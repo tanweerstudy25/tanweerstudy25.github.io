@@ -4966,3 +4966,448 @@ section[id] {
 .ccnp-card:hover {
     border-color: #7c5cff;
 }
+/* =========================================================
+   FRESH CERTIFICATIONS PAGE
+   ========================================================= */
+
+.cert-page {
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0, 180, 255, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(120, 80, 255, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #041b2d,
+            #071d35,
+            #11183f
+        );
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.cert-header {
+    width: 100%;
+
+    padding: 18px 35px;
+
+    box-sizing: border-box;
+
+    background: rgba(3, 15, 30, 0.88);
+
+    border-bottom: 1px solid rgba(0, 190, 255, 0.25);
+
+    backdrop-filter: blur(15px);
+}
+
+
+.cert-nav {
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 22px;
+}
+
+
+.cert-nav a {
+    color: #d7e7ff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+
+.cert-nav a:hover {
+    color: #00c6ff;
+
+    transform: translateY(-2px);
+}
+
+
+.cert-nav .active {
+    color: #00c6ff;
+}
+
+
+/* =========================================================
+   THEME BUTTON
+   ========================================================= */
+
+.cert-page .theme-btn {
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(0, 190, 255, 0.4);
+
+    background: rgba(10, 35, 60, 0.9);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.cert-page .theme-btn:hover {
+
+    transform: rotate(12deg) scale(1.08);
+
+    box-shadow:
+        0 0 20px rgba(0, 190, 255, 0.5);
+}
+
+
+/* =========================================================
+   WHATSAPP
+   ========================================================= */
+
+.cert-page .whatsapp-btn {
+
+    padding: 13px 20px;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #12c978,
+        #0b9f68
+    );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 25px rgba(0, 210, 120, 0.25);
+}
+
+
+.cert-page .whatsapp-btn:hover {
+
+    color: white;
+
+    transform: translateY(-3px) scale(1.04);
+
+    box-shadow:
+        0 12px 35px rgba(0, 220, 130, 0.45);
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.cert-main {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding:
+        55px 35px
+        70px;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.cert-title {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+
+.cert-small-title {
+
+    color: #00c6ff;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 18px;
+}
+
+
+.cert-title h1 {
+
+    margin: 0;
+
+    font-size: clamp(42px, 5vw, 68px);
+
+    line-height: 1.05;
+
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #c7eaff,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.cert-title p {
+
+    margin:
+        22px auto
+        0;
+
+    max-width: 850px;
+
+    color: #b9d4ef;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CERTIFICATE GALLERY
+   ========================================================= */
+
+.certificate-gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   CERTIFICATE BOX
+   ========================================================= */
+
+.certificate-box {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 1.55 / 1;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    border: 2px solid
+        rgba(0, 198, 255, 0.55);
+
+    box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+/* =========================================================
+   CERTIFICATE IMAGE
+   ========================================================= */
+
+.certificate-box img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    background: #ffffff;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.certificate-box:hover {
+
+    transform:
+        translateY(-8px)
+        scale(1.015);
+
+    border-color: #00c6ff;
+
+    box-shadow:
+        0 20px 55px
+        rgba(0, 0, 0, 0.5),
+
+        0 0 30px
+        rgba(0, 198, 255, 0.35);
+}
+
+
+.certificate-box:hover img {
+
+    transform: scale(1.03);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-area {
+
+    text-align: center;
+
+    margin-top: 45px;
+}
+
+
+.back-button {
+
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border-radius: 11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0099ff,
+            #7355ff
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    transition: 0.3s ease;
+}
+
+
+.back-button:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.04);
+
+    box-shadow:
+        0 10px 30px
+        rgba(70, 120, 255, 0.4);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .cert-nav {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 13px;
+    }
+
+
+    .cert-main {
+
+        padding:
+            40px 18px
+            55px;
+    }
+
+
+    .certificate-gallery {
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+
+    .certificate-box {
+
+        aspect-ratio: 1.45 / 1;
+    }
+
+
+    .cert-title h1 {
+
+        font-size: 42px;
+    }
+
+
+    .cert-title p {
+
+        font-size: 14px;
+    }
+}

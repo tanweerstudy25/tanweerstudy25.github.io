@@ -10,300 +10,96 @@
 
     <style>
 
-        /* =====================================================
+        /* =========================================
            CERTIFICATIONS PAGE
-        ===================================================== */
+        ========================================= */
 
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #ffffff;
-
-            background:
-                radial-gradient(circle at 10% 20%, rgba(0, 153, 255, 0.18), transparent 30%),
-                radial-gradient(circle at 90% 20%, rgba(168, 85, 247, 0.20), transparent 30%),
-                radial-gradient(circle at 50% 90%, rgba(255, 72, 120, 0.15), transparent 35%),
-                linear-gradient(135deg, #020b18, #071b32, #081126);
-
-            background-attachment: fixed;
-        }
-
-
-        /* =====================================================
-           ANIMATED BACKGROUND
-        ===================================================== */
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-
-            background:
-                linear-gradient(
-                    120deg,
-                    transparent 0%,
-                    rgba(0, 174, 255, 0.04) 30%,
-                    transparent 60%,
-                    rgba(168, 85, 247, 0.05) 100%
-                );
-
-            animation: backgroundMove 10s ease-in-out infinite alternate;
-            pointer-events: none;
-        }
-
-        @keyframes backgroundMove {
-
-            0% {
-                transform: translateX(-2%) scale(1);
-            }
-
-            100% {
-                transform: translateX(2%) scale(1.08);
-            }
-        }
-
-
-        /* =====================================================
-           NAVIGATION
-        ===================================================== */
-
-        .cert-nav {
-
-            position: fixed;
-
-            top: 0;
-            left: 0;
-            right: 0;
-
-            height: 72px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            gap: 28px;
-
-            z-index: 9999;
-
-            background: rgba(2, 12, 25, 0.88);
-
-            backdrop-filter: blur(18px);
-
-            border-bottom:
-                1px solid rgba(0, 174, 255, 0.25);
-
-            box-shadow:
-                0 10px 30px rgba(0,0,0,0.25);
-        }
-
-        .cert-nav a {
-
-            position: relative;
-
-            color: #9fb4c9;
-
-            text-decoration: none;
-
-            font-size: 15px;
-
-            font-weight: 700;
-
-            padding: 10px 5px;
-
-            transition: 0.3s ease;
-        }
-
-        .cert-nav a:hover {
-
-            color: #ffffff;
-
-            transform:
-                translateY(-3px)
-                scale(1.08);
-
-            text-shadow:
-                0 0 10px #00aaff,
-                0 0 20px #00aaff;
-        }
-
-        .cert-nav a::after {
-
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-            bottom: 2px;
-
-            width: 0;
-            height: 2px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #00c6ff,
-                    #8b5cf6,
-                    #ff3d81
-                );
-
-            transition: 0.3s ease;
-        }
-
-        .cert-nav a:hover::after {
-            width: 100%;
-        }
-
-
-        /* =====================================================
-           MAIN PAGE
-        ===================================================== */
-
-        .cert-page {
-
+        .certifications-page {
             min-height: 100vh;
+            padding: 110px 5% 80px;
 
-            padding:
-                120px 5%
-                80px;
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(0, 174, 255, 0.16),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 80% 30%,
+                    rgba(145, 70, 255, 0.16),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #020b18,
+                    #071b32,
+                    #03101f
+                );
         }
-
 
         .cert-header {
-
-            max-width: 1200px;
-
-            margin:
-                0 auto 50px;
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 50px;
         }
 
-
-        .cert-label {
-
-            display: inline-block;
-
-            color: #20b7ff;
-
-            font-size: 13px;
-
+        .cert-header .eyebrow {
+            color: #00bfff;
+            font-size: 14px;
             font-weight: 800;
-
-            letter-spacing: 3px;
-
+            letter-spacing: 4px;
             text-transform: uppercase;
-
-            margin-bottom: 14px;
+            margin-bottom: 15px;
         }
-
 
         .cert-header h1 {
-
+            color: white;
+            font-size: clamp(35px, 5vw, 62px);
             margin: 0 0 15px;
-
-            font-size:
-                clamp(38px, 5vw, 64px);
-
-            line-height: 1.05;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #ffffff,
-                    #58c7ff,
-                    #b18cff,
-                    #ffffff
-                );
-
-            background-size: 300% auto;
-
-            -webkit-background-clip: text;
-            background-clip: text;
-
-            color: transparent;
-
-            animation:
-                gradientText 5s linear infinite;
+            font-weight: 900;
         }
-
-        @keyframes gradientText {
-
-            0% {
-                background-position: 0% center;
-            }
-
-            100% {
-                background-position: 300% center;
-            }
-        }
-
 
         .cert-header p {
-
-            margin: 0;
-
-            color: #a8bbcf;
-
+            color: #a9bfd5;
             font-size: 18px;
-
-            max-width: 800px;
-
-            line-height: 1.7;
         }
 
 
-        /* =====================================================
-           CERTIFICATION GRID
-        ===================================================== */
+        /* =========================================
+           CERTIFICATE GRID
+        ========================================= */
 
-        .cert-grid {
-
-            max-width: 1200px;
-
+        .certificate-grid {
+            max-width: 1250px;
             margin: auto;
 
             display: grid;
+            grid-template-columns: repeat(2, 1fr);
 
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 24px;
+            gap: 30px;
         }
 
 
-        /* =====================================================
-           CERTIFICATION CARD
-        ===================================================== */
+        /* =========================================
+           CERTIFICATE CARD
+        ========================================= */
 
-        .cert-card {
-
+        .certificate-card {
             position: relative;
 
-            min-height: 255px;
-
-            padding: 30px;
+            height: 390px;
 
             overflow: hidden;
 
             border-radius: 22px;
 
-            border:
-                1px solid
-                rgba(74, 163, 255, 0.28);
+            background: #ffffff;
 
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(12, 39, 67, 0.96),
-                    rgba(5, 20, 39, 0.98)
-                );
+            border: 2px solid rgba(0, 190, 255, 0.45);
 
             box-shadow:
-                0 15px 35px
-                rgba(0,0,0,0.28);
+                0 15px 45px rgba(0,0,0,0.35);
 
             transition:
                 transform 0.4s ease,
@@ -312,1094 +108,298 @@
         }
 
 
-        /* Animated light */
+        /* =========================================
+           CERTIFICATE IMAGE
+        ========================================= */
 
-        .cert-card::before {
+        .certificate-image {
+            position: absolute;
 
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            background: white;
+
+            padding: 12px;
+
+            display: block;
+
+            transition:
+                transform 0.5s ease;
+        }
+
+
+        /* Slight glass layer */
+        .certificate-card::after {
             content: "";
 
             position: absolute;
 
-            top: -120%;
-
-            left: -80%;
-
-            width: 50%;
-
-            height: 300%;
-
-            transform:
-                rotate(25deg);
+            inset: 0;
 
             background:
                 linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(255,255,255,0.18),
-                    transparent
+                    to top,
+                    rgba(0,0,0,0.20),
+                    transparent 35%
                 );
 
-            transition:
-                left 0.8s ease;
+            pointer-events: none;
+
+            z-index: 2;
         }
 
 
-        .cert-card:hover::before {
+        /* =========================================
+           CCNA / CCNP LABEL
+        ========================================= */
 
-            left: 150%;
-        }
-
-
-        /* Glow circle */
-
-        .cert-card::after {
-
-            content: "";
-
+        .certificate-title {
             position: absolute;
 
-            width: 180px;
+            left: 25px;
+            bottom: 22px;
 
-            height: 180px;
+            z-index: 5;
 
-            top: -90px;
+            font-size: 30px;
 
-            right: -90px;
+            font-weight: 1000;
 
-            border-radius: 50%;
+            letter-spacing: 2px;
 
-            background:
-                rgba(0, 174, 255, 0.12);
+            color: white;
 
-            filter: blur(5px);
+            text-shadow:
+                0 0 5px currentColor,
+                0 0 15px currentColor,
+                0 0 30px currentColor;
 
-            transition:
-                0.5s ease;
+            animation:
+                certificateBlink 1.5s infinite alternate;
         }
 
 
-        .cert-card:hover {
+        /* CCNA */
+        .ccna-title {
+            color: #00d9ff;
+        }
+
+
+        /* CCNP */
+        .ccnp-title {
+            color: #c77dff;
+        }
+
+
+        /* =========================================
+           BLINKING EFFECT
+        ========================================= */
+
+        @keyframes certificateBlink {
+
+            0% {
+                opacity: 0.45;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+
+                transform:
+                    translateY(-3px)
+                    scale(1.05);
+
+                text-shadow:
+                    0 0 8px currentColor,
+                    0 0 20px currentColor,
+                    0 0 40px currentColor,
+                    0 0 65px currentColor;
+            }
+        }
+
+
+        /* =========================================
+           HOVER EFFECT
+        ========================================= */
+
+        .certificate-card:hover {
 
             transform:
                 translateY(-12px)
-                scale(1.025)
+                perspective(800px)
                 rotateX(2deg);
 
-            border-color:
-                #20b7ff;
-
             box-shadow:
+                0 25px 70px rgba(0, 200, 255, 0.30);
 
-                0 25px 55px
-                rgba(0,0,0,0.45),
-
-                0 0 25px
-                rgba(0,174,255,0.22),
-
-                0 0 60px
-                rgba(139,92,246,0.10);
+            border-color: #00d9ff;
         }
 
-
-        .cert-card:hover::after {
+        .certificate-card:hover .certificate-image {
 
             transform:
-                scale(2);
-
-            background:
-                rgba(139,92,246,0.16);
+                scale(1.04);
         }
 
 
-        /* =====================================================
-           ICON
-        ===================================================== */
+        /* CCNP hover */
+        .certificate-card.ccnp-card:hover {
 
-        .cert-icon {
+            border-color: #b76cff;
 
-            width: 58px;
+            box-shadow:
+                0 25px 70px rgba(170, 80, 255, 0.35);
+        }
 
-            height: 58px;
 
-            display: flex;
+        /* =========================================
+           BACK BUTTON
+        ========================================= */
 
-            align-items: center;
+        .back-home {
 
-            justify-content: center;
+            display: block;
 
-            border-radius: 16px;
+            width: fit-content;
 
-            margin-bottom: 22px;
+            margin: 55px auto 0;
 
-            font-size: 27px;
+            padding: 13px 25px;
+
+            border-radius: 12px;
+
+            text-decoration: none;
 
             color: white;
 
             background:
                 linear-gradient(
                     135deg,
-                    #ff7a18,
-                    #ff3d81
+                    #009dff,
+                    #7657ff
                 );
 
-            box-shadow:
+            font-weight: 700;
 
-                0 10px 25px
-                rgba(255,72,120,0.28);
-
-            transition:
-                0.4s ease;
+            transition: 0.3s ease;
         }
 
-
-        .cert-card:hover .cert-icon {
+        .back-home:hover {
 
             transform:
-                rotate(-6deg)
-                scale(1.12);
+                translateY(-4px)
+                scale(1.04);
 
             box-shadow:
-
-                0 0 20px
-                rgba(255,72,120,0.5),
-
-                0 0 35px
-                rgba(0,174,255,0.25);
+                0 10px 30px rgba(0,150,255,0.4);
         }
 
 
-        /* =====================================================
-           CARD TEXT
-        ===================================================== */
+        /* =========================================
+           MOBILE
+        ========================================= */
 
-        .cert-card h2 {
+        @media (max-width: 800px) {
 
-            margin:
-                0 0 10px;
-
-            font-size: 21px;
-
-            line-height: 1.3;
-
-            color: #ffffff;
-        }
-
-
-        .cert-card .issuer {
-
-            display: inline-block;
-
-            color: #20b7ff;
-
-            font-size: 12px;
-
-            font-weight: 800;
-
-            letter-spacing: 1px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 12px;
-        }
-
-
-        .cert-card p {
-
-            margin: 0;
-
-            color: #aebfd1;
-
-            font-size: 14px;
-
-            line-height: 1.7;
-        }
-
-
-        /* =====================================================
-           CARD NUMBER
-        ===================================================== */
-
-        .cert-number {
-
-            position: absolute;
-
-            top: 22px;
-
-            right: 25px;
-
-            font-size: 45px;
-
-            font-weight: 900;
-
-            color:
-                rgba(255,255,255,0.045);
-
-            transition:
-                0.4s ease;
-        }
-
-
-        .cert-card:hover .cert-number {
-
-            color:
-                rgba(32,183,255,0.13);
-
-            transform:
-                scale(1.15);
-        }
-
-
-        /* =====================================================
-           SPECIAL CARD COLORS
-        ===================================================== */
-
-        .cert-card:nth-child(2) .cert-icon {
-            background:
-                linear-gradient(
-                    135deg,
-                    #2563eb,
-                    #06b6d4
-                );
-        }
-
-        .cert-card:nth-child(3) .cert-icon {
-            background:
-                linear-gradient(
-                    135deg,
-                    #7c3aed,
-                    #ec4899
-                );
-        }
-
-        .cert-card:nth-child(4) .cert-icon {
-            background:
-                linear-gradient(
-                    135deg,
-                    #0078d4,
-                    #00bcf2
-                );
-        }
-
-        .cert-card:nth-child(5) .cert-icon {
-            background:
-                linear-gradient(
-                    135deg,
-                    #2563eb,
-                    #7c3aed
-                );
-        }
-
-        .cert-card:nth-child(6) .cert-icon {
-            background:
-                linear-gradient(
-                    135deg,
-                    #f59e0b,
-                    #ef4444
-                );
-        }
-
-        .cert-card:nth-child(7) .cert-icon {
-            background:
-                linear-gradient(
-                    135deg,
-                    #10b981,
-                    #06b6d4
-                );
-        }
-
-        .cert-card:nth-child(8) .cert-icon {
-            background:
-                linear-gradient(
-                    135deg,
-                    #6366f1,
-                    #a855f7
-                );
-        }
-
-        .cert-card:nth-child(9) .cert-icon {
-            background:
-                linear-gradient(
-                    135deg,
-                    #f97316,
-                    #e11d48
-                );
-        }
-
-        .cert-card:nth-child(10) .cert-icon {
-            background:
-                linear-gradient(
-                    135deg,
-                    #ef4444,
-                    #f97316
-                );
-        }
-
-        .cert-card:nth-child(11) .cert-icon {
-            background:
-                linear-gradient(
-                    135deg,
-                    #06b6d4,
-                    #2563eb
-                );
-        }
-
-        .cert-card:nth-child(12) .cert-icon {
-            background:
-                linear-gradient(
-                    135deg,
-                    #8b5cf6,
-                    #ec4899
-                );
-        }
-
-
-        /* =====================================================
-           RESPONSIVE
-        ===================================================== */
-
-        @media (max-width: 950px) {
-
-            .cert-grid {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
+            .certificate-grid {
+                grid-template-columns: 1fr;
             }
 
-            .cert-nav {
-
-                gap: 16px;
-
-                overflow-x: auto;
-
-                justify-content:
-                    flex-start;
-
-                padding:
-                    0 20px;
+            .certificate-card {
+                height: 330px;
             }
 
-            .cert-nav a {
-
-                white-space:
-                    nowrap;
-
-                font-size: 13px;
-            }
         }
 
-
-        @media (max-width: 650px) {
-
-            .cert-page {
-
-                padding:
-                    105px 20px 60px;
-            }
-
-            .cert-grid {
-
-                grid-template-columns:
-                    1fr;
-            }
-
-            .cert-card {
-
-                min-height:
-                    230px;
-            }
-
-            .cert-header h1 {
-
-                font-size:
-                    40px;
-            }
-        }
-/* =========================================================
-   BRAND WATERMARK BACKGROUNDS
-   ========================================================= */
-
-/* CCNA */
-.ccna-card {
-    background:
-        linear-gradient(
-            rgba(7, 27, 50, 0.88),
-            rgba(5, 20, 39, 0.94)
-        ),
-        url("ccna-logo.png");
-
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%, 52% auto;
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease,
-        border-color 0.4s ease,
-        background-size 0.5s ease;
-}
-
-/* CCNA hover */
-.ccna-card:hover {
-    background-size: 100% 100%, 58% auto;
-}
-
-
-/* =========================================================
-   CCNP - CARD 02
-   ========================================================= */
-
-.cert-grid > .cert-card:nth-child(2) {
-    background:
-        linear-gradient(
-            rgba(7, 27, 50, 0.88),
-            rgba(5, 20, 39, 0.94)
-        ),
-        url("ccnp-logo.png");
-
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%, 52% auto;
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease,
-        border-color 0.4s ease,
-        background-size 0.5s ease;
-}
-
-/* CCNP hover */
-.cert-grid > .cert-card:nth-child(2):hover {
-    background-size: 100% 100%, 58% auto;
-}
-
-
-/* =========================================================
-   SSCL COMPANY TRAINING - CARDS 10, 11, 12
-   ========================================================= */
-
-.cert-grid > .cert-card:nth-child(10),
-.cert-grid > .cert-card:nth-child(11),
-.cert-grid > .cert-card:nth-child(12) {
-
-    background:
-        linear-gradient(
-            rgba(7, 27, 50, 0.86),
-            rgba(5, 20, 39, 0.94)
-        ),
-        url("sscl-logo.png");
-
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%, 55% auto;
-
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease,
-        border-color 0.4s ease,
-        background-size 0.5s ease;
-}
-
-
-/* SSCL hover */
-.cert-grid > .cert-card:nth-child(10):hover,
-.cert-grid > .cert-card:nth-child(11):hover,
-.cert-grid > .cert-card:nth-child(12):hover {
-
-    background-size: 100% 100%, 62% auto;
-
-    box-shadow:
-        0 25px 55px rgba(0,0,0,0.45),
-        0 0 30px rgba(0,174,255,0.30),
-        0 0 70px rgba(139,92,246,0.15);
-}
-
-
-/* =========================================================
-   EXTRA PREMIUM BRAND GLOW
-   ========================================================= */
-
-.ccna-card:hover,
-.cert-grid > .cert-card:nth-child(2):hover,
-.cert-grid > .cert-card:nth-child(10):hover,
-.cert-grid > .cert-card:nth-child(11):hover,
-.cert-grid > .cert-card:nth-child(12):hover {
-
-    border-color: #20b7ff;
-
-    transform:
-        translateY(-12px)
-        scale(1.025);
-}
     </style>
 </head>
 
 
 <body>
 
+<section class="certifications-page">
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+    <div class="cert-header">
 
-<nav class="cert-nav">
-
-    <a href="index.html">Home</a>
-
-    <a href="about.html">About</a>
-
-    <a href="skills.html">Skills</a>
-
-    <a href="experience.html">Experience</a>
-
-    <a href="certifications.html">Certifications</a>
-
-    <a href="projects.html">Projects</a>
-
-    <a href="index.html#contact">Contact</a>
-
-</nav>
-
-
-
-<!-- =====================================================
-     CERTIFICATIONS PAGE
-===================================================== -->
-
-<main class="cert-page">
-
-
-    <header class="cert-header">
-
-        <div class="cert-label">
+        <div class="eyebrow">
             Professional Certifications
         </div>
 
         <h1>
-            Certifications & Training
+            Certifications & Credentials
         </h1>
 
         <p>
-            Professional certifications, technical training and
-            enterprise technology learning across networking,
-            cloud, security and IT operations.
+            Professional certifications and technical credentials
+            across networking, cloud, security and IT infrastructure.
         </p>
 
-    </header>
-
-
-
-    <section class="cert-grid">
-
-
-        <!-- 01 -->
-
-       <article class="cert-card certificate-bg ccna-card">
-    
-    <div class="cert-icon">
-        🌐
     </div>
 
-    <span class="issuer">CISCO</span>
 
-    <h2>CCNA</h2>
-
-    <p>
-        Cisco Certified Network Associate — networking
-        fundamentals, routing, switching, VLANs and
-        network troubleshooting.
-    </p>
-
-</article>
+    <div class="certificate-grid">
 
 
+        <!-- ======================================
+             CCNA
+        ======================================= -->
 
-        <!-- 02 -->
+        <article class="certificate-card ccna-card">
 
-      
-<article class="cert-card certificate-bg ccnp-card">
-    
-    <div class="cert-icon">
-        ◆
+            <img
+                src="ccna-certificate.jpg"
+                class="certificate-image"
+                alt="Cisco CCNA Certificate"
+            >
+
+            <div class="certificate-title ccna-title">
+                CCNA
+            </div>
+
+        </article>
+
+
+
+        <!-- ======================================
+             CCNP
+        ======================================= -->
+
+        <article class="certificate-card ccnp-card">
+
+            <img
+                src="ccnp-certificate.jpg"
+                class="certificate-image"
+                alt="Cisco CCNP Certificate"
+            >
+
+            <div class="certificate-title ccnp-title">
+                CCNP
+            </div>
+
+        </article>
+
+
     </div>
 
-    <span class="issuer">CISCO</span>
 
-    <h2>CCNP</h2>
+    <a href="index.html" class="back-home">
+        ← Back to Home
+    </a>
 
-    <p>
-        Cisco Certified Network Professional — enterprise
-        routing, switching and advanced network
-        infrastructure.
-    </p>
-
-</article>
-
-
-        <!-- 03 -->
-
-        <article class="cert-card">
-
-            <span class="cert-number">03</span>
-
-            <div class="cert-icon">
-                🛡️
-            </div>
-
-            <span class="issuer">
-                Fortinet
-            </span>
-
-            <h2>
-                Fortinet NSE 4
-            </h2>
-
-            <p>
-                FortiGate firewall administration,
-                security policies, VPN, user access,
-                filtering and network security operations.
-            </p>
-
-        </article>
-
-
-
-        <!-- 04 -->
-
-        <article class="cert-card">
-
-            <span class="cert-number">04</span>
-
-            <div class="cert-icon">
-                ☁️
-            </div>
-
-            <span class="issuer">
-                Microsoft
-            </span>
-
-            <h2>
-                Azure Administrator — AZ-104
-            </h2>
-
-            <p>
-                Azure administration including compute,
-                storage, networking, identity,
-                monitoring and resource management.
-            </p>
-
-        </article>
-
-
-
-        <!-- 05 -->
-
-        <article class="cert-card">
-
-            <span class="cert-number">05</span>
-
-            <div class="cert-icon">
-                🔵
-            </div>
-
-            <span class="issuer">
-                Microsoft
-            </span>
-
-            <h2>
-                Azure Networking — AZ-700
-            </h2>
-
-            <p>
-                Azure networking, virtual networks,
-                connectivity, security, load balancing
-                and hybrid networking concepts.
-            </p>
-
-        </article>
-
-
-
-        <!-- 06 -->
-
-        <article class="cert-card">
-
-            <span class="cert-number">06</span>
-
-            <div class="cert-icon">
-                ⚙️
-            </div>
-
-            <span class="issuer">
-                PeopleCert
-            </span>
-
-            <h2>
-                ITIL 4 Foundation
-            </h2>
-
-            <p>
-                IT service management, service value system,
-                incident management, service requests
-                and IT best practices.
-            </p>
-
-        </article>
-
-
-
-        <!-- 07 -->
-
-        <article class="cert-card">
-
-            <span class="cert-number">07</span>
-
-            <div class="cert-icon">
-                🖥️
-            </div>
-
-            <span class="issuer">
-                Microsoft
-            </span>
-
-            <h2>
-                Microsoft 365 & Office 365
-            </h2>
-
-            <p>
-                Microsoft 365 administration, Office 365,
-                user management, Exchange Online,
-                collaboration and cloud services.
-            </p>
-
-        </article>
-
-
-
-        <!-- 08 -->
-
-        <article class="cert-card">
-
-            <span class="cert-number">08</span>
-
-            <div class="cert-icon">
-                🔑
-            </div>
-
-            <span class="issuer">
-                Microsoft
-            </span>
-
-            <h2>
-                Microsoft Entra ID & Intune
-            </h2>
-
-            <p>
-                Identity and access management,
-                endpoint management, Windows Autopilot
-                and enterprise device administration.
-            </p>
-
-        </article>
-
-
-
-        <!-- 09 -->
-
-        <article class="cert-card">
-
-            <span class="cert-number">09</span>
-
-            <div class="cert-icon">
-                🪟
-            </div>
-
-            <span class="issuer">
-                Technical Training
-            </span>
-
-            <h2>
-                Windows Server Administration
-            </h2>
-
-            <p>
-                Windows Server administration including
-                Active Directory, DNS, DHCP, Group Policy,
-                user management and troubleshooting.
-            </p>
-
-        </article>
-
-
-
-        <!-- 10 -->
-
-        <article class="cert-card">
-
-            <span class="cert-number">10</span>
-
-            <div class="cert-icon">
-                🔐
-            </div>
-
-            <span class="issuer">
-                SSCL Company Training Certificate
-            </span>
-
-            <h2>
-                Cybersecurity Awareness
-            </h2>
-
-            <p>
-                Cybersecurity awareness training covering
-                security best practices, safe IT operations,
-                threats and responsible technology usage.
-            </p>
-
-        </article>
-
-
-
-        <!-- 11 -->
-
-        <article class="cert-card">
-
-            <span class="cert-number">11</span>
-
-            <div class="cert-icon">
-                ☁️
-            </div>
-
-            <span class="issuer">
-                SSCL Company Training Certificate
-            </span>
-
-            <h2>
-                GCP Management Training
-            </h2>
-
-            <p>
-                Google Cloud Platform management training
-                covering cloud services, administration
-                and enterprise cloud operations.
-            </p>
-
-        </article>
-
-
-
-        <!-- 12 -->
-
-        <article class="cert-card">
-
-            <span class="cert-number">12</span>
-
-            <div class="cert-icon">
-                📊
-            </div>
-
-            <span class="issuer">
-                SSCL Company Training Certificate
-            </span>
-
-            <h2>
-                HCM Application
-            </h2>
-
-            <p>
-                HCM application training covering
-                enterprise application operations,
-                user support and system processes.
-            </p>
-
-        </article>
-
-
-    </section>
-
-</main>
+</section>
 
 
 </body>
-    <style>
-
-/* =========================================
-   REMOVE CERTIFICATION NUMBERS
-   ========================================= */
-
-.cert-number {
-    display: none !important;
-}
-
-
-/* =========================================
-   CCNA - FULL CARD WATERMARK
-   ========================================= */
-
-.ccna-card::before {
-    content: "";
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background-image: url("ccna-logo.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    opacity: 0.28;
-
-    z-index: 0;
-
-    transform: none !important;
-    left: 0 !important;
-    top: 0 !important;
-
-    transition: opacity 0.4s ease,
-                transform 0.5s ease !important;
-}
-
-
-/* =========================================
-   CCNP - FULL CARD WATERMARK
-   ========================================= */
-
-.cert-grid > .cert-card:nth-child(2)::before {
-    content: "";
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background-image: url("ccnp-logo.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    opacity: 0.28;
-
-    z-index: 0;
-
-    transform: none !important;
-    left: 0 !important;
-    top: 0 !important;
-
-    transition: opacity 0.4s ease,
-                transform 0.5s ease !important;
-}
-
-
-/* =========================================
-   SSCL - CARDS 10, 11 & 12
-   ========================================= */
-
-.cert-grid > .cert-card:nth-child(10)::before,
-.cert-grid > .cert-card:nth-child(11)::before,
-.cert-grid > .cert-card:nth-child(12)::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background-image: url("sscl-logo.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    opacity: 0.25;
-
-    z-index: 0;
-
-    transform: none !important;
-    left: 0 !important;
-    top: 0 !important;
-
-    transition: opacity 0.4s ease,
-                transform 0.5s ease !important;
-}
-
-
-/* =========================================
-   KEEP TEXT ABOVE WATERMARK
-   ========================================= */
-
-.cert-card .cert-icon,
-.cert-card .issuer,
-.cert-card h2,
-.cert-card p {
-    position: relative;
-    z-index: 5;
-}
-
-
-/* =========================================
-   HOVER - MAKE WATERMARK CLEARER
-   ========================================= */
-
-.ccna-card:hover::before,
-.cert-grid > .cert-card:nth-child(2):hover::before {
-
-    opacity: 0.40;
-
-    transform: scale(1.04) !important;
-}
-
-
-.cert-grid > .cert-card:nth-child(10):hover::before,
-.cert-grid > .cert-card:nth-child(11):hover::before,
-.cert-grid > .cert-card:nth-child(12):hover::before {
-
-    opacity: 0.38;
-
-    transform: scale(1.04) !important;
-}
-
-
-/* =========================================
-   PREMIUM CARD EFFECT
-   ========================================= */
-
-.ccna-card,
-.cert-grid > .cert-card:nth-child(2),
-.cert-grid > .cert-card:nth-child(10),
-.cert-grid > .cert-card:nth-child(11),
-.cert-grid > .cert-card:nth-child(12) {
-
-    border-color: rgba(32,183,255,0.45);
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,0.35),
-        inset 0 0 40px rgba(0,120,255,0.05);
-
-}
-
-
-/* =========================================
-   MOBILE
-   ========================================= */
-
-@media (max-width: 650px) {
-
-    .ccna-card::before,
-    .cert-grid > .cert-card:nth-child(2)::before,
-    .cert-grid > .cert-card:nth-child(10)::before,
-    .cert-grid > .cert-card:nth-child(11)::before,
-    .cert-grid > .cert-card:nth-child(12)::before {
-
-        background-size: cover;
-        opacity: 0.22;
-    }
-
-}
-
-</style>
 </html>

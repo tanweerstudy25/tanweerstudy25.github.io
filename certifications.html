@@ -1,93 +1,207 @@
-/* =========================================
-   SAFE PREMIUM CERTIFICATE ANIMATION
-   PHOTO ALWAYS CLEAR
-========================================= */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Certifications | Tanweer Ansari</title>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0,140,255,.15), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(120,50,255,.18), transparent 35%),
+        linear-gradient(135deg, #031526, #071b32, #10133a);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 14px;
+    padding: 0 5%;
+    background: rgba(3,14,30,.82);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0,170,255,.25);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #a9c1d8;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    transition: .35s ease;
+}
+
+.navbar a:hover {
+    color: white;
+    transform: translateY(-3px) scale(1.08);
+    background: linear-gradient(135deg,#00aaff,#754cff);
+    box-shadow: 0 0 20px rgba(0,170,255,.6);
+}
+
+/* Theme */
+
+.theme-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    border: 1px solid #1976b8;
+    background: #071d35;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    transition: .4s;
+}
+
+.theme-btn:hover {
+    transform: rotate(12deg) scale(1.12);
+    box-shadow: 0 0 25px #00aaff;
+}
+
+/* WhatsApp */
+
+.whatsapp {
+    text-decoration: none;
+    color: white !important;
+    background: linear-gradient(135deg,#00c853,#00a878);
+    padding: 12px 20px !important;
+    border-radius: 12px;
+    font-weight: bold !important;
+    box-shadow: 0 0 18px rgba(0,200,83,.35);
+}
+
+.whatsapp:hover {
+    background: linear-gradient(135deg,#00e676,#00bfa5) !important;
+    box-shadow: 0 0 30px rgba(0,255,150,.7);
+}
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.header {
+    text-align: center;
+    padding: 65px 20px 40px;
+}
+
+.small-title {
+    color: #00b7ff;
+    letter-spacing: 5px;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.header h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #55c7ff,
+        #a66cff,
+        #ffffff
+    );
+
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: titleGlow 6s linear infinite;
+}
+
+.header p {
+    color: #a9c6df;
+    font-size: 16px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* =========================
+   CERTIFICATE GRID
+========================= */
+
+.cert-grid {
+
+    width: 90%;
+    max-width: 1250px;
+
+    margin: 20px auto 70px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+/* =========================
+   CERTIFICATE CARD
+========================= */
 
 .cert-card {
+
     position: relative;
-    overflow: hidden;
 
-    transform-style: preserve-3d;
+    height: 420px;
 
-    transition:
-        transform 0.45s ease,
-        box-shadow 0.45s ease,
-        border-color 0.45s ease;
+    padding: 12px;
 
-    border: 1px solid rgba(0,190,255,0.45);
+    border-radius: 22px;
 
-    /* Animation layer ke neeche photo */
-    isolation: isolate;
-}
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.02)
+        );
 
-
-/* =========================================
-   CERTIFICATE PHOTO
-========================================= */
-
-.cert-card img {
-    position: relative;
-    z-index: 2;
-
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    background: #ffffff;
-
-    border-radius: 14px;
-
-    transition:
-        transform 0.45s ease,
-        filter 0.45s ease;
-
-    /* Photo ko kabhi dark/white overlay nahi karega */
-    opacity: 1;
-}
-
-
-/* =========================================
-   HOVER - PROFESSIONAL 3D
-========================================= */
-
-.cert-card:hover {
-
-    transform:
-        perspective(1200px)
-        rotateX(3deg)
-        rotateY(-3deg)
-        translateY(-12px)
-        scale(1.025);
-
-    border-color: #00e5ff;
+    border: 1px solid rgba(0,190,255,.45);
 
     box-shadow:
-        0 18px 45px rgba(0,0,0,0.55),
-        0 0 18px rgba(0,200,255,0.75),
-        0 0 40px rgba(0,140,255,0.35);
+        0 15px 45px rgba(0,0,0,.45),
+        inset 0 0 20px rgba(0,150,255,.05);
+
+    overflow: hidden;
+
+    transition:
+        transform .5s ease,
+        box-shadow .5s ease,
+        border-color .5s ease;
+
+    animation: cardFloat 5s ease-in-out infinite;
 }
 
-
-/* Photo stays CLEAR */
-
-.cert-card:hover img {
-
-    transform: scale(1.02);
-
-    filter:
-        brightness(1.03)
-        contrast(1.03);
-
-}
-
-
-/* =========================================
-   MOVING LIGHT
-   ONLY BORDER AREA - NOT PHOTO
-========================================= */
+/* glowing moving border */
 
 .cert-card::before {
 
@@ -95,152 +209,397 @@
 
     position: absolute;
 
-    inset: 0;
+    inset: -2px;
 
     border-radius: 22px;
 
-    border: 2px solid transparent;
+    background:
+        conic-gradient(
+            from 0deg,
+            transparent,
+            #00bfff,
+            #7c4dff,
+            transparent,
+            #00e5ff,
+            transparent
+        );
+
+    animation: rotateBorder 5s linear infinite;
+
+    z-index: -1;
+}
+
+/* dark inner layer */
+
+.cert-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 2px;
+
+    border-radius: 20px;
+
+    background: #071c31;
+
+    z-index: -1;
+}
+
+/* hover 3D */
+
+.cert-card:hover {
+
+    transform:
+        perspective(1000px)
+        rotateX(4deg)
+        rotateY(-4deg)
+        translateY(-12px)
+        scale(1.025);
+
+    border-color: #00d9ff;
+
+    box-shadow:
+        0 25px 70px rgba(0,170,255,.35),
+        0 0 35px rgba(120,70,255,.25);
+
+}
+
+/* =========================
+   CERTIFICATE IMAGE
+========================= */
+
+.cert-card img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    background: white;
+
+    border-radius: 14px;
+
+    transition:
+        transform .6s ease,
+        filter .6s ease;
+}
+
+.cert-card:hover img {
+
+    transform: scale(1.035);
+
+    filter:
+        brightness(1.05)
+        contrast(1.05);
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-home {
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 auto 60px;
+
+    padding: 14px 25px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-weight: bold;
+
+    border-radius: 12px;
 
     background:
         linear-gradient(
-            120deg,
-            transparent,
-            rgba(0,220,255,0.9),
-            transparent
-        ) border-box;
-
-    mask:
-        linear-gradient(#fff 0 0) padding-box,
-        linear-gradient(#fff 0 0);
-
-    mask-composite: exclude;
-
-    -webkit-mask:
-        linear-gradient(#fff 0 0) padding-box,
-        linear-gradient(#fff 0 0);
-
-    -webkit-mask-composite: xor;
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    z-index: 4;
-
-    transition: opacity 0.3s ease;
-}
-
-
-/* Activate border animation */
-
-.cert-card:hover::before {
-
-    opacity: 1;
-
-    animation:
-        borderGlow 1.4s linear infinite;
-}
-
-
-/* =========================================
-   DIFFERENT PROFESSIONAL COLORS
-========================================= */
-
-.cert-card:nth-child(1):hover {
-    border-color: #00e5ff;
+            135deg,
+            #009cff,
+            #7655ff
+        );
 
     box-shadow:
-        0 18px 45px rgba(0,0,0,.55),
-        0 0 20px rgba(0,229,255,.8),
-        0 0 45px rgba(0,180,255,.35);
+        0 8px 25px rgba(0,130,255,.3);
+
+    transition: .4s;
 }
 
+.back-home:hover {
 
-.cert-card:nth-child(2):hover {
-    border-color: #ff315f;
+    transform:
+        translateY(-5px)
+        scale(1.06);
 
     box-shadow:
-        0 18px 45px rgba(0,0,0,.55),
-        0 0 20px rgba(255,49,95,.8),
-        0 0 45px rgba(255,49,95,.35);
+        0 0 30px rgba(0,170,255,.7);
 }
 
+/* =========================
+   ANIMATIONS
+========================= */
 
-.cert-card:nth-child(3):hover {
-    border-color: #ff9800;
-
-    box-shadow:
-        0 18px 45px rgba(0,0,0,.55),
-        0 0 20px rgba(255,152,0,.8),
-        0 0 45px rgba(255,100,0,.35);
-}
-
-
-.cert-card:nth-child(4):hover {
-    border-color: #2196f3;
-
-    box-shadow:
-        0 18px 45px rgba(0,0,0,.55),
-        0 0 20px rgba(33,150,243,.8),
-        0 0 45px rgba(33,100,255,.35);
-}
-
-
-.cert-card:nth-child(5):hover {
-    border-color: #9c5cff;
-
-    box-shadow:
-        0 18px 45px rgba(0,0,0,.55),
-        0 0 20px rgba(156,92,255,.8),
-        0 0 45px rgba(120,50,255,.35);
-}
-
-
-.cert-card:nth-child(6):hover {
-    border-color: #00e676;
-
-    box-shadow:
-        0 18px 45px rgba(0,0,0,.55),
-        0 0 20px rgba(0,230,118,.8),
-        0 0 45px rgba(0,180,100,.35);
-}
-
-
-/* =========================================
-   BORDER ANIMATION
-========================================= */
-
-@keyframes borderGlow {
+@keyframes rotateBorder {
 
     0% {
         transform: rotate(0deg);
-        filter: brightness(1);
-    }
-
-    50% {
-        filter: brightness(1.8);
     }
 
     100% {
         transform: rotate(360deg);
-        filter: brightness(1);
     }
 
 }
 
+@keyframes cardFloat {
 
-/* =========================================
-   REMOVE OLD OVERLAY EFFECTS
-========================================= */
+    0%,100% {
+        transform: translateY(0);
+    }
 
-.cert-card::after {
-    display: none !important;
+    50% {
+        transform: translateY(-3px);
+    }
+
+}
+
+@keyframes titleGlow {
+
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        justify-content: center;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 12px;
+    }
+
+    .navbar a {
+        font-size: 12px;
+        padding: 7px;
+    }
+
+    .cert-grid {
+        grid-template-columns: 1fr;
+        width: 94%;
+    }
+
+    .cert-card {
+        height: auto;
+        min-height: 320px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="navbar">
+
+    <a href="index.html">Home</a>
+
+    <a href="about.html">About</a>
+
+    <a href="skills.html">Skills</a>
+
+    <a href="experience.html">Experience</a>
+
+    <a href="certifications.html">Certifications</a>
+
+    <a href="index.html#projects">Projects</a>
+
+    <button
+        class="theme-btn"
+        onclick="changeTheme()"
+        title="Change Theme">
+        🌙
+    </button>
+
+    <a
+        class="whatsapp"
+        href="https://wa.me/966557316795"
+        target="_blank">
+        🟢 WhatsApp
+    </a>
+
+</nav>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<section class="header">
+
+    <div class="small-title">
+        PROFESSIONAL CERTIFICATIONS
+    </div>
+
+    <h1>
+        Certifications & Credentials
+    </h1>
+
+    <p>
+        Professional certifications and technical credentials
+        across networking, cloud, security and IT infrastructure.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     CERTIFICATE BOXES
+========================= -->
+
+<section class="cert-grid">
+
+    <!-- 01 -->
+    <div class="cert-card">
+        <img src="ccna.jpeg" alt="Certificate">
+    </div>
+
+
+    <!-- 02 -->
+    <div class="cert-card">
+        <img src="ccnp.jpeg" alt="Certificate">
+    </div>
+
+
+    <!-- 03 -->
+    <div class="cert-card">
+        <img src="fortinet.jpeg" alt="Certificate">
+    </div>
+
+
+    <!-- 04 -->
+    <div class="cert-card">
+        <img src="azure104.jpeg" alt="Certificate">
+    </div>
+
+
+    <!-- 05 -->
+    <div class="cert-card">
+        <img src="azure700.jpeg" alt="Certificate">
+    </div>
+
+
+    <!-- 06 -->
+    <div class="cert-card">
+        <img src="itil.jpeg" alt="Certificate">
+    </div>
+
+</section>
+
+
+<a href="index.html" class="back-home">
+    ← Back to Home
+</a>
+
+
+<script>
+
+/* =========================
+   3 THEME SYSTEM
+========================= */
+
+let themeIndex = 0;
+
+function changeTheme() {
+
+    themeIndex++;
+
+    if (themeIndex > 2) {
+        themeIndex = 0;
+    }
+
+    const themes = [
+
+        {
+            bg:
+            "linear-gradient(135deg,#031526,#071b32,#10133a)"
+        },
+
+        {
+            bg:
+            "linear-gradient(135deg,#071b16,#063b3b,#10284d)"
+        },
+
+        {
+            bg:
+            "linear-gradient(135deg,#21051f,#321052,#111a46)"
+        }
+
+    ];
+
+    document.body.style.background = themes[themeIndex].bg;
+
+    localStorage.setItem(
+        "tanweerTheme",
+        themeIndex
+    );
 }
 
 
-/* Make sure certificate image is always visible */
+/* Remember selected theme */
 
-.cert-card img {
-    visibility: visible !important;
-    opacity: 1 !important;
-}
+window.addEventListener("DOMContentLoaded", function() {
+
+    const saved =
+        localStorage.getItem("tanweerTheme");
+
+    if (saved !== null) {
+
+        themeIndex = parseInt(saved);
+
+        const themes = [
+
+            "linear-gradient(135deg,#031526,#071b32,#10133a)",
+
+            "linear-gradient(135deg,#071b16,#063b3b,#10284d)",
+
+            "linear-gradient(135deg,#21051f,#321052,#111a46)"
+
+        ];
+
+        document.body.style.background =
+            themes[themeIndex];
+    }
+
+});
+
+</script>
+
+</body>
+</html>

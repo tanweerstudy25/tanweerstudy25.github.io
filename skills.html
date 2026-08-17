@@ -1,288 +1,623 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Tanweer Ansari</title>
 
-<title>Skills | Tanweer Ansari</title>
+    <!-- Main Website CSS -->
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
+    <style>
+        /* ================================
+           SKILLS PAGE
+        ================================= */
 
+        .skills-page {
+            min-height: 100vh;
+            padding: 110px 5% 70px;
+            background: var(--bg, #061426);
+        }
+
+        .skills-header {
+            max-width: 1200px;
+            margin: 0 auto 45px;
+        }
+
+        .skills-label {
+            color: #20a8ff;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .skills-header h1 {
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.1;
+            margin: 0 0 15px;
+            color: #ffffff;
+        }
+
+        .skills-header p {
+            color: #9fb3c8;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        /* ================================
+           GRID
+        ================================= */
+
+        .skills-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        /* ================================
+           CARD
+        ================================= */
+
+        .skill-card {
+            position: relative;
+            padding: 30px;
+            min-height: 260px;
+
+            background: linear-gradient(
+                145deg,
+                rgba(14, 37, 64, 0.95),
+                rgba(7, 24, 44, 0.98)
+            );
+
+            border: 1px solid rgba(55, 148, 255, 0.25);
+            border-radius: 20px;
+
+            transition:
+                transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease,
+                background 0.35s ease;
+
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            top: -100px;
+            right: -80px;
+
+            background: rgba(0, 174, 255, 0.15);
+            border-radius: 50%;
+            filter: blur(5px);
+
+            transition: 0.4s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #21a9ff;
+
+            box-shadow:
+                0 20px 45px rgba(0, 0, 0, 0.35),
+                0 0 25px rgba(0, 157, 255, 0.18);
+
+            background: linear-gradient(
+                145deg,
+                #102f50,
+                #091d36
+            );
+        }
+
+        .skill-card:hover::before {
+            transform: scale(2);
+            background: rgba(0, 174, 255, 0.12);
+        }
+
+        /* ================================
+           ICON
+        ================================= */
+
+        .skill-icon {
+            width: 52px;
+            height: 52px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background: linear-gradient(
+                135deg,
+                #ff7a18,
+                #ff3d81
+            );
+
+            color: white;
+            font-size: 24px;
+
+            margin-bottom: 20px;
+
+            box-shadow: 0 10px 25px rgba(255, 80, 80, 0.25);
+        }
+
+        .skill-card h2 {
+            color: #ffffff;
+            font-size: 22px;
+            margin: 0 0 18px;
+        }
+
+        .skill-card ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .skill-card li {
+            position: relative;
+            padding-left: 18px;
+            margin: 9px 0;
+
+            color: #aebfd1;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .skill-card li::before {
+            content: "•";
+
+            position: absolute;
+            left: 0;
+
+            color: #ff8a00;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* ================================
+           HOBBIES CARD
+        ================================= */
+
+        .hobbies-card {
+            grid-column: span 3;
+            min-height: auto;
+        }
+
+        .hobbies-card li {
+            margin: 10px 0;
+        }
+
+        /* ================================
+           NAVIGATION
+        ================================= */
+
+        .skills-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+
+            height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+
+            background: rgba(3, 15, 29, 0.92);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(52, 153, 255, 0.2);
+        }
+
+        .skills-nav a {
+            position: relative;
+
+            color: #9fb3c8;
+            text-decoration: none;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            padding: 10px 5px;
+
+            transition: 0.3s ease;
+        }
+
+        .skills-nav a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+            text-shadow: 0 0 12px rgba(0, 174, 255, 0.8);
+        }
+
+        .skills-nav a::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+
+            width: 0;
+            height: 2px;
+
+            background: linear-gradient(
+                90deg,
+                #00aaff,
+                #8b5cf6
+            );
+
+            transition: 0.3s ease;
+        }
+
+        .skills-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ================================
+           RESPONSIVE
+        ================================= */
+
+        @media (max-width: 950px) {
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hobbies-card {
+                grid-column: span 2;
+            }
+
+            .skills-nav {
+                gap: 15px;
+            }
+
+            .skills-nav a {
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .skills-page {
+                padding: 100px 20px 50px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hobbies-card {
+                grid-column: span 1;
+            }
+
+            .skills-nav {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding: 0 15px;
+            }
+
+            .skills-nav a {
+                white-space: nowrap;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header class="navbar">
+<!-- ================================
+     NAVIGATION
+================================= -->
 
-<div class="nav-container">
+<nav class="skills-nav">
 
-<div class="nav-links">
+    <a href="index.html">Home</a>
 
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="skills.html" class="active">Skills</a>
-<a href="experience.html">Experience</a>
-<a href="index.html#certifications">Certifications</a>
-<a href="projects.html">Projects</a>
-<a href="index.html#contact">Contact</a>
+    <a href="about.html">About</a>
 
-</div>
+    <a href="skills.html">Skills</a>
 
-<div class="nav-actions">
+    <a href="experience.html">Experience</a>
 
-<button id="themeToggle"
-class="theme-btn"
-onclick="changeTheme()">🌙</button>
+    <a href="certifications.html">Certifications</a>
 
-<a href="https://wa.me/966557316795"
-target="_blank"
-class="whatsapp-btn">◉ WhatsApp</a>
+    <a href="projects.html">Projects</a>
 
-</div>
+    <a href="index.html#contact">Contact</a>
 
-</div>
+</nav>
 
-</header>
 
+<!-- ================================
+     SKILLS
+================================= -->
 
-<main class="page">
+<main class="skills-page">
 
-<div class="section-label">TECHNOLOGY AREAS</div>
+    <header class="skills-header">
 
-<h1 class="page-title">
-Practical skills across enterprise IT operations.
-</h1>
+        <div class="skills-label">
+            Technology Areas
+        </div>
 
+        <h1>
+            Practical skills across enterprise IT operations.
+        </h1>
 
-<div class="skills-grid">
+        <p>
+            Network, Cloud, Security, Systems, IT Operations and Enterprise Support.
+        </p>
 
+    </header>
 
-<div class="skill-card">
-<div class="card-icon">🌐</div>
-<h2>NETWORKING</h2>
 
-<ul>
-<li>Routing & Switching</li>
-<li>LAN & WAN</li>
-<li>VLAN</li>
-<li>STP</li>
-<li>RIP</li>
-<li>BGP</li>
-<li>OSPF</li>
-<li>TCP/IP</li>
-<li>VPN</li>
-<li>Cisco & Avaya Telephony</li>
-<li>Network Troubleshooting</li>
-<li>Network Monitoring</li>
-</ul>
+    <section class="skills-grid">
 
-</div>
 
+        <!-- NETWORKING -->
 
-<div class="skill-card">
-<div class="card-icon">🔐</div>
+        <div class="skill-card">
 
-<h2>SECURITY</h2>
+            <div class="skill-icon">🌐</div>
 
-<ul>
-<li>FortiGate Firewall Basic</li>
-<li>Firewall Policies</li>
-<li>VPN</li>
-<li>User Management</li>
-<li>Access Profiles</li>
-<li>URL Filtering</li>
-<li>Network Security</li>
-<li>Security Troubleshooting</li>
-</ul>
+            <h2>NETWORKING</h2>
 
-</div>
+            <ul>
+                <li>Routing & Switching</li>
+                <li>LAN & WAN</li>
+                <li>VLAN</li>
+                <li>STP</li>
+                <li>RIP</li>
+                <li>BGP</li>
+                <li>OSPF</li>
+                <li>TCP/IP</li>
+                <li>VPN</li>
+                <li>Cisco & Avaya Telephony</li>
+                <li>Network Troubleshooting</li>
+                <li>Network Monitoring</li>
+            </ul>
 
+        </div>
 
-<div class="skill-card">
-<div class="card-icon">☁️</div>
 
-<h2>MICROSOFT AZURE</h2>
+        <!-- SECURITY -->
 
-<ul>
-<li>Azure Administration</li>
-<li>Azure Infrastructure</li>
-<li>Azure Networking</li>
-<li>Virtual Networks</li>
-<li>Network Security</li>
-<li>Azure Identity</li>
-<li>Resource Management</li>
-<li>AZ-104</li>
-<li>AZ-700</li>
-</ul>
+        <div class="skill-card">
 
-</div>
+            <div class="skill-icon">🔐</div>
 
+            <h2>SECURITY</h2>
 
-<div class="skill-card">
-<div class="card-icon">☁️</div>
+            <ul>
+                <li>FortiGate Firewall Basic</li>
+                <li>Firewall Policies</li>
+                <li>VPN</li>
+                <li>User Management</li>
+                <li>Access Profiles</li>
+                <li>URL Filtering</li>
+                <li>Network Security</li>
+                <li>Security Troubleshooting</li>
+            </ul>
 
-<h2>MICROSOFT CLOUD</h2>
+        </div>
 
-<ul>
-<li>Microsoft Entra ID</li>
-<li>Microsoft Intune</li>
-<li>Windows Autopilot</li>
-<li>Microsoft 365</li>
-<li>Office 365</li>
-<li>Exchange Online</li>
-<li>SharePoint</li>
-<li>User Account Management</li>
-<li>Access Management</li>
-</ul>
 
-</div>
+        <!-- AZURE -->
 
+        <div class="skill-card">
 
-<div class="skill-card">
-<div class="card-icon">🖥️</div>
+            <div class="skill-icon">☁️</div>
 
-<h2>SYSTEMS</h2>
+            <h2>MICROSOFT AZURE</h2>
 
-<ul>
-<li>Windows Server 2016</li>
-<li>Active Directory</li>
-<li>Group Policy</li>
-<li>Windows 10 / 11</li>
-<li>Computer Hardware</li>
-<li>Software Installation</li>
-<li>PC & Laptop Troubleshooting</li>
-<li>Printer Support</li>
-<li>Anti-Virus</li>
-</ul>
+            <ul>
+                <li>Azure Administration</li>
+                <li>Azure Infrastructure</li>
+                <li>Azure Networking</li>
+                <li>Virtual Networks</li>
+                <li>Network Security</li>
+                <li>Azure Identity</li>
+                <li>Resource Management</li>
+                <li>AZ-104</li>
+                <li>AZ-700</li>
+            </ul>
 
-</div>
+        </div>
 
 
-<div class="skill-card">
-<div class="card-icon">⚙️</div>
+        <!-- MICROSOFT CLOUD -->
 
-<h2>IT OPERATIONS</h2>
+        <div class="skill-card">
 
-<ul>
-<li>Helpdesk & Ticketing System</li>
-<li>L2 IT Support</li>
-<li>Incident Management</li>
-<li>Service Requests</li>
-<li>IT Asset Management</li>
-<li>PPM Reports</li>
-<li>Technical Documentation</li>
-<li>End User Support</li>
-<li>Troubleshooting</li>
-</ul>
+            <div class="skill-icon">▦</div>
 
-</div>
+            <h2>MICROSOFT CLOUD</h2>
 
+            <ul>
+                <li>Microsoft Entra ID</li>
+                <li>Microsoft Intune</li>
+                <li>Windows Autopilot</li>
+                <li>Microsoft 365</li>
+                <li>Office 365</li>
+                <li>Exchange Online</li>
+                <li>SharePoint</li>
+                <li>User Account Management</li>
+                <li>Access Management</li>
+            </ul>
 
-<div class="skill-card">
-<div class="card-icon">📹</div>
+        </div>
 
-<h2>CCTV & SMART SYSTEMS</h2>
 
-<ul>
-<li>IP Camera</li>
-<li>CCTV Systems</li>
-<li>Camera Installation</li>
-<li>Camera Troubleshooting</li>
-<li>Access Control</li>
-<li>Smart Lock</li>
-<li>Smart TV</li>
-<li>IoT Smart Sensors</li>
-</ul>
+        <!-- SYSTEMS -->
 
-</div>
+        <div class="skill-card">
 
+            <div class="skill-icon">💻</div>
 
-<div class="skill-card">
-<div class="card-icon">💾</div>
+            <h2>SYSTEMS</h2>
 
-<h2>DATABASE & APPLICATIONS</h2>
+            <ul>
+                <li>Windows Server 2016</li>
+                <li>Active Directory</li>
+                <li>Group Policy</li>
+                <li>Windows 10 / 11</li>
+                <li>Computer Hardware</li>
+                <li>Software Installation</li>
+                <li>PC & Laptop Troubleshooting</li>
+                <li>Printer Support</li>
+                <li>Anti-Virus</li>
+            </ul>
 
-<ul>
-<li>Oracle Database 10g</li>
-<li>Oracle Forms</li>
-<li>Oracle Reports 6i</li>
-<li>Application Installation</li>
-<li>Software Configuration</li>
-<li>System Upgrades</li>
-<li>Software Licensing</li>
-<li>Application Troubleshooting</li>
-</ul>
+        </div>
 
-</div>
 
+        <!-- IT OPERATIONS -->
 
-<div class="skill-card">
-<div class="card-icon">📋</div>
+        <div class="skill-card">
 
-<h2>DOCUMENTATION</h2>
+            <div class="skill-icon">⚙️</div>
 
-<ul>
-<li>Technical Reports</li>
-<li>PPM Reports</li>
-<li>IT Documentation</li>
-<li>SOP Preparation</li>
-<li>Asset Inventory</li>
-<li>Network Documentation</li>
-<li>Incident Documentation</li>
-</ul>
+            <h2>IT OPERATIONS</h2>
 
-</div>
+            <ul>
+                <li>Helpdesk & Ticketing System</li>
+                <li>L2 IT Support</li>
+                <li>Incident Management</li>
+                <li>Service Requests</li>
+                <li>IT Asset Management</li>
+                <li>PPM Reports</li>
+                <li>Technical Documentation</li>
+                <li>End User Support</li>
+                <li>Troubleshooting</li>
+            </ul>
 
+        </div>
 
-<!-- EXTRA CARD -->
 
-<div class="skill-card extra-card">
+        <!-- CCTV -->
 
-<div class="card-icon">♟️</div>
+        <div class="skill-card">
 
-<h2>EXTRA-CURRICULAR ACTIVITY & HOBBIES</h2>
+            <div class="skill-icon">📹</div>
 
-<ul>
+            <h2>CCTV & SMART SYSTEMS</h2>
 
-<li>Won Inter Chess Championship at GHATSHILA COLLEGE.</li>
+            <ul>
+                <li>IP Camera</li>
+                <li>CCTV Systems</li>
+                <li>Camera Installation</li>
+                <li>Camera Troubleshooting</li>
+                <li>Access Control</li>
+                <li>Smart Lock</li>
+                <li>Smart TV</li>
+                <li>IoT Smart Sensors</li>
+            </ul>
 
-<li>Active participation in Debating, Quizzing and Sports.</li>
+        </div>
 
-<li>Regularly explore new IT technologies and industry trends.</li>
 
-<li>Interested in research, testing and hands-on experimentation with new technologies.</li>
+        <!-- DATABASE -->
 
-<li>Continuously improving networking, cloud and cybersecurity knowledge.</li>
+        <div class="skill-card">
 
-<li>Enjoy learning new Microsoft Azure and enterprise IT solutions.</li>
+            <div class="skill-icon">🗄️</div>
 
-<li>Passionate about technology research and practical problem solving.</li>
+            <h2>DATABASE & APPLICATIONS</h2>
 
-<li>Believe in continuous professional development and lifelong learning.</li>
+            <ul>
+                <li>Oracle Database 10g</li>
+                <li>Oracle Forms</li>
+                <li>Oracle Reports 6i</li>
+                <li>Application Installation</li>
+                <li>Software Configuration</li>
+                <li>System Upgrades</li>
+                <li>Software Licensing</li>
+                <li>Application Troubleshooting</li>
+            </ul>
 
-</ul>
+        </div>
 
-</div>
 
+        <!-- DOCUMENTATION -->
 
-</div>
+        <div class="skill-card">
+
+            <div class="skill-icon">📄</div>
+
+            <h2>DOCUMENTATION</h2>
+
+            <ul>
+                <li>Technical Reports</li>
+                <li>PPM Reports</li>
+                <li>IT Documentation</li>
+                <li>SOP Preparation</li>
+                <li>Asset Inventory</li>
+                <li>Network Documentation</li>
+                <li>Incident Documentation</li>
+            </ul>
+
+        </div>
+
+
+        <!-- EXTRA CURRICULAR -->
+
+        <div class="skill-card hobbies-card">
+
+            <div class="skill-icon">🏆</div>
+
+            <h2>EXTRA-CURRICULAR ACTIVITY & HOBBIES</h2>
+
+            <ul>
+
+                <li>
+                    Won Inter Chess Championship at GHATSHILA COLLEGE.
+                </li>
+
+                <li>
+                    Active in Debating, Quizzing and Sports.
+                </li>
+
+                <li>
+                    Regularly explore new IT technologies and industry trends.
+                </li>
+
+                <li>
+                    Interested in research, testing and hands-on experimentation with new technologies.
+                </li>
+
+                <li>
+                    Continuously improving networking, cloud and cybersecurity knowledge.
+                </li>
+
+                <li>
+                    Enjoy learning Microsoft Azure and enterprise IT solutions.
+                </li>
+
+                <li>
+                    Passionate about technology research and practical problem solving.
+                </li>
+
+                <li>
+                    Believe in continuous professional development and lifelong learning.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </section>
 
 </main>
 
 
-<footer>
-
-<span>Tanweer Ansari · Network & IT Support Engineer</span>
-
-<span>Open to New Opportunities</span>
-
-</footer>
-
-
-<script src="script.js"></script>
-
 </body>
-
 </html>

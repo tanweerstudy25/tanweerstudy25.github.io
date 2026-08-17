@@ -3,2541 +3,370 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Tanweer Ansari | Network & Cloud Infrastructure Engineer</title>
-
-<meta name="description" content="Tanweer Ansari - Network & Cloud Infrastructure Engineer with 16+ years of enterprise IT infrastructure experience in Cisco, Azure, Microsoft 365, Entra ID, Intune and Fortinet.">
-
-<meta name="keywords" content="Tanweer Ansari, Network Engineer, Cloud Engineer, Azure Engineer, Cisco Engineer, Fortinet, Microsoft 365, Intune, Entra ID, Saudi Arabia">
-
-<meta name="author" content="Tanweer Ansari">
-
-<meta property="og:title" content="Tanweer Ansari | Network & Cloud Infrastructure Engineer">
-<meta property="og:description" content="16+ Years of Enterprise IT Infrastructure Experience">
-<meta property="og:type" content="website">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta name="description" content="Tanweer Ansari - Network & Cloud Infrastructure Engineer Portfolio">
+<title>Tanweer Ansari | Network & Cloud Engineer</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-/* =========================================================
-   GLOBAL
-========================================================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
-
-:root{
-    --bg:#07111f;
-    --bg2:#0b1728;
-    --card:#101f33;
-    --card2:#12253c;
-    --text:#f4f8ff;
-    --muted:#9fb0c5;
-    --primary:#38bdf8;
-    --secondary:#6366f1;
-    --border:rgba(255,255,255,0.08);
-    --shadow:0 20px 60px rgba(0,0,0,0.35);
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-    font-family:'Inter',sans-serif;
-    background:
-        radial-gradient(circle at 10% 10%,rgba(56,189,248,.12),transparent 30%),
-        radial-gradient(circle at 90% 20%,rgba(99,102,241,.12),transparent 30%),
-        var(--bg);
-    color:var(--text);
-    line-height:1.6;
-    overflow-x:hidden;
+  font-family:Inter,Arial,sans-serif;
+  background:#050816;
+  color:#eef4ff;
+  overflow-x:hidden;
 }
-
-a{
-    text-decoration:none;
-    color:inherit;
+body:before{
+  content:"";position:fixed;inset:0;z-index:-3;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(0,210,255,.14),transparent 30%),
+    radial-gradient(circle at 80% 70%,rgba(125,70,255,.16),transparent 32%),
+    linear-gradient(135deg,#050816,#081125 50%,#050816);
 }
+canvas{position:fixed;inset:0;z-index:-2;pointer-events:none}
+a{text-decoration:none;color:inherit}
+.container{width:min(1150px,92%);margin:auto}
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+nav{
+  position:fixed;top:0;left:0;width:100%;z-index:20;
+  padding:18px 0;
+  backdrop-filter:blur(16px);
+  background:rgba(5,8,22,.58);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
-
-section{
-    padding:100px 0;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:60px;
-}
-
-.section-title span{
-    color:var(--primary);
-    font-size:14px;
-    font-weight:700;
-    letter-spacing:3px;
-    text-transform:uppercase;
-}
-
-.section-title h2{
-    font-size:42px;
-    margin-top:10px;
-}
-
-.section-title p{
-    color:var(--muted);
-    max-width:700px;
-    margin:15px auto 0;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:14px 24px;
-    border-radius:10px;
-    font-weight:700;
-    transition:.3s;
-    border:1px solid var(--border);
-}
-
-.btn-primary{
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    color:white;
-    border:none;
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 30px rgba(56,189,248,.2);
-}
-
-.glass{
-    background:rgba(16,31,51,.7);
-    backdrop-filter:blur(15px);
-    border:1px solid var(--border);
-}
-
-/* =========================================================
-   NAVBAR
-========================================================= */
-
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-    background:rgba(7,17,31,.75);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid var(--border);
-}
-
-.navbar{
-    height:75px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-size:22px;
-    font-weight:800;
-    letter-spacing:1px;
-}
-
-.logo span{
-    color:var(--primary);
-}
-
-.nav-links{
-    display:flex;
-    list-style:none;
-    gap:28px;
-}
-
-.nav-links a{
-    color:var(--muted);
-    font-size:14px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.nav-links a:hover,
-.nav-links a.active{
-    color:var(--primary);
-}
-
-.nav-actions{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.theme-toggle{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    border:1px solid var(--border);
-    background:var(--card);
-    color:white;
-    cursor:pointer;
-}
-
-.menu-toggle{
-    display:none;
-    font-size:24px;
-    cursor:pointer;
-}
-
-/* =========================================================
-   HERO
-========================================================= */
+.nav-inner{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.25rem;font-weight:800;letter-spacing:.5px}
+.logo span{color:#35d9ff}
+.nav-links{display:flex;gap:25px;align-items:center}
+.nav-links a{font-size:.9rem;color:#b8c4dc;transition:.3s}
+.nav-links a:hover{color:#fff}
+.menu{display:none;font-size:1.5rem;cursor:pointer}
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    padding-top:100px;
-    position:relative;
+  min-height:100vh;display:flex;align-items:center;
+  padding-top:90px;
 }
-
 .hero-grid{
-    display:grid;
-    grid-template-columns:1.1fr .9fr;
-    gap:60px;
-    align-items:center;
+  display:grid;grid-template-columns:1.1fr .9fr;
+  gap:60px;align-items:center;
 }
-
 .badge{
-    display:inline-flex;
-    padding:8px 15px;
-    border-radius:30px;
-    border:1px solid rgba(56,189,248,.25);
-    background:rgba(56,189,248,.08);
-    color:var(--primary);
-    font-size:13px;
-    font-weight:600;
-    margin-bottom:20px;
+  display:inline-flex;padding:9px 15px;border-radius:999px;
+  background:rgba(40,210,255,.08);
+  border:1px solid rgba(40,210,255,.35);
+  color:#69e4ff;font-size:.8rem;font-weight:700;
+  margin-bottom:22px;box-shadow:0 0 30px rgba(40,210,255,.08);
 }
-
-.hero h1{
-    font-size:clamp(42px,6vw,72px);
-    line-height:1.05;
-    margin-bottom:20px;
+h1{font-size:clamp(3rem,7vw,6.4rem);line-height:.95;letter-spacing:-4px}
+.gradient{
+  background:linear-gradient(90deg,#fff,#63e4ff,#a879ff,#fff);
+  background-size:300% auto;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shine 5s linear infinite;
 }
-
-.hero h1 span{
-    background:linear-gradient(90deg,var(--primary),#818cf8);
-    -webkit-background-clip:text;
-    color:transparent;
+.hero p{margin:25px 0;color:#aebbd4;max-width:650px;line-height:1.8;font-size:1.05rem}
+.buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  padding:13px 20px;border-radius:12px;font-weight:700;
+  border:1px solid rgba(255,255,255,.13);
+  background:rgba(255,255,255,.05);transition:.3s;
 }
-
-.hero h3{
-    font-size:22px;
-    color:#dbeafe;
-    margin-bottom:20px;
+.btn.primary{
+  color:#00131b;
+  background:linear-gradient(135deg,#45e1ff,#8c7bff);
+  border:0;box-shadow:0 10px 35px rgba(61,204,255,.2)
 }
+.btn:hover{transform:translateY(-4px);box-shadow:0 15px 35px rgba(0,0,0,.25)}
 
-.hero p{
-    color:var(--muted);
-    font-size:17px;
-    max-width:680px;
-    margin-bottom:30px;
+.scene{height:500px;display:grid;place-items:center;perspective:1000px}
+.cube{
+  width:260px;height:260px;position:relative;
+  transform-style:preserve-3d;
+  animation:spin 15s linear infinite;
 }
-
-.hero-buttons{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
+.face{
+  position:absolute;width:260px;height:260px;
+  display:grid;place-items:center;text-align:center;
+  border:1px solid rgba(91,227,255,.65);
+  background:linear-gradient(135deg,rgba(29,217,255,.10),rgba(121,82,255,.08));
+  box-shadow:inset 0 0 40px rgba(70,220,255,.07),0 0 35px rgba(80,180,255,.08);
+  backdrop-filter:blur(3px);
 }
-
-.socials{
-    display:flex;
-    gap:12px;
-    margin-top:30px;
-}
-
-.socials a{
-    width:45px;
-    height:45px;
-    border:1px solid var(--border);
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--muted);
-    transition:.3s;
-}
-
-.socials a:hover{
-    color:var(--primary);
-    border-color:var(--primary);
-    transform:translateY(-4px);
-}
-
-/* NETWORK VISUAL */
-
-.network-visual{
-    position:relative;
-    height:500px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
+.face strong{font-size:1.3rem}.face small{display:block;color:#91a7c9;margin-top:8px}
+.front{transform:translateZ(130px)}
+.back{transform:rotateY(180deg) translateZ(130px)}
+.right{transform:rotateY(90deg) translateZ(130px)}
+.left{transform:rotateY(-90deg) translateZ(130px)}
+.top{transform:rotateX(90deg) translateZ(130px)}
+.bottom{transform:rotateX(-90deg) translateZ(130px)}
 
 .orbit{
-    width:330px;
-    height:330px;
-    border:1px solid rgba(56,189,248,.2);
-    border-radius:50%;
-    position:absolute;
-    animation:spin 20s linear infinite;
+  position:absolute;width:390px;height:390px;border:1px solid rgba(95,218,255,.18);
+  border-radius:50%;transform:rotateX(70deg) rotateZ(20deg);
+  animation:orbit 12s linear infinite;
 }
-
-.orbit:before,
 .orbit:after{
-    content:"";
-    position:absolute;
-    border:1px solid rgba(99,102,241,.15);
-    border-radius:50%;
+  content:"";position:absolute;width:12px;height:12px;border-radius:50%;
+  background:#54e5ff;box-shadow:0 0 25px 8px rgba(84,229,255,.5);
+  left:8%;top:8%;
 }
 
-.orbit:before{
-    inset:35px;
+section{padding:110px 0}
+.section-title{font-size:2.5rem;margin-bottom:12px}
+.section-sub{color:#91a0bb;margin-bottom:45px}
+.cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px
 }
-
-.orbit:after{
-    inset:70px;
+.card{
+  padding:28px;border-radius:20px;
+  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
+  border:1px solid rgba(255,255,255,.10);
+  backdrop-filter:blur(14px);
+  transition:.4s;position:relative;overflow:hidden;
 }
-
-.center-server{
-    width:150px;
-    height:150px;
-    border-radius:25px;
-    background:linear-gradient(145deg,#122a45,#0c1c30);
-    border:1px solid rgba(56,189,248,.3);
-    box-shadow:0 0 70px rgba(56,189,248,.18);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:60px;
-    color:var(--primary);
-    z-index:2;
+.card:before{
+  content:"";position:absolute;inset:-2px;
+  background:linear-gradient(120deg,transparent,#5ee7ff,transparent);
+  opacity:0;transition:.4s;z-index:-1;
 }
+.card:hover{transform:translateY(-10px) rotateX(3deg) rotateY(-3deg);border-color:rgba(86,225,255,.4)}
+.card:hover:before{opacity:.12}
+.icon{font-size:2rem;margin-bottom:15px}
+.card h3{margin-bottom:10px}
+.card p{color:#9ba9c1;line-height:1.7;font-size:.92rem}
 
-.tech-node{
-    position:absolute;
-    width:60px;
-    height:60px;
-    border-radius:15px;
-    background:var(--card2);
-    border:1px solid var(--border);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:24px;
-    color:var(--primary);
-    box-shadow:var(--shadow);
+.skills{display:flex;flex-wrap:wrap;gap:12px}
+.skill{
+  padding:12px 16px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.11);
+  background:rgba(255,255,255,.045);color:#c9d6ed;
+  transition:.3s;
 }
+.skill:hover{transform:scale(1.07) rotate(-2deg);border-color:#55ddff;color:#fff}
 
-.node1{top:40px;left:50%;}
-.node2{right:20px;top:45%;}
-.node3{bottom:40px;left:50%;}
-.node4{left:20px;top:45%;}
+.timeline{border-left:1px solid rgba(92,222,255,.3);padding-left:30px}
+.item{position:relative;margin-bottom:35px}
+.item:before{
+  content:"";position:absolute;left:-37px;top:5px;width:12px;height:12px;
+  border-radius:50%;background:#5de2ff;box-shadow:0 0 18px #5de2ff
+}
+.item h3{margin-bottom:7px}
+.item p{color:#9caac1;line-height:1.7}
+
+.contact-box{
+  text-align:center;padding:55px 25px;border-radius:28px;
+  background:linear-gradient(135deg,rgba(55,219,255,.08),rgba(135,90,255,.10));
+  border:1px solid rgba(255,255,255,.12);
+}
+.contact-box p{color:#aab7ce;margin:15px auto 25px;max-width:650px;line-height:1.7}
+
+footer{padding:30px 0;text-align:center;color:#71809b;border-top:1px solid rgba(255,255,255,.07)}
+
+.reveal{opacity:0;transform:translateY(35px);transition:1s}
+.reveal.show{opacity:1;transform:none}
 
 @keyframes spin{
-    from{transform:rotate(0);}
-    to{transform:rotate(360deg);}
+  from{transform:rotateX(-15deg) rotateY(0deg) rotateZ(0deg)}
+  to{transform:rotateX(345deg) rotateY(360deg) rotateZ(360deg)}
+}
+@keyframes orbit{to{transform:rotateX(70deg) rotateZ(380deg)}}
+@keyframes shine{to{background-position:300% center}}
+
+@media(max-width:800px){
+  .nav-links{display:none;position:absolute;top:65px;left:4%;width:92%;
+    padding:20px;flex-direction:column;background:#0a1124;border:1px solid #1d2940;border-radius:15px}
+  .nav-links.open{display:flex}.menu{display:block}
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero p{margin-left:auto;margin-right:auto}
+  .buttons{justify-content:center}
+  .scene{height:370px}
+  .cube,.face{width:190px;height:190px}
+  .front{transform:translateZ(95px)}.back{transform:rotateY(180deg) translateZ(95px)}
+  .right{transform:rotateY(90deg) translateZ(95px)}.left{transform:rotateY(-90deg) translateZ(95px)}
+  .top{transform:rotateX(90deg) translateZ(95px)}.bottom{transform:rotateX(-90deg) translateZ(95px)}
+  .orbit{width:290px;height:290px}
+  .cards{grid-template-columns:1fr}
+  h1{letter-spacing:-2px}
 }
-
-/* =========================================================
-   STATS
-========================================================= */
-
-.stats{
-    margin-top:-40px;
-}
-
-.stats-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
-
-.stat-card{
-    padding:28px;
-    text-align:center;
-    border-radius:18px;
-}
-
-.stat-card h3{
-    font-size:34px;
-    color:var(--primary);
-}
-
-.stat-card p{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
-}
-
-.about-text h3{
-    font-size:32px;
-    margin-bottom:20px;
-}
-
-.about-text p{
-    color:var(--muted);
-    margin-bottom:18px;
-}
-
-.about-list{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-    margin-top:25px;
-}
-
-.about-list div{
-    color:#dbeafe;
-    font-size:14px;
-}
-
-.about-list i{
-    color:var(--primary);
-    margin-right:8px;
-}
-
-.about-card{
-    padding:35px;
-    border-radius:25px;
-}
-
-.about-card h3{
-    font-size:24px;
-    margin-bottom:25px;
-}
-
-.info-row{
-    display:flex;
-    justify-content:space-between;
-    padding:15px 0;
-    border-bottom:1px solid var(--border);
-}
-
-.info-row span:first-child{
-    color:var(--muted);
-}
-
-.info-row span:last-child{
-    font-weight:600;
-}
-
-/* =========================================================
-   SKILLS
-========================================================= */
-
-.skills-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:22px;
-}
-
-.skill-card{
-    padding:30px;
-    border-radius:20px;
-    transition:.3s;
-}
-
-.skill-card:hover{
-    transform:translateY(-7px);
-    border-color:rgba(56,189,248,.3);
-}
-
-.skill-head{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    margin-bottom:20px;
-}
-
-.skill-icon{
-    width:50px;
-    height:50px;
-    border-radius:13px;
-    background:rgba(56,189,248,.1);
-    color:var(--primary);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:22px;
-}
-
-.skill-card h3{
-    font-size:20px;
-}
-
-.skill-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:9px;
-}
-
-.skill-tags span{
-    padding:7px 11px;
-    background:rgba(255,255,255,.04);
-    border:1px solid var(--border);
-    border-radius:8px;
-    color:#cbd5e1;
-    font-size:12px;
-}
-
-/* =========================================================
-   EXPERIENCE
-========================================================= */
-
-.timeline{
-    max-width:850px;
-    margin:auto;
-    position:relative;
-}
-
-.timeline:before{
-    content:"";
-    position:absolute;
-    left:20px;
-    top:0;
-    bottom:0;
-    width:2px;
-    background:linear-gradient(var(--primary),var(--secondary));
-}
-
-.timeline-item{
-    position:relative;
-    padding-left:65px;
-    margin-bottom:45px;
-}
-
-.timeline-dot{
-    position:absolute;
-    left:9px;
-    top:5px;
-    width:24px;
-    height:24px;
-    border-radius:50%;
-    background:var(--bg);
-    border:5px solid var(--primary);
-}
-
-.timeline-card{
-    padding:30px;
-    border-radius:20px;
-}
-
-.timeline-card .date{
-    color:var(--primary);
-    font-size:13px;
-    font-weight:700;
-}
-
-.timeline-card h3{
-    margin:7px 0;
-    font-size:22px;
-}
-
-.timeline-card h4{
-    color:#94a3b8;
-    margin-bottom:15px;
-}
-
-.timeline-card p{
-    color:var(--muted);
-}
-
-/* =========================================================
-   CERTIFICATIONS
-========================================================= */
-
-.cert-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.cert-card{
-    padding:30px;
-    border-radius:20px;
-    text-align:center;
-    transition:.3s;
-}
-
-.cert-card:hover{
-    transform:translateY(-8px);
-    border-color:rgba(56,189,248,.4);
-}
-
-.cert-icon{
-    width:70px;
-    height:70px;
-    margin:auto;
-    margin-bottom:20px;
-    border-radius:18px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:30px;
-    color:var(--primary);
-    background:rgba(56,189,248,.08);
-}
-
-.cert-card h3{
-    font-size:18px;
-    margin-bottom:8px;
-}
-
-.cert-card p{
-    color:var(--muted);
-    font-size:13px;
-}
-
-/* =========================================================
-   PROJECTS
-========================================================= */
-
-.projects-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
-
-.project-card{
-    padding:30px;
-    border-radius:20px;
-    transition:.3s;
-    position:relative;
-    overflow:hidden;
-}
-
-.project-card:hover{
-    transform:translateY(-8px);
-}
-
-.project-icon{
-    font-size:35px;
-    color:var(--primary);
-    margin-bottom:20px;
-}
-
-.project-card h3{
-    font-size:21px;
-    margin-bottom:12px;
-}
-
-.project-card p{
-    color:var(--muted);
-    font-size:14px;
-    margin-bottom:20px;
-}
-
-.project-tech{
-    display:flex;
-    flex-wrap:wrap;
-    gap:7px;
-}
-
-.project-tech span{
-    padding:6px 9px;
-    border-radius:7px;
-    background:rgba(255,255,255,.05);
-    font-size:11px;
-    color:#cbd5e1;
-}
-
-/* =========================================================
-   SERVICES
-========================================================= */
-
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.service-card{
-    padding:30px;
-    border-radius:20px;
-    transition:.3s;
-}
-
-.service-card:hover{
-    transform:translateY(-7px);
-}
-
-.service-card i{
-    font-size:35px;
-    color:var(--primary);
-    margin-bottom:20px;
-}
-
-.service-card h3{
-    margin-bottom:10px;
-}
-
-.service-card p{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* =========================================================
-   TECHNOLOGY CLOUD
-========================================================= */
-
-.tech-cloud{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:12px;
-    max-width:950px;
-    margin:auto;
-}
-
-.tech-cloud span{
-    padding:12px 18px;
-    border-radius:30px;
-    background:var(--card);
-    border:1px solid var(--border);
-    color:#dbeafe;
-    transition:.3s;
-}
-
-.tech-cloud span:hover{
-    color:var(--primary);
-    border-color:var(--primary);
-    transform:translateY(-4px);
-}
-
-/* =========================================================
-   WHY HIRE
-========================================================= */
-
-.why-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
-
-.why-card{
-    padding:25px;
-    border-radius:18px;
-    text-align:center;
-}
-
-.why-card i{
-    font-size:28px;
-    color:var(--primary);
-    margin-bottom:15px;
-}
-
-.why-card h3{
-    font-size:16px;
-}
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact-wrapper{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
-}
-
-.contact-wrapper > p{
-    color:var(--muted);
-    max-width:650px;
-    margin:0 auto 40px;
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.contact-card{
-    padding:30px 20px;
-    border-radius:20px;
-}
-
-.contact-card i{
-    font-size:28px;
-    color:var(--primary);
-    margin-bottom:15px;
-}
-
-.contact-card p{
-    color:var(--muted);
-    font-size:13px;
-    margin-top:5px;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-    padding:40px 0;
-    border-top:1px solid var(--border);
-    text-align:center;
-}
-
-footer h3{
-    font-size:22px;
-}
-
-footer p{
-    color:var(--muted);
-    font-size:13px;
-    margin:8px 0 20px;
-}
-
-.footer-social{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    margin-bottom:20px;
-}
-
-.footer-social a{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    border:1px solid var(--border);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--muted);
-}
-
-.footer-social a:hover{
-    color:var(--primary);
-}
-
-.copyright{
-    color:#64748b;
-    font-size:12px;
-}
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-#topBtn{
-    position:fixed;
-    right:25px;
-    bottom:25px;
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    border:none;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    color:white;
-    cursor:pointer;
-    display:none;
-    z-index:999;
-}
-
-/* =========================================================
-   LIGHT MODE
-========================================================= */
-
-body.light{
-    --bg:#f5f8fc;
-    --bg2:#ffffff;
-    --card:#ffffff;
-    --card2:#eef5fb;
-    --text:#0f172a;
-    --muted:#64748b;
-    --border:rgba(15,23,42,.1);
-}
-
-body.light header{
-    background:rgba(255,255,255,.8);
-}
-
-body.light .nav-links a{
-    color:#475569;
-}
-
-body.light .hero h3{
-    color:#334155;
-}
-
-/* =========================================================
-   SCROLL ANIMATION
-========================================================= */
-
-.reveal{
-    opacity:0;
-    transform:translateY(30px);
-    transition:all .7s ease;
-}
-
-.reveal.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:1000px){
-
-    .hero-grid,
-    .about-grid{
-        grid-template-columns:1fr;
-    }
-
-    .hero{
-        text-align:center;
-    }
-
-    .hero p{
-        margin-left:auto;
-        margin-right:auto;
-    }
-
-    .hero-buttons,
-    .socials{
-        justify-content:center;
-    }
-
-    .network-visual{
-        height:400px;
-    }
-
-    .stats-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .cert-grid,
-    .projects-grid,
-    .services-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .why-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media(max-width:700px){
-
-    section{
-        padding:75px 0;
-    }
-
-    .section-title h2{
-        font-size:32px;
-    }
-
-    .nav-links{
-        position:absolute;
-        top:75px;
-        left:0;
-        width:100%;
-        background:var(--bg);
-        flex-direction:column;
-        align-items:center;
-        gap:0;
-        max-height:0;
-        overflow:hidden;
-        transition:.3s;
-        border-bottom:1px solid var(--border);
-    }
-
-    .nav-links.open{
-        max-height:450px;
-    }
-
-    .nav-links li{
-        width:100%;
-        text-align:center;
-    }
-
-    .nav-links a{
-        display:block;
-        padding:15px;
-    }
-
-    .menu-toggle{
-        display:block;
-    }
-
-    .nav-actions .btn{
-        display:none;
-    }
-
-    .hero h1{
-        font-size:44px;
-    }
-
-    .network-visual{
-        height:340px;
-    }
-
-    .orbit{
-        width:250px;
-        height:250px;
-    }
-
-    .center-server{
-        width:110px;
-        height:110px;
-        font-size:45px;
-    }
-
-    .tech-node{
-        width:50px;
-        height:50px;
-    }
-
-    .stats-grid,
-    .skills-grid,
-    .cert-grid,
-    .projects-grid,
-    .services-grid,
-    .contact-grid,
-    .why-grid{
-        grid-template-columns:1fr;
-    }
-
-    .about-list{
-        grid-template-columns:1fr;
-    }
-
-    .timeline-card{
-        padding:22px;
-    }
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<canvas id="stars"></canvas>
 
-<header>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">TANWEER<span>.</span></a>
+    <div class="menu" id="menu">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
 
-<div class="container navbar">
+<main id="home">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="badge">● AVAILABLE FOR NETWORK & CLOUD OPPORTUNITIES</div>
+      <h1>Tanweer<br><span class="gradient">Ansari</span></h1>
+      <p>
+        Network & Cloud Infrastructure Engineer with 16+ years of enterprise IT experience,
+        specializing in Cisco, Fortinet, Microsoft Azure, Microsoft 365, Entra ID,
+        Intune and Windows infrastructure.
+      </p>
+      <div class="buttons">
+        <a class="btn primary" href="#contact">Let's Connect →</a>
+        <a class="btn" href="#expertise">Explore My Work</a>
+      </div>
+    </div>
 
-<a href="#home" class="logo">
-TANWEER<span>.</span>
-</a>
-
-<ul class="nav-links" id="navLinks">
-
-<li><a href="#home" class="active">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#certifications">Certifications</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-<div class="nav-actions">
-
-<button class="theme-toggle" id="themeToggle">
-<i class="fas fa-moon"></i>
-</button>
-
-<a href="mailto:tanweeromn@gmail.com" class="btn btn-primary">
-Contact Me
-</a>
-
-<i class="fas fa-bars menu-toggle" id="menuToggle"></i>
-
-</div>
-
-</div>
-
-</header>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section class="hero" id="home">
-
-<div class="container hero-grid">
-
-<div class="hero-content reveal">
-
-<div class="badge">
-<i class="fas fa-circle-check"></i>
-&nbsp; Available for Network & Cloud Opportunities
-</div>
-
-<h1>
-Network & Cloud
-<br>
-<span>Infrastructure Engineer</span>
-</h1>
-
-<h3>
-16+ Years of Enterprise IT Infrastructure Experience
-</h3>
-
-<p>
-Designing, securing and managing enterprise network,
-cloud, Microsoft 365 and IT infrastructure environments
-across Saudi Arabia and the GCC.
-</p>
-
-<div class="hero-buttons">
-
-<a href="#experience" class="btn btn-primary">
-<i class="fas fa-arrow-down"></i>
-View My Experience
-</a>
-
-<a href="mailto:tanweeromn@gmail.com" class="btn">
-<i class="fas fa-envelope"></i>
-Contact Me
-</a>
-
-</div>
-
-<div class="socials">
-
-<a href="https://www.linkedin.com/in/tanweeransari21"
-target="_blank"
-aria-label="LinkedIn">
-<i class="fab fa-linkedin-in"></i>
-</a>
-
-<a href="https://github.com/tanweerstudy25"
-target="_blank"
-aria-label="GitHub">
-<i class="fab fa-github"></i>
-</a>
-
-<a href="mailto:tanweeromn@gmail.com"
-aria-label="Email">
-<i class="fas fa-envelope"></i>
-</a>
-
-</div>
-
-</div>
-
-
-<div class="network-visual reveal">
-
-<div class="orbit"></div>
-
-<div class="center-server">
-<i class="fas fa-server"></i>
-</div>
-
-<div class="tech-node node1">
-<i class="fas fa-cloud"></i>
-</div>
-
-<div class="tech-node node2">
-<i class="fas fa-shield-halved"></i>
-</div>
-
-<div class="tech-node node3">
-<i class="fas fa-network-wired"></i>
-</div>
-
-<div class="tech-node node4">
-<i class="fas fa-router"></i>
-</div>
-
-</div>
-
-</div>
-
+    <div class="scene reveal">
+      <div class="orbit"></div>
+      <div class="cube">
+        <div class="face front"><div><strong>NETWORK</strong><small>Cisco • LAN • WAN</small></div></div>
+        <div class="face back"><div><strong>AZURE</strong><small>AZ-104 • AZ-700</small></div></div>
+        <div class="face right"><div><strong>SECURITY</strong><small>Fortinet • Firewall</small></div></div>
+        <div class="face left"><div><strong>MICROSOFT</strong><small>Entra • Intune • M365</small></div></div>
+        <div class="face top"><div><strong>ITSM</strong><small>ITIL v4</small></div></div>
+        <div class="face bottom"><div><strong>INFRA</strong><small>Enterprise IT</small></div></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<!-- =====================================================
-     STATS
-===================================================== -->
-
-<section class="stats">
-
-<div class="container">
-
-<div class="stats-grid">
-
-<div class="stat-card glass reveal">
-<h3 data-count="16">0+</h3>
-<p>Years Experience</p>
-</div>
-
-<div class="stat-card glass reveal">
-<h3>Enterprise</h3>
-<p>IT Infrastructure</p>
-</div>
-
-<div class="stat-card glass reveal">
-<h3>Azure</h3>
-<p>Cloud Platform</p>
-</div>
-
-<div class="stat-card glass reveal">
-<h3>Microsoft 365</h3>
-<p>Cloud Productivity</p>
-</div>
-
-</div>
-
-</div>
-
+<section id="expertise">
+  <div class="container">
+    <h2 class="section-title reveal">Core Expertise</h2>
+    <p class="section-sub reveal">Enterprise infrastructure, cloud and security technologies.</p>
+    <div class="cards">
+      <div class="card reveal"><div class="icon">🌐</div><h3>Network Engineering</h3><p>Cisco routing & switching, LAN/WAN, VPN, troubleshooting, network monitoring and enterprise connectivity.</p></div>
+      <div class="card reveal"><div class="icon">☁️</div><h3>Azure & Cloud</h3><p>Azure infrastructure, virtual networking, identity, administration and cloud operations.</p></div>
+      <div class="card reveal"><div class="icon">🛡️</div><h3>Security</h3><p>Fortinet firewalls, VPN, access control, network security and infrastructure protection.</p></div>
+      <div class="card reveal"><div class="icon">🪟</div><h3>Microsoft 365</h3><p>Entra ID, Intune, Windows Autopilot, Office 365 and endpoint management.</p></div>
+      <div class="card reveal"><div class="icon">🖥️</div><h3>Windows Infrastructure</h3><p>Windows Server, desktop support, enterprise troubleshooting and endpoint administration.</p></div>
+      <div class="card reveal"><div class="icon">📊</div><h3>IT Operations</h3><p>L2 support, incident management, ITIL practices, monitoring and operational improvement.</p></div>
+    </div>
+  </div>
 </section>
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section id="about">
-
-<div class="container">
-
-<div class="section-title reveal">
-<span>Profile</span>
-<h2>About Me</h2>
-<p>
-Senior IT professional focused on enterprise networking,
-cloud infrastructure and modern Microsoft technologies.
-</p>
-</div>
-
-<div class="about-grid">
-
-<div class="about-text reveal">
-
-<h3>
-Building Reliable & Secure IT Infrastructure
-</h3>
-
-<p>
-I am a Network & Cloud Infrastructure Engineer with
-16+ years of experience in enterprise IT infrastructure,
-networking, cloud platforms, Microsoft technologies
-and IT support.
-</p>
-
-<p>
-My experience covers Cisco routing and switching,
-Fortinet firewall, Microsoft Azure, Microsoft Entra ID,
-Microsoft Intune, Microsoft 365, Windows Autopilot,
-Windows Server, LAN/WAN, VPN and enterprise IT support.
-</p>
-
-<div class="about-list">
-
-<div>
-<i class="fas fa-check"></i>
-Enterprise Networking
-</div>
-
-<div>
-<i class="fas fa-check"></i>
-Cloud Infrastructure
-</div>
-
-<div>
-<i class="fas fa-check"></i>
-Network Security
-</div>
-
-<div>
-<i class="fas fa-check"></i>
-Microsoft 365
-</div>
-
-<div>
-<i class="fas fa-check"></i>
-Endpoint Management
-</div>
-
-<div>
-<i class="fas fa-check"></i>
-IT Infrastructure
-</div>
-
-</div>
-
-</div>
-
-
-<div class="about-card glass reveal">
-
-<h3>Professional Profile</h3>
-
-<div class="info-row">
-<span>Experience</span>
-<span>16+ Years</span>
-</div>
-
-<div class="info-row">
-<span>Specialization</span>
-<span>Network & Cloud</span>
-</div>
-
-<div class="info-row">
-<span>Location</span>
-<span>Saudi Arabia</span>
-</div>
-
-<div class="info-row">
-<span>Cloud</span>
-<span>Microsoft Azure</span>
-</div>
-
-<div class="info-row">
-<span>Networking</span>
-<span>Cisco</span>
-</div>
-
-<div class="info-row">
-<span>Security</span>
-<span>Fortinet</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     SKILLS
-===================================================== -->
 
 <section id="skills">
-
-<div class="container">
-
-<div class="section-title reveal">
-<span>Expertise</span>
-<h2>Core Technical Skills</h2>
-<p>
-Enterprise technologies and platforms used across
-network, cloud, security and infrastructure environments.
-</p>
-</div>
-
-<div class="skills-grid">
-
-
-<div class="skill-card glass reveal">
-
-<div class="skill-head">
-<div class="skill-icon">
-<i class="fas fa-network-wired"></i>
-</div>
-<h3>Networking</h3>
-</div>
-
-<div class="skill-tags">
-
-<span>Cisco Routing</span>
-<span>Cisco Switching</span>
-<span>LAN / WAN</span>
-<span>TCP/IP</span>
-<span>VLAN</span>
-<span>STP</span>
-<span>OSPF</span>
-<span>EIGRP</span>
-<span>BGP</span>
-<span>HSRP</span>
-<span>VPN</span>
-<span>DHCP</span>
-<span>DNS</span>
-<span>NAT</span>
-
-</div>
-
-</div>
-
-
-<div class="skill-card glass reveal">
-
-<div class="skill-head">
-<div class="skill-icon">
-<i class="fas fa-cloud"></i>
-</div>
-<h3>Microsoft Cloud</h3>
-</div>
-
-<div class="skill-tags">
-
-<span>Microsoft Azure</span>
-<span>Azure VNet</span>
-<span>Azure VM</span>
-<span>Azure Storage</span>
-<span>Azure Monitor</span>
-<span>Entra ID</span>
-<span>Microsoft Intune</span>
-<span>Microsoft 365</span>
-<span>Office 365</span>
-<span>Windows Autopilot</span>
-
-</div>
-
-</div>
-
-
-<div class="skill-card glass reveal">
-
-<div class="skill-head">
-<div class="skill-icon">
-<i class="fas fa-shield-halved"></i>
-</div>
-<h3>Security</h3>
-</div>
-
-<div class="skill-tags">
-
-<span>Fortinet Firewall</span>
-<span>Firewall Policies</span>
-<span>NAT</span>
-<span>IPSec VPN</span>
-<span>SSL VPN</span>
-<span>Network Security</span>
-<span>Access Control</span>
-<span>Security Monitoring</span>
-
-</div>
-
-</div>
-
-
-<div class="skill-card glass reveal">
-
-<div class="skill-head">
-<div class="skill-icon">
-<i class="fab fa-windows"></i>
-</div>
-<h3>Windows & Enterprise IT</h3>
-</div>
-
-<div class="skill-tags">
-
-<span>Windows Server</span>
-<span>Active Directory</span>
-<span>Group Policy</span>
-<span>DNS</span>
-<span>DHCP</span>
-<span>Windows 11</span>
-<span>IT Support</span>
-<span>Asset Management</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+  <div class="container">
+    <h2 class="section-title reveal">Technology Stack</h2>
+    <p class="section-sub reveal">Tools and technologies I work with.</p>
+    <div class="skills reveal">
+      <span class="skill">Cisco Routing & Switching</span>
+      <span class="skill">CCNA / CCNP</span>
+      <span class="skill">Fortinet</span>
+      <span class="skill">Azure AZ-104</span>
+      <span class="skill">Azure AZ-700</span>
+      <span class="skill">Microsoft Entra ID</span>
+      <span class="skill">Microsoft Intune</span>
+      <span class="skill">Windows Autopilot</span>
+      <span class="skill">Office 365</span>
+      <span class="skill">Windows Server</span>
+      <span class="skill">Avaya</span>
+      <span class="skill">Power BI</span>
+      <span class="skill">PowerApps</span>
+      <span class="skill">SharePoint</span>
+      <span class="skill">ITIL v4</span>
+      <span class="skill">Wireshark</span>
+    </div>
+  </div>
 </section>
-
-
-<!-- =====================================================
-     EXPERIENCE
-===================================================== -->
 
 <section id="experience">
-
-<div class="container">
-
-<div class="section-title reveal">
-<span>Career</span>
-<h2>Professional Experience</h2>
-<p>
-16+ years of enterprise IT infrastructure and
-technology experience.
-</p>
-</div>
-
-<div class="timeline">
-
-
-<div class="timeline-item reveal">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-card glass">
-
-<span class="date">
-NETWORK & CLOUD INFRASTRUCTURE
-</span>
-
-<h3>
-Network & Cloud Infrastructure Engineer
-</h3>
-
-<h4>
-Enterprise IT Environment
-</h4>
-
-<p>
-Managing enterprise network infrastructure,
-cloud platforms, Microsoft 365, security,
-endpoint management and IT operations.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="timeline-item reveal">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-card glass">
-
-<span class="date">
-NETWORK ENGINEERING
-</span>
-
-<h3>
-Senior Network Engineering Responsibilities
-</h3>
-
-<h4>
-Cisco & Fortinet Infrastructure
-</h4>
-
-<p>
-Enterprise LAN/WAN, Cisco routing and switching,
-Fortinet firewall, VPN, network troubleshooting,
-monitoring and infrastructure support.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="timeline-item reveal">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-card glass">
-
-<span class="date">
-CLOUD & MICROSOFT
-</span>
-
-<h3>
-Cloud Infrastructure & Microsoft Technologies
-</h3>
-
-<h4>
-Azure | Microsoft 365 | Entra ID | Intune
-</h4>
-
-<p>
-Administration and support of Azure infrastructure,
-Microsoft 365, Entra ID, Intune, Windows Autopilot
-and modern enterprise endpoint environments.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="timeline-item reveal">
-
-<div class="timeline-dot"></div>
-
-<div class="timeline-card glass">
-
-<span class="date">
-IT INFRASTRUCTURE
-</span>
-
-<h3>
-Enterprise IT Support & Infrastructure
-</h3>
-
-<h4>
-Systems | Network | End User Support
-</h4>
-
-<p>
-Enterprise troubleshooting, incident management,
-user support, infrastructure documentation,
-hardware, software and IT operations.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+  <div class="container">
+    <h2 class="section-title reveal">Professional Journey</h2>
+    <p class="section-sub reveal">Building and supporting reliable enterprise IT environments.</p>
+    <div class="timeline">
+      <div class="item reveal"><h3>Network & Cloud Infrastructure</h3><p>Design, administration and troubleshooting across Cisco networking, Fortinet security, Azure and Microsoft cloud services.</p></div>
+      <div class="item reveal"><h3>Microsoft Enterprise Support</h3><p>Microsoft 365, Entra ID, Intune, Windows Autopilot and endpoint management for enterprise users.</p></div>
+      <div class="item reveal"><h3>L2 IT Operations</h3><p>VPN, email, printing, internet, desktop and infrastructure troubleshooting with focus on service continuity.</p></div>
+      <div class="item reveal"><h3>16+ Years of IT Experience</h3><p>Long-term enterprise IT experience spanning networking, systems, cloud, security and end-user support.</p></div>
+    </div>
+  </div>
 </section>
-
-
-<!-- =====================================================
-     CERTIFICATIONS
-===================================================== -->
-
-<section id="certifications">
-
-<div class="container">
-
-<div class="section-title reveal">
-
-<span>Credentials</span>
-
-<h2>Certifications</h2>
-
-<p>
-Professional certifications supporting my networking,
-cloud, security and IT service management expertise.
-</p>
-
-</div>
-
-
-<div class="cert-grid">
-
-
-<div class="cert-card glass reveal">
-
-<div class="cert-icon">
-<i class="fas fa-network-wired"></i>
-</div>
-
-<h3>CCNA / CCNP</h3>
-
-<p>
-Cisco Networking
-</p>
-
-</div>
-
-
-<div class="cert-card glass reveal">
-
-<div class="cert-icon">
-<i class="fas fa-shield-halved"></i>
-</div>
-
-<h3>Fortinet NSE 4</h3>
-
-<p>
-Network Security & Firewall
-</p>
-
-</div>
-
-
-<div class="cert-card glass reveal">
-
-<div class="cert-icon">
-<i class="fab fa-microsoft"></i>
-</div>
-
-<h3>AZ-104</h3>
-
-<p>
-Microsoft Azure Administrator
-Associate
-</p>
-
-</div>
-
-
-<div class="cert-card glass reveal">
-
-<div class="cert-icon">
-<i class="fas fa-cloud"></i>
-</div>
-
-<h3>AZ-700</h3>
-
-<p>
-Azure Network Engineer
-Associate
-</p>
-
-</div>
-
-
-<div class="cert-card glass reveal">
-
-<div class="cert-icon">
-<i class="fas fa-clipboard-check"></i>
-</div>
-
-<h3>ITIL 4 Foundation</h3>
-
-<p>
-IT Service Management
-</p>
-
-</div>
-
-
-<div class="cert-card glass reveal">
-
-<div class="cert-icon">
-<i class="fas fa-server"></i>
-</div>
-
-<h3>Microsoft Technologies</h3>
-
-<p>
-Azure | Microsoft 365 | Intune
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     PROJECTS
-===================================================== -->
-
-<section id="projects">
-
-<div class="container">
-
-<div class="section-title reveal">
-
-<span>Portfolio</span>
-
-<h2>Featured Projects</h2>
-
-<p>
-Selected infrastructure projects and technology
-solutions.
-</p>
-
-</div>
-
-
-<div class="projects-grid">
-
-
-<div class="project-card glass reveal">
-
-<div class="project-icon">
-<i class="fas fa-network-wired"></i>
-</div>
-
-<h3>Enterprise Network Infrastructure</h3>
-
-<p>
-Enterprise LAN/WAN infrastructure using Cisco
-routing and switching technologies.
-</p>
-
-<div class="project-tech">
-<span>Cisco</span>
-<span>VLAN</span>
-<span>Routing</span>
-<span>Switching</span>
-</div>
-
-</div>
-
-
-<div class="project-card glass reveal">
-
-<div class="project-icon">
-<i class="fas fa-cloud"></i>
-</div>
-
-<h3>Microsoft Azure Infrastructure</h3>
-
-<p>
-Azure cloud infrastructure including networking,
-virtual machines, storage and monitoring.
-</p>
-
-<div class="project-tech">
-<span>Azure</span>
-<span>VNet</span>
-<span>VM</span>
-<span>Storage</span>
-</div>
-
-</div>
-
-
-<div class="project-card glass reveal">
-
-<div class="project-icon">
-<i class="fab fa-microsoft"></i>
-</div>
-
-<h3>Microsoft 365 & Entra ID</h3>
-
-<p>
-Microsoft cloud identity and productivity
-environment administration.
-</p>
-
-<div class="project-tech">
-<span>Entra ID</span>
-<span>Microsoft 365</span>
-<span>Office 365</span>
-</div>
-
-</div>
-
-
-<div class="project-card glass reveal">
-
-<div class="project-icon">
-<i class="fas fa-laptop"></i>
-</div>
-
-<h3>Endpoint Management</h3>
-
-<p>
-Windows endpoint deployment and management using
-Intune and Windows Autopilot.
-</p>
-
-<div class="project-tech">
-<span>Intune</span>
-<span>Autopilot</span>
-<span>Windows 11</span>
-</div>
-
-</div>
-
-
-<div class="project-card glass reveal">
-
-<div class="project-icon">
-<i class="fas fa-shield-halved"></i>
-</div>
-
-<h3>Network Security</h3>
-
-<p>
-Fortinet firewall infrastructure, VPN connectivity
-and network security policies.
-</p>
-
-<div class="project-tech">
-<span>Fortinet</span>
-<span>Firewall</span>
-<span>VPN</span>
-<span>IPSec</span>
-</div>
-
-</div>
-
-
-<div class="project-card glass reveal">
-
-<div class="project-icon">
-<i class="fas fa-chart-line"></i>
-</div>
-
-<h3>IT Inventory & Asset Management</h3>
-
-<p>
-IT inventory and asset management solution using
-Microsoft Power Platform and SharePoint.
-</p>
-
-<div class="project-tech">
-<span>Power Apps</span>
-<span>SharePoint</span>
-<span>Power BI</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     SERVICES
-===================================================== -->
-
-<section id="services">
-
-<div class="container">
-
-<div class="section-title reveal">
-
-<span>Capabilities</span>
-
-<h2>What I Do</h2>
-
-<p>
-Technology expertise focused on secure, reliable
-and scalable enterprise infrastructure.
-</p>
-
-</div>
-
-
-<div class="services-grid">
-
-
-<div class="service-card glass reveal">
-
-<i class="fas fa-network-wired"></i>
-
-<h3>Network Infrastructure</h3>
-
-<p>
-Enterprise LAN/WAN, routing, switching,
-troubleshooting and network optimization.
-</p>
-
-</div>
-
-
-<div class="service-card glass reveal">
-
-<i class="fas fa-cloud"></i>
-
-<h3>Cloud Infrastructure</h3>
-
-<p>
-Azure infrastructure deployment, networking,
-administration and monitoring.
-</p>
-
-</div>
-
-
-<div class="service-card glass reveal">
-
-<i class="fab fa-microsoft"></i>
-
-<h3>Microsoft 365</h3>
-
-<p>
-Microsoft 365, Office 365, Entra ID and
-enterprise cloud administration.
-</p>
-
-</div>
-
-
-<div class="service-card glass reveal">
-
-<i class="fas fa-laptop-code"></i>
-
-<h3>Endpoint Management</h3>
-
-<p>
-Intune, Windows Autopilot and modern Windows
-endpoint management.
-</p>
-
-</div>
-
-
-<div class="service-card glass reveal">
-
-<i class="fas fa-shield-halved"></i>
-
-<h3>Network Security</h3>
-
-<p>
-Fortinet firewall, VPN, security policies
-and network security operations.
-</p>
-
-</div>
-
-
-<div class="service-card glass reveal">
-
-<i class="fas fa-headset"></i>
-
-<h3>IT Infrastructure Support</h3>
-
-<p>
-Enterprise IT support, troubleshooting,
-incident management and infrastructure operations.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     TECHNOLOGY
-===================================================== -->
-
-<section>
-
-<div class="container">
-
-<div class="section-title reveal">
-
-<span>Technology Stack</span>
-
-<h2>Technologies I Work With</h2>
-
-</div>
-
-
-<div class="tech-cloud reveal">
-
-<span>Cisco</span>
-<span>Microsoft Azure</span>
-<span>Microsoft 365</span>
-<span>Entra ID</span>
-<span>Intune</span>
-<span>Fortinet</span>
-<span>Windows Server</span>
-<span>Windows Autopilot</span>
-<span>Power BI</span>
-<span>Power Apps</span>
-<span>SharePoint</span>
-<span>Wireshark</span>
-<span>PRTG</span>
-<span>SolarWinds</span>
-<span>Avaya</span>
-<span>Oracle</span>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     WHY HIRE ME
-===================================================== -->
-
-<section>
-
-<div class="container">
-
-<div class="section-title reveal">
-
-<span>Value</span>
-
-<h2>Why Organizations Choose Me</h2>
-
-</div>
-
-
-<div class="why-grid">
-
-
-<div class="why-card glass reveal">
-<i class="fas fa-award"></i>
-<h3>16+ Years Experience</h3>
-</div>
-
-
-<div class="why-card glass reveal">
-<i class="fas fa-building"></i>
-<h3>Enterprise Expertise</h3>
-</div>
-
-
-<div class="why-card glass reveal">
-<i class="fas fa-layer-group"></i>
-<h3>Multi-Technology Knowledge</h3>
-</div>
-
-
-<div class="why-card glass reveal">
-<i class="fas fa-cloud"></i>
-<h3>Network + Cloud</h3>
-</div>
-
-
-<div class="why-card glass reveal">
-<i class="fas fa-screwdriver-wrench"></i>
-<h3>Strong Troubleshooting</h3>
-</div>
-
-
-<div class="why-card glass reveal">
-<i class="fas fa-lock"></i>
-<h3>Security Focused</h3>
-</div>
-
-
-<div class="why-card glass reveal">
-<i class="fas fa-globe"></i>
-<h3>Saudi / GCC Experience</h3>
-</div>
-
-
-<div class="why-card glass reveal">
-<i class="fas fa-graduation-cap"></i>
-<h3>Continuous Learning</h3>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
 
 <section id="contact">
-
-<div class="container">
-
-<div class="contact-wrapper">
-
-<div class="section-title reveal">
-
-<span>Get In Touch</span>
-
-<h2>Let's Connect</h2>
-
-</div>
-
-<p class="reveal">
-
-Looking for a Network, Cloud Infrastructure or
-IT Engineering professional?
-
-Let's connect and discuss how I can contribute
-to your organization.
-
-</p>
-
-
-<div class="contact-grid">
-
-
-<a href="mailto:tanweeromn@gmail.com"
-class="contact-card glass reveal">
-
-<i class="fas fa-envelope"></i>
-
-<h3>Email</h3>
-
-<p>
-tanweeromn@gmail.com
-</p>
-
-</a>
-
-
-<a href="https://www.linkedin.com/in/tanweeransari21"
-target="_blank"
-class="contact-card glass reveal">
-
-<i class="fab fa-linkedin"></i>
-
-<h3>LinkedIn</h3>
-
-<p>
-Connect with me
-</p>
-
-</a>
-
-
-<a href="https://github.com/tanweerstudy25"
-target="_blank"
-class="contact-card glass reveal">
-
-<i class="fab fa-github"></i>
-
-<h3>GitHub</h3>
-
-<p>
-View my projects
-</p>
-
-</a>
-
-</div>
-
-
-<div style="margin-top:40px;" class="reveal">
-
-<a href="mailto:tanweeromn@gmail.com"
-class="btn btn-primary">
-
-<i class="fas fa-paper-plane"></i>
-
-Send Me a Message
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
+  <div class="container">
+    <div class="contact-box reveal">
+      <h2>Let's Build Reliable Infrastructure.</h2>
+      <p>Open to Network Engineer, Cloud Engineer and Infrastructure opportunities across Saudi Arabia and the GCC.</p>
+      <div class="buttons" style="justify-content:center">
+        <a class="btn primary" href="mailto:tanweeromn@gmail.com">Email Me</a>
+        <a class="btn" href="https://www.linkedin.com/in/tanweeransari21" target="_blank">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
 </section>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+</main>
 
 <footer>
-
-<div class="container">
-
-<h3>
-Tanweer Ansari
-</h3>
-
-<p>
-Network & Cloud Infrastructure Engineer
-</p>
-
-<div class="footer-social">
-
-<a href="https://www.linkedin.com/in/tanweeransari21"
-target="_blank">
-
-<i class="fab fa-linkedin-in"></i>
-
-</a>
-
-<a href="https://github.com/tanweerstudy25"
-target="_blank">
-
-<i class="fab fa-github"></i>
-
-</a>
-
-<a href="mailto:tanweeromn@gmail.com">
-
-<i class="fas fa-envelope"></i>
-
-</a>
-
-</div>
-
-<div class="copyright">
-
-© 2026 Tanweer Ansari. All Rights Reserved.
-
-</div>
-
-</div>
-
+  © <span id="year"></span> Tanweer Ansari • Network & Cloud Infrastructure Engineer
 </footer>
 
-
-<button id="topBtn">
-<i class="fas fa-arrow-up"></i>
-</button>
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
-
-/* =====================================================
-   MOBILE MENU
-===================================================== */
-
-const menuToggle = document.getElementById("menuToggle");
+// Mobile menu
+const menu = document.getElementById("menu");
 const navLinks = document.getElementById("navLinks");
-
-menuToggle.addEventListener("click", () => {
-
-    navLinks.classList.toggle("open");
-
-    const icon = menuToggle.querySelector("i");
-
-    if(navLinks.classList.contains("open")){
-        menuToggle.classList.remove("fa-bars");
-        menuToggle.classList.add("fa-xmark");
-    }
-
+menu.addEventListener("click",()=>navLinks.classList.toggle("open"));
+document.querySelectorAll(".nav-links a").forEach(a=>{
+  a.addEventListener("click",()=>navLinks.classList.remove("open"));
 });
 
+// Scroll reveal
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add("show");
+  });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
-document.querySelectorAll(".nav-links a").forEach(link => {
+// Year
+document.getElementById("year").textContent = new Date().getFullYear();
 
-    link.addEventListener("click", () => {
-
-        navLinks.classList.remove("open");
-
-        menuToggle.classList.remove("fa-xmark");
-        menuToggle.classList.add("fa-bars");
-
-    });
-
-});
-
-
-/* =====================================================
-   THEME TOGGLE
-===================================================== */
-
-const themeToggle = document.getElementById("themeToggle");
-
-themeToggle.addEventListener("click", () => {
-
-    document.body.classList.toggle("light");
-
-    const icon = themeToggle.querySelector("i");
-
-    if(document.body.classList.contains("light")){
-
-        icon.classList.remove("fa-moon");
-        icon.classList.add("fa-sun");
-
-        localStorage.setItem("theme","light");
-
-    }else{
-
-        icon.classList.remove("fa-sun");
-        icon.classList.add("fa-moon");
-
-        localStorage.setItem("theme","dark");
-
-    }
-
-});
-
-
-/* LOAD SAVED THEME */
-
-if(localStorage.getItem("theme") === "light"){
-
-    document.body.classList.add("light");
-
-    const icon = themeToggle.querySelector("i");
-
-    icon.classList.remove("fa-moon");
-    icon.classList.add("fa-sun");
-
+// Animated star/particle background
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
+let particles=[];
+function resize(){
+  canvas.width=innerWidth;canvas.height=innerHeight;
+  particles=Array.from({length:Math.min(130,Math.floor(innerWidth/9))},()=>({
+    x:Math.random()*canvas.width,y:Math.random()*canvas.height,
+    r:Math.random()*1.7+.3,
+    dx:(Math.random()-.5)*.35,dy:(Math.random()-.5)*.35
+  }));
 }
-
-
-/* =====================================================
-   SCROLL REVEAL
-===================================================== */
-
-const revealElements =
-document.querySelectorAll(".reveal");
-
-const revealObserver =
-new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("show");
-
-        }
-
-    });
-
-},{
-    threshold:0.12
-});
-
-
-revealElements.forEach(el => {
-
-    revealObserver.observe(el);
-
-});
-
-
-/* =====================================================
-   ACTIVE NAVIGATION
-===================================================== */
-
-const sections =
-document.querySelectorAll("section[id]");
-
-const navItems =
-document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop =
-        section.offsetTop - 150;
-
-        if(window.scrollY >= sectionTop){
-
-            current = section.getAttribute("id");
-
-        }
-
-    });
-
-
-    navItems.forEach(link => {
-
-        link.classList.remove("active");
-
-        if(link.getAttribute("href") === "#" + current){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-
-/* =====================================================
-   BACK TO TOP
-===================================================== */
-
-const topBtn =
-document.getElementById("topBtn");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 500){
-
-        topBtn.style.display = "block";
-
-    }else{
-
-        topBtn.style.display = "none";
-
-    }
-
-});
-
-
-topBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-});
-
-
-/* =====================================================
-   EXPERIENCE COUNTER
-===================================================== */
-
-const counter =
-document.querySelector("[data-count]");
-
-let counterStarted = false;
-
-const counterObserver =
-new IntersectionObserver((entries) => {
-
-    if(entries[0].isIntersecting && !counterStarted){
-
-        counterStarted = true;
-
-        let count = 0;
-        const target = 16;
-
-        const interval =
-        setInterval(() => {
-
-            count++;
-
-            counter.textContent =
-            count + "+";
-
-            if(count >= target){
-
-                clearInterval(interval);
-
-            }
-
-        },80);
-
-    }
-
-});
-
-
-if(counter){
-
-    counterObserver.observe(counter);
-
+function animate(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{
+    p.x+=p.dx;p.y+=p.dy;
+    if(p.x<0)p.x=canvas.width;if(p.x>canvas.width)p.x=0;
+    if(p.y<0)p.y=canvas.height;if(p.y>canvas.height)p.y=0;
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle="rgba(130,220,255,.65)";ctx.fill();
+  });
+  requestAnimationFrame(animate);
 }
+addEventListener("resize",resize);
+resize();animate();
 
+// Subtle mouse parallax for the 3D cube
+const cube=document.querySelector(".cube");
+document.addEventListener("mousemove",e=>{
+  if(innerWidth>800){
+    const x=(e.clientX/innerWidth-.5)*12;
+    const y=(e.clientY/innerHeight-.5)*12;
+    cube.style.filter=`drop-shadow(${x}px ${y}px 25px rgba(80,220,255,.10))`;
+  }
+});
 </script>
-
 </body>
 </html>

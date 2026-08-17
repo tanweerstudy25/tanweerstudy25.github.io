@@ -4039,3 +4039,814 @@ body.theme-green
     }
 
 }
+/* =========================================================
+   TANWEER PORTFOLIO
+   FINAL PREMIUM NAVIGATION
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   HIDE LOGO
+   --------------------------------------------------------- */
+
+.nav-container > .logo {
+    display: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   NAVBAR CONTAINER
+   --------------------------------------------------------- */
+
+.nav-container {
+
+    width: min(1450px, 97%) !important;
+
+    height: 82px !important;
+
+    margin: auto !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 18px !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   NAVIGATION MENU
+   --------------------------------------------------------- */
+
+.nav-container nav {
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 8px !important;
+
+    margin: 0 !important;
+
+    flex: 0 0 auto !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   MENU BUTTON
+   --------------------------------------------------------- */
+
+.nav-container nav a {
+
+    position: relative;
+
+    display: inline-flex !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 105px !important;
+
+    height: 50px !important;
+
+    padding: 0 19px !important;
+
+    border-radius: 13px !important;
+
+    color: #aebfd3 !important;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid
+        rgba(90,160,230,.14);
+
+    font-size: 15px !important;
+
+    font-weight: 750 !important;
+
+    letter-spacing: .2px;
+
+    white-space: nowrap;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform .28s ease,
+        color .28s ease,
+        background .28s ease,
+        border-color .28s ease,
+        box-shadow .28s ease;
+
+    overflow: hidden;
+
+}
+
+
+/* ---------------------------------------------------------
+   SHINE
+   --------------------------------------------------------- */
+
+.nav-container nav a::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -130%;
+
+    width: 75%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent,
+            rgba(255,255,255,.40),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition:
+        left .55s ease;
+
+    pointer-events: none;
+
+}
+
+
+.nav-container nav a:hover::before {
+
+    left: 150%;
+
+}
+
+
+/* ---------------------------------------------------------
+   3D HOVER
+   --------------------------------------------------------- */
+
+.nav-container nav a:hover {
+
+    transform:
+        perspective(700px)
+        rotateX(9deg)
+        rotateY(-3deg)
+        translateY(-6px)
+        scale(1.07);
+
+    color:
+        var(--nav-color) !important;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border-color:
+        var(--nav-color) !important;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.35),
+        0 0 25px var(--nav-glow);
+
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE
+   --------------------------------------------------------- */
+
+.nav-container nav a.active {
+
+    color:
+        #ffffff !important;
+
+    border-color:
+        var(--nav-color) !important;
+
+    box-shadow:
+        0 0 16px var(--nav-glow);
+
+}
+
+
+/* =========================================================
+   INDIVIDUAL COLORS
+   ========================================================= */
+
+
+/* HOME */
+
+.nav-container nav a:nth-child(1) {
+
+    --nav-color: #38bdf8;
+
+    --nav-glow:
+        rgba(56,189,248,.55);
+
+}
+
+
+/* ABOUT */
+
+.nav-container nav a:nth-child(2) {
+
+    --nav-color: #a855f7;
+
+    --nav-glow:
+        rgba(168,85,247,.55);
+
+}
+
+
+/* SKILLS */
+
+.nav-container nav a:nth-child(3) {
+
+    --nav-color: #06b6d4;
+
+    --nav-glow:
+        rgba(6,182,212,.55);
+
+}
+
+
+/* EXPERIENCE */
+
+.nav-container nav a:nth-child(4) {
+
+    --nav-color: #f97316;
+
+    --nav-glow:
+        rgba(249,115,22,.55);
+
+}
+
+
+/* CERTIFICATIONS */
+
+.nav-container nav a:nth-child(5) {
+
+    --nav-color: #22c55e;
+
+    --nav-glow:
+        rgba(34,197,94,.55);
+
+}
+
+
+/* PROJECTS */
+
+.nav-container nav a:nth-child(6) {
+
+    --nav-color: #ec4899;
+
+    --nav-glow:
+        rgba(236,72,153,.55);
+
+}
+
+
+/* CONTACT */
+
+.nav-container nav a:nth-child(7) {
+
+    --nav-color: #facc15;
+
+    --nav-glow:
+        rgba(250,204,21,.55);
+
+}
+
+
+/* =========================================================
+   RIGHT BUTTONS
+   ========================================================= */
+
+.nav-buttons {
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 8px !important;
+
+    margin: 0 !important;
+
+    flex: 0 0 auto !important;
+
+}
+
+
+/* =========================================================
+   THEME BUTTON
+   ========================================================= */
+
+#themeToggle {
+
+    width: 52px !important;
+
+    height: 52px !important;
+
+    min-width: 52px !important;
+
+    margin: 0 !important;
+
+    border-radius: 13px !important;
+
+    display: flex !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            145deg,
+            #102641,
+            #08182c
+        ) !important;
+
+    border:
+        1px solid
+        rgba(57,168,255,.45) !important;
+
+    box-shadow:
+        0 6px 20px
+        rgba(57,168,255,.12);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+#themeToggle:hover {
+
+    transform:
+        perspective(600px)
+        rotateY(15deg)
+        rotateX(8deg)
+        translateY(-5px)
+        scale(1.08);
+
+    box-shadow:
+        0 0 25px
+        rgba(57,168,255,.45);
+
+}
+
+
+#themeToggle i {
+
+    font-size: 19px !important;
+
+}
+
+
+/* =========================================================
+   WHATSAPP
+   ========================================================= */
+
+.nav-contact.whatsapp-nav {
+
+    height: 52px !important;
+
+    min-width: 145px !important;
+
+    padding:
+        0 22px !important;
+
+    margin: 0 !important;
+
+    display: inline-flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 9px !important;
+
+    border-radius: 13px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #25D366,
+            #128C7E
+        ) !important;
+
+    border:
+        1px solid
+        rgba(37,211,102,.65) !important;
+
+    color: white !important;
+
+    font-size: 15px !important;
+
+    font-weight: 800 !important;
+
+    box-shadow:
+        0 8px 25px
+        rgba(37,211,102,.20);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        filter .3s ease;
+
+}
+
+
+.nav-contact.whatsapp-nav i {
+
+    font-size: 19px !important;
+
+}
+
+
+.nav-contact.whatsapp-nav:hover {
+
+    transform:
+        perspective(600px)
+        rotateX(8deg)
+        translateY(-5px)
+        scale(1.06);
+
+    filter:
+        brightness(1.12);
+
+    box-shadow:
+        0 14px 35px
+        rgba(37,211,102,.45);
+
+}
+
+
+/* =========================================================
+   EXPERIENCE SECTION
+   ========================================================= */
+
+.experience-section {
+
+    background:
+        linear-gradient(
+            180deg,
+            #061426,
+            #071a30
+        );
+
+}
+
+
+.experience-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px;
+
+}
+
+
+.experience-card {
+
+    position: relative;
+
+    display: flex;
+
+    gap: 22px;
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(14,36,62,.95),
+            rgba(8,25,44,.95)
+        );
+
+    border:
+        1px solid
+        rgba(60,150,255,.18);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.20);
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.experience-card:hover {
+
+    transform:
+        perspective(1000px)
+        rotateX(3deg)
+        rotateY(-3deg)
+        translateY(-8px);
+
+    border-color:
+        #f97316;
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,.35),
+        0 0 25px
+        rgba(249,115,22,.18);
+
+}
+
+
+.experience-icon {
+
+    flex:
+        0 0 58px;
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f97316,
+            #ec4899
+        );
+
+    color: white;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(249,115,22,.22);
+
+}
+
+
+.experience-content {
+
+    flex: 1;
+
+}
+
+
+.experience-period {
+
+    display: inline-block;
+
+    margin-bottom: 7px;
+
+    color: #38bdf8;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.experience-card h3 {
+
+    margin-bottom: 9px;
+
+    font-size: 23px;
+
+    color: #f3f7ff;
+
+}
+
+
+.experience-summary {
+
+    color: #a8bad0;
+
+    font-size: 14px;
+
+    margin-bottom: 14px;
+
+}
+
+
+.experience-card ul {
+
+    padding-left: 18px;
+
+    color: #9eafc6;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+}
+
+
+.experience-card li::marker {
+
+    color: #f97316;
+
+}
+
+
+/* =========================================================
+   FIX ANCHOR POSITION WITH FIXED NAVBAR
+   ========================================================= */
+
+section[id] {
+
+    scroll-margin-top:
+        95px;
+
+}
+
+
+/* =========================================================
+   REMOVE MOBILE MENU BUTTON ON DESKTOP
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+    #menuToggle {
+
+        display: none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1400px) {
+
+    .nav-container {
+
+        width: 1450px !important;
+
+        gap: 22px !important;
+
+    }
+
+    .nav-container nav {
+
+        gap: 10px !important;
+
+    }
+
+    .nav-container nav a {
+
+        min-width: 112px !important;
+
+        height: 53px !important;
+
+        font-size: 16px !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1250px) {
+
+    .nav-container {
+
+        width: 98% !important;
+
+        gap: 8px !important;
+
+    }
+
+    .nav-container nav {
+
+        gap: 3px !important;
+
+    }
+
+    .nav-container nav a {
+
+        min-width: auto !important;
+
+        padding:
+            0 11px !important;
+
+        font-size:
+            13px !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   EXPERIENCE MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .experience-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .nav-container {
+
+        height: 68px !important;
+
+    }
+
+    .nav-container nav {
+
+        gap: 2px !important;
+
+    }
+
+    .nav-container nav a {
+
+        min-width: auto !important;
+
+        height: 38px !important;
+
+        padding:
+            0 6px !important;
+
+        font-size:
+            10px !important;
+
+    }
+
+    #themeToggle {
+
+        width: 40px !important;
+
+        height: 40px !important;
+
+        min-width: 40px !important;
+
+    }
+
+    .nav-contact.whatsapp-nav {
+
+        min-width: auto !important;
+
+        height: 40px !important;
+
+        padding:
+            0 10px !important;
+
+        font-size:
+            11px !important;
+
+    }
+
+}

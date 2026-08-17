@@ -2051,3 +2051,248 @@ body,
     }
 
 }
+/* =========================================================
+   PROJECT CARDS - PREMIUM 3D HOVER EFFECT
+   ========================================================= */
+
+.project-card {
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
+    transition:
+        transform 0.18s ease-out,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+
+    overflow: hidden;
+
+    will-change: transform;
+}
+
+
+/* Moving colorful glow inside card */
+
+.project-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    left: var(--mouse-x, 50%);
+    top: var(--mouse-y, 50%);
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(57, 168, 255, 0.30),
+            rgba(139, 92, 246, 0.18),
+            transparent 70%
+        );
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+
+/* Purple/blue border glow */
+
+.project-card:hover {
+
+    border-color:
+        rgba(57, 168, 255, 0.75);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 42, 72, 0.98),
+            rgba(19, 28, 58, 0.98)
+        );
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.40),
+        0 0 25px rgba(57, 168, 255, 0.20),
+        0 0 50px rgba(139, 92, 246, 0.10);
+}
+
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+
+/* Content comes slightly forward */
+
+.project-card > * {
+    position: relative;
+
+    z-index: 2;
+
+    transform:
+        translateZ(25px);
+}
+
+
+/* Project category */
+
+.project-card > span,
+.project-card .project-category {
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.project-card:hover > span,
+.project-card:hover .project-category {
+
+    color: #58b8ff !important;
+
+    transform:
+        translateZ(35px);
+}
+
+
+/* Project title */
+
+.project-card h3,
+.project-card h4 {
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.project-card:hover h3,
+.project-card:hover h4 {
+
+    color: #ffffff;
+
+    transform:
+        translateZ(35px);
+}
+
+
+/* Project description */
+
+.project-card p {
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.project-card:hover p {
+
+    color: #c7d8ec;
+
+    transform:
+        translateZ(20px);
+}
+
+
+/* Small shine animation */
+
+.project-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent 20%,
+            rgba(255,255,255,0.08) 45%,
+            rgba(255,255,255,0.16) 50%,
+            transparent 75%
+        );
+
+    transform:
+        skewX(-20deg);
+
+    pointer-events: none;
+
+    transition:
+        left 0.7s ease;
+
+    z-index: 1;
+}
+
+
+.project-card:hover::after {
+
+    left: 150%;
+
+}
+
+
+/* Different color accent for every card */
+
+.project-card:nth-child(2n):hover {
+
+    border-color:
+        rgba(139, 92, 246, 0.85);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.40),
+        0 0 30px rgba(139, 92, 246, 0.22);
+
+}
+
+
+.project-card:nth-child(3n):hover {
+
+    border-color:
+        rgba(34, 211, 238, 0.85);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.40),
+        0 0 30px rgba(34, 211, 238, 0.20);
+
+}
+
+
+.project-card:nth-child(4n):hover {
+
+    border-color:
+        rgba(236, 72, 153, 0.80);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.40),
+        0 0 30px rgba(236, 72, 153, 0.20);
+
+}
+
+
+/* Mobile - don't tilt cards */
+
+@media (max-width: 768px) {
+
+    .project-card {
+
+        transform:
+            none !important;
+
+    }
+
+}

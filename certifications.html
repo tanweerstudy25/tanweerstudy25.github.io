@@ -2,404 +2,137 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Certifications | Tanweer Ansari</title>
+    <title>Certifications</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <style>
-
-        /* =========================================
-           CERTIFICATIONS PAGE
-        ========================================= */
-
-        .certifications-page {
-            min-height: 100vh;
-            padding: 110px 5% 80px;
-
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(0, 174, 255, 0.16),
-                    transparent 35%
-                ),
-                radial-gradient(
-                    circle at 80% 30%,
-                    rgba(145, 70, 255, 0.16),
-                    transparent 35%
-                ),
-                linear-gradient(
-                    135deg,
-                    #020b18,
-                    #071b32,
-                    #03101f
-                );
-        }
-
-        .cert-header {
-            max-width: 1100px;
-            margin: auto;
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .cert-header .eyebrow {
-            color: #00bfff;
-            font-size: 14px;
-            font-weight: 800;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .cert-header h1 {
-            color: white;
-            font-size: clamp(35px, 5vw, 62px);
-            margin: 0 0 15px;
-            font-weight: 900;
-        }
-
-        .cert-header p {
-            color: #a9bfd5;
-            font-size: 18px;
-        }
-
-
-        /* =========================================
-           CERTIFICATE GRID
-        ========================================= */
-
-        .certificate-grid {
-            max-width: 1250px;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-
-            gap: 30px;
-        }
-
-
-        /* =========================================
-           CERTIFICATE CARD
-        ========================================= */
-
-        .certificate-card {
-            position: relative;
-
-            height: 390px;
-
-            overflow: hidden;
-
-            border-radius: 22px;
-
-            background: #ffffff;
-
-            border: 2px solid rgba(0, 190, 255, 0.45);
-
-            box-shadow:
-                0 15px 45px rgba(0,0,0,0.35);
-
-            transition:
-                transform 0.4s ease,
-                box-shadow 0.4s ease,
-                border-color 0.4s ease;
-        }
-
-
-        /* =========================================
-           CERTIFICATE IMAGE
-        ========================================= */
-
-        .certificate-image {
-            position: absolute;
-
-            inset: 0;
-
-            width: 100%;
-            height: 100%;
-
-            object-fit: contain;
-
-            background: white;
-
-            padding: 12px;
-
-            display: block;
-
-            transition:
-                transform 0.5s ease;
-        }
-
-
-        /* Slight glass layer */
-        .certificate-card::after {
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            background:
-                linear-gradient(
-                    to top,
-                    rgba(0,0,0,0.20),
-                    transparent 35%
-                );
-
-            pointer-events: none;
-
-            z-index: 2;
-        }
-
-
-        /* =========================================
-           CCNA / CCNP LABEL
-        ========================================= */
-
-        .certificate-title {
-            position: absolute;
-
-            left: 25px;
-            bottom: 22px;
-
-            z-index: 5;
-
-            font-size: 30px;
-
-            font-weight: 1000;
-
-            letter-spacing: 2px;
-
-            color: white;
-
-            text-shadow:
-                0 0 5px currentColor,
-                0 0 15px currentColor,
-                0 0 30px currentColor;
-
-            animation:
-                certificateBlink 1.5s infinite alternate;
-        }
-
-
-        /* CCNA */
-        .ccna-title {
-            color: #00d9ff;
-        }
-
-
-        /* CCNP */
-        .ccnp-title {
-            color: #c77dff;
-        }
-
-
-        /* =========================================
-           BLINKING EFFECT
-        ========================================= */
-
-        @keyframes certificateBlink {
-
-            0% {
-                opacity: 0.45;
-
-                transform:
-                    translateY(0)
-                    scale(1);
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 1;
-
-                transform:
-                    translateY(-3px)
-                    scale(1.05);
-
-                text-shadow:
-                    0 0 8px currentColor,
-                    0 0 20px currentColor,
-                    0 0 40px currentColor,
-                    0 0 65px currentColor;
-            }
-        }
-
-
-        /* =========================================
-           HOVER EFFECT
-        ========================================= */
-
-        .certificate-card:hover {
-
-            transform:
-                translateY(-12px)
-                perspective(800px)
-                rotateX(2deg);
-
-            box-shadow:
-                0 25px 70px rgba(0, 200, 255, 0.30);
-
-            border-color: #00d9ff;
-        }
-
-        .certificate-card:hover .certificate-image {
-
-            transform:
-                scale(1.04);
-        }
-
-
-        /* CCNP hover */
-        .certificate-card.ccnp-card:hover {
-
-            border-color: #b76cff;
-
-            box-shadow:
-                0 25px 70px rgba(170, 80, 255, 0.35);
-        }
-
-
-        /* =========================================
-           BACK BUTTON
-        ========================================= */
-
-        .back-home {
-
-            display: block;
-
-            width: fit-content;
-
-            margin: 55px auto 0;
-
-            padding: 13px 25px;
-
-            border-radius: 12px;
-
-            text-decoration: none;
-
-            color: white;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #009dff,
-                    #7657ff
-                );
-
-            font-weight: 700;
-
-            transition: 0.3s ease;
-        }
-
-        .back-home:hover {
-
-            transform:
-                translateY(-4px)
-                scale(1.04);
-
-            box-shadow:
-                0 10px 30px rgba(0,150,255,0.4);
-        }
-
-
-        /* =========================================
-           MOBILE
-        ========================================= */
-
-        @media (max-width: 800px) {
-
-            .certificate-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .certificate-card {
-                height: 330px;
-            }
-
-        }
-
-    </style>
 </head>
 
+<body class="cert-page">
 
-<body>
+    <!-- HEADER -->
+    <header class="cert-header">
 
-<section class="certifications-page">
+        <nav class="cert-nav">
 
-    <div class="cert-header">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="experience.html">Experience</a>
+            <a href="certifications.html" class="active">Certifications</a>
+            <a href="index.html#projects">Projects</a>
 
-        <div class="eyebrow">
-            Professional Certifications
+            <button id="themeToggle" class="theme-btn" onclick="changeTheme()">
+                🌙
+            </button>
+
+            <a
+                href="https://wa.me/966557316795"
+                target="_blank"
+                class="whatsapp-btn"
+            >
+                🟢 WhatsApp
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="cert-main">
+
+        <div class="cert-title">
+
+            <div class="cert-small-title">
+                PROFESSIONAL CERTIFICATIONS
+            </div>
+
+            <h1>Certifications & Credentials</h1>
+
+            <p>
+                Professional certifications and technical credentials
+                across networking, cloud, security and IT infrastructure.
+            </p>
+
         </div>
 
-        <h1>
-            Certifications & Credentials
-        </h1>
 
-        <p>
-            Professional certifications and technical credentials
-            across networking, cloud, security and IT infrastructure.
-        </p>
-
-    </div>
+        <!-- 6 CERTIFICATE PHOTO BOXES -->
+        <section class="certificate-gallery">
 
 
-    <div class="certificate-grid">
-
-
-        <!-- ======================================
-             CCNA
-        ======================================= -->
-
-        <article class="certificate-card ccna-card">
-
-            <img
-                src="ccna-certificate.jpg"
-                class="certificate-image"
-                alt="Cisco CCNA Certificate"
-            >
-
-            <div class="certificate-title ccna-title">
-                CCNA
+            <!-- CERTIFICATE 01 -->
+            <div class="certificate-box">
+                <img
+                    src="certificate1.jpg"
+                    alt="Professional Certificate"
+                >
             </div>
 
-        </article>
 
-
-
-        <!-- ======================================
-             CCNP
-        ======================================= -->
-
-        <article class="certificate-card ccnp-card">
-
-            <img
-                src="ccnp-certificate.jpg"
-                class="certificate-image"
-                alt="Cisco CCNP Certificate"
-            >
-
-            <div class="certificate-title ccnp-title">
-                CCNP
+            <!-- CERTIFICATE 02 -->
+            <div class="certificate-box">
+                <img
+                    src="certificate2.jpg"
+                    alt="Professional Certificate"
+                >
             </div>
 
-        </article>
+
+            <!-- CERTIFICATE 03 -->
+            <div class="certificate-box">
+                <img
+                    src="certificate3.jpg"
+                    alt="Professional Certificate"
+                >
+            </div>
 
 
-    </div>
+            <!-- CERTIFICATE 04 -->
+            <div class="certificate-box">
+                <img
+                    src="certificate4.jpg"
+                    alt="Professional Certificate"
+                >
+            </div>
 
 
-    <a href="index.html" class="back-home">
-        ← Back to Home
-    </a>
+            <!-- CERTIFICATE 05 -->
+            <div class="certificate-box">
+                <img
+                    src="certificate5.jpg"
+                    alt="Professional Certificate"
+                >
+            </div>
 
-</section>
 
+            <!-- CERTIFICATE 06 -->
+            <div class="certificate-box">
+                <img
+                    src="certificate6.jpg"
+                    alt="Professional Certificate"
+                >
+            </div>
+
+        </section>
+
+
+        <!-- BACK BUTTON -->
+        <div class="back-area">
+
+            <a href="index.html" class="back-button">
+                ← Back to Home
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
 
 </body>
 </html>

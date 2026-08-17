@@ -1,225 +1,246 @@
 /* =========================================
-   PREMIUM CERTIFICATE HOVER EFFECT
+   SAFE PREMIUM CERTIFICATE ANIMATION
+   PHOTO ALWAYS CLEAR
 ========================================= */
 
 .cert-card {
     position: relative;
-    transition:
-        transform 0.5s cubic-bezier(.2,.8,.2,1),
-        box-shadow 0.5s ease,
-        border-color 0.5s ease,
-        filter 0.5s ease;
+    overflow: hidden;
 
     transform-style: preserve-3d;
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+
+    border: 1px solid rgba(0,190,255,0.45);
+
+    /* Animation layer ke neeche photo */
+    isolation: isolate;
 }
 
-/* Moving light effect */
-.cert-card::before {
-    content: "";
-    position: absolute;
-    top: -80%;
-    left: -120%;
 
-    width: 70%;
-    height: 260%;
+/* =========================================
+   CERTIFICATE PHOTO
+========================================= */
 
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,0.18),
-        rgba(0,220,255,0.35),
-        rgba(255,255,255,0.18),
-        transparent
-    );
+.cert-card img {
+    position: relative;
+    z-index: 2;
 
-    transform: rotate(25deg);
+    display: block;
 
-    opacity: 0;
+    width: 100%;
+    height: 100%;
 
-    pointer-events: none;
+    object-fit: contain;
 
-    z-index: 5;
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+
+    /* Photo ko kabhi dark/white overlay nahi karega */
+    opacity: 1;
 }
 
-/* Hover glow */
+
+/* =========================================
+   HOVER - PROFESSIONAL 3D
+========================================= */
+
 .cert-card:hover {
 
     transform:
         perspective(1200px)
         rotateX(3deg)
         rotateY(-3deg)
-        translateY(-14px)
-        scale(1.035);
+        translateY(-12px)
+        scale(1.025);
 
     border-color: #00e5ff;
 
-    filter: brightness(1.08);
-
     box-shadow:
+        0 18px 45px rgba(0,0,0,0.55),
+        0 0 18px rgba(0,200,255,0.75),
+        0 0 40px rgba(0,140,255,0.35);
+}
 
-        0 20px 50px rgba(0,0,0,0.55),
 
-        0 0 15px rgba(0,200,255,0.8),
+/* Photo stays CLEAR */
 
-        0 0 35px rgba(0,140,255,0.55),
+.cert-card:hover img {
 
-        0 0 70px rgba(120,70,255,0.35);
+    transform: scale(1.02);
+
+    filter:
+        brightness(1.03)
+        contrast(1.03);
 
 }
 
-/* Sweeping light animation */
+
+/* =========================================
+   MOVING LIGHT
+   ONLY BORDER AREA - NOT PHOTO
+========================================= */
+
+.cert-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 22px;
+
+    border: 2px solid transparent;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(0,220,255,0.9),
+            transparent
+        ) border-box;
+
+    mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+
+    mask-composite: exclude;
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 4;
+
+    transition: opacity 0.3s ease;
+}
+
+
+/* Activate border animation */
+
 .cert-card:hover::before {
 
     opacity: 1;
 
     animation:
-        certificateShine 1.1s ease forwards;
-
+        borderGlow 1.4s linear infinite;
 }
 
 
 /* =========================================
-   CERTIFICATE IMAGE HOVER
+   DIFFERENT PROFESSIONAL COLORS
 ========================================= */
-
-.cert-card img {
-
-    transition:
-        transform 0.6s cubic-bezier(.2,.8,.2,1),
-        filter 0.5s ease;
-
-}
-
-.cert-card:hover img {
-
-    transform: scale(1.025);
-
-    filter:
-        brightness(1.08)
-        contrast(1.05)
-        saturate(1.08);
-
-}
-
-
-/* =========================================
-   COLORFUL GLOWING BORDER
-========================================= */
-
-.cert-card {
-    border: 1px solid rgba(0,190,255,0.45);
-
-    animation:
-        certificatePulse 4s ease-in-out infinite;
-}
-
-/* Different colors for each card */
 
 .cert-card:nth-child(1):hover {
     border-color: #00e5ff;
+
     box-shadow:
+        0 18px 45px rgba(0,0,0,.55),
         0 0 20px rgba(0,229,255,.8),
-        0 0 50px rgba(0,180,255,.45);
+        0 0 45px rgba(0,180,255,.35);
 }
+
 
 .cert-card:nth-child(2):hover {
     border-color: #ff315f;
+
     box-shadow:
+        0 18px 45px rgba(0,0,0,.55),
         0 0 20px rgba(255,49,95,.8),
-        0 0 50px rgba(255,49,95,.45);
+        0 0 45px rgba(255,49,95,.35);
 }
+
 
 .cert-card:nth-child(3):hover {
-    border-color: #ff8a00;
+    border-color: #ff9800;
+
     box-shadow:
-        0 0 20px rgba(255,138,0,.8),
-        0 0 50px rgba(255,80,0,.45);
+        0 18px 45px rgba(0,0,0,.55),
+        0 0 20px rgba(255,152,0,.8),
+        0 0 45px rgba(255,100,0,.35);
 }
+
 
 .cert-card:nth-child(4):hover {
-    border-color: #00aaff;
+    border-color: #2196f3;
+
     box-shadow:
-        0 0 20px rgba(0,170,255,.8),
-        0 0 50px rgba(0,120,255,.45);
+        0 18px 45px rgba(0,0,0,.55),
+        0 0 20px rgba(33,150,243,.8),
+        0 0 45px rgba(33,100,255,.35);
 }
 
+
 .cert-card:nth-child(5):hover {
-    border-color: #9b5cff;
+    border-color: #9c5cff;
+
     box-shadow:
-        0 0 20px rgba(155,92,255,.8),
-        0 0 50px rgba(120,50,255,.45);
+        0 18px 45px rgba(0,0,0,.55),
+        0 0 20px rgba(156,92,255,.8),
+        0 0 45px rgba(120,50,255,.35);
 }
+
 
 .cert-card:nth-child(6):hover {
     border-color: #00e676;
+
     box-shadow:
+        0 18px 45px rgba(0,0,0,.55),
         0 0 20px rgba(0,230,118,.8),
-        0 0 50px rgba(0,180,100,.45);
+        0 0 45px rgba(0,180,100,.35);
 }
 
 
 /* =========================================
-   ANIMATIONS
+   BORDER ANIMATION
 ========================================= */
 
-@keyframes certificateShine {
+@keyframes borderGlow {
 
     0% {
-        left: -120%;
-    }
-
-    100% {
-        left: 160%;
-    }
-
-}
-
-@keyframes certificatePulse {
-
-    0%,100% {
-        box-shadow:
-            0 12px 35px rgba(0,0,0,.35);
+        transform: rotate(0deg);
+        filter: brightness(1);
     }
 
     50% {
-        box-shadow:
-            0 15px 40px rgba(0,100,255,.12);
+        filter: brightness(1.8);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        filter: brightness(1);
     }
 
 }
 
 
 /* =========================================
-   MOUSE HOVER INNER GLOW
+   REMOVE OLD OVERLAY EFFECTS
 ========================================= */
 
-.cert-card:hover {
-    background:
-        linear-gradient(
-            145deg,
-            rgba(0,180,255,.12),
-            rgba(100,50,255,.08)
-        );
+.cert-card::after {
+    display: none !important;
 }
 
 
-/* =========================================
-   PREMIUM HOVER TOP LIGHT
-========================================= */
+/* Make sure certificate image is always visible */
 
-.cert-card:hover::after {
-
-    box-shadow:
-        inset 0 0 35px rgba(0,200,255,.12);
-
-}
-
-
-/* =========================================
-   SMOOTH EXPERIENCE
-========================================= */
-
-.cert-card,
 .cert-card img {
-    will-change: transform;
+    visibility: visible !important;
+    opacity: 1 !important;
 }

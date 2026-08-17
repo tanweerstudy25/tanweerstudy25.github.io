@@ -1,372 +1,989 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Tanweer Ansari - Network & Cloud Infrastructure Engineer Portfolio">
-<title>Tanweer Ansari | Network & Cloud Engineer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    <title>Tanweer Ansari | Network & IT Support Engineer</title>
 
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:Inter,Arial,sans-serif;
-  background:#050816;
-  color:#eef4ff;
-  overflow-x:hidden;
-}
-body:before{
-  content:"";position:fixed;inset:0;z-index:-3;
-  background:
-    radial-gradient(circle at 20% 20%,rgba(0,210,255,.14),transparent 30%),
-    radial-gradient(circle at 80% 70%,rgba(125,70,255,.16),transparent 32%),
-    linear-gradient(135deg,#050816,#081125 50%,#050816);
-}
-canvas{position:fixed;inset:0;z-index:-2;pointer-events:none}
-a{text-decoration:none;color:inherit}
-.container{width:min(1150px,92%);margin:auto}
+    <meta name="description"
+          content="Tanweer Ansari - Network & IT Support Engineer with 16+ years of enterprise IT experience across networking, Microsoft Azure, Microsoft 365, Fortinet and infrastructure support.">
 
-nav{
-  position:fixed;top:0;left:0;width:100%;z-index:20;
-  padding:18px 0;
-  backdrop-filter:blur(16px);
-  background:rgba(5,8,22,.58);
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-.nav-inner{display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:1.25rem;font-weight:800;letter-spacing:.5px}
-.logo span{color:#35d9ff}
-.nav-links{display:flex;gap:25px;align-items:center}
-.nav-links a{font-size:.9rem;color:#b8c4dc;transition:.3s}
-.nav-links a:hover{color:#fff}
-.menu{display:none;font-size:1.5rem;cursor:pointer}
+    <meta name="keywords"
+          content="Tanweer Ansari, Network Engineer, IT Support Engineer, Azure Engineer, Cisco, Fortinet, Microsoft 365, Intune, Entra ID, Saudi Arabia">
 
-.hero{
-  min-height:100vh;display:flex;align-items:center;
-  padding-top:90px;
-}
-.hero-grid{
-  display:grid;grid-template-columns:1.1fr .9fr;
-  gap:60px;align-items:center;
-}
-.badge{
-  display:inline-flex;padding:9px 15px;border-radius:999px;
-  background:rgba(40,210,255,.08);
-  border:1px solid rgba(40,210,255,.35);
-  color:#69e4ff;font-size:.8rem;font-weight:700;
-  margin-bottom:22px;box-shadow:0 0 30px rgba(40,210,255,.08);
-}
-h1{font-size:clamp(3rem,7vw,6.4rem);line-height:.95;letter-spacing:-4px}
-.gradient{
-  background:linear-gradient(90deg,#fff,#63e4ff,#a879ff,#fff);
-  background-size:300% auto;
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  animation:shine 5s linear infinite;
-}
-.hero p{margin:25px 0;color:#aebbd4;max-width:650px;line-height:1.8;font-size:1.05rem}
-.buttons{display:flex;gap:14px;flex-wrap:wrap}
-.btn{
-  padding:13px 20px;border-radius:12px;font-weight:700;
-  border:1px solid rgba(255,255,255,.13);
-  background:rgba(255,255,255,.05);transition:.3s;
-}
-.btn.primary{
-  color:#00131b;
-  background:linear-gradient(135deg,#45e1ff,#8c7bff);
-  border:0;box-shadow:0 10px 35px rgba(61,204,255,.2)
-}
-.btn:hover{transform:translateY(-4px);box-shadow:0 15px 35px rgba(0,0,0,.25)}
+    <meta name="author" content="Tanweer Ansari">
 
-.scene{height:500px;display:grid;place-items:center;perspective:1000px}
-.cube{
-  width:260px;height:260px;position:relative;
-  transform-style:preserve-3d;
-  animation:spin 15s linear infinite;
-}
-.face{
-  position:absolute;width:260px;height:260px;
-  display:grid;place-items:center;text-align:center;
-  border:1px solid rgba(91,227,255,.65);
-  background:linear-gradient(135deg,rgba(29,217,255,.10),rgba(121,82,255,.08));
-  box-shadow:inset 0 0 40px rgba(70,220,255,.07),0 0 35px rgba(80,180,255,.08);
-  backdrop-filter:blur(3px);
-}
-.face strong{font-size:1.3rem}.face small{display:block;color:#91a7c9;margin-top:8px}
-.front{transform:translateZ(130px)}
-.back{transform:rotateY(180deg) translateZ(130px)}
-.right{transform:rotateY(90deg) translateZ(130px)}
-.left{transform:rotateY(-90deg) translateZ(130px)}
-.top{transform:rotateX(90deg) translateZ(130px)}
-.bottom{transform:rotateX(-90deg) translateZ(130px)}
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-.orbit{
-  position:absolute;width:390px;height:390px;border:1px solid rgba(95,218,255,.18);
-  border-radius:50%;transform:rotateX(70deg) rotateZ(20deg);
-  animation:orbit 12s linear infinite;
-}
-.orbit:after{
-  content:"";position:absolute;width:12px;height:12px;border-radius:50%;
-  background:#54e5ff;box-shadow:0 0 25px 8px rgba(84,229,255,.5);
-  left:8%;top:8%;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-section{padding:110px 0}
-.section-title{font-size:2.5rem;margin-bottom:12px}
-.section-sub{color:#91a0bb;margin-bottom:45px}
-.cards{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px
-}
-.card{
-  padding:28px;border-radius:20px;
-  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
-  border:1px solid rgba(255,255,255,.10);
-  backdrop-filter:blur(14px);
-  transition:.4s;position:relative;overflow:hidden;
-}
-.card:before{
-  content:"";position:absolute;inset:-2px;
-  background:linear-gradient(120deg,transparent,#5ee7ff,transparent);
-  opacity:0;transition:.4s;z-index:-1;
-}
-.card:hover{transform:translateY(-10px) rotateX(3deg) rotateY(-3deg);border-color:rgba(86,225,255,.4)}
-.card:hover:before{opacity:.12}
-.icon{font-size:2rem;margin-bottom:15px}
-.card h3{margin-bottom:10px}
-.card p{color:#9ba9c1;line-height:1.7;font-size:.92rem}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-.skills{display:flex;flex-wrap:wrap;gap:12px}
-.skill{
-  padding:12px 16px;border-radius:999px;
-  border:1px solid rgba(255,255,255,.11);
-  background:rgba(255,255,255,.045);color:#c9d6ed;
-  transition:.3s;
-}
-.skill:hover{transform:scale(1.07) rotate(-2deg);border-color:#55ddff;color:#fff}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
-.timeline{border-left:1px solid rgba(92,222,255,.3);padding-left:30px}
-.item{position:relative;margin-bottom:35px}
-.item:before{
-  content:"";position:absolute;left:-37px;top:5px;width:12px;height:12px;
-  border-radius:50%;background:#5de2ff;box-shadow:0 0 18px #5de2ff
-}
-.item h3{margin-bottom:7px}
-.item p{color:#9caac1;line-height:1.7}
-
-.contact-box{
-  text-align:center;padding:55px 25px;border-radius:28px;
-  background:linear-gradient(135deg,rgba(55,219,255,.08),rgba(135,90,255,.10));
-  border:1px solid rgba(255,255,255,.12);
-}
-.contact-box p{color:#aab7ce;margin:15px auto 25px;max-width:650px;line-height:1.7}
-
-footer{padding:30px 0;text-align:center;color:#71809b;border-top:1px solid rgba(255,255,255,.07)}
-
-.reveal{opacity:0;transform:translateY(35px);transition:1s}
-.reveal.show{opacity:1;transform:none}
-
-@keyframes spin{
-  from{transform:rotateX(-15deg) rotateY(0deg) rotateZ(0deg)}
-  to{transform:rotateX(345deg) rotateY(360deg) rotateZ(360deg)}
-}
-@keyframes orbit{to{transform:rotateX(70deg) rotateZ(380deg)}}
-@keyframes shine{to{background-position:300% center}}
-
-@media(max-width:800px){
-  .nav-links{display:none;position:absolute;top:65px;left:4%;width:92%;
-    padding:20px;flex-direction:column;background:#0a1124;border:1px solid #1d2940;border-radius:15px}
-  .nav-links.open{display:flex}.menu{display:block}
-  .hero-grid{grid-template-columns:1fr;text-align:center}
-  .hero p{margin-left:auto;margin-right:auto}
-  .buttons{justify-content:center}
-  .scene{height:370px}
-  .cube,.face{width:190px;height:190px}
-  .front{transform:translateZ(95px)}.back{transform:rotateY(180deg) translateZ(95px)}
-  .right{transform:rotateY(90deg) translateZ(95px)}.left{transform:rotateY(-90deg) translateZ(95px)}
-  .top{transform:rotateX(90deg) translateZ(95px)}.bottom{transform:rotateX(-90deg) translateZ(95px)}
-  .orbit{width:290px;height:290px}
-  .cards{grid-template-columns:1fr}
-  h1{letter-spacing:-2px}
-}
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<canvas id="stars"></canvas>
+<!-- ================= NAVIGATION ================= -->
 
-<nav>
-  <div class="container nav-inner">
-    <a class="logo" href="#home">TANWEER<span>.</span></a>
-    <div class="menu" id="menu">☰</div>
-    <div class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-</nav>
+<header class="navbar">
 
-<main id="home">
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="reveal">
-      <div class="badge">● AVAILABLE FOR NETWORK & CLOUD OPPORTUNITIES</div>
-      <h1>Tanweer<br><span class="gradient">Ansari</span></h1>
-      <p>
-        Network & Cloud Infrastructure Engineer with 16+ years of enterprise IT experience,
-        specializing in Cisco, Fortinet, Microsoft Azure, Microsoft 365, Entra ID,
-        Intune and Windows infrastructure.
-      </p>
-      <div class="buttons">
-        <a class="btn primary" href="#contact">Let's Connect →</a>
-        <a class="btn" href="#expertise">Explore My Work</a>
-      </div>
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            TANWEER<span>.</span>
+        </a>
+
+        <nav id="navMenu">
+
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+        <div class="nav-buttons">
+
+            <button id="themeToggle" class="icon-btn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <a href="mailto:tanweeromn@gmail.com" class="nav-contact">
+                Contact
+            </a>
+
+            <button id="menuToggle" class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
     </div>
 
-    <div class="scene reveal">
-      <div class="orbit"></div>
-      <div class="cube">
-        <div class="face front"><div><strong>NETWORK</strong><small>Cisco • LAN • WAN</small></div></div>
-        <div class="face back"><div><strong>AZURE</strong><small>AZ-104 • AZ-700</small></div></div>
-        <div class="face right"><div><strong>SECURITY</strong><small>Fortinet • Firewall</small></div></div>
-        <div class="face left"><div><strong>MICROSOFT</strong><small>Entra • Intune • M365</small></div></div>
-        <div class="face top"><div><strong>ITSM</strong><small>ITIL v4</small></div></div>
-        <div class="face bottom"><div><strong>INFRA</strong><small>Enterprise IT</small></div></div>
-      </div>
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <div class="availability">
+            <span></span>
+            Available for Network & Cloud Opportunities
+        </div>
+
+        <h1>
+            Tanweer Ansari
+        </h1>
+
+        <h2>
+            Network & IT Support Engineer
+        </h2>
+
+        <p class="hero-intro">
+
+            Experienced IT Professional with <strong>16+ years</strong>
+            of overall experience, including enterprise network,
+            infrastructure, IT support, Microsoft Azure,
+            Microsoft 365, Fortinet and endpoint management.
+
+        </p>
+
+        <p class="hero-description">
+
+            Experienced in diverse IT projects and dedicated to
+            optimizing IT performance through network infrastructure,
+            LAN/WAN, routing & switching, Fortinet firewall,
+            Microsoft Azure, Office 365, Windows Autopilot and
+            Microsoft Entra ID.
+
+        </p>
+
+        <div class="hero-meta">
+
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                Makkah, Saudi Arabia
+            </span>
+
+            <span>
+                <i class="fa-solid fa-briefcase"></i>
+                16+ Years IT Experience
+            </span>
+
+        </div>
+
+        <div class="hero-buttons">
+
+            <a href="mailto:tanweeromn@gmail.com"
+               class="btn btn-primary">
+
+                <i class="fa-regular fa-envelope"></i>
+                Contact Me
+
+            </a>
+
+            <a href="https://www.linkedin.com/in/tanweeransari21"
+               target="_blank"
+               class="btn btn-outline">
+
+                <i class="fa-brands fa-linkedin-in"></i>
+                LinkedIn
+
+            </a>
+
+            <a href="#projects"
+               class="btn btn-outline">
+
+                <i class="fa-solid fa-code"></i>
+                Projects
+
+            </a>
+
+            <a href="#contact"
+               class="btn btn-outline">
+
+                <i class="fa-solid fa-file-lines"></i>
+                Request CV
+
+            </a>
+
+        </div>
+
     </div>
-  </div>
+
 </section>
 
-<section id="expertise">
-  <div class="container">
-    <h2 class="section-title reveal">Core Expertise</h2>
-    <p class="section-sub reveal">Enterprise infrastructure, cloud and security technologies.</p>
-    <div class="cards">
-      <div class="card reveal"><div class="icon">🌐</div><h3>Network Engineering</h3><p>Cisco routing & switching, LAN/WAN, VPN, troubleshooting, network monitoring and enterprise connectivity.</p></div>
-      <div class="card reveal"><div class="icon">☁️</div><h3>Azure & Cloud</h3><p>Azure infrastructure, virtual networking, identity, administration and cloud operations.</p></div>
-      <div class="card reveal"><div class="icon">🛡️</div><h3>Security</h3><p>Fortinet firewalls, VPN, access control, network security and infrastructure protection.</p></div>
-      <div class="card reveal"><div class="icon">🪟</div><h3>Microsoft 365</h3><p>Entra ID, Intune, Windows Autopilot, Office 365 and endpoint management.</p></div>
-      <div class="card reveal"><div class="icon">🖥️</div><h3>Windows Infrastructure</h3><p>Windows Server, desktop support, enterprise troubleshooting and endpoint administration.</p></div>
-      <div class="card reveal"><div class="icon">📊</div><h3>IT Operations</h3><p>L2 support, incident management, ITIL practices, monitoring and operational improvement.</p></div>
+
+<!-- ================= QUICK STATS ================= -->
+
+<section class="stats-section">
+
+    <div class="container stats-grid">
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+
+            <h3>16+</h3>
+            <p>Years IT Experience</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-network-wired"></i>
+            </div>
+
+            <h3>Network</h3>
+            <p>Cisco Routing & Switching</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-cloud"></i>
+            </div>
+
+            <h3>Azure</h3>
+            <p>Cloud Infrastructure</p>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <h3>Fortinet</h3>
+            <p>Firewall & VPN Security</p>
+        </div>
+
     </div>
-  </div>
+
 </section>
 
-<section id="skills">
-  <div class="container">
-    <h2 class="section-title reveal">Technology Stack</h2>
-    <p class="section-sub reveal">Tools and technologies I work with.</p>
-    <div class="skills reveal">
-      <span class="skill">Cisco Routing & Switching</span>
-      <span class="skill">CCNA / CCNP</span>
-      <span class="skill">Fortinet</span>
-      <span class="skill">Azure AZ-104</span>
-      <span class="skill">Azure AZ-700</span>
-      <span class="skill">Microsoft Entra ID</span>
-      <span class="skill">Microsoft Intune</span>
-      <span class="skill">Windows Autopilot</span>
-      <span class="skill">Office 365</span>
-      <span class="skill">Windows Server</span>
-      <span class="skill">Avaya</span>
-      <span class="skill">Power BI</span>
-      <span class="skill">PowerApps</span>
-      <span class="skill">SharePoint</span>
-      <span class="skill">ITIL v4</span>
-      <span class="skill">Wireshark</span>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="section">
+
+    <div class="container">
+
+        <div class="section-label">
+            ABOUT ME
+        </div>
+
+        <h2 class="section-title">
+            Practical enterprise IT support across
+            network, cloud, systems and endpoints.
+        </h2>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I work across the complete IT infrastructure
+                    lifecycle — from network connectivity and
+                    firewall security to Azure infrastructure,
+                    Microsoft 365, Entra ID, Intune and
+                    end-user computing.
+                </p>
+
+                <p>
+                    My approach is hands-on, structured and focused
+                    on reliable support for enterprise users and
+                    services.
+                </p>
+
+                <p>
+                    I combine traditional infrastructure knowledge
+                    with modern cloud and endpoint technologies to
+                    support secure and reliable IT environments.
+                </p>
+
+            </div>
+
+
+            <div class="about-cards">
+
+                <div class="mini-card">
+                    <i class="fa-solid fa-shield"></i>
+                    <strong>16+ Years Experience</strong>
+                </div>
+
+                <div class="mini-card">
+                    <i class="fa-solid fa-cloud"></i>
+                    <strong>Azure · AZ-104 / AZ-700</strong>
+                </div>
+
+                <div class="mini-card">
+                    <i class="fa-solid fa-wave-square"></i>
+                    <strong>Cisco Routing & Switching</strong>
+                </div>
+
+                <div class="mini-card">
+                    <i class="fa-solid fa-lock"></i>
+                    <strong>Fortinet Firewall & VPN</strong>
+                </div>
+
+                <div class="mini-card">
+                    <i class="fa-solid fa-server"></i>
+                    <strong>Hardware Assembly & Installation</strong>
+                </div>
+
+                <div class="mini-card">
+                    <i class="fa-solid fa-gear"></i>
+                    <strong>IT Support & Troubleshooting</strong>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
+
 </section>
 
-<section id="experience">
-  <div class="container">
-    <h2 class="section-title reveal">Professional Journey</h2>
-    <p class="section-sub reveal">Building and supporting reliable enterprise IT environments.</p>
-    <div class="timeline">
-      <div class="item reveal"><h3>Network & Cloud Infrastructure</h3><p>Design, administration and troubleshooting across Cisco networking, Fortinet security, Azure and Microsoft cloud services.</p></div>
-      <div class="item reveal"><h3>Microsoft Enterprise Support</h3><p>Microsoft 365, Entra ID, Intune, Windows Autopilot and endpoint management for enterprise users.</p></div>
-      <div class="item reveal"><h3>L2 IT Operations</h3><p>VPN, email, printing, internet, desktop and infrastructure troubleshooting with focus on service continuity.</p></div>
-      <div class="item reveal"><h3>16+ Years of IT Experience</h3><p>Long-term enterprise IT experience spanning networking, systems, cloud, security and end-user support.</p></div>
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills" class="section section-dark">
+
+    <div class="container">
+
+        <div class="section-label">
+            TECHNOLOGY AREAS
+        </div>
+
+        <h2 class="section-title">
+            Practical skills across enterprise IT operations.
+        </h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-network-wired"></i>
+
+                <h3>NETWORKING</h3>
+
+                <p>
+                    Cisco Routing & Switching · CCNA · CCNP ·
+                    LAN/WAN · TCP/IP · VLAN · Routing · Switching ·
+                    VPN · Network Troubleshooting · Network Monitoring
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <h3>SECURITY</h3>
+
+                <p>
+                    Fortinet FortiGate · Fortinet NSE 4 ·
+                    Firewall Administration · Firewall Policies ·
+                    VPN · Network Security · Access Control ·
+                    Security Troubleshooting
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-cloud"></i>
+
+                <h3>MICROSOFT AZURE</h3>
+
+                <p>
+                    Azure Administration · Azure Infrastructure ·
+                    Azure Networking · Virtual Networks ·
+                    Network Security · Azure Identity ·
+                    Monitoring · Resource Management
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-server"></i>
+
+                <h3>MICROSOFT CLOUD</h3>
+
+                <p>
+                    Microsoft Entra ID · Microsoft Intune ·
+                    Windows Autopilot · Microsoft 365 ·
+                    Office 365 · Exchange Online · SharePoint ·
+                    Endpoint Management
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <i class="fa-brands fa-windows"></i>
+
+                <h3>SYSTEMS</h3>
+
+                <p>
+                    Windows Server · Windows 10/11 ·
+                    Active Directory · Group Policy ·
+                    Endpoint Support · Desktop Support ·
+                    System Administration
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <i class="fa-solid fa-headset"></i>
+
+                <h3>IT OPERATIONS</h3>
+
+                <p>
+                    L2 IT Support · Incident Management ·
+                    Service Requests · ITIL Practices ·
+                    IT Asset Management · Troubleshooting ·
+                    Documentation · User Support
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
+
 </section>
 
-<section id="contact">
-  <div class="container">
-    <div class="contact-box reveal">
-      <h2>Let's Build Reliable Infrastructure.</h2>
-      <p>Open to Network Engineer, Cloud Engineer and Infrastructure opportunities across Saudi Arabia and the GCC.</p>
-      <div class="buttons" style="justify-content:center">
-        <a class="btn primary" href="mailto:tanweeromn@gmail.com">Email Me</a>
-        <a class="btn" href="https://www.linkedin.com/in/tanweeransari21" target="_blank">LinkedIn ↗</a>
-      </div>
+
+<!-- ================= CERTIFICATIONS ================= -->
+
+<section id="certifications" class="section">
+
+    <div class="container">
+
+        <div class="section-label">
+            CERTIFICATIONS & DEVELOPMENT
+        </div>
+
+        <h2 class="section-title">
+            Certifications and professional development.
+        </h2>
+
+        <div class="cert-grid">
+
+
+            <div class="cert-card blue">
+                <i class="fa-brands fa-microsoft"></i>
+
+                <h3>
+                    Microsoft Certified:
+                    Azure Administrator Associate
+                </h3>
+
+                <p>
+                    AZ-104 · Azure administration
+                    and infrastructure
+                </p>
+            </div>
+
+
+            <div class="cert-card purple">
+                <i class="fa-brands fa-microsoft"></i>
+
+                <h3>
+                    Microsoft Certified:
+                    Azure Network Engineer Associate
+                </h3>
+
+                <p>
+                    AZ-700 · Azure networking
+                    and connectivity
+                </p>
+            </div>
+
+
+            <div class="cert-card green">
+                <i class="fa-solid fa-clipboard-check"></i>
+
+                <h3>
+                    ITIL 4 Foundation
+                </h3>
+
+                <p>
+                    Service management and
+                    IT operations practices
+                </p>
+            </div>
+
+
+            <div class="cert-card blue">
+                <i class="fa-solid fa-network-wired"></i>
+
+                <h3>
+                    CCNA / CCNP
+                </h3>
+
+                <p>
+                    Cisco Networking ·
+                    Routing & Switching
+                </p>
+            </div>
+
+
+            <div class="cert-card purple">
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <h3>
+                    Fortinet NSE 4
+                </h3>
+
+                <p>
+                    FortiGate Firewall,
+                    VPN & security operations
+                </p>
+            </div>
+
+
+            <div class="cert-card green">
+                <i class="fa-brands fa-google"></i>
+
+                <h3>
+                    GCP Management
+                </h3>
+
+                <p>
+                    Basic cloud resource access,
+                    service navigation and administration
+                </p>
+            </div>
+
+
+            <div class="cert-card orange">
+                <i class="fa-solid fa-chart-column"></i>
+
+                <h3>
+                    Microsoft Power BI
+                </h3>
+
+                <p>
+                    Basic dashboards, report review
+                    and data-driven IT visibility
+                </p>
+            </div>
+
+
+            <div class="cert-card pink">
+                <i class="fa-solid fa-database"></i>
+
+                <h3>
+                    Oracle HCM & Appraisal
+                </h3>
+
+                <p>
+                    Basic user support, access assistance
+                    and appraisal workflow coordination
+                </p>
+            </div>
+
+
+            <div class="cert-card purple">
+                <i class="fa-brands fa-linkedin"></i>
+
+                <h3>
+                    LinkedIn Learning
+                </h3>
+
+                <p>
+                    Continuous learning across IT,
+                    cloud, security and professional development
+                </p>
+            </div>
+
+        </div>
+
     </div>
-  </div>
+
 </section>
-</main>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects" class="section section-dark">
+
+    <div class="container">
+
+        <div class="section-label">
+            PROJECTS
+        </div>
+
+        <h2 class="section-title">
+            Hands-on enterprise IT projects and support domains.
+        </h2>
+
+        <div class="projects-grid">
+
+
+            <div class="project-card">
+
+                <span>NETWORKING</span>
+
+                <h3>
+                    Enterprise Network Infrastructure
+                </h3>
+
+                <p>
+                    Managing and troubleshooting enterprise
+                    LAN/WAN environments including Cisco routing
+                    and switching, VLANs, connectivity, VPN and
+                    network infrastructure.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <span>SECURITY</span>
+
+                <h3>
+                    Fortinet Network Security
+                </h3>
+
+                <p>
+                    Firewall administration, security policies,
+                    VPN support, troubleshooting and network
+                    security operations using Fortinet FortiGate.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <span>MICROSOFT AZURE</span>
+
+                <h3>
+                    Microsoft Azure Infrastructure
+                </h3>
+
+                <p>
+                    Working with Azure infrastructure,
+                    networking, identity and cloud administration.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <span>MICROSOFT CLOUD</span>
+
+                <h3>
+                    Microsoft 365 & Entra ID
+                </h3>
+
+                <p>
+                    Supporting Microsoft 365, Entra ID,
+                    user identities, access management,
+                    Outlook and cloud productivity services.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <span>ENDPOINT MANAGEMENT</span>
+
+                <h3>
+                    Intune & Windows Autopilot
+                </h3>
+
+                <p>
+                    Endpoint management, device provisioning,
+                    Windows Autopilot and modern device
+                    administration.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <span>IT OPERATIONS</span>
+
+                <h3>
+                    IT Inventory Management
+                </h3>
+
+                <p>
+                    Designing IT inventory and asset tracking
+                    solutions using Microsoft Power Platform
+                    and SharePoint.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <span>IT OPERATIONS</span>
+
+                <h3>
+                    Enterprise L2 IT Support
+                </h3>
+
+                <p>
+                    Resolving complex technical issues involving
+                    networks, VPN, systems, endpoints, printers,
+                    email, user accounts and enterprise applications.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <span>IT OPERATIONS</span>
+
+                <h3>
+                    Technical Documentation
+                </h3>
+
+                <p>
+                    Maintaining clear technical documentation,
+                    troubleshooting procedures, infrastructure
+                    records and operational knowledge.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TECHNOLOGY STACK ================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-label">
+            TECHNOLOGY STACK
+        </div>
+
+        <h2 class="section-title">
+            Enterprise tools I work with every day.
+        </h2>
+
+        <div class="technology-cloud">
+
+            <span>Cisco Routing & Switching</span>
+            <span>Fortinet Firewall</span>
+            <span>Microsoft Azure</span>
+            <span>Microsoft Entra ID</span>
+            <span>Microsoft Intune</span>
+            <span>Windows Server & AD</span>
+            <span>VPN & Network Security</span>
+            <span>Microsoft 365</span>
+            <span>Windows Autopilot</span>
+            <span>Oracle Database 10g</span>
+            <span>Cisco & Avaya Telephony</span>
+            <span>IP Surveillance</span>
+            <span>ITSM</span>
+            <span>Incident Management</span>
+            <span>Remote Support</span>
+            <span>Technical Documentation</span>
+            <span>Power BI</span>
+            <span>SharePoint</span>
+            <span>Power Apps</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INFRASTRUCTURE FLOW ================= -->
+
+<section class="section section-dark">
+
+    <div class="container">
+
+        <div class="section-label">
+            INFRASTRUCTURE FLOW
+        </div>
+
+        <h2 class="section-title left">
+            From Network Infrastructure to Cloud
+        </h2>
+
+        <p class="flow-description">
+
+            A practical view of the enterprise technology path —
+            from users and connectivity through security, cloud
+            identity and endpoint management.
+
+        </p>
+
+
+        <div class="flow-box">
+
+            <div class="flow-item">
+                <strong>END USERS</strong>
+                <span>Devices, applications and day-to-day support</span>
+            </div>
+
+            <div class="flow-line"></div>
+
+            <div class="flow-item">
+                <strong>LAN</strong>
+                <span>Local connectivity, VLANs and endpoint access</span>
+            </div>
+
+            <div class="flow-line"></div>
+
+            <div class="flow-item">
+                <strong>CISCO SWITCHING</strong>
+                <span>LAN segmentation and network access</span>
+            </div>
+
+            <div class="flow-line"></div>
+
+            <div class="flow-item">
+                <strong>CISCO ROUTING</strong>
+                <span>WAN connectivity and traffic paths</span>
+            </div>
+
+            <div class="flow-line"></div>
+
+            <div class="flow-item security-flow">
+                <strong>FORTINET FIREWALL</strong>
+                <span>Policies, security controls and protected access</span>
+            </div>
+
+            <div class="flow-line"></div>
+
+            <div class="flow-item cloud-flow">
+                <strong>VPN / INTERNET → AZURE → ENTRA ID → INTUNE → MICROSOFT 365</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY HIRE ================= -->
+
+<section class="section">
+
+    <div class="container why-grid">
+
+        <div class="why-content">
+
+            <div class="section-label">
+                WHY HIRE ME
+            </div>
+
+            <h2 class="section-title left">
+                A practical Network & IT Support Engineer
+                for enterprise environments.
+            </h2>
+
+            <p>
+                I bring 16+ years of hands-on experience
+                supporting the infrastructure people rely on
+                every day — from connectivity and security
+                to cloud services, systems, endpoints and
+                user support.
+            </p>
+
+        </div>
+
+
+        <div class="why-list">
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Business-focused technical decision-making
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Hands-on security and infrastructure ownership
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Clear coordination across technical teams
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Network + Cloud + IT Support expertise
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Strong troubleshooting and incident management
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact-section">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div class="section-label">
+                CONTACT ME
+            </div>
+
+            <h2>
+                Let's build dependable infrastructure.
+            </h2>
+
+            <p>
+                Available for network, cloud, infrastructure
+                and technical leadership opportunities across
+                Saudi Arabia and the GCC.
+            </p>
+
+            <div class="contact-buttons">
+
+                <a href="mailto:tanweeromn@gmail.com"
+                   class="btn btn-light">
+
+                    <i class="fa-regular fa-envelope"></i>
+
+                    tanweeromn@gmail.com
+
+                </a>
+
+                <a href="https://www.linkedin.com/in/tanweeransari21"
+                   target="_blank"
+                   class="btn btn-outline-light">
+
+                    <i class="fa-brands fa-linkedin-in"></i>
+
+                    Connect on LinkedIn
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
-  © <span id="year"></span> Tanweer Ansari • Network & Cloud Infrastructure Engineer
+
+    <div class="container footer-content">
+
+        <div>
+            <strong>
+                Tanweer Ansari
+            </strong>
+
+            <span>
+                · Network & IT Support Engineer
+            </span>
+        </div>
+
+        <a href="#home">
+            Open to New Opportunities
+        </a>
+
+    </div>
+
 </footer>
 
-<script>
-// Mobile menu
-const menu = document.getElementById("menu");
-const navLinks = document.getElementById("navLinks");
-menu.addEventListener("click",()=>navLinks.classList.toggle("open"));
-document.querySelectorAll(".nav-links a").forEach(a=>{
-  a.addEventListener("click",()=>navLinks.classList.remove("open"));
-});
 
-// Scroll reveal
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting) entry.target.classList.add("show");
-  });
-},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+<button id="backTop">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
 
-// Year
-document.getElementById("year").textContent = new Date().getFullYear();
 
-// Animated star/particle background
-const canvas = document.getElementById("stars");
-const ctx = canvas.getContext("2d");
-let particles=[];
-function resize(){
-  canvas.width=innerWidth;canvas.height=innerHeight;
-  particles=Array.from({length:Math.min(130,Math.floor(innerWidth/9))},()=>({
-    x:Math.random()*canvas.width,y:Math.random()*canvas.height,
-    r:Math.random()*1.7+.3,
-    dx:(Math.random()-.5)*.35,dy:(Math.random()-.5)*.35
-  }));
-}
-function animate(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  particles.forEach(p=>{
-    p.x+=p.dx;p.y+=p.dy;
-    if(p.x<0)p.x=canvas.width;if(p.x>canvas.width)p.x=0;
-    if(p.y<0)p.y=canvas.height;if(p.y>canvas.height)p.y=0;
-    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle="rgba(130,220,255,.65)";ctx.fill();
-  });
-  requestAnimationFrame(animate);
-}
-addEventListener("resize",resize);
-resize();animate();
+<script src="script.js"></script>
 
-// Subtle mouse parallax for the 3D cube
-const cube=document.querySelector(".cube");
-document.addEventListener("mousemove",e=>{
-  if(innerWidth>800){
-    const x=(e.clientX/innerWidth-.5)*12;
-    const y=(e.clientY/innerHeight-.5)*12;
-    cube.style.filter=`drop-shadow(${x}px ${y}px 25px rgba(80,220,255,.10))`;
-  }
-});
-</script>
 </body>
 </html>

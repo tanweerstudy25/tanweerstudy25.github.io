@@ -5411,3 +5411,55 @@ section[id] {
         font-size: 14px;
     }
 }
+/* =========================================
+   FIX CERTIFICATE IMAGE VISIBILITY
+   ========================================= */
+
+.cert-card {
+    position: relative !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+    min-height: 300px !important;
+}
+
+/* Force certificate image to appear */
+.cert-card img {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 300px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: #ffffff !important;
+    position: relative !important;
+    z-index: 2 !important;
+
+    filter: none !important;
+    transform: none !important;
+}
+
+/* Keep image clear even on hover */
+.cert-card:hover img {
+    opacity: 1 !important;
+    visibility: visible !important;
+    filter: brightness(1.05) contrast(1.05) saturate(1.05) !important;
+    transform: scale(1.02) !important;
+}
+
+/* Don't let the shine layer cover the certificate */
+.cert-card::before {
+    z-index: 10 !important;
+    pointer-events: none !important;
+}
+
+/* Certificate remains above card background */
+.cert-card img {
+    z-index: 3 !important;
+}
+
+/* Make shine transparent so certificate is still clearly visible */
+.cert-card:hover::before {
+    opacity: 0.18 !important;
+}

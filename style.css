@@ -3349,3 +3349,693 @@ body.theme-green
     }
 
 }
+/* =========================================================
+   FINAL PREMIUM TOP NAVIGATION
+   ========================================================= */
+
+/* Hide TANWEER logo completely */
+.navbar .logo {
+    display: none !important;
+}
+
+
+/* =========================================================
+   NAVBAR LAYOUT
+   ========================================================= */
+
+.nav-container {
+    width: min(1400px, 96%) !important;
+
+    height: 82px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 22px !important;
+}
+
+
+/* =========================================================
+   MAIN MENU
+   ========================================================= */
+
+.nav-container nav {
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 9px !important;
+
+    margin: 0 !important;
+}
+
+
+/* =========================================================
+   ALL MENU BUTTONS
+   ========================================================= */
+
+.nav-container nav a {
+
+    position: relative;
+
+    display: inline-flex !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 92px !important;
+
+    height: 48px !important;
+
+    padding: 0 18px !important;
+
+    border-radius: 13px !important;
+
+    font-size: 15px !important;
+
+    font-weight: 750 !important;
+
+    letter-spacing: .25px;
+
+    color: #aebfd3 !important;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid rgba(100,160,220,.12);
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform .25s ease,
+        color .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SHINE EFFECT
+   ========================================================= */
+
+.nav-container nav a::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -130%;
+
+    width: 75%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition:
+        left .55s ease;
+
+    pointer-events: none;
+}
+
+
+.nav-container nav a:hover::before {
+
+    left: 150%;
+
+}
+
+
+/* =========================================================
+   3D HOVER
+   ========================================================= */
+
+.nav-container nav a:hover {
+
+    transform:
+        perspective(700px)
+        rotateX(8deg)
+        translateY(-5px)
+        scale(1.07);
+
+    color: #ffffff !important;
+
+    background:
+        rgba(255,255,255,.09);
+
+    border-color:
+        var(--nav-color) !important;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.35),
+        0 0 22px var(--nav-glow);
+
+    animation:
+        navPulse .7s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   LITTLE BLINK / GLOW
+   ========================================================= */
+
+@keyframes navPulse {
+
+    from {
+        filter: brightness(1);
+    }
+
+    to {
+        filter: brightness(1.28);
+    }
+
+}
+
+
+/* =========================================================
+   HOME - BLUE
+   ========================================================= */
+
+.nav-container nav a:nth-child(1) {
+
+    --nav-color: #38bdf8;
+
+    --nav-glow:
+        rgba(56,189,248,.55);
+}
+
+
+.nav-container nav a:nth-child(1):hover {
+
+    color: #38bdf8 !important;
+
+}
+
+
+/* =========================================================
+   ABOUT - PURPLE
+   ========================================================= */
+
+.nav-container nav a:nth-child(2) {
+
+    --nav-color: #a855f7;
+
+    --nav-glow:
+        rgba(168,85,247,.55);
+}
+
+
+.nav-container nav a:nth-child(2):hover {
+
+    color: #c084fc !important;
+
+}
+
+
+/* =========================================================
+   SKILLS - CYAN
+   ========================================================= */
+
+.nav-container nav a:nth-child(3) {
+
+    --nav-color: #06b6d4;
+
+    --nav-glow:
+        rgba(6,182,212,.55);
+}
+
+
+.nav-container nav a:nth-child(3):hover {
+
+    color: #22d3ee !important;
+
+}
+
+
+/* =========================================================
+   EXPERIENCE - ORANGE
+   ========================================================= */
+
+.nav-container nav a:nth-child(4) {
+
+    --nav-color: #f97316;
+
+    --nav-glow:
+        rgba(249,115,22,.55);
+}
+
+
+.nav-container nav a:nth-child(4):hover {
+
+    color: #fb923c !important;
+
+}
+
+
+/* =========================================================
+   CERTIFICATIONS - GREEN
+   ========================================================= */
+
+.nav-container nav a:nth-child(5) {
+
+    --nav-color: #22c55e;
+
+    --nav-glow:
+        rgba(34,197,94,.55);
+}
+
+
+.nav-container nav a:nth-child(5):hover {
+
+    color: #4ade80 !important;
+
+}
+
+
+/* =========================================================
+   PROJECTS - PINK
+   ========================================================= */
+
+.nav-container nav a:nth-child(6) {
+
+    --nav-color: #ec4899;
+
+    --nav-glow:
+        rgba(236,72,153,.55);
+}
+
+
+.nav-container nav a:nth-child(6):hover {
+
+    color: #f472b6 !important;
+
+}
+
+
+/* =========================================================
+   CONTACT - YELLOW / GOLD
+   ========================================================= */
+
+.nav-container nav a:nth-child(7) {
+
+    --nav-color: #facc15;
+
+    --nav-glow:
+        rgba(250,204,21,.55);
+}
+
+
+.nav-container nav a:nth-child(7):hover {
+
+    color: #fde047 !important;
+
+}
+
+
+/* =========================================================
+   ACTIVE BUTTON
+   ========================================================= */
+
+.nav-container nav a.active {
+
+    color: #ffffff !important;
+
+    border-color:
+        var(--nav-color) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+        0 0 16px var(--nav-glow);
+
+}
+
+
+/* =========================================================
+   RIGHT SIDE BUTTON GROUP
+   ========================================================= */
+
+.nav-buttons {
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 8px !important;
+
+    margin-left: 4px !important;
+}
+
+
+/* =========================================================
+   THEME BUTTON - BIGGER
+   ========================================================= */
+
+#themeToggle {
+
+    width: 50px !important;
+
+    height: 50px !important;
+
+    flex: 0 0 50px;
+
+    border-radius: 13px !important;
+
+    margin: 0 !important;
+
+    border:
+        1px solid rgba(70,160,255,.35) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #102641,
+            #0a192d
+        ) !important;
+
+    box-shadow:
+        0 7px 20px rgba(0,0,0,.25);
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+
+#themeToggle:hover {
+
+    transform:
+        perspective(500px)
+        rotateY(15deg)
+        rotateX(8deg)
+        translateY(-4px)
+        scale(1.08);
+
+    border-color:
+        #39a8ff !important;
+
+    box-shadow:
+        0 0 22px
+        rgba(57,168,255,.45);
+
+}
+
+
+/* Theme icon */
+
+#themeToggle i {
+
+    font-size: 18px;
+
+    transition:
+        transform .3s ease,
+        color .3s ease;
+}
+
+
+#themeToggle:hover i {
+
+    transform:
+        rotate(25deg)
+        scale(1.2);
+
+}
+
+
+/* =========================================================
+   WHATSAPP BUTTON
+   ========================================================= */
+
+.nav-contact.whatsapp-nav {
+
+    min-width: 135px !important;
+
+    height: 50px !important;
+
+    padding:
+        0 22px !important;
+
+    margin: 0 !important;
+
+    border-radius: 13px !important;
+
+    display: inline-flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 9px !important;
+
+    font-size: 15px !important;
+
+    font-weight: 800 !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #25D366,
+            #128C7E
+        ) !important;
+
+    color: #ffffff !important;
+
+    border:
+        1px solid
+        rgba(37,211,102,.65) !important;
+
+    box-shadow:
+        0 8px 25px
+        rgba(37,211,102,.22);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        filter .3s ease;
+}
+
+
+.nav-contact.whatsapp-nav i {
+
+    font-size: 19px;
+
+}
+
+
+.nav-contact.whatsapp-nav:hover {
+
+    transform:
+        perspective(600px)
+        rotateX(7deg)
+        translateY(-5px)
+        scale(1.06);
+
+    filter:
+        brightness(1.12);
+
+    box-shadow:
+        0 12px 35px
+        rgba(37,211,102,.45);
+
+}
+
+
+/* =========================================================
+   WHATSAPP ICON ANIMATION
+   ========================================================= */
+
+.nav-contact.whatsapp-nav:hover i {
+
+    animation:
+        whatsappBounce .5s ease;
+
+}
+
+
+@keyframes whatsappBounce {
+
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform:
+            scale(1.25)
+            rotate(-10deg);
+    }
+
+    70% {
+        transform:
+            scale(.95)
+            rotate(8deg);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP LARGE SCREEN
+   ========================================================= */
+
+@media (min-width: 1400px) {
+
+    .nav-container {
+
+        width: 1400px !important;
+
+        gap: 30px !important;
+
+    }
+
+    .nav-container nav {
+
+        gap: 11px !important;
+
+    }
+
+    .nav-container nav a {
+
+        min-width: 105px !important;
+
+        height: 52px !important;
+
+        padding:
+            0 20px !important;
+
+        font-size:
+            16px !important;
+
+    }
+
+    #themeToggle {
+
+        width: 52px !important;
+
+        height: 52px !important;
+
+    }
+
+    .nav-contact.whatsapp-nav {
+
+        height: 52px !important;
+
+        min-width: 145px !important;
+
+        font-size: 16px !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .nav-container {
+
+        width: 98% !important;
+
+        gap: 12px !important;
+
+    }
+
+    .nav-container nav {
+
+        gap: 4px !important;
+
+    }
+
+    .nav-container nav a {
+
+        min-width: auto !important;
+
+        padding:
+            0 12px !important;
+
+        font-size:
+            13px !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .nav-container {
+
+        height: 70px !important;
+
+    }
+
+    .nav-container nav {
+
+        gap: 3px !important;
+
+    }
+
+    .nav-container nav a {
+
+        height: 40px !important;
+
+        padding:
+            0 7px !important;
+
+        font-size:
+            10px !important;
+
+        min-width:
+            auto !important;
+
+    }
+
+    #themeToggle {
+
+        width: 42px !important;
+
+        height: 42px !important;
+
+        flex-basis: 42px;
+
+    }
+
+}

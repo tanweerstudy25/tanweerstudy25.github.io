@@ -1498,3 +1498,556 @@ footer {
     }
 
 }
+/* =========================================================
+   TANWEER PORTFOLIO - FINAL VISUAL UPGRADES
+   ========================================================= */
+
+
+/* =========================================================
+   1. HERO - TEXT ABOVE IMAGE
+   ========================================================= */
+
+.hero {
+    min-height: auto !important;
+    padding-top: 125px !important;
+    padding-bottom: 45px !important;
+
+    display: block !important;
+
+    background-image: none !important;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hero text area */
+
+.hero-content {
+    width: min(1180px, 92%) !important;
+    max-width: 1050px !important;
+
+    margin: 0 auto 40px auto !important;
+
+    text-align: left;
+
+    position: relative;
+    z-index: 5;
+}
+
+/* Make heading cleaner */
+
+.hero h1 {
+    font-size: clamp(52px, 7vw, 82px) !important;
+    margin-bottom: 12px !important;
+}
+
+.hero h2 {
+    margin-bottom: 20px !important;
+}
+
+/* Hero text */
+
+.hero p {
+    max-width: 950px !important;
+}
+
+/* =========================================================
+   HERO IMAGE BANNER
+   ========================================================= */
+
+.hero::after {
+    content: "";
+
+    display: block;
+
+    width: min(1180px, 92%);
+    height: min(430px, 36vw);
+
+    min-height: 300px;
+
+    margin: 0 auto;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(4,16,31,.02),
+            rgba(4,16,31,.12)
+        ),
+        url("tanweer-hero.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    border: 1px solid rgba(57,168,255,.35);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 0 0 1px rgba(57,168,255,.08),
+        0 20px 70px rgba(0,0,0,.45),
+        0 0 50px rgba(30,130,255,.08);
+
+    position: relative;
+    z-index: 3;
+}
+
+
+/* =========================================================
+   HERO IMAGE GLOW
+   ========================================================= */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: 5%;
+    bottom: 0;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(35,150,255,.12),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   2. INFRASTRUCTURE FLOW
+   ANIMATED BLUE VERTICAL CONNECTION
+   ========================================================= */
+
+.flow-line {
+    width: 3px !important;
+
+    height: 35px !important;
+
+    margin: 0 auto !important;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(57,168,255,.15),
+            rgba(57,168,255,.35)
+        ) !important;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 8px rgba(57,168,255,.25);
+}
+
+
+/* Moving light */
+
+.flow-line::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: -100%;
+
+    width: 100%;
+    height: 70%;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            #39a8ff,
+            #ffffff,
+            #39a8ff,
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px #39a8ff,
+        0 0 20px rgba(57,168,255,.8);
+
+    animation:
+        flowPulse 1.5s linear infinite;
+}
+
+
+@keyframes flowPulse {
+
+    0% {
+        top: -80%;
+    }
+
+    100% {
+        top: 110%;
+    }
+
+}
+
+
+/* Flow boxes hover */
+
+.flow-item {
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.flow-item:hover {
+
+    transform: scale(1.015);
+
+    border-color:
+        rgba(57,168,255,.65);
+
+    box-shadow:
+        0 0 25px rgba(57,168,255,.12);
+}
+
+
+/* =========================================================
+   3. THREE COLOR THEMES
+   ========================================================= */
+
+
+/* DEFAULT BLUE */
+
+:root {
+
+    --blue: #39a8ff;
+    --blue-light: #58b8ff;
+
+    --purple: #8b5cf6;
+
+    --pink: #e946d7;
+
+}
+
+
+/* PURPLE THEME */
+
+body.theme-purple {
+
+    --blue: #a855f7;
+    --blue-light: #c084fc;
+
+    --purple: #ec4899;
+
+    --pink: #f472b6;
+
+}
+
+
+/* GREEN / CYBER THEME */
+
+body.theme-green {
+
+    --blue: #22c55e;
+    --blue-light: #4ade80;
+
+    --purple: #06b6d4;
+
+    --pink: #14b8a6;
+
+}
+
+
+/* Theme transition */
+
+body,
+.navbar,
+.stat-card,
+.skill-card,
+.cert-card,
+.project-card,
+.mini-card,
+.flow-item,
+.flow-box,
+.contact-box,
+.technology-cloud span {
+
+    transition:
+        background-color .45s ease,
+        border-color .45s ease,
+        color .45s ease,
+        box-shadow .45s ease;
+}
+
+
+/* =========================================================
+   THEME BUTTON
+   ========================================================= */
+
+.icon-btn {
+
+    position: relative;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        border-color .3s ease;
+
+}
+
+
+.icon-btn:hover {
+
+    transform:
+        rotate(20deg)
+        scale(1.08);
+
+    border-color:
+        var(--blue);
+
+    box-shadow:
+        0 0 18px rgba(57,168,255,.25);
+
+}
+
+
+/* Theme indicator */
+
+.icon-btn::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    right: 5px;
+    bottom: 5px;
+
+    border-radius: 50%;
+
+    background:
+        var(--blue);
+
+    box-shadow:
+        0 0 8px var(--blue);
+
+}
+
+
+/* =========================================================
+   NAV CONTACT
+   ========================================================= */
+
+.nav-contact {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--purple)
+        ) !important;
+
+    box-shadow:
+        0 8px 25px rgba(80,120,255,.15);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.nav-contact:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(80,120,255,.3);
+
+}
+
+
+/* =========================================================
+   BUTTON COLORS FOLLOW THEME
+   ========================================================= */
+
+.btn-primary {
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--purple)
+        ) !important;
+
+}
+
+
+.section-label,
+.hero h2,
+.hero-meta i,
+.project-card > span,
+.logo span {
+
+    color:
+        var(--blue) !important;
+
+}
+
+
+/* =========================================================
+   FLOW SPECIAL EFFECT
+   ========================================================= */
+
+.security-flow {
+
+    border-color:
+        color-mix(
+            in srgb,
+            var(--purple) 55%,
+            transparent
+        ) !important;
+
+}
+
+
+.cloud-flow {
+
+    border-color:
+        color-mix(
+            in srgb,
+            var(--purple) 55%,
+            transparent
+        ) !important;
+
+}
+
+
+/* =========================================================
+   MOBILE HERO
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+
+        padding-top: 105px !important;
+        padding-bottom: 30px !important;
+
+    }
+
+    .hero-content {
+
+        text-align: center;
+
+        margin-bottom: 30px !important;
+
+    }
+
+    .hero-buttons {
+
+        justify-content: center;
+
+    }
+
+    .hero-meta {
+
+        justify-content: center;
+
+    }
+
+    .hero::after {
+
+        width: 92%;
+
+        height: 260px;
+
+        min-height: 260px;
+
+        border-radius: 16px;
+
+        background-position: center;
+
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA HERO ANIMATION
+   ========================================================= */
+
+.hero-content {
+
+    animation:
+        heroContentIn .9s ease both;
+
+}
+
+
+@keyframes heroContentIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* Image entrance */
+
+.hero::after {
+
+    animation:
+        heroImageIn 1.1s ease .15s both;
+
+}
+
+
+@keyframes heroImageIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(.98);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}

@@ -1,4 +1,3 @@
-```html id="k2m8qa"
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,14 +64,13 @@
         :root {
 
             --neon: #39ffb0;
-
             --cyan: #35d9ff;
-
             --blue: #4d8dff;
-
             --purple: #a56cff;
+            --pink: #ff4dca;
+            --orange: #ffb347;
 
-            --bg: #050b10;
+            --bg: #03070d;
 
             --panel: rgba(255,255,255,.045);
 
@@ -82,6 +80,7 @@
 
             --muted: #8ea0a8;
 
+            --nav-height: 74px;
         }
 
 
@@ -101,37 +100,160 @@
 
             font-family: "Inter", sans-serif;
 
-            background:
-
-                radial-gradient(
-                    circle at 15% 15%,
-                    rgba(57,255,176,.09),
-                    transparent 30%
-                ),
-
-                radial-gradient(
-                    circle at 85% 20%,
-                    rgba(53,217,255,.08),
-                    transparent 30%
-                ),
-
-                radial-gradient(
-                    circle at 50% 90%,
-                    rgba(165,108,255,.07),
-                    transparent 35%
-                ),
-
-                var(--bg);
-
             color: var(--text);
 
             overflow-x: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(57,255,176,.15),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 90% 15%,
+                    rgba(53,217,255,.14),
+                    transparent 27%
+                ),
+
+                radial-gradient(
+                    circle at 80% 65%,
+                    rgba(165,108,255,.12),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 15% 80%,
+                    rgba(255,77,202,.08),
+                    transparent 28%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #02060b,
+                    #06131c 45%,
+                    #030810
+                );
 
         }
 
 
         /* =====================================================
-           3D CANVAS
+           IT WALLPAPER GRID
+        ====================================================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -5;
+
+            pointer-events: none;
+
+            opacity: .20;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(53,217,255,.08) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(53,217,255,.08) 1px,
+                    transparent 1px
+                );
+
+            background-size:
+                55px 55px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 85%
+                );
+
+        }
+
+
+        /* =====================================================
+           IT GLOW WALLPAPER
+        ====================================================== */
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -6;
+
+            pointer-events: none;
+
+            background:
+
+                radial-gradient(
+                    circle at 25% 25%,
+                    rgba(57,255,176,.12),
+                    transparent 18%
+                ),
+
+                radial-gradient(
+                    circle at 75% 35%,
+                    rgba(77,141,255,.12),
+                    transparent 20%
+                ),
+
+                radial-gradient(
+                    circle at 45% 75%,
+                    rgba(165,108,255,.10),
+                    transparent 22%
+                );
+
+            animation:
+                wallpaperGlow 12s ease-in-out infinite alternate;
+
+        }
+
+
+        @keyframes wallpaperGlow {
+
+            0% {
+                transform:
+                    scale(1)
+                    rotate(0deg);
+                opacity: .7;
+            }
+
+            50% {
+                transform:
+                    scale(1.08)
+                    rotate(1deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    scale(1)
+                    rotate(-1deg);
+                opacity: .75;
+            }
+
+        }
+
+
+        /* =====================================================
+           THREE.JS CANVAS
         ====================================================== */
 
         #skillsCanvas {
@@ -144,7 +266,7 @@
 
             height: 100%;
 
-            z-index: -3;
+            z-index: -4;
 
             pointer-events: none;
 
@@ -157,7 +279,7 @@
 
             inset: 0;
 
-            z-index: -2;
+            z-index: -3;
 
             pointer-events: none;
 
@@ -165,8 +287,8 @@
 
                 linear-gradient(
                     180deg,
-                    rgba(5,11,16,.35),
-                    rgba(5,11,16,.9)
+                    rgba(2,7,13,.20),
+                    rgba(2,7,13,.72)
                 );
 
         }
@@ -191,14 +313,15 @@
             position: relative;
 
             padding:
-                150px 20px 90px;
+                145px 20px 75px;
 
         }
 
 
         .hero-inner {
 
-            width: min(1000px, 92%);
+            width:
+                min(1000px, 92%);
 
         }
 
@@ -244,13 +367,19 @@
         @keyframes pulseBadge {
 
             0%,100% {
+
                 box-shadow:
-                    0 0 20px rgba(57,255,176,.05);
+                    0 0 20px
+                    rgba(57,255,176,.05);
+
             }
 
             50% {
+
                 box-shadow:
-                    0 0 35px rgba(57,255,176,.2);
+                    0 0 40px
+                    rgba(57,255,176,.25);
+
             }
 
         }
@@ -270,6 +399,9 @@
 
             letter-spacing: -5px;
 
+            text-shadow:
+                0 0 40px rgba(53,217,255,.08);
+
         }
 
 
@@ -278,7 +410,32 @@
             color: var(--neon);
 
             text-shadow:
-                0 0 25px rgba(57,255,176,.3);
+                0 0 25px
+                rgba(57,255,176,.3);
+
+            animation:
+                neonText 3s ease-in-out infinite;
+
+        }
+
+
+        @keyframes neonText {
+
+            0%,100% {
+
+                text-shadow:
+                    0 0 20px
+                    rgba(57,255,176,.20);
+
+            }
+
+            50% {
+
+                text-shadow:
+                    0 0 45px
+                    rgba(57,255,176,.55);
+
+            }
 
         }
 
@@ -322,7 +479,8 @@
 
             min-width: 150px;
 
-            padding: 18px 22px;
+            padding:
+                18px 22px;
 
             border:
                 1px solid var(--border);
@@ -330,7 +488,8 @@
             background:
                 rgba(255,255,255,.035);
 
-            backdrop-filter: blur(15px);
+            backdrop-filter:
+                blur(15px);
 
             border-radius: 16px;
 
@@ -347,6 +506,10 @@
 
             border-color:
                 rgba(57,255,176,.4);
+
+            box-shadow:
+                0 15px 40px
+                rgba(57,255,176,.08);
 
         }
 
@@ -376,25 +539,64 @@
 
 
         /* =====================================================
-           MARQUEE
+           FAST STICKY MARQUEE
         ====================================================== */
 
         .marquee {
+
+            position: sticky;
+
+            top: var(--nav-height);
+
+            z-index: 999;
 
             width: 100%;
 
             overflow: hidden;
 
             border-top:
-                1px solid rgba(255,255,255,.06);
+                1px solid rgba(255,255,255,.08);
 
             border-bottom:
-                1px solid rgba(255,255,255,.06);
+                1px solid rgba(57,255,176,.20);
 
             background:
-                rgba(255,255,255,.025);
+                rgba(3,9,15,.82);
 
-            padding: 18px 0;
+            backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
+
+            padding:
+                15px 0;
+
+            box-shadow:
+                0 10px 35px
+                rgba(0,0,0,.25);
+
+        }
+
+
+        .marquee::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(57,255,176,.05),
+                    transparent 25%,
+                    transparent 75%,
+                    rgba(53,217,255,.05)
+                );
+
+            pointer-events: none;
 
         }
 
@@ -406,15 +608,10 @@
             width: max-content;
 
             animation:
-                marquee 32s linear infinite;
+                marqueeFast 14s linear infinite;
 
-        }
-
-
-        .marquee:hover
-        .marquee-track {
-
-            animation-play-state: paused;
+            will-change:
+                transform;
 
         }
 
@@ -427,17 +624,21 @@
 
             gap: 10px;
 
-            margin-right: 45px;
+            margin-right: 55px;
 
-            color: #9fb0b6;
+            color: #b7c5ca;
 
             font-size: 12px;
 
-            font-weight: 700;
+            font-weight: 800;
 
-            letter-spacing: 1.5px;
+            letter-spacing: 1.7px;
 
             white-space: nowrap;
+
+            text-shadow:
+                0 0 12px
+                rgba(57,255,176,.12);
 
         }
 
@@ -446,17 +647,29 @@
 
             color: var(--neon);
 
+            filter:
+                drop-shadow(
+                    0 0 7px
+                    rgba(57,255,176,.6)
+                );
+
         }
 
 
-        @keyframes marquee {
+        @keyframes marqueeFast {
 
             from {
-                transform: translateX(0);
+
+                transform:
+                    translate3d(0,0,0);
+
             }
 
             to {
-                transform: translateX(-50%);
+
+                transform:
+                    translate3d(-50%,0,0);
+
             }
 
         }
@@ -474,7 +687,7 @@
             margin: auto;
 
             padding:
-                100px 0;
+                95px 0;
 
         }
 
@@ -558,9 +771,10 @@
             border-radius: 24px;
 
             background:
+
                 linear-gradient(
                     145deg,
-                    rgba(255,255,255,.07),
+                    rgba(255,255,255,.075),
                     rgba(255,255,255,.018)
                 );
 
@@ -568,6 +782,9 @@
                 1px solid var(--border);
 
             backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
                 blur(18px);
 
             overflow: hidden;
@@ -598,13 +815,41 @@
             background:
                 var(--glow);
 
-            opacity: .08;
+            opacity: .10;
 
-            filter: blur(25px);
+            filter:
+                blur(30px);
 
             top: -100px;
 
             right: -100px;
+
+        }
+
+
+        .skill-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 120px;
+
+            height: 120px;
+
+            border-radius: 50%;
+
+            background:
+                var(--glow);
+
+            opacity: .04;
+
+            filter:
+                blur(25px);
+
+            bottom: -60px;
+
+            left: -60px;
 
         }
 
@@ -615,8 +860,12 @@
                 rgba(57,255,176,.45);
 
             box-shadow:
-                0 30px 80px rgba(0,0,0,.35),
-                0 0 40px rgba(57,255,176,.05);
+
+                0 30px 80px
+                rgba(0,0,0,.35),
+
+                0 0 40px
+                rgba(57,255,176,.07);
 
         }
 
@@ -658,7 +907,8 @@
                 rgba(57,255,176,.07);
 
             border:
-                1px solid rgba(57,255,176,.2);
+                1px solid
+                rgba(57,255,176,.2);
 
             font-size: 25px;
 
@@ -726,7 +976,8 @@
                 rgba(255,255,255,.035);
 
             border:
-                1px solid rgba(255,255,255,.07);
+                1px solid
+                rgba(255,255,255,.07);
 
             color: #b8c4c8;
 
@@ -754,7 +1005,7 @@
 
 
         /* =====================================================
-           EXPERTISE BAR
+           EXPERTISE
         ====================================================== */
 
         .expertise {
@@ -808,6 +1059,7 @@
             border-radius: inherit;
 
             background:
+
                 linear-gradient(
                     90deg,
                     var(--neon),
@@ -815,7 +1067,8 @@
                 );
 
             box-shadow:
-                0 0 15px rgba(57,255,176,.45);
+                0 0 15px
+                rgba(57,255,176,.45);
 
             animation:
                 loadBar 1.5s ease forwards;
@@ -839,106 +1092,15 @@
 
 
         /* =====================================================
-           CERTIFICATIONS
+           PROFESSIONAL PRACTICES
         ====================================================== */
 
-        .cert-section {
+        .hobbies {
 
             margin-top: 90px;
 
-            padding:
-                50px 35px;
-
-            border-radius: 25px;
-
-            text-align: center;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(57,255,176,.07),
-                    rgba(53,217,255,.035),
-                    rgba(165,108,255,.05)
-                );
-
-            border:
-                1px solid rgba(255,255,255,.08);
-
         }
 
-
-        .cert-section h2 {
-
-            margin:
-                0 0 30px;
-
-            font-size: 28px;
-
-        }
-
-
-        .cert-grid {
-
-            display: flex;
-
-            justify-content: center;
-
-            flex-wrap: wrap;
-
-            gap: 15px;
-
-        }
-
-
-        .cert {
-
-            padding:
-                14px 20px;
-
-            border-radius: 12px;
-
-            background:
-                rgba(0,0,0,.22);
-
-            border:
-                1px solid rgba(255,255,255,.08);
-
-            color: #dce5e8;
-
-            font-size: 12px;
-
-            font-weight: 700;
-
-            transition: .3s;
-
-        }
-
-
-        .cert:hover {
-
-            transform:
-                translateY(-5px);
-
-            border-color:
-                rgba(57,255,176,.4);
-
-            color: var(--neon);
-
-        }
-
-
-        .cert i {
-
-            color: var(--neon);
-
-            margin-right: 8px;
-
-        }
-
-
-        /* =====================================================
-           PROFESSIONAL PRACTICES
-        ====================================================== */
 
         .practice-grid {
 
@@ -964,7 +1126,8 @@
                 rgba(255,255,255,.03);
 
             border:
-                1px solid rgba(255,255,255,.07);
+                1px solid
+                rgba(255,255,255,.07);
 
             color: #aebbc0;
 
@@ -985,6 +1148,10 @@
             border-color:
                 rgba(57,255,176,.3);
 
+            box-shadow:
+                0 15px 35px
+                rgba(57,255,176,.05);
+
         }
 
 
@@ -1000,13 +1167,6 @@
         /* =====================================================
            HOBBIES
         ====================================================== */
-
-        .hobbies {
-
-            margin-top: 90px;
-
-        }
-
 
         .hobby-grid {
 
@@ -1045,7 +1205,8 @@
                 rgba(255,255,255,.035);
 
             border:
-                1px solid rgba(255,255,255,.07);
+                1px solid
+                rgba(255,255,255,.07);
 
             color: #9eafb5;
 
@@ -1069,6 +1230,10 @@
             border-color:
                 rgba(57,255,176,.35);
 
+            box-shadow:
+                0 20px 45px
+                rgba(0,0,0,.25);
+
         }
 
 
@@ -1077,6 +1242,12 @@
             font-size: 25px;
 
             color: var(--neon);
+
+            filter:
+                drop-shadow(
+                    0 0 8px
+                    rgba(57,255,176,.35)
+                );
 
         }
 
@@ -1093,7 +1264,8 @@
             text-align: center;
 
             border-top:
-                1px solid rgba(255,255,255,.07);
+                1px solid
+                rgba(255,255,255,.07);
 
             color: #65767d;
 
@@ -1140,11 +1312,19 @@
 
         @media(max-width:600px) {
 
+            :root {
+
+                --nav-height: 65px;
+
+            }
+
+
             .skills-hero {
 
                 min-height: 80vh;
 
             }
+
 
             .hero-title {
 
@@ -1154,11 +1334,13 @@
 
             }
 
+
             .hero-metrics {
 
                 gap: 10px;
 
             }
+
 
             .metric {
 
@@ -1166,11 +1348,13 @@
 
             }
 
+
             .skill-card {
 
                 padding: 25px;
 
             }
+
 
             .practice-grid {
 
@@ -1178,16 +1362,58 @@
 
             }
 
+
             .hobby-grid {
 
                 grid-template-columns: 1fr;
 
             }
 
-            .cert-section {
 
-                padding:
-                    35px 20px;
+            .marquee {
+
+                padding: 13px 0;
+
+            }
+
+
+            .marquee-track {
+
+                animation-duration:
+                    10s;
+
+            }
+
+
+            .marquee-item {
+
+                margin-right: 40px;
+
+                font-size: 10px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           REDUCED MOTION
+        ====================================================== */
+
+        @media(prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    .01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                scroll-behavior:
+                    auto !important;
 
             }
 
@@ -1373,17 +1599,6 @@
 
             </div>
 
-
-            <div class="metric">
-
-                <strong>05</strong>
-
-                <span>
-                    Key Certifications
-                </span>
-
-            </div>
-
         </div>
 
     </div>
@@ -1393,7 +1608,7 @@
 
 
 <!-- =====================================================
-     MARQUEE
+     FAST STICKY MARQUEE
 ====================================================== -->
 
 <div class="marquee">
@@ -1442,7 +1657,7 @@
         </div>
 
 
-        <!-- DUPLICATE FOR INFINITE LOOP -->
+        <!-- INFINITE LOOP COPY -->
 
         <div class="marquee-item">
             <i class="fa-solid fa-network-wired"></i>
@@ -1522,7 +1737,9 @@
     <div class="skill-grid">
 
 
-        <!-- NETWORKING -->
+        <!-- =================================================
+             NETWORKING
+        ================================================== -->
 
         <article class="skill-card"
                  style="--glow:#39ffb0;">
@@ -1573,9 +1790,13 @@
 
                 <div class="expertise-label">
 
-                    <span>Enterprise Networking</span>
+                    <span>
+                        Enterprise Networking
+                    </span>
 
-                    <span>Expertise</span>
+                    <span>
+                        Expertise
+                    </span>
 
                 </div>
 
@@ -1589,7 +1810,9 @@
 
 
 
-        <!-- SECURITY -->
+        <!-- =================================================
+             SECURITY
+        ================================================== -->
 
         <article class="skill-card"
                  style="--glow:#ff5c7a;">
@@ -1635,9 +1858,13 @@
 
                 <div class="expertise-label">
 
-                    <span>Security Operations</span>
+                    <span>
+                        Security Operations
+                    </span>
 
-                    <span>Expertise</span>
+                    <span>
+                        Expertise
+                    </span>
 
                 </div>
 
@@ -1651,7 +1878,9 @@
 
 
 
-        <!-- AZURE -->
+        <!-- =================================================
+             AZURE
+        ================================================== -->
 
         <article class="skill-card"
                  style="--glow:#35d9ff;">
@@ -1698,9 +1927,13 @@
 
                 <div class="expertise-label">
 
-                    <span>Cloud Infrastructure</span>
+                    <span>
+                        Cloud Infrastructure
+                    </span>
 
-                    <span>Expertise</span>
+                    <span>
+                        Expertise
+                    </span>
 
                 </div>
 
@@ -1714,7 +1947,9 @@
 
 
 
-        <!-- MICROSOFT CLOUD -->
+        <!-- =================================================
+             MICROSOFT CLOUD
+        ================================================== -->
 
         <article class="skill-card"
                  style="--glow:#4d8dff;">
@@ -1761,9 +1996,13 @@
 
                 <div class="expertise-label">
 
-                    <span>Microsoft Platform</span>
+                    <span>
+                        Microsoft Platform
+                    </span>
 
-                    <span>Expertise</span>
+                    <span>
+                        Expertise
+                    </span>
 
                 </div>
 
@@ -1777,7 +2016,9 @@
 
 
 
-        <!-- SYSTEMS -->
+        <!-- =================================================
+             SYSTEMS
+        ================================================== -->
 
         <article class="skill-card"
                  style="--glow:#a56cff;">
@@ -1824,9 +2065,13 @@
 
                 <div class="expertise-label">
 
-                    <span>Systems Support</span>
+                    <span>
+                        Systems Support
+                    </span>
 
-                    <span>Expertise</span>
+                    <span>
+                        Expertise
+                    </span>
 
                 </div>
 
@@ -1840,7 +2085,9 @@
 
 
 
-        <!-- IT OPERATIONS -->
+        <!-- =================================================
+             IT OPERATIONS
+        ================================================== -->
 
         <article class="skill-card"
                  style="--glow:#ffb347;">
@@ -1887,9 +2134,13 @@
 
                 <div class="expertise-label">
 
-                    <span>Enterprise Support</span>
+                    <span>
+                        Enterprise Support
+                    </span>
 
-                    <span>Expertise</span>
+                    <span>
+                        Expertise
+                    </span>
 
                 </div>
 
@@ -1903,7 +2154,9 @@
 
 
 
-        <!-- CCTV -->
+        <!-- =================================================
+             CCTV
+        ================================================== -->
 
         <article class="skill-card"
                  style="--glow:#ff4dca;">
@@ -1948,7 +2201,9 @@
 
 
 
-        <!-- DATABASE -->
+        <!-- =================================================
+             DATABASE
+        ================================================== -->
 
         <article class="skill-card"
                  style="--glow:#8df56a;">
@@ -1993,74 +2248,6 @@
 
 
     </div>
-
-
-
-    <!-- =====================================================
-         CERTIFICATIONS
-    ====================================================== -->
-
-    <section class="cert-section">
-
-        <h2>
-
-            <i class="fa-solid fa-award"
-               style="color:var(--neon);"></i>
-
-            Professional Certifications
-
-        </h2>
-
-
-        <div class="cert-grid">
-
-            <div class="cert">
-
-                <i class="fa-solid fa-network-wired"></i>
-
-                CCNA / CCNP
-
-            </div>
-
-
-            <div class="cert">
-
-                <i class="fa-brands fa-microsoft"></i>
-
-                AZ-104
-
-            </div>
-
-
-            <div class="cert">
-
-                <i class="fa-solid fa-cloud"></i>
-
-                AZ-700
-
-            </div>
-
-
-            <div class="cert">
-
-                <i class="fa-solid fa-shield-halved"></i>
-
-                Fortinet NSE 4
-
-            </div>
-
-
-            <div class="cert">
-
-                <i class="fa-solid fa-gears"></i>
-
-                ITIL v4
-
-            </div>
-
-        </div>
-
-    </section>
 
 
 
@@ -2288,7 +2475,10 @@
     const canvas =
         document.getElementById("skillsCanvas");
 
-    if (!canvas || typeof THREE === "undefined") {
+    if (
+        !canvas ||
+        typeof THREE === "undefined"
+    ) {
         return;
     }
 
@@ -2300,7 +2490,8 @@
     const camera =
         new THREE.PerspectiveCamera(
             65,
-            window.innerWidth / window.innerHeight,
+            window.innerWidth /
+            window.innerHeight,
             0.1,
             1000
         );
@@ -2311,14 +2502,21 @@
 
     const renderer =
         new THREE.WebGLRenderer({
+
             canvas: canvas,
+
             alpha: true,
+
             antialias: true
+
         });
 
 
     renderer.setPixelRatio(
-        Math.min(window.devicePixelRatio, 2)
+        Math.min(
+            window.devicePixelRatio,
+            2
+        )
     );
 
 
@@ -2332,7 +2530,7 @@
        PARTICLES
     ====================================================== */
 
-    const particleCount = 900;
+    const particleCount = 1100;
 
     const positions =
         new Float32Array(
@@ -2347,13 +2545,13 @@
     ) {
 
         positions[i * 3] =
-            (Math.random() - .5) * 70;
+            (Math.random() - .5) * 75;
 
         positions[i * 3 + 1] =
-            (Math.random() - .5) * 45;
+            (Math.random() - .5) * 50;
 
         positions[i * 3 + 2] =
-            (Math.random() - .5) * 45;
+            (Math.random() - .5) * 50;
 
     }
 
@@ -2364,6 +2562,7 @@
 
     geometry.setAttribute(
         "position",
+
         new THREE.BufferAttribute(
             positions,
             3
@@ -2410,7 +2609,9 @@
 
     const nodeMaterial =
         new THREE.MeshBasicMaterial({
+
             color: 0x39ffb0
+
         });
 
 
@@ -2419,7 +2620,7 @@
 
     for (
         let i = 0;
-        i < 55;
+        i < 65;
         i++
     ) {
 
@@ -2431,13 +2632,13 @@
 
 
         node.position.x =
-            (Math.random() - .5) * 45;
+            (Math.random() - .5) * 48;
 
         node.position.y =
-            (Math.random() - .5) * 30;
+            (Math.random() - .5) * 32;
 
         node.position.z =
-            (Math.random() - .5) * 20;
+            (Math.random() - .5) * 22;
 
 
         scene.add(node);
@@ -2449,17 +2650,17 @@
 
 
     /* =====================================================
-       CONNECTION LINES
+       NETWORK CONNECTIONS
     ====================================================== */
 
     const lineMaterial =
         new THREE.LineBasicMaterial({
 
-            color: 0x39ffb0,
+            color: 0x35d9ff,
 
             transparent: true,
 
-            opacity: .09
+            opacity: .10
 
         });
 
@@ -2481,10 +2682,10 @@
 
             const distance =
                 nodes[i]
-                .position
-                .distanceTo(
-                    nodes[j].position
-                );
+                    .position
+                    .distanceTo(
+                        nodes[j].position
+                    );
 
 
             if (distance < 7) {
@@ -2533,15 +2734,17 @@
 
     window.addEventListener(
         "mousemove",
+
         function (event) {
 
             mouseX =
-                (event.clientX /
-                window.innerWidth - .5);
+                event.clientX /
+                window.innerWidth - .5;
+
 
             mouseY =
-                (event.clientY /
-                window.innerHeight - .5);
+                event.clientY /
+                window.innerHeight - .5;
 
         }
     );
@@ -2560,19 +2763,24 @@
 
 
         particles.rotation.y +=
-            0.00025;
+            0.00035;
 
 
         particles.rotation.x +=
-            0.00008;
+            0.00010;
 
 
         nodes.forEach(
-            function (node, index) {
+            function (
+                node,
+                index
+            ) {
 
                 node.position.y +=
+
                     Math.sin(
-                        Date.now() * .0004 +
+                        Date.now() *
+                        .0004 +
                         index
                     ) * .00008;
 
@@ -2581,13 +2789,19 @@
 
 
         scene.rotation.y +=
-            (mouseX * .0007 -
-            scene.rotation.y) * .015;
+
+            (
+                mouseX * .0007 -
+                scene.rotation.y
+            ) * .015;
 
 
         scene.rotation.x +=
-            (-mouseY * .0005 -
-            scene.rotation.x) * .015;
+
+            (
+                -mouseY * .0005 -
+                scene.rotation.x
+            ) * .015;
 
 
         renderer.render(
@@ -2608,11 +2822,13 @@
 
     window.addEventListener(
         "resize",
+
         function () {
 
             camera.aspect =
                 window.innerWidth /
                 window.innerHeight;
+
 
             camera.updateProjectionMatrix();
 
@@ -2642,6 +2858,7 @@
 
             card.addEventListener(
                 "mousemove",
+
                 function (event) {
 
                     const rect =
@@ -2652,22 +2869,30 @@
                         event.clientX -
                         rect.left;
 
+
                     const y =
                         event.clientY -
                         rect.top;
 
 
                     const rotateX =
-                        ((y / rect.height) -
-                        .5) * -8;
+                        (
+                            y /
+                            rect.height -
+                            .5
+                        ) * -8;
 
 
                     const rotateY =
-                        ((x / rect.width) -
-                        .5) * 8;
+                        (
+                            x /
+                            rect.width -
+                            .5
+                        ) * 8;
 
 
                     card.style.transform =
+
                         `perspective(900px)
                          rotateX(${rotateX}deg)
                          rotateY(${rotateY}deg)
@@ -2679,6 +2904,7 @@
 
             card.addEventListener(
                 "mouseleave",
+
                 function () {
 
                     card.style.transform =
@@ -2698,4 +2924,3 @@
 </body>
 
 </html>
-```

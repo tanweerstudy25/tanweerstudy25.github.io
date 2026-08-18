@@ -603,6 +603,228 @@
         line-height: 1.7 !important;
     }
 }
+
+/* =====================================================
+   ABOUT HERO - COMPACT PREMIUM CARD FINAL
+===================================================== */
+
+.about-hero {
+    width: min(1050px, 90%) !important;
+
+    margin: 55px auto 65px !important;
+
+    padding: 38px 42px 34px !important;
+
+    border-radius: 24px !important;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(81, 91, 255, .12),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(12, 32, 56, .98),
+            rgba(7, 23, 43, .98)
+        ) !important;
+
+    border:
+        1px solid rgba(75, 165, 255, .28) !important;
+
+    box-shadow:
+        0 22px 60px rgba(0,0,0,.30),
+        0 0 30px rgba(57,168,255,.06) !important;
+
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+
+/* Card hover */
+
+.about-hero:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(88,184,255,.48) !important;
+
+    box-shadow:
+        0 28px 70px rgba(0,0,0,.36),
+        0 0 35px rgba(57,168,255,.10) !important;
+}
+
+
+/* Small ABOUT ME label */
+
+.about-hero .eyebrow {
+    margin: 0 0 12px !important;
+
+    font-family:
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size: 12px !important;
+
+    font-weight: 800 !important;
+
+    letter-spacing: 3px !important;
+
+    color: #4fc3ff !important;
+
+    text-transform: uppercase;
+}
+
+
+/* Main Heading */
+
+.about-hero h1 {
+    max-width: 900px !important;
+
+    margin: 0 0 22px !important;
+
+    font-family:
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        clamp(38px, 4vw, 58px) !important;
+
+    font-weight: 800 !important;
+
+    line-height: 1.08 !important;
+
+    letter-spacing: -1.8px !important;
+
+    color: #f5f8ff !important;
+}
+
+
+/* Gradient text */
+
+.about-hero .gradient-text {
+    background:
+        linear-gradient(
+            90deg,
+            #4fc3ff,
+            #6594ff,
+            #9b67ff,
+            #f05ab8
+        ) !important;
+
+    -webkit-background-clip: text !important;
+
+    background-clip: text !important;
+
+    -webkit-text-fill-color: transparent !important;
+}
+
+
+/* Paragraph area */
+
+.about-hero .hero-description {
+    max-width: 900px !important;
+
+    margin: 0 !important;
+
+    font-family:
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size: 16px !important;
+
+    font-weight: 400 !important;
+
+    line-height: 1.75 !important;
+
+    color: #aebed2 !important;
+}
+
+
+/* Reduce paragraph spacing */
+
+.about-hero .hero-description br {
+    line-height: 1.4;
+}
+
+
+/* Decorative glow */
+
+.about-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    right: -100px;
+    top: -110px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(70,170,255,.16),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .about-hero {
+        width: 92% !important;
+
+        margin:
+            30px auto
+            45px !important;
+
+        padding:
+            28px 22px !important;
+
+        border-radius:
+            18px !important;
+    }
+
+
+    .about-hero h1 {
+        font-size:
+            35px !important;
+
+        line-height:
+            1.12 !important;
+
+        letter-spacing:
+            -1px !important;
+    }
+
+
+    .about-hero .hero-description {
+        font-size:
+            15px !important;
+
+        line-height:
+            1.7 !important;
+    }
+
+}
         
     </style>
 </head>

@@ -470,6 +470,140 @@
             }
         }
 
+/* =====================================================
+   PREMIUM ABOUT HERO - FINAL OVERRIDE
+===================================================== */
+
+/* About section */
+.about-section,
+.about-hero {
+    padding-top: 85px !important;
+    padding-bottom: 90px !important;
+}
+
+/* ABOUT ME small label */
+.about-section .section-label,
+.about-hero .section-label,
+.about-section .eyebrow,
+.about-hero .eyebrow {
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+    color: #56c8ff !important;
+    margin-bottom: 18px !important;
+}
+
+/* MAIN HEADING */
+.about-section h1,
+.about-section h2,
+.about-hero h1,
+.about-hero h2 {
+    max-width: 1050px !important;
+
+    font-family: "Inter", "Segoe UI", Arial, sans-serif !important;
+
+    font-size: clamp(42px, 4.3vw, 68px) !important;
+    font-weight: 750 !important;
+
+    line-height: 1.08 !important;
+    letter-spacing: -2.2px !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 34px !important;
+
+    color: #f4f8ff !important;
+}
+
+/* Gradient only on highlighted words if spans exist */
+.about-section h1 span,
+.about-section h2 span,
+.about-hero h1 span,
+.about-hero h2 span {
+    background: linear-gradient(
+        90deg,
+        #45caff 0%,
+        #668cff 35%,
+        #a45cff 68%,
+        #f052b5 100%
+    ) !important;
+
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* DESCRIPTION */
+.about-section p,
+.about-hero p {
+    max-width: 940px !important;
+
+    font-family: "Inter", "Segoe UI", Arial, sans-serif !important;
+
+    font-size: 17px !important;
+    font-weight: 400 !important;
+
+    line-height: 1.85 !important;
+    letter-spacing: 0 !important;
+
+    color: #aebfd4 !important;
+
+    margin-bottom: 18px !important;
+}
+
+/* Desktop spacing */
+@media (min-width: 1000px) {
+
+    .about-section .container,
+    .about-hero .container {
+        max-width: 1360px !important;
+        margin: 0 auto !important;
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+    }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+
+    .about-section h1,
+    .about-section h2,
+    .about-hero h1,
+    .about-hero h2 {
+        font-size: 46px !important;
+        letter-spacing: -1.5px !important;
+    }
+
+    .about-section p,
+    .about-hero p {
+        font-size: 16px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .about-section,
+    .about-hero {
+        padding-top: 55px !important;
+    }
+
+    .about-section h1,
+    .about-section h2,
+    .about-hero h1,
+    .about-hero h2 {
+        font-size: 36px !important;
+        line-height: 1.12 !important;
+        letter-spacing: -1px !important;
+    }
+
+    .about-section p,
+    .about-hero p {
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+    }
+}
+        
     </style>
 </head>
 

@@ -1,5465 +1,732 @@
-/* =========================================================
-   GLOBAL
-========================================================= */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <title>Tanweer Ansari | Network & IT Support Engineer</title>
 
-html {
-    scroll-behavior: smooth;
-}
+    <meta name="description"
+          content="Tanweer Ansari - Network & IT Support Engineer with 16+ years of enterprise IT experience across networking, Microsoft Azure, Microsoft 365, Fortinet and infrastructure support.">
 
-:root {
+    <meta name="keywords"
+          content="Tanweer Ansari, Network Engineer, IT Support Engineer, Azure Engineer, Cisco, Fortinet, Microsoft 365, Intune, Entra ID, Saudi Arabia">
 
-    --bg: #061426;
-    --bg-dark: #071a30;
-    --card: #0c1d34;
-    --card-hover: #102641;
+    <meta name="author" content="Tanweer Ansari">
 
-    --text: #f3f7ff;
-    --muted: #9eafc6;
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    --blue: #39a8ff;
-    --blue-light: #58b8ff;
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    --purple: #8b5cf6;
-    --pink: #e946d7;
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    --border: rgba(72, 163, 255, 0.22);
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
-    --shadow:
-        0 20px 50px rgba(0,0,0,.25);
-}
+    <link rel="stylesheet" href="style.css">
+</head>
 
-body {
+<body>
 
-    font-family: "Inter", sans-serif;
+<!-- ================= NAVIGATION ================= -->
 
-    background:
-        radial-gradient(
-            circle at 20% 10%,
-            rgba(40,130,255,.07),
-            transparent 30%
-        ),
-        var(--bg);
+<header class="navbar">
 
-    color: var(--text);
+    <div class="nav-container">
 
-    line-height: 1.6;
+        <a href="#home" class="logo">
+            TANWEER<span>.</span>
+        </a>
 
-    overflow-x: hidden;
-}
+        <nav id="navMenu">
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+            <a href="#home" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="experience.html">Experience</a>
+            <a href="certifications.html">Certifications</a>
+           <a href="projects.html">Projects</a>
+            <a href="#contact">Contact</a>
 
-.container {
+        </nav>
 
-    width: min(1180px, 92%);
+        <div class="nav-buttons">
 
-    margin: auto;
-}
+            <button id="themeToggle" class="icon-btn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
 
-.section {
+            <a href="https://wa.me/966557316795"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="nav-contact whatsapp-nav"
+               title="WhatsApp: +966 55 731 6795">
 
-    padding: 110px 0;
-}
+                <i class="fa-brands fa-whatsapp"></i>
 
-.section-dark {
+                <span>WhatsApp</span>
 
-    background:
-        linear-gradient(
-            180deg,
-            #07182c,
-            #061426
-        );
-}
+            </a>
 
-.section-label {
+            <button id="menuToggle" class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-    color: var(--blue);
+        </div>
 
-    font-size: 13px;
+    </div>
 
-    font-weight: 800;
+</header>
 
-    letter-spacing: 2px;
 
-    margin-bottom: 15px;
-}
+<!-- ================= HOME ================= -->
 
-.section-title {
+<section id="home" class="hero">
 
-    font-size: clamp(35px, 4vw, 52px);
+    <div class="hero-overlay"></div>
 
-    line-height: 1.15;
+    <div class="hero-content">
 
-    max-width: 900px;
+        <div class="availability">
+            <span></span>
+            Available for Network & Cloud Opportunities
+        </div>
 
-    margin-bottom: 45px;
+        <h1>
+            Tanweer Ansari
+        </h1>
 
-    letter-spacing: -1.5px;
-}
+        <h2>
+            Network & IT Support Engineer
+        </h2>
 
-.section-title.left {
+        <p class="hero-intro">
 
-    margin-bottom: 20px;
-}
+            Experienced IT Professional with <strong>16+ years</strong>
+            of overall experience, including enterprise network,
+            infrastructure, IT support, Microsoft Azure,
+            Microsoft 365, Fortinet and endpoint management.
 
+        </p>
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+        <p class="hero-description">
 
-.navbar {
+            Experienced in diverse IT projects and dedicated to
+            optimizing IT performance through network infrastructure,
+            LAN/WAN, routing & switching, Fortinet firewall,
+            Microsoft Azure, Office 365, Windows Autopilot and
+            Microsoft Entra ID.
 
-    position: fixed;
+        </p>
 
-    top: 0;
+        <div class="hero-meta">
 
-    left: 0;
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                Makkah, Saudi Arabia
+            </span>
 
-    width: 100%;
+            <span>
+                <i class="fa-solid fa-briefcase"></i>
+                16+ Years IT Experience
+            </span>
 
-    z-index: 999;
+        </div>
 
-    background:
-        rgba(5,17,32,.88);
+        <div class="hero-buttons">
 
-    backdrop-filter: blur(18px);
+            <a href="mailto:tanweeromn@gmail.com"
+               class="btn btn-primary">
 
-    border-bottom:
-        1px solid rgba(60,150,255,.12);
-}
+                <i class="fa-regular fa-envelope"></i>
+                Contact Me
 
-.nav-container {
+            </a>
 
-    width: min(1180px,92%);
+            <a href="https://www.linkedin.com/in/tanweeransari21"
+               target="_blank"
+               class="btn btn-outline">
 
-    height: 76px;
+                <i class="fa-brands fa-linkedin-in"></i>
+                LinkedIn
 
-    margin: auto;
+            </a>
 
-    display: flex;
+            <a href="projects.html"
+   class="btn btn-outline">
 
-    align-items: center;
+    <i class="fa-solid fa-code"></i>
+    Projects
 
-    justify-content: space-between;
-}
+</a>
 
-.logo {
+            <a href="#contact"
+               class="btn btn-outline">
 
-    font-size: 23px;
+                <i class="fa-solid fa-file-lines"></i>
+                Request CV
 
-    font-weight: 800;
+            </a>
 
-    letter-spacing: 1px;
-}
+        </div>
 
-.logo span {
+    </div>
 
-    color: var(--blue);
-}
+</section>
 
-nav {
 
-    display: flex;
+<!-- ================= ABOUT ================= -->
 
-    gap: 28px;
-}
+<section id="about" class="section">
 
-nav a {
+    <div class="container">
 
-    color: #91a5bd;
+        <div class="section-label">
+            ABOUT ME
+        </div>
 
-    font-size: 13px;
+        <h2 class="section-title">
+            Practical Enterprise IT Support Across
+            Network, Cloud, Systems and Endpoints.
+        </h2>
 
-    font-weight: 600;
+        <div class="about-grid">
 
-    transition: .3s;
-}
+            <div class="about-text">
 
-nav a:hover,
-nav a.active {
+                <p>
+                    I work across the complete IT infrastructure
+                    lifecycle — from network connectivity and
+                    firewall security to Azure infrastructure,
+                    Microsoft 365, Entra ID, Intune and
+                    end-user computing.
+                </p>
 
-    color: var(--blue);
-}
+                <p>
+                    My approach is hands-on, structured and focused
+                    on reliable support for enterprise users and
+                    services.
+                </p>
 
-.nav-buttons {
+                <p>
+                    I combine traditional infrastructure knowledge
+                    with modern cloud and endpoint technologies to
+                    support secure and reliable IT environments.
+                </p>
 
-    display: flex;
+            </div>
 
-    align-items: center;
 
-    gap: 10px;
-}
+            <div class="about-cards">
 
-.icon-btn,
-.menu-btn {
+                <div class="mini-card">
+                    <i class="fa-solid fa-shield"></i>
+                    <strong>16+ Years Experience</strong>
+                </div>
 
-    width: 38px;
+                <div class="mini-card">
+                    <i class="fa-solid fa-cloud"></i>
+                    <strong>Azure · AZ-104 / AZ-700</strong>
+                </div>
 
-    height: 38px;
+                <div class="mini-card">
+                    <i class="fa-solid fa-wave-square"></i>
+                    <strong>Cisco Routing & Switching</strong>
+                </div>
 
-    border-radius: 9px;
+                <div class="mini-card">
+                    <i class="fa-solid fa-lock"></i>
+                    <strong>Fortinet Firewall & VPN</strong>
+                </div>
 
-    border: 1px solid var(--border);
+                <div class="mini-card">
+                    <i class="fa-solid fa-server"></i>
+                    <strong>Hardware Assembly & Installation</strong>
+                </div>
 
-    background: var(--card);
+                <div class="mini-card">
+                    <i class="fa-solid fa-gear"></i>
+                    <strong>IT Support & Troubleshooting</strong>
+                </div>
 
-    color: white;
+            </div>
 
-    cursor: pointer;
-}
+        </div>
 
-.menu-btn {
+    </div>
 
-    display: none;
-}
+</section>
 
-.nav-contact {
 
-    padding: 9px 17px;
+<!-- ================= EXPERIENCE ================= -->
 
-    border-radius: 8px;
+<section id="experience" class="section experience-section">
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--blue),
-            var(--purple)
-        );
+    <div class="container">
 
-    font-size: 13px;
+        <div class="section-label">
+            PROFESSIONAL EXPERIENCE
+        </div>
 
-    font-weight: 700;
-}
+        <h2 class="section-title">
+            16+ years of hands-on enterprise IT experience.
+        </h2>
 
+        <div class="experience-grid">
 
-/* =========================================================
-   HERO
-========================================================= */
+            <div class="experience-card">
 
-.hero {
+                <div class="experience-icon">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
 
-    min-height: 900px;
+                <div class="experience-content">
 
-    position: relative;
+                    <span class="experience-period">
+                        NETWORK & IT INFRASTRUCTURE
+                    </span>
 
-    display: flex;
+                    <h3>
+                        Network Engineer
+                    </h3>
 
-    align-items: flex-start;
+                    <p class="experience-summary">
+                        Enterprise network infrastructure,
+                        routing & switching, security and
+                        IT support operations.
+                    </p>
 
-    padding-top: 140px;
+                    <ul>
 
-    overflow: hidden;
+                        <li>
+                            Cisco LAN/WAN routing and switching
+                        </li>
 
-    background-image:
-        linear-gradient(
-            90deg,
-            rgba(4,16,31,.97) 0%,
-            rgba(4,16,31,.84) 38%,
-            rgba(4,16,31,.35) 75%,
-            rgba(4,16,31,.12) 100%
-        ),
-        url("tanweer-hero.png");
+                        <li>
+                            VLAN, TCP/IP, VPN and network troubleshooting
+                        </li>
 
-    background-size: cover;
+                        <li>
+                            Fortinet FortiGate firewall administration
+                        </li>
 
-    background-position: center;
+                        <li>
+                            Network monitoring and infrastructure support
+                        </li>
 
-    background-repeat: no-repeat;
-}
+                    </ul>
 
-.hero-overlay {
+                </div>
 
-    position: absolute;
+            </div>
 
-    inset: 0;
 
-    background:
-        radial-gradient(
-            circle at 80% 45%,
-            rgba(0,132,255,.12),
-            transparent 35%
-        );
+            <div class="experience-card">
 
-    pointer-events: none;
-}
+                <div class="experience-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
 
-.hero-content {
+                <div class="experience-content">
 
-    width: min(1180px,92%);
+                    <span class="experience-period">
+                        ENTERPRISE IT OPERATIONS
+                    </span>
 
-    margin: auto;
+                    <h3>
+                        L2 IT Support Engineer
+                    </h3>
 
-    position: relative;
+                    <p class="experience-summary">
+                        Hands-on enterprise support covering
+                        users, endpoints, systems, applications
+                        and infrastructure.
+                    </p>
 
-    z-index: 2;
+                    <ul>
 
-    max-width: 780px;
-}
+                        <li>
+                            L2 troubleshooting for enterprise users
+                        </li>
 
-.availability {
+                        <li>
+                            VPN, email, Outlook and connectivity support
+                        </li>
 
-    display: inline-flex;
+                        <li>
+                            Printer, desktop and endpoint troubleshooting
+                        </li>
 
-    align-items: center;
+                        <li>
+                            Incident and service request management
+                        </li>
 
-    gap: 9px;
+                    </ul>
 
-    color: #72c3ff;
+                </div>
 
-    border: 1px solid rgba(60,170,255,.25);
+            </div>
 
-    background: rgba(0,100,190,.08);
 
-    padding: 7px 13px;
+            <div class="experience-card">
 
-    border-radius: 30px;
+                <div class="experience-icon">
+                    <i class="fa-brands fa-microsoft"></i>
+                </div>
 
-    font-size: 12px;
+                <div class="experience-content">
 
-    font-weight: 600;
+                    <span class="experience-period">
+                        MICROSOFT CLOUD
+                    </span>
 
-    margin-bottom: 22px;
-}
+                    <h3>
+                        Azure & Microsoft 365
+                    </h3>
 
-.availability span {
+                    <p class="experience-summary">
+                        Supporting modern cloud, identity and
+                        endpoint management technologies.
+                    </p>
 
-    width: 7px;
+                    <ul>
 
-    height: 7px;
+                        <li>
+                            Microsoft Azure infrastructure
+                        </li>
 
-    background: #34d399;
+                        <li>
+                            Microsoft Entra ID and identity management
+                        </li>
 
-    border-radius: 50%;
+                        <li>
+                            Microsoft Intune and Windows Autopilot
+                        </li>
 
-    box-shadow:
-        0 0 10px #34d399;
-}
+                        <li>
+                            Microsoft 365 and Office 365 administration
+                        </li>
 
-.hero h1 {
+                    </ul>
 
-    font-size: clamp(55px,7vw,88px);
+                </div>
 
-    line-height: .98;
+            </div>
 
-    letter-spacing: -4px;
 
-    margin-bottom: 16px;
-}
+            <div class="experience-card">
 
-.hero h2 {
+                <div class="experience-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
 
-    font-size: clamp(24px,3vw,34px);
+                <div class="experience-content">
 
-    color: var(--blue);
+                    <span class="experience-period">
+                        SECURITY & INFRASTRUCTURE
+                    </span>
 
-    margin-bottom: 24px;
-}
+                    <h3>
+                        Enterprise Infrastructure Support
+                    </h3>
 
-.hero p {
+                    <p class="experience-summary">
+                        Supporting secure and reliable enterprise
+                        technology environments.
+                    </p>
 
-    color: #b1c0d4;
+                    <ul>
 
-    font-size: 15px;
+                        <li>
+                            Fortinet firewall policies and VPN
+                        </li>
 
-    line-height: 1.8;
+                        <li>
+                            Windows Server and Active Directory
+                        </li>
 
-    margin-bottom: 14px;
+                        <li>
+                            IT asset and inventory management
+                        </li>
 
-    max-width: 800px;
-}
+                        <li>
+                            Technical documentation and SOPs
+                        </li>
 
-.hero strong {
+                    </ul>
 
-    color: white;
-}
+                </div>
 
-.hero-meta {
+            </div>
 
-    display: flex;
+        </div>
 
-    gap: 25px;
+    </div>
 
-    flex-wrap: wrap;
+</section>
 
-    margin: 25px 0;
-}
 
-.hero-meta span {
 
-    color: #a7b8cd;
+<!-- ================= TECHNOLOGY STACK ================= -->
 
-    font-size: 13px;
-}
+<section class="section">
 
-.hero-meta i {
+    <div class="container">
 
-    color: var(--blue);
+        <div class="section-label">
+            TECHNOLOGY STACK
+        </div>
 
-    margin-right: 6px;
-}
+        <h2 class="section-title">
+            Enterprise tools I work with every day.
+        </h2>
 
-.hero-buttons {
+        <div class="technology-cloud">
 
-    display: flex;
+            <span>Cisco Routing & Switching</span>
+            <span>Fortinet Firewall</span>
+            <span>Microsoft Azure</span>
+            <span>Microsoft Entra ID</span>
+            <span>Microsoft Intune</span>
+            <span>Windows Server & AD</span>
+            <span>VPN & Network Security</span>
+            <span>Microsoft 365</span>
+            <span>Windows Autopilot</span>
+            <span>Oracle Database 10g</span>
+            <span>Cisco & Avaya Telephony</span>
+            <span>IP Surveillance</span>
+            <span>ITSM</span>
+            <span>Incident Management</span>
+            <span>Remote Support</span>
+            <span>Technical Documentation</span>
+            <span>Power BI</span>
+            <span>SharePoint</span>
+            <span>Power Apps</span>
 
-    gap: 10px;
+        </div>
 
-    flex-wrap: wrap;
-}
+    </div>
 
-.btn {
+</section>
 
-    display: inline-flex;
 
-    align-items: center;
+<!-- ================= INFRASTRUCTURE FLOW ================= -->
 
-    justify-content: center;
+<section class="section section-dark">
 
-    gap: 9px;
+    <div class="container">
 
-    padding: 12px 20px;
+        <div class="section-label">
+            INFRASTRUCTURE FLOW
+        </div>
 
-    border-radius: 9px;
+        <h2 class="section-title left">
+            From Network Infrastructure to Cloud
+        </h2>
 
-    font-size: 13px;
+        <p class="flow-description">
 
-    font-weight: 700;
+            A practical view of the enterprise technology path —
+            from users and connectivity through security, cloud
+            identity and endpoint management.
 
-    transition: .3s;
+        </p>
 
-    cursor: pointer;
-}
 
-.btn:hover {
+        <div class="flow-box">
 
-    transform: translateY(-3px);
-}
+            <div class="flow-item">
+                <strong>END USERS</strong>
+                <span>Devices, applications and day-to-day support</span>
+            </div>
 
-.btn-primary {
+            <div class="flow-line"></div>
 
-    color: white;
+            <div class="flow-item">
+                <strong>LAN</strong>
+                <span>Local connectivity, VLANs and endpoint access</span>
+            </div>
 
-    background:
-        linear-gradient(
-            135deg,
-            #319eff,
-            #8057f5
-        );
+            <div class="flow-line"></div>
 
-    box-shadow:
-        0 10px 30px rgba(53,144,255,.2);
-}
+            <div class="flow-item">
+                <strong>CISCO SWITCHING</strong>
+                <span>LAN segmentation and network access</span>
+            </div>
 
-.btn-outline {
+            <div class="flow-line"></div>
 
-    color: #dbe9fa;
+            <div class="flow-item">
+                <strong>CISCO ROUTING</strong>
+                <span>WAN connectivity and traffic paths</span>
+            </div>
 
-    border: 1px solid rgba(88,155,220,.28);
+            <div class="flow-line"></div>
 
-    background: rgba(9,27,48,.75);
-}
+            <div class="flow-item security-flow">
+                <strong>FORTINET FIREWALL</strong>
+                <span>Policies, security controls and protected access</span>
+            </div>
 
-.btn-outline:hover {
+            <div class="flow-line"></div>
 
-    border-color: var(--blue);
+            <div class="flow-item cloud-flow">
+                <strong>VPN / INTERNET → AZURE → ENTRA ID → INTUNE → MICROSOFT 365</strong>
+            </div>
 
-    color: white;
-}
+        </div>
 
+    </div>
 
-/* =========================================================
-   STATS
-========================================================= */
+</section>
 
-.stats-section {
 
-    padding: 35px 0 80px;
+<!-- ================= WHY HIRE ================= -->
 
-    background: #061426;
-}
+<section class="section">
 
-.stats-grid {
+    <div class="container why-grid">
 
-    display: grid;
+        <div class="why-content">
 
-    grid-template-columns:
-        repeat(4,1fr);
+            <div class="section-label">
+                WHY HIRE ME
+            </div>
 
-    gap: 15px;
-}
+            <h2 class="section-title left">
+                A practical Network & IT Support Engineer
+                for enterprise environments.
+            </h2>
 
-.stat-card {
+            <p>
+                I bring 16+ years of hands-on experience
+                supporting the infrastructure people rely on
+                every day — from connectivity and security
+                to cloud services, systems, endpoints and
+                user support.
+            </p>
 
-    background:
-        linear-gradient(
-            145deg,
-            #0b1d34,
-            #0a192d
-        );
+        </div>
 
-    border:
-        1px solid rgba(72,160,255,.15);
 
-    border-radius: 16px;
+        <div class="why-list">
 
-    padding: 25px;
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Business-focused technical decision-making
+            </div>
 
-    display: flex;
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Hands-on security and infrastructure ownership
+            </div>
 
-    align-items: center;
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Clear coordination across technical teams
+            </div>
 
-    gap: 18px;
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Network + Cloud + IT Support expertise
+            </div>
 
-    transition: .3s;
-}
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Strong troubleshooting and incident management
+            </div>
 
-.stat-card:hover {
+        </div>
 
-    transform: translateY(-5px);
+    </div>
 
-    border-color: rgba(72,160,255,.4);
-}
+</section>
 
-.stat-icon {
 
-    width: 50px;
+<!-- ================= CONTACT ================= -->
 
-    height: 50px;
+<section id="contact" class="contact-section">
 
-    display: flex;
+    <div class="container">
 
-    align-items: center;
+        <div class="contact-box">
 
-    justify-content: center;
+            <div class="section-label">
+                CONTACT ME
+            </div>
 
-    border-radius: 13px;
+            <h2>
+                Let's build dependable infrastructure.
+            </h2>
 
-    color: var(--blue);
+            <p>
+                Available for network, cloud, infrastructure
+                and technical leadership opportunities across
+                Saudi Arabia and the GCC.
+            </p>
 
-    background:
-        rgba(45,155,255,.08);
+            <div class="contact-buttons">
 
-    font-size: 20px;
-}
+                <a href="mailto:tanweeromn@gmail.com"
+                   class="btn btn-light">
 
-.stat-card h3 {
+                    <i class="fa-regular fa-envelope"></i>
 
-    font-size: 20px;
+                    tanweeromn@gmail.com
 
-    margin-bottom: 2px;
-}
+                </a>
 
-.stat-card p {
+                <a href="https://www.linkedin.com/in/tanweeransari21"
+                   target="_blank"
+                   class="btn btn-outline-light">
 
-    color: var(--muted);
+                    <i class="fa-brands fa-linkedin-in"></i>
 
-    font-size: 12px;
-}
+                    Connect on LinkedIn
 
+                </a>
 
-/* =========================================================
-   ABOUT
-========================================================= */
+            </div>
 
-.about-grid {
+        </div>
 
-    display: grid;
+    </div>
 
-    grid-template-columns:
-        1fr 1.1fr;
+</section>
 
-    gap: 70px;
 
-    align-items: center;
-}
+<!-- ================= FOOTER ================= -->
 
-.about-text p {
+<footer>
 
-    color: var(--muted);
+    <div class="container footer-content">
 
-    font-size: 15px;
+        <div>
+            <strong>
+                Tanweer Ansari
+            </strong>
 
-    line-height: 1.9;
+            <span>
+                · Network & IT Support Engineer
+            </span>
+        </div>
 
-    margin-bottom: 20px;
-}
+        <a href="#home">
+            Open to New Opportunities
+        </a>
 
-.about-cards {
+    </div>
 
-    display: grid;
+</footer>
 
-    grid-template-columns:
-        repeat(2,1fr);
 
-    gap: 14px;
-}
+<button id="backTop">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
 
-.mini-card {
 
-    min-height: 100px;
+<script src="script.js"></script>
 
-    padding: 25px;
-
-    border-radius: 16px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #0c2038,
-            #0a192d
-        );
-
-    border:
-        1px solid rgba(74,155,255,.15);
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    transition: .3s;
-}
-
-.mini-card:hover {
-
-    transform: translateY(-4px);
-
-    border-color: rgba(73,165,255,.4);
-}
-
-.mini-card i {
-
-    color: var(--blue);
-
-    font-size: 18px;
-}
-
-.mini-card strong {
-
-    font-size: 13px;
-}
-
-
-/* =========================================================
-   SKILLS
-========================================================= */
-
-.skills-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap: 16px;
-}
-
-.skill-card {
-
-    padding: 30px;
-
-    min-height: 225px;
-
-    border-radius: 17px;
-
-    background:
-        #0b1c32;
-
-    border:
-        1px solid rgba(73,157,255,.16);
-
-    transition: .35s;
-}
-
-.skill-card:hover {
-
-    transform: translateY(-7px);
-
-    background:
-        #0d223c;
-
-    border-color:
-        rgba(73,157,255,.45);
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.2);
-}
-
-.skill-card > i {
-
-    font-size: 24px;
-
-    color: var(--blue);
-
-    margin-bottom: 20px;
-}
-
-.skill-card:nth-child(2) > i,
-.skill-card:nth-child(4) > i {
-
-    color: var(--purple);
-}
-
-.skill-card h3 {
-
-    font-size: 16px;
-
-    margin-bottom: 15px;
-}
-
-.skill-card p {
-
-    color: #9eb0c7;
-
-    font-size: 13px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================================
-   CERTIFICATIONS
-========================================================= */
-
-.cert-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap: 16px;
-}
-
-.cert-card {
-
-    min-height: 150px;
-
-    padding: 23px;
-
-    border-radius: 15px;
-
-    border: 1px solid;
-
-    transition: .3s;
-}
-
-.cert-card:hover {
-
-    transform: translateY(-5px);
-}
-
-.cert-card i {
-
-    font-size: 20px;
-
-    margin-bottom: 12px;
-}
-
-.cert-card h3 {
-
-    font-size: 15px;
-
-    line-height: 1.3;
-
-    margin-bottom: 10px;
-}
-
-.cert-card p {
-
-    font-size: 12px;
-
-    color: #a7b8cd;
-}
-
-.cert-card.blue {
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(38,128,230,.15),
-            rgba(30,50,90,.35)
-        );
-
-    border-color:
-        rgba(46,150,255,.35);
-}
-
-.cert-card.blue i {
-
-    color: #4caeff;
-}
-
-.cert-card.purple {
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(115,76,225,.15),
-            rgba(40,30,90,.35)
-        );
-
-    border-color:
-        rgba(136,83,255,.35);
-}
-
-.cert-card.purple i {
-
-    color: #9b6cff;
-}
-
-.cert-card.green {
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(23,160,145,.12),
-            rgba(20,60,70,.35)
-        );
-
-    border-color:
-        rgba(30,190,175,.35);
-}
-
-.cert-card.green i {
-
-    color: #34d6c4;
-}
-
-.cert-card.orange {
-
-    background:
-        rgba(255,155,20,.07);
-
-    border-color:
-        rgba(255,170,30,.3);
-}
-
-.cert-card.orange i {
-
-    color: #ffb43b;
-}
-
-.cert-card.pink {
-
-    background:
-        rgba(230,50,140,.08);
-
-    border-color:
-        rgba(230,70,150,.3);
-}
-
-.cert-card.pink i {
-
-    color: #f45da7;
-}
-
-
-/* =========================================================
-   PROJECTS
-========================================================= */
-
-.projects-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap: 16px;
-}
-
-.project-card {
-
-    padding: 30px;
-
-    min-height: 190px;
-
-    background:
-        #0b1d34;
-
-    border:
-        1px solid rgba(65,153,255,.17);
-
-    border-radius: 17px;
-
-    transition: .3s;
-}
-
-.project-card:hover {
-
-    transform: translateY(-5px);
-
-    border-color:
-        rgba(65,153,255,.45);
-}
-
-.project-card > span {
-
-    color: var(--blue);
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    letter-spacing: 1px;
-}
-
-.project-card h3 {
-
-    font-size: 20px;
-
-    margin: 10px 0 12px;
-}
-
-.project-card p {
-
-    color: #9eb0c7;
-
-    font-size: 13px;
-
-    line-height: 1.75;
-}
-
-
-/* =========================================================
-   TECHNOLOGY CLOUD
-========================================================= */
-
-.technology-cloud {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 9px;
-}
-
-.technology-cloud span {
-
-    padding: 7px 12px;
-
-    border-radius: 20px;
-
-    font-size: 12px;
-
-    font-weight: 600;
-
-    background:
-        linear-gradient(
-            135deg,
-            #102b51,
-            #14254c
-        );
-
-    color: #dce9fa;
-
-    border:
-        1px solid rgba(85,140,230,.12);
-
-    transition: .3s;
-}
-
-.technology-cloud span:hover {
-
-    transform: translateY(-3px);
-
-    border-color:
-        var(--blue);
-
-    color: white;
-}
-
-
-/* =========================================================
-   INFRASTRUCTURE FLOW
-========================================================= */
-
-.flow-description {
-
-    color: var(--muted);
-
-    max-width: 900px;
-
-    margin-bottom: 30px;
-
-    font-size: 14px;
-}
-
-.flow-box {
-
-    padding: 25px;
-
-    border-radius: 18px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #0a1e38,
-            #0b1a31
-        );
-
-    border:
-        1px solid rgba(66,150,255,.2);
-}
-
-.flow-item {
-
-    padding: 15px 20px;
-
-    border:
-        1px solid rgba(67,157,255,.25);
-
-    border-radius: 12px;
-
-    background:
-        #0d213b;
-
-    text-align: center;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 3px;
-}
-
-.flow-item strong {
-
-    font-size: 13px;
-}
-
-.flow-item span {
-
-    color: #a2b3c8;
-
-    font-size: 12px;
-}
-
-.flow-line {
-
-    height: 18px;
-
-    width: 2px;
-
-    background:
-        var(--blue);
-
-    margin: auto;
-}
-
-.security-flow {
-
-    border-color:
-        rgba(140,80,255,.45);
-
-    background:
-        rgba(98,50,170,.08);
-}
-
-.cloud-flow {
-
-    border-color:
-        rgba(150,75,255,.4);
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(76,50,150,.15),
-            rgba(100,50,170,.12)
-        );
-}
-
-
-/* =========================================================
-   WHY HIRE
-========================================================= */
-
-.why-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        1.1fr .9fr;
-
-    gap: 70px;
-
-    align-items: center;
-}
-
-.why-content > p {
-
-    color: var(--muted);
-
-    max-width: 600px;
-
-    font-size: 15px;
-
-    line-height: 1.9;
-}
-
-.why-list {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 12px;
-}
-
-.why-list div {
-
-    padding: 15px 18px;
-
-    border-radius: 12px;
-
-    background:
-        #0c1e35;
-
-    border:
-        1px solid rgba(65,150,255,.15);
-
-    color: #dbe8f8;
-
-    font-size: 13px;
-
-    font-weight: 600;
-}
-
-.why-list i {
-
-    color: var(--blue);
-
-    margin-right: 12px;
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact-section {
-
-    padding: 30px 0 80px;
-}
-
-.contact-box {
-
-    text-align: center;
-
-    padding: 90px 30px;
-
-    border-radius: 25px;
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(64,100,220,.35),
-            transparent 45%
-        ),
-        linear-gradient(
-            135deg,
-            #132f56,
-            #171c4b
-        );
-
-    border:
-        1px solid rgba(120,140,255,.25);
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.25);
-}
-
-.contact-box .section-label {
-
-    margin-bottom: 15px;
-}
-
-.contact-box h2 {
-
-    font-size: clamp(35px,5vw,50px);
-
-    margin-bottom: 18px;
-
-    letter-spacing: -1.5px;
-}
-
-.contact-box p {
-
-    max-width: 750px;
-
-    margin: auto;
-
-    color: #a9b8cd;
-
-    font-size: 14px;
-
-    margin-bottom: 30px;
-}
-
-.contact-buttons {
-
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-}
-
-.btn-light {
-
-    background: white;
-
-    color: #142238;
-}
-
-.btn-outline-light {
-
-    color: white;
-
-    border:
-        1px solid rgba(255,255,255,.3);
-
-    background:
-        rgba(0,0,0,.15);
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-
-    padding: 25px 0;
-
-    border-top:
-        1px solid rgba(65,150,255,.1);
-}
-
-.footer-content {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    color: #8da0b8;
-
-    font-size: 12px;
-}
-
-.footer-content a {
-
-    color: var(--blue);
-
-    font-weight: 700;
-}
-
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-#backTop {
-
-    position: fixed;
-
-    right: 25px;
-
-    bottom: 25px;
-
-    width: 44px;
-
-    height: 44px;
-
-    border: 0;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--blue),
-            var(--purple)
-        );
-
-    color: white;
-
-    cursor: pointer;
-
-    display: none;
-
-    z-index: 500;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:1000px) {
-
-    nav {
-
-        gap: 15px;
-    }
-
-    .stats-grid {
-
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .skills-grid,
-    .cert-grid {
-
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .about-grid,
-    .why-grid {
-
-        grid-template-columns: 1fr;
-    }
-
-}
-
-
-@media(max-width:760px) {
-
-    .nav-container {
-
-        height: 68px;
-    }
-
-    nav {
-
-        position: fixed;
-
-        top: 68px;
-
-        left: 0;
-
-        width: 100%;
-
-        background:
-            #07182b;
-
-        flex-direction: column;
-
-        gap: 0;
-
-        max-height: 0;
-
-        overflow: hidden;
-
-        transition: .3s;
-
-        border-bottom:
-            1px solid var(--border);
-    }
-
-    nav.open {
-
-        max-height: 500px;
-
-        padding: 10px 0;
-    }
-
-    nav a {
-
-        padding: 13px 25px;
-
-        display: block;
-    }
-
-    .nav-contact {
-
-        display: none;
-    }
-
-    .menu-btn {
-
-        display: block;
-    }
-
-    .hero {
-
-        min-height: 850px;
-
-        padding-top: 115px;
-
-        background-position:
-            63% center;
-
-        background-image:
-            linear-gradient(
-                180deg,
-                rgba(4,16,31,.96) 0%,
-                rgba(4,16,31,.84) 45%,
-                rgba(4,16,31,.50) 100%
-            ),
-            url("tanweer-hero.png");
-    }
-
-    .hero-content {
-
-        text-align: left;
-    }
-
-    .hero h1 {
-
-        font-size: 48px;
-
-        letter-spacing: -2.5px;
-    }
-
-    .hero h2 {
-
-        font-size: 24px;
-    }
-
-    .stats-grid {
-
-        grid-template-columns: 1fr;
-    }
-
-    .about-cards,
-    .skills-grid,
-    .cert-grid,
-    .projects-grid {
-
-        grid-template-columns: 1fr;
-    }
-
-    .section {
-
-        padding: 75px 0;
-    }
-
-    .section-title {
-
-        font-size: 34px;
-    }
-
-    .footer-content {
-
-        flex-direction: column;
-
-        gap: 10px;
-
-        text-align: center;
-    }
-
-}
-
-
-@media(max-width:450px) {
-
-    .hero h1 {
-
-        font-size: 42px;
-    }
-
-    .hero-meta {
-
-        flex-direction: column;
-
-        gap: 8px;
-    }
-
-    .hero-buttons {
-
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-    .btn {
-
-        width: 100%;
-    }
-
-}
-/* =========================================================
-   TANWEER PORTFOLIO - FINAL VISUAL UPGRADES
-   ========================================================= */
-
-
-/* =========================================================
-   1. HERO - TEXT ABOVE IMAGE
-   ========================================================= */
-
-.hero {
-    min-height: auto !important;
-    padding-top: 125px !important;
-    padding-bottom: 45px !important;
-
-    display: block !important;
-
-    background-image: none !important;
-
-    position: relative;
-    overflow: hidden;
-}
-
-/* Hero text area */
-
-.hero-content {
-    width: min(1180px, 92%) !important;
-    max-width: 1050px !important;
-
-    margin: 0 auto 40px auto !important;
-
-    text-align: left;
-
-    position: relative;
-    z-index: 5;
-}
-
-/* Make heading cleaner */
-
-.hero h1 {
-    font-size: clamp(52px, 7vw, 82px) !important;
-    margin-bottom: 12px !important;
-}
-
-.hero h2 {
-    margin-bottom: 20px !important;
-}
-
-/* Hero text */
-
-.hero p {
-    max-width: 950px !important;
-}
-
-/* =========================================================
-   HERO IMAGE BANNER
-   ========================================================= */
-
-.hero::after {
-    content: "";
-
-    display: block;
-
-    width: min(1180px, 92%);
-    height: min(430px, 36vw);
-
-    min-height: 300px;
-
-    margin: 0 auto;
-
-    background-image:
-        linear-gradient(
-            180deg,
-            rgba(4,16,31,.02),
-            rgba(4,16,31,.12)
-        ),
-        url("tanweer-hero.png");
-
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-
-    border: 1px solid rgba(57,168,255,.35);
-
-    border-radius: 22px;
-
-    box-shadow:
-        0 0 0 1px rgba(57,168,255,.08),
-        0 20px 70px rgba(0,0,0,.45),
-        0 0 50px rgba(30,130,255,.08);
-
-    position: relative;
-    z-index: 3;
-}
-
-
-/* =========================================================
-   HERO IMAGE GLOW
-   ========================================================= */
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    right: 5%;
-    bottom: 0;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(35,150,255,.12),
-            transparent 70%
-        );
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   2. INFRASTRUCTURE FLOW
-   ANIMATED BLUE VERTICAL CONNECTION
-   ========================================================= */
-
-.flow-line {
-    width: 3px !important;
-
-    height: 35px !important;
-
-    margin: 0 auto !important;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(57,168,255,.15),
-            rgba(57,168,255,.35)
-        ) !important;
-
-    border-radius: 10px;
-
-    box-shadow:
-        0 0 8px rgba(57,168,255,.25);
-}
-
-
-/* Moving light */
-
-.flow-line::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: -100%;
-
-    width: 100%;
-    height: 70%;
-
-    border-radius: 10px;
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            #39a8ff,
-            #ffffff,
-            #39a8ff,
-            transparent
-        );
-
-    box-shadow:
-        0 0 10px #39a8ff,
-        0 0 20px rgba(57,168,255,.8);
-
-    animation:
-        flowPulse 1.5s linear infinite;
-}
-
-
-@keyframes flowPulse {
-
-    0% {
-        top: -80%;
-    }
-
-    100% {
-        top: 110%;
-    }
-
-}
-
-
-/* Flow boxes hover */
-
-.flow-item {
-    transition:
-        transform .35s ease,
-        border-color .35s ease,
-        box-shadow .35s ease;
-}
-
-
-.flow-item:hover {
-
-    transform: scale(1.015);
-
-    border-color:
-        rgba(57,168,255,.65);
-
-    box-shadow:
-        0 0 25px rgba(57,168,255,.12);
-}
-
-
-/* =========================================================
-   3. THREE COLOR THEMES
-   ========================================================= */
-
-
-/* DEFAULT BLUE */
-
-:root {
-
-    --blue: #39a8ff;
-    --blue-light: #58b8ff;
-
-    --purple: #8b5cf6;
-
-    --pink: #e946d7;
-
-}
-
-
-/* PURPLE THEME */
-
-body.theme-purple {
-
-    --blue: #a855f7;
-    --blue-light: #c084fc;
-
-    --purple: #ec4899;
-
-    --pink: #f472b6;
-
-}
-
-
-/* GREEN / CYBER THEME */
-
-body.theme-green {
-
-    --blue: #22c55e;
-    --blue-light: #4ade80;
-
-    --purple: #06b6d4;
-
-    --pink: #14b8a6;
-
-}
-
-
-/* Theme transition */
-
-body,
-.navbar,
-.stat-card,
-.skill-card,
-.cert-card,
-.project-card,
-.mini-card,
-.flow-item,
-.flow-box,
-.contact-box,
-.technology-cloud span {
-
-    transition:
-        background-color .45s ease,
-        border-color .45s ease,
-        color .45s ease,
-        box-shadow .45s ease;
-}
-
-
-/* =========================================================
-   THEME BUTTON
-   ========================================================= */
-
-.icon-btn {
-
-    position: relative;
-
-    transition:
-        transform .3s ease,
-        background .3s ease,
-        border-color .3s ease;
-
-}
-
-
-.icon-btn:hover {
-
-    transform:
-        rotate(20deg)
-        scale(1.08);
-
-    border-color:
-        var(--blue);
-
-    box-shadow:
-        0 0 18px rgba(57,168,255,.25);
-
-}
-
-
-/* Theme indicator */
-
-.icon-btn::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 6px;
-    height: 6px;
-
-    right: 5px;
-    bottom: 5px;
-
-    border-radius: 50%;
-
-    background:
-        var(--blue);
-
-    box-shadow:
-        0 0 8px var(--blue);
-
-}
-
-
-/* =========================================================
-   NAV CONTACT
-   ========================================================= */
-
-.nav-contact {
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--blue),
-            var(--purple)
-        ) !important;
-
-    box-shadow:
-        0 8px 25px rgba(80,120,255,.15);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-
-}
-
-
-.nav-contact:hover {
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 12px 30px rgba(80,120,255,.3);
-
-}
-
-
-/* =========================================================
-   BUTTON COLORS FOLLOW THEME
-   ========================================================= */
-
-.btn-primary {
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--blue),
-            var(--purple)
-        ) !important;
-
-}
-
-
-.section-label,
-.hero h2,
-.hero-meta i,
-.project-card > span,
-.logo span {
-
-    color:
-        var(--blue) !important;
-
-}
-
-
-/* =========================================================
-   FLOW SPECIAL EFFECT
-   ========================================================= */
-
-.security-flow {
-
-    border-color:
-        color-mix(
-            in srgb,
-            var(--purple) 55%,
-            transparent
-        ) !important;
-
-}
-
-
-.cloud-flow {
-
-    border-color:
-        color-mix(
-            in srgb,
-            var(--purple) 55%,
-            transparent
-        ) !important;
-
-}
-
-
-/* =========================================================
-   MOBILE HERO
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    .hero {
-
-        padding-top: 105px !important;
-        padding-bottom: 30px !important;
-
-    }
-
-    .hero-content {
-
-        text-align: center;
-
-        margin-bottom: 30px !important;
-
-    }
-
-    .hero-buttons {
-
-        justify-content: center;
-
-    }
-
-    .hero-meta {
-
-        justify-content: center;
-
-    }
-
-    .hero::after {
-
-        width: 92%;
-
-        height: 260px;
-
-        min-height: 260px;
-
-        border-radius: 16px;
-
-        background-position: center;
-
-    }
-
-}
-
-
-/* =========================================================
-   EXTRA HERO ANIMATION
-   ========================================================= */
-
-.hero-content {
-
-    animation:
-        heroContentIn .9s ease both;
-
-}
-
-
-@keyframes heroContentIn {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(25px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-
-    }
-
-}
-
-
-/* Image entrance */
-
-.hero::after {
-
-    animation:
-        heroImageIn 1.1s ease .15s both;
-
-}
-
-
-@keyframes heroImageIn {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(30px)
-            scale(.98);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-
-    }
-
-}
-/* =========================================================
-   PROJECT CARDS - PREMIUM 3D HOVER EFFECT
-   ========================================================= */
-
-.project-card {
-    position: relative;
-    transform-style: preserve-3d;
-    perspective: 1000px;
-
-    transition:
-        transform 0.18s ease-out,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
-
-    overflow: hidden;
-
-    will-change: transform;
-}
-
-
-/* Moving colorful glow inside card */
-
-.project-card::before {
-    content: "";
-
-    position: absolute;
-
-    width: 220px;
-    height: 220px;
-
-    left: var(--mouse-x, 50%);
-    top: var(--mouse-y, 50%);
-
-    transform:
-        translate(-50%, -50%);
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(57, 168, 255, 0.30),
-            rgba(139, 92, 246, 0.18),
-            transparent 70%
-        );
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition:
-        opacity 0.3s ease;
-}
-
-
-/* Purple/blue border glow */
-
-.project-card:hover {
-
-    border-color:
-        rgba(57, 168, 255, 0.75);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(18, 42, 72, 0.98),
-            rgba(19, 28, 58, 0.98)
-        );
-
-    box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.40),
-        0 0 25px rgba(57, 168, 255, 0.20),
-        0 0 50px rgba(139, 92, 246, 0.10);
-}
-
-
-.project-card:hover::before {
-    opacity: 1;
-}
-
-
-/* Content comes slightly forward */
-
-.project-card > * {
-    position: relative;
-
-    z-index: 2;
-
-    transform:
-        translateZ(25px);
-}
-
-
-/* Project category */
-
-.project-card > span,
-.project-card .project-category {
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
-}
-
-
-.project-card:hover > span,
-.project-card:hover .project-category {
-
-    color: #58b8ff !important;
-
-    transform:
-        translateZ(35px);
-}
-
-
-/* Project title */
-
-.project-card h3,
-.project-card h4 {
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
-}
-
-
-.project-card:hover h3,
-.project-card:hover h4 {
-
-    color: #ffffff;
-
-    transform:
-        translateZ(35px);
-}
-
-
-/* Project description */
-
-.project-card p {
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
-}
-
-
-.project-card:hover p {
-
-    color: #c7d8ec;
-
-    transform:
-        translateZ(20px);
-}
-
-
-/* Small shine animation */
-
-.project-card::after {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -120%;
-
-    width: 70%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            110deg,
-            transparent 20%,
-            rgba(255,255,255,0.08) 45%,
-            rgba(255,255,255,0.16) 50%,
-            transparent 75%
-        );
-
-    transform:
-        skewX(-20deg);
-
-    pointer-events: none;
-
-    transition:
-        left 0.7s ease;
-
-    z-index: 1;
-}
-
-
-.project-card:hover::after {
-
-    left: 150%;
-
-}
-
-
-/* Different color accent for every card */
-
-.project-card:nth-child(2n):hover {
-
-    border-color:
-        rgba(139, 92, 246, 0.85);
-
-    box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.40),
-        0 0 30px rgba(139, 92, 246, 0.22);
-
-}
-
-
-.project-card:nth-child(3n):hover {
-
-    border-color:
-        rgba(34, 211, 238, 0.85);
-
-    box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.40),
-        0 0 30px rgba(34, 211, 238, 0.20);
-
-}
-
-
-.project-card:nth-child(4n):hover {
-
-    border-color:
-        rgba(236, 72, 153, 0.80);
-
-    box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.40),
-        0 0 30px rgba(236, 72, 153, 0.20);
-
-}
-
-
-/* Mobile - don't tilt cards */
-
-@media (max-width: 768px) {
-
-    .project-card {
-
-        transform:
-            none !important;
-
-    }
-
-}
-
-/* =========================================================
-   WHATSAPP NAVIGATION BUTTON
-   ========================================================= */
-
-.whatsapp-nav {
-    display: inline-flex !important;
-
-    align-items: center;
-    justify-content: center;
-
-    gap: 8px;
-
-    padding: 9px 16px !important;
-
-    border-radius: 10px;
-
-    color: #ffffff !important;
-
-    background:
-        linear-gradient(
-            135deg,
-            #25D366,
-            #128C7E
-        ) !important;
-
-    border:
-        1px solid rgba(37, 211, 102, 0.55);
-
-    box-shadow:
-        0 8px 22px rgba(37, 211, 102, 0.18);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        filter .3s ease;
-}
-
-
-/* WhatsApp icon */
-
-.whatsapp-nav i {
-    font-size: 17px;
-
-    color: #ffffff;
-
-    transition:
-        transform .3s ease;
-}
-
-
-/* Hover */
-
-.whatsapp-nav:hover {
-
-    transform:
-        translateY(-3px)
-        scale(1.03);
-
-    filter:
-        brightness(1.08);
-
-    box-shadow:
-        0 12px 30px rgba(37, 211, 102, 0.35);
-}
-
-
-.whatsapp-nav:hover i {
-
-    transform:
-        rotate(-10deg)
-        scale(1.15);
-}
-
-
-/* Small glowing WhatsApp effect */
-
-.whatsapp-nav::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 6px;
-    height: 6px;
-
-    border-radius: 50%;
-
-    background: #ffffff;
-
-    opacity: .8;
-
-    box-shadow:
-        0 0 10px #ffffff;
-
-}
-
-
-/* Mobile */
-
-@media (max-width: 760px) {
-
-    .whatsapp-nav {
-
-        display: none !important;
-
-    }
-
-}
-/* =========================================================
-   TANWEER - FINAL THREE COLOR THEME SYSTEM
-   ========================================================= */
-
-
-/* =========================================================
-   BLUE THEME - DEFAULT
-   ========================================================= */
-
-body {
-
-    --theme-main: #39a8ff;
-    --theme-secondary: #8b5cf6;
-
-    --theme-bg: #061426;
-    --theme-card: #0b1d34;
-
-    --theme-border:
-        rgba(57,168,255,.28);
-
-    --theme-glow:
-        rgba(57,168,255,.28);
-
-}
-
-
-/* =========================================================
-   PURPLE THEME
-   ========================================================= */
-
-body.theme-purple {
-
-    --theme-main: #a855f7;
-    --theme-secondary: #ec4899;
-
-    --theme-bg: #10091f;
-    --theme-card: #1a1030;
-
-    --theme-border:
-        rgba(168,85,247,.38);
-
-    --theme-glow:
-        rgba(168,85,247,.35);
-
-}
-
-
-/* =========================================================
-   GREEN THEME
-   ========================================================= */
-
-body.theme-green {
-
-    --theme-main: #22c55e;
-    --theme-secondary: #06b6d4;
-
-    --theme-bg: #031a13;
-    --theme-card: #08271d;
-
-    --theme-border:
-        rgba(34,197,94,.38);
-
-    --theme-glow:
-        rgba(34,197,94,.35);
-
-}
-
-
-/* =========================================================
-   BODY
-   ========================================================= */
-
-body {
-
-    transition:
-        background .5s ease,
-        color .5s ease;
-
-}
-
-
-/* =========================================================
-   NAVBAR
-   ========================================================= */
-
-body.theme-purple .navbar {
-
-    background:
-        rgba(18,8,35,.94);
-
-    border-bottom-color:
-        rgba(168,85,247,.35);
-
-}
-
-
-body.theme-green .navbar {
-
-    background:
-        rgba(2,25,18,.94);
-
-    border-bottom-color:
-        rgba(34,197,94,.35);
-
-}
-
-
-/* =========================================================
-   NAVIGATION ACTIVE COLOR
-   ========================================================= */
-
-body.theme-purple nav a:hover,
-body.theme-purple nav a.active {
-
-    color:
-        #c084fc !important;
-
-}
-
-
-body.theme-green nav a:hover,
-body.theme-green nav a.active {
-
-    color:
-        #4ade80 !important;
-
-}
-
-
-/* =========================================================
-   LOGO
-   ========================================================= */
-
-body.theme-purple .logo span {
-
-    color:
-        #c084fc !important;
-
-}
-
-
-body.theme-green .logo span {
-
-    color:
-        #4ade80 !important;
-
-}
-
-
-/* =========================================================
-   HERO HEADING
-   ========================================================= */
-
-body.theme-purple .hero h2 {
-
-    color:
-        #c084fc !important;
-
-}
-
-
-body.theme-green .hero h2 {
-
-    color:
-        #4ade80 !important;
-
-}
-
-
-/* =========================================================
-   SECTION LABELS
-   ========================================================= */
-
-body.theme-purple .section-label {
-
-    color:
-        #c084fc !important;
-
-}
-
-
-body.theme-green .section-label {
-
-    color:
-        #4ade80 !important;
-
-}
-
-
-/* =========================================================
-   ICONS
-   ========================================================= */
-
-body.theme-purple
-.stat-icon,
-
-body.theme-purple
-.mini-card i,
-
-body.theme-purple
-.skill-card > i,
-
-body.theme-purple
-.why-list i {
-
-    color:
-        #c084fc !important;
-
-}
-
-
-body.theme-green
-.stat-icon,
-
-body.theme-green
-.mini-card i,
-
-body.theme-green
-.skill-card > i,
-
-body.theme-green
-.why-list i {
-
-    color:
-        #4ade80 !important;
-
-}
-
-
-/* =========================================================
-   CARDS - PURPLE
-   ========================================================= */
-
-body.theme-purple
-.stat-card,
-
-body.theme-purple
-.mini-card,
-
-body.theme-purple
-.skill-card,
-
-body.theme-purple
-.project-card,
-
-body.theme-purple
-.flow-item,
-
-body.theme-purple
-.why-list div {
-
-    border-color:
-        rgba(168,85,247,.28);
-
-}
-
-
-body.theme-purple
-.stat-card:hover,
-
-body.theme-purple
-.mini-card:hover,
-
-body.theme-purple
-.skill-card:hover,
-
-body.theme-purple
-.project-card:hover {
-
-    border-color:
-        rgba(236,72,153,.75);
-
-    box-shadow:
-        0 20px 50px rgba(168,85,247,.18),
-        0 0 30px rgba(236,72,153,.10);
-
-}
-
-
-/* =========================================================
-   CARDS - GREEN
-   ========================================================= */
-
-body.theme-green
-.stat-card,
-
-body.theme-green
-.mini-card,
-
-body.theme-green
-.skill-card,
-
-body.theme-green
-.project-card,
-
-body.theme-green
-.flow-item,
-
-body.theme-green
-.why-list div {
-
-    border-color:
-        rgba(34,197,94,.28);
-
-}
-
-
-body.theme-green
-.stat-card:hover,
-
-body.theme-green
-.mini-card:hover,
-
-body.theme-green
-.skill-card:hover,
-
-body.theme-green
-.project-card:hover {
-
-    border-color:
-        rgba(74,222,128,.75);
-
-    box-shadow:
-        0 20px 50px rgba(34,197,94,.18),
-        0 0 30px rgba(6,182,212,.10);
-
-}
-
-
-/* =========================================================
-   PRIMARY BUTTON
-   ========================================================= */
-
-body.theme-purple .btn-primary {
-
-    background:
-        linear-gradient(
-            135deg,
-            #a855f7,
-            #ec4899
-        ) !important;
-
-}
-
-
-body.theme-green .btn-primary {
-
-    background:
-        linear-gradient(
-            135deg,
-            #22c55e,
-            #06b6d4
-        ) !important;
-
-}
-
-
-/* =========================================================
-   THEME BUTTON
-   ========================================================= */
-
-body.theme-purple .icon-btn {
-
-    border-color:
-        #a855f7 !important;
-
-    box-shadow:
-        0 0 18px
-        rgba(168,85,247,.35);
-
-}
-
-
-body.theme-green .icon-btn {
-
-    border-color:
-        #22c55e !important;
-
-    box-shadow:
-        0 0 18px
-        rgba(34,197,94,.35);
-
-}
-
-
-/* Theme button icon */
-
-body.theme-purple
-#themeToggle i {
-
-    color:
-        #c084fc;
-
-}
-
-
-body.theme-green
-#themeToggle i {
-
-    color:
-        #4ade80;
-
-}
-
-
-/* =========================================================
-   FLOW LINE
-   ========================================================= */
-
-body.theme-purple .flow-line {
-
-    background:
-        linear-gradient(
-            180deg,
-            #a855f7,
-            #ec4899
-        ) !important;
-
-    box-shadow:
-        0 0 12px
-        rgba(168,85,247,.45);
-
-}
-
-
-body.theme-green .flow-line {
-
-    background:
-        linear-gradient(
-            180deg,
-            #22c55e,
-            #06b6d4
-        ) !important;
-
-    box-shadow:
-        0 0 12px
-        rgba(34,197,94,.45);
-
-}
-
-
-/* =========================================================
-   FLOW MOVING LIGHT
-   ========================================================= */
-
-body.theme-purple
-.flow-line::after {
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            #a855f7,
-            #ffffff,
-            #ec4899,
-            transparent
-        );
-
-    box-shadow:
-        0 0 12px #a855f7,
-        0 0 22px rgba(236,72,153,.8);
-
-}
-
-
-body.theme-green
-.flow-line::after {
-
-    background:
-        linear-gradient(
-            180deg,
-            transparent,
-            #22c55e,
-            #ffffff,
-            #06b6d4,
-            transparent
-        );
-
-    box-shadow:
-        0 0 12px #22c55e,
-        0 0 22px rgba(6,182,212,.8);
-
-}
-
-
-/* =========================================================
-   TECHNOLOGY TAGS
-   ========================================================= */
-
-body.theme-purple
-.technology-cloud span:hover {
-
-    border-color:
-        #c084fc !important;
-
-    box-shadow:
-        0 0 15px
-        rgba(168,85,247,.25);
-
-}
-
-
-body.theme-green
-.technology-cloud span:hover {
-
-    border-color:
-        #4ade80 !important;
-
-    box-shadow:
-        0 0 15px
-        rgba(34,197,94,.25);
-
-}
-
-
-/* =========================================================
-   PROJECT CARD CATEGORY
-   ========================================================= */
-
-body.theme-purple
-.project-card > span {
-
-    color:
-        #c084fc !important;
-
-}
-
-
-body.theme-green
-.project-card > span {
-
-    color:
-        #4ade80 !important;
-
-}
-
-
-/* =========================================================
-   THEME INDICATOR DOT
-   ========================================================= */
-
-body.theme-purple
-.icon-btn::after {
-
-    background:
-        #ec4899 !important;
-
-    box-shadow:
-        0 0 10px #ec4899;
-
-}
-
-
-body.theme-green
-.icon-btn::after {
-
-    background:
-        #22c55e !important;
-
-    box-shadow:
-        0 0 10px #22c55e;
-
-}
-
-
-/* =========================================================
-   SMOOTH TRANSITION
-   ========================================================= */
-
-.navbar,
-.icon-btn,
-.stat-card,
-.mini-card,
-.skill-card,
-.project-card,
-.flow-item,
-.flow-box,
-.why-list div,
-.technology-cloud span,
-.btn-primary {
-
-    transition:
-        background .5s ease,
-        background-color .5s ease,
-        border-color .5s ease,
-        box-shadow .5s ease,
-        color .5s ease,
-        transform .3s ease;
-
-}
-/* =========================================================
-   TOP NAVIGATION - PREMIUM 3D MENU
-   ========================================================= */
-
-/* Hide TANWEER logo/text */
-.navbar .logo {
-    display: none !important;
-}
-
-/* Give navigation more space */
-.navbar {
-    padding: 18px 5% !important;
-}
-
-/* Navigation container */
-.nav-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px !important;
-}
-
-/* All navigation buttons */
-.nav-menu a {
-    position: relative;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-width: 92px;
-    padding: 12px 18px !important;
-
-    border-radius: 12px;
-
-    font-size: 15px !important;
-    font-weight: 700 !important;
-    letter-spacing: .3px;
-
-    color: #c9d8ea !important;
-
-    border: 1px solid transparent;
-
-    background: rgba(255,255,255,.025);
-
-    transform-style: preserve-3d;
-
-    transition:
-        transform .25s ease,
-        color .25s ease,
-        background .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
-
-    overflow: hidden;
-}
-
-/* Animated shine */
-.nav-menu a::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -120%;
-
-    width: 80%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            110deg,
-            transparent,
-            rgba(255,255,255,.25),
-            transparent
-        );
-
-    transform: skewX(-20deg);
-
-    transition: left .5s ease;
-
-    pointer-events: none;
-}
-
-/* 3D hover */
-.nav-menu a:hover {
-    transform:
-        translateY(-5px)
-        perspective(600px)
-        rotateX(8deg)
-        scale(1.06);
-
-    color: #ffffff !important;
-
-    background: rgba(255,255,255,.08);
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,.35),
-        0 0 20px var(--nav-glow);
-
-    border-color: var(--nav-color);
-}
-
-.nav-menu a:hover::before {
-    left: 140%;
-}
-
-/* =========================================================
-   EACH MENU BUTTON - DIFFERENT COLOR
-   ========================================================= */
-
-/* HOME - BLUE */
-.nav-menu a:nth-child(1) {
-    --nav-color: #39a8ff;
-    --nav-glow: rgba(57,168,255,.45);
-}
-
-.nav-menu a:nth-child(1):hover {
-    color: #58b8ff !important;
-}
-
-/* ABOUT - PURPLE */
-.nav-menu a:nth-child(2) {
-    --nav-color: #a855f7;
-    --nav-glow: rgba(168,85,247,.45);
-}
-
-.nav-menu a:nth-child(2):hover {
-    color: #c084fc !important;
-}
-
-/* SKILLS - CYAN */
-.nav-menu a:nth-child(3) {
-    --nav-color: #06b6d4;
-    --nav-glow: rgba(6,182,212,.45);
-}
-
-.nav-menu a:nth-child(3):hover {
-    color: #22d3ee !important;
-}
-
-/* PROJECTS - PINK */
-.nav-menu a:nth-child(4) {
-    --nav-color: #ec4899;
-    --nav-glow: rgba(236,72,153,.45);
-}
-
-.nav-menu a:nth-child(4):hover {
-    color: #f472b6 !important;
-}
-
-/* EXPERIENCE - ORANGE */
-.nav-menu a:nth-child(5) {
-    --nav-color: #f97316;
-    --nav-glow: rgba(249,115,22,.45);
-}
-
-.nav-menu a:nth-child(5):hover {
-    color: #fb923c !important;
-}
-
-/* CERTIFICATIONS - GREEN */
-.nav-menu a:nth-child(6) {
-    --nav-color: #22c55e;
-    --nav-glow: rgba(34,197,94,.45);
-}
-
-.nav-menu a:nth-child(6):hover {
-    color: #4ade80 !important;
-}
-
-
-/* =========================================================
-   ACTIVE MENU
-   ========================================================= */
-
-.nav-menu a.active {
-    color: #ffffff !important;
-
-    border-color: var(--nav-color);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.08),
-            rgba(255,255,255,.025)
-        );
-
-    box-shadow:
-        0 0 15px var(--nav-glow);
-}
-
-
-/* =========================================================
-   BLINKING / PULSING EFFECT
-   ========================================================= */
-
-.nav-menu a:hover {
-    animation:
-        navBlink .8s ease-in-out infinite alternate;
-}
-
-@keyframes navBlink {
-
-    from {
-        filter: brightness(1);
-    }
-
-    to {
-        filter: brightness(1.25);
-    }
-
-}
-
-
-/* =========================================================
-   WHATSAPP BUTTON - KEEP GREEN
-   ========================================================= */
-
-.whatsapp-nav {
-    min-width: 120px !important;
-
-    padding: 12px 20px !important;
-
-    border-radius: 12px !important;
-
-    background:
-        linear-gradient(
-            135deg,
-            #25D366,
-            #128C7E
-        ) !important;
-
-    color: #ffffff !important;
-
-    border-color:
-        rgba(37,211,102,.55) !important;
-
-    box-shadow:
-        0 6px 20px
-        rgba(37,211,102,.18);
-}
-
-.whatsapp-nav:hover {
-
-    color: #ffffff !important;
-
-    border-color:
-        #25D366 !important;
-
-    box-shadow:
-        0 12px 30px
-        rgba(37,211,102,.4) !important;
-}
-
-
-/* =========================================================
-   THEME BUTTON - SAME PREMIUM SIZE
-   ========================================================= */
-
-#themeToggle {
-
-    width: 48px !important;
-    height: 48px !important;
-
-    border-radius: 12px !important;
-
-    margin-left: 8px;
-
-    transform-style: preserve-3d;
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-#themeToggle:hover {
-
-    transform:
-        translateY(-4px)
-        rotateY(15deg)
-        scale(1.08);
-
-}
-
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 1100px) {
-
-    .nav-menu {
-        gap: 4px !important;
-    }
-
-    .nav-menu a {
-        min-width: auto;
-
-        padding:
-            10px 12px !important;
-
-        font-size:
-            13px !important;
-    }
-
-}
-
-
-@media (max-width: 768px) {
-
-    /* Keep mobile navigation manageable */
-    .navbar {
-        padding:
-            14px 4% !important;
-    }
-
-    .nav-menu {
-        gap: 3px !important;
-    }
-
-    .nav-menu a {
-        padding:
-            9px 8px !important;
-
-        min-width: auto;
-
-        font-size:
-            11px !important;
-    }
-
-    .whatsapp-nav {
-        min-width: auto !important;
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .nav-menu a {
-        padding:
-            8px 6px !important;
-
-        font-size:
-            10px !important;
-    }
-
-    #themeToggle {
-        width: 40px !important;
-        height: 40px !important;
-    }
-
-}
-/* =========================================================
-   FINAL PREMIUM TOP NAVIGATION
-   ========================================================= */
-
-/* Hide TANWEER logo completely */
-.navbar .logo {
-    display: none !important;
-}
-
-
-/* =========================================================
-   NAVBAR LAYOUT
-   ========================================================= */
-
-.nav-container {
-    width: min(1400px, 96%) !important;
-
-    height: 82px !important;
-
-    display: flex !important;
-
-    align-items: center !important;
-
-    justify-content: center !important;
-
-    gap: 22px !important;
-}
-
-
-/* =========================================================
-   MAIN MENU
-   ========================================================= */
-
-.nav-container nav {
-    display: flex !important;
-
-    align-items: center !important;
-
-    justify-content: center !important;
-
-    gap: 9px !important;
-
-    margin: 0 !important;
-}
-
-
-/* =========================================================
-   ALL MENU BUTTONS
-   ========================================================= */
-
-.nav-container nav a {
-
-    position: relative;
-
-    display: inline-flex !important;
-
-    align-items: center;
-
-    justify-content: center;
-
-    min-width: 92px !important;
-
-    height: 48px !important;
-
-    padding: 0 18px !important;
-
-    border-radius: 13px !important;
-
-    font-size: 15px !important;
-
-    font-weight: 750 !important;
-
-    letter-spacing: .25px;
-
-    color: #aebfd3 !important;
-
-    background:
-        rgba(255,255,255,.025);
-
-    border:
-        1px solid rgba(100,160,220,.12);
-
-    transform-style: preserve-3d;
-
-    transition:
-        transform .25s ease,
-        color .25s ease,
-        background .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
-
-    overflow: hidden;
-}
-
-
-/* =========================================================
-   SHINE EFFECT
-   ========================================================= */
-
-.nav-container nav a::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: -130%;
-
-    width: 75%;
-
-    height: 100%;
-
-    background:
-        linear-gradient(
-            110deg,
-            transparent,
-            rgba(255,255,255,.35),
-            transparent
-        );
-
-    transform: skewX(-20deg);
-
-    transition:
-        left .55s ease;
-
-    pointer-events: none;
-}
-
-
-.nav-container nav a:hover::before {
-
-    left: 150%;
-
-}
-
-
-/* =========================================================
-   3D HOVER
-   ========================================================= */
-
-.nav-container nav a:hover {
-
-    transform:
-        perspective(700px)
-        rotateX(8deg)
-        translateY(-5px)
-        scale(1.07);
-
-    color: #ffffff !important;
-
-    background:
-        rgba(255,255,255,.09);
-
-    border-color:
-        var(--nav-color) !important;
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,.35),
-        0 0 22px var(--nav-glow);
-
-    animation:
-        navPulse .7s ease-in-out infinite alternate;
-}
-
-
-/* =========================================================
-   LITTLE BLINK / GLOW
-   ========================================================= */
-
-@keyframes navPulse {
-
-    from {
-        filter: brightness(1);
-    }
-
-    to {
-        filter: brightness(1.28);
-    }
-
-}
-
-
-/* =========================================================
-   HOME - BLUE
-   ========================================================= */
-
-.nav-container nav a:nth-child(1) {
-
-    --nav-color: #38bdf8;
-
-    --nav-glow:
-        rgba(56,189,248,.55);
-}
-
-
-.nav-container nav a:nth-child(1):hover {
-
-    color: #38bdf8 !important;
-
-}
-
-
-/* =========================================================
-   ABOUT - PURPLE
-   ========================================================= */
-
-.nav-container nav a:nth-child(2) {
-
-    --nav-color: #a855f7;
-
-    --nav-glow:
-        rgba(168,85,247,.55);
-}
-
-
-.nav-container nav a:nth-child(2):hover {
-
-    color: #c084fc !important;
-
-}
-
-
-/* =========================================================
-   SKILLS - CYAN
-   ========================================================= */
-
-.nav-container nav a:nth-child(3) {
-
-    --nav-color: #06b6d4;
-
-    --nav-glow:
-        rgba(6,182,212,.55);
-}
-
-
-.nav-container nav a:nth-child(3):hover {
-
-    color: #22d3ee !important;
-
-}
-
-
-/* =========================================================
-   EXPERIENCE - ORANGE
-   ========================================================= */
-
-.nav-container nav a:nth-child(4) {
-
-    --nav-color: #f97316;
-
-    --nav-glow:
-        rgba(249,115,22,.55);
-}
-
-
-.nav-container nav a:nth-child(4):hover {
-
-    color: #fb923c !important;
-
-}
-
-
-/* =========================================================
-   CERTIFICATIONS - GREEN
-   ========================================================= */
-
-.nav-container nav a:nth-child(5) {
-
-    --nav-color: #22c55e;
-
-    --nav-glow:
-        rgba(34,197,94,.55);
-}
-
-
-.nav-container nav a:nth-child(5):hover {
-
-    color: #4ade80 !important;
-
-}
-
-
-/* =========================================================
-   PROJECTS - PINK
-   ========================================================= */
-
-.nav-container nav a:nth-child(6) {
-
-    --nav-color: #ec4899;
-
-    --nav-glow:
-        rgba(236,72,153,.55);
-}
-
-
-.nav-container nav a:nth-child(6):hover {
-
-    color: #f472b6 !important;
-
-}
-
-
-/* =========================================================
-   CONTACT - YELLOW / GOLD
-   ========================================================= */
-
-.nav-container nav a:nth-child(7) {
-
-    --nav-color: #facc15;
-
-    --nav-glow:
-        rgba(250,204,21,.55);
-}
-
-
-.nav-container nav a:nth-child(7):hover {
-
-    color: #fde047 !important;
-
-}
-
-
-/* =========================================================
-   ACTIVE BUTTON
-   ========================================================= */
-
-.nav-container nav a.active {
-
-    color: #ffffff !important;
-
-    border-color:
-        var(--nav-color) !important;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.09),
-            rgba(255,255,255,.025)
-        );
-
-    box-shadow:
-        0 0 16px var(--nav-glow);
-
-}
-
-
-/* =========================================================
-   RIGHT SIDE BUTTON GROUP
-   ========================================================= */
-
-.nav-buttons {
-
-    display: flex !important;
-
-    align-items: center !important;
-
-    gap: 8px !important;
-
-    margin-left: 4px !important;
-}
-
-
-/* =========================================================
-   THEME BUTTON - BIGGER
-   ========================================================= */
-
-#themeToggle {
-
-    width: 50px !important;
-
-    height: 50px !important;
-
-    flex: 0 0 50px;
-
-    border-radius: 13px !important;
-
-    margin: 0 !important;
-
-    border:
-        1px solid rgba(70,160,255,.35) !important;
-
-    background:
-        linear-gradient(
-            145deg,
-            #102641,
-            #0a192d
-        ) !important;
-
-    box-shadow:
-        0 7px 20px rgba(0,0,0,.25);
-
-    cursor: pointer;
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        border-color .3s ease;
-}
-
-
-#themeToggle:hover {
-
-    transform:
-        perspective(500px)
-        rotateY(15deg)
-        rotateX(8deg)
-        translateY(-4px)
-        scale(1.08);
-
-    border-color:
-        #39a8ff !important;
-
-    box-shadow:
-        0 0 22px
-        rgba(57,168,255,.45);
-
-}
-
-
-/* Theme icon */
-
-#themeToggle i {
-
-    font-size: 18px;
-
-    transition:
-        transform .3s ease,
-        color .3s ease;
-}
-
-
-#themeToggle:hover i {
-
-    transform:
-        rotate(25deg)
-        scale(1.2);
-
-}
-
-
-/* =========================================================
-   WHATSAPP BUTTON
-   ========================================================= */
-
-.nav-contact.whatsapp-nav {
-
-    min-width: 135px !important;
-
-    height: 50px !important;
-
-    padding:
-        0 22px !important;
-
-    margin: 0 !important;
-
-    border-radius: 13px !important;
-
-    display: inline-flex !important;
-
-    align-items: center !important;
-
-    justify-content: center !important;
-
-    gap: 9px !important;
-
-    font-size: 15px !important;
-
-    font-weight: 800 !important;
-
-    background:
-        linear-gradient(
-            135deg,
-            #25D366,
-            #128C7E
-        ) !important;
-
-    color: #ffffff !important;
-
-    border:
-        1px solid
-        rgba(37,211,102,.65) !important;
-
-    box-shadow:
-        0 8px 25px
-        rgba(37,211,102,.22);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        filter .3s ease;
-}
-
-
-.nav-contact.whatsapp-nav i {
-
-    font-size: 19px;
-
-}
-
-
-.nav-contact.whatsapp-nav:hover {
-
-    transform:
-        perspective(600px)
-        rotateX(7deg)
-        translateY(-5px)
-        scale(1.06);
-
-    filter:
-        brightness(1.12);
-
-    box-shadow:
-        0 12px 35px
-        rgba(37,211,102,.45);
-
-}
-
-
-/* =========================================================
-   WHATSAPP ICON ANIMATION
-   ========================================================= */
-
-.nav-contact.whatsapp-nav:hover i {
-
-    animation:
-        whatsappBounce .5s ease;
-
-}
-
-
-@keyframes whatsappBounce {
-
-    0% {
-        transform: scale(1);
-    }
-
-    40% {
-        transform:
-            scale(1.25)
-            rotate(-10deg);
-    }
-
-    70% {
-        transform:
-            scale(.95)
-            rotate(8deg);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-
-}
-
-
-/* =========================================================
-   DESKTOP LARGE SCREEN
-   ========================================================= */
-
-@media (min-width: 1400px) {
-
-    .nav-container {
-
-        width: 1400px !important;
-
-        gap: 30px !important;
-
-    }
-
-    .nav-container nav {
-
-        gap: 11px !important;
-
-    }
-
-    .nav-container nav a {
-
-        min-width: 105px !important;
-
-        height: 52px !important;
-
-        padding:
-            0 20px !important;
-
-        font-size:
-            16px !important;
-
-    }
-
-    #themeToggle {
-
-        width: 52px !important;
-
-        height: 52px !important;
-
-    }
-
-    .nav-contact.whatsapp-nav {
-
-        height: 52px !important;
-
-        min-width: 145px !important;
-
-        font-size: 16px !important;
-
-    }
-
-}
-
-
-/* =========================================================
-   LAPTOP
-   ========================================================= */
-
-@media (max-width: 1200px) {
-
-    .nav-container {
-
-        width: 98% !important;
-
-        gap: 12px !important;
-
-    }
-
-    .nav-container nav {
-
-        gap: 4px !important;
-
-    }
-
-    .nav-container nav a {
-
-        min-width: auto !important;
-
-        padding:
-            0 12px !important;
-
-        font-size:
-            13px !important;
-
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    .nav-container {
-
-        height: 70px !important;
-
-    }
-
-    .nav-container nav {
-
-        gap: 3px !important;
-
-    }
-
-    .nav-container nav a {
-
-        height: 40px !important;
-
-        padding:
-            0 7px !important;
-
-        font-size:
-            10px !important;
-
-        min-width:
-            auto !important;
-
-    }
-
-    #themeToggle {
-
-        width: 42px !important;
-
-        height: 42px !important;
-
-        flex-basis: 42px;
-
-    }
-
-}
-/* =========================================================
-   TANWEER PORTFOLIO
-   FINAL PREMIUM NAVIGATION
-   ========================================================= */
-
-
-/* ---------------------------------------------------------
-   HIDE LOGO
-   --------------------------------------------------------- */
-
-.nav-container > .logo {
-    display: none !important;
-}
-
-
-/* ---------------------------------------------------------
-   NAVBAR CONTAINER
-   --------------------------------------------------------- */
-
-.nav-container {
-
-    width: min(1450px, 97%) !important;
-
-    height: 82px !important;
-
-    margin: auto !important;
-
-    display: flex !important;
-
-    align-items: center !important;
-
-    justify-content: center !important;
-
-    gap: 18px !important;
-
-}
-
-
-/* ---------------------------------------------------------
-   NAVIGATION MENU
-   --------------------------------------------------------- */
-
-.nav-container nav {
-
-    display: flex !important;
-
-    align-items: center !important;
-
-    justify-content: center !important;
-
-    gap: 8px !important;
-
-    margin: 0 !important;
-
-    flex: 0 0 auto !important;
-
-}
-
-
-/* ---------------------------------------------------------
-   MENU BUTTON
-   --------------------------------------------------------- */
-
-.nav-container nav a {
-
-    position: relative;
-
-    display: inline-flex !important;
-
-    align-items: center;
-
-    justify-content: center;
-
-    min-width: 105px !important;
-
-    height: 50px !important;
-
-    padding: 0 19px !important;
-
-    border-radius: 13px !important;
-
-    color: #aebfd3 !important;
-
-    background:
-        rgba(255,255,255,.025);
-
-    border:
-        1px solid
-        rgba(90,160,230,.14);
-
-    font-size: 15px !important;
-
-    font-weight: 750 !important;
-
-    letter-spacing: .2px;
-
-    white-space: nowrap;
-
-    transform-style: preserve-3d;
-
-    transition:
-        transform .28s ease,
-        color .28s ease,
-        background .28s ease,
-        border-color .28s ease,
-        box-shadow .28s ease;
-
-    overflow: hidden;
-
-}
-
-
-/* ---------------------------------------------------------
-   SHINE
-   --------------------------------------------------------- */
-
-.nav-container nav a::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: -130%;
-
-    width: 75%;
-
-    height: 100%;
-
-    background:
-        linear-gradient(
-            110deg,
-            transparent,
-            rgba(255,255,255,.40),
-            transparent
-        );
-
-    transform: skewX(-20deg);
-
-    transition:
-        left .55s ease;
-
-    pointer-events: none;
-
-}
-
-
-.nav-container nav a:hover::before {
-
-    left: 150%;
-
-}
-
-
-/* ---------------------------------------------------------
-   3D HOVER
-   --------------------------------------------------------- */
-
-.nav-container nav a:hover {
-
-    transform:
-        perspective(700px)
-        rotateX(9deg)
-        rotateY(-3deg)
-        translateY(-6px)
-        scale(1.07);
-
-    color:
-        var(--nav-color) !important;
-
-    background:
-        rgba(255,255,255,.08);
-
-    border-color:
-        var(--nav-color) !important;
-
-    box-shadow:
-        0 12px 25px rgba(0,0,0,.35),
-        0 0 25px var(--nav-glow);
-
-}
-
-
-/* ---------------------------------------------------------
-   ACTIVE
-   --------------------------------------------------------- */
-
-.nav-container nav a.active {
-
-    color:
-        #ffffff !important;
-
-    border-color:
-        var(--nav-color) !important;
-
-    box-shadow:
-        0 0 16px var(--nav-glow);
-
-}
-
-
-/* =========================================================
-   INDIVIDUAL COLORS
-   ========================================================= */
-
-
-/* HOME */
-
-.nav-container nav a:nth-child(1) {
-
-    --nav-color: #38bdf8;
-
-    --nav-glow:
-        rgba(56,189,248,.55);
-
-}
-
-
-/* ABOUT */
-
-.nav-container nav a:nth-child(2) {
-
-    --nav-color: #a855f7;
-
-    --nav-glow:
-        rgba(168,85,247,.55);
-
-}
-
-
-/* SKILLS */
-
-.nav-container nav a:nth-child(3) {
-
-    --nav-color: #06b6d4;
-
-    --nav-glow:
-        rgba(6,182,212,.55);
-
-}
-
-
-/* EXPERIENCE */
-
-.nav-container nav a:nth-child(4) {
-
-    --nav-color: #f97316;
-
-    --nav-glow:
-        rgba(249,115,22,.55);
-
-}
-
-
-/* CERTIFICATIONS */
-
-.nav-container nav a:nth-child(5) {
-
-    --nav-color: #22c55e;
-
-    --nav-glow:
-        rgba(34,197,94,.55);
-
-}
-
-
-/* PROJECTS */
-
-.nav-container nav a:nth-child(6) {
-
-    --nav-color: #ec4899;
-
-    --nav-glow:
-        rgba(236,72,153,.55);
-
-}
-
-
-/* CONTACT */
-
-.nav-container nav a:nth-child(7) {
-
-    --nav-color: #facc15;
-
-    --nav-glow:
-        rgba(250,204,21,.55);
-
-}
-
-
-/* =========================================================
-   RIGHT BUTTONS
-   ========================================================= */
-
-.nav-buttons {
-
-    display: flex !important;
-
-    align-items: center !important;
-
-    gap: 8px !important;
-
-    margin: 0 !important;
-
-    flex: 0 0 auto !important;
-
-}
-
-
-/* =========================================================
-   THEME BUTTON
-   ========================================================= */
-
-#themeToggle {
-
-    width: 52px !important;
-
-    height: 52px !important;
-
-    min-width: 52px !important;
-
-    margin: 0 !important;
-
-    border-radius: 13px !important;
-
-    display: flex !important;
-
-    align-items: center;
-
-    justify-content: center;
-
-    cursor: pointer;
-
-    background:
-        linear-gradient(
-            145deg,
-            #102641,
-            #08182c
-        ) !important;
-
-    border:
-        1px solid
-        rgba(57,168,255,.45) !important;
-
-    box-shadow:
-        0 6px 20px
-        rgba(57,168,255,.12);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-
-}
-
-
-#themeToggle:hover {
-
-    transform:
-        perspective(600px)
-        rotateY(15deg)
-        rotateX(8deg)
-        translateY(-5px)
-        scale(1.08);
-
-    box-shadow:
-        0 0 25px
-        rgba(57,168,255,.45);
-
-}
-
-
-#themeToggle i {
-
-    font-size: 19px !important;
-
-}
-
-
-/* =========================================================
-   WHATSAPP
-   ========================================================= */
-
-.nav-contact.whatsapp-nav {
-
-    height: 52px !important;
-
-    min-width: 145px !important;
-
-    padding:
-        0 22px !important;
-
-    margin: 0 !important;
-
-    display: inline-flex !important;
-
-    align-items: center !important;
-
-    justify-content: center !important;
-
-    gap: 9px !important;
-
-    border-radius: 13px !important;
-
-    background:
-        linear-gradient(
-            135deg,
-            #25D366,
-            #128C7E
-        ) !important;
-
-    border:
-        1px solid
-        rgba(37,211,102,.65) !important;
-
-    color: white !important;
-
-    font-size: 15px !important;
-
-    font-weight: 800 !important;
-
-    box-shadow:
-        0 8px 25px
-        rgba(37,211,102,.20);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        filter .3s ease;
-
-}
-
-
-.nav-contact.whatsapp-nav i {
-
-    font-size: 19px !important;
-
-}
-
-
-.nav-contact.whatsapp-nav:hover {
-
-    transform:
-        perspective(600px)
-        rotateX(8deg)
-        translateY(-5px)
-        scale(1.06);
-
-    filter:
-        brightness(1.12);
-
-    box-shadow:
-        0 14px 35px
-        rgba(37,211,102,.45);
-
-}
-
-
-/* =========================================================
-   EXPERIENCE SECTION
-   ========================================================= */
-
-.experience-section {
-
-    background:
-        linear-gradient(
-            180deg,
-            #061426,
-            #071a30
-        );
-
-}
-
-
-.experience-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 22px;
-
-}
-
-
-.experience-card {
-
-    position: relative;
-
-    display: flex;
-
-    gap: 22px;
-
-    padding: 28px;
-
-    border-radius: 20px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(14,36,62,.95),
-            rgba(8,25,44,.95)
-        );
-
-    border:
-        1px solid
-        rgba(60,150,255,.18);
-
-    box-shadow:
-        0 15px 35px
-        rgba(0,0,0,.20);
-
-    transform-style: preserve-3d;
-
-    transition:
-        transform .35s ease,
-        border-color .35s ease,
-        box-shadow .35s ease;
-
-}
-
-
-.experience-card:hover {
-
-    transform:
-        perspective(1000px)
-        rotateX(3deg)
-        rotateY(-3deg)
-        translateY(-8px);
-
-    border-color:
-        #f97316;
-
-    box-shadow:
-        0 20px 45px
-        rgba(0,0,0,.35),
-        0 0 25px
-        rgba(249,115,22,.18);
-
-}
-
-
-.experience-icon {
-
-    flex:
-        0 0 58px;
-
-    width: 58px;
-
-    height: 58px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 15px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f97316,
-            #ec4899
-        );
-
-    color: white;
-
-    font-size: 22px;
-
-    box-shadow:
-        0 8px 25px
-        rgba(249,115,22,.22);
-
-}
-
-
-.experience-content {
-
-    flex: 1;
-
-}
-
-
-.experience-period {
-
-    display: inline-block;
-
-    margin-bottom: 7px;
-
-    color: #38bdf8;
-
-    font-size: 11px;
-
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
-
-}
-
-
-.experience-card h3 {
-
-    margin-bottom: 9px;
-
-    font-size: 23px;
-
-    color: #f3f7ff;
-
-}
-
-
-.experience-summary {
-
-    color: #a8bad0;
-
-    font-size: 14px;
-
-    margin-bottom: 14px;
-
-}
-
-
-.experience-card ul {
-
-    padding-left: 18px;
-
-    color: #9eafc6;
-
-    font-size: 13px;
-
-    line-height: 1.9;
-
-}
-
-
-.experience-card li::marker {
-
-    color: #f97316;
-
-}
-
-
-/* =========================================================
-   FIX ANCHOR POSITION WITH FIXED NAVBAR
-   ========================================================= */
-
-section[id] {
-
-    scroll-margin-top:
-        95px;
-
-}
-
-
-/* =========================================================
-   REMOVE MOBILE MENU BUTTON ON DESKTOP
-   ========================================================= */
-
-@media (min-width: 769px) {
-
-    #menuToggle {
-
-        display: none !important;
-
-    }
-
-}
-
-
-/* =========================================================
-   LARGE DESKTOP
-   ========================================================= */
-
-@media (min-width: 1400px) {
-
-    .nav-container {
-
-        width: 1450px !important;
-
-        gap: 22px !important;
-
-    }
-
-    .nav-container nav {
-
-        gap: 10px !important;
-
-    }
-
-    .nav-container nav a {
-
-        min-width: 112px !important;
-
-        height: 53px !important;
-
-        font-size: 16px !important;
-
-    }
-
-}
-
-
-/* =========================================================
-   LAPTOP
-   ========================================================= */
-
-@media (max-width: 1250px) {
-
-    .nav-container {
-
-        width: 98% !important;
-
-        gap: 8px !important;
-
-    }
-
-    .nav-container nav {
-
-        gap: 3px !important;
-
-    }
-
-    .nav-container nav a {
-
-        min-width: auto !important;
-
-        padding:
-            0 11px !important;
-
-        font-size:
-            13px !important;
-
-    }
-
-}
-
-
-/* =========================================================
-   EXPERIENCE MOBILE
-   ========================================================= */
-
-@media (max-width: 800px) {
-
-    .experience-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 650px) {
-
-    .nav-container {
-
-        height: 68px !important;
-
-    }
-
-    .nav-container nav {
-
-        gap: 2px !important;
-
-    }
-
-    .nav-container nav a {
-
-        min-width: auto !important;
-
-        height: 38px !important;
-
-        padding:
-            0 6px !important;
-
-        font-size:
-            10px !important;
-
-    }
-
-    #themeToggle {
-
-        width: 40px !important;
-
-        height: 40px !important;
-
-        min-width: 40px !important;
-
-    }
-
-    .nav-contact.whatsapp-nav {
-
-        min-width: auto !important;
-
-        height: 40px !important;
-
-        padding:
-            0 10px !important;
-
-        font-size:
-            11px !important;
-
-    }
-
-}
-/* =====================================================
-   CLEAN CISCO CERTIFICATE CARDS
-   ===================================================== */
-
-.certificate-bg {
-    position: relative;
-    overflow: hidden;
-
-    background-color: #ffffff !important;
-
-    border: 2px solid rgba(0, 190, 255, 0.65);
-
-    min-height: 300px;
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
-}
-
-/* Certificate image layer */
-.certificate-bg::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 92% auto;
-
-    opacity: 1;
-
-    z-index: 0;
-
-    pointer-events: none;
-}
-
-/* CCNA certificate */
-.ccna-card::before {
-    background-image: url("ccna-logo.png");
-}
-
-/* CCNP certificate */
-.ccnp-card::before {
-    background-image: url("ccnp-logo.png");
-}
-
-/* White certificate surface */
-.certificate-bg::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: rgba(255, 255, 255, 0.08);
-
-    z-index: 1;
-
-    pointer-events: none;
-}
-
-/* Put text above certificate */
-.certificate-bg > * {
-    position: relative;
-    z-index: 3;
-}
-
-/* Certificate issuer */
-.certificate-bg .issuer {
-    color: #0077b6 !important;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-/* Certificate title */
-.certificate-bg h2 {
-    color: #071a35 !important;
-    font-weight: 900;
-    text-shadow: 0 1px 1px rgba(255,255,255,0.8);
-}
-
-/* Certificate description */
-.certificate-bg p {
-    color: #18324f !important;
-    font-weight: 600;
-    line-height: 1.7;
-}
-
-/* Icon */
-.certificate-bg .cert-icon {
-    box-shadow:
-        0 8px 25px rgba(0, 120, 255, 0.30);
-
-    position: relative;
-    z-index: 4;
-}
-
-/* Hover effect */
-.certificate-bg:hover {
-    transform: translateY(-10px) scale(1.02);
-
-    border-color: #00c8ff;
-
-    box-shadow:
-        0 20px 50px rgba(0, 160, 255, 0.35),
-        0 0 30px rgba(0, 200, 255, 0.20);
-}
-
-/* CCNA special hover */
-.ccna-card:hover {
-    border-color: #00aaff;
-}
-
-/* CCNP special hover */
-.ccnp-card:hover {
-    border-color: #7c5cff;
-}
-/* =========================================================
-   FRESH CERTIFICATIONS PAGE
-   ========================================================= */
-
-.cert-page {
-    min-height: 100vh;
-
-    margin: 0;
-    padding: 0;
-
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(0, 180, 255, 0.18),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(120, 80, 255, 0.18),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #041b2d,
-            #071d35,
-            #11183f
-        );
-
-    color: #ffffff;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-}
-
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-
-.cert-header {
-    width: 100%;
-
-    padding: 18px 35px;
-
-    box-sizing: border-box;
-
-    background: rgba(3, 15, 30, 0.88);
-
-    border-bottom: 1px solid rgba(0, 190, 255, 0.25);
-
-    backdrop-filter: blur(15px);
-}
-
-
-.cert-nav {
-    max-width: 1250px;
-
-    margin: auto;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: flex-end;
-
-    gap: 22px;
-}
-
-
-.cert-nav a {
-    color: #d7e7ff;
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    transition: 0.3s ease;
-}
-
-
-.cert-nav a:hover {
-    color: #00c6ff;
-
-    transform: translateY(-2px);
-}
-
-
-.cert-nav .active {
-    color: #00c6ff;
-}
-
-
-/* =========================================================
-   THEME BUTTON
-   ========================================================= */
-
-.cert-page .theme-btn {
-
-    width: 48px;
-    height: 48px;
-
-    border-radius: 12px;
-
-    border: 1px solid rgba(0, 190, 255, 0.4);
-
-    background: rgba(10, 35, 60, 0.9);
-
-    color: white;
-
-    font-size: 20px;
-
-    cursor: pointer;
-
-    transition: 0.3s ease;
-}
-
-
-.cert-page .theme-btn:hover {
-
-    transform: rotate(12deg) scale(1.08);
-
-    box-shadow:
-        0 0 20px rgba(0, 190, 255, 0.5);
-}
-
-
-/* =========================================================
-   WHATSAPP
-   ========================================================= */
-
-.cert-page .whatsapp-btn {
-
-    padding: 13px 20px;
-
-    border-radius: 12px;
-
-    background: linear-gradient(
-        135deg,
-        #12c978,
-        #0b9f68
-    );
-
-    color: white;
-
-    font-size: 14px;
-
-    font-weight: 800;
-
-    box-shadow:
-        0 8px 25px rgba(0, 210, 120, 0.25);
-}
-
-
-.cert-page .whatsapp-btn:hover {
-
-    color: white;
-
-    transform: translateY(-3px) scale(1.04);
-
-    box-shadow:
-        0 12px 35px rgba(0, 220, 130, 0.45);
-}
-
-
-/* =========================================================
-   MAIN
-   ========================================================= */
-
-.cert-main {
-
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding:
-        55px 35px
-        70px;
-}
-
-
-/* =========================================================
-   TITLE
-   ========================================================= */
-
-.cert-title {
-
-    text-align: center;
-
-    margin-bottom: 45px;
-}
-
-
-.cert-small-title {
-
-    color: #00c6ff;
-
-    font-size: 13px;
-
-    font-weight: 900;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 18px;
-}
-
-
-.cert-title h1 {
-
-    margin: 0;
-
-    font-size: clamp(42px, 5vw, 68px);
-
-    line-height: 1.05;
-
-    font-weight: 900;
-
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff,
-            #c7eaff,
-            #ffffff
-        );
-
-    -webkit-background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-}
-
-
-.cert-title p {
-
-    margin:
-        22px auto
-        0;
-
-    max-width: 850px;
-
-    color: #b9d4ef;
-
-    font-size: 16px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   CERTIFICATE GALLERY
-   ========================================================= */
-
-.certificate-gallery {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 30px;
-
-    width: 100%;
-}
-
-
-/* =========================================================
-   CERTIFICATE BOX
-   ========================================================= */
-
-.certificate-box {
-
-    position: relative;
-
-    width: 100%;
-
-    aspect-ratio: 1.55 / 1;
-
-    overflow: hidden;
-
-    background: #ffffff;
-
-    border-radius: 18px;
-
-    border: 2px solid
-        rgba(0, 198, 255, 0.55);
-
-    box-shadow:
-        0 12px 35px
-        rgba(0, 0, 0, 0.35);
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
-}
-
-
-/* =========================================================
-   CERTIFICATE IMAGE
-   ========================================================= */
-
-.certificate-box img {
-
-    width: 100%;
-
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    background: #ffffff;
-
-    transition:
-        transform 0.5s ease;
-}
-
-
-/* =========================================================
-   HOVER
-   ========================================================= */
-
-.certificate-box:hover {
-
-    transform:
-        translateY(-8px)
-        scale(1.015);
-
-    border-color: #00c6ff;
-
-    box-shadow:
-        0 20px 55px
-        rgba(0, 0, 0, 0.5),
-
-        0 0 30px
-        rgba(0, 198, 255, 0.35);
-}
-
-
-.certificate-box:hover img {
-
-    transform: scale(1.03);
-}
-
-
-/* =========================================================
-   BACK BUTTON
-   ========================================================= */
-
-.back-area {
-
-    text-align: center;
-
-    margin-top: 45px;
-}
-
-
-.back-button {
-
-    display: inline-block;
-
-    padding: 13px 25px;
-
-    border-radius: 11px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #0099ff,
-            #7355ff
-        );
-
-    color: white;
-
-    text-decoration: none;
-
-    font-weight: 800;
-
-    transition: 0.3s ease;
-}
-
-
-.back-button:hover {
-
-    transform:
-        translateY(-3px)
-        scale(1.04);
-
-    box-shadow:
-        0 10px 30px
-        rgba(70, 120, 255, 0.4);
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 850px) {
-
-    .cert-nav {
-
-        justify-content: center;
-
-        flex-wrap: wrap;
-
-        gap: 13px;
-    }
-
-
-    .cert-main {
-
-        padding:
-            40px 18px
-            55px;
-    }
-
-
-    .certificate-gallery {
-
-        grid-template-columns: 1fr;
-
-        gap: 22px;
-    }
-
-
-    .certificate-box {
-
-        aspect-ratio: 1.45 / 1;
-    }
-
-
-    .cert-title h1 {
-
-        font-size: 42px;
-    }
-
-
-    .cert-title p {
-
-        font-size: 14px;
-    }
-}
-/* =========================================
-   FIX CERTIFICATE IMAGE VISIBILITY
-   ========================================= */
-
-.cert-card {
-    position: relative !important;
-    overflow: hidden !important;
-    background: #ffffff !important;
-    min-height: 300px !important;
-}
-
-/* Force certificate image to appear */
-.cert-card img {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    width: 100% !important;
-    height: 100% !important;
-    min-height: 300px !important;
-    object-fit: contain !important;
-    object-position: center !important;
-    background: #ffffff !important;
-    position: relative !important;
-    z-index: 2 !important;
-
-    filter: none !important;
-    transform: none !important;
-}
-
-/* Keep image clear even on hover */
-.cert-card:hover img {
-    opacity: 1 !important;
-    visibility: visible !important;
-    filter: brightness(1.05) contrast(1.05) saturate(1.05) !important;
-    transform: scale(1.02) !important;
-}
-
-/* Don't let the shine layer cover the certificate */
-.cert-card::before {
-    z-index: 10 !important;
-    pointer-events: none !important;
-}
-
-/* Certificate remains above card background */
-.cert-card img {
-    z-index: 3 !important;
-}
-
-/* Make shine transparent so certificate is still clearly visible */
-.cert-card:hover::before {
-    opacity: 0.18 !important;
-}
+</body>
+</html>

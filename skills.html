@@ -1,5 +1,7 @@
+```html id="k2m8qa"
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -7,12 +9,18 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Enterprise IT Skills | Tanweer Ansari</title>
+    <title>Skills | Tanweer Ansari</title>
 
     <meta name="description"
-          content="Tanweer Ansari - Enterprise IT Skills covering Networking, Security, Microsoft Azure, Microsoft Cloud, Systems, IT Operations, CCTV, Smart Systems, Database and Applications.">
+          content="Tanweer Ansari — Enterprise Network, Cloud, Security, Microsoft Azure and IT Operations Skills.">
 
-    <!-- ================= FONT ================= -->
+    <meta name="author"
+          content="Tanweer Ansari">
+
+
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
 
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
@@ -24,1005 +32,1168 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
           rel="stylesheet">
 
-    <!-- ================= ICONS ================= -->
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 
-<style>
+    <!-- =====================================================
+         EXISTING SITE CSS
+    ====================================================== -->
 
-/* =========================================================
-   GLOBAL
-========================================================= */
+    <link rel="stylesheet"
+          href="style.css">
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-html {
-    scroll-behavior: smooth;
-}
+    <!-- =====================================================
+         THREE.JS
+    ====================================================== -->
 
-body {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-    font-family: "Inter", sans-serif;
 
-    background:
-        radial-gradient(circle at 10% 20%, rgba(0, 153, 255, 0.12), transparent 25%),
-        radial-gradient(circle at 90% 30%, rgba(0, 255, 200, 0.10), transparent 25%),
-        radial-gradient(circle at 50% 90%, rgba(120, 70, 255, 0.10), transparent 30%),
-        #050912;
+    <!-- =====================================================
+         SKILLS PAGE CSS
+    ====================================================== -->
 
-    color: #ffffff;
+    <style>
 
-    min-height: 100vh;
+        :root {
 
-    overflow-x: hidden;
-}
+            --neon: #39ffb0;
 
+            --cyan: #35d9ff;
 
-/* =========================================================
-   ANIMATED GRID
-========================================================= */
+            --blue: #4d8dff;
 
-body::before {
+            --purple: #a56cff;
 
-    content: "";
+            --bg: #050b10;
 
-    position: fixed;
+            --panel: rgba(255,255,255,.045);
 
-    inset: 0;
+            --border: rgba(255,255,255,.09);
 
-    background-image:
+            --text: #f4f8f9;
 
-        linear-gradient(
-            rgba(0, 180, 255, 0.035) 1px,
-            transparent 1px
-        ),
+            --muted: #8ea0a8;
 
-        linear-gradient(
-            90deg,
-            rgba(0, 180, 255, 0.035) 1px,
-            transparent 1px
-        );
+        }
 
-    background-size: 50px 50px;
 
-    pointer-events: none;
+        * {
+            box-sizing: border-box;
+        }
 
-    z-index: -3;
 
-    animation: gridMove 20s linear infinite;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-@keyframes gridMove {
 
-    from {
-        transform: translateY(0);
-    }
+        body {
 
-    to {
-        transform: translateY(50px);
-    }
-}
+            margin: 0;
 
+            font-family: "Inter", sans-serif;
 
-/* =========================================================
-   AMBIENT GLOW
-========================================================= */
+            background:
 
-.glow {
+                radial-gradient(
+                    circle at 15% 15%,
+                    rgba(57,255,176,.09),
+                    transparent 30%
+                ),
 
-    position: fixed;
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(53,217,255,.08),
+                    transparent 30%
+                ),
 
-    width: 420px;
+                radial-gradient(
+                    circle at 50% 90%,
+                    rgba(165,108,255,.07),
+                    transparent 35%
+                ),
 
-    height: 420px;
+                var(--bg);
 
-    border-radius: 50%;
+            color: var(--text);
 
-    filter: blur(100px);
+            overflow-x: hidden;
 
-    opacity: 0.18;
+        }
 
-    pointer-events: none;
 
-    z-index: -2;
-}
+        /* =====================================================
+           3D CANVAS
+        ====================================================== */
 
-.glow-one {
+        #skillsCanvas {
 
-    background: #008cff;
+            position: fixed;
 
-    top: 5%;
+            inset: 0;
 
-    left: -150px;
+            width: 100%;
 
-    animation: floatGlow 12s ease-in-out infinite;
-}
+            height: 100%;
 
-.glow-two {
+            z-index: -3;
 
-    background: #00e0b8;
+            pointer-events: none;
 
-    right: -150px;
+        }
 
-    top: 40%;
 
-    animation: floatGlow 15s ease-in-out infinite reverse;
-}
+        .space-overlay {
 
-.glow-three {
+            position: fixed;
 
-    background: #7047ff;
+            inset: 0;
 
-    bottom: -200px;
+            z-index: -2;
 
-    left: 35%;
+            pointer-events: none;
 
-    animation: floatGlow 18s ease-in-out infinite;
-}
+            background:
 
-@keyframes floatGlow {
+                linear-gradient(
+                    180deg,
+                    rgba(5,11,16,.35),
+                    rgba(5,11,16,.9)
+                );
 
-    0%,100% {
-        transform: translate(0,0);
-    }
+        }
 
-    50% {
-        transform: translate(80px,-60px);
-    }
-}
 
+        /* =====================================================
+           HERO
+        ====================================================== */
 
-/* =========================================================
-   NETWORK CANVAS
-========================================================= */
+        .skills-hero {
 
-#networkCanvas {
+            min-height: 92vh;
 
-    position: fixed;
+            display: flex;
 
-    inset: 0;
+            align-items: center;
 
-    width: 100%;
+            justify-content: center;
 
-    height: 100%;
+            text-align: center;
 
-    z-index: -1;
+            position: relative;
 
-    pointer-events: none;
+            padding:
+                150px 20px 90px;
 
-    opacity: 0.55;
-}
+        }
 
 
-/* =========================================================
-   NAVBAR
-========================================================= */
+        .hero-inner {
 
-.navbar {
+            width: min(1000px, 92%);
 
-    position: sticky;
+        }
 
-    top: 0;
 
-    z-index: 1000;
+        .eyebrow {
 
-    backdrop-filter: blur(18px);
+            display: inline-flex;
 
-    background: rgba(4, 8, 18, 0.72);
+            align-items: center;
 
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-}
+            gap: 9px;
 
-.nav-container {
+            padding:
+                9px 17px;
 
-    max-width: 1250px;
+            border-radius: 50px;
 
-    margin: auto;
+            border:
+                1px solid rgba(57,255,176,.3);
 
-    min-height: 72px;
+            background:
+                rgba(57,255,176,.06);
 
-    padding: 0 25px;
+            color: var(--neon);
 
-    display: flex;
+            font-size: 11px;
 
-    align-items: center;
+            font-weight: 800;
 
-    justify-content: space-between;
-}
+            letter-spacing: 2.5px;
 
-.logo {
+            text-transform: uppercase;
 
-    text-decoration: none;
+            box-shadow:
+                0 0 30px rgba(57,255,176,.08);
 
-    color: white;
+            animation:
+                pulseBadge 2.5s infinite;
 
-    font-size: 23px;
+        }
 
-    font-weight: 900;
 
-    letter-spacing: 1px;
-}
+        @keyframes pulseBadge {
 
-.logo span {
+            0%,100% {
+                box-shadow:
+                    0 0 20px rgba(57,255,176,.05);
+            }
 
-    color: #00e0b8;
-}
+            50% {
+                box-shadow:
+                    0 0 35px rgba(57,255,176,.2);
+            }
 
-.nav-links {
+        }
 
-    display: flex;
 
-    gap: 25px;
-}
+        .hero-title {
 
-.nav-links a {
+            margin:
+                28px 0 20px;
 
-    color: #b7c4d8;
+            font-size:
+                clamp(48px, 8vw, 100px);
 
-    text-decoration: none;
+            line-height: .95;
 
-    font-size: 14px;
+            font-weight: 900;
 
-    font-weight: 600;
+            letter-spacing: -5px;
 
-    transition: 0.3s;
-}
+        }
 
-.nav-links a:hover {
 
-    color: #00e0b8;
+        .hero-title span {
 
-    text-shadow:
-        0 0 12px rgba(0,224,184,0.7);
-}
+            color: var(--neon);
 
-.nav-active {
+            text-shadow:
+                0 0 25px rgba(57,255,176,.3);
 
-    color: #00e0b8 !important;
-}
+        }
 
 
-/* =========================================================
-   HERO
-========================================================= */
+        .hero-description {
 
-.hero {
+            max-width: 760px;
 
-    max-width: 1250px;
+            margin: auto;
 
-    margin: auto;
+            color: var(--muted);
 
-    padding: 55px 25px 30px;
+            font-size:
+                clamp(15px, 2vw, 19px);
 
-    text-align: center;
-}
+            line-height: 1.8;
 
-.hero-badge {
+        }
 
-    display: inline-flex;
 
-    align-items: center;
+        /* =====================================================
+           HERO METRICS
+        ====================================================== */
 
-    gap: 10px;
+        .hero-metrics {
 
-    padding: 9px 17px;
+            display: flex;
 
-    border-radius: 50px;
+            justify-content: center;
 
-    background:
-        rgba(0,224,184,0.08);
+            flex-wrap: wrap;
 
-    border:
-        1px solid rgba(0,224,184,0.25);
+            gap: 18px;
 
-    color: #00e0b8;
+            margin-top: 42px;
 
-    font-size: 12px;
+        }
 
-    font-weight: 800;
 
-    letter-spacing: 1.5px;
+        .metric {
 
-    text-transform: uppercase;
+            min-width: 150px;
 
-    animation: badgePulse 2.5s infinite;
-}
+            padding: 18px 22px;
 
-.hero-badge i {
+            border:
+                1px solid var(--border);
 
-    animation: rotateIcon 4s linear infinite;
-}
+            background:
+                rgba(255,255,255,.035);
 
-@keyframes badgePulse {
+            backdrop-filter: blur(15px);
 
-    0%,100% {
-        box-shadow:
-            0 0 0 rgba(0,224,184,0);
-    }
+            border-radius: 16px;
 
-    50% {
-        box-shadow:
-            0 0 25px rgba(0,224,184,0.18);
-    }
-}
+            transition: .35s;
 
-@keyframes rotateIcon {
+        }
 
-    to {
-        transform: rotate(360deg);
-    }
-}
 
+        .metric:hover {
 
-.hero h1 {
+            transform:
+                translateY(-6px)
+                scale(1.03);
 
-    margin-top: 20px;
+            border-color:
+                rgba(57,255,176,.4);
 
-    font-size: clamp(40px, 7vw, 78px);
+        }
 
-    font-weight: 900;
 
-    line-height: 0.95;
+        .metric strong {
 
-    letter-spacing: -3px;
+            display: block;
 
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff,
-            #65dfff,
-            #00e0b8,
-            #ffffff
-        );
+            font-size: 26px;
 
-    background-size: 300% auto;
+            color: var(--neon);
 
-    -webkit-background-clip: text;
+        }
 
-    -webkit-text-fill-color: transparent;
 
-    animation: gradientMove 5s linear infinite;
-}
+        .metric span {
 
-@keyframes gradientMove {
+            color: #778a92;
 
-    to {
-        background-position: 300% center;
-    }
-}
+            font-size: 11px;
 
-.hero h2 {
+            text-transform: uppercase;
 
-    margin-top: 18px;
+            letter-spacing: 1px;
 
-    font-size: clamp(18px, 3vw, 28px);
+        }
 
-    font-weight: 600;
 
-    color: #a9bad0;
-}
+        /* =====================================================
+           MARQUEE
+        ====================================================== */
 
-.hero-description {
+        .marquee {
 
-    max-width: 850px;
+            width: 100%;
 
-    margin: 18px auto 0;
+            overflow: hidden;
 
-    color: #8293aa;
+            border-top:
+                1px solid rgba(255,255,255,.06);
 
-    line-height: 1.8;
+            border-bottom:
+                1px solid rgba(255,255,255,.06);
 
-    font-size: 15px;
-}
+            background:
+                rgba(255,255,255,.025);
 
+            padding: 18px 0;
 
-/* =========================================================
-   FIXED MARQUEE
-========================================================= */
+        }
 
-.marquee-wrapper {
 
-    position: sticky;
+        .marquee-track {
 
-    top: 72px;
+            display: flex;
 
-    z-index: 900;
+            width: max-content;
 
-    width: 100%;
+            animation:
+                marquee 32s linear infinite;
 
-    overflow: hidden;
+        }
 
-    border-top:
-        1px solid rgba(0,224,184,0.18);
 
-    border-bottom:
-        1px solid rgba(0,224,184,0.18);
+        .marquee:hover
+        .marquee-track {
 
-    background:
-        rgba(3, 10, 20, 0.88);
+            animation-play-state: paused;
 
-    backdrop-filter: blur(16px);
+        }
 
-    box-shadow:
-        0 10px 35px rgba(0,0,0,0.25);
-}
 
-.marquee {
+        .marquee-item {
 
-    display: flex;
+            display: flex;
 
-    width: max-content;
+            align-items: center;
 
-    animation:
-        marqueeFast 16s linear infinite;
-}
+            gap: 10px;
 
-.marquee span {
+            margin-right: 45px;
 
-    display: flex;
+            color: #9fb0b6;
 
-    align-items: center;
+            font-size: 12px;
 
-    gap: 12px;
+            font-weight: 700;
 
-    padding: 14px 25px;
+            letter-spacing: 1.5px;
 
-    color: #b9cadc;
+            white-space: nowrap;
 
-    font-size: 12px;
+        }
 
-    font-weight: 800;
 
-    letter-spacing: 1.2px;
+        .marquee-item i {
 
-    white-space: nowrap;
+            color: var(--neon);
 
-    text-transform: uppercase;
-}
+        }
 
-.marquee span i {
 
-    color: #00e0b8;
+        @keyframes marquee {
 
-    font-size: 14px;
+            from {
+                transform: translateX(0);
+            }
 
-    text-shadow:
-        0 0 12px rgba(0,224,184,0.8);
-}
+            to {
+                transform: translateX(-50%);
+            }
 
-@keyframes marqueeFast {
+        }
 
-    from {
-        transform: translateX(0);
-    }
 
-    to {
-        transform: translateX(-50%);
-    }
-}
+        /* =====================================================
+           CONTENT
+        ====================================================== */
 
+        .skills-container {
 
-/* =========================================================
-   SKILLS SECTION
-========================================================= */
+            width:
+                min(1250px, 92%);
 
-.skills-container {
+            margin: auto;
 
-    max-width: 1250px;
+            padding:
+                100px 0;
 
-    margin: auto;
+        }
 
-    padding: 35px 25px 100px;
-}
 
+        .section-heading {
 
-/* =========================================================
-   SECTION TITLE
-========================================================= */
+            text-align: center;
 
-.section-heading {
+            margin-bottom: 55px;
 
-    text-align: center;
+        }
 
-    margin-bottom: 40px;
 
-    opacity: 0;
+        .section-heading small {
 
-    transform: translateY(30px);
+            color: var(--neon);
 
-    transition:
-        0.8s ease;
-}
+            font-size: 11px;
 
-.section-heading.show {
+            font-weight: 800;
 
-    opacity: 1;
+            letter-spacing: 3px;
 
-    transform: translateY(0);
-}
+        }
 
-.section-heading .small {
 
-    color: #00e0b8;
+        .section-heading h2 {
 
-    font-size: 12px;
+            font-size:
+                clamp(32px, 5vw, 55px);
 
-    font-weight: 900;
+            margin:
+                12px 0;
 
-    letter-spacing: 3px;
+            letter-spacing: -2px;
 
-    text-transform: uppercase;
-}
+        }
 
-.section-heading h2 {
 
-    margin-top: 10px;
+        .section-heading p {
 
-    font-size: clamp(30px, 5vw, 52px);
+            color: var(--muted);
 
-    font-weight: 900;
+            max-width: 650px;
 
-    letter-spacing: -1.5px;
-}
+            margin: auto;
 
-.section-heading p {
+            line-height: 1.7;
 
-    max-width: 700px;
+        }
 
-    margin: 12px auto 0;
 
-    color: #8293aa;
+        /* =====================================================
+           SKILL GRID
+        ====================================================== */
 
-    line-height: 1.7;
-}
+        .skill-grid {
 
+            display: grid;
 
-/* =========================================================
-   SKILL GRID
-========================================================= */
+            grid-template-columns:
+                repeat(2, 1fr);
 
-.skills-grid {
+            gap: 25px;
 
-    display: grid;
+        }
 
-    grid-template-columns:
-        repeat(3, 1fr);
 
-    gap: 22px;
+        /* =====================================================
+           3D CARD
+        ====================================================== */
 
-    perspective: 1200px;
-}
+        .skill-card {
 
+            position: relative;
 
-/* =========================================================
-   SKILL CARD
-========================================================= */
+            min-height: 320px;
 
-.skill-card {
+            padding: 32px;
 
-    position: relative;
+            border-radius: 24px;
 
-    padding: 30px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.07),
+                    rgba(255,255,255,.018)
+                );
 
-    min-height: 340px;
+            border:
+                1px solid var(--border);
 
-    border-radius: 22px;
+            backdrop-filter:
+                blur(18px);
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.07),
-            rgba(255,255,255,0.025)
-        );
+            overflow: hidden;
 
-    border:
-        1px solid rgba(255,255,255,0.09);
+            transform-style:
+                preserve-3d;
 
-    backdrop-filter: blur(15px);
+            transition:
+                transform .15s ease,
+                border-color .3s ease,
+                box-shadow .3s ease;
 
-    overflow: hidden;
+        }
 
-    opacity: 0;
 
-    transform:
-        translateY(50px)
-        rotateX(8deg);
+        .skill-card::before {
 
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease,
-        border 0.3s ease,
-        box-shadow 0.3s ease;
-}
+            content: "";
 
-.skill-card.show {
+            position: absolute;
 
-    opacity: 1;
+            width: 220px;
 
-    transform:
-        translateY(0)
-        rotateX(0);
-}
+            height: 220px;
 
-.skill-card::before {
+            border-radius: 50%;
 
-    content: "";
+            background:
+                var(--glow);
 
-    position: absolute;
+            opacity: .08;
 
-    width: 180px;
+            filter: blur(25px);
 
-    height: 180px;
+            top: -100px;
 
-    top: -90px;
+            right: -100px;
 
-    right: -90px;
+        }
 
-    border-radius: 50%;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,224,184,0.22),
-            transparent 70%
-        );
+        .skill-card:hover {
 
-    transition: 0.5s;
-}
+            border-color:
+                rgba(57,255,176,.45);
 
-.skill-card:hover {
+            box-shadow:
+                0 30px 80px rgba(0,0,0,.35),
+                0 0 40px rgba(57,255,176,.05);
 
-    transform:
-        translateY(-12px)
-        rotateX(2deg)
-        rotateY(-2deg);
+        }
 
-    border-color:
-        rgba(0,224,184,0.45);
 
-    box-shadow:
-        0 25px 60px rgba(0,0,0,0.35),
-        0 0 35px rgba(0,224,184,0.08);
-}
+        .skill-card-top {
 
-.skill-card:hover::before {
+            display: flex;
 
-    transform:
-        scale(2);
-}
+            align-items: center;
 
+            gap: 18px;
 
-/* =========================================================
-   ICON
-========================================================= */
+            position: relative;
 
-.skill-icon {
+            z-index: 2;
 
-    width: 60px;
+        }
 
-    height: 60px;
 
-    border-radius: 17px;
+        .skill-icon {
 
-    display: flex;
+            width: 62px;
 
-    align-items: center;
+            height: 62px;
 
-    justify-content: center;
+            flex-shrink: 0;
 
-    margin-bottom: 22px;
+            display: flex;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(0,224,184,0.16),
-            rgba(0,130,255,0.10)
-        );
+            align-items: center;
 
-    border:
-        1px solid rgba(0,224,184,0.22);
+            justify-content: center;
 
-    color: #00e0b8;
+            border-radius: 18px;
 
-    font-size: 25px;
+            color: var(--neon);
 
-    box-shadow:
-        inset 0 0 20px rgba(0,224,184,0.04);
+            background:
+                rgba(57,255,176,.07);
 
-    transition: 0.4s;
-}
+            border:
+                1px solid rgba(57,255,176,.2);
 
-.skill-card:hover .skill-icon {
+            font-size: 25px;
 
-    transform:
-        rotate(-8deg)
-        scale(1.12);
+            transform:
+                translateZ(30px);
 
-    box-shadow:
-        0 0 25px rgba(0,224,184,0.25);
-}
+        }
 
 
-/* =========================================================
-   CARD CONTENT
-========================================================= */
+        .skill-card h3 {
 
-.skill-card h3 {
+            margin: 0;
 
-    font-size: 17px;
+            font-size: 20px;
 
-    letter-spacing: 1px;
+            letter-spacing: .5px;
 
-    margin-bottom: 15px;
-}
+        }
 
-.skill-card p {
 
-    color: #8192aa;
+        .skill-card .category {
 
-    line-height: 1.7;
+            margin-top: 5px;
 
-    font-size: 13px;
+            color: #6f838b;
 
-    margin-bottom: 15px;
-}
+            font-size: 11px;
 
-.skill-list {
+            text-transform: uppercase;
 
-    list-style: none;
+            letter-spacing: 1px;
 
-    display: flex;
+        }
 
-    flex-wrap: wrap;
 
-    gap: 7px;
-}
+        /* =====================================================
+           TAGS
+        ====================================================== */
 
-.skill-list li {
+        .skill-tags {
 
-    padding: 6px 9px;
+            display: flex;
 
-    border-radius: 7px;
+            flex-wrap: wrap;
 
-    background:
-        rgba(255,255,255,0.045);
+            gap: 9px;
 
-    border:
-        1px solid rgba(255,255,255,0.07);
+            margin-top: 30px;
 
-    color: #c4d0df;
+            position: relative;
 
-    font-size: 11px;
+            z-index: 2;
 
-    transition: 0.25s;
-}
+        }
 
-.skill-list li:hover {
 
-    color: #00e0b8;
+        .tag {
 
-    border-color:
-        rgba(0,224,184,0.3);
+            padding:
+                9px 12px;
 
-    transform:
-        translateY(-2px);
-}
+            border-radius: 9px;
 
+            background:
+                rgba(255,255,255,.035);
 
-/* =========================================================
-   SPECIAL CARDS
-========================================================= */
+            border:
+                1px solid rgba(255,255,255,.07);
 
-.skill-card.azure .skill-icon {
+            color: #b8c4c8;
 
-    color: #48bfff;
+            font-size: 11px;
 
-    border-color:
-        rgba(72,191,255,0.3);
-}
+            transition: .25s;
 
-.skill-card.security .skill-icon {
+        }
 
-    color: #ffb84d;
 
-    border-color:
-        rgba(255,184,77,0.3);
-}
+        .tag:hover {
 
-.skill-card.systems .skill-icon {
+            color: var(--neon);
 
-    color: #9d8cff;
+            border-color:
+                rgba(57,255,176,.4);
 
-    border-color:
-        rgba(157,140,255,0.3);
-}
+            background:
+                rgba(57,255,176,.07);
 
-.skill-card.cctv .skill-icon {
+            transform:
+                translateY(-2px);
 
-    color: #ff6b8a;
+        }
 
-    border-color:
-        rgba(255,107,138,0.3);
-}
 
-.skill-card.database .skill-icon {
+        /* =====================================================
+           EXPERTISE BAR
+        ====================================================== */
 
-    color: #62d8ff;
+        .expertise {
 
-    border-color:
-        rgba(98,216,255,0.3);
-}
+            margin-top: 30px;
 
+        }
 
-/* =========================================================
-   SKILL COUNTER
-========================================================= */
 
-.skill-number {
+        .expertise-label {
 
-    position: absolute;
+            display: flex;
 
-    top: 24px;
+            justify-content: space-between;
 
-    right: 25px;
+            color: #73858d;
 
-    font-size: 11px;
+            font-size: 10px;
 
-    color: #4f6075;
+            margin-bottom: 8px;
 
-    font-weight: 800;
+            text-transform: uppercase;
 
-    letter-spacing: 1px;
-}
+            letter-spacing: 1px;
 
+        }
 
-/* =========================================================
-   FOOTER
-========================================================= */
 
-.footer {
+        .bar {
 
-    border-top:
-        1px solid rgba(255,255,255,0.08);
+            height: 5px;
 
-    padding: 30px 20px;
+            background:
+                rgba(255,255,255,.07);
 
-    text-align: center;
+            border-radius: 20px;
 
-    color: #66778c;
+            overflow: hidden;
 
-    font-size: 12px;
-}
+        }
 
-.footer strong {
 
-    color: #d8e3ee;
-}
+        .bar span {
 
+            display: block;
 
-/* =========================================================
-   BACK TO TOP
-========================================================= */
+            height: 100%;
 
-#backTop {
+            width: var(--level);
 
-    position: fixed;
+            border-radius: inherit;
 
-    right: 25px;
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--neon),
+                    var(--cyan)
+                );
 
-    bottom: 25px;
+            box-shadow:
+                0 0 15px rgba(57,255,176,.45);
 
-    width: 48px;
+            animation:
+                loadBar 1.5s ease forwards;
 
-    height: 48px;
+            transform-origin: left;
 
-    border-radius: 50%;
+        }
 
-    border: 1px solid rgba(0,224,184,0.3);
 
-    background:
-        rgba(5,15,25,0.8);
+        @keyframes loadBar {
 
-    color: #00e0b8;
+            from {
+                transform: scaleX(0);
+            }
 
-    cursor: pointer;
+            to {
+                transform: scaleX(1);
+            }
 
-    opacity: 0;
+        }
 
-    visibility: hidden;
 
-    transform: translateY(20px);
+        /* =====================================================
+           CERTIFICATIONS
+        ====================================================== */
 
-    transition: 0.3s;
+        .cert-section {
 
-    z-index: 2000;
-}
+            margin-top: 90px;
 
-#backTop.show {
+            padding:
+                50px 35px;
 
-    opacity: 1;
+            border-radius: 25px;
 
-    visibility: visible;
+            text-align: center;
 
-    transform: translateY(0);
-}
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(57,255,176,.07),
+                    rgba(53,217,255,.035),
+                    rgba(165,108,255,.05)
+                );
 
-#backTop:hover {
+            border:
+                1px solid rgba(255,255,255,.08);
 
-    background: #00e0b8;
+        }
 
-    color: #03100d;
 
-    box-shadow:
-        0 0 25px rgba(0,224,184,0.35);
-}
+        .cert-section h2 {
 
+            margin:
+                0 0 30px;
 
-/* =========================================================
-   MOBILE
-========================================================= */
+            font-size: 28px;
 
-@media (max-width: 950px) {
+        }
 
-    .skills-grid {
 
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
+        .cert-grid {
 
-    .nav-links {
+            display: flex;
 
-        display: none;
-    }
-}
+            justify-content: center;
 
-@media (max-width: 650px) {
+            flex-wrap: wrap;
 
-    .hero {
+            gap: 15px;
 
-        padding-top: 35px;
-    }
+        }
 
-    .hero h1 {
 
-        letter-spacing: -2px;
-    }
+        .cert {
 
-    .skills-grid {
+            padding:
+                14px 20px;
 
-        grid-template-columns: 1fr;
-    }
+            border-radius: 12px;
 
-    .skill-card {
+            background:
+                rgba(0,0,0,.22);
 
-        min-height: auto;
-    }
+            border:
+                1px solid rgba(255,255,255,.08);
 
-    .marquee-wrapper {
+            color: #dce5e8;
 
-        top: 70px;
-    }
+            font-size: 12px;
 
-    .nav-container {
+            font-weight: 700;
 
-        padding: 0 15px;
-    }
+            transition: .3s;
 
-    .skills-container {
+        }
 
-        padding-left: 15px;
 
-        padding-right: 15px;
-    }
-}
+        .cert:hover {
 
-</style>
+            transform:
+                translateY(-5px);
+
+            border-color:
+                rgba(57,255,176,.4);
+
+            color: var(--neon);
+
+        }
+
+
+        .cert i {
+
+            color: var(--neon);
+
+            margin-right: 8px;
+
+        }
+
+
+        /* =====================================================
+           PROFESSIONAL PRACTICES
+        ====================================================== */
+
+        .practice-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-top: 30px;
+
+        }
+
+
+        .practice {
+
+            padding: 22px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,.03);
+
+            border:
+                1px solid rgba(255,255,255,.07);
+
+            color: #aebbc0;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+
+            transition: .3s;
+
+        }
+
+
+        .practice:hover {
+
+            transform:
+                translateY(-5px);
+
+            border-color:
+                rgba(57,255,176,.3);
+
+        }
+
+
+        .practice i {
+
+            color: var(--neon);
+
+            margin-right: 9px;
+
+        }
+
+
+        /* =====================================================
+           HOBBIES
+        ====================================================== */
+
+        .hobbies {
+
+            margin-top: 90px;
+
+        }
+
+
+        .hobby-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+
+        }
+
+
+        .hobby {
+
+            padding:
+                25px 18px;
+
+            min-height: 145px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            gap: 12px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,.035);
+
+            border:
+                1px solid rgba(255,255,255,.07);
+
+            color: #9eafb5;
+
+            font-size: 11px;
+
+            line-height: 1.6;
+
+            transition: .35s;
+
+        }
+
+
+        .hobby:hover {
+
+            transform:
+                translateY(-7px)
+                scale(1.02);
+
+            color: white;
+
+            border-color:
+                rgba(57,255,176,.35);
+
+        }
+
+
+        .hobby i {
+
+            font-size: 25px;
+
+            color: var(--neon);
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        .skills-footer {
+
+            padding:
+                40px 20px;
+
+            text-align: center;
+
+            border-top:
+                1px solid rgba(255,255,255,.07);
+
+            color: #65767d;
+
+            font-size: 12px;
+
+        }
+
+
+        .skills-footer strong {
+
+            color: white;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media(max-width:900px) {
+
+            .skill-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .practice-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+
+            }
+
+            .hobby-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+
+            }
+
+        }
+
+
+        @media(max-width:600px) {
+
+            .skills-hero {
+
+                min-height: 80vh;
+
+            }
+
+            .hero-title {
+
+                font-size: 52px;
+
+                letter-spacing: -3px;
+
+            }
+
+            .hero-metrics {
+
+                gap: 10px;
+
+            }
+
+            .metric {
+
+                min-width: 135px;
+
+            }
+
+            .skill-card {
+
+                padding: 25px;
+
+            }
+
+            .practice-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .hobby-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .cert-section {
+
+                padding:
+                    35px 20px;
+
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -1030,20 +1201,19 @@ body::before {
 <body>
 
 
-<!-- =========================================================
-     BACKGROUND EFFECTS
-========================================================= -->
+<!-- =====================================================
+     THREE.JS BACKGROUND
+====================================================== -->
 
-<div class="glow glow-one"></div>
-<div class="glow glow-two"></div>
-<div class="glow glow-three"></div>
+<canvas id="skillsCanvas"></canvas>
 
-<canvas id="networkCanvas"></canvas>
+<div class="space-overlay"></div>
 
 
-<!-- =========================================================
+
+<!-- =====================================================
      NAVIGATION
-========================================================= -->
+====================================================== -->
 
 <header class="navbar">
 
@@ -1057,7 +1227,7 @@ body::before {
         </a>
 
 
-        <nav class="nav-links">
+        <nav id="navMenu">
 
             <a href="index.html">
                 Home
@@ -1068,7 +1238,7 @@ body::before {
             </a>
 
             <a href="skills.html"
-               class="nav-active">
+               class="active">
 
                 Skills
 
@@ -1092,536 +1262,732 @@ body::before {
 
         </nav>
 
+
+        <div class="nav-buttons">
+
+            <button
+                id="themeToggle"
+                class="icon-btn">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+
+            <a href="https://wa.me/966557316795"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="nav-contact whatsapp-nav">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                <span>
+                    WhatsApp
+                </span>
+
+            </a>
+
+
+            <button
+                id="menuToggle"
+                class="menu-btn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
     </div>
 
 </header>
 
 
-<!-- =========================================================
+
+<!-- =====================================================
      HERO
-========================================================= -->
+====================================================== -->
 
-<section class="hero">
+<section class="skills-hero">
 
-    <div class="hero-badge">
+    <div class="hero-inner">
 
-        <i class="fa-solid fa-microchip"></i>
+        <div class="eyebrow">
 
-        ENTERPRISE TECHNOLOGY EXPERTISE
+            <i class="fa-solid fa-microchip"></i>
+
+            TECHNOLOGY AREAS
+
+        </div>
+
+
+        <h1 class="hero-title">
+
+            Enterprise IT
+            <span>Skills</span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            A practical technology ecosystem covering
+            Network Infrastructure, Cloud, Security,
+            Microsoft Platforms, Systems and Enterprise
+            IT Operations.
+
+        </p>
+
+
+        <div class="hero-metrics">
+
+            <div class="metric">
+
+                <strong>16+</strong>
+
+                <span>
+                    Years Experience
+                </span>
+
+            </div>
+
+
+            <div class="metric">
+
+                <strong>08</strong>
+
+                <span>
+                    Core Domains
+                </span>
+
+            </div>
+
+
+            <div class="metric">
+
+                <strong>20+</strong>
+
+                <span>
+                    Technologies
+                </span>
+
+            </div>
+
+
+            <div class="metric">
+
+                <strong>05</strong>
+
+                <span>
+                    Key Certifications
+                </span>
+
+            </div>
+
+        </div>
 
     </div>
-
-
-    <h1>
-        Enterprise IT Skills
-    </h1>
-
-
-    <h2>
-        Network • Cloud • Security • Systems • Infrastructure
-    </h2>
-
-
-    <p class="hero-description">
-
-        A practical technology portfolio covering enterprise
-        networking, Microsoft cloud, cybersecurity, systems,
-        IT operations, smart technologies and application support.
-
-    </p>
 
 </section>
 
 
-<!-- =========================================================
-     FAST FIXED MARQUEE
-========================================================= -->
 
-<div class="marquee-wrapper">
+<!-- =====================================================
+     MARQUEE
+====================================================== -->
 
-    <div class="marquee">
+<div class="marquee">
 
-        <span>
+    <div class="marquee-track">
+
+
+        <div class="marquee-item">
             <i class="fa-solid fa-network-wired"></i>
-            NETWORKING
-        </span>
+            CISCO
+        </div>
 
-        <span>
+        <div class="marquee-item">
             <i class="fa-solid fa-shield-halved"></i>
-            SECURITY
-        </span>
+            FORTINET
+        </div>
 
-        <span>
-            <i class="fa-solid fa-cloud"></i>
-            MICROSOFT AZURE
-        </span>
-
-        <span>
+        <div class="marquee-item">
             <i class="fa-brands fa-microsoft"></i>
-            MICROSOFT 365
-        </span>
+            MICROSOFT
+        </div>
 
-        <span>
+        <div class="marquee-item">
+            <i class="fa-solid fa-cloud"></i>
+            AZURE
+        </div>
+
+        <div class="marquee-item">
             <i class="fa-solid fa-server"></i>
-            SYSTEMS
-        </span>
+            WINDOWS SERVER
+        </div>
 
-        <span>
-            <i class="fa-solid fa-headset"></i>
-            IT OPERATIONS
-        </span>
-
-        <span>
-            <i class="fa-solid fa-video"></i>
-            CCTV & SMART SYSTEMS
-        </span>
-
-        <span>
+        <div class="marquee-item">
             <i class="fa-solid fa-database"></i>
-            DATABASE
-        </span>
+            ORACLE
+        </div>
 
-        <span>
-            <i class="fa-solid fa-file-lines"></i>
-            DOCUMENTATION
-        </span>
+        <div class="marquee-item">
+            <i class="fa-solid fa-video"></i>
+            CCTV
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-headset"></i>
+            IT SUPPORT
+        </div>
 
 
-        <!-- DUPLICATE FOR CONTINUOUS LOOP -->
+        <!-- DUPLICATE FOR INFINITE LOOP -->
 
-        <span>
+        <div class="marquee-item">
             <i class="fa-solid fa-network-wired"></i>
-            NETWORKING
-        </span>
+            CISCO
+        </div>
 
-        <span>
+        <div class="marquee-item">
             <i class="fa-solid fa-shield-halved"></i>
-            SECURITY
-        </span>
+            FORTINET
+        </div>
 
-        <span>
-            <i class="fa-solid fa-cloud"></i>
-            MICROSOFT AZURE
-        </span>
-
-        <span>
+        <div class="marquee-item">
             <i class="fa-brands fa-microsoft"></i>
-            MICROSOFT 365
-        </span>
+            MICROSOFT
+        </div>
 
-        <span>
+        <div class="marquee-item">
+            <i class="fa-solid fa-cloud"></i>
+            AZURE
+        </div>
+
+        <div class="marquee-item">
             <i class="fa-solid fa-server"></i>
-            SYSTEMS
-        </span>
+            WINDOWS SERVER
+        </div>
 
-        <span>
-            <i class="fa-solid fa-headset"></i>
-            IT OPERATIONS
-        </span>
-
-        <span>
-            <i class="fa-solid fa-video"></i>
-            CCTV & SMART SYSTEMS
-        </span>
-
-        <span>
+        <div class="marquee-item">
             <i class="fa-solid fa-database"></i>
-            DATABASE
-        </span>
+            ORACLE
+        </div>
 
-        <span>
-            <i class="fa-solid fa-file-lines"></i>
-            DOCUMENTATION
-        </span>
+        <div class="marquee-item">
+            <i class="fa-solid fa-video"></i>
+            CCTV
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-headset"></i>
+            IT SUPPORT
+        </div>
 
     </div>
 
 </div>
 
 
-<!-- =========================================================
-     SKILLS
-========================================================= -->
+
+<!-- =====================================================
+     MAIN SKILLS
+====================================================== -->
 
 <main class="skills-container">
 
 
-    <div class="section-heading reveal">
+    <div class="section-heading">
 
-        <div class="small">
-            TECHNOLOGY AREAS
-        </div>
+        <small>
+            CORE TECHNOLOGY DOMAINS
+        </small>
 
         <h2>
-            Enterprise Technology Stack
+            What I Work With
         </h2>
 
         <p>
-            Practical hands-on capabilities across
-            infrastructure, networking, cloud, security,
-            systems and enterprise IT operations.
+
+            Hands-on experience across enterprise
+            infrastructure, network operations,
+            cloud platforms, security and IT support.
+
         </p>
 
     </div>
 
 
-    <div class="skills-grid">
+
+    <div class="skill-grid">
 
 
         <!-- NETWORKING -->
 
-        <article class="skill-card reveal">
+        <article class="skill-card"
+                 style="--glow:#39ffb0;">
 
-            <span class="skill-number">
-                01
-            </span>
+            <div class="skill-card-top">
 
-            <div class="skill-icon">
+                <div class="skill-icon">
 
-                <i class="fa-solid fa-network-wired"></i>
+                    <i class="fa-solid fa-network-wired"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        NETWORKING
+                    </h3>
+
+                    <div class="category">
+                        Network Infrastructure
+                    </div>
+
+                </div>
 
             </div>
 
-            <h3>
-                NETWORKING
-            </h3>
 
-            <p>
-                Enterprise network infrastructure,
-                connectivity and troubleshooting.
-            </p>
+            <div class="skill-tags">
 
-            <ul class="skill-list">
+                <span class="tag">Routing & Switching</span>
+                <span class="tag">LAN & WAN</span>
+                <span class="tag">VLAN</span>
+                <span class="tag">STP</span>
+                <span class="tag">RIP</span>
+                <span class="tag">BGP</span>
+                <span class="tag">OSPF</span>
+                <span class="tag">TCP/IP</span>
+                <span class="tag">VPN</span>
+                <span class="tag">Cisco</span>
+                <span class="tag">Avaya</span>
+                <span class="tag">Network Monitoring</span>
+                <span class="tag">Troubleshooting</span>
 
-                <li>Routing & Switching</li>
-                <li>LAN & WAN</li>
-                <li>VLAN</li>
-                <li>STP</li>
-                <li>RIP</li>
-                <li>BGP</li>
-                <li>OSPF</li>
-                <li>TCP/IP</li>
-                <li>VPN</li>
-                <li>Cisco & Avaya Telephony</li>
-                <li>Network Troubleshooting</li>
-                <li>Network Monitoring</li>
+            </div>
 
-            </ul>
+
+            <div class="expertise">
+
+                <div class="expertise-label">
+
+                    <span>Enterprise Networking</span>
+
+                    <span>Expertise</span>
+
+                </div>
+
+                <div class="bar">
+                    <span style="--level:92%;"></span>
+                </div>
+
+            </div>
 
         </article>
+
 
 
         <!-- SECURITY -->
 
-        <article class="skill-card security reveal">
+        <article class="skill-card"
+                 style="--glow:#ff5c7a;">
 
-            <span class="skill-number">
-                02
-            </span>
+            <div class="skill-card-top">
 
-            <div class="skill-icon">
+                <div class="skill-icon">
 
-                <i class="fa-solid fa-shield-halved"></i>
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        SECURITY
+                    </h3>
+
+                    <div class="category">
+                        Firewall & Network Security
+                    </div>
+
+                </div>
 
             </div>
 
-            <h3>
-                SECURITY
-            </h3>
 
-            <p>
-                Firewall administration and secure
-                enterprise network access.
-            </p>
+            <div class="skill-tags">
 
-            <ul class="skill-list">
+                <span class="tag">FortiGate</span>
+                <span class="tag">Firewall Policies</span>
+                <span class="tag">VPN</span>
+                <span class="tag">User Management</span>
+                <span class="tag">Access Profiles</span>
+                <span class="tag">URL Filtering</span>
+                <span class="tag">Network Security</span>
+                <span class="tag">Security Troubleshooting</span>
 
-                <li>FortiGate Firewall Basic</li>
-                <li>Firewall Policies</li>
-                <li>VPN</li>
-                <li>User Management</li>
-                <li>Access Profiles</li>
-                <li>URL Filtering</li>
-                <li>Network Security</li>
-                <li>Security Troubleshooting</li>
+            </div>
 
-            </ul>
+
+            <div class="expertise">
+
+                <div class="expertise-label">
+
+                    <span>Security Operations</span>
+
+                    <span>Expertise</span>
+
+                </div>
+
+                <div class="bar">
+                    <span style="--level:88%;"></span>
+                </div>
+
+            </div>
 
         </article>
+
 
 
         <!-- AZURE -->
 
-        <article class="skill-card azure reveal">
+        <article class="skill-card"
+                 style="--glow:#35d9ff;">
 
-            <span class="skill-number">
-                03
-            </span>
+            <div class="skill-card-top">
 
-            <div class="skill-icon">
+                <div class="skill-icon">
 
-                <i class="fa-solid fa-cloud"></i>
+                    <i class="fa-solid fa-cloud"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        MICROSOFT AZURE
+                    </h3>
+
+                    <div class="category">
+                        Cloud Infrastructure
+                    </div>
+
+                </div>
 
             </div>
 
-            <h3>
-                MICROSOFT AZURE
-            </h3>
 
-            <p>
-                Cloud infrastructure, networking,
-                identity and resource management.
-            </p>
+            <div class="skill-tags">
 
-            <ul class="skill-list">
+                <span class="tag">Azure Administration</span>
+                <span class="tag">Infrastructure</span>
+                <span class="tag">Azure Networking</span>
+                <span class="tag">Virtual Networks</span>
+                <span class="tag">Network Security</span>
+                <span class="tag">Azure Identity</span>
+                <span class="tag">Resource Management</span>
+                <span class="tag">AZ-104</span>
+                <span class="tag">AZ-700</span>
 
-                <li>Azure Administration</li>
-                <li>Azure Infrastructure</li>
-                <li>Azure Networking</li>
-                <li>Virtual Networks</li>
-                <li>Network Security</li>
-                <li>Azure Identity</li>
-                <li>Resource Management</li>
-                <li>AZ-104</li>
-                <li>AZ-700</li>
+            </div>
 
-            </ul>
+
+            <div class="expertise">
+
+                <div class="expertise-label">
+
+                    <span>Cloud Infrastructure</span>
+
+                    <span>Expertise</span>
+
+                </div>
+
+                <div class="bar">
+                    <span style="--level:86%;"></span>
+                </div>
+
+            </div>
 
         </article>
+
 
 
         <!-- MICROSOFT CLOUD -->
 
-        <article class="skill-card reveal">
+        <article class="skill-card"
+                 style="--glow:#4d8dff;">
 
-            <span class="skill-number">
-                04
-            </span>
+            <div class="skill-card-top">
 
-            <div class="skill-icon">
+                <div class="skill-icon">
 
-                <i class="fa-brands fa-microsoft"></i>
+                    <i class="fa-brands fa-microsoft"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        MICROSOFT CLOUD
+                    </h3>
+
+                    <div class="category">
+                        Identity & Endpoint
+                    </div>
+
+                </div>
 
             </div>
 
-            <h3>
-                MICROSOFT CLOUD
-            </h3>
 
-            <p>
-                Identity, endpoint and productivity
-                services across Microsoft cloud.
-            </p>
+            <div class="skill-tags">
 
-            <ul class="skill-list">
+                <span class="tag">Entra ID</span>
+                <span class="tag">Intune</span>
+                <span class="tag">Windows Autopilot</span>
+                <span class="tag">Microsoft 365</span>
+                <span class="tag">Office 365</span>
+                <span class="tag">Exchange Online</span>
+                <span class="tag">SharePoint</span>
+                <span class="tag">User Management</span>
+                <span class="tag">Access Management</span>
 
-                <li>Microsoft Entra ID</li>
-                <li>Microsoft Intune</li>
-                <li>Windows Autopilot</li>
-                <li>Microsoft 365</li>
-                <li>Office 365</li>
-                <li>Exchange Online</li>
-                <li>SharePoint</li>
-                <li>User Account Management</li>
-                <li>Access Management</li>
+            </div>
 
-            </ul>
+
+            <div class="expertise">
+
+                <div class="expertise-label">
+
+                    <span>Microsoft Platform</span>
+
+                    <span>Expertise</span>
+
+                </div>
+
+                <div class="bar">
+                    <span style="--level:85%;"></span>
+                </div>
+
+            </div>
 
         </article>
+
 
 
         <!-- SYSTEMS -->
 
-        <article class="skill-card systems reveal">
+        <article class="skill-card"
+                 style="--glow:#a56cff;">
 
-            <span class="skill-number">
-                05
-            </span>
+            <div class="skill-card-top">
 
-            <div class="skill-icon">
+                <div class="skill-icon">
 
-                <i class="fa-solid fa-server"></i>
+                    <i class="fa-brands fa-windows"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        SYSTEMS
+                    </h3>
+
+                    <div class="category">
+                        Windows & Endpoint Support
+                    </div>
+
+                </div>
 
             </div>
 
-            <h3>
-                SYSTEMS
-            </h3>
 
-            <p>
-                Windows infrastructure, hardware and
-                enterprise endpoint support.
-            </p>
+            <div class="skill-tags">
 
-            <ul class="skill-list">
+                <span class="tag">Windows Server 2016</span>
+                <span class="tag">Active Directory</span>
+                <span class="tag">Group Policy</span>
+                <span class="tag">Windows 10 / 11</span>
+                <span class="tag">Hardware</span>
+                <span class="tag">Software Installation</span>
+                <span class="tag">PC Troubleshooting</span>
+                <span class="tag">Printer Support</span>
+                <span class="tag">Anti-Virus</span>
 
-                <li>Windows Server 2016</li>
-                <li>Active Directory</li>
-                <li>Group Policy</li>
-                <li>Windows 10 / 11</li>
-                <li>Computer Hardware</li>
-                <li>Software Installation</li>
-                <li>PC & Laptop Troubleshooting</li>
-                <li>Printer Support</li>
-                <li>Anti-Virus</li>
+            </div>
 
-            </ul>
+
+            <div class="expertise">
+
+                <div class="expertise-label">
+
+                    <span>Systems Support</span>
+
+                    <span>Expertise</span>
+
+                </div>
+
+                <div class="bar">
+                    <span style="--level:90%;"></span>
+                </div>
+
+            </div>
 
         </article>
+
 
 
         <!-- IT OPERATIONS -->
 
-        <article class="skill-card reveal">
+        <article class="skill-card"
+                 style="--glow:#ffb347;">
 
-            <span class="skill-number">
-                06
-            </span>
+            <div class="skill-card-top">
 
-            <div class="skill-icon">
+                <div class="skill-icon">
 
-                <i class="fa-solid fa-headset"></i>
+                    <i class="fa-solid fa-gears"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        IT OPERATIONS
+                    </h3>
+
+                    <div class="category">
+                        Enterprise IT Support
+                    </div>
+
+                </div>
 
             </div>
 
-            <h3>
-                IT OPERATIONS
-            </h3>
 
-            <p>
-                Enterprise support, service management
-                and technical operations.
-            </p>
+            <div class="skill-tags">
 
-            <ul class="skill-list">
+                <span class="tag">Helpdesk</span>
+                <span class="tag">Ticketing</span>
+                <span class="tag">L2 IT Support</span>
+                <span class="tag">Incident Management</span>
+                <span class="tag">Service Requests</span>
+                <span class="tag">IT Asset Management</span>
+                <span class="tag">PPM Reports</span>
+                <span class="tag">Documentation</span>
+                <span class="tag">End User Support</span>
 
-                <li>Helpdesk & Ticketing System</li>
-                <li>L2 IT Support</li>
-                <li>Incident Management</li>
-                <li>Service Requests</li>
-                <li>IT Asset Management</li>
-                <li>PPM Reports</li>
-                <li>Technical Documentation</li>
-                <li>End User Support</li>
-                <li>Troubleshooting</li>
+            </div>
 
-            </ul>
+
+            <div class="expertise">
+
+                <div class="expertise-label">
+
+                    <span>Enterprise Support</span>
+
+                    <span>Expertise</span>
+
+                </div>
+
+                <div class="bar">
+                    <span style="--level:94%;"></span>
+                </div>
+
+            </div>
 
         </article>
+
 
 
         <!-- CCTV -->
 
-        <article class="skill-card cctv reveal">
+        <article class="skill-card"
+                 style="--glow:#ff4dca;">
 
-            <span class="skill-number">
-                07
-            </span>
+            <div class="skill-card-top">
 
-            <div class="skill-icon">
+                <div class="skill-icon">
 
-                <i class="fa-solid fa-video"></i>
+                    <i class="fa-solid fa-video"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        CCTV & SMART SYSTEMS
+                    </h3>
+
+                    <div class="category">
+                        Surveillance & IoT
+                    </div>
+
+                </div>
 
             </div>
 
-            <h3>
-                CCTV & SMART SYSTEMS
-            </h3>
 
-            <p>
-                Security surveillance, access control
-                and connected smart technologies.
-            </p>
+            <div class="skill-tags">
 
-            <ul class="skill-list">
+                <span class="tag">IP Camera</span>
+                <span class="tag">CCTV Systems</span>
+                <span class="tag">Camera Installation</span>
+                <span class="tag">Troubleshooting</span>
+                <span class="tag">Access Control</span>
+                <span class="tag">Smart Lock</span>
+                <span class="tag">Smart TV</span>
+                <span class="tag">IoT Sensors</span>
 
-                <li>IP Camera</li>
-                <li>CCTV Systems</li>
-                <li>Camera Installation</li>
-                <li>Camera Troubleshooting</li>
-                <li>Access Control</li>
-                <li>Smart Lock</li>
-                <li>Smart TV</li>
-                <li>IoT Smart Sensors</li>
-
-            </ul>
+            </div>
 
         </article>
+
 
 
         <!-- DATABASE -->
 
-        <article class="skill-card database reveal">
+        <article class="skill-card"
+                 style="--glow:#8df56a;">
 
-            <span class="skill-number">
-                08
-            </span>
+            <div class="skill-card-top">
 
-            <div class="skill-icon">
+                <div class="skill-icon">
 
-                <i class="fa-solid fa-database"></i>
+                    <i class="fa-solid fa-database"></i>
 
-            </div>
+                </div>
 
-            <h3>
-                DATABASE & APPLICATIONS
-            </h3>
+                <div>
 
-            <p>
-                Enterprise database, application deployment
-                and software lifecycle support.
-            </p>
+                    <h3>
+                        DATABASE & APPLICATIONS
+                    </h3>
 
-            <ul class="skill-list">
+                    <div class="category">
+                        Enterprise Applications
+                    </div>
 
-                <li>Oracle Database 10g</li>
-                <li>Oracle Forms</li>
-                <li>Oracle Reports 6i</li>
-                <li>Application Installation</li>
-                <li>Software Configuration</li>
-                <li>System Upgrades</li>
-                <li>Software Licensing</li>
-                <li>Application Troubleshooting</li>
-
-            </ul>
-
-        </article>
-
-
-        <!-- DOCUMENTATION -->
-
-        <article class="skill-card reveal">
-
-            <span class="skill-number">
-                09
-            </span>
-
-            <div class="skill-icon">
-
-                <i class="fa-solid fa-file-lines"></i>
+                </div>
 
             </div>
 
-            <h3>
-                DOCUMENTATION
-            </h3>
 
-            <p>
-                Structured technical documentation and
-                enterprise operational records.
-            </p>
+            <div class="skill-tags">
 
-            <ul class="skill-list">
+                <span class="tag">Oracle Database 10g</span>
+                <span class="tag">Oracle Forms</span>
+                <span class="tag">Oracle Reports 6i</span>
+                <span class="tag">Application Installation</span>
+                <span class="tag">Software Configuration</span>
+                <span class="tag">System Upgrades</span>
+                <span class="tag">Software Licensing</span>
+                <span class="tag">Application Troubleshooting</span>
 
-                <li>Technical Reports</li>
-                <li>PPM Reports</li>
-                <li>IT Documentation</li>
-                <li>SOP Preparation</li>
-                <li>Asset Inventory</li>
-                <li>Network Documentation</li>
-                <li>Incident Documentation</li>
-
-            </ul>
+            </div>
 
         </article>
 
@@ -1629,315 +1995,476 @@ body::before {
     </div>
 
 
+
     <!-- =====================================================
-         EXTRA CURRICULAR
-    ===================================================== -->
+         CERTIFICATIONS
+    ====================================================== -->
 
-    <section class="section-heading reveal"
-             style="margin-top:100px;">
-
-        <div class="small">
-            BEYOND TECHNOLOGY
-        </div>
+    <section class="cert-section">
 
         <h2>
-            Extra-Curricular & Interests
+
+            <i class="fa-solid fa-award"
+               style="color:var(--neon);"></i>
+
+            Professional Certifications
+
         </h2>
 
-        <p>
-            Continuous learning, curiosity and practical
-            problem solving beyond day-to-day IT operations.
-        </p>
+
+        <div class="cert-grid">
+
+            <div class="cert">
+
+                <i class="fa-solid fa-network-wired"></i>
+
+                CCNA / CCNP
+
+            </div>
+
+
+            <div class="cert">
+
+                <i class="fa-brands fa-microsoft"></i>
+
+                AZ-104
+
+            </div>
+
+
+            <div class="cert">
+
+                <i class="fa-solid fa-cloud"></i>
+
+                AZ-700
+
+            </div>
+
+
+            <div class="cert">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Fortinet NSE 4
+
+            </div>
+
+
+            <div class="cert">
+
+                <i class="fa-solid fa-gears"></i>
+
+                ITIL v4
+
+            </div>
+
+        </div>
 
     </section>
 
 
-    <div class="skill-card reveal"
-         style="max-width:1000px;margin:auto;">
 
-        <div class="skill-icon">
+    <!-- =====================================================
+         PROFESSIONAL PRACTICES
+    ====================================================== -->
 
-            <i class="fa-solid fa-chess-knight"></i>
+    <section class="hobbies">
+
+        <div class="section-heading">
+
+            <small>
+                PROFESSIONAL PRACTICES
+            </small>
+
+            <h2>
+                Documentation & Operations
+            </h2>
 
         </div>
 
-        <h3>
-            PROFESSIONAL MINDSET
-        </h3>
 
-        <ul class="skill-list">
+        <div class="practice-grid">
 
-            <li>
-                Won Inter Chess Championship at GHATSHILA COLLEGE
-            </li>
+            <div class="practice">
+                <i class="fa-solid fa-file-lines"></i>
+                Technical Reports
+            </div>
 
-            <li>
-                Active in Debating, Quizzing and Sports
-            </li>
+            <div class="practice">
+                <i class="fa-solid fa-chart-line"></i>
+                PPM Reports
+            </div>
 
-            <li>
-                Exploring new IT technologies and industry trends
-            </li>
+            <div class="practice">
+                <i class="fa-solid fa-book"></i>
+                IT Documentation
+            </div>
 
-            <li>
-                Research, testing and hands-on experimentation
-            </li>
+            <div class="practice">
+                <i class="fa-solid fa-list-check"></i>
+                SOP Preparation
+            </div>
 
-            <li>
-                Continuous networking, cloud and cybersecurity learning
-            </li>
+            <div class="practice">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                Asset Inventory
+            </div>
 
-            <li>
-                Microsoft Azure and enterprise IT solutions
-            </li>
+            <div class="practice">
+                <i class="fa-solid fa-diagram-project"></i>
+                Network Documentation
+            </div>
 
-            <li>
-                Technology research and practical problem solving
-            </li>
+            <div class="practice">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Incident Documentation
+            </div>
 
-            <li>
-                Continuous professional development
-            </li>
+            <div class="practice">
+                <i class="fa-solid fa-headset"></i>
+                End User Support
+            </div>
 
-        </ul>
+            <div class="practice">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                Technical Troubleshooting
+            </div>
 
-    </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HOBBIES
+    ====================================================== -->
+
+    <section class="hobbies">
+
+        <div class="section-heading">
+
+            <small>
+                BEYOND TECHNOLOGY
+            </small>
+
+            <h2>
+                Interests & Hobbies
+            </h2>
+
+        </div>
+
+
+        <div class="hobby-grid">
+
+
+            <div class="hobby">
+
+                <i class="fa-solid fa-chess"></i>
+
+                Won Inter Chess Championship
+                at GHATSHILA COLLEGE.
+
+            </div>
+
+
+            <div class="hobby">
+
+                <i class="fa-solid fa-microphone"></i>
+
+                Active in Debating,
+                Quizzing and Sports.
+
+            </div>
+
+
+            <div class="hobby">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                Exploring new IT technologies
+                and industry trends.
+
+            </div>
+
+
+            <div class="hobby">
+
+                <i class="fa-solid fa-flask"></i>
+
+                Research, testing and
+                hands-on experimentation.
+
+            </div>
+
+
+            <div class="hobby">
+
+                <i class="fa-solid fa-network-wired"></i>
+
+                Improving networking,
+                cloud and cybersecurity knowledge.
+
+            </div>
+
+
+            <div class="hobby">
+
+                <i class="fa-solid fa-cloud"></i>
+
+                Learning Microsoft Azure
+                and enterprise IT solutions.
+
+            </div>
+
+
+            <div class="hobby">
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+                Technology research and
+                practical problem solving.
+
+            </div>
+
+
+            <div class="hobby">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                Continuous professional
+                development and lifelong learning.
+
+            </div>
+
+
+        </div>
+
+    </section>
+
 
 </main>
 
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
 
-<footer class="footer">
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer class="skills-footer">
 
     <strong>
         Tanweer Ansari
     </strong>
 
-    · Network & IT Support Engineer
+    &nbsp;·&nbsp;
+
+    Network & IT Support Engineer
 
     <br><br>
 
-    Enterprise IT • Networking • Cloud • Security • Infrastructure
+    16+ Years Enterprise IT Experience
 
 </footer>
 
 
-<!-- =========================================================
-     BACK TO TOP
-========================================================= -->
 
-<button id="backTop">
+<!-- =====================================================
+     EXISTING SITE JAVASCRIPT
+====================================================== -->
 
-    <i class="fa-solid fa-arrow-up"></i>
-
-</button>
+<script src="script.js"></script>
 
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
+
+<!-- =====================================================
+     THREE.JS 3D NETWORK
+====================================================== -->
 
 <script>
 
+(function () {
 
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
+    const canvas =
+        document.getElementById("skillsCanvas");
 
-const revealElements =
-    document.querySelectorAll(".reveal");
+    if (!canvas || typeof THREE === "undefined") {
+        return;
+    }
 
 
-const revealObserver =
-    new IntersectionObserver(
+    const scene =
+        new THREE.Scene();
 
-        (entries) => {
 
-            entries.forEach(entry => {
+    const camera =
+        new THREE.PerspectiveCamera(
+            65,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+        );
 
-                if (entry.isIntersecting) {
 
-                    entry.target.classList.add("show");
+    camera.position.z = 30;
 
-                }
 
-            });
+    const renderer =
+        new THREE.WebGLRenderer({
+            canvas: canvas,
+            alpha: true,
+            antialias: true
+        });
 
-        },
 
-        {
-            threshold: 0.12
-        }
-
+    renderer.setPixelRatio(
+        Math.min(window.devicePixelRatio, 2)
     );
 
 
-revealElements.forEach(element => {
-
-    revealObserver.observe(element);
-
-});
-
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-const backTop =
-    document.getElementById("backTop");
+    renderer.setSize(
+        window.innerWidth,
+        window.innerHeight
+    );
 
 
-window.addEventListener("scroll", () => {
+    /* =====================================================
+       PARTICLES
+    ====================================================== */
 
-    if (window.scrollY > 500) {
+    const particleCount = 900;
 
-        backTop.classList.add("show");
+    const positions =
+        new Float32Array(
+            particleCount * 3
+        );
 
-    } else {
 
-        backTop.classList.remove("show");
+    for (
+        let i = 0;
+        i < particleCount;
+        i++
+    ) {
+
+        positions[i * 3] =
+            (Math.random() - .5) * 70;
+
+        positions[i * 3 + 1] =
+            (Math.random() - .5) * 45;
+
+        positions[i * 3 + 2] =
+            (Math.random() - .5) * 45;
 
     }
 
-});
+
+    const geometry =
+        new THREE.BufferGeometry();
 
 
-backTop.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
-    });
-
-});
-
-
-/* =========================================================
-   3D NETWORK BACKGROUND
-========================================================= */
-
-const canvas =
-    document.getElementById("networkCanvas");
-
-const ctx =
-    canvas.getContext("2d");
-
-
-let width;
-let height;
-
-let nodes = [];
-
-
-function resizeCanvas() {
-
-    width =
-        canvas.width =
-        window.innerWidth;
-
-    height =
-        canvas.height =
-        window.innerHeight;
-
-}
-
-
-window.addEventListener(
-    "resize",
-    resizeCanvas
-);
-
-
-resizeCanvas();
-
-
-const nodeCount =
-    window.innerWidth < 700 ? 35 : 70;
-
-
-for (let i = 0; i < nodeCount; i++) {
-
-    nodes.push({
-
-        x: Math.random() * width,
-
-        y: Math.random() * height,
-
-        vx:
-            (Math.random() - 0.5)
-            * 0.35,
-
-        vy:
-            (Math.random() - 0.5)
-            * 0.35,
-
-        radius:
-            Math.random() * 2 + 1
-
-    });
-
-}
-
-
-function drawNetwork() {
-
-    ctx.clearRect(
-        0,
-        0,
-        width,
-        height
+    geometry.setAttribute(
+        "position",
+        new THREE.BufferAttribute(
+            positions,
+            3
+        )
     );
 
 
-    nodes.forEach(node => {
+    const material =
+        new THREE.PointsMaterial({
 
-        node.x += node.vx;
+            color: 0x39ffb0,
 
-        node.y += node.vy;
+            size: .045,
 
+            transparent: true,
 
-        if (
-            node.x < 0 ||
-            node.x > width
-        ) {
+            opacity: .65
 
-            node.vx *= -1;
-
-        }
+        });
 
 
-        if (
-            node.y < 0 ||
-            node.y > height
-        ) {
-
-            node.vy *= -1;
-
-        }
-
-
-        ctx.beginPath();
-
-        ctx.arc(
-            node.x,
-            node.y,
-            node.radius,
-            0,
-            Math.PI * 2
+    const particles =
+        new THREE.Points(
+            geometry,
+            material
         );
 
-        ctx.fillStyle =
-            "rgba(0,224,184,0.65)";
 
-        ctx.fill();
+    scene.add(particles);
 
-    });
+
+
+    /* =====================================================
+       NETWORK NODES
+    ====================================================== */
+
+    const nodeGeometry =
+        new THREE.SphereGeometry(
+            .07,
+            8,
+            8
+        );
+
+
+    const nodeMaterial =
+        new THREE.MeshBasicMaterial({
+            color: 0x39ffb0
+        });
+
+
+    const nodes = [];
+
+
+    for (
+        let i = 0;
+        i < 55;
+        i++
+    ) {
+
+        const node =
+            new THREE.Mesh(
+                nodeGeometry,
+                nodeMaterial
+            );
+
+
+        node.position.x =
+            (Math.random() - .5) * 45;
+
+        node.position.y =
+            (Math.random() - .5) * 30;
+
+        node.position.z =
+            (Math.random() - .5) * 20;
+
+
+        scene.add(node);
+
+        nodes.push(node);
+
+    }
+
+
+
+    /* =====================================================
+       CONNECTION LINES
+    ====================================================== */
+
+    const lineMaterial =
+        new THREE.LineBasicMaterial({
+
+            color: 0x39ffb0,
+
+            transparent: true,
+
+            opacity: .09
+
+        });
+
+
+    const lines = [];
 
 
     for (
@@ -1952,46 +2479,40 @@ function drawNetwork() {
             j++
         ) {
 
-            const dx =
-                nodes[i].x -
-                nodes[j].x;
-
-            const dy =
-                nodes[i].y -
-                nodes[j].y;
-
             const distance =
-                Math.sqrt(
-                    dx * dx +
-                    dy * dy
+                nodes[i]
+                .position
+                .distanceTo(
+                    nodes[j].position
                 );
 
 
-            if (distance < 150) {
+            if (distance < 7) {
 
-                const opacity =
-                    1 -
-                    distance / 150;
+                const points = [
+
+                    nodes[i].position,
+
+                    nodes[j].position
+
+                ];
 
 
-                ctx.beginPath();
+                const lineGeometry =
+                    new THREE.BufferGeometry()
+                        .setFromPoints(points);
 
-                ctx.moveTo(
-                    nodes[i].x,
-                    nodes[i].y
-                );
 
-                ctx.lineTo(
-                    nodes[j].x,
-                    nodes[j].y
-                );
+                const line =
+                    new THREE.Line(
+                        lineGeometry,
+                        lineMaterial
+                    );
 
-                ctx.strokeStyle =
-                    `rgba(0,180,255,${opacity * 0.16})`;
 
-                ctx.lineWidth = 1;
+                scene.add(line);
 
-                ctx.stroke();
+                lines.push(line);
 
             }
 
@@ -2000,87 +2521,181 @@ function drawNetwork() {
     }
 
 
-    requestAnimationFrame(
-        drawNetwork
-    );
 
-}
+    /* =====================================================
+       MOUSE PARALLAX
+    ====================================================== */
 
+    let mouseX = 0;
 
-drawNetwork();
-
-
-/* =========================================================
-   CARD 3D MOUSE EFFECT
-========================================================= */
-
-const cards =
-    document.querySelectorAll(
-        ".skill-card"
-    );
+    let mouseY = 0;
 
 
-cards.forEach(card => {
-
-    card.addEventListener(
+    window.addEventListener(
         "mousemove",
-        (event) => {
+        function (event) {
 
-            const rect =
-                card.getBoundingClientRect();
+            mouseX =
+                (event.clientX /
+                window.innerWidth - .5);
 
-
-            const x =
-                event.clientX -
-                rect.left;
-
-
-            const y =
-                event.clientY -
-                rect.top;
-
-
-            const centerX =
-                rect.width / 2;
-
-
-            const centerY =
-                rect.height / 2;
-
-
-            const rotateY =
-                ((x - centerX) /
-                    centerX) * 3;
-
-
-            const rotateX =
-                ((centerY - y) /
-                    centerY) * 3;
-
-
-            card.style.transform =
-                `translateY(-12px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)`;
+            mouseY =
+                (event.clientY /
+                window.innerHeight - .5);
 
         }
     );
 
 
-    card.addEventListener(
-        "mouseleave",
-        () => {
 
-            card.style.transform = "";
+    /* =====================================================
+       ANIMATION
+    ====================================================== */
+
+    function animate() {
+
+        requestAnimationFrame(
+            animate
+        );
+
+
+        particles.rotation.y +=
+            0.00025;
+
+
+        particles.rotation.x +=
+            0.00008;
+
+
+        nodes.forEach(
+            function (node, index) {
+
+                node.position.y +=
+                    Math.sin(
+                        Date.now() * .0004 +
+                        index
+                    ) * .00008;
+
+            }
+        );
+
+
+        scene.rotation.y +=
+            (mouseX * .0007 -
+            scene.rotation.y) * .015;
+
+
+        scene.rotation.x +=
+            (-mouseY * .0005 -
+            scene.rotation.x) * .015;
+
+
+        renderer.render(
+            scene,
+            camera
+        );
+
+    }
+
+
+    animate();
+
+
+
+    /* =====================================================
+       RESIZE
+    ====================================================== */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            camera.aspect =
+                window.innerWidth /
+                window.innerHeight;
+
+            camera.updateProjectionMatrix();
+
+
+            renderer.setSize(
+                window.innerWidth,
+                window.innerHeight
+            );
 
         }
     );
 
-});
 
+
+    /* =====================================================
+       3D CARD TILT
+    ====================================================== */
+
+    const cards =
+        document.querySelectorAll(
+            ".skill-card"
+        );
+
+
+    cards.forEach(
+        function (card) {
+
+            card.addEventListener(
+                "mousemove",
+                function (event) {
+
+                    const rect =
+                        card.getBoundingClientRect();
+
+
+                    const x =
+                        event.clientX -
+                        rect.left;
+
+                    const y =
+                        event.clientY -
+                        rect.top;
+
+
+                    const rotateX =
+                        ((y / rect.height) -
+                        .5) * -8;
+
+
+                    const rotateY =
+                        ((x / rect.width) -
+                        .5) * 8;
+
+
+                    card.style.transform =
+                        `perspective(900px)
+                         rotateX(${rotateX}deg)
+                         rotateY(${rotateY}deg)
+                         translateY(-6px)`;
+
+                }
+            );
+
+
+            card.addEventListener(
+                "mouseleave",
+                function () {
+
+                    card.style.transform =
+                        "";
+
+                }
+            );
+
+        }
+    );
+
+})();
 
 </script>
 
 
 </body>
+
 </html>
+```

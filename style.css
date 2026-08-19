@@ -474,7 +474,22 @@ nav a.active {
 
     color: white;
 }
+.btn-outline:hover {
 
+    border-color: var(--blue);
+
+    color: white;
+}
+
+
+/* =========================================================
+   HERO BUTTON COLORS
+========================================================= */
+
+.btn-pink {
+    color: #ffffff;
+    background: linear-gradient(135deg, #b84cff, #f04fae);
+}
 
 /* =========================================================
    STATS

@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>IT Support Services | Tanweer Ansari</title>
+
+    <meta name="description"
+          content="Professional IT support services covering networking, Fortinet firewall, Microsoft Azure, Microsoft 365, Entra ID, Intune, Windows Server, endpoint support and enterprise IT infrastructure.">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: "Inter", sans-serif;
+
+    color: #f7fbff;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(0, 170, 255, .12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(168, 85, 247, .10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 70% 80%,
+            rgba(0, 220, 170, .07),
+            transparent 30%
+        ),
+        #061426;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    min-height: 76px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0 20px;
+
+    background:
+        rgba(12, 6, 30, .94);
+
+    backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid rgba(139, 92, 246, .30);
+
+}
+
+
+.nav-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+.nav-menu a {
+
+    color: #b8bfd0;
+
+    text-decoration: none;
+
+    padding: 10px 17px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid rgba(120, 100, 170, .22);
+
+    background:
+        rgba(20, 15, 45, .62);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease,
+        color .3s ease;
+
+}
+
+
+.nav-menu a:hover {
+
+    color: #ffffff;
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        #39a8ff;
+
+    box-shadow:
+        0 0 20px rgba(57,168,255,.20);
+
+}
+
+
+.nav-menu a.active {
+
+    color: #ffffff;
+
+    border-color: transparent;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0891b2,
+            #2563eb
+        );
+
+    box-shadow:
+        0 0 20px rgba(37,99,235,.30);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.support-hero {
+
+    width:
+        min(1150px, 92%);
+
+    margin:
+        0 auto;
+
+    padding:
+        85px 0 55px;
+
+    text-align:
+        center;
+
+}
+
+
+.hero-badge {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        8px 14px;
+
+    border-radius:
+        30px;
+
+    color:
+        #55d8ff;
+
+    border:
+        1px solid rgba(56,189,248,.32);
+
+    background:
+        rgba(8,145,178,.10);
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1.5px;
+
+    margin-bottom:
+        22px;
+
+}
+
+
+.hero-badge span {
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #22c55e;
+
+    box-shadow:
+        0 0 10px #22c55e;
+
+}
+
+
+.support-hero h1 {
+
+    max-width:
+        950px;
+
+    margin:
+        0 auto 22px;
+
+    font-size:
+        clamp(44px, 6vw, 72px);
+
+    line-height:
+        1.05;
+
+    letter-spacing:
+        -2px;
+
+}
+
+
+.support-hero h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #38bdf8,
+            #6366f1,
+            #c084fc
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+}
+
+
+.support-hero p {
+
+    max-width:
+        820px;
+
+    margin:
+        0 auto;
+
+    color:
+        #aabbd0;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.9;
+
+}
+
+
+/* =========================================================
+   QUICK CONTACT
+========================================================= */
+
+.quick-contact {
+
+    width:
+        min(950px, 92%);
+
+    margin:
+        0 auto 65px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        14px;
+
+}
+
+
+.quick-card {
+
+    min-height:
+        95px;
+
+    padding:
+        20px;
+
+    border-radius:
+        16px;
+
+    text-decoration:
+        none;
+
+    color:
+        #ffffff;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b2039,
+            #11172e
+        );
+
+    border:
+        1px solid rgba(56,189,248,.22);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.quick-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        #38bdf8;
+
+    box-shadow:
+        0 0 25px rgba(56,189,248,.15);
+
+}
+
+
+.quick-icon {
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    flex:
+        0 0 48px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        13px;
+
+    font-size:
+        20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0891b2,
+            #2563eb
+        );
+
+    box-shadow:
+        0 0 18px rgba(37,99,235,.25);
+
+}
+
+
+.quick-card:nth-child(2)
+.quick-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #059669,
+            #22c55e
+        );
+
+}
+
+
+.quick-card:nth-child(3)
+.quick-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+
+}
+
+
+.quick-card small {
+
+    display:
+        block;
+
+    color:
+        #8fb0d2;
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1px;
+
+    margin-bottom:
+        3px;
+
+}
+
+
+.quick-card strong {
+
+    font-size:
+        13px;
+
+}
+
+
+/* =========================================================
+   SERVICE SECTION
+========================================================= */
+
+.services-section {
+
+    width:
+        min(1150px, 92%);
+
+    margin:
+        0 auto;
+
+    padding-bottom:
+        80px;
+
+}
+
+
+.section-heading {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        40px;
+
+}
+
+
+.section-label {
+
+    color:
+        #38bdf8;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        3px;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.section-heading h2 {
+
+    font-size:
+        clamp(32px, 4vw, 46px);
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.section-heading p {
+
+    color:
+        #9eafc6;
+
+    max-width:
+        750px;
+
+    margin:
+        0 auto;
+
+    font-size:
+        14px;
+
+}
+
+
+.services-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        18px;
+
+}
+
+
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
+
+.service-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    min-height:
+        330px;
+
+    padding:
+        30px;
+
+    border-radius:
+        20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b2039,
+            #0c172c
+        );
+
+    border:
+        1px solid rgba(56,189,248,.20);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.25);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.service-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(56,189,248,.70);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35),
+        0 0 28px rgba(56,189,248,.12);
+
+}
+
+
+.service-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        220px;
+
+    height:
+        220px;
+
+    top:
+        -100px;
+
+    right:
+        -100px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(56,189,248,.18),
+            transparent 70%
+        );
+
+}
+
+
+.service-icon {
+
+    width:
+        55px;
+
+    height:
+        55px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        15px;
+
+    margin-bottom:
+        20px;
+
+    font-size:
+        23px;
+
+    color:
+        #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0ea5e9,
+            #2563eb
+        );
+
+    box-shadow:
+        0 0 20px rgba(37,99,235,.25);
+
+}
+
+
+.service-card:nth-child(2)
+.service-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #dc2626,
+            #f97316
+        );
+
+}
+
+
+.service-card:nth-child(3)
+.service-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #8b5cf6
+        );
+
+}
+
+
+.service-card:nth-child(4)
+.service-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #ec4899
+        );
+
+}
+
+
+.service-card:nth-child(5)
+.service-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #059669,
+            #22c55e
+        );
+
+}
+
+
+.service-card:nth-child(6)
+.service-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #0891b2,
+            #06b6d4
+        );
+
+}
+
+
+.service-card h3 {
+
+    font-size:
+        21px;
+
+    margin-bottom:
+        9px;
+
+}
+
+
+.service-card > p {
+
+    color:
+        #9eafc6;
+
+    font-size:
+        13px;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.service-card ul {
+
+    list-style:
+        none;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        8px;
+
+}
+
+
+.service-card li {
+
+    position:
+        relative;
+
+    padding-left:
+        18px;
+
+    color:
+        #bed0e3;
+
+    font-size:
+        12.5px;
+
+}
+
+
+.service-card li::before {
+
+    content:
+        "•";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    color:
+        #38bdf8;
+
+    font-weight:
+        900;
+
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process-section {
+
+    padding:
+        20px 0 80px;
+
+}
+
+
+.process-box {
+
+    width:
+        min(1050px, 92%);
+
+    margin:
+        0 auto;
+
+    padding:
+        35px;
+
+    border-radius:
+        22px;
+
+    border:
+        1px solid rgba(139,92,246,.25);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(28,34,79,.75),
+            rgba(14,35,62,.80)
+        );
+
+}
+
+
+.process-title {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        30px;
+
+}
+
+
+.process-title h2 {
+
+    font-size:
+        30px;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.process-title p {
+
+    color:
+        #9eafc6;
+
+    font-size:
+        13px;
+
+}
+
+
+.process-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        12px;
+
+}
+
+
+.process-step {
+
+    text-align:
+        center;
+
+    padding:
+        20px 15px;
+
+    border-radius:
+        14px;
+
+    background:
+        rgba(5,18,35,.65);
+
+    border:
+        1px solid rgba(80,150,255,.16);
+
+}
+
+
+.process-number {
+
+    width:
+        38px;
+
+    height:
+        38px;
+
+    margin:
+        0 auto 12px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    background:
+        linear-gradient(
+            135deg,
+            #38bdf8,
+            #8b5cf6
+        );
+
+}
+
+
+.process-step strong {
+
+    display:
+        block;
+
+    font-size:
+        13px;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.process-step span {
+
+    color:
+        #92a6be;
+
+    font-size:
+        11px;
+
+}
+
+
+/* =========================================================
+   CALL TO ACTION
+========================================================= */
+
+.cta-section {
+
+    width:
+        min(1050px, 92%);
+
+    margin:
+        0 auto 90px;
+
+    padding:
+        55px 35px;
+
+    text-align:
+        center;
+
+    border-radius:
+        24px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(99,102,241,.25),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #122b50,
+            #211c57
+        );
+
+    border:
+        1px solid rgba(129,140,248,.28);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.30);
+
+}
+
+
+.cta-section h2 {
+
+    font-size:
+        clamp(30px, 4vw, 42px);
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.cta-section p {
+
+    color:
+        #a9bbd0;
+
+    max-width:
+        720px;
+
+    margin:
+        0 auto 28px;
+
+    font-size:
+        14px;
+
+}
+
+
+.cta-buttons {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        12px;
+
+}
+
+
+.cta-btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        9px;
+
+    min-height:
+        47px;
+
+    padding:
+        0 20px;
+
+    border-radius:
+        11px;
+
+    text-decoration:
+        none;
+
+    color:
+        #ffffff;
+
+    font-size:
+        13px;
+
+    font-weight:
+        800;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.cta-whatsapp {
+
+    background:
+        linear-gradient(
+            135deg,
+            #059669,
+            #22c55e
+        );
+
+}
+
+
+.cta-email {
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #8b5cf6
+        );
+
+}
+
+
+.cta-btn:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    filter:
+        brightness(1.12);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.28);
+
+}
+
+
+/* =========================================================
+   BACK HOME
+========================================================= */
+
+.back-home {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    margin-top:
+        18px;
+
+    color:
+        #cdd9e8;
+
+    text-decoration:
+        none;
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:900px) {
+
+    .quick-contact {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .services-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .process-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:550px) {
+
+    .navbar {
+
+        padding:
+            12px;
+
+    }
+
+    .nav-menu a {
+
+        padding:
+            8px 10px;
+
+        font-size:
+            11px;
+
+    }
+
+    .support-hero {
+
+        padding-top:
+            55px;
+
+    }
+
+    .process-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .service-card {
+
+        padding:
+            24px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header class="navbar">
+
+    <nav class="nav-menu">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="skills.html">
+            Skills
+        </a>
+
+        <a href="experience.html">
+            Experience
+        </a>
+
+        <a href="certifications.html">
+            Certifications
+        </a>
+
+        <a href="projects.html">
+            Projects
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+        <a href="support.html"
+           class="active">
+            IT Support
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="support-hero">
+
+    <div class="hero-badge">
+
+        <span></span>
+
+        PROFESSIONAL IT SUPPORT
+
+    </div>
+
+
+    <h1>
+
+        Need Help with Your
+        <span>IT Infrastructure?</span>
+
+    </h1>
+
+
+    <p>
+
+        I provide practical support across enterprise networking,
+        security, Microsoft cloud, systems, endpoints and IT operations.
+        If you need assistance with troubleshooting, configuration,
+        technical guidance or infrastructure support, you can contact me.
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================================================
+     QUICK CONTACT
+========================================================= -->
+
+<section class="quick-contact">
+
+
+    <a href="mailto:tanweeromn@gmail.com"
+       class="quick-card">
+
+        <div class="quick-icon">
+
+            <i class="fa-solid fa-envelope"></i>
+
+        </div>
+
+        <div>
+
+            <small>
+                EMAIL
+            </small>
+
+            <strong>
+                tanweeromn@gmail.com
+            </strong>
+
+        </div>
+
+    </a>
+
+
+
+    <a href="https://wa.me/966557316795"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="quick-card">
+
+        <div class="quick-icon">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+        </div>
+
+        <div>
+
+            <small>
+                WHATSAPP
+            </small>
+
+            <strong>
+                +966 55 731 6795
+            </strong>
+
+        </div>
+
+    </a>
+
+
+
+    <a href="contact.html"
+       class="quick-card">
+
+        <div class="quick-icon">
+
+            <i class="fa-solid fa-address-card"></i>
+
+        </div>
+
+        <div>
+
+            <small>
+                CONTACT PAGE
+            </small>
+
+            <strong>
+                View Contact Details
+            </strong>
+
+        </div>
+
+    </a>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="services-section">
+
+    <div class="section-heading">
+
+        <div class="section-label">
+            IT SUPPORT CATEGORIES
+        </div>
+
+        <h2>
+            How I Can Help
+        </h2>
+
+        <p>
+
+            Support areas are organized by technology category
+            so you can quickly identify the service you need.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="services-grid">
+
+
+        <!-- NETWORK -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-network-wired"></i>
+
+            </div>
+
+            <h3>
+                Network & Connectivity
+            </h3>
+
+            <p>
+                Enterprise network troubleshooting,
+                configuration and connectivity support.
+            </p>
+
+            <ul>
+
+                <li>Cisco Routing & Switching</li>
+                <li>LAN / WAN Troubleshooting</li>
+                <li>VLAN Configuration & Troubleshooting</li>
+                <li>TCP/IP & Gateway Issues</li>
+                <li>Routing Connectivity Problems</li>
+                <li>VPN Connectivity Support</li>
+                <li>Network Performance Troubleshooting</li>
+                <li>Wi-Fi & Local Network Support</li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- SECURITY -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+            </div>
+
+            <h3>
+                Firewall & Network Security
+            </h3>
+
+            <p>
+                Fortinet firewall and secure network
+                connectivity support.
+            </p>
+
+            <ul>
+
+                <li>FortiGate Basic Configuration</li>
+                <li>Firewall Policy Configuration</li>
+                <li>VPN Configuration & Troubleshooting</li>
+                <li>Website / URL Filtering</li>
+                <li>User Access Troubleshooting</li>
+                <li>Network Security Review</li>
+                <li>Firewall Connectivity Issues</li>
+                <li>Secure Remote Access Guidance</li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- AZURE -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+
+                <i class="fa-brands fa-microsoft"></i>
+
+            </div>
+
+            <h3>
+                Microsoft Azure & Cloud
+            </h3>
+
+            <p>
+                Microsoft cloud infrastructure,
+                identity and administration support.
+            </p>
+
+            <ul>
+
+                <li>Microsoft Azure Administration</li>
+                <li>Azure Virtual Machine Guidance</li>
+                <li>Azure Networking Support</li>
+                <li>Microsoft Entra ID</li>
+                <li>User & Identity Management</li>
+                <li>Microsoft 365 Administration</li>
+                <li>Cloud Connectivity Troubleshooting</li>
+                <li>Azure Infrastructure Guidance</li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- INTUNE -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-laptop-code"></i>
+
+            </div>
+
+            <h3>
+                Intune, Autopilot & Endpoints
+            </h3>
+
+            <p>
+                Endpoint provisioning, device management
+                and user-computing support.
+            </p>
+
+            <ul>
+
+                <li>Microsoft Intune Support</li>
+                <li>Windows Autopilot Guidance</li>
+                <li>Device Enrollment Issues</li>
+                <li>Endpoint Configuration Support</li>
+                <li>Windows 10 / Windows 11 Support</li>
+                <li>Application Installation Issues</li>
+                <li>Driver & Device Troubleshooting</li>
+                <li>Endpoint Connectivity Problems</li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- SYSTEMS -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-server"></i>
+
+            </div>
+
+            <h3>
+                Windows Server & IT Systems
+            </h3>
+
+            <p>
+                Windows infrastructure and enterprise
+                systems support.
+            </p>
+
+            <ul>
+
+                <li>Windows Server Support</li>
+                <li>Active Directory Basics</li>
+                <li>User & Computer Management</li>
+                <li>Group Policy Troubleshooting</li>
+                <li>Shared Folder & Permission Issues</li>
+                <li>Printer & Peripheral Support</li>
+                <li>Hardware / Software Troubleshooting</li>
+                <li>System Connectivity Support</li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- IT OPERATIONS -->
+
+        <div class="service-card">
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-headset"></i>
+
+            </div>
+
+            <h3>
+                IT Support & Operations
+            </h3>
+
+            <p>
+                Practical enterprise user support,
+                documentation and IT operations assistance.
+            </p>
+
+            <ul>
+
+                <li>L2 End-User Support</li>
+                <li>Outlook & Email Troubleshooting</li>
+                <li>Microsoft 365 User Support</li>
+                <li>Remote Support Guidance</li>
+                <li>Incident Troubleshooting</li>
+                <li>ITSM & Service Request Guidance</li>
+                <li>Technical Documentation & SOPs</li>
+                <li>IT Asset & Inventory Guidance</li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+
+<section class="process-section">
+
+    <div class="process-box">
+
+        <div class="process-title">
+
+            <h2>
+                How Support Works
+            </h2>
+
+            <p>
+                A simple approach for understanding and resolving
+                your IT requirement.
+            </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <strong>
+                    Contact Me
+                </strong>
+
+                <span>
+                    Share your IT requirement.
+                </span>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <strong>
+                    Explain the Issue
+                </strong>
+
+                <span>
+                    Provide details or screenshots.
+                </span>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <strong>
+                    Technical Review
+                </strong>
+
+                <span>
+                    I review the problem and environment.
+                </span>
+
+            </div>
+
+
+            <div class="process-step">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <strong>
+                    Guidance / Support
+                </strong>
+
+                <span>
+                    Recommended troubleshooting or solution.
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta-section">
+
+    <h2>
+        Have an IT Issue or Technical Requirement?
+    </h2>
+
+    <p>
+
+        Send the problem details, screenshots and a short
+        explanation of what you need help with. I will review
+        the requirement and respond based on the technical scope.
+
+    </p>
+
+
+    <div class="cta-buttons">
+
+        <a href="https://wa.me/966557316795"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="cta-btn cta-whatsapp">
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Contact on WhatsApp
+
+        </a>
+
+
+        <a href="mailto:tanweeromn@gmail.com"
+           class="cta-btn cta-email">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            Send Email
+
+        </a>
+
+    </div>
+
+
+    <a href="index.html"
+       class="back-home">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Back to Home
+
+    </a>
+
+</section>
+
+
+</body>
+
+</html>

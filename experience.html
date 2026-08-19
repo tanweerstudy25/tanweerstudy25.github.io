@@ -8,7 +8,20 @@
 
     <meta name="description"
           content="Professional experience of Tanweer Ansari - Network & IT Support Engineer with 16+ years of enterprise IT experience.">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
     <style>
 
         /* =====================================================
@@ -53,135 +66,7 @@
             color: inherit;
         }
 
-        /* =====================================================
-           NAVBAR
-        ===================================================== */
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 999;
-
-            height: 76px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background: rgba(4, 17, 32, 0.92);
-            backdrop-filter: blur(15px);
-
-            border-bottom: 1px solid rgba(0, 157, 255, 0.25);
-
-            box-shadow:
-                0 10px 40px rgba(0, 0, 0, 0.25);
-        }
-
-        .nav-container {
-            width: min(1200px, 92%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .nav-btn {
-            position: relative;
-
-            padding: 13px 19px;
-
-            border-radius: 12px;
-
-            color: #9eb1c7;
-            font-size: 15px;
-            font-weight: 700;
-
-            border: 1px solid transparent;
-
-            transition:
-                transform 0.25s ease,
-                color 0.25s ease,
-                background 0.25s ease,
-                box-shadow 0.25s ease;
-
-            overflow: hidden;
-        }
-
-        .nav-btn::before {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-
-            width: 0;
-            height: 3px;
-
-            transform: translateX(-50%);
-
-            background: #22aaff;
-
-            transition: width 0.25s ease;
-        }
-
-        .nav-btn:hover {
-            color: #ffffff;
-            transform: translateY(-4px) scale(1.05);
-
-            background: rgba(20, 140, 255, 0.12);
-
-            border-color: rgba(20, 160, 255, 0.4);
-
-            box-shadow:
-                0 8px 25px rgba(0, 150, 255, 0.25),
-                inset 0 0 15px rgba(0, 150, 255, 0.08);
-        }
-
-        .nav-btn:hover::before {
-            width: 70%;
-        }
-
-        .nav-btn.active {
-            color: #38aaff;
-            background: rgba(30, 130, 255, 0.10);
-        }
-
-        /* Different hover colors */
-
-        .nav-btn:nth-child(1):hover {
-            border-color: #00aaff;
-            box-shadow: 0 8px 25px rgba(0, 170, 255, 0.3);
-        }
-
-        .nav-btn:nth-child(2):hover {
-            border-color: #9b6cff;
-            box-shadow: 0 8px 25px rgba(155, 108, 255, 0.3);
-        }
-
-        .nav-btn:nth-child(3):hover {
-            border-color: #00e0c6;
-            box-shadow: 0 8px 25px rgba(0, 224, 198, 0.3);
-        }
-
-        .nav-btn:nth-child(4):hover {
-            border-color: #ff9f43;
-            box-shadow: 0 8px 25px rgba(255, 159, 67, 0.3);
-        }
-
-        .nav-btn:nth-child(5):hover {
-            border-color: #ff4fa3;
-            box-shadow: 0 8px 25px rgba(255, 79, 163, 0.3);
-        }
-
-        .nav-btn:nth-child(6):hover {
-            border-color: #7c5cff;
-            box-shadow: 0 8px 25px rgba(124, 92, 255, 0.3);
-        }
-
-        .nav-btn:nth-child(7):hover {
-            border-color: #20d67a;
-            box-shadow: 0 8px 25px rgba(32, 214, 122, 0.3);
-        }
-
+  
         /* =====================================================
            HERO
         ===================================================== */
@@ -190,7 +75,7 @@
             width: min(1200px, 92%);
             margin: auto;
 
-            padding: 90px 0 65px;
+            padding: 145px 0 65px;
 
             text-align: center;
         }
@@ -756,21 +641,8 @@
 
         @media (max-width: 850px) {
 
-            .navbar {
-                height: auto;
-                padding: 10px 0;
-            }
-
-            .nav-container {
-                gap: 4px;
-                flex-wrap: wrap;
-            }
-
-            .nav-btn {
-                padding: 9px 10px;
-                font-size: 12px;
-            }
-
+           
+            
             .hero {
                 padding-top: 65px;
             }
@@ -829,9 +701,7 @@
                 border-radius: 17px;
             }
 
-            .nav-container {
-                justify-content: center;
-            }
+            
         }
 
     </style>
@@ -843,42 +713,77 @@
      NAVIGATION
 ========================================================= -->
 
-<nav class="navbar">
+<!-- ================= NAVIGATION ================= -->
+
+<header class="navbar">
 
     <div class="nav-container">
 
-        <a href="index.html" class="nav-btn">
-            Home
+        <a href="index.html" class="logo">
+            TANWEER<span>.</span>
         </a>
 
-        <a href="index.html#about" class="nav-btn">
-            About
-        </a>
+        <nav id="navMenu">
 
-        <a href="index.html#skills" class="nav-btn">
-            Skills
-        </a>
+            <a href="index.html">Home</a>
 
-        <a href="experience.html" class="nav-btn active">
-            Experience
-        </a>
+            <a href="about.html">About</a>
 
-        <a href="index.html#certifications" class="nav-btn">
-            Certifications
-        </a>
+            <a href="skills.html">Skills</a>
 
-        <a href="index.html#projects" class="nav-btn">
-            Projects
-        </a>
+            <a href="experience.html" class="active">
+                Experience
+            </a>
 
-        <a href="index.html#contact" class="nav-btn">
-            Contact
-        </a>
+            <a href="certifications.html">
+                Certifications
+            </a>
+
+            <a href="projects.html">
+                Projects
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="nav-buttons">
+
+            <button id="themeToggle"
+                    class="icon-btn">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+
+            <a href="https://wa.me/966557316795"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="nav-contact whatsapp-nav">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                <span>WhatsApp</span>
+
+            </a>
+
+
+            <button id="menuToggle"
+                    class="menu-btn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
 
     </div>
 
-</nav>
-
+</header>
 
 <!-- =========================================================
      HERO

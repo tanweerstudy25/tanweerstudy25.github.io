@@ -6804,3 +6804,107 @@ section[id] {
 
 
 
+/* =====================================================
+   PREMIUM LIVE VISITOR COUNTER
+===================================================== */
+
+.visitor-counter-section {
+    padding: 45px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #07111f, #0b1728);
+}
+
+.visitor-counter-box {
+    width: 100%;
+    max-width: 520px;
+    padding: 24px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(0,212,255,0.35);
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.35),
+        0 0 25px rgba(0,212,255,0.10);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.visitor-counter-box:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.45),
+        0 0 30px rgba(0,212,255,0.25);
+}
+
+.visitor-counter-icon {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #00d4ff, #6366f1);
+
+    font-size: 28px;
+    color: white;
+
+    box-shadow: 0 0 25px rgba(0,212,255,0.35);
+}
+
+.visitor-counter-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.visitor-counter-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #00d4ff;
+}
+
+#visitor-count {
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 4px 0;
+}
+
+.visitor-counter-text {
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .visitor-counter-box {
+        padding: 20px;
+        gap: 18px;
+    }
+
+    .visitor-counter-icon {
+        width: 58px;
+        height: 58px;
+        min-width: 58px;
+        font-size: 23px;
+    }
+
+    #visitor-count {
+        font-size: 30px;
+    }
+}

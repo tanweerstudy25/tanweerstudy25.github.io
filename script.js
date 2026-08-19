@@ -283,3 +283,35 @@ projectCards.forEach(card => {
     );
 
 });
+/* =====================================================
+   GOATCOUNTER - PUBLIC TOTAL VISITOR COUNTER
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const visitorCount = document.getElementById("visitor-count");
+
+    if (!visitorCount) return;
+
+    fetch("https://tanweerportfolio.goatcounter.com/counter/TOTAL.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Visitor counter unavailable");
+            }
+            return response.json();
+        })
+        .then(data => {
+
+            visitorCount.textContent =
+                data.count_unique || data.count || "0";
+
+        })
+        .catch(error => {
+
+            console.log("GoatCounter:", error);
+
+            visitorCount.textContent = "—";
+
+        });
+
+});

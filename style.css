@@ -5411,3 +5411,739 @@ section[id] {
         font-size: 14px;
     }
 }
+
+/* =========================================================
+   PREMIUM INFRASTRUCTURE FLOW - FINAL
+========================================================= */
+
+.premium-flow-section {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* HEADER */
+
+.premium-flow-label {
+    color: #b45cff !important;
+    letter-spacing: 4px !important;
+    font-size: 14px !important;
+    font-weight: 900 !important;
+}
+
+
+.premium-flow-title {
+    max-width: 1050px !important;
+
+    font-size:
+        clamp(40px, 5vw, 66px) !important;
+
+    line-height: 1.08 !important;
+
+    margin-bottom: 18px !important;
+
+    letter-spacing: -2px !important;
+}
+
+
+.premium-flow-title span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #39c6ff,
+            #4f91ff,
+            #9b6cff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.premium-flow-description {
+
+    max-width: 850px !important;
+
+    font-size: 17px !important;
+
+    line-height: 1.75 !important;
+
+    color: #b7c8dc !important;
+
+    margin-bottom: 34px !important;
+}
+
+
+/* MAIN BOX */
+
+.premium-flow-box {
+
+    width: 100%;
+
+    padding: 20px 30px 28px;
+
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(20,100,255,.08),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(6,25,48,.96),
+            rgba(4,16,32,.98)
+        );
+
+    border:
+        1px solid rgba(50,150,255,.22);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35);
+}
+
+
+/* FLOW CARD */
+
+.premium-flow-card {
+
+    position: relative;
+
+    min-height: 105px;
+
+    display: grid;
+
+    grid-template-columns:
+        105px 1fr 100px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 13px 25px;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+
+.premium-flow-card:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.008);
+
+}
+
+
+/* ICON */
+
+.premium-flow-icon {
+
+    width: 76px;
+    height: 76px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    font-size: 30px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.premium-flow-icon i {
+
+    filter:
+        drop-shadow(
+            0 0 8px currentColor
+        );
+}
+
+
+/* TEXT */
+
+.premium-flow-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    text-align: center;
+}
+
+
+.premium-flow-content strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 850;
+
+    letter-spacing: -.4px;
+}
+
+
+.premium-flow-content span {
+
+    display: block;
+
+    color: #d1dceb;
+
+    font-size: 15px;
+
+    font-weight: 450;
+
+    line-height: 1.5;
+}
+
+
+/* DOTTED DECORATION */
+
+.flow-dots {
+
+    width: 78px;
+    height: 58px;
+
+    justify-self: end;
+
+    opacity: .65;
+
+    background-image:
+        radial-gradient(
+            circle,
+            currentColor 2px,
+            transparent 2.5px
+        );
+
+    background-size:
+        13px 13px;
+}
+
+
+/* =========================================================
+   CARD COLORS
+========================================================= */
+
+
+/* BLUE */
+
+.flow-blue {
+
+    color: #28a9ff;
+
+    border:
+        1px solid #1d9dff;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,65,150,.45),
+            rgba(2,22,48,.93)
+        );
+
+    box-shadow:
+        inset 0 0 35px rgba(0,110,255,.12);
+}
+
+
+.flow-blue .premium-flow-icon {
+
+    color: #41aaff;
+
+    border:
+        1px solid #1ba7ff;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,100,230,.35),
+            rgba(3,25,65,.95)
+        );
+
+    box-shadow:
+        0 0 20px rgba(0,150,255,.25);
+}
+
+
+.flow-blue:hover {
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35),
+        0 0 28px rgba(0,150,255,.25);
+}
+
+
+/* GREEN */
+
+.flow-green {
+
+    color: #40ef87;
+
+    border:
+        1px solid #27df72;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,120,70,.34),
+            rgba(2,35,30,.94)
+        );
+
+    box-shadow:
+        inset 0 0 35px rgba(0,200,100,.09);
+}
+
+
+.flow-green .premium-flow-icon {
+
+    color: #58ee88;
+
+    border:
+        1px solid #34df78;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,120,65,.34),
+            rgba(2,45,33,.95)
+        );
+
+    box-shadow:
+        0 0 20px rgba(40,230,120,.22);
+}
+
+
+.flow-green:hover {
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35),
+        0 0 28px rgba(40,230,120,.22);
+}
+
+
+/* YELLOW */
+
+.flow-yellow {
+
+    color: #ffd633;
+
+    border:
+        1px solid #e9c523;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(125,95,0,.35),
+            rgba(40,35,5,.92)
+        );
+
+    box-shadow:
+        inset 0 0 35px rgba(255,210,0,.08);
+}
+
+
+.flow-yellow .premium-flow-icon {
+
+    color: #ffd83e;
+
+    border:
+        1px solid #f1cd24;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(130,100,0,.4),
+            rgba(45,37,5,.95)
+        );
+
+    box-shadow:
+        0 0 20px rgba(255,210,0,.22);
+}
+
+
+.flow-yellow:hover {
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35),
+        0 0 28px rgba(255,210,0,.20);
+}
+
+
+/* PURPLE */
+
+.flow-purple {
+
+    color: #ab68ff;
+
+    border:
+        1px solid #9559f5;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(80,30,145,.38),
+            rgba(28,18,70,.94)
+        );
+
+    box-shadow:
+        inset 0 0 35px rgba(140,70,255,.10);
+}
+
+
+.flow-purple .premium-flow-icon {
+
+    color: #b567ff;
+
+    border:
+        1px solid #a85eff;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(80,35,150,.4),
+            rgba(35,19,75,.95)
+        );
+
+    box-shadow:
+        0 0 20px rgba(160,80,255,.25);
+}
+
+
+.flow-purple:hover {
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35),
+        0 0 28px rgba(160,80,255,.25);
+}
+
+
+/* CYAN */
+
+.flow-cyan {
+
+    color: #21e0ff;
+
+    border:
+        1px solid #19d3ee;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,100,155,.38),
+            rgba(3,35,55,.96)
+        );
+
+    box-shadow:
+        inset 0 0 35px rgba(0,210,255,.09);
+}
+
+
+.flow-cyan .premium-flow-icon {
+
+    color: #2de0ff;
+
+    border:
+        1px solid #20d7f5;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,110,170,.40),
+            rgba(4,35,60,.95)
+        );
+
+    box-shadow:
+        0 0 20px rgba(0,210,255,.25);
+}
+
+
+.flow-cyan:hover {
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35),
+        0 0 28px rgba(0,210,255,.25);
+}
+
+
+/* =========================================================
+   ROTATING CONNECTOR
+========================================================= */
+
+.premium-flow-connector {
+
+    position: relative;
+
+    width: 58px;
+    height: 32px;
+
+    margin:
+        -2px auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 20;
+}
+
+
+/* VERTICAL LINE */
+
+.premium-flow-connector::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        currentColor;
+
+    box-shadow:
+        0 0 12px currentColor;
+}
+
+
+/* ROTATING RING */
+
+.premium-flow-connector span {
+
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border:
+        3px solid
+        rgba(255,255,255,.20);
+
+    border-top-color:
+        currentColor;
+
+    border-right-color:
+        currentColor;
+
+    background:
+        rgba(5,18,35,.96);
+
+    box-shadow:
+        0 0 12px currentColor,
+        inset 0 0 12px rgba(255,255,255,.08);
+
+    animation:
+        premiumFlowRotate
+        1.2s linear infinite;
+}
+
+
+/* CENTER LIGHT */
+
+.premium-flow-connector span::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    border-radius: 50%;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 0 12px #ffffff,
+        0 0 20px currentColor;
+}
+
+
+/* CONNECTOR COLORS */
+
+.connector-blue {
+    color: #29aaff;
+}
+
+.connector-green {
+    color: #42e77d;
+}
+
+.connector-yellow {
+    color: #ffc629;
+}
+
+.connector-purple {
+    color: #9e61ff;
+}
+
+.connector-pink {
+    color: #ff3c87;
+}
+
+
+/* ROTATION */
+
+@keyframes premiumFlowRotate {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+/* CLOUD PATH */
+
+.cloud-path {
+
+    font-size:
+        19px !important;
+
+    letter-spacing:
+        -.3px !important;
+}
+
+
+.cloud-path b {
+
+    color: #54dfff;
+
+    padding:
+        0 5px;
+
+    font-weight: 900;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .premium-flow-box {
+
+        padding:
+            16px 12px
+            22px;
+    }
+
+
+    .premium-flow-card {
+
+        grid-template-columns:
+            65px 1fr;
+
+        min-height:
+            105px;
+
+        padding:
+            14px;
+    }
+
+
+    .premium-flow-icon {
+
+        width: 58px;
+        height: 58px;
+
+        font-size:
+            23px;
+
+        border-radius:
+            14px;
+    }
+
+
+    .premium-flow-content {
+
+        text-align:
+            left;
+    }
+
+
+    .premium-flow-content strong {
+
+        font-size:
+            17px;
+    }
+
+
+    .premium-flow-content span {
+
+        font-size:
+            13px;
+    }
+
+
+    .flow-dots {
+
+        display:
+            none;
+    }
+
+
+    .cloud-path {
+
+        font-size:
+            15px !important;
+
+        line-height:
+            1.6;
+    }
+
+
+    .premium-flow-title {
+
+        font-size:
+            38px !important;
+    }
+
+
+    .premium-flow-description {
+
+        font-size:
+            15px !important;
+    }
+
+}

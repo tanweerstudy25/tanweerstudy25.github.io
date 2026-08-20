@@ -40,596 +40,300 @@
 <style>
 
 /* =========================================================
-   DJ NEON LIVE VISITOR COUNTER
-   WhatsApp ke right side
+   PREMIUM PINK DJ LIVE VISITOR COUNTER
+   Same visual height as WhatsApp button
    ========================================================= */
 
 .nav-visitor-counter {
-
     position: relative;
     overflow: hidden;
     isolation: isolate;
 
-    height: 44px;
-    min-width: 150px;
-
-    padding: 0 13px;
+    height: 39px;
+    min-width: 142px;
+    padding: 0 14px;
 
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    gap: 9px;
 
-    gap: 10px;
-
-    border-radius: 12px;
-
-    border: 1px solid #00e5ff;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 229, 255, 0.95);
 
     background:
         linear-gradient(
             135deg,
-            rgba(3,18,35,.98),
-            rgba(9,21,46,.98),
-            rgba(14,8,40,.98)
+            rgba(4, 20, 39, 0.98),
+            rgba(9, 25, 47, 0.98)
         );
 
     flex: 0 0 auto;
-
     white-space: nowrap;
 
     box-shadow:
-        0 0 6px #00e5ff,
-        0 0 12px rgba(0,229,255,.55),
-        0 0 22px rgba(98,68,255,.28),
-        inset 0 0 15px rgba(0,229,255,.06);
+        0 0 5px rgba(0,229,255,.85),
+        0 0 12px rgba(0,229,255,.42),
+        inset 0 0 10px rgba(0,229,255,.05);
 
     animation:
-        visitorDJBeat 1.15s ease-in-out infinite,
-        visitorDJBorder 3s linear infinite;
+        visitorSoftBeat 1.4s ease-in-out infinite;
 
     transition:
         transform .25s ease,
         box-shadow .25s ease;
-
 }
 
-
-/* =========================================================
-   MOVING DJ LASER LIGHT
-   ========================================================= */
-
+/* Pink laser moving left -> right */
 .nav-visitor-counter::before {
-
     content: "";
-
     position: absolute;
-
-    top: -80%;
+    top: -90%;
     left: -45%;
+    width: 24%;
+    height: 280%;
 
-    width: 28%;
-    height: 260%;
-
-    transform:
-        rotate(25deg);
+    transform: rotate(24deg);
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,255,255,.12),
-            rgba(255,255,255,.95),
-            rgba(0,229,255,.80),
+            rgba(255, 20, 147, .15),
+            rgba(255, 0, 128, .88),
+            rgba(255, 105, 180, 1),
+            rgba(255, 0, 128, .88),
             transparent
         );
 
-    filter:
-        blur(2px);
-
-    animation:
-        visitorLaser 2s linear infinite;
-
+    filter: blur(1px);
+    animation: visitorPinkLaser 1.8s linear infinite;
     pointer-events: none;
-
     z-index: 0;
-
 }
 
-
-/* =========================================================
-   SMALL BLINKING LIVE LED
-   ========================================================= */
-
+/* Small blinking live LEDs */
 .nav-visitor-counter::after {
-
     content: "";
-
     position: absolute;
+    top: 4px;
+    right: 5px;
 
-    top: 5px;
-    right: 6px;
-
-    width: 5px;
-    height: 5px;
-
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
 
-    background: #00ff88;
+    background: #ff2d95;
 
     box-shadow:
-        0 0 4px #00ff88,
-        0 0 8px #00ff88,
-        0 0 13px #00ff88,
-        -7px 0 7px #00d4ff,
-        -14px 0 7px #a855f7;
+        0 0 4px #ff2d95,
+        0 0 8px #ff2d95,
+        -7px 0 6px #00e5ff;
 
-    animation:
-        visitorLED .45s ease-in-out infinite alternate;
-
+    animation: visitorLED .45s ease-in-out infinite alternate;
     z-index: 5;
-
 }
-
-
-/* Keep content above moving laser */
 
 .nav-visitor-counter > * {
-
     position: relative;
     z-index: 2;
-
 }
 
-
-/* =========================================================
-   EYE ICON
-   ========================================================= */
-
+/* Eye icon */
 .nav-visitor-counter .visitor-counter-icon {
-
-    width: 31px !important;
-    height: 31px !important;
-    min-width: 31px !important;
+    width: 27px !important;
+    height: 27px !important;
+    min-width: 27px !important;
 
     display: flex !important;
-
     align-items: center !important;
     justify-content: center !important;
 
     border-radius: 50% !important;
 
     color: #ffffff !important;
-
-    font-size: 13px !important;
+    font-size: 12px !important;
 
     background:
         linear-gradient(
             135deg,
-            #00e5ff,
-            #2979ff,
+            #00d9ff,
+            #267dff,
             #8b5cf6
         ) !important;
 
     box-shadow:
-        0 0 7px #00d4ff,
-        0 0 16px rgba(0,212,255,.75),
-        0 0 24px rgba(139,92,246,.30) !important;
+        0 0 6px rgba(0,217,255,.95),
+        0 0 12px rgba(0,217,255,.45) !important;
 
-    animation:
-        visitorIconBeat .75s ease-in-out infinite alternate;
-
+    animation: visitorIconPulse .8s ease-in-out infinite alternate;
 }
 
-
-/* =========================================================
-   COUNTER INFORMATION
-   ========================================================= */
-
+/* Text block */
 .nav-visitor-counter .visitor-counter-info {
-
     display: flex !important;
-
     flex-direction: column !important;
-
     justify-content: center !important;
+    align-items: flex-start !important;
+    line-height: .95 !important;
+}
 
+/* TOTAL VISITORS - larger and clearer */
+.nav-visitor-counter .visitor-counter-label {
+    font-family: "Inter", sans-serif !important;
+    font-size: 9.5px !important;
+    font-weight: 900 !important;
+    letter-spacing: .75px !important;
     line-height: 1 !important;
 
-}
-
-
-/* =========================================================
-   TOTAL VISITORS LABEL
-   ========================================================= */
-
-.nav-visitor-counter .visitor-counter-label {
-
-    font-size: 8px !important;
-
-    font-weight: 900 !important;
-
-    letter-spacing: 1.4px !important;
-
-    color: #00e5ff !important;
+    color: #71efff !important;
 
     text-shadow:
-        0 0 5px #00e5ff,
-        0 0 9px rgba(0,229,255,.65);
+        0 0 2px rgba(0,229,255,.80) !important;
 
-    animation:
-        visitorLabelColor 2s linear infinite;
-
+    animation: none !important;
 }
 
-
-/* =========================================================
-   VISITOR NUMBER
-   ========================================================= */
-
+/* Visitor number - sharp and strong */
 .nav-visitor-counter #visitor-count {
-
     margin: 2px 0 0 !important;
 
-    font-size: 19px !important;
-
-    line-height: 1 !important;
-
+    font-family: "Inter", sans-serif !important;
+    font-size: 17px !important;
+    line-height: .95 !important;
     font-weight: 900 !important;
+    letter-spacing: .2px !important;
 
     color: #ffffff !important;
 
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+
     text-shadow:
-        0 0 5px #ffffff,
-        0 0 10px #00d4ff,
-        0 0 16px #7c3aed;
+        0 0 1px #ffffff,
+        0 0 3px rgba(0,229,255,.75) !important;
 
-    animation:
-        visitorNumberBeat .55s ease-in-out infinite alternate;
-
+    animation: visitorNumberSharpPulse .9s ease-in-out infinite alternate;
 }
-
-
-/* Hide long description inside navbar */
 
 .nav-visitor-counter .visitor-counter-text {
-
     display: none !important;
-
 }
-
-
-/* Keep navbar controls in one line */
 
 .nav-buttons {
-
     flex-wrap: nowrap !important;
-
 }
-
-
-/* =========================================================
-   HOVER — DJ BOOST 😂
-   ========================================================= */
 
 .nav-visitor-counter:hover {
-
-    transform:
-        translateY(-3px)
-        scale(1.08)
-        rotate(-1deg);
+    transform: translateY(-2px) scale(1.04);
 
     box-shadow:
-        0 0 8px #00ffff,
-        0 0 18px #00ffff,
-        0 0 32px #8b5cf6,
-        0 0 45px rgba(236,72,153,.30);
-
+        0 0 6px rgba(0,229,255,.95),
+        0 0 14px rgba(0,229,255,.55),
+        0 0 20px rgba(255,0,128,.25);
 }
 
-
-/* =========================================================
-   DJ ANIMATIONS
-   ========================================================= */
-
-
-/* Bass / heartbeat */
-
-@keyframes visitorDJBeat {
-
-    0%,
-    100% {
-
-        transform:
-            scale(1);
-
-    }
-
-    45% {
-
-        transform:
-            scale(1.025);
-
-    }
-
-    55% {
-
-        transform:
-            scale(1.04);
-
-    }
-
+@keyframes visitorPinkLaser {
+    0% { left: -45%; }
+    100% { left: 135%; }
 }
-
-
-/* Border changing color */
-
-@keyframes visitorDJBorder {
-
-    0% {
-
-        border-color: #00e5ff;
-
-    }
-
-    25% {
-
-        border-color: #8b5cf6;
-
-    }
-
-    50% {
-
-        border-color: #ec4899;
-
-    }
-
-    75% {
-
-        border-color: #22c55e;
-
-    }
-
-    100% {
-
-        border-color: #00e5ff;
-
-    }
-
-}
-
-
-/* Moving laser */
-
-@keyframes visitorLaser {
-
-    0% {
-
-        left: -45%;
-
-    }
-
-    100% {
-
-        left: 135%;
-
-    }
-
-}
-
-
-/* LED blinking */
 
 @keyframes visitorLED {
-
     from {
-
-        opacity: .25;
-
-        transform:
-            scale(.6);
-
+        opacity: .30;
+        transform: scale(.7);
     }
-
     to {
-
         opacity: 1;
-
-        transform:
-            scale(1.5);
-
+        transform: scale(1.45);
     }
-
 }
 
-
-/* Eye beat */
-
-@keyframes visitorIconBeat {
-
-    from {
-
-        transform:
-            scale(.88)
-            rotate(-4deg);
-
-        filter:
-            brightness(.85);
-
-    }
-
-    to {
-
-        transform:
-            scale(1.08)
-            rotate(4deg);
-
-        filter:
-            brightness(1.35);
-
-    }
-
+@keyframes visitorSoftBeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.015); }
 }
 
-
-/* Visitor number flashing */
-
-@keyframes visitorNumberBeat {
-
+@keyframes visitorIconPulse {
     from {
-
-        transform:
-            scale(1);
-
-        opacity: .82;
-
+        transform: scale(.94);
+        filter: brightness(.95);
     }
-
     to {
+        transform: scale(1.06);
+        filter: brightness(1.25);
+    }
+}
 
-        transform:
-            scale(1.15);
-
+@keyframes visitorNumberSharpPulse {
+    from {
+        opacity: .92;
+        transform: scale(1);
+    }
+    to {
         opacity: 1;
-
+        transform: scale(1.06);
     }
-
 }
 
-
-/* Label DJ colors */
-
-@keyframes visitorLabelColor {
-
-    0% {
-
-        color: #00e5ff;
-
-    }
-
-    25% {
-
-        color: #60a5fa;
-
-    }
-
-    50% {
-
-        color: #c084fc;
-
-    }
-
-    75% {
-
-        color: #34d399;
-
-    }
-
-    100% {
-
-        color: #00e5ff;
-
-    }
-
-}
-
-
-/* =========================================================
-   LAPTOP
-   ========================================================= */
-
+/* Laptop */
 @media (max-width: 1250px) {
-
     .nav-visitor-counter {
-
-        min-width: 92px;
-
-        padding:
-            0 8px;
-
+        min-width: 128px;
+        height: 39px;
+        padding: 0 10px;
         gap: 7px;
-
     }
-
 
     .nav-visitor-counter .visitor-counter-label {
-
-        display: none !important;
-
+        font-size: 8.5px !important;
     }
 
+    .nav-visitor-counter #visitor-count {
+        font-size: 16px !important;
+    }
 }
 
-
-/* =========================================================
-   TABLET / MOBILE
-   ========================================================= */
-
+/* Tablet / mobile */
 @media (max-width: 800px) {
-
     .nav-visitor-counter {
-
         height: 38px;
-
         min-width: 72px;
-
-        padding:
-            0 7px;
-
+        padding: 0 7px;
     }
 
+    .nav-visitor-counter .visitor-counter-label {
+        display: none !important;
+    }
 
     .nav-visitor-counter .visitor-counter-icon {
-
         width: 25px !important;
         height: 25px !important;
         min-width: 25px !important;
-
         font-size: 11px !important;
-
     }
-
 
     .nav-visitor-counter #visitor-count {
-
         font-size: 16px !important;
-
     }
-
 }
 
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
 @media (max-width: 520px) {
-
     .nav-visitor-counter {
-
         min-width: 60px;
-
-        padding:
-            0 6px;
-
+        padding: 0 6px;
         gap: 5px;
-
     }
 
-
     .nav-visitor-counter .visitor-counter-icon {
-
         width: 23px !important;
         height: 23px !important;
         min-width: 23px !important;
-
     }
-
 
     .nav-visitor-counter #visitor-count {
-
         font-size: 15px !important;
-
     }
-
 }
 
 </style>

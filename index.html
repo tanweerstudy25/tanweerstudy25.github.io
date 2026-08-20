@@ -35,9 +35,271 @@
           rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+    /* =========================================================
+       TOP RIGHT LIVE VISITOR COUNTER
+       ========================================================= */
+
+    .nav-visitor-counter {
+        height: 42px;
+        min-width: 142px;
+        padding: 0 12px;
+
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+
+        border-radius: 11px;
+
+        border:
+            1px solid rgba(0, 212, 255, 0.38);
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(10,31,52,.96),
+                rgba(8,22,40,.96)
+            );
+
+        box-shadow:
+            0 8px 24px rgba(0,0,0,.24),
+            0 0 18px rgba(0,212,255,.10);
+
+        flex: 0 0 auto;
+        white-space: nowrap;
+
+        transition:
+            transform .3s ease,
+            box-shadow .3s ease,
+            border-color .3s ease;
+    }
+
+
+    .nav-visitor-counter:hover {
+
+        transform:
+            translateY(-2px);
+
+        border-color:
+            rgba(0, 212, 255, 0.72);
+
+        box-shadow:
+            0 10px 26px rgba(0,0,0,.30),
+            0 0 22px rgba(0,212,255,.20);
+    }
+
+
+    .nav-visitor-counter .visitor-counter-icon {
+
+        width: 29px !important;
+        height: 29px !important;
+        min-width: 29px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        border-radius: 50% !important;
+
+        background:
+            linear-gradient(
+                135deg,
+                #00d4ff,
+                #6366f1
+            ) !important;
+
+        color: #ffffff !important;
+
+        font-size: 13px !important;
+
+        box-shadow:
+            0 0 14px rgba(0,212,255,.35) !important;
+    }
+
+
+    .nav-visitor-counter .visitor-counter-info {
+
+        display: flex !important;
+
+        flex-direction:
+            column !important;
+
+        justify-content:
+            center !important;
+
+        line-height:
+            1.05 !important;
+    }
+
+
+    .nav-visitor-counter .visitor-counter-label {
+
+        font-size:
+            8px !important;
+
+        font-weight:
+            800 !important;
+
+        letter-spacing:
+            1.2px !important;
+
+        color:
+            #00d4ff !important;
+    }
+
+
+    .nav-visitor-counter #visitor-count {
+
+        margin:
+            2px 0 0 !important;
+
+        font-size:
+            18px !important;
+
+        line-height:
+            1 !important;
+
+        font-weight:
+            900 !important;
+
+        color:
+            #ffffff !important;
+    }
+
+
+    .nav-visitor-counter .visitor-counter-text {
+
+        display:
+            none !important;
+    }
+
+
+    /* Keep navbar controls in one row */
+
+    .nav-buttons {
+
+        flex-wrap:
+            nowrap !important;
+    }
+
+
+    /* =========================================================
+       LAPTOP
+       ========================================================= */
+
+    @media (max-width: 1250px) {
+
+        .nav-visitor-counter {
+
+            min-width:
+                92px;
+
+            padding:
+                0 8px;
+
+            gap:
+                7px;
+        }
+
+
+        .nav-visitor-counter .visitor-counter-label {
+
+            display:
+                none !important;
+        }
+
+    }
+
+
+    /* =========================================================
+       TABLET / MOBILE
+       ========================================================= */
+
+    @media (max-width: 800px) {
+
+        .nav-visitor-counter {
+
+            height:
+                38px;
+
+            min-width:
+                72px;
+
+            padding:
+                0 7px;
+        }
+
+
+        .nav-visitor-counter .visitor-counter-icon {
+
+            width:
+                25px !important;
+
+            height:
+                25px !important;
+
+            min-width:
+                25px !important;
+
+            font-size:
+                11px !important;
+        }
+
+
+        .nav-visitor-counter #visitor-count {
+
+            font-size:
+                16px !important;
+        }
+
+    }
+
+
+    @media (max-width: 520px) {
+
+        .nav-visitor-counter {
+
+            min-width:
+                60px;
+
+            padding:
+                0 6px;
+
+            gap:
+                5px;
+        }
+
+
+        .nav-visitor-counter .visitor-counter-icon {
+
+            width:
+                23px !important;
+
+            height:
+                23px !important;
+
+            min-width:
+                23px !important;
+        }
+
+
+        .nav-visitor-counter #visitor-count {
+
+            font-size:
+                15px !important;
+        }
+
+    }
+
+    </style>
+
 </head>
 
+
 <body>
+
 
 <!-- ================= NAVIGATION ================= -->
 
@@ -45,27 +307,62 @@
 
     <div class="nav-container">
 
+
         <a href="#home" class="logo">
+
             TANWEER<span>.</span>
+
         </a>
+
 
         <nav id="navMenu">
 
-            <a href="#home" class="active">Home</a>
-            <a href="about.html">About</a>
-            <a href="skills.html">Skills</a>
-            <a href="experience.html">Experience</a>
-            <a href="certifications.html">Certifications</a>
-            <a href="projects.html">Projects</a>
-            <a href="/contact.html">Contact</a>
+            <a href="#home" class="active">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="skills.html">
+                Skills
+            </a>
+
+            <a href="experience.html">
+                Experience
+            </a>
+
+            <a href="certifications.html">
+                Certifications
+            </a>
+
+            <a href="projects.html">
+                Projects
+            </a>
+
+            <a href="/contact.html">
+                Contact
+            </a>
 
         </nav>
 
+
         <div class="nav-buttons">
 
-            <button id="themeToggle" class="icon-btn">
+
+            <!-- THEME -->
+
+            <button
+                id="themeToggle"
+                class="icon-btn">
+
                 <i class="fa-solid fa-moon"></i>
+
             </button>
+
+
+            <!-- WHATSAPP -->
 
             <a href="https://wa.me/966557316795"
                target="_blank"
@@ -74,43 +371,117 @@
                title="WhatsApp: +966 55 731 6795">
 
                 <i class="fa-brands fa-whatsapp"></i>
-                <span>WhatsApp</span>
+
+                <span>
+                    WhatsApp
+                </span>
 
             </a>
 
-            <button id="menuToggle" class="menu-btn">
+
+            <!-- ================= TOP RIGHT LIVE VISITOR COUNTER ================= -->
+
+            <div
+                class="nav-visitor-counter"
+                title="Total Portfolio Visitors Worldwide">
+
+
+                <div class="visitor-counter-icon">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                </div>
+
+
+                <div class="visitor-counter-info">
+
+
+                    <span class="visitor-counter-label">
+
+                        TOTAL VISITORS
+
+                    </span>
+
+
+                    <strong id="visitor-count">
+
+                        Loading...
+
+                    </strong>
+
+
+                    <span class="visitor-counter-text">
+
+                        Portfolio Visits Worldwide
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                id="menuToggle"
+                class="menu-btn">
+
                 <i class="fa-solid fa-bars"></i>
+
             </button>
+
 
         </div>
 
+
     </div>
+
 
 </header>
 
 
+
 <!-- ================= HOME ================= -->
 
-<section id="home" class="hero">
+
+<section
+    id="home"
+    class="hero">
+
 
     <div class="hero-overlay"></div>
 
+
     <div class="hero-content">
 
-        
 
-        <h1>Tanweer Ansari</h1>
+        <h1>
 
-        <h2>Network & IT Support Engineer</h2>
+            Tanweer Ansari
+
+        </h1>
+
+
+        <h2>
+
+            Network & IT Support Engineer
+
+        </h2>
+
 
         <p class="hero-intro">
 
-            Experienced IT Professional with <strong>16+ years</strong>
+            Experienced IT Professional with
+            <strong>16+ years</strong>
             of overall experience, including enterprise network,
             infrastructure, IT support, Microsoft Azure,
             Microsoft 365, Fortinet and endpoint management.
 
         </p>
+
 
         <p class="hero-description">
 
@@ -122,532 +493,939 @@
 
         </p>
 
+
         <div class="hero-meta">
 
+
             <span>
+
                 <i class="fa-solid fa-location-dot"></i>
+
                 Makkah, Saudi Arabia
+
             </span>
+
 
             <span>
+
                 <i class="fa-solid fa-briefcase"></i>
+
                 16+ Years IT Experience
+
             </span>
+
 
         </div>
 
-       <div class="hero-buttons">
-
-    <!-- CONTACT ME -->
-    <a href="mailto:tanweerstudy25@gmail.com"
-       class="btn btn-pink">
-
-        <i class="fa-regular fa-envelope"></i>
-        Contact Me
-
-    </a>
 
 
-    <!-- LINKEDIN -->
-    <a href="https://www.linkedin.com/in/tanweeransari21"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="btn btn-linkedin">
-
-        <i class="fa-brands fa-linkedin-in"></i>
-        LinkedIn
-
-    </a>
+        <div class="hero-buttons">
 
 
-    <!-- PROJECTS -->
-    <a href="projects.html"
-       class="btn btn-projects">
+            <!-- CONTACT ME -->
 
-        <i class="fa-solid fa-code"></i>
-        Projects
+            <a href="mailto:tanweerstudy25@gmail.com"
+               class="btn btn-pink">
 
-    </a>
+                <i class="fa-regular fa-envelope"></i>
 
+                Contact Me
 
-    <!-- REQUEST CV -->
-    <a href="/contact.html"
-       class="btn btn-cv">
-
-        <i class="fa-solid fa-file-lines"></i>
-        Request CV
-
-    </a>
+            </a>
 
 
-    <!-- DOWNLOAD NOTES -->
-    <a href="notes.html"
-       class="btn btn-notes">
 
-        <i class="fa-solid fa-download"></i>
-        Download Notes
+            <!-- LINKEDIN -->
 
-    </a>
+            <a href="https://www.linkedin.com/in/tanweeransari21"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-linkedin">
+
+                <i class="fa-brands fa-linkedin-in"></i>
+
+                LinkedIn
+
+            </a>
 
 
-    <!-- REQUEST IT SUPPORT -->
-    <a href="support.html"
-       class="btn btn-support">
 
-        <i class="fa-solid fa-headset"></i>
-        Request for IT Support
+            <!-- PROJECTS -->
 
-    </a>
+            <a href="projects.html"
+               class="btn btn-projects">
 
-</div>
+                <i class="fa-solid fa-code"></i>
+
+                Projects
+
+            </a>
+
+
+
+            <!-- REQUEST CV -->
+
+            <a href="/contact.html"
+               class="btn btn-cv">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                Request CV
+
+            </a>
+
+
+
+            <!-- DOWNLOAD NOTES -->
+
+            <a href="notes.html"
+               class="btn btn-notes">
+
+                <i class="fa-solid fa-download"></i>
+
+                Download Notes
+
+            </a>
+
+
+
+            <!-- REQUEST IT SUPPORT -->
+
+            <a href="support.html"
+               class="btn btn-support">
+
+                <i class="fa-solid fa-headset"></i>
+
+                Request for IT Support
+
+            </a>
+
+
+        </div>
+
 
     </div>
 
+
 </section>
-<!-- ================= LIVE VISITOR COUNTER ================= -->
 
-<section class="visitor-counter-section">
-    <div class="visitor-counter-box">
 
-        <div class="visitor-counter-icon">
-            <i class="fa-solid fa-eye"></i>
-        </div>
-
-        <div class="visitor-counter-info">
-            <span class="visitor-counter-label">TOTAL VISITORS</span>
-
-            <strong id="visitor-count">
-                Loading...
-            </strong>
-
-            <span class="visitor-counter-text">
-                Portfolio Visits Worldwide
-            </span>
-        </div>
-
-    </div>
-</section>
 
 <!-- ================= PROFESSIONAL EXPERIENCE ================= -->
 
-<section id="experience" class="section experience-section">
+
+<section
+    id="experience"
+    class="section experience-section">
+
 
     <div class="container">
 
+
         <div class="section-label">
+
             PROFESSIONAL EXPERIENCE
+
         </div>
 
+
         <h2 class="section-title">
+
             16+ Years of IT Experience in Network & Support.
+
         </h2>
+
+
 
         <div class="experience-grid">
 
 
+
             <!-- ================= BOX 1 ================= -->
+
 
             <div class="experience-card">
 
+
                 <div class="experience-icon">
+
                     <i class="fa-solid fa-network-wired"></i>
+
                 </div>
+
 
                 <div class="experience-content">
 
+
                     <span class="experience-period">
+
                         NETWORK & IT INFRASTRUCTURE
+
                     </span>
 
-                    <h3>Network Engineer</h3>
+
+                    <h3>
+
+                        Network Engineer
+
+                    </h3>
+
 
                     <p class="experience-summary">
+
                         Enterprise network infrastructure,
                         routing & switching, security and
                         IT support operations.
+
                     </p>
 
+
                     <ul>
-                        <li>Cisco LAN/WAN routing and switching</li>
-                        <li>VLAN, TCP/IP, VPN and network troubleshooting</li>
-                        <li>Fortinet FortiGate firewall administration</li>
-                        <li>Network monitoring and infrastructure support</li>
+
+                        <li>
+                            Cisco LAN/WAN routing and switching
+                        </li>
+
+                        <li>
+                            VLAN, TCP/IP, VPN and network troubleshooting
+                        </li>
+
+                        <li>
+                            Fortinet FortiGate firewall administration
+                        </li>
+
+                        <li>
+                            Network monitoring and infrastructure support
+                        </li>
+
                     </ul>
+
 
                 </div>
 
+
             </div>
+
 
 
             <!-- ================= BOX 2 ================= -->
 
+
             <div class="experience-card">
 
+
                 <div class="experience-icon">
+
                     <i class="fa-solid fa-headset"></i>
+
                 </div>
+
 
                 <div class="experience-content">
 
+
                     <span class="experience-period">
+
                         ENTERPRISE IT OPERATIONS
+
                     </span>
 
-                    <h3>L2 IT Support Engineer</h3>
+
+                    <h3>
+
+                        L2 IT Support Engineer
+
+                    </h3>
+
 
                     <p class="experience-summary">
+
                         Hands-on enterprise support covering
                         users, endpoints, systems, applications
                         and infrastructure.
+
                     </p>
 
+
                     <ul>
-                        <li>L2 troubleshooting for enterprise users</li>
-                        <li>VPN, email, Outlook and connectivity support</li>
-                        <li>Printer, desktop and endpoint troubleshooting</li>
-                        <li>Incident and service request management</li>
+
+                        <li>
+                            L2 troubleshooting for enterprise users
+                        </li>
+
+                        <li>
+                            VPN, email, Outlook and connectivity support
+                        </li>
+
+                        <li>
+                            Printer, desktop and endpoint troubleshooting
+                        </li>
+
+                        <li>
+                            Incident and service request management
+                        </li>
+
                     </ul>
+
 
                 </div>
 
+
             </div>
+
 
 
             <!-- ================= BOX 3 ================= -->
 
+
             <div class="experience-card">
 
+
                 <div class="experience-icon">
+
                     <i class="fa-brands fa-microsoft"></i>
+
                 </div>
+
 
                 <div class="experience-content">
 
+
                     <span class="experience-period">
+
                         MICROSOFT CLOUD
+
                     </span>
 
-                    <h3>Azure & Microsoft 365</h3>
+
+                    <h3>
+
+                        Azure & Microsoft 365
+
+                    </h3>
+
 
                     <p class="experience-summary">
+
                         Supporting modern cloud, identity and
                         endpoint management technologies.
+
                     </p>
 
+
                     <ul>
-                        <li>Microsoft Azure infrastructure</li>
-                        <li>Microsoft Entra ID and identity management</li>
-                        <li>Microsoft Intune and Windows Autopilot</li>
-                        <li>Microsoft 365 and Office 365 administration</li>
+
+                        <li>
+                            Microsoft Azure infrastructure
+                        </li>
+
+                        <li>
+                            Microsoft Entra ID and identity management
+                        </li>
+
+                        <li>
+                            Microsoft Intune and Windows Autopilot
+                        </li>
+
+                        <li>
+                            Microsoft 365 and Office 365 administration
+                        </li>
+
                     </ul>
+
 
                 </div>
 
+
             </div>
+
 
 
             <!-- ================= BOX 4 ================= -->
 
+
             <div class="experience-card">
 
+
                 <div class="experience-icon">
+
                     <i class="fa-solid fa-shield-halved"></i>
+
                 </div>
+
 
                 <div class="experience-content">
 
+
                     <span class="experience-period">
+
                         SECURITY & INFRASTRUCTURE
+
                     </span>
 
-                    <h3>Enterprise Infrastructure Support</h3>
+
+                    <h3>
+
+                        Enterprise Infrastructure Support
+
+                    </h3>
+
 
                     <p class="experience-summary">
+
                         Supporting secure and reliable enterprise
                         technology environments.
+
                     </p>
 
+
                     <ul>
-                        <li>Fortinet firewall policies and VPN</li>
-                        <li>Windows Server and Active Directory</li>
-                        <li>IT asset and inventory management</li>
-                        <li>Technical documentation and SOPs</li>
+
+                        <li>
+                            Fortinet firewall policies and VPN
+                        </li>
+
+                        <li>
+                            Windows Server and Active Directory
+                        </li>
+
+                        <li>
+                            IT asset and inventory management
+                        </li>
+
+                        <li>
+                            Technical documentation and SOPs
+                        </li>
+
                     </ul>
 
+
                 </div>
+
 
             </div>
 
 
-            <!-- ================= NEW BOX 5 ================= -->
+
+            <!-- ================= BOX 5 ================= -->
+
 
             <div class="experience-card">
 
+
                 <div class="experience-icon">
+
                     <i class="fa-solid fa-cloud"></i>
+
                 </div>
+
 
                 <div class="experience-content">
 
+
                     <span class="experience-period">
+
                         ENDPOINT & CLOUD MANAGEMENT
+
                     </span>
 
-                    <h3>Microsoft Cloud & Endpoint</h3>
+
+                    <h3>
+
+                        Microsoft Cloud & Endpoint
+
+                    </h3>
+
 
                     <p class="experience-summary">
+
                         Supporting Microsoft cloud, identity,
                         endpoint and collaboration technologies.
+
                     </p>
 
+
                     <ul>
-                        <li>Microsoft Azure</li>
-                        <li>Microsoft Entra ID</li>
-                        <li>Microsoft Intune</li>
-                        <li>Microsoft 365</li>
-                        <li>Windows Autopilot</li>
-                        <li>Windows Server & AD</li>
-                        <li>SharePoint & Power Apps</li>
+
+                        <li>
+                            Microsoft Azure
+                        </li>
+
+                        <li>
+                            Microsoft Entra ID
+                        </li>
+
+                        <li>
+                            Microsoft Intune
+                        </li>
+
+                        <li>
+                            Microsoft 365
+                        </li>
+
+                        <li>
+                            Windows Autopilot
+                        </li>
+
+                        <li>
+                            Windows Server & AD
+                        </li>
+
+                        <li>
+                            SharePoint & Power Apps
+                        </li>
+
                     </ul>
 
+
                 </div>
+
 
             </div>
 
 
-            <!-- ================= NEW BOX 6 ================= -->
+
+            <!-- ================= BOX 6 ================= -->
+
 
             <div class="experience-card">
 
+
                 <div class="experience-icon">
+
                     <i class="fa-solid fa-gears"></i>
+
                 </div>
+
 
                 <div class="experience-content">
 
+
                     <span class="experience-period">
+
                         ENTERPRISE TECHNOLOGIES
+
                     </span>
 
-                    <h3>IT Tools & Technologies</h3>
+
+                    <h3>
+
+                        IT Tools & Technologies
+
+                    </h3>
+
 
                     <p class="experience-summary">
+
                         Enterprise networking, security,
                         communication and IT operations technologies.
+
                     </p>
 
+
                     <ul>
-                        <li>Cisco Routing & Switching</li>
-                        <li>Fortinet Firewall</li>
-                        <li>VPN & Network Security</li>
-                        <li>Oracle Database 10g</li>
-                        <li>Cisco & Avaya Telephony</li>
-                        <li>IP Surveillance</li>
-                        <li>ITSM & Incident Management</li>
-                        <li>Remote Support</li>
-                        <li>Technical Documentation</li>
-                        <li>Power BI</li>
+
+                        <li>
+                            Cisco Routing & Switching
+                        </li>
+
+                        <li>
+                            Fortinet Firewall
+                        </li>
+
+                        <li>
+                            VPN & Network Security
+                        </li>
+
+                        <li>
+                            Oracle Database 10g
+                        </li>
+
+                        <li>
+                            Cisco & Avaya Telephony
+                        </li>
+
+                        <li>
+                            IP Surveillance
+                        </li>
+
+                        <li>
+                            ITSM & Incident Management
+                        </li>
+
+                        <li>
+                            Remote Support
+                        </li>
+
+                        <li>
+                            Technical Documentation
+                        </li>
+
+                        <li>
+                            Power BI
+                        </li>
+
                     </ul>
 
+
                 </div>
+
 
             </div>
 
 
         </div>
 
+
     </div>
+
 
 </section>
 
 
+
 <!-- ================= PREMIUM INFRASTRUCTURE FLOW ================= -->
+
 
 <section class="section section-dark premium-flow-section">
 
+
     <div class="container">
 
+
         <div class="section-label premium-flow-label">
+
             INFRASTRUCTURE FLOW
+
         </div>
 
+
         <h2 class="section-title left premium-flow-title">
+
             From Network Infrastructure to
-            <span>Cloud</span>
+
+            <span>
+                Cloud
+            </span>
+
         </h2>
 
+
         <p class="flow-description premium-flow-description">
+
             A practical view of the enterprise technology path —
             from users and connectivity through security,
             cloud identity and endpoint management.
+
         </p>
+
 
 
         <div class="premium-flow-box">
 
 
+
             <!-- END USERS -->
+
 
             <div class="premium-flow-card flow-blue">
 
+
                 <div class="premium-flow-icon">
+
                     <i class="fa-solid fa-users"></i>
+
                 </div>
 
+
                 <div class="premium-flow-content">
-                    <strong>END USERS</strong>
+
+
+                    <strong>
+
+                        END USERS
+
+                    </strong>
+
+
                     <span>
+
                         Devices, applications and day-to-day support
+
                     </span>
+
+
                 </div>
+
 
                 <div class="flow-dots"></div>
 
+
             </div>
+
 
 
             <div class="premium-flow-connector connector-blue">
+
                 <span></span>
+
             </div>
+
 
 
             <!-- LAN -->
 
+
             <div class="premium-flow-card flow-green">
 
+
                 <div class="premium-flow-icon">
+
                     <i class="fa-solid fa-network-wired"></i>
+
                 </div>
 
+
                 <div class="premium-flow-content">
-                    <strong>LAN</strong>
+
+
+                    <strong>
+
+                        LAN
+
+                    </strong>
+
+
                     <span>
+
                         Local connectivity, VLANs and endpoint access
+
                     </span>
+
+
                 </div>
+
 
                 <div class="flow-dots"></div>
 
+
             </div>
+
 
 
             <div class="premium-flow-connector connector-green">
+
                 <span></span>
+
             </div>
+
 
 
             <!-- CISCO SWITCHING -->
 
+
             <div class="premium-flow-card flow-yellow">
 
+
                 <div class="premium-flow-icon">
+
                     <i class="fa-solid fa-ethernet"></i>
+
                 </div>
 
+
                 <div class="premium-flow-content">
-                    <strong>CISCO SWITCHING</strong>
+
+
+                    <strong>
+
+                        CISCO SWITCHING
+
+                    </strong>
+
+
                     <span>
+
                         LAN segmentation and network access
+
                     </span>
+
+
                 </div>
+
 
                 <div class="flow-dots"></div>
 
+
             </div>
+
 
 
             <div class="premium-flow-connector connector-yellow">
+
                 <span></span>
+
             </div>
+
 
 
             <!-- CISCO ROUTING -->
 
+
             <div class="premium-flow-card flow-blue">
 
+
                 <div class="premium-flow-icon">
+
                     <i class="fa-solid fa-arrows-up-down-left-right"></i>
+
                 </div>
 
+
                 <div class="premium-flow-content">
-                    <strong>CISCO ROUTING</strong>
+
+
+                    <strong>
+
+                        CISCO ROUTING
+
+                    </strong>
+
+
                     <span>
+
                         WAN connectivity and traffic paths
+
                     </span>
+
+
                 </div>
+
 
                 <div class="flow-dots"></div>
 
+
             </div>
+
 
 
             <div class="premium-flow-connector connector-purple">
+
                 <span></span>
+
             </div>
+
 
 
             <!-- FORTINET FIREWALL -->
 
+
             <div class="premium-flow-card flow-purple">
 
+
                 <div class="premium-flow-icon">
+
                     <i class="fa-solid fa-shield-halved"></i>
+
                 </div>
 
+
                 <div class="premium-flow-content">
-                    <strong>FORTINET FIREWALL</strong>
+
+
+                    <strong>
+
+                        FORTINET FIREWALL
+
+                    </strong>
+
+
                     <span>
+
                         Policies, security controls and protected access
+
                     </span>
+
+
                 </div>
+
 
                 <div class="flow-dots"></div>
 
+
             </div>
+
 
 
             <div class="premium-flow-connector connector-pink">
+
                 <span></span>
+
             </div>
+
 
 
             <!-- CLOUD -->
 
+
             <div class="premium-flow-card flow-cyan">
 
+
                 <div class="premium-flow-icon">
+
                     <i class="fa-solid fa-cloud"></i>
+
                 </div>
+
 
                 <div class="premium-flow-content">
 
+
                     <strong class="cloud-path">
+
                         VPN / INTERNET
+
                         <b>→</b>
+
                         AZURE
+
                         <b>→</b>
+
                         ENTRA ID
+
                         <b>→</b>
+
                         INTUNE
+
                         <b>→</b>
+
                         MICROSOFT 365
+
                     </strong>
 
+
                     <span>
+
                         Secure connectivity to cloud, identity,
                         device management and productivity
+
                     </span>
+
 
                 </div>
 
+
                 <div class="flow-dots"></div>
+
 
             </div>
 
 
         </div>
 
+
     </div>
+
 
 </section>
 
@@ -655,48 +1433,76 @@
 
 
 
-
-
-
-    
-
 <!-- ================= FOOTER ================= -->
+
 
 <footer>
 
+
     <div class="container footer-content">
+
 
         <div>
 
+
             <strong>
+
                 Tanweer Ansari
+
             </strong>
 
+
             <span>
+
                 · Network & IT Support Engineer
+
             </span>
+
 
         </div>
 
+
         <a href="#home">
+
             Open to New Opportunities
+
         </a>
 
+
     </div>
+
 
 </footer>
 
 
+
+<!-- ================= BACK TO TOP ================= -->
+
+
 <button id="backTop">
+
     <i class="fa-solid fa-arrow-up"></i>
+
 </button>
+
+
+
+<!-- ================= MAIN JAVASCRIPT ================= -->
 
 
 <script src="script.js"></script>
 
-<!-- GoatCounter -->
-<script data-goatcounter="https://tanweerportfolio.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+
+
+<!-- ================= GOATCOUNTER ================= -->
+
+
+<script
+    data-goatcounter="https://tanweerportfolio.goatcounter.com/count"
+    async
+    src="//gc.zgo.at/count.js">
+</script>
+
 
 </body>
 </html>

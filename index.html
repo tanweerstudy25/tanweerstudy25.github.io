@@ -36,264 +36,607 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <style>
 
-    /* =========================================================
-       TOP RIGHT LIVE VISITOR COUNTER
-       ========================================================= */
+<style>
 
-    .nav-visitor-counter {
-        height: 42px;
-        min-width: 142px;
-        padding: 0 12px;
+/* =========================================================
+   DJ NEON LIVE VISITOR COUNTER
+   WhatsApp ke right side
+   ========================================================= */
 
-        display: inline-flex;
-        align-items: center;
-        gap: 9px;
+.nav-visitor-counter {
 
-        border-radius: 11px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
 
-        border:
-            1px solid rgba(0, 212, 255, 0.38);
+    height: 44px;
+    min-width: 150px;
 
-        background:
-            linear-gradient(
-                135deg,
-                rgba(10,31,52,.96),
-                rgba(8,22,40,.96)
-            );
+    padding: 0 13px;
 
-        box-shadow:
-            0 8px 24px rgba(0,0,0,.24),
-            0 0 18px rgba(0,212,255,.10);
+    display: inline-flex;
+    align-items: center;
 
-        flex: 0 0 auto;
-        white-space: nowrap;
+    gap: 10px;
 
-        transition:
-            transform .3s ease,
-            box-shadow .3s ease,
-            border-color .3s ease;
-    }
+    border-radius: 12px;
+
+    border: 1px solid #00e5ff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(3,18,35,.98),
+            rgba(9,21,46,.98),
+            rgba(14,8,40,.98)
+        );
+
+    flex: 0 0 auto;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 0 6px #00e5ff,
+        0 0 12px rgba(0,229,255,.55),
+        0 0 22px rgba(98,68,255,.28),
+        inset 0 0 15px rgba(0,229,255,.06);
+
+    animation:
+        visitorDJBeat 1.15s ease-in-out infinite,
+        visitorDJBorder 3s linear infinite;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
 
 
-    .nav-visitor-counter:hover {
+/* =========================================================
+   MOVING DJ LASER LIGHT
+   ========================================================= */
+
+.nav-visitor-counter::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -80%;
+    left: -45%;
+
+    width: 28%;
+    height: 260%;
+
+    transform:
+        rotate(25deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.95),
+            rgba(0,229,255,.80),
+            transparent
+        );
+
+    filter:
+        blur(2px);
+
+    animation:
+        visitorLaser 2s linear infinite;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+}
+
+
+/* =========================================================
+   SMALL BLINKING LIVE LED
+   ========================================================= */
+
+.nav-visitor-counter::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 5px;
+    right: 6px;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #00ff88;
+
+    box-shadow:
+        0 0 4px #00ff88,
+        0 0 8px #00ff88,
+        0 0 13px #00ff88,
+        -7px 0 7px #00d4ff,
+        -14px 0 7px #a855f7;
+
+    animation:
+        visitorLED .45s ease-in-out infinite alternate;
+
+    z-index: 5;
+
+}
+
+
+/* Keep content above moving laser */
+
+.nav-visitor-counter > * {
+
+    position: relative;
+    z-index: 2;
+
+}
+
+
+/* =========================================================
+   EYE ICON
+   ========================================================= */
+
+.nav-visitor-counter .visitor-counter-icon {
+
+    width: 31px !important;
+    height: 31px !important;
+    min-width: 31px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+
+    color: #ffffff !important;
+
+    font-size: 13px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00e5ff,
+            #2979ff,
+            #8b5cf6
+        ) !important;
+
+    box-shadow:
+        0 0 7px #00d4ff,
+        0 0 16px rgba(0,212,255,.75),
+        0 0 24px rgba(139,92,246,.30) !important;
+
+    animation:
+        visitorIconBeat .75s ease-in-out infinite alternate;
+
+}
+
+
+/* =========================================================
+   COUNTER INFORMATION
+   ========================================================= */
+
+.nav-visitor-counter .visitor-counter-info {
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    justify-content: center !important;
+
+    line-height: 1 !important;
+
+}
+
+
+/* =========================================================
+   TOTAL VISITORS LABEL
+   ========================================================= */
+
+.nav-visitor-counter .visitor-counter-label {
+
+    font-size: 8px !important;
+
+    font-weight: 900 !important;
+
+    letter-spacing: 1.4px !important;
+
+    color: #00e5ff !important;
+
+    text-shadow:
+        0 0 5px #00e5ff,
+        0 0 9px rgba(0,229,255,.65);
+
+    animation:
+        visitorLabelColor 2s linear infinite;
+
+}
+
+
+/* =========================================================
+   VISITOR NUMBER
+   ========================================================= */
+
+.nav-visitor-counter #visitor-count {
+
+    margin: 2px 0 0 !important;
+
+    font-size: 19px !important;
+
+    line-height: 1 !important;
+
+    font-weight: 900 !important;
+
+    color: #ffffff !important;
+
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 10px #00d4ff,
+        0 0 16px #7c3aed;
+
+    animation:
+        visitorNumberBeat .55s ease-in-out infinite alternate;
+
+}
+
+
+/* Hide long description inside navbar */
+
+.nav-visitor-counter .visitor-counter-text {
+
+    display: none !important;
+
+}
+
+
+/* Keep navbar controls in one line */
+
+.nav-buttons {
+
+    flex-wrap: nowrap !important;
+
+}
+
+
+/* =========================================================
+   HOVER — DJ BOOST 😂
+   ========================================================= */
+
+.nav-visitor-counter:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.08)
+        rotate(-1deg);
+
+    box-shadow:
+        0 0 8px #00ffff,
+        0 0 18px #00ffff,
+        0 0 32px #8b5cf6,
+        0 0 45px rgba(236,72,153,.30);
+
+}
+
+
+/* =========================================================
+   DJ ANIMATIONS
+   ========================================================= */
+
+
+/* Bass / heartbeat */
+
+@keyframes visitorDJBeat {
+
+    0%,
+    100% {
 
         transform:
-            translateY(-2px);
+            scale(1);
 
-        border-color:
-            rgba(0, 212, 255, 0.72);
-
-        box-shadow:
-            0 10px 26px rgba(0,0,0,.30),
-            0 0 22px rgba(0,212,255,.20);
     }
 
+    45% {
 
-    .nav-visitor-counter .visitor-counter-icon {
+        transform:
+            scale(1.025);
 
-        width: 29px !important;
-        height: 29px !important;
-        min-width: 29px !important;
-
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-
-        border-radius: 50% !important;
-
-        background:
-            linear-gradient(
-                135deg,
-                #00d4ff,
-                #6366f1
-            ) !important;
-
-        color: #ffffff !important;
-
-        font-size: 13px !important;
-
-        box-shadow:
-            0 0 14px rgba(0,212,255,.35) !important;
     }
 
+    55% {
 
-    .nav-visitor-counter .visitor-counter-info {
+        transform:
+            scale(1.04);
 
-        display: flex !important;
+    }
 
-        flex-direction:
-            column !important;
+}
 
-        justify-content:
-            center !important;
 
-        line-height:
-            1.05 !important;
+/* Border changing color */
+
+@keyframes visitorDJBorder {
+
+    0% {
+
+        border-color: #00e5ff;
+
+    }
+
+    25% {
+
+        border-color: #8b5cf6;
+
+    }
+
+    50% {
+
+        border-color: #ec4899;
+
+    }
+
+    75% {
+
+        border-color: #22c55e;
+
+    }
+
+    100% {
+
+        border-color: #00e5ff;
+
+    }
+
+}
+
+
+/* Moving laser */
+
+@keyframes visitorLaser {
+
+    0% {
+
+        left: -45%;
+
+    }
+
+    100% {
+
+        left: 135%;
+
+    }
+
+}
+
+
+/* LED blinking */
+
+@keyframes visitorLED {
+
+    from {
+
+        opacity: .25;
+
+        transform:
+            scale(.6);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1.5);
+
+    }
+
+}
+
+
+/* Eye beat */
+
+@keyframes visitorIconBeat {
+
+    from {
+
+        transform:
+            scale(.88)
+            rotate(-4deg);
+
+        filter:
+            brightness(.85);
+
+    }
+
+    to {
+
+        transform:
+            scale(1.08)
+            rotate(4deg);
+
+        filter:
+            brightness(1.35);
+
+    }
+
+}
+
+
+/* Visitor number flashing */
+
+@keyframes visitorNumberBeat {
+
+    from {
+
+        transform:
+            scale(1);
+
+        opacity: .82;
+
+    }
+
+    to {
+
+        transform:
+            scale(1.15);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* Label DJ colors */
+
+@keyframes visitorLabelColor {
+
+    0% {
+
+        color: #00e5ff;
+
+    }
+
+    25% {
+
+        color: #60a5fa;
+
+    }
+
+    50% {
+
+        color: #c084fc;
+
+    }
+
+    75% {
+
+        color: #34d399;
+
+    }
+
+    100% {
+
+        color: #00e5ff;
+
+    }
+
+}
+
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1250px) {
+
+    .nav-visitor-counter {
+
+        min-width: 92px;
+
+        padding:
+            0 8px;
+
+        gap: 7px;
+
     }
 
 
     .nav-visitor-counter .visitor-counter-label {
 
-        font-size:
-            8px !important;
+        display: none !important;
 
-        font-weight:
-            800 !important;
+    }
 
-        letter-spacing:
-            1.2px !important;
+}
 
-        color:
-            #00d4ff !important;
+
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .nav-visitor-counter {
+
+        height: 38px;
+
+        min-width: 72px;
+
+        padding:
+            0 7px;
+
+    }
+
+
+    .nav-visitor-counter .visitor-counter-icon {
+
+        width: 25px !important;
+        height: 25px !important;
+        min-width: 25px !important;
+
+        font-size: 11px !important;
+
     }
 
 
     .nav-visitor-counter #visitor-count {
 
-        margin:
-            2px 0 0 !important;
+        font-size: 16px !important;
 
-        font-size:
-            18px !important;
-
-        line-height:
-            1 !important;
-
-        font-weight:
-            900 !important;
-
-        color:
-            #ffffff !important;
     }
 
-
-    .nav-visitor-counter .visitor-counter-text {
-
-        display:
-            none !important;
-    }
+}
 
 
-    /* Keep navbar controls in one row */
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
 
-    .nav-buttons {
+@media (max-width: 520px) {
 
-        flex-wrap:
-            nowrap !important;
-    }
+    .nav-visitor-counter {
 
+        min-width: 60px;
 
-    /* =========================================================
-       LAPTOP
-       ========================================================= */
+        padding:
+            0 6px;
 
-    @media (max-width: 1250px) {
-
-        .nav-visitor-counter {
-
-            min-width:
-                92px;
-
-            padding:
-                0 8px;
-
-            gap:
-                7px;
-        }
-
-
-        .nav-visitor-counter .visitor-counter-label {
-
-            display:
-                none !important;
-        }
+        gap: 5px;
 
     }
 
 
-    /* =========================================================
-       TABLET / MOBILE
-       ========================================================= */
+    .nav-visitor-counter .visitor-counter-icon {
 
-    @media (max-width: 800px) {
-
-        .nav-visitor-counter {
-
-            height:
-                38px;
-
-            min-width:
-                72px;
-
-            padding:
-                0 7px;
-        }
-
-
-        .nav-visitor-counter .visitor-counter-icon {
-
-            width:
-                25px !important;
-
-            height:
-                25px !important;
-
-            min-width:
-                25px !important;
-
-            font-size:
-                11px !important;
-        }
-
-
-        .nav-visitor-counter #visitor-count {
-
-            font-size:
-                16px !important;
-        }
+        width: 23px !important;
+        height: 23px !important;
+        min-width: 23px !important;
 
     }
 
 
-    @media (max-width: 520px) {
+    .nav-visitor-counter #visitor-count {
 
-        .nav-visitor-counter {
-
-            min-width:
-                60px;
-
-            padding:
-                0 6px;
-
-            gap:
-                5px;
-        }
-
-
-        .nav-visitor-counter .visitor-counter-icon {
-
-            width:
-                23px !important;
-
-            height:
-                23px !important;
-
-            min-width:
-                23px !important;
-        }
-
-
-        .nav-visitor-counter #visitor-count {
-
-            font-size:
-                15px !important;
-        }
+        font-size: 15px !important;
 
     }
 
-    </style>
+}
+
+</style>
+
+
+
+  
 
 </head>
 

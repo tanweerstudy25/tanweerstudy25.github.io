@@ -7031,23 +7031,13 @@ body.theme-light .icon-btn {
 
 body.theme-light .hero {
 
-    background-image:
-
+    background:
         linear-gradient(
-            90deg,
+            180deg,
+            #ffffff 0%,
+            #f7faff 100%
+        ) !important;
 
-            rgba(255,255,255,.98) 0%,
-
-            rgba(255,255,255,.93) 40%,
-
-            rgba(255,255,255,.55) 72%,
-
-            rgba(255,255,255,.20) 100%
-        ),
-
-        url("tanweer-hero.png")
-
-        !important;
 }
 
 body.theme-light .hero-overlay {

@@ -121,7 +121,142 @@ if (themeToggle) {
 
 applyTheme();
 
+/* =========================================================
+   MOBILE NAVIGATION MENU
+   ========================================================= */
 
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const navMenu =
+    document.getElementById("navMenu");
+
+const menuIcon =
+    menuToggle
+        ? menuToggle.querySelector("i")
+        : null;
+
+
+/* Open / Close Mobile Menu */
+
+if (menuToggle && navMenu) {
+
+    menuToggle.addEventListener(
+        "click",
+        function (event) {
+
+            event.stopPropagation();
+
+            navMenu.classList.toggle("open");
+
+            const isOpen =
+                navMenu.classList.contains("open");
+
+
+            /* Change hamburger to X */
+
+            if (menuIcon) {
+
+                menuIcon.className =
+                    isOpen
+                        ? "fa-solid fa-xmark"
+                        : "fa-solid fa-bars";
+
+            }
+
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+        }
+    );
+
+
+    /* Close menu after clicking menu link */
+
+    navMenu
+        .querySelectorAll("a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    navMenu.classList.remove("open");
+
+                    if (menuIcon) {
+                        menuIcon.className =
+                            "fa-solid fa-bars";
+                    }
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* Close when clicking outside */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                !navMenu.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ) {
+
+                navMenu.classList.remove("open");
+
+                if (menuIcon) {
+                    menuIcon.className =
+                        "fa-solid fa-bars";
+                }
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* Reset menu when returning to desktop */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (window.innerWidth > 760) {
+
+                navMenu.classList.remove("open");
+
+                if (menuIcon) {
+                    menuIcon.className =
+                        "fa-solid fa-bars";
+                }
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        }
+    );
+
+}
 
 /* =========================================================
    2. PROJECT CARDS - 3D EFFECT

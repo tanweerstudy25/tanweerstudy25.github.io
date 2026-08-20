@@ -67,7 +67,486 @@
     <link rel="stylesheet"
           href="style.css">
 
+/* =========================================================
+   BIG PREMIUM FLOATING IT SUPPORT / WHATSAPP
+   FINAL OVERRIDE
+========================================================= */
 
+.floating-whatsapp {
+
+    position: fixed !important;
+
+    right: 32px !important;
+    bottom: 105px !important;
+
+    z-index: 99999 !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 18px !important;
+}
+
+
+/* =========================================================
+   BIG SUPPORT POPUP
+========================================================= */
+
+.whatsapp-popup {
+
+    min-width: 285px !important;
+
+    padding: 22px 24px !important;
+
+    border-radius: 22px !important;
+
+    text-align: center !important;
+
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(0,210,255,.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #102c4d,
+            #08182d
+        ) !important;
+
+    border:
+        2px solid
+        rgba(0,210,255,.65) !important;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.45),
+        0 0 22px rgba(0,210,255,.25),
+        0 0 40px rgba(37,211,102,.12) !important;
+
+    animation:
+        supportBoxFloat
+        2.6s ease-in-out infinite !important;
+}
+
+
+/* =========================================================
+   CUSTOMER SUPPORT BOY / AGENT LOGO
+========================================================= */
+
+.support-agent-avatar {
+
+    position: relative;
+
+    width: 78px;
+    height: 78px;
+
+    margin:
+        -6px auto 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00d9ff,
+            #2979ff,
+            #8b5cf6,
+            #ec4899
+        );
+
+    border:
+        3px solid
+        rgba(255,255,255,.90);
+
+    box-shadow:
+        0 0 15px rgba(0,217,255,.65),
+        0 0 28px rgba(139,92,246,.40);
+
+    color:
+        #ffffff;
+
+    animation:
+        agentPulse
+        1.8s ease-in-out infinite;
+}
+
+
+/* PERSON */
+
+.support-agent-avatar .agent-person {
+
+    font-size:
+        36px;
+
+    transform:
+        translateY(3px);
+}
+
+
+/* HEADSET BADGE */
+
+.support-agent-avatar .agent-headset {
+
+    position: absolute;
+
+    right: -4px;
+    bottom: -3px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size:
+        15px;
+
+    color:
+        #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #00b86b
+        );
+
+    border:
+        3px solid
+        #0a1d32;
+
+    box-shadow:
+        0 0 15px
+        rgba(34,197,94,.70);
+}
+
+
+/* ONLINE LIGHT */
+
+.support-agent-avatar::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 4px;
+    right: 5px;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background:
+        #57ff8a;
+
+    border:
+        2px solid
+        #ffffff;
+
+    box-shadow:
+        0 0 12px
+        #57ff8a;
+
+    animation:
+        onlineBlink
+        .8s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   SUPPORT TITLE
+========================================================= */
+
+.whatsapp-popup strong {
+
+    display: block !important;
+
+    margin-bottom:
+        6px !important;
+
+    font-family:
+        "Inter",
+        sans-serif !important;
+
+    font-size:
+        18px !important;
+
+    font-weight:
+        900 !important;
+
+    color:
+        #ffffff !important;
+
+    letter-spacing:
+        .2px;
+
+    text-shadow:
+        0 0 8px
+        rgba(0,210,255,.35);
+}
+
+
+/* =========================================================
+   SMALL TEXT
+========================================================= */
+
+.whatsapp-popup span {
+
+    font-family:
+        "Inter",
+        sans-serif !important;
+
+    font-size:
+        13px !important;
+
+    font-weight:
+        600 !important;
+
+    color:
+        #b9d4e8 !important;
+}
+
+
+/* =========================================================
+   POPUP ARROW
+========================================================= */
+
+.whatsapp-popup::after {
+
+    width:
+        18px !important;
+
+    height:
+        18px !important;
+
+    right:
+        -10px !important;
+
+    background:
+        #0d2743 !important;
+}
+
+
+/* =========================================================
+   BIG WHATSAPP ROUND BUTTON
+========================================================= */
+
+.whatsapp-float-btn {
+
+    width:
+        82px !important;
+
+    height:
+        82px !important;
+
+    min-width:
+        82px !important;
+
+    font-size:
+        43px !important;
+
+    border:
+        3px solid
+        rgba(255,255,255,.95) !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #43ef82,
+            #25D366,
+            #079447
+        ) !important;
+
+    box-shadow:
+        0 12px 35px rgba(37,211,102,.50),
+        0 0 25px rgba(37,211,102,.48),
+        0 0 45px rgba(37,211,102,.20) !important;
+
+    animation:
+        bigWhatsappPulse
+        1.8s ease-in-out infinite !important;
+}
+
+
+.whatsapp-float-btn:hover {
+
+    transform:
+        translateY(-7px)
+        scale(1.12) !important;
+
+    box-shadow:
+        0 20px 45px rgba(37,211,102,.60),
+        0 0 35px rgba(37,211,102,.65),
+        0 0 60px rgba(37,211,102,.30) !important;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes agentPulse {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.06);
+    }
+}
+
+
+@keyframes onlineBlink {
+
+    from {
+        opacity:
+            .45;
+
+        transform:
+            scale(.80);
+    }
+
+    to {
+        opacity:
+            1;
+
+        transform:
+            scale(1.20);
+    }
+}
+
+
+@keyframes supportBoxFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-6px);
+    }
+}
+
+
+@keyframes bigWhatsappPulse {
+
+    0%,
+    100% {
+
+        box-shadow:
+            0 12px 35px rgba(37,211,102,.45),
+            0 0 0 0 rgba(37,211,102,.35);
+    }
+
+    50% {
+
+        box-shadow:
+            0 14px 38px rgba(37,211,102,.58),
+            0 0 0 15px rgba(37,211,102,0);
+    }
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+body.theme-light .whatsapp-popup {
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #edf7ff
+        ) !important;
+
+    border-color:
+        rgba(0,150,220,.45) !important;
+
+    box-shadow:
+        0 18px 40px
+        rgba(30,80,130,.18) !important;
+}
+
+
+body.theme-light .whatsapp-popup strong {
+
+    color:
+        #102033 !important;
+
+    text-shadow:
+        none !important;
+}
+
+
+body.theme-light .whatsapp-popup span {
+
+    color:
+        #52657a !important;
+}
+
+
+body.theme-light .whatsapp-popup::after {
+
+    background:
+        #f3f9ff !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .floating-whatsapp {
+
+        right:
+            17px !important;
+
+        bottom:
+            85px !important;
+    }
+
+
+    .whatsapp-popup {
+
+        display:
+            none !important;
+    }
+
+
+    .whatsapp-float-btn {
+
+        width:
+            62px !important;
+
+        height:
+            62px !important;
+
+        min-width:
+            62px !important;
+
+        font-size:
+            31px !important;
+    }
+
+}
 
 <style>
 
@@ -2240,15 +2719,28 @@ body.theme-light .whatsapp-popup::after {
 
     <div class="whatsapp-popup">
 
-        <strong>
-            👋 Need IT Support?
-        </strong>
+    <!-- CUSTOMER SUPPORT AGENT -->
 
-        <span>
-            Chat with me on WhatsApp
-        </span>
+    <div class="support-agent-avatar">
+
+        <i class="fa-solid fa-user-tie agent-person"></i>
+
+        <div class="agent-headset">
+            <i class="fa-solid fa-headset"></i>
+        </div>
 
     </div>
+
+
+    <strong>
+        Need IT Support?
+    </strong>
+
+    <span>
+        Chat with me on WhatsApp
+    </span>
+
+</div>
 
 
     <a

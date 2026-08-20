@@ -1026,7 +1026,320 @@
 
 }
 
+/* =========================================================
+   PREMIUM FLOATING WHATSAPP
+========================================================= */
 
+.floating-whatsapp {
+
+    position: fixed;
+
+    right: 24px;
+    bottom: 100px;
+
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* POPUP MESSAGE */
+
+.whatsapp-popup {
+
+    position: relative;
+
+    padding: 12px 17px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(8, 25, 44, .96);
+
+    border:
+        1px solid
+        rgba(37, 211, 102, .45);
+
+    box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, .35),
+        0 0 20px
+        rgba(37, 211, 102, .12);
+
+    color: #ffffff;
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.35;
+
+    white-space: nowrap;
+
+    animation:
+        whatsappPopupFloat
+        2.5s
+        ease-in-out
+        infinite;
+}
+
+
+.whatsapp-popup strong {
+
+    display: block;
+
+    color: #5cf18e;
+
+    font-size: 13px;
+
+    margin-bottom: 2px;
+}
+
+
+.whatsapp-popup span {
+
+    color: #b9c8d8;
+}
+
+
+/* SMALL ARROW */
+
+.whatsapp-popup::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -7px;
+    top: 50%;
+
+    width: 13px;
+    height: 13px;
+
+    background:
+        rgba(8, 25, 44, .96);
+
+    border-top:
+        1px solid
+        rgba(37, 211, 102, .35);
+
+    border-right:
+        1px solid
+        rgba(37, 211, 102, .35);
+
+    transform:
+        translateY(-50%)
+        rotate(45deg);
+}
+
+
+/* WHATSAPP ROUND BUTTON */
+
+.whatsapp-float-btn {
+
+    position: relative;
+
+    width: 64px;
+    height: 64px;
+
+    min-width: 64px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    color: #ffffff !important;
+
+    font-size: 32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #29e76f,
+            #14a94f
+        );
+
+    border:
+        2px solid
+        rgba(255,255,255,.75);
+
+    box-shadow:
+        0 10px 30px
+        rgba(37,211,102,.38),
+        0 0 25px
+        rgba(37,211,102,.30);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    animation:
+        whatsappPulse
+        1.8s
+        ease-in-out
+        infinite;
+}
+
+
+.whatsapp-float-btn:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.10);
+
+    box-shadow:
+        0 18px 40px
+        rgba(37,211,102,.55),
+        0 0 35px
+        rgba(37,211,102,.45);
+}
+
+
+/* ONLINE DOT */
+
+.whatsapp-float-btn::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 3px;
+    top: 3px;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background:
+        #ffffff;
+
+    border:
+        3px solid
+        #16b957;
+
+    box-shadow:
+        0 0 10px
+        rgba(255,255,255,.8);
+}
+
+
+/* ANIMATION */
+
+@keyframes whatsappPulse {
+
+    0%,
+    100% {
+
+        box-shadow:
+            0 10px 30px
+            rgba(37,211,102,.35),
+            0 0 0 0
+            rgba(37,211,102,.35);
+    }
+
+    50% {
+
+        box-shadow:
+            0 12px 35px
+            rgba(37,211,102,.50),
+            0 0 0 12px
+            rgba(37,211,102,0);
+    }
+
+}
+
+
+@keyframes whatsappPopupFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-4px);
+    }
+
+}
+
+
+/* LIGHT THEME */
+
+body.theme-light .whatsapp-popup {
+
+    background:
+        rgba(255,255,255,.98);
+
+    color:
+        #102033;
+
+    border-color:
+        rgba(37,211,102,.45);
+
+    box-shadow:
+        0 12px 30px
+        rgba(30,70,110,.14);
+}
+
+
+body.theme-light .whatsapp-popup span {
+
+    color:
+        #52657a;
+}
+
+
+body.theme-light .whatsapp-popup::after {
+
+    background:
+        #ffffff;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .floating-whatsapp {
+
+        right: 16px;
+        bottom: 85px;
+    }
+
+
+    .whatsapp-float-btn {
+
+        width: 56px;
+        height: 56px;
+
+        min-width: 56px;
+
+        font-size: 27px;
+    }
+
+
+    .whatsapp-popup {
+
+        display: none;
+    }
+
+}
+    
 </style>
 
 
@@ -1144,32 +1457,7 @@
 
 
 
-            <!-- WHATSAPP -->
-
-
-            <a href="https://wa.me/966557316795"
-
-               target="_blank"
-
-               rel="noopener noreferrer"
-
-               class="nav-contact whatsapp-nav"
-
-               title="WhatsApp: +966 55 731 6795">
-
-
-                <i class="fa-brands fa-whatsapp"></i>
-
-
-                <span>
-
-                    WhatsApp
-
-                </span>
-
-
-            </a>
-
+          
 
 
             <!-- =================================================
@@ -1944,7 +2232,37 @@
 
 
 
+<!-- =========================================================
+     FLOATING WHATSAPP
+========================================================= -->
 
+<div class="floating-whatsapp">
+
+    <div class="whatsapp-popup">
+
+        <strong>
+            👋 Need IT Support?
+        </strong>
+
+        <span>
+            Chat with me on WhatsApp
+        </span>
+
+    </div>
+
+
+    <a
+        href="https://wa.me/966557316795?text=Hello%20Tanweer%2C%20I%20visited%20your%20portfolio%20website."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-float-btn"
+        title="Chat with Tanweer on WhatsApp">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+
+</div>
 
 <!-- =========================================================
      BACK TO TOP

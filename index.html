@@ -1873,6 +1873,241 @@ body.theme-light .whatsapp-popup::after {
     }
 
 }    
+ /* =========================================================
+   COMPACT CUSTOMER SUPPORT WHATSAPP - FINAL OVERRIDE
+========================================================= */
+
+.floating-whatsapp {
+    right: 26px !important;
+    bottom: 90px !important;
+    gap: 14px !important;
+}
+
+
+/* SMALLER SUPPORT BOX */
+
+.whatsapp-popup {
+    min-width: 245px !important;
+
+    padding:
+        16px 19px !important;
+
+    border-radius:
+        18px !important;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(0, 229, 255, .28),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(236, 72, 153, .25),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #123e68,
+            #15244b,
+            #30174c
+        ) !important;
+
+    border:
+        2px solid
+        rgba(0, 217, 255, .70) !important;
+
+    box-shadow:
+        0 14px 35px rgba(0,0,0,.38),
+        0 0 18px rgba(0,217,255,.25),
+        0 0 25px rgba(236,72,153,.16) !important;
+}
+
+
+/* CUSTOMER CARE PHOTO */
+
+.support-agent-avatar {
+    width:
+        72px !important;
+
+    height:
+        72px !important;
+
+    margin:
+        0 auto 10px !important;
+
+    padding:
+        4px !important;
+
+    overflow:
+        hidden !important;
+
+    border-radius:
+        50% !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00e5ff,
+            #2979ff,
+            #8b5cf6,
+            #ec4899,
+            #22c55e
+        ) !important;
+
+    border:
+        3px solid
+        rgba(255,255,255,.92) !important;
+
+    box-shadow:
+        0 0 14px rgba(0,229,255,.65),
+        0 0 25px rgba(139,92,246,.38) !important;
+}
+
+
+/* ACTUAL CUSTOMER CARE IMAGE */
+
+.support-agent-avatar img {
+    width:
+        100% !important;
+
+    height:
+        100% !important;
+
+    display:
+        block !important;
+
+    object-fit:
+        cover !important;
+
+    object-position:
+        center top !important;
+
+    border-radius:
+        50% !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff8ff,
+            #dcd8ff,
+            #ffdcef
+        ) !important;
+}
+
+
+/* REMOVE OLD GREEN STATUS DOT */
+
+.support-agent-avatar::after {
+    display:
+        none !important;
+}
+
+
+/* TEXT SMALLER */
+
+.whatsapp-popup strong {
+    font-size:
+        17px !important;
+
+    margin-bottom:
+        4px !important;
+}
+
+
+.whatsapp-popup span {
+    font-size:
+        12px !important;
+}
+
+
+/* SMALLER WHATSAPP BUTTON */
+
+.whatsapp-float-btn {
+    width:
+        68px !important;
+
+    height:
+        68px !important;
+
+    min-width:
+        68px !important;
+
+    font-size:
+        35px !important;
+
+    border:
+        3px solid
+        rgba(255,255,255,.95) !important;
+
+    box-shadow:
+        0 10px 28px rgba(37,211,102,.48),
+        0 0 22px rgba(37,211,102,.38) !important;
+}
+
+
+.whatsapp-float-btn:hover {
+    transform:
+        translateY(-5px)
+        scale(1.08) !important;
+}
+
+
+/* LIGHT THEME */
+
+body.theme-light .whatsapp-popup {
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(0,210,255,.20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(236,72,153,.14),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #edf8ff,
+            #f7efff
+        ) !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .floating-whatsapp {
+        right:
+            15px !important;
+
+        bottom:
+            80px !important;
+    }
+
+    .whatsapp-popup {
+        display:
+            none !important;
+    }
+
+    .whatsapp-float-btn {
+        width:
+            57px !important;
+
+        height:
+            57px !important;
+
+        min-width:
+            57px !important;
+
+        font-size:
+            29px !important;
+    }
+
+}   
 </style>
 
 
@@ -2777,13 +3012,11 @@ body.theme-light .whatsapp-popup::after {
 
     <div class="support-agent-avatar">
 
-        <i class="fa-solid fa-user-tie agent-person"></i>
+    <img
+        src="customer.png"
+        alt="IT Support Customer Care">
 
-        <div class="agent-headset">
-            <i class="fa-solid fa-headset"></i>
-        </div>
-
-    </div>
+</div>
 
 
     <strong>

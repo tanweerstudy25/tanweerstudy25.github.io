@@ -1,467 +1,1238 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLJZCDB7HK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
-      gtag('config', 'G-CLJZCDB7HK');
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-CLJZCDB7HK');
     </script>
 
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-    <title>Tanweer Ansari | Network & IT Support Engineer</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+
+    <title>
+        Tanweer Ansari | Network & IT Support Engineer
+    </title>
+
 
     <meta name="description"
           content="Tanweer Ansari - Network & IT Support Engineer with 16+ years of enterprise IT experience across networking, Microsoft Azure, Microsoft 365, Fortinet and infrastructure support.">
 
+
     <meta name="keywords"
           content="Tanweer Ansari, Network Engineer, IT Support Engineer, Azure Engineer, Cisco, Fortinet, Microsoft 365, Intune, Entra ID, Saudi Arabia">
 
-    <meta name="author" content="Tanweer Ansari">
+
+    <meta name="author"
+          content="Tanweer Ansari">
+
+
+    <!-- FONT AWESOME -->
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
           rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+
+    <!-- MAIN CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
 
 
 <style>
 
 /* =========================================================
    PREMIUM PINK DJ LIVE VISITOR COUNTER
-   Same visual height as WhatsApp button
-   ========================================================= */
+   Bigger + clearer + WhatsApp size
+========================================================= */
+
 
 .nav-visitor-counter {
+
     position: relative;
+
     overflow: hidden;
+
     isolation: isolate;
 
-    height: 39px;
-    min-width: 142px;
-    padding: 0 14px;
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9px;
+    /* SAME FEEL AS WHATSAPP */
 
-    border-radius: 10px;
-    border: 1px solid rgba(0, 229, 255, 0.95);
+    height: 42px;
+
+    min-width: 152px;
+
+
+    padding:
+        0 16px;
+
+
+    display:
+        inline-flex;
+
+
+    align-items:
+        center;
+
+
+    justify-content:
+        center;
+
+
+    gap:
+        10px;
+
+
+    border-radius:
+        10px;
+
+
+    border:
+        1px solid
+        rgba(0, 229, 255, 0.95);
+
 
     background:
+
         linear-gradient(
+
             135deg,
+
             rgba(4, 20, 39, 0.98),
+
             rgba(9, 25, 47, 0.98)
+
         );
 
-    flex: 0 0 auto;
-    white-space: nowrap;
+
+    flex:
+        0 0 auto;
+
+
+    white-space:
+        nowrap;
+
 
     box-shadow:
-        0 0 5px rgba(0,229,255,.85),
-        0 0 12px rgba(0,229,255,.42),
-        inset 0 0 10px rgba(0,229,255,.05);
+
+        0 0 5px
+        rgba(0,229,255,.90),
+
+        0 0 12px
+        rgba(0,229,255,.45),
+
+        0 0 20px
+        rgba(0,229,255,.12),
+
+        inset 0 0 10px
+        rgba(0,229,255,.05);
+
 
     animation:
-        visitorSoftBeat 1.4s ease-in-out infinite;
+
+        visitorSoftBeat
+        1.4s
+        ease-in-out
+        infinite;
+
 
     transition:
-        transform .25s ease,
-        box-shadow .25s ease;
+
+        transform
+        .25s
+        ease,
+
+        box-shadow
+        .25s
+        ease;
+
 }
 
-/* Pink laser moving left -> right */
-.nav-visitor-counter::before {
-    content: "";
-    position: absolute;
-    top: -90%;
-    left: -45%;
-    width: 24%;
-    height: 280%;
 
-    transform: rotate(24deg);
+
+/* =========================================================
+   PINK LASER LIGHT
+   LEFT TO RIGHT
+========================================================= */
+
+
+.nav-visitor-counter::before {
+
+    content:
+        "";
+
+
+    position:
+        absolute;
+
+
+    top:
+        -90%;
+
+
+    left:
+        -45%;
+
+
+    width:
+        25%;
+
+
+    height:
+        280%;
+
+
+    transform:
+
+        rotate(24deg);
+
 
     background:
+
         linear-gradient(
+
             90deg,
+
             transparent,
-            rgba(255, 20, 147, .15),
-            rgba(255, 0, 128, .88),
+
+            rgba(255, 20, 147, .12),
+
+            rgba(255, 0, 128, .65),
+
             rgba(255, 105, 180, 1),
-            rgba(255, 0, 128, .88),
+
+            rgba(255, 0, 128, .90),
+
+            rgba(255, 20, 147, .30),
+
             transparent
+
         );
 
-    filter: blur(1px);
-    animation: visitorPinkLaser 1.8s linear infinite;
-    pointer-events: none;
-    z-index: 0;
+
+    filter:
+
+        blur(1px);
+
+
+    animation:
+
+        visitorPinkLaser
+        1.8s
+        linear
+        infinite;
+
+
+    pointer-events:
+        none;
+
+
+    z-index:
+        0;
+
 }
 
-/* Small blinking live LEDs */
+
+
+/* =========================================================
+   SMALL BLINKING LIVE LIGHTS
+========================================================= */
+
+
 .nav-visitor-counter::after {
-    content: "";
-    position: absolute;
-    top: 4px;
-    right: 5px;
 
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
+    content:
+        "";
 
-    background: #ff2d95;
 
-    box-shadow:
-        0 0 4px #ff2d95,
-        0 0 8px #ff2d95,
-        -7px 0 6px #00e5ff;
+    position:
+        absolute;
 
-    animation: visitorLED .45s ease-in-out infinite alternate;
-    z-index: 5;
-}
 
-.nav-visitor-counter > * {
-    position: relative;
-    z-index: 2;
-}
+    top:
+        5px;
 
-/* Eye icon */
-.nav-visitor-counter .visitor-counter-icon {
-    width: 27px !important;
-    height: 27px !important;
-    min-width: 27px !important;
 
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    right:
+        6px;
 
-    border-radius: 50% !important;
 
-    color: #ffffff !important;
-    font-size: 12px !important;
+    width:
+        5px;
+
+
+    height:
+        5px;
+
+
+    border-radius:
+        50%;
+
 
     background:
+
+        #ff2d95;
+
+
+    box-shadow:
+
+        0 0 4px
+        #ff2d95,
+
+        0 0 8px
+        #ff2d95,
+
+        0 0 13px
+        rgba(255,45,149,.80),
+
+        -8px 0 6px
+        #00e5ff;
+
+
+    animation:
+
+        visitorLED
+        .45s
+        ease-in-out
+        infinite
+        alternate;
+
+
+    z-index:
+        5;
+
+}
+
+
+
+/* =========================================================
+   CONTENT ABOVE LASER
+========================================================= */
+
+
+.nav-visitor-counter > * {
+
+    position:
+        relative;
+
+
+    z-index:
+        2;
+
+}
+
+
+
+/* =========================================================
+   VISITOR EYE ICON
+========================================================= */
+
+
+.nav-visitor-counter
+.visitor-counter-icon {
+
+    width:
+        29px !important;
+
+
+    height:
+        29px !important;
+
+
+    min-width:
+        29px !important;
+
+
+    display:
+        flex !important;
+
+
+    align-items:
+        center !important;
+
+
+    justify-content:
+        center !important;
+
+
+    border-radius:
+        50% !important;
+
+
+    color:
+        #ffffff !important;
+
+
+    font-size:
+        13px !important;
+
+
+    background:
+
         linear-gradient(
+
             135deg,
+
             #00d9ff,
+
             #267dff,
+
             #8b5cf6
+
         ) !important;
 
+
     box-shadow:
-        0 0 6px rgba(0,217,255,.95),
-        0 0 12px rgba(0,217,255,.45) !important;
 
-    animation: visitorIconPulse .8s ease-in-out infinite alternate;
+        0 0 6px
+        rgba(0,217,255,.95),
+
+        0 0 13px
+        rgba(0,217,255,.55),
+
+        0 0 18px
+        rgba(139,92,246,.18)
+
+        !important;
+
+
+    animation:
+
+        visitorIconPulse
+        .8s
+        ease-in-out
+        infinite
+        alternate;
+
 }
 
-/* Text block */
-.nav-visitor-counter .visitor-counter-info {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-    line-height: .95 !important;
+
+
+/* =========================================================
+   VISITOR INFORMATION
+========================================================= */
+
+
+.nav-visitor-counter
+.visitor-counter-info {
+
+    display:
+        flex !important;
+
+
+    flex-direction:
+        column !important;
+
+
+    justify-content:
+        center !important;
+
+
+    align-items:
+        flex-start !important;
+
+
+    line-height:
+        1 !important;
+
 }
 
-/* TOTAL VISITORS - larger and clearer */
-.nav-visitor-counter .visitor-counter-label {
-    font-family: "Inter", sans-serif !important;
-    font-size: 9.5px !important;
-    font-weight: 900 !important;
-    letter-spacing: .75px !important;
-    line-height: 1 !important;
 
-    color: #71efff !important;
+
+/* =========================================================
+   TOTAL VISITORS TEXT
+========================================================= */
+
+
+.nav-visitor-counter
+.visitor-counter-label {
+
+    font-family:
+        "Inter",
+        sans-serif
+        !important;
+
+
+    font-size:
+        10px !important;
+
+
+    font-weight:
+        900 !important;
+
+
+    letter-spacing:
+        .8px !important;
+
+
+    line-height:
+        1 !important;
+
+
+    color:
+        #82f2ff !important;
+
 
     text-shadow:
-        0 0 2px rgba(0,229,255,.80) !important;
 
-    animation: none !important;
+        0 0 2px
+        rgba(0,229,255,.90),
+
+        0 0 5px
+        rgba(0,229,255,.30)
+
+        !important;
+
 }
 
-/* Visitor number - sharp and strong */
-.nav-visitor-counter #visitor-count {
-    margin: 2px 0 0 !important;
 
-    font-family: "Inter", sans-serif !important;
-    font-size: 17px !important;
-    line-height: .95 !important;
-    font-weight: 900 !important;
-    letter-spacing: .2px !important;
 
-    color: #ffffff !important;
+/* =========================================================
+   VISITOR NUMBER
+   SHARP + CLEAR
+========================================================= */
 
-    -webkit-font-smoothing: antialiased;
-    text-rendering: geometricPrecision;
+
+.nav-visitor-counter
+#visitor-count {
+
+    margin:
+
+        3px
+        0
+        0
+        !important;
+
+
+    font-family:
+
+        "Inter",
+        Arial,
+        sans-serif
+        !important;
+
+
+    font-size:
+
+        18px
+        !important;
+
+
+    line-height:
+
+        1
+        !important;
+
+
+    font-weight:
+
+        900
+        !important;
+
+
+    letter-spacing:
+
+        .3px
+        !important;
+
+
+    color:
+
+        #ffffff
+        !important;
+
+
+    -webkit-font-smoothing:
+
+        antialiased;
+
+
+    text-rendering:
+
+        geometricPrecision;
+
 
     text-shadow:
-        0 0 1px #ffffff,
-        0 0 3px rgba(0,229,255,.75) !important;
 
-    animation: visitorNumberSharpPulse .9s ease-in-out infinite alternate;
+        0 0 1px
+        rgba(255,255,255,1),
+
+        0 0 3px
+        rgba(0,229,255,.75)
+
+        !important;
+
+
+    animation:
+
+        visitorNumberSharpPulse
+        .9s
+        ease-in-out
+        infinite
+        alternate;
+
 }
 
-.nav-visitor-counter .visitor-counter-text {
-    display: none !important;
+
+
+/* =========================================================
+   HIDE LONG DESCRIPTION
+========================================================= */
+
+
+.nav-visitor-counter
+.visitor-counter-text {
+
+    display:
+        none !important;
+
 }
+
+
+
+/* =========================================================
+   KEEP NAVBAR ITEMS IN SAME LINE
+========================================================= */
+
 
 .nav-buttons {
-    flex-wrap: nowrap !important;
+
+    flex-wrap:
+        nowrap !important;
+
 }
+
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
 
 .nav-visitor-counter:hover {
-    transform: translateY(-2px) scale(1.04);
+
+    transform:
+
+        translateY(-2px)
+        scale(1.045);
+
 
     box-shadow:
-        0 0 6px rgba(0,229,255,.95),
-        0 0 14px rgba(0,229,255,.55),
-        0 0 20px rgba(255,0,128,.25);
+
+        0 0 7px
+        rgba(0,229,255,.95),
+
+        0 0 15px
+        rgba(0,229,255,.60),
+
+        0 0 25px
+        rgba(255,0,128,.30);
+
 }
+
+
+
+/* =========================================================
+   ANIMATION - PINK LASER
+========================================================= */
+
 
 @keyframes visitorPinkLaser {
-    0% { left: -45%; }
-    100% { left: 135%; }
+
+    0% {
+
+        left:
+            -45%;
+
+    }
+
+
+    100% {
+
+        left:
+            135%;
+
+    }
+
 }
+
+
+
+/* =========================================================
+   ANIMATION - LED
+========================================================= */
+
 
 @keyframes visitorLED {
+
     from {
-        opacity: .30;
-        transform: scale(.7);
+
+        opacity:
+            .30;
+
+
+        transform:
+
+            scale(.7);
+
     }
+
+
     to {
-        opacity: 1;
-        transform: scale(1.45);
+
+        opacity:
+            1;
+
+
+        transform:
+
+            scale(1.45);
+
     }
+
 }
+
+
+
+/* =========================================================
+   ANIMATION - CARD HEART BEAT
+========================================================= */
+
 
 @keyframes visitorSoftBeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.015); }
+
+    0%,
+    100% {
+
+        transform:
+
+            scale(1);
+
+    }
+
+
+    50% {
+
+        transform:
+
+            scale(1.015);
+
+    }
+
 }
+
+
+
+/* =========================================================
+   ANIMATION - EYE ICON
+========================================================= */
+
 
 @keyframes visitorIconPulse {
+
     from {
-        transform: scale(.94);
-        filter: brightness(.95);
+
+        transform:
+
+            scale(.94);
+
+
+        filter:
+
+            brightness(.95);
+
     }
+
+
     to {
-        transform: scale(1.06);
-        filter: brightness(1.25);
+
+        transform:
+
+            scale(1.07);
+
+
+        filter:
+
+            brightness(1.30);
+
     }
+
 }
+
+
+
+/* =========================================================
+   ANIMATION - VISITOR NUMBER
+========================================================= */
+
 
 @keyframes visitorNumberSharpPulse {
+
     from {
-        opacity: .92;
-        transform: scale(1);
+
+        opacity:
+            .93;
+
+
+        transform:
+
+            scale(1);
+
     }
+
+
     to {
-        opacity: 1;
-        transform: scale(1.06);
+
+        opacity:
+            1;
+
+
+        transform:
+
+            scale(1.07);
+
     }
+
 }
 
-/* Laptop */
-@media (max-width: 1250px) {
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+
+@media
+(max-width: 1250px) {
+
+
     .nav-visitor-counter {
-        min-width: 128px;
-        height: 39px;
-        padding: 0 10px;
-        gap: 7px;
+
+        height:
+            42px;
+
+
+        min-width:
+            145px;
+
+
+        padding:
+
+            0
+            12px;
+
+
+        gap:
+            8px;
+
     }
 
-    .nav-visitor-counter .visitor-counter-label {
-        font-size: 8.5px !important;
+
+    .nav-visitor-counter
+    .visitor-counter-label {
+
+        font-size:
+
+            9px
+            !important;
+
     }
 
-    .nav-visitor-counter #visitor-count {
-        font-size: 16px !important;
+
+    .nav-visitor-counter
+    #visitor-count {
+
+        font-size:
+
+            17px
+            !important;
+
     }
+
 }
 
-/* Tablet / mobile */
-@media (max-width: 800px) {
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+
+@media
+(max-width: 800px) {
+
+
     .nav-visitor-counter {
-        height: 38px;
-        min-width: 72px;
-        padding: 0 7px;
+
+        height:
+            38px;
+
+
+        min-width:
+            72px;
+
+
+        padding:
+
+            0
+            7px;
+
     }
 
-    .nav-visitor-counter .visitor-counter-label {
-        display: none !important;
+
+    .nav-visitor-counter
+    .visitor-counter-label {
+
+        display:
+
+            none
+            !important;
+
     }
 
-    .nav-visitor-counter .visitor-counter-icon {
-        width: 25px !important;
-        height: 25px !important;
-        min-width: 25px !important;
-        font-size: 11px !important;
+
+    .nav-visitor-counter
+    .visitor-counter-icon {
+
+        width:
+
+            25px
+            !important;
+
+
+        height:
+
+            25px
+            !important;
+
+
+        min-width:
+
+            25px
+            !important;
+
+
+        font-size:
+
+            11px
+            !important;
+
     }
 
-    .nav-visitor-counter #visitor-count {
-        font-size: 16px !important;
+
+    .nav-visitor-counter
+    #visitor-count {
+
+        font-size:
+
+            16px
+            !important;
+
     }
+
 }
 
-@media (max-width: 520px) {
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+
+@media
+(max-width: 520px) {
+
+
     .nav-visitor-counter {
-        min-width: 60px;
-        padding: 0 6px;
-        gap: 5px;
+
+        min-width:
+            60px;
+
+
+        padding:
+
+            0
+            6px;
+
+
+        gap:
+            5px;
+
     }
 
-    .nav-visitor-counter .visitor-counter-icon {
-        width: 23px !important;
-        height: 23px !important;
-        min-width: 23px !important;
+
+    .nav-visitor-counter
+    .visitor-counter-icon {
+
+        width:
+
+            23px
+            !important;
+
+
+        height:
+
+            23px
+            !important;
+
+
+        min-width:
+
+            23px
+            !important;
+
     }
 
-    .nav-visitor-counter #visitor-count {
-        font-size: 15px !important;
+
+    .nav-visitor-counter
+    #visitor-count {
+
+        font-size:
+
+            15px
+            !important;
+
     }
+
 }
+
 
 </style>
 
 
-
-  
-
 </head>
+
 
 
 <body>
 
 
-<!-- ================= NAVIGATION ================= -->
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
 
 <header class="navbar">
+
 
     <div class="nav-container">
 
 
-        <a href="#home" class="logo">
+
+        <!-- LOGO -->
+
+
+        <a href="#home"
+           class="logo">
 
             TANWEER<span>.</span>
 
         </a>
 
 
+
+        <!-- NAVIGATION -->
+
+
         <nav id="navMenu">
 
-            <a href="#home" class="active">
+
+            <a href="#home"
+               class="active">
+
                 Home
+
             </a>
+
 
             <a href="about.html">
+
                 About
+
             </a>
+
 
             <a href="skills.html">
+
                 Skills
+
             </a>
+
 
             <a href="experience.html">
+
                 Experience
+
             </a>
+
 
             <a href="certifications.html">
+
                 Certifications
+
             </a>
+
 
             <a href="projects.html">
+
                 Projects
+
             </a>
+
 
             <a href="/contact.html">
+
                 Contact
+
             </a>
 
+
         </nav>
+
+
+
+        <!-- RIGHT NAVIGATION -->
 
 
         <div class="nav-buttons">
 
 
-            <!-- THEME -->
+
+            <!-- THEME BUTTON -->
+
 
             <button
                 id="themeToggle"
                 class="icon-btn">
 
+
                 <i class="fa-solid fa-moon"></i>
+
 
             </button>
 
 
+
             <!-- WHATSAPP -->
 
+
             <a href="https://wa.me/966557316795"
+
                target="_blank"
+
                rel="noopener noreferrer"
+
                class="nav-contact whatsapp-nav"
+
                title="WhatsApp: +966 55 731 6795">
+
 
                 <i class="fa-brands fa-whatsapp"></i>
 
+
                 <span>
+
                     WhatsApp
+
                 </span>
+
 
             </a>
 
 
-            <!-- ================= TOP RIGHT LIVE VISITOR COUNTER ================= -->
+
+            <!-- =================================================
+                 LIVE VISITOR COUNTER
+            ================================================= -->
+
 
             <div
+
                 class="nav-visitor-counter"
+
                 title="Total Portfolio Visitors Worldwide">
+
+
+
+                <!-- EYE -->
 
 
                 <div class="visitor-counter-icon">
 
+
                     <i class="fa-solid fa-eye"></i>
 
+
                 </div>
+
+
+
+                <!-- VISITOR INFORMATION -->
 
 
                 <div class="visitor-counter-info">
 
 
+
                     <span class="visitor-counter-label">
+
 
                         TOTAL VISITORS
 
+
                     </span>
+
 
 
                     <strong id="visitor-count">
 
+
                         Loading...
+
 
                     </strong>
 
 
+
                     <span class="visitor-counter-text">
+
 
                         Portfolio Visits Worldwide
 
+
                     </span>
+
 
 
                 </div>
@@ -470,13 +1241,19 @@
             </div>
 
 
+
             <!-- MOBILE MENU -->
 
+
             <button
+
                 id="menuToggle"
+
                 class="menu-btn">
 
+
                 <i class="fa-solid fa-bars"></i>
+
 
             </button>
 
@@ -491,7 +1268,11 @@
 
 
 
-<!-- ================= HOME ================= -->
+
+
+<!-- =========================================================
+     HOME / HERO
+========================================================= -->
 
 
 <section
@@ -499,10 +1280,13 @@
     class="hero">
 
 
+
     <div class="hero-overlay"></div>
 
 
+
     <div class="hero-content">
+
 
 
         <h1>
@@ -512,6 +1296,7 @@
         </h1>
 
 
+
         <h2>
 
             Network & IT Support Engineer
@@ -519,18 +1304,29 @@
         </h2>
 
 
+
         <p class="hero-intro">
 
+
             Experienced IT Professional with
-            <strong>16+ years</strong>
+
+            <strong>
+
+                16+ years
+
+            </strong>
+
             of overall experience, including enterprise network,
             infrastructure, IT support, Microsoft Azure,
             Microsoft 365, Fortinet and endpoint management.
 
+
         </p>
 
 
+
         <p class="hero-description">
+
 
             Experienced in diverse IT projects and dedicated to
             optimizing IT performance through network infrastructure,
@@ -538,26 +1334,36 @@
             Microsoft Azure, Office 365, Windows Autopilot and
             Microsoft Entra ID.
 
+
         </p>
+
 
 
         <div class="hero-meta">
 
 
+
             <span>
+
 
                 <i class="fa-solid fa-location-dot"></i>
 
+
                 Makkah, Saudi Arabia
+
 
             </span>
 
 
+
             <span>
+
 
                 <i class="fa-solid fa-briefcase"></i>
 
+
                 16+ Years IT Experience
+
 
             </span>
 
@@ -566,17 +1372,29 @@
 
 
 
+
+        <!-- =====================================================
+             HERO BUTTONS
+        ====================================================== -->
+
+
         <div class="hero-buttons">
+
 
 
             <!-- CONTACT ME -->
 
+
             <a href="mailto:tanweerstudy25@gmail.com"
+
                class="btn btn-pink">
+
 
                 <i class="fa-regular fa-envelope"></i>
 
+
                 Contact Me
+
 
             </a>
 
@@ -584,14 +1402,21 @@
 
             <!-- LINKEDIN -->
 
+
             <a href="https://www.linkedin.com/in/tanweeransari21"
+
                target="_blank"
+
                rel="noopener noreferrer"
+
                class="btn btn-linkedin">
+
 
                 <i class="fa-brands fa-linkedin-in"></i>
 
+
                 LinkedIn
+
 
             </a>
 
@@ -599,12 +1424,17 @@
 
             <!-- PROJECTS -->
 
+
             <a href="projects.html"
+
                class="btn btn-projects">
+
 
                 <i class="fa-solid fa-code"></i>
 
+
                 Projects
+
 
             </a>
 
@@ -612,12 +1442,17 @@
 
             <!-- REQUEST CV -->
 
+
             <a href="/contact.html"
+
                class="btn btn-cv">
+
 
                 <i class="fa-solid fa-file-lines"></i>
 
+
                 Request CV
+
 
             </a>
 
@@ -625,25 +1460,35 @@
 
             <!-- DOWNLOAD NOTES -->
 
+
             <a href="notes.html"
+
                class="btn btn-notes">
+
 
                 <i class="fa-solid fa-download"></i>
 
+
                 Download Notes
+
 
             </a>
 
 
 
-            <!-- REQUEST IT SUPPORT -->
+            <!-- IT SUPPORT -->
+
 
             <a href="support.html"
+
                class="btn btn-support">
+
 
                 <i class="fa-solid fa-headset"></i>
 
+
                 Request for IT Support
+
 
             </a>
 
@@ -658,7 +1503,11 @@
 
 
 
-<!-- ================= PROFESSIONAL EXPERIENCE ================= -->
+
+
+<!-- =========================================================
+     PROFESSIONAL EXPERIENCE
+========================================================= -->
 
 
 <section
@@ -669,16 +1518,22 @@
     <div class="container">
 
 
+
         <div class="section-label">
 
+
             PROFESSIONAL EXPERIENCE
+
 
         </div>
 
 
+
         <h2 class="section-title">
 
+
             16+ Years of IT Experience in Network & Support.
+
 
         </h2>
 
@@ -688,7 +1543,11 @@
 
 
 
-            <!-- ================= BOX 1 ================= -->
+
+
+            <!-- =================================================
+                 EXPERIENCE 1
+            ================================================= -->
 
 
             <div class="experience-card">
@@ -696,9 +1555,12 @@
 
                 <div class="experience-icon">
 
+
                     <i class="fa-solid fa-network-wired"></i>
 
+
                 </div>
+
 
 
                 <div class="experience-content">
@@ -706,44 +1568,63 @@
 
                     <span class="experience-period">
 
+
                         NETWORK & IT INFRASTRUCTURE
+
 
                     </span>
 
 
                     <h3>
 
+
                         Network Engineer
+
 
                     </h3>
 
 
                     <p class="experience-summary">
+
 
                         Enterprise network infrastructure,
                         routing & switching, security and
                         IT support operations.
 
+
                     </p>
 
 
                     <ul>
 
+
                         <li>
+
                             Cisco LAN/WAN routing and switching
+
                         </li>
 
+
                         <li>
+
                             VLAN, TCP/IP, VPN and network troubleshooting
+
                         </li>
 
+
                         <li>
+
                             Fortinet FortiGate firewall administration
+
                         </li>
 
+
                         <li>
+
                             Network monitoring and infrastructure support
+
                         </li>
+
 
                     </ul>
 
@@ -755,7 +1636,11 @@
 
 
 
-            <!-- ================= BOX 2 ================= -->
+
+
+            <!-- =================================================
+                 EXPERIENCE 2
+            ================================================= -->
 
 
             <div class="experience-card">
@@ -763,9 +1648,12 @@
 
                 <div class="experience-icon">
 
+
                     <i class="fa-solid fa-headset"></i>
 
+
                 </div>
+
 
 
                 <div class="experience-content">
@@ -773,44 +1661,63 @@
 
                     <span class="experience-period">
 
+
                         ENTERPRISE IT OPERATIONS
+
 
                     </span>
 
 
                     <h3>
 
+
                         L2 IT Support Engineer
+
 
                     </h3>
 
 
                     <p class="experience-summary">
+
 
                         Hands-on enterprise support covering
                         users, endpoints, systems, applications
                         and infrastructure.
 
+
                     </p>
 
 
                     <ul>
 
+
                         <li>
+
                             L2 troubleshooting for enterprise users
+
                         </li>
 
+
                         <li>
+
                             VPN, email, Outlook and connectivity support
+
                         </li>
 
+
                         <li>
+
                             Printer, desktop and endpoint troubleshooting
+
                         </li>
 
+
                         <li>
+
                             Incident and service request management
+
                         </li>
+
 
                     </ul>
 
@@ -822,7 +1729,11 @@
 
 
 
-            <!-- ================= BOX 3 ================= -->
+
+
+            <!-- =================================================
+                 EXPERIENCE 3
+            ================================================= -->
 
 
             <div class="experience-card">
@@ -830,9 +1741,12 @@
 
                 <div class="experience-icon">
 
+
                     <i class="fa-brands fa-microsoft"></i>
 
+
                 </div>
+
 
 
                 <div class="experience-content">
@@ -840,43 +1754,62 @@
 
                     <span class="experience-period">
 
+
                         MICROSOFT CLOUD
+
 
                     </span>
 
 
                     <h3>
 
+
                         Azure & Microsoft 365
+
 
                     </h3>
 
 
                     <p class="experience-summary">
+
 
                         Supporting modern cloud, identity and
                         endpoint management technologies.
 
+
                     </p>
 
 
                     <ul>
 
+
                         <li>
+
                             Microsoft Azure infrastructure
+
                         </li>
 
+
                         <li>
+
                             Microsoft Entra ID and identity management
+
                         </li>
 
+
                         <li>
+
                             Microsoft Intune and Windows Autopilot
+
                         </li>
 
+
                         <li>
+
                             Microsoft 365 and Office 365 administration
+
                         </li>
+
 
                     </ul>
 
@@ -888,7 +1821,11 @@
 
 
 
-            <!-- ================= BOX 4 ================= -->
+
+
+            <!-- =================================================
+                 EXPERIENCE 4
+            ================================================= -->
 
 
             <div class="experience-card">
@@ -896,9 +1833,12 @@
 
                 <div class="experience-icon">
 
+
                     <i class="fa-solid fa-shield-halved"></i>
 
+
                 </div>
+
 
 
                 <div class="experience-content">
@@ -906,43 +1846,62 @@
 
                     <span class="experience-period">
 
+
                         SECURITY & INFRASTRUCTURE
+
 
                     </span>
 
 
                     <h3>
 
+
                         Enterprise Infrastructure Support
+
 
                     </h3>
 
 
                     <p class="experience-summary">
+
 
                         Supporting secure and reliable enterprise
                         technology environments.
 
+
                     </p>
 
 
                     <ul>
 
+
                         <li>
+
                             Fortinet firewall policies and VPN
+
                         </li>
 
+
                         <li>
+
                             Windows Server and Active Directory
+
                         </li>
 
+
                         <li>
+
                             IT asset and inventory management
+
                         </li>
 
+
                         <li>
+
                             Technical documentation and SOPs
+
                         </li>
+
 
                     </ul>
 
@@ -954,7 +1913,11 @@
 
 
 
-            <!-- ================= BOX 5 ================= -->
+
+
+            <!-- =================================================
+                 EXPERIENCE 5
+            ================================================= -->
 
 
             <div class="experience-card">
@@ -962,9 +1925,12 @@
 
                 <div class="experience-icon">
 
+
                     <i class="fa-solid fa-cloud"></i>
 
+
                 </div>
+
 
 
                 <div class="experience-content">
@@ -972,55 +1938,83 @@
 
                     <span class="experience-period">
 
+
                         ENDPOINT & CLOUD MANAGEMENT
+
 
                     </span>
 
 
                     <h3>
 
+
                         Microsoft Cloud & Endpoint
+
 
                     </h3>
 
 
                     <p class="experience-summary">
+
 
                         Supporting Microsoft cloud, identity,
                         endpoint and collaboration technologies.
 
+
                     </p>
 
 
                     <ul>
 
+
                         <li>
+
                             Microsoft Azure
+
                         </li>
 
+
                         <li>
+
                             Microsoft Entra ID
+
                         </li>
 
+
                         <li>
+
                             Microsoft Intune
+
                         </li>
 
+
                         <li>
+
                             Microsoft 365
+
                         </li>
 
+
                         <li>
+
                             Windows Autopilot
+
                         </li>
 
+
                         <li>
+
                             Windows Server & AD
+
                         </li>
 
+
                         <li>
+
                             SharePoint & Power Apps
+
                         </li>
+
 
                     </ul>
 
@@ -1032,7 +2026,11 @@
 
 
 
-            <!-- ================= BOX 6 ================= -->
+
+
+            <!-- =================================================
+                 EXPERIENCE 6
+            ================================================= -->
 
 
             <div class="experience-card">
@@ -1040,9 +2038,12 @@
 
                 <div class="experience-icon">
 
+
                     <i class="fa-solid fa-gears"></i>
 
+
                 </div>
+
 
 
                 <div class="experience-content">
@@ -1050,67 +2051,104 @@
 
                     <span class="experience-period">
 
+
                         ENTERPRISE TECHNOLOGIES
+
 
                     </span>
 
 
                     <h3>
 
+
                         IT Tools & Technologies
+
 
                     </h3>
 
 
                     <p class="experience-summary">
 
+
                         Enterprise networking, security,
                         communication and IT operations technologies.
+
 
                     </p>
 
 
                     <ul>
 
+
                         <li>
+
                             Cisco Routing & Switching
+
                         </li>
 
+
                         <li>
+
                             Fortinet Firewall
+
                         </li>
 
+
                         <li>
+
                             VPN & Network Security
+
                         </li>
 
+
                         <li>
+
                             Oracle Database 10g
+
                         </li>
 
+
                         <li>
+
                             Cisco & Avaya Telephony
+
                         </li>
 
+
                         <li>
+
                             IP Surveillance
+
                         </li>
 
+
                         <li>
+
                             ITSM & Incident Management
+
                         </li>
 
+
                         <li>
+
                             Remote Support
+
                         </li>
 
+
                         <li>
+
                             Technical Documentation
+
                         </li>
 
+
                         <li>
+
                             Power BI
+
                         </li>
+
 
                     </ul>
 
@@ -1131,44 +2169,63 @@
 
 
 
-<!-- ================= PREMIUM INFRASTRUCTURE FLOW ================= -->
 
 
-<section class="section section-dark premium-flow-section">
+<!-- =========================================================
+     INFRASTRUCTURE FLOW
+========================================================= -->
+
+
+<section
+    class="section section-dark premium-flow-section">
 
 
     <div class="container">
 
 
+
         <div class="section-label premium-flow-label">
 
+
             INFRASTRUCTURE FLOW
+
 
         </div>
 
 
+
         <h2 class="section-title left premium-flow-title">
+
 
             From Network Infrastructure to
 
+
             <span>
+
                 Cloud
+
             </span>
+
 
         </h2>
 
 
+
         <p class="flow-description premium-flow-description">
+
 
             A practical view of the enterprise technology path —
             from users and connectivity through security,
             cloud identity and endpoint management.
+
 
         </p>
 
 
 
         <div class="premium-flow-box">
+
+
 
 
 
@@ -1180,7 +2237,9 @@
 
                 <div class="premium-flow-icon">
 
+
                     <i class="fa-solid fa-users"></i>
+
 
                 </div>
 
@@ -1212,11 +2271,13 @@
 
 
 
+
             <div class="premium-flow-connector connector-blue">
 
                 <span></span>
 
             </div>
+
 
 
 
@@ -1228,7 +2289,9 @@
 
                 <div class="premium-flow-icon">
 
+
                     <i class="fa-solid fa-network-wired"></i>
+
 
                 </div>
 
@@ -1260,11 +2323,13 @@
 
 
 
+
             <div class="premium-flow-connector connector-green">
 
                 <span></span>
 
             </div>
+
 
 
 
@@ -1276,7 +2341,9 @@
 
                 <div class="premium-flow-icon">
 
+
                     <i class="fa-solid fa-ethernet"></i>
+
 
                 </div>
 
@@ -1308,11 +2375,13 @@
 
 
 
+
             <div class="premium-flow-connector connector-yellow">
 
                 <span></span>
 
             </div>
+
 
 
 
@@ -1324,7 +2393,9 @@
 
                 <div class="premium-flow-icon">
 
+
                     <i class="fa-solid fa-arrows-up-down-left-right"></i>
+
 
                 </div>
 
@@ -1356,11 +2427,13 @@
 
 
 
+
             <div class="premium-flow-connector connector-purple">
 
                 <span></span>
 
             </div>
+
 
 
 
@@ -1372,7 +2445,9 @@
 
                 <div class="premium-flow-icon">
 
+
                     <i class="fa-solid fa-shield-halved"></i>
+
 
                 </div>
 
@@ -1404,11 +2479,13 @@
 
 
 
+
             <div class="premium-flow-connector connector-pink">
 
                 <span></span>
 
             </div>
+
 
 
 
@@ -1420,7 +2497,9 @@
 
                 <div class="premium-flow-icon">
 
+
                     <i class="fa-solid fa-cloud"></i>
+
 
                 </div>
 
@@ -1430,31 +2509,43 @@
 
                     <strong class="cloud-path">
 
+
                         VPN / INTERNET
 
+
                         <b>→</b>
+
 
                         AZURE
 
+
                         <b>→</b>
+
 
                         ENTRA ID
 
+
                         <b>→</b>
+
 
                         INTUNE
 
+
                         <b>→</b>
 
+
                         MICROSOFT 365
+
 
                     </strong>
 
 
                     <span>
 
+
                         Secure connectivity to cloud, identity,
                         device management and productivity
+
 
                     </span>
 
@@ -1480,13 +2571,16 @@
 
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 
 <footer>
 
 
     <div class="container footer-content">
+
 
 
         <div>
@@ -1509,9 +2603,12 @@
         </div>
 
 
+
         <a href="#home">
 
+
             Open to New Opportunities
+
 
         </a>
 
@@ -1523,33 +2620,55 @@
 
 
 
-<!-- ================= BACK TO TOP ================= -->
+
+
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
 
 
 <button id="backTop">
 
+
     <i class="fa-solid fa-arrow-up"></i>
+
 
 </button>
 
 
 
-<!-- ================= MAIN JAVASCRIPT ================= -->
+
+
+<!-- =========================================================
+     MAIN JAVASCRIPT
+========================================================= -->
 
 
 <script src="script.js"></script>
 
 
 
-<!-- ================= GOATCOUNTER ================= -->
+
+
+<!-- =========================================================
+     GOATCOUNTER
+========================================================= -->
 
 
 <script
-    data-goatcounter="https://tanweerportfolio.goatcounter.com/count"
+
+    data-goatcounter=
+    "https://tanweerportfolio.goatcounter.com/count"
+
     async
-    src="//gc.zgo.at/count.js">
+
+    src=
+    "//gc.zgo.at/count.js">
+
 </script>
 
 
+
 </body>
+
 </html>

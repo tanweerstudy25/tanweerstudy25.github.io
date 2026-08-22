@@ -1381,6 +1381,199 @@ body {
     user-drag: none;
 
 }
+
+/* =====================================================
+   CERTIFICATIONS PAGE - PREMIUM LIGHT THEME
+   SAME THEME SYSTEM AS HOME PAGE
+===================================================== */
+
+body.theme-light {
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #f4f8fc
+        ) !important;
+
+    color:
+        #102033 !important;
+}
+
+
+/* PAGE HEADER */
+
+body.theme-light .page-header {
+
+    color:
+        #102033 !important;
+}
+
+
+body.theme-light .page-label {
+
+    color:
+        #087cf0 !important;
+}
+
+
+body.theme-light .page-header h1 {
+
+    background:
+        linear-gradient(
+            90deg,
+            #102033,
+            #087cf0,
+            #7950f2,
+            #102033
+        ) !important;
+
+    background-size:
+        300% auto !important;
+
+    -webkit-background-clip:
+        text !important;
+
+    background-clip:
+        text !important;
+
+    -webkit-text-fill-color:
+        transparent !important;
+}
+
+
+body.theme-light .page-header p {
+
+    color:
+        #52657a !important;
+}
+
+
+/* CERTIFICATE FRAME */
+
+body.theme-light .certificate-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.98),
+            rgba(240,247,255,.96)
+        ) !important;
+
+    border:
+        2px solid rgba(20,100,190,.20) !important;
+
+    box-shadow:
+        0 15px 35px rgba(30,80,130,.12),
+        inset 0 1px 2px rgba(255,255,255,.85) !important;
+}
+
+
+/* CERTIFICATE TITLE */
+
+body.theme-light .certificate-title strong {
+
+    color:
+        #102033 !important;
+}
+
+
+body.theme-light .certificate-title span {
+
+    color:
+        #087cf0 !important;
+}
+
+
+/* GRADIENT CERTIFICATE TITLE TEXT */
+
+body.theme-light
+.certificate-title-logo
+.certificate-title-text strong {
+
+    background:
+        linear-gradient(
+            90deg,
+            #102033,
+            #087cf0,
+            #7950f2,
+            #102033
+        ) !important;
+
+    background-size:
+        300% 100% !important;
+
+    -webkit-background-clip:
+        text !important;
+
+    background-clip:
+        text !important;
+
+    -webkit-text-fill-color:
+        transparent !important;
+}
+
+
+body.theme-light
+.certificate-title-logo
+.certificate-title-text span {
+
+    color:
+        #087cf0 !important;
+
+    text-shadow:
+        none !important;
+}
+
+
+/* PROTECTED PREVIEW */
+
+body.theme-light .certificate-protection {
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(240,248,255,.38),
+            rgba(225,235,255,.44)
+        ) !important;
+}
+
+
+body.theme-light .certificate-protection strong {
+
+    color:
+        #102033 !important;
+
+    text-shadow:
+        0 2px 8px rgba(255,255,255,.9) !important;
+}
+
+
+body.theme-light .certificate-protection span {
+
+    color:
+        #43566d !important;
+}
+
+
+/* BACK HOME BUTTON */
+
+body.theme-light .back-home {
+
+    color:
+        #ffffff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #087cf0,
+            #7950f2
+        ) !important;
+
+    box-shadow:
+        0 8px 22px rgba(30,100,190,.18) !important;
+}
+      
 </style>
 </head>
 
@@ -2267,77 +2460,6 @@ body {
 
 <script>
 
-/* ================================
-   THEME SWITCH
-================================ */
-
-let theme = 0;
-
-const themes = [
-
-    `
-    radial-gradient(circle at 10% 15%, rgba(0,180,255,.18), transparent 30%),
-    radial-gradient(circle at 90% 75%, rgba(125,70,255,.20), transparent 35%),
-    linear-gradient(135deg,#031526,#071b32,#10153b)
-    `,
-
-    `
-    radial-gradient(circle at 10% 15%, rgba(0,255,180,.15), transparent 30%),
-    radial-gradient(circle at 90% 75%, rgba(0,120,255,.18), transparent 35%),
-    linear-gradient(135deg,#031c19,#063b39,#10284d)
-    `,
-
-    `
-    radial-gradient(circle at 10% 15%, rgba(255,50,180,.15), transparent 30%),
-    radial-gradient(circle at 90% 75%, rgba(120,50,255,.20), transparent 35%),
-    linear-gradient(135deg,#21051f,#321052,#111a46)
-    `
-
-];
-
-
-function changeTheme() {
-
-    theme++;
-
-    if (theme >= themes.length) {
-        theme = 0;
-    }
-
-    document.body.style.background =
-        themes[theme];
-
-    localStorage.setItem(
-        "certificateTheme",
-        theme
-    );
-
-}
-
-
-/* Load saved theme */
-
-window.addEventListener(
-    "DOMContentLoaded",
-    function() {
-
-        const saved =
-            localStorage.getItem(
-                "certificateTheme"
-            );
-
-        if (saved !== null) {
-
-            theme =
-                parseInt(saved);
-
-            document.body.style.background =
-                themes[theme];
-
-        }
-
-    }
-);
 
       /* =====================================================
    PROTECT CERTIFICATE PREVIEWS
@@ -2383,8 +2505,9 @@ document.addEventListener(
 
     }
 );
-      
+ 
 </script>
-
+<!-- SAME THEME + MOBILE MENU SYSTEM AS HOME PAGE -->
+<script src="script.js"></script>     
 </body>
 </html>

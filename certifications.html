@@ -825,7 +825,47 @@ body {
     font-size: 12px;
     color: #d5e6f5;
     letter-spacing: 1px;
-}      
+}     
+
+   /* =====================================================
+   CERTIFICATE NAME BELOW PREVIEW
+===================================================== */
+
+.protected-certificate-item {
+    width: 100%;
+}
+
+.protected-certificate-item .certificate-card {
+    margin-bottom: 14px;
+}
+
+.certificate-title {
+    text-align: center;
+    padding: 3px 10px 15px;
+}
+
+.certificate-title strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 5px;
+}
+
+.certificate-title span {
+    display: block;
+
+    color: #8fdcff;
+
+    font-size: 14px;
+    font-weight: 600;
+}   
+      
 </style>
 </head>
 
@@ -969,24 +1009,38 @@ body {
     </div>
 
 
-  <!-- 4 AZURE 104 - PROTECTED TEST -->
+<!-- 4 AZURE 104 - PROTECTED TEST -->
 
-<div class="certificate-card protected-test">
+<div class="protected-certificate-item">
 
-    <img
-        src="./azure104.jpg"
-        alt="Azure AZ-104 Certificate">
+    <div class="certificate-card protected-test">
 
-    <div class="certificate-protection">
+        <img
+            src="./azure104.jpg"
+            alt="Azure AZ-104 Certificate">
 
-        <i class="fa-solid fa-lock"></i>
+        <div class="certificate-protection">
 
-        <strong>
-            PORTFOLIO PREVIEW
-        </strong>
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="certificate-title">
+
+        <strong>AZ-104</strong>
 
         <span>
-            Original Certificate Available on Request
+            Microsoft Azure Administrator
         </span>
 
     </div>

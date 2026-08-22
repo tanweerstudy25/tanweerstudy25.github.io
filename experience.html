@@ -1240,7 +1240,504 @@
                 left: 0 !important;
             }
         }
+/* =====================================================
+   EXPERIENCE PAGE - PREMIUM LIGHT THEME
+   SAME THEME SYSTEM AS HOME PAGE
+===================================================== */
 
+body.theme-light {
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #f4f8fc
+        ) !important;
+
+    color:
+        #102033 !important;
+}
+
+
+/* LIGHT GRID BACKGROUND */
+
+body.theme-light::before {
+
+    background:
+        linear-gradient(
+            rgba(8,124,240,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(8,124,240,.035) 1px,
+            transparent 1px
+        ) !important;
+
+    background-size:
+        45px 45px !important;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+body.theme-light .navbar {
+
+    background:
+        rgba(255,255,255,.96) !important;
+
+    border-bottom:
+        1px solid rgba(20,90,160,.15) !important;
+
+    box-shadow:
+        0 5px 25px rgba(25,70,120,.08) !important;
+
+}
+
+
+/* NAV LINKS */
+
+body.theme-light #navMenu a {
+
+    color:
+        #43566d !important;
+
+    background:
+        rgba(8,124,240,.025) !important;
+
+    border-color:
+        rgba(20,90,160,.12) !important;
+
+}
+
+
+body.theme-light #navMenu a:hover {
+
+    color:
+        var(--nav-color) !important;
+
+    background:
+        #ffffff !important;
+
+    border-color:
+        var(--nav-color) !important;
+
+    box-shadow:
+        0 10px 25px rgba(30,80,130,.10),
+        0 0 18px var(--nav-glow) !important;
+
+}
+
+
+body.theme-light #navMenu a.active {
+
+    color:
+        #087cf0 !important;
+
+    background:
+        rgba(8,124,240,.07) !important;
+
+    border-color:
+        rgba(8,124,240,.35) !important;
+
+    box-shadow:
+        0 0 14px rgba(8,124,240,.15) !important;
+
+}
+
+
+/* =====================================================
+   THEME BUTTON
+===================================================== */
+
+body.theme-light #themeToggle {
+
+    background:
+        #ffffff !important;
+
+    color:
+        #ff9f00 !important;
+
+    border:
+        1px solid rgba(0,120,230,.25) !important;
+
+    box-shadow:
+        0 5px 15px rgba(20,70,130,.08) !important;
+
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+@media (max-width:900px) {
+
+    body.theme-light #navMenu {
+
+        background:
+            rgba(255,255,255,.98) !important;
+
+        border:
+            1px solid rgba(20,100,190,.18) !important;
+
+        box-shadow:
+            0 15px 35px rgba(30,80,130,.12) !important;
+
+    }
+
+
+    body.theme-light .menu-btn {
+
+        background:
+            #ffffff !important;
+
+        color:
+            #102033 !important;
+
+        border-color:
+            rgba(8,124,240,.30) !important;
+
+    }
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+body.theme-light .hero {
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f7faff 100%
+        ) !important;
+
+}
+
+
+/* SMALL TITLE */
+
+body.theme-light .eyebrow {
+
+    color:
+        #087cf0 !important;
+
+}
+
+
+/* MAIN EXPERIENCE TITLE */
+
+body.theme-light .hero h1 {
+
+    background:
+        linear-gradient(
+            90deg,
+            #102033,
+            #087cf0,
+            #7950f2,
+            #102033
+        ) !important;
+
+    background-size:
+        250% auto !important;
+
+    -webkit-background-clip:
+        text !important;
+
+    background-clip:
+        text !important;
+
+    color:
+        transparent !important;
+
+    -webkit-text-fill-color:
+        transparent !important;
+
+}
+
+
+body.theme-light .hero p {
+
+    color:
+        #43566d !important;
+
+}
+
+
+/* EXPERIENCE COUNTER */
+
+body.theme-light .experience-count {
+
+    color:
+        #087cf0 !important;
+
+    background:
+        rgba(8,124,240,.07) !important;
+
+    border:
+        1px solid rgba(8,124,240,.22) !important;
+
+    box-shadow:
+        0 8px 24px rgba(20,90,160,.07) !important;
+
+}
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+body.theme-light .timeline-dot {
+
+    background:
+        #ffffff !important;
+
+    border-color:
+        #087cf0 !important;
+
+    box-shadow:
+        0 0 0 6px rgba(8,124,240,.08),
+        0 0 20px rgba(8,124,240,.35) !important;
+
+}
+
+
+/* =====================================================
+   EXPERIENCE CARDS
+===================================================== */
+
+body.theme-light .experience-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f7faff
+        ) !important;
+
+    border:
+        1px solid rgba(20,100,190,.18) !important;
+
+    box-shadow:
+        0 12px 30px rgba(20,70,120,.08) !important;
+
+}
+
+
+body.theme-light .experience-card:hover {
+
+    border-color:
+        #2496ff !important;
+
+    box-shadow:
+        0 20px 45px rgba(30,80,130,.14),
+        0 0 24px rgba(36,150,255,.13) !important;
+
+}
+
+
+/* DATE */
+
+body.theme-light .date {
+
+    color:
+        #087cf0 !important;
+
+    background:
+        rgba(8,124,240,.07) !important;
+
+    border-color:
+        rgba(8,124,240,.20) !important;
+
+}
+
+
+/* JOB TITLE */
+
+body.theme-light .job-title {
+
+    color:
+        #102033 !important;
+
+}
+
+
+/* COMPANY */
+
+body.theme-light .company {
+
+    color:
+        #087cf0 !important;
+
+}
+
+
+/* LOCATION */
+
+body.theme-light .location {
+
+    color:
+        #66788c !important;
+
+}
+
+
+/* DESCRIPTION */
+
+body.theme-light .description {
+
+    color:
+        #52657a !important;
+
+}
+
+
+/* RESPONSIBILITIES */
+
+body.theme-light .responsibilities li {
+
+    color:
+        #52657a !important;
+
+}
+
+
+body.theme-light .responsibilities li::before {
+
+    background:
+        #087cf0 !important;
+
+    box-shadow:
+        0 0 7px rgba(8,124,240,.45) !important;
+
+}
+
+
+/* =====================================================
+   SKILL TAGS
+===================================================== */
+
+body.theme-light .skill {
+
+    color:
+        #6d46d9 !important;
+
+    background:
+        rgba(121,80,242,.07) !important;
+
+    border:
+        1px solid rgba(121,80,242,.18) !important;
+
+}
+
+
+/* =====================================================
+   CTA SECTION
+===================================================== */
+
+body.theme-light .cta {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f3f8ff,
+            #f8f4ff
+        ) !important;
+
+    border:
+        1px solid rgba(20,100,190,.18) !important;
+
+    box-shadow:
+        0 20px 50px rgba(30,80,130,.09) !important;
+
+}
+
+
+body.theme-light .cta h2 {
+
+    color:
+        #102033 !important;
+
+}
+
+
+body.theme-light .cta p {
+
+    color:
+        #52657a !important;
+
+}
+
+
+/* CTA BUTTONS */
+
+body.theme-light .cta-btn {
+
+    color:
+        #102033 !important;
+
+    background:
+        #ffffff !important;
+
+    border:
+        1px solid rgba(20,100,190,.20) !important;
+
+    box-shadow:
+        0 7px 18px rgba(30,80,130,.06);
+
+}
+
+
+body.theme-light .cta-btn:hover {
+
+    color:
+        #ffffff !important;
+
+    background:
+        #087cf0 !important;
+
+}
+
+
+body.theme-light .cta-btn.whatsapp:hover {
+
+    color:
+        #ffffff !important;
+
+    background:
+        #13b96c !important;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+body.theme-light footer {
+
+    color:
+        #66788c !important;
+
+    border-top:
+        1px solid rgba(20,90,160,.14) !important;
+
+}
+
+
+body.theme-light footer strong {
+
+    color:
+        #102033 !important;
+
+}
     </style>
 </head>
 
@@ -2070,23 +2567,10 @@
 
 </script>
 
-<script>
-    const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
+<!-- SAME THEME + MOBILE MENU SYSTEM AS HOME PAGE -->
+<script src="script.js"></script>
 
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-        });
-    }
-
-    const themeToggle = document.getElementById("themeToggle");
-    if (themeToggle) {
-        themeToggle.addEventListener("click", () => {
-            document.body.classList.toggle("experience-light");
-        });
-    }
-</script>
+    
  <!-- GOATCOUNTER TRACKING -->
 <script
     data-goatcounter="https://tanweerportfolio.goatcounter.com/count"

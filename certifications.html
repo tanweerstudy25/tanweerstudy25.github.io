@@ -916,6 +916,197 @@ body {
 .microsoft-logo span {
     border-radius: 1px;
 }     
+/* =====================================================
+   AZ-104 PREMIUM 3D GLOW + BLINK ANIMATION
+===================================================== */
+
+/* Logo + Text ko aur close rakho */
+
+.certificate-title-logo {
+    gap: 10px !important;
+
+    perspective: 700px;
+
+    animation:
+        certificateGlowPulse 2.2s ease-in-out infinite;
+}
+
+
+/* AZ-104 aur subtitle ko paas lao */
+
+.certificate-title-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0 !important;
+
+    line-height: 1;
+}
+
+
+/* AZ-104 */
+
+.certificate-title-logo
+.certificate-title-text strong {
+
+    margin-bottom: 1px !important;
+
+    line-height: 1.05;
+
+    font-size: 22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #00e5ff,
+            #8a7dff,
+            #ffffff
+        );
+
+    background-size: 300% 100%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+
+    text-shadow:
+        0 3px 8px rgba(0,0,0,.35);
+
+    animation:
+        certificateTextFlow 3s linear infinite;
+}
+
+
+/* Microsoft Azure Administrator */
+
+.certificate-title-logo
+.certificate-title-text span {
+
+    margin-top: 0 !important;
+
+    line-height: 1.05;
+
+    color: #7fe8ff;
+
+    text-shadow:
+        0 0 8px rgba(0,220,255,.65),
+        0 0 15px rgba(100,100,255,.30);
+}
+
+
+/* Microsoft Logo */
+
+.certificate-title-logo
+.microsoft-logo {
+
+    width: 36px;
+    height: 36px;
+
+    transform:
+        perspective(500px)
+        rotateY(-7deg)
+        rotateX(4deg);
+
+    filter:
+        drop-shadow(0 4px 5px rgba(0,0,0,.45))
+        drop-shadow(0 0 8px rgba(0,210,255,.35));
+
+    animation:
+        microsoftLogoFloat 2.2s ease-in-out infinite;
+}
+
+
+/* Logo ke 4 colors bhi glow karenge */
+
+.certificate-title-logo
+.microsoft-logo span {
+
+    box-shadow:
+        inset 0 1px 2px rgba(255,255,255,.45),
+        0 0 7px rgba(255,255,255,.18);
+}
+
+
+/* =====================================================
+   COMPLETE LOGO + TEXT LIGHT PULSE
+===================================================== */
+
+@keyframes certificateGlowPulse {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            brightness(1)
+            drop-shadow(0 0 2px rgba(0,200,255,.20));
+    }
+
+    50% {
+
+        transform:
+            translateY(-2px)
+            scale(1.035);
+
+        filter:
+            brightness(1.35)
+            drop-shadow(0 0 8px rgba(0,229,255,.85))
+            drop-shadow(0 0 15px rgba(120,80,255,.55));
+    }
+}
+
+
+/* =====================================================
+   COLOR MOVEMENT
+===================================================== */
+
+@keyframes certificateTextFlow {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* =====================================================
+   MICROSOFT LOGO 3D FLOAT
+===================================================== */
+
+@keyframes microsoftLogoFloat {
+
+    0%,
+    100% {
+
+        transform:
+            perspective(500px)
+            rotateY(-7deg)
+            rotateX(4deg)
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            perspective(500px)
+            rotateY(7deg)
+            rotateX(-3deg)
+            translateY(-3px)
+            scale(1.07);
+    }
+}
 </style>
 </head>
 

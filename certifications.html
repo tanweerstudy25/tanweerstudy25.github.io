@@ -1360,6 +1360,27 @@ body {
     }
 }
       
+/* =====================================================
+   BLOCK CERTIFICATE IMAGE SAVE / DRAG
+===================================================== */
+
+.protected-certificate-item .certificate-card,
+.protected-certificate-item .certificate-card img {
+
+    -webkit-user-select: none;
+    user-select: none;
+
+}
+
+.protected-certificate-item .certificate-card img {
+
+    pointer-events: none;
+
+    -webkit-user-drag: none;
+
+    user-drag: none;
+
+}
 </style>
 </head>
 
@@ -2318,6 +2339,51 @@ window.addEventListener(
     }
 );
 
+      /* =====================================================
+   PROTECT CERTIFICATE PREVIEWS
+   BLOCK RIGHT CLICK + IMAGE DRAG
+===================================================== */
+
+
+/* Block right click on certificate cards */
+
+document.addEventListener(
+    "contextmenu",
+    function(event) {
+
+        if (
+            event.target.closest(
+                ".protected-certificate-item"
+            )
+        ) {
+
+            event.preventDefault();
+
+        }
+
+    }
+);
+
+
+/* Block dragging certificate images */
+
+document.addEventListener(
+    "dragstart",
+    function(event) {
+
+        if (
+            event.target.closest(
+                ".protected-certificate-item"
+            )
+        ) {
+
+            event.preventDefault();
+
+        }
+
+    }
+);
+      
 </script>
 
 </body>

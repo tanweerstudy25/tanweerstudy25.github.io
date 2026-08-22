@@ -355,9 +355,12 @@ document.addEventListener(
         }
 
 
-        fetch(
-            "https://tanweerportfolio.goatcounter.com/counter/TOTAL.json"
-        )
+      fetch(
+    "https://live-visitor-counter.tanweerstudy25.workers.dev/",
+    {
+        cache: "no-store"
+    }
+)  
 
         .then(response => {
 

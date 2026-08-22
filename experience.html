@@ -1297,30 +1297,7 @@
             </button>
 
 
-        <div class="nav-visitor-counter"
-     title="Total Portfolio Visitors Worldwide">
-
-    <div class="visitor-counter-icon">
-        <i class="fa-solid fa-eye"></i>
-    </div>
-
-    <div class="visitor-counter-info">
-
-        <span class="visitor-counter-label">
-            TOTAL VISITORS
-        </span>
-
-        <strong id="visitor-count">
-            Loading...
-        </strong>
-
-        <span class="visitor-counter-text">
-            Portfolio Visits Worldwide
-        </span>
-
-    </div>
-
-</div>  
+       
 
 
             <button id="menuToggle"
@@ -2117,34 +2094,6 @@
     src="//gc.zgo.at/count.js">
 </script>
 
-<!-- TOTAL VISITOR COUNTER -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
 
-    const visitorCount =
-        document.getElementById("visitor-count");
-
-    if (!visitorCount) return;
-
-    fetch(
-        "https://tanweerportfolio.goatcounter.com/counter/TOTAL.json"
-    )
-    .then(response => response.json())
-    .then(data => {
-
-        visitorCount.textContent =
-            data.count_unique ||
-            data.count ||
-            "0";
-
-    })
-    .catch(() => {
-
-        visitorCount.textContent = "—";
-
-    });
-
-});
-</script>   
 </body>
 </html>

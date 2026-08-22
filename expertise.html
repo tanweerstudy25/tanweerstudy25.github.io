@@ -1,0 +1,3488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Expertise | Tanweer Ansari</title>
+
+    <meta name="description"
+          content="Tanweer Ansari — Technical Expertise across Enterprise Networking, Fortinet Security, Microsoft Azure, Microsoft 365, Entra ID, Intune, Windows Systems and IT Operations.">
+
+    <meta name="author"
+          content="Tanweer Ansari">
+
+
+    <!-- =====================================================
+         GOOGLE ANALYTICS
+    ====================================================== -->
+
+    <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-CLJZCDB7HK"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-CLJZCDB7HK');
+    </script>
+
+
+    <!-- =====================================================
+         GOATCOUNTER
+    ====================================================== -->
+
+    <script data-goatcounter="https://tanweerportfolio.goatcounter.com/count"
+            async
+            src="//gc.zgo.at/count.js">
+    </script>
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         MAIN WEBSITE CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+
+<style>
+
+/* ==========================================================
+   ROOT
+========================================================== */
+
+:root{
+
+    --bg:#020711;
+    --bg2:#07111f;
+
+    --panel:rgba(10,22,38,.72);
+
+    --text:#f4f8ff;
+    --muted:#8fa4b6;
+
+    --green:#39ffb0;
+    --cyan:#35d9ff;
+    --blue:#4d8dff;
+    --purple:#a56cff;
+    --pink:#ff4dca;
+    --orange:#ffb347;
+    --red:#ff5c7a;
+
+    --border:rgba(120,170,220,.16);
+
+}
+
+
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    margin:0;
+
+    font-family:"Inter",sans-serif;
+
+    color:var(--text);
+
+    background:
+
+        radial-gradient(
+            circle at 10% 8%,
+            rgba(57,255,176,.12),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(53,217,255,.12),
+            transparent 24%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(165,108,255,.10),
+            transparent 26%
+        ),
+
+        radial-gradient(
+            circle at 20% 85%,
+            rgba(255,77,202,.07),
+            transparent 24%
+        ),
+
+        var(--bg);
+
+    overflow-x:hidden;
+}
+
+
+/* ==========================================================
+   GRID BACKGROUND
+========================================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-10;
+
+    pointer-events:none;
+
+    opacity:.22;
+
+    background-image:
+
+        linear-gradient(
+            rgba(53,217,255,.06) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(53,217,255,.06) 1px,
+            transparent 1px
+        );
+
+    background-size:55px 55px;
+
+}
+
+
+/* ==========================================================
+   FLOATING BACKGROUND ORBS
+========================================================== */
+
+.bg-orb{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    filter:blur(85px);
+
+    pointer-events:none;
+
+    z-index:-8;
+
+    opacity:.20;
+
+    animation:orbMove 10s ease-in-out infinite alternate;
+
+}
+
+.orb-one{
+
+    width:330px;
+    height:330px;
+
+    background:var(--green);
+
+    top:10%;
+    left:-140px;
+
+}
+
+.orb-two{
+
+    width:400px;
+    height:400px;
+
+    background:var(--purple);
+
+    right:-180px;
+    top:38%;
+
+    animation-delay:-4s;
+
+}
+
+.orb-three{
+
+    width:300px;
+    height:300px;
+
+    background:var(--cyan);
+
+    left:40%;
+    bottom:-170px;
+
+    animation-delay:-7s;
+
+}
+
+@keyframes orbMove{
+
+    from{
+        transform:translate3d(0,0,0) scale(1);
+    }
+
+    to{
+        transform:translate3d(30px,-25px,0) scale(1.12);
+    }
+
+}
+
+
+/* ==========================================================
+   TOP TECHNOLOGY MARQUEE
+========================================================== */
+
+.expertise-marquee{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:43px;
+
+    z-index:9999;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(57,255,176,.07),
+            rgba(53,217,255,.10),
+            rgba(165,108,255,.08),
+            rgba(57,255,176,.07)
+        );
+
+    border-bottom:
+        1px solid rgba(53,217,255,.18);
+
+    backdrop-filter:blur(15px);
+
+}
+
+.marquee-track{
+
+    display:flex;
+
+    width:max-content;
+
+    animation:
+        marqueeMove 22s linear infinite;
+
+}
+
+.marquee-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    margin-right:34px;
+
+    padding:7px 13px;
+
+    white-space:nowrap;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    color:#aebdc9;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:1.4px;
+
+}
+
+.marquee-item i{
+
+    color:var(--green);
+
+    text-shadow:
+        0 0 12px currentColor;
+
+}
+
+@keyframes marqueeMove{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+
+/* ==========================================================
+   NAVBAR
+========================================================== */
+
+.navbar{
+
+    position:fixed !important;
+
+    top:43px !important;
+
+    left:0 !important;
+    right:0 !important;
+
+    width:100% !important;
+
+    height:68px !important;
+
+    z-index:9998 !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    background:
+        rgba(5,14,27,.92) !important;
+
+    border-bottom:
+        1px solid rgba(53,217,255,.15) !important;
+
+    backdrop-filter:
+        blur(18px) !important;
+
+}
+
+.navbar .nav-container{
+
+    width:100% !important;
+
+    max-width:1240px !important;
+
+    height:100% !important;
+
+    margin:0 auto !important;
+
+    padding:0 22px !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    gap:12px !important;
+
+}
+
+.navbar .logo{
+
+    display:none !important;
+
+}
+
+.navbar #navMenu{
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    gap:7px !important;
+
+    padding:0 !important;
+
+    margin:0 !important;
+
+}
+
+.navbar #navMenu a{
+
+    min-height:40px !important;
+
+    padding:0 17px !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    border:
+        1px solid rgba(120,150,190,.19) !important;
+
+    border-radius:10px !important;
+
+    background:
+        rgba(10,20,38,.55) !important;
+
+    color:#aebdce !important;
+
+    text-decoration:none !important;
+
+    font-size:12px !important;
+
+    font-weight:700 !important;
+
+    transition:.28s !important;
+
+}
+
+.navbar #navMenu a:hover{
+
+    color:white !important;
+
+    border-color:
+        var(--cyan) !important;
+
+    background:
+        rgba(53,217,255,.08) !important;
+
+    transform:
+        translateY(-2px) !important;
+
+    box-shadow:
+        0 0 20px rgba(53,217,255,.16) !important;
+
+}
+
+.navbar #navMenu a.active{
+
+    color:white !important;
+
+    border-color:
+        var(--green) !important;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(57,255,176,.16),
+            rgba(53,217,255,.13)
+        ) !important;
+
+    box-shadow:
+
+        0 0 22px rgba(57,255,176,.18),
+
+        inset
+        0 0 13px
+        rgba(57,255,176,.06) !important;
+
+}
+
+.navbar .nav-buttons{
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    gap:8px !important;
+
+}
+
+.navbar .icon-btn{
+
+    width:42px !important;
+
+    height:40px !important;
+
+    border-radius:10px !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+}
+
+.navbar .whatsapp-nav{
+
+    min-height:40px !important;
+
+    padding:0 16px !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    border-radius:10px !important;
+
+    font-size:12px !important;
+
+    font-weight:800 !important;
+
+}
+
+.navbar .menu-btn{
+
+    display:none !important;
+
+}
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.expertise-hero{
+
+    min-height:93vh;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:
+        180px 20px 85px;
+
+}
+
+.hero-inner{
+
+    width:min(1050px,94%);
+
+    margin:auto;
+
+}
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 18px;
+
+    border-radius:40px;
+
+    border:
+        1px solid rgba(57,255,176,.35);
+
+    background:
+        rgba(57,255,176,.06);
+
+    color:var(--green);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:2.5px;
+
+    box-shadow:
+        0 0 30px rgba(57,255,176,.10);
+
+}
+
+.hero-badge i{
+
+    animation:
+        pulseIcon 1.4s infinite alternate;
+
+}
+
+@keyframes pulseIcon{
+
+    from{
+        opacity:.45;
+    }
+
+    to{
+        opacity:1;
+        filter:brightness(1.8);
+    }
+
+}
+
+.hero-title{
+
+    margin:
+        27px 0 22px;
+
+    font-size:
+        clamp(46px,7.5vw,92px);
+
+    line-height:.98;
+
+    font-weight:900;
+
+    letter-spacing:-4px;
+
+}
+
+.hero-title span{
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--green),
+            var(--cyan),
+            var(--purple)
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(57,255,176,.20)
+        );
+
+}
+
+.hero-description{
+
+    width:min(790px,100%);
+
+    margin:auto;
+
+    color:var(--muted);
+
+    font-size:
+        clamp(14px,2vw,18px);
+
+    line-height:1.85;
+
+}
+
+.hero-stats{
+
+    margin-top:46px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+
+}
+
+.hero-stat{
+
+    padding:21px 15px;
+
+    border-radius:18px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(255,255,255,.025);
+
+    backdrop-filter:blur(16px);
+
+    transition:.35s;
+
+}
+
+.hero-stat:hover{
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        var(--green);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.28),
+        0 0 25px rgba(57,255,176,.10);
+
+}
+
+.hero-stat strong{
+
+    display:block;
+
+    margin-bottom:7px;
+
+    color:var(--green);
+
+    font-size:27px;
+
+}
+
+.hero-stat span{
+
+    color:#7f95a5;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.expertise-container{
+
+    width:min(1250px,92%);
+
+    margin:auto;
+
+    padding:
+        65px 0 130px;
+
+}
+
+
+/* ==========================================================
+   SECTION HEADING
+========================================================== */
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:48px;
+
+}
+
+.section-heading small{
+
+    color:var(--cyan);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+
+}
+
+.section-heading h2{
+
+    margin:
+        12px 0 14px;
+
+    font-size:
+        clamp(32px,5vw,54px);
+
+    letter-spacing:-2px;
+
+}
+
+.section-heading p{
+
+    max-width:730px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    line-height:1.75;
+
+    font-size:14px;
+
+}
+
+
+/* ==========================================================
+   EXPERTISE GRID
+========================================================== */
+
+.expertise-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:24px;
+
+}
+
+
+/* ==========================================================
+   EXPERTISE CARD
+========================================================== */
+
+.expertise-card{
+
+    --accent:var(--green);
+
+    position:relative;
+
+    overflow:hidden;
+
+    min-height:410px;
+
+    padding:30px;
+
+    border-radius:26px;
+
+    border:
+        1px solid
+        color-mix(
+            in srgb,
+            var(--accent) 28%,
+            transparent
+        );
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.015)
+        );
+
+    backdrop-filter:blur(20px);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.expertise-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+
+    height:280px;
+
+    border-radius:50%;
+
+    right:-135px;
+
+    top:-145px;
+
+    background:
+        var(--accent);
+
+    opacity:.08;
+
+    filter:blur(45px);
+
+    transition:.5s;
+
+}
+
+.expertise-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150%;
+
+    left:-70%;
+
+    width:45%;
+
+    height:350%;
+
+    transform:rotate(25deg);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.09),
+            transparent
+        );
+
+    transition:.8s;
+
+}
+
+.expertise-card:hover{
+
+    transform:
+        translateY(-9px);
+
+    border-color:
+        var(--accent);
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(0,0,0,.40),
+
+        0 0 30px
+        color-mix(
+            in srgb,
+            var(--accent) 20%,
+            transparent
+        );
+
+}
+
+.expertise-card:hover::before{
+
+    opacity:.18;
+
+    transform:
+        scale(1.35);
+
+}
+
+.expertise-card:hover::after{
+
+    left:125%;
+
+}
+
+
+/* ==========================================================
+   CARD COLORS
+========================================================== */
+
+.expertise-card:nth-child(1){
+    --accent:#39ffb0;
+}
+
+.expertise-card:nth-child(2){
+    --accent:#35d9ff;
+}
+
+.expertise-card:nth-child(3){
+    --accent:#4d8dff;
+}
+
+.expertise-card:nth-child(4){
+    --accent:#a56cff;
+}
+
+.expertise-card:nth-child(5){
+    --accent:#ffb347;
+}
+
+.expertise-card:nth-child(6){
+    --accent:#ff4dca;
+}
+
+
+/* ==========================================================
+   CARD HEADER
+========================================================== */
+
+.card-header{
+
+    position:relative;
+
+    z-index:3;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:17px;
+
+}
+
+.card-icon{
+
+    width:61px;
+
+    height:61px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:18px;
+
+    border:
+        1px solid
+        color-mix(
+            in srgb,
+            var(--accent) 40%,
+            transparent
+        );
+
+    background:
+
+        color-mix(
+            in srgb,
+            var(--accent) 10%,
+            transparent
+        );
+
+    color:var(--accent);
+
+    font-size:24px;
+
+    box-shadow:
+
+        0 0 20px
+
+        color-mix(
+            in srgb,
+            var(--accent) 15%,
+            transparent
+        );
+
+    transition:.35s;
+
+}
+
+.expertise-card:hover .card-icon{
+
+    transform:
+        rotateY(12deg)
+        scale(1.08);
+
+    box-shadow:
+
+        0 0 30px
+
+        color-mix(
+            in srgb,
+            var(--accent) 28%,
+            transparent
+        );
+
+}
+
+.card-heading h3{
+
+    margin:0 0 5px;
+
+    font-size:19px;
+
+}
+
+.card-heading span{
+
+    color:#718998;
+
+    font-size:10px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:1.3px;
+
+}
+
+
+/* ==========================================================
+   CARD INTRO
+========================================================== */
+
+.card-intro{
+
+    position:relative;
+
+    z-index:3;
+
+    margin:
+        23px 0 20px;
+
+    color:#9fb0bb;
+
+    line-height:1.65;
+
+    font-size:12px;
+
+}
+
+
+/* ==========================================================
+   TECHNOLOGY TAGS
+========================================================== */
+
+.label{
+
+    position:relative;
+
+    z-index:3;
+
+    margin-bottom:10px;
+
+    color:var(--accent);
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:1.7px;
+
+    text-transform:uppercase;
+
+}
+
+.tech-tags{
+
+    position:relative;
+
+    z-index:3;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-bottom:23px;
+
+}
+
+.tech-tag{
+
+    padding:
+        7px 10px;
+
+    border-radius:8px;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    background:
+        rgba(255,255,255,.026);
+
+    color:#adbdc7;
+
+    font-size:10px;
+
+    transition:.25s;
+
+}
+
+.tech-tag:hover{
+
+    border-color:
+        var(--accent);
+
+    color:var(--accent);
+
+    background:
+
+        color-mix(
+            in srgb,
+            var(--accent) 8%,
+            transparent
+        );
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* ==========================================================
+   WORK LIST
+========================================================== */
+
+.work-list{
+
+    position:relative;
+
+    z-index:3;
+
+    display:grid;
+
+    gap:9px;
+
+}
+
+.work-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:9px;
+
+    color:#96aab6;
+
+    font-size:11px;
+
+    line-height:1.5;
+
+}
+
+.work-item i{
+
+    margin-top:3px;
+
+    color:var(--accent);
+
+    font-size:9px;
+
+}
+
+
+/* ==========================================================
+   SUPPORTING TECHNOLOGY STRIP
+========================================================== */
+
+.stack-section{
+
+    margin-top:100px;
+
+}
+
+.stack-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:14px;
+
+    margin-top:30px;
+
+}
+
+.stack-box{
+
+    position:relative;
+
+    padding:23px 18px;
+
+    border-radius:17px;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    background:
+        rgba(255,255,255,.025);
+
+    text-align:center;
+
+    color:#9fb0bb;
+
+    font-size:11px;
+
+    line-height:1.5;
+
+    transition:.35s;
+
+}
+
+.stack-box i{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    color:var(--cyan);
+
+    font-size:22px;
+
+}
+
+.stack-box strong{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    color:white;
+
+    font-size:12px;
+
+}
+
+.stack-box:hover{
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        var(--cyan);
+
+    box-shadow:
+        0 0 25px rgba(53,217,255,.10);
+
+}
+
+
+/* ==========================================================
+   PRACTICES
+========================================================== */
+
+.practice-section{
+
+    margin-top:100px;
+
+}
+
+.practice-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:14px;
+
+    margin-top:30px;
+
+}
+
+.practice{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-height:67px;
+
+    padding:17px 18px;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    border-radius:14px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    color:#a0b0ba;
+
+    font-size:11px;
+
+    transition:.3s;
+
+}
+
+.practice i{
+
+    width:28px;
+
+    text-align:center;
+
+    color:var(--green);
+
+    font-size:17px;
+
+}
+
+.practice:hover{
+
+    transform:
+        translateY(-5px);
+
+    color:white;
+
+    border-color:
+        var(--green);
+
+    background:
+        rgba(57,255,176,.04);
+
+}
+
+
+/* ==========================================================
+   WORKFLOW
+========================================================== */
+
+.workflow-section{
+
+    margin-top:105px;
+
+}
+
+.workflow{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:12px;
+
+    margin-top:35px;
+
+}
+
+.workflow-box{
+
+    position:relative;
+
+    padding:24px 15px;
+
+    border:
+        1px solid rgba(255,255,255,.07);
+
+    border-radius:16px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.workflow-box i{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    color:var(--purple);
+
+    font-size:22px;
+
+}
+
+.workflow-box strong{
+
+    display:block;
+
+    margin-bottom:5px;
+
+    font-size:11px;
+
+}
+
+.workflow-box span{
+
+    color:#728796;
+
+    font-size:9px;
+
+    line-height:1.5;
+
+}
+
+.workflow-box:hover{
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--purple);
+
+    box-shadow:
+        0 0 22px rgba(165,108,255,.10);
+
+}
+
+
+/* ==========================================================
+   CTA
+========================================================== */
+
+.cta{
+
+    position:relative;
+
+    overflow:hidden;
+
+    margin-top:110px;
+
+    padding:
+        55px 30px;
+
+    text-align:center;
+
+    border-radius:27px;
+
+    border:
+        1px solid rgba(57,255,176,.18);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(57,255,176,.06),
+            rgba(53,217,255,.045),
+            rgba(165,108,255,.06)
+        );
+
+}
+
+.cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    top:-230px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+        var(--green);
+
+    opacity:.10;
+
+    filter:blur(70px);
+
+}
+
+.cta h2{
+
+    position:relative;
+
+    margin:
+        0 0 13px;
+
+    font-size:
+        clamp(27px,4vw,45px);
+
+}
+
+.cta p{
+
+    position:relative;
+
+    max-width:620px;
+
+    margin:
+        0 auto 28px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+.cta-buttons{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:11px;
+
+}
+
+.cta-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    min-height:44px;
+
+    padding:
+        0 20px;
+
+    border-radius:11px;
+
+    text-decoration:none;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    transition:.3s;
+
+}
+
+.cta-primary{
+
+    color:#00140d;
+
+    background:
+        var(--green);
+
+    box-shadow:
+        0 0 25px rgba(57,255,176,.18);
+
+}
+
+.cta-secondary{
+
+    color:white;
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    background:
+        rgba(255,255,255,.04);
+
+}
+
+.cta-btn:hover{
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.expertise-footer{
+
+    padding:
+        65px 20px 80px;
+
+    text-align:center;
+
+    color:#617582;
+
+    font-size:11px;
+
+}
+
+.expertise-footer strong{
+
+    color:#c7d4dc;
+
+}
+
+
+/* ==========================================================
+   BACK TO TOP
+========================================================== */
+
+#expertiseBackTop{
+
+    position:fixed;
+
+    right:22px;
+
+    bottom:22px;
+
+    width:44px;
+
+    height:44px;
+
+    z-index:999;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:
+        1px solid rgba(57,255,176,.30);
+
+    border-radius:13px;
+
+    background:
+        rgba(5,18,30,.90);
+
+    color:var(--green);
+
+    cursor:pointer;
+
+    box-shadow:
+        0 0 20px rgba(57,255,176,.10);
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media(max-width:950px){
+
+    .expertise-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .stack-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .practice-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .workflow{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .navbar .nav-container{
+
+        justify-content:
+            space-between !important;
+
+        padding:
+            0 13px !important;
+
+    }
+
+
+    .navbar .menu-btn{
+
+        display:flex !important;
+
+    }
+
+
+    .navbar #navMenu{
+
+        position:absolute !important;
+
+        top:68px !important;
+
+        left:13px !important;
+
+        right:13px !important;
+
+        display:none !important;
+
+        flex-direction:column !important;
+
+        padding:13px !important;
+
+        border:
+            1px solid
+            rgba(53,217,255,.18) !important;
+
+        border-radius:15px !important;
+
+        background:
+            rgba(5,14,27,.98) !important;
+
+        box-shadow:
+            0 20px 50px
+            rgba(0,0,0,.45) !important;
+
+    }
+
+
+    .navbar #navMenu.active,
+    .navbar #navMenu.open{
+
+        display:flex !important;
+
+    }
+
+
+    .navbar #navMenu a{
+
+        width:100% !important;
+
+    }
+
+
+    .navbar .whatsapp-nav span{
+
+        display:none !important;
+
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .expertise-marquee{
+
+        height:38px;
+
+    }
+
+    .navbar{
+
+        top:38px !important;
+
+    }
+
+    .expertise-hero{
+
+        min-height:auto;
+
+        padding:
+            155px 16px 70px;
+
+    }
+
+    .hero-title{
+
+        letter-spacing:-2.4px;
+
+    }
+
+    .hero-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .expertise-container{
+
+        width:91%;
+
+    }
+
+    .expertise-card{
+
+        min-height:auto;
+
+        padding:24px;
+
+    }
+
+    .stack-grid,
+    .practice-grid,
+    .workflow{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .card-header{
+
+        align-items:flex-start;
+
+    }
+
+    .marquee-item{
+
+        margin-right:20px;
+
+        font-size:8px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     BACKGROUND
+========================================================== -->
+
+<div class="bg-orb orb-one"></div>
+<div class="bg-orb orb-two"></div>
+<div class="bg-orb orb-three"></div>
+
+
+<!-- ==========================================================
+     TOP MARQUEE
+========================================================== -->
+
+<div class="expertise-marquee">
+
+    <div class="marquee-track">
+
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-network-wired"></i>
+            CISCO NETWORKING
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            FORTINET SECURITY
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-cloud"></i>
+            MICROSOFT AZURE
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-brands fa-microsoft"></i>
+            MICROSOFT 365
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-id-card"></i>
+            ENTRA ID
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-laptop-code"></i>
+            INTUNE & AUTOPILOT
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-server"></i>
+            WINDOWS SERVER
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-gears"></i>
+            ENTERPRISE IT OPERATIONS
+        </div>
+
+
+        <!-- DUPLICATE FOR CONTINUOUS LOOP -->
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-network-wired"></i>
+            CISCO NETWORKING
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            FORTINET SECURITY
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-cloud"></i>
+            MICROSOFT AZURE
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-brands fa-microsoft"></i>
+            MICROSOFT 365
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-id-card"></i>
+            ENTRA ID
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-laptop-code"></i>
+            INTUNE & AUTOPILOT
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-server"></i>
+            WINDOWS SERVER
+        </div>
+
+        <div class="marquee-item">
+            <i class="fa-solid fa-gears"></i>
+            ENTERPRISE IT OPERATIONS
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================================
+     NAVIGATION
+========================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+
+        <a href="index.html"
+           class="logo">
+
+            TANWEER<span>.</span>
+
+        </a>
+
+
+        <nav id="navMenu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="expertise.html"
+               class="active">
+                Expertise
+            </a>
+
+            <a href="experience.html">
+                Experience
+            </a>
+
+            <a href="certifications.html">
+                Certifications
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="nav-buttons">
+
+
+            <button
+                id="themeToggle"
+                class="icon-btn"
+                aria-label="Toggle theme">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+
+            <a href="https://wa.me/966557316795"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="nav-contact whatsapp-nav">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                <span>
+                    WhatsApp
+                </span>
+
+            </a>
+
+
+            <button
+                id="menuToggle"
+                class="menu-btn"
+                aria-label="Open menu">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</header>
+
+
+<!-- ==========================================================
+     HERO
+========================================================== -->
+
+<section class="expertise-hero">
+
+    <div class="hero-inner">
+
+
+        <div class="hero-badge">
+
+            <i class="fa-solid fa-microchip"></i>
+
+            TECHNICAL EXPERTISE
+
+        </div>
+
+
+        <h1 class="hero-title">
+
+            Technical Expertise
+            <br>
+
+            <span>
+                & Enterprise Solutions
+            </span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Practical hands-on experience across enterprise
+            networking, security, Microsoft cloud, systems,
+            endpoint management and IT operations — focused on
+            supporting secure, stable and reliable technology
+            environments.
+
+        </p>
+
+
+        <div class="hero-stats">
+
+
+            <div class="hero-stat">
+
+                <strong>
+                    16+
+                </strong>
+
+                <span>
+                    Years IT Experience
+                </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+                <strong>
+                    06
+                </strong>
+
+                <span>
+                    Core Expertise Domains
+                </span>
+
+            </div>
+
+
+            <div class="hero-stat">
+
+                <strong>
+                    20+
+                </strong>
+
+                <span>
+                    Technologies & Platforms
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     MAIN CONTENT
+========================================================== -->
+
+<main class="expertise-container">
+
+
+    <div class="section-heading">
+
+        <small>
+            CORE EXPERTISE
+        </small>
+
+        <h2>
+            What I Work With
+        </h2>
+
+        <p>
+
+            Technology knowledge combined with practical
+            infrastructure and support work across enterprise
+            networks, cloud platforms, endpoints, systems and
+            business technology services.
+
+        </p>
+
+    </div>
+
+
+    <!-- ======================================================
+         EXPERTISE GRID
+    ======================================================= -->
+
+    <div class="expertise-grid">
+
+
+        <!-- ==================================================
+             1 NETWORK + SECURITY
+        =================================================== -->
+
+        <article class="expertise-card">
+
+
+            <div class="card-header">
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-network-wired"></i>
+
+                </div>
+
+
+                <div class="card-heading">
+
+                    <h3>
+                        Network Infrastructure & Security
+                    </h3>
+
+                    <span>
+                        Cisco · Fortinet · Connectivity
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p class="card-intro">
+
+                Supporting enterprise LAN/WAN connectivity,
+                routing, switching, network security and secure
+                remote access environments.
+
+            </p>
+
+
+            <div class="label">
+                Technologies
+            </div>
+
+
+            <div class="tech-tags">
+
+                <span class="tech-tag">Cisco</span>
+                <span class="tech-tag">Routing & Switching</span>
+                <span class="tech-tag">LAN / WAN</span>
+                <span class="tech-tag">VLAN</span>
+                <span class="tech-tag">STP</span>
+                <span class="tech-tag">OSPF</span>
+                <span class="tech-tag">BGP</span>
+                <span class="tech-tag">TCP/IP</span>
+                <span class="tech-tag">FortiGate</span>
+                <span class="tech-tag">Firewall Policies</span>
+                <span class="tech-tag">VPN</span>
+                <span class="tech-tag">Network Monitoring</span>
+
+            </div>
+
+
+            <div class="label">
+                What I Work On
+            </div>
+
+
+            <div class="work-list">
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Enterprise LAN/WAN connectivity and network support
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Cisco routing, switching and VLAN troubleshooting
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Fortinet firewall policies, filtering and VPN support
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Network monitoring and connectivity troubleshooting
+                </div>
+
+            </div>
+
+
+        </article>
+
+
+        <!-- ==================================================
+             2 AZURE
+        =================================================== -->
+
+        <article class="expertise-card">
+
+
+            <div class="card-header">
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-cloud"></i>
+
+                </div>
+
+
+                <div class="card-heading">
+
+                    <h3>
+                        Microsoft Azure & Cloud Infrastructure
+                    </h3>
+
+                    <span>
+                        Cloud · Networking · Administration
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p class="card-intro">
+
+                Working with Microsoft Azure infrastructure,
+                networking, identity integration and cloud
+                resource administration.
+
+            </p>
+
+
+            <div class="label">
+                Technologies
+            </div>
+
+
+            <div class="tech-tags">
+
+                <span class="tech-tag">Microsoft Azure</span>
+                <span class="tech-tag">Azure Administration</span>
+                <span class="tech-tag">Virtual Networks</span>
+                <span class="tech-tag">Azure Networking</span>
+                <span class="tech-tag">Resource Management</span>
+                <span class="tech-tag">Azure Identity</span>
+                <span class="tech-tag">Network Security</span>
+                <span class="tech-tag">AZ-104</span>
+                <span class="tech-tag">AZ-700</span>
+
+            </div>
+
+
+            <div class="label">
+                What I Work On
+            </div>
+
+
+            <div class="work-list">
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Azure infrastructure and resource administration
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Virtual network and cloud connectivity support
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Azure identity and access-related support
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Cloud infrastructure troubleshooting and operations
+                </div>
+
+            </div>
+
+
+        </article>
+
+
+        <!-- ==================================================
+             3 MICROSOFT CLOUD
+        =================================================== -->
+
+        <article class="expertise-card">
+
+
+            <div class="card-header">
+
+                <div class="card-icon">
+
+                    <i class="fa-brands fa-microsoft"></i>
+
+                </div>
+
+
+                <div class="card-heading">
+
+                    <h3>
+                        Microsoft 365, Identity & Endpoint
+                    </h3>
+
+                    <span>
+                        Entra ID · Intune · Autopilot
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p class="card-intro">
+
+                Supporting Microsoft identity, endpoint,
+                productivity and user management technologies
+                across modern enterprise environments.
+
+            </p>
+
+
+            <div class="label">
+                Technologies
+            </div>
+
+
+            <div class="tech-tags">
+
+                <span class="tech-tag">Microsoft 365</span>
+                <span class="tech-tag">Office 365</span>
+                <span class="tech-tag">Entra ID</span>
+                <span class="tech-tag">Intune</span>
+                <span class="tech-tag">Windows Autopilot</span>
+                <span class="tech-tag">Exchange Online</span>
+                <span class="tech-tag">SharePoint</span>
+                <span class="tech-tag">User Management</span>
+                <span class="tech-tag">Access Management</span>
+
+            </div>
+
+
+            <div class="label">
+                What I Work On
+            </div>
+
+
+            <div class="work-list">
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    User, identity and access management support
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Intune-based endpoint management and support
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Windows Autopilot provisioning workflows
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Microsoft 365, Outlook and collaboration support
+                </div>
+
+            </div>
+
+
+        </article>
+
+
+        <!-- ==================================================
+             4 SYSTEMS SUPPORT
+        =================================================== -->
+
+        <article class="expertise-card">
+
+
+            <div class="card-header">
+
+                <div class="card-icon">
+
+                    <i class="fa-brands fa-windows"></i>
+
+                </div>
+
+
+                <div class="card-heading">
+
+                    <h3>
+                        Systems & Enterprise IT Support
+                    </h3>
+
+                    <span>
+                        Windows · AD · L2 Support
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p class="card-intro">
+
+                Hands-on enterprise support for users,
+                endpoints, Windows environments, applications,
+                hardware and business-critical IT services.
+
+            </p>
+
+
+            <div class="label">
+                Technologies
+            </div>
+
+
+            <div class="tech-tags">
+
+                <span class="tech-tag">Windows Server 2016</span>
+                <span class="tech-tag">Active Directory</span>
+                <span class="tech-tag">Group Policy</span>
+                <span class="tech-tag">Windows 10 / 11</span>
+                <span class="tech-tag">Hardware Support</span>
+                <span class="tech-tag">Software Support</span>
+                <span class="tech-tag">Printer Support</span>
+                <span class="tech-tag">Remote Support</span>
+                <span class="tech-tag">L2 Support</span>
+
+            </div>
+
+
+            <div class="label">
+                What I Work On
+            </div>
+
+
+            <div class="work-list">
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    L2 troubleshooting for enterprise end users
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Windows desktop, hardware and application support
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Active Directory and Windows Server support
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Printer, connectivity, VPN and endpoint troubleshooting
+                </div>
+
+            </div>
+
+
+        </article>
+
+
+        <!-- ==================================================
+             5 OPERATIONS
+        =================================================== -->
+
+        <article class="expertise-card">
+
+
+            <div class="card-header">
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-gears"></i>
+
+                </div>
+
+
+                <div class="card-heading">
+
+                    <h3>
+                        IT Operations & Infrastructure Services
+                    </h3>
+
+                    <span>
+                        ITSM · Assets · Documentation
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p class="card-intro">
+
+                Structured support for day-to-day enterprise IT
+                operations, incidents, service requests,
+                infrastructure records and asset management.
+
+            </p>
+
+
+            <div class="label">
+                Technologies & Practices
+            </div>
+
+
+            <div class="tech-tags">
+
+                <span class="tech-tag">ITSM</span>
+                <span class="tech-tag">Ticketing</span>
+                <span class="tech-tag">Incident Management</span>
+                <span class="tech-tag">Service Requests</span>
+                <span class="tech-tag">Asset Management</span>
+                <span class="tech-tag">Inventory</span>
+                <span class="tech-tag">PPM Reports</span>
+                <span class="tech-tag">SOP</span>
+                <span class="tech-tag">Documentation</span>
+
+            </div>
+
+
+            <div class="label">
+                What I Work On
+            </div>
+
+
+            <div class="work-list">
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Incident and service request handling
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    IT asset and inventory tracking
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Technical reports, SOPs and infrastructure documentation
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Enterprise IT operational and user support
+                </div>
+
+            </div>
+
+
+        </article>
+
+
+        <!-- ==================================================
+             6 BUSINESS + SMART TECH
+        =================================================== -->
+
+        <article class="expertise-card">
+
+
+            <div class="card-header">
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                </div>
+
+
+                <div class="card-heading">
+
+                    <h3>
+                        Business & Smart Technologies
+                    </h3>
+
+                    <span>
+                        Applications · Telephony · Surveillance
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <p class="card-intro">
+
+                Additional hands-on exposure supporting
+                enterprise applications, communication systems,
+                surveillance and smart technology environments.
+
+            </p>
+
+
+            <div class="label">
+                Technologies
+            </div>
+
+
+            <div class="tech-tags">
+
+                <span class="tech-tag">Oracle Database 10g</span>
+                <span class="tech-tag">Oracle Forms</span>
+                <span class="tech-tag">Oracle Reports 6i</span>
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">Power Apps</span>
+                <span class="tech-tag">Cisco Telephony</span>
+                <span class="tech-tag">Avaya</span>
+                <span class="tech-tag">IP CCTV</span>
+                <span class="tech-tag">Access Control</span>
+                <span class="tech-tag">IoT</span>
+
+            </div>
+
+
+            <div class="label">
+                What I Work On
+            </div>
+
+
+            <div class="work-list">
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Enterprise application installation and troubleshooting
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Cisco and Avaya IP telephony support
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    CCTV, IP surveillance and access-control support
+                </div>
+
+                <div class="work-item">
+                    <i class="fa-solid fa-check"></i>
+                    Reporting, Power BI and business technology support
+                </div>
+
+            </div>
+
+
+        </article>
+
+
+    </div>
+
+
+    <!-- ======================================================
+         TECHNOLOGY STACK
+    ======================================================= -->
+
+    <section class="stack-section">
+
+
+        <div class="section-heading">
+
+            <small>
+                SUPPORTING TECHNOLOGIES
+            </small>
+
+            <h2>
+                Infrastructure Technology Stack
+            </h2>
+
+            <p>
+
+                Additional technologies that support complete
+                enterprise infrastructure and end-user services.
+
+            </p>
+
+        </div>
+
+
+        <div class="stack-grid">
+
+
+            <div class="stack-box">
+
+                <i class="fa-solid fa-phone-volume"></i>
+
+                <strong>
+                    IP Telephony
+                </strong>
+
+                Cisco & Avaya communication systems
+
+            </div>
+
+
+            <div class="stack-box">
+
+                <i class="fa-solid fa-video"></i>
+
+                <strong>
+                    Surveillance
+                </strong>
+
+                IP CCTV, cameras and monitoring systems
+
+            </div>
+
+
+            <div class="stack-box">
+
+                <i class="fa-solid fa-database"></i>
+
+                <strong>
+                    Enterprise Applications
+                </strong>
+
+                Oracle database and application support
+
+            </div>
+
+
+            <div class="stack-box">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                <strong>
+                    Reporting & Apps
+                </strong>
+
+                Power BI, Power Apps and operational reporting
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ======================================================
+         OPERATIONAL PRACTICES
+    ======================================================= -->
+
+    <section class="practice-section">
+
+
+        <div class="section-heading">
+
+            <small>
+                OPERATIONAL PRACTICES
+            </small>
+
+            <h2>
+                How I Support IT Operations
+            </h2>
+
+            <p>
+
+                Practical operational activities supporting
+                reliable infrastructure, users and IT services.
+
+            </p>
+
+        </div>
+
+
+        <div class="practice-grid">
+
+
+            <div class="practice">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                Technical Documentation
+
+            </div>
+
+
+            <div class="practice">
+
+                <i class="fa-solid fa-list-check"></i>
+
+                SOP Preparation
+
+            </div>
+
+
+            <div class="practice">
+
+                <i class="fa-solid fa-boxes-stacked"></i>
+
+                Asset & Inventory Management
+
+            </div>
+
+
+            <div class="practice">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                Incident Documentation
+
+            </div>
+
+
+            <div class="practice">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                PPM & Operational Reporting
+
+            </div>
+
+
+            <div class="practice">
+
+                <i class="fa-solid fa-headset"></i>
+
+                End User Support
+
+            </div>
+
+
+            <div class="practice">
+
+                <i class="fa-solid fa-diagram-project"></i>
+
+                Network Documentation
+
+            </div>
+
+
+            <div class="practice">
+
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                Technical Troubleshooting
+
+            </div>
+
+
+            <div class="practice">
+
+                <i class="fa-solid fa-desktop"></i>
+
+                Remote Support
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ======================================================
+         SUPPORT WORKFLOW
+    ======================================================= -->
+
+    <section class="workflow-section">
+
+
+        <div class="section-heading">
+
+            <small>
+                SUPPORT APPROACH
+            </small>
+
+            <h2>
+                Practical IT Support Workflow
+            </h2>
+
+            <p>
+
+                A structured approach to understanding,
+                troubleshooting and supporting enterprise
+                technology issues.
+
+            </p>
+
+        </div>
+
+
+        <div class="workflow">
+
+
+            <div class="workflow-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <strong>
+                    Identify
+                </strong>
+
+                <span>
+                    Understand the issue
+                </span>
+
+            </div>
+
+
+            <div class="workflow-box">
+
+                <i class="fa-solid fa-stethoscope"></i>
+
+                <strong>
+                    Diagnose
+                </strong>
+
+                <span>
+                    Find the root cause
+                </span>
+
+            </div>
+
+
+            <div class="workflow-box">
+
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                <strong>
+                    Resolve
+                </strong>
+
+                <span>
+                    Apply practical fix
+                </span>
+
+            </div>
+
+
+            <div class="workflow-box">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <strong>
+                    Verify
+                </strong>
+
+                <span>
+                    Confirm service stability
+                </span>
+
+            </div>
+
+
+            <div class="workflow-box">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+                <strong>
+                    Document
+                </strong>
+
+                <span>
+                    Record the solution
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ======================================================
+         CTA
+    ======================================================= -->
+
+    <section class="cta">
+
+
+        <h2>
+            Network. Cloud. Systems. Support.
+        </h2>
+
+
+        <p>
+
+            Bringing practical infrastructure experience
+            together with modern Microsoft cloud and endpoint
+            technologies to support reliable enterprise IT
+            environments.
+
+        </p>
+
+
+        <div class="cta-buttons">
+
+
+            <a href="experience.html"
+               class="cta-btn cta-primary">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                View Experience
+
+            </a>
+
+
+            <a href="certifications.html"
+               class="cta-btn cta-secondary">
+
+                <i class="fa-solid fa-certificate"></i>
+
+                Certifications
+
+            </a>
+
+
+            <a href="contact.html"
+               class="cta-btn cta-secondary">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                Contact Me
+
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+<!-- ==========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="expertise-footer">
+
+    <strong>
+        Tanweer Ansari
+    </strong>
+
+    · Network & IT Support Engineer
+
+    <br><br>
+
+    Enterprise Networking · Microsoft Cloud · Security · Systems · IT Operations
+
+</footer>
+
+
+<!-- ==========================================================
+     BACK TO TOP
+========================================================== -->
+
+<button id="expertiseBackTop"
+        aria-label="Back to top">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+<!-- ==========================================================
+     EXISTING WEBSITE JS
+========================================================== -->
+
+<script src="script.js"></script>
+
+
+<!-- ==========================================================
+     PAGE JAVASCRIPT
+========================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        /* ==============================================
+           MOBILE MENU
+        ============================================== */
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const navMenu =
+            document.getElementById("navMenu");
+
+
+        if(menuToggle && navMenu){
+
+            menuToggle.addEventListener(
+                "click",
+                function(){
+
+                    navMenu.classList.toggle("active");
+
+                }
+            );
+
+        }
+
+
+        /* ==============================================
+           CLOSE MENU AFTER CLICK
+        ============================================== */
+
+        if(navMenu){
+
+            const navLinks =
+                navMenu.querySelectorAll("a");
+
+            navLinks.forEach(
+                function(link){
+
+                    link.addEventListener(
+                        "click",
+                        function(){
+
+                            navMenu.classList.remove("active");
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* ==============================================
+           BACK TO TOP
+        ============================================== */
+
+        const backTop =
+            document.getElementById(
+                "expertiseBackTop"
+            );
+
+
+        window.addEventListener(
+            "scroll",
+            function(){
+
+                if(
+                    window.scrollY > 550
+                ){
+
+                    backTop.style.display =
+                        "flex";
+
+                }
+                else{
+
+                    backTop.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+
+        backTop.addEventListener(
+            "click",
+            function(){
+
+                window.scrollTo({
+
+                    top:0,
+
+                    behavior:"smooth"
+
+                });
+
+            }
+        );
+
+
+        /* ==============================================
+           CARD MOUSE GLOW / TILT
+        ============================================== */
+
+        const cards =
+            document.querySelectorAll(
+                ".expertise-card"
+            );
+
+
+        cards.forEach(
+            function(card){
+
+                card.addEventListener(
+                    "mousemove",
+                    function(event){
+
+                        const rect =
+                            card.getBoundingClientRect();
+
+                        const x =
+                            event.clientX -
+                            rect.left;
+
+                        const y =
+                            event.clientY -
+                            rect.top;
+
+                        const centerX =
+                            rect.width / 2;
+
+                        const centerY =
+                            rect.height / 2;
+
+                        const rotateX =
+                            (
+                                centerY - y
+                            ) / 55;
+
+                        const rotateY =
+                            (
+                                x - centerX
+                            ) / 55;
+
+
+                        card.style.transform =
+                            `perspective(900px)
+                             rotateX(${rotateX}deg)
+                             rotateY(${rotateY}deg)
+                             translateY(-7px)`;
+
+                    }
+                );
+
+
+                card.addEventListener(
+                    "mouseleave",
+                    function(){
+
+                        card.style.transform = "";
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

@@ -31,8 +31,8 @@
           href="https://fonts.gstatic.com"
           crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
 
 
     <!-- MAIN CSS -->
@@ -1389,7 +1389,312 @@ footer {
 
 }
 
+/* =====================================================
+   PREMIUM HANDWRITTEN ABOUT HERO
+===================================================== */
 
+.about-hero {
+    width: min(900px, 88%);
+    padding: 28px 34px 30px;
+
+    transform-style: preserve-3d;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,.018) 0px,
+            rgba(255,255,255,.018) 1px,
+            transparent 1px,
+            transparent 31px
+        ),
+        radial-gradient(
+            circle at 12% 18%,
+            rgba(0,229,255,.14),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 88% 20%,
+            rgba(255,75,180,.13),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(11,31,55,.98),
+            rgba(13,20,48,.98)
+        );
+
+    border:
+        1px solid rgba(95,190,255,.32);
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.34),
+        0 0 28px rgba(0,190,255,.10),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    animation:
+        aboutFloat 5s ease-in-out infinite;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+
+/* ABOUT ME */
+
+.about-hero .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    width: fit-content;
+
+    margin: 0 0 6px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    letter-spacing: .5px;
+    text-transform: none;
+
+    color: #79eaff;
+
+    text-shadow:
+        0 0 10px rgba(0,220,255,.35);
+
+    transform: rotate(-2deg);
+}
+
+
+/* PEN */
+
+.about-hero .eyebrow .fa-pen-nib {
+    color: #ff61b8;
+
+    animation:
+        penWriting 1.3s ease-in-out infinite alternate;
+}
+
+
+/* PENCIL */
+
+.about-hero .eyebrow .fa-pencil {
+    color: #ffd166;
+
+    animation:
+        pencilWriting 1.6s ease-in-out infinite alternate;
+}
+
+
+/* MAIN HANDWRITTEN TITLE */
+
+.about-hero h1 {
+    max-width: 800px;
+
+    margin: 0 0 12px;
+
+    font-family: "Caveat", cursive;
+
+    font-size:
+        clamp(30px, 3.5vw, 43px);
+
+    font-weight: 700;
+
+    line-height: 1.08;
+
+    letter-spacing: .2px;
+
+    transform:
+        perspective(700px)
+        rotateX(2deg)
+        rotateZ(-.4deg);
+
+    text-shadow:
+        0 3px 2px rgba(0,0,0,.25);
+}
+
+
+/* COLORFUL TEXT */
+
+.about-hero .gradient-text {
+    background:
+        linear-gradient(
+            90deg,
+            #39e7ff,
+            #668cff,
+            #b86cff,
+            #ff5cb8,
+            #ffd166,
+            #39e7ff
+        );
+
+    background-size:
+        300% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation:
+        handwrittenColor 6s linear infinite;
+}
+
+
+/* HANDWRITTEN DESCRIPTION */
+
+.about-hero .hero-description {
+    max-width: 810px;
+
+    margin: 0;
+
+    padding: 13px 17px;
+
+    font-family: "Caveat", cursive;
+
+    font-size:
+        clamp(17px, 1.7vw, 20px);
+
+    font-weight: 500;
+
+    line-height: 1.42;
+
+    letter-spacing: .1px;
+
+    color: #d5e2f1;
+
+    border-left:
+        3px solid rgba(255,91,184,.72);
+
+    border-radius:
+        0 12px 12px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.045),
+            transparent
+        );
+
+    text-shadow:
+        0 1px 7px rgba(0,0,0,.25);
+
+    transition:
+        transform .35s ease,
+        color .35s ease;
+}
+
+
+/* 3D HOVER */
+
+.about-hero:hover {
+    animation-play-state: paused;
+    transform:
+        perspective(1100px)
+        rotateX(2deg)
+        rotateY(-2deg)
+        translateY(-6px);
+
+    box-shadow:
+        0 28px 70px rgba(0,0,0,.42),
+        0 0 35px rgba(0,220,255,.15),
+        0 0 28px rgba(255,75,180,.10);
+}
+
+
+.about-hero:hover .hero-description {
+    transform:
+        translateZ(18px);
+
+    color:
+        #ffffff;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes aboutFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+@keyframes handwrittenColor {
+
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 300% center;
+    }
+}
+
+
+@keyframes penWriting {
+
+    from {
+        transform:
+            rotate(-16deg)
+            translateX(0);
+    }
+
+    to {
+        transform:
+            rotate(-8deg)
+            translateX(5px);
+    }
+}
+
+
+@keyframes pencilWriting {
+
+    from {
+        transform:
+            rotate(13deg)
+            translateY(0);
+    }
+
+    to {
+        transform:
+            rotate(6deg)
+            translateY(-4px);
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width:700px) {
+
+    .about-hero {
+        width: 92%;
+
+        padding:
+            24px 20px;
+    }
+
+    .about-hero .eyebrow {
+        font-size: 19px;
+    }
+
+    .about-hero h1 {
+        font-size: 30px;
+    }
+
+    .about-hero .hero-description {
+        font-size: 17px;
+        padding: 11px 13px;
+    }
+}
 </style>
 
 </head>
@@ -1515,12 +1820,15 @@ footer {
 
 <section class="about-hero">
 
+<div class="eyebrow">
 
-    <div class="eyebrow">
+    <i class="fa-solid fa-pen-nib"></i>
 
-        ABOUT ME
+    ABOUT ME
 
-    </div>
+    <i class="fa-solid fa-pencil"></i>
+
+</div>
 
 
 

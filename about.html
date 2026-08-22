@@ -1695,6 +1695,1179 @@ footer {
         padding: 11px 13px;
     }
 }
+   /* =====================================================
+   ABOUT PAGE - PROFESSIONAL COLOR THEME
+===================================================== */
+
+body {
+
+    background:
+
+        radial-gradient(
+            circle at 8% 18%,
+            rgba(0, 217, 255, .13),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 92% 18%,
+            rgba(139, 92, 246, .15),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 20% 82%,
+            rgba(0, 230, 118, .08),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 76, 170, .09),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            145deg,
+            #03111f,
+            #071a30 48%,
+            #101638
+        ) !important;
+}
+
+
+/* Technical cards more premium */
+
+.technical-card {
+
+    backdrop-filter:
+        blur(12px);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.065),
+            rgba(255,255,255,.018)
+        ) !important;
+
+}
+
+
+/* Section title colorful */
+
+.section-heading h2 {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #68ddff,
+            #9182ff,
+            #ff72c5,
+            #ffffff
+        );
+
+    background-size:
+        250% auto;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+    animation:
+        opsTitleColor 7s linear infinite;
+}
+
+
+/* =====================================================
+   OPERATIONS COMMAND SECTION
+===================================================== */
+
+.ops-command-section {
+
+    margin:
+        95px 0 105px;
+
+    position:
+        relative;
+
+}
+
+
+.ops-heading {
+
+    margin-bottom:
+        32px;
+
+}
+
+
+/* =====================================================
+   MAIN COMMAND CENTER
+===================================================== */
+
+.ops-command-center {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        235px
+        minmax(0, 1.15fr);
+
+    align-items:
+        center;
+
+    gap:
+        25px;
+
+    padding:
+        35px;
+
+    border-radius:
+        28px;
+
+    border:
+        1px solid rgba(81,195,255,.25);
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(54,105,255,.13),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(10,34,58,.92),
+            rgba(9,20,46,.96)
+        );
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(0,0,0,.38),
+
+        inset 0 1px 0
+        rgba(255,255,255,.08),
+
+        0 0 35px
+        rgba(0,195,255,.07);
+
+}
+
+
+/* =====================================================
+   MOVING SCANNER LIGHT
+===================================================== */
+
+.ops-scan-light {
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -35%;
+
+    width:
+        30%;
+
+    height:
+        100%;
+
+    pointer-events:
+        none;
+
+    z-index:
+        1;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,229,255,.02),
+            rgba(0,229,255,.10),
+            rgba(160,100,255,.09),
+            transparent
+        );
+
+    transform:
+        skewX(-18deg);
+
+    animation:
+        opsScanner 6s linear infinite;
+
+}
+
+
+/* =====================================================
+   SIDE HEADINGS
+===================================================== */
+
+.ops-side,
+.ops-process-side,
+.ops-hub {
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+}
+
+
+.ops-side-label {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    margin-bottom:
+        15px;
+
+    color:
+        #7de8ff;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1.5px;
+
+}
+
+
+.ops-side-label i {
+
+    color:
+        #ff6ec7;
+
+    font-size:
+        14px;
+
+}
+
+
+/* =====================================================
+   DAY TO DAY TASK GRID
+===================================================== */
+
+.ops-task-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+    gap:
+        10px;
+
+}
+
+
+.ops-task {
+
+    --task:
+        #00e5ff;
+
+    min-height:
+        79px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+    padding:
+        12px;
+
+    border-radius:
+        14px;
+
+    border:
+
+        1px solid
+        color-mix(
+            in srgb,
+            var(--task) 30%,
+            transparent
+        );
+
+    background:
+
+        linear-gradient(
+            145deg,
+            color-mix(
+                in srgb,
+                var(--task) 9%,
+                rgba(255,255,255,.025)
+            ),
+            rgba(255,255,255,.018)
+        );
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.05);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+
+.ops-task > i {
+
+    width:
+        36px;
+
+    height:
+        36px;
+
+    flex:
+        0 0 36px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        11px;
+
+    color:
+        var(--task);
+
+    font-size:
+        15px;
+
+    background:
+
+        color-mix(
+            in srgb,
+            var(--task) 12%,
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 12px
+        color-mix(
+            in srgb,
+            var(--task) 25%,
+            transparent
+        );
+
+}
+
+
+.ops-task strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        3px;
+
+    color:
+        #eef7ff;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.25;
+
+}
+
+
+.ops-task span {
+
+    color:
+        #7890a8;
+
+    font-size:
+        8px;
+
+    line-height:
+        1.35;
+
+}
+
+
+.ops-task:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.025);
+
+    border-color:
+        var(--task);
+
+    box-shadow:
+
+        0 12px 25px
+        rgba(0,0,0,.28),
+
+        0 0 18px
+        color-mix(
+            in srgb,
+            var(--task) 20%,
+            transparent
+        );
+
+}
+
+
+/* DIFFERENT COLORS */
+
+.ops-cyan {
+    --task: #00e5ff;
+}
+
+.ops-purple {
+    --task: #9b78ff;
+}
+
+.ops-green {
+    --task: #39eaa3;
+}
+
+.ops-orange {
+    --task: #ffad4d;
+}
+
+.ops-pink {
+    --task: #ff64ba;
+}
+
+.ops-blue {
+    --task: #4d8dff;
+}
+
+
+/* =====================================================
+   CENTRAL SUPPORT HUB
+===================================================== */
+
+.ops-hub {
+
+    height:
+        235px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+.ops-hub-ring {
+
+    position:
+        absolute;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid rgba(75,210,255,.30);
+
+}
+
+
+.ring-one {
+
+    width:
+        205px;
+
+    height:
+        205px;
+
+    animation:
+        opsRingRotate 12s linear infinite;
+
+}
+
+
+.ring-two {
+
+    width:
+        165px;
+
+    height:
+        165px;
+
+    border-style:
+        dashed;
+
+    border-color:
+        rgba(169,105,255,.42);
+
+    animation:
+        opsRingRotateReverse 9s linear infinite;
+
+}
+
+
+.ring-one::before,
+.ring-two::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        8px;
+
+    height:
+        8px;
+
+    top:
+        -4px;
+
+    left:
+        50%;
+
+    border-radius:
+        50%;
+
+    background:
+        #55eaff;
+
+    box-shadow:
+
+        0 0 8px #55eaff,
+        0 0 18px #55eaff;
+
+}
+
+
+.ring-two::before {
+
+    background:
+        #ff69bd;
+
+    box-shadow:
+
+        0 0 8px #ff69bd,
+        0 0 18px #ff69bd;
+
+}
+
+
+.ops-hub-core {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    width:
+        130px;
+
+    height:
+        130px;
+
+    padding:
+        13px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle at 30% 25%,
+            rgba(255,255,255,.18),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            145deg,
+            #0876a7,
+            #315cce,
+            #7745c7
+        );
+
+    border:
+        2px solid rgba(255,255,255,.45);
+
+    box-shadow:
+
+        0 15px 35px
+        rgba(0,0,0,.40),
+
+        0 0 22px
+        rgba(0,220,255,.42),
+
+        0 0 38px
+        rgba(140,80,255,.28);
+
+    animation:
+        opsHubPulse 2.2s ease-in-out infinite;
+
+}
+
+
+.ops-hub-icon {
+
+    font-size:
+        27px;
+
+    color:
+        #ffffff;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.ops-hub-core small {
+
+    color:
+        #b9f5ff;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.ops-hub-core strong {
+
+    margin:
+        2px 0 4px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        16px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.ops-hub-core span {
+
+    max-width:
+        100px;
+
+    color:
+        #d9e7ff;
+
+    font-size:
+        6px;
+
+    line-height:
+        1.3;
+
+}
+
+
+/* =====================================================
+   SUPPORT PROCESS
+===================================================== */
+
+.ops-process {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+}
+
+
+.ops-step {
+
+    --step:
+        #00e5ff;
+
+    min-height:
+        52px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    padding:
+        9px 12px;
+
+    border-radius:
+        13px;
+
+    border:
+
+        1px solid
+        color-mix(
+            in srgb,
+            var(--step) 28%,
+            transparent
+        );
+
+    background:
+
+        linear-gradient(
+            90deg,
+            color-mix(
+                in srgb,
+                var(--step) 10%,
+                transparent
+            ),
+            rgba(255,255,255,.018)
+        );
+
+    transition:
+        .3s ease;
+
+}
+
+
+.ops-step-icon {
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    flex:
+        0 0 34px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    color:
+        var(--step);
+
+    border:
+
+        1px solid
+        color-mix(
+            in srgb,
+            var(--step) 45%,
+            transparent
+        );
+
+    background:
+
+        color-mix(
+            in srgb,
+            var(--step) 10%,
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 12px
+        color-mix(
+            in srgb,
+            var(--step) 20%,
+            transparent
+        );
+
+}
+
+
+.ops-step small {
+
+    color:
+        var(--step);
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.ops-step strong {
+
+    display:
+        block;
+
+    color:
+        #ffffff;
+
+    font-size:
+        11px;
+
+}
+
+
+.ops-step span {
+
+    display:
+        block;
+
+    color:
+        #7890a8;
+
+    font-size:
+        8px;
+
+}
+
+
+.step-1 {
+    --step: #00e5ff;
+}
+
+.step-2 {
+    --step: #8c7dff;
+}
+
+.step-3 {
+    --step: #ff61b8;
+}
+
+.step-4 {
+    --step: #38e893;
+}
+
+.step-5 {
+    --step: #ffc857;
+}
+
+
+.ops-step:hover {
+
+    transform:
+        translateX(6px);
+
+    border-color:
+        var(--step);
+
+}
+
+
+/* =====================================================
+   MOVING FLOW CONNECTOR
+===================================================== */
+
+.ops-flow-line {
+
+    position:
+        relative;
+
+    width:
+        2px;
+
+    height:
+        13px;
+
+    margin-left:
+        28px;
+
+    overflow:
+        hidden;
+
+    background:
+        rgba(110,190,255,.16);
+
+}
+
+
+.ops-flow-line span {
+
+    position:
+        absolute;
+
+    top:
+        -10px;
+
+    left:
+        0;
+
+    width:
+        2px;
+
+    height:
+        9px;
+
+    border-radius:
+        10px;
+
+    background:
+        #62ecff;
+
+    box-shadow:
+        0 0 10px #62ecff;
+
+    animation:
+        opsDataFlow 1.15s linear infinite;
+
+}
+
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes opsScanner {
+
+    0% {
+        left: -35%;
+    }
+
+    100% {
+        left: 125%;
+    }
+
+}
+
+
+@keyframes opsRingRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes opsRingRotateReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+@keyframes opsHubPulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+        filter:
+            brightness(1);
+    }
+
+    50% {
+
+        transform:
+            scale(1.045);
+
+        filter:
+            brightness(1.22);
+    }
+
+}
+
+
+@keyframes opsDataFlow {
+
+    from {
+        top: -10px;
+    }
+
+    to {
+        top: 15px;
+    }
+
+}
+
+
+@keyframes opsTitleColor {
+
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: 250% center;
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width:1000px) {
+
+    .ops-command-center {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            28px;
+
+    }
+
+
+    .ops-hub {
+
+        order:
+            -1;
+
+        height:
+            205px;
+
+    }
+
+
+    .ops-task-grid {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:600px) {
+
+    .ops-command-center {
+
+        padding:
+            22px 16px;
+
+        border-radius:
+            20px;
+
+    }
+
+
+    .ops-task-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .ops-task {
+
+        min-height:
+            68px;
+
+    }
+
+
+    .ops-heading h2 {
+
+        font-size:
+            31px;
+
+    }
+
+} 
 </style>
 
 </head>
@@ -2230,117 +3403,368 @@ footer {
 
 
 <!-- =====================================================
-     IT OPERATIONS
+     IT OPERATIONS & SUPPORT LIFECYCLE
 ===================================================== -->
 
-<section class="practice-section">
+<section class="ops-command-section">
 
-    <div class="section-heading">
+    <div class="section-heading ops-heading">
 
         <small>
-            IT OPERATIONS
+            IT OPERATIONS & SUPPORT
         </small>
 
         <h2>
-            Day-to-Day Support
+            IT Operations & Support Lifecycle
         </h2>
+
+        <p>
+            Day-to-day enterprise IT support from issue identification
+            and troubleshooting to resolution, verification and documentation.
+        </p>
 
     </div>
 
 
-    <div class="practice-grid">
+    <div class="ops-command-center">
 
-        <div class="practice">
-            <i class="fa-solid fa-file-lines"></i>
-            Documentation & SOPs
+
+        <!-- MOVING LIGHT -->
+
+        <div class="ops-scan-light"></div>
+
+
+        <!-- =========================
+             DAILY OPERATIONS
+        ========================== -->
+
+        <div class="ops-side">
+
+            <div class="ops-side-label">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                <span>DAY-TO-DAY OPERATIONS</span>
+
+            </div>
+
+
+            <div class="ops-task-grid">
+
+
+                <div class="ops-task ops-cyan">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    <div>
+
+                        <strong>
+                            End User Support
+                        </strong>
+
+                        <span>
+                            User assistance & service support
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ops-task ops-purple">
+
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                    <div>
+
+                        <strong>
+                            Troubleshooting
+                        </strong>
+
+                        <span>
+                            Diagnose technical issues
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ops-task ops-green">
+
+                    <i class="fa-solid fa-list-check"></i>
+
+                    <div>
+
+                        <strong>
+                            Incidents & Requests
+                        </strong>
+
+                        <span>
+                            Ticket handling & follow-up
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ops-task ops-orange">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                    <div>
+
+                        <strong>
+                            Asset & Inventory
+                        </strong>
+
+                        <span>
+                            IT asset tracking & records
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ops-task ops-pink">
+
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    <div>
+
+                        <strong>
+                            Documentation & SOPs
+                        </strong>
+
+                        <span>
+                            Procedures & technical records
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ops-task ops-blue">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <div>
+
+                        <strong>
+                            PPM Reporting
+                        </strong>
+
+                        <span>
+                            Operational reporting & tracking
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
         </div>
 
-        <div class="practice">
-            <i class="fa-solid fa-boxes-stacked"></i>
-            Asset & Inventory
+
+        <!-- =========================
+             CENTRAL HUB
+        ========================== -->
+
+        <div class="ops-hub">
+
+            <div class="ops-hub-ring ring-one"></div>
+
+            <div class="ops-hub-ring ring-two"></div>
+
+            <div class="ops-hub-core">
+
+                <div class="ops-hub-icon">
+
+                    <i class="fa-solid fa-laptop-code"></i>
+
+                </div>
+
+                <small>
+                    ENTERPRISE IT
+                </small>
+
+                <strong>
+                    SUPPORT
+                </strong>
+
+                <span>
+                    Reliable • Structured • Documented
+                </span>
+
+            </div>
+
         </div>
 
-        <div class="practice">
-            <i class="fa-solid fa-list-check"></i>
-            Incidents & Requests
+
+        <!-- =========================
+             SUPPORT PROCESS
+        ========================== -->
+
+        <div class="ops-process-side">
+
+            <div class="ops-side-label">
+
+                <i class="fa-solid fa-route"></i>
+
+                <span>SUPPORT APPROACH</span>
+
+            </div>
+
+
+            <div class="ops-process">
+
+
+                <div class="ops-step step-1">
+
+                    <div class="ops-step-icon">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>01</small>
+
+                        <strong>Identify</strong>
+
+                        <span>Understand issue</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ops-flow-line">
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="ops-step step-2">
+
+                    <div class="ops-step-icon">
+
+                        <i class="fa-solid fa-stethoscope"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>02</small>
+
+                        <strong>Diagnose</strong>
+
+                        <span>Find root cause</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ops-flow-line">
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="ops-step step-3">
+
+                    <div class="ops-step-icon">
+
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>03</small>
+
+                        <strong>Resolve</strong>
+
+                        <span>Apply solution</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ops-flow-line">
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="ops-step step-4">
+
+                    <div class="ops-step-icon">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>04</small>
+
+                        <strong>Verify</strong>
+
+                        <span>Confirm stability</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ops-flow-line">
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="ops-step step-5">
+
+                    <div class="ops-step-icon">
+
+                        <i class="fa-solid fa-file-circle-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>05</small>
+
+                        <strong>Document</strong>
+
+                        <span>Record solution</span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
         </div>
 
-        <div class="practice">
-            <i class="fa-solid fa-chart-line"></i>
-            PPM Reporting
-        </div>
-
-        <div class="practice">
-            <i class="fa-solid fa-headset"></i>
-            End User Support
-        </div>
-
-        <div class="practice">
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-            Troubleshooting
-        </div>
 
     </div>
 
 </section>
-
-
-
-<!-- =====================================================
-     SUPPORT WORKFLOW
-===================================================== -->
-
-<section class="workflow-section">
-
-    <div class="section-heading">
-
-        <small>
-            SUPPORT APPROACH
-        </small>
-
-        <h2>
-            Identify → Diagnose → Resolve → Verify → Document
-        </h2>
-
-    </div>
-
-
-    <div class="workflow">
-
-        <div class="workflow-box">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <strong>Identify</strong>
-            <span>Understand issue</span>
-        </div>
-
-        <div class="workflow-box">
-            <i class="fa-solid fa-stethoscope"></i>
-            <strong>Diagnose</strong>
-            <span>Find cause</span>
-        </div>
-
-        <div class="workflow-box">
-            <i class="fa-solid fa-screwdriver-wrench"></i>
-            <strong>Resolve</strong>
-            <span>Apply fix</span>
-        </div>
-
-        <div class="workflow-box">
-            <i class="fa-solid fa-circle-check"></i>
-            <strong>Verify</strong>
-            <span>Confirm stability</span>
-        </div>
-
-        <div class="workflow-box">
-            <i class="fa-solid fa-file-circle-check"></i>
-            <strong>Document</strong>
-            <span>Record solution</span>
-        </div>
-
-    </div>
-
-</section>
-
 
 </main>
 

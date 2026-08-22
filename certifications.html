@@ -1107,6 +1107,259 @@ body {
             scale(1.07);
     }
 }
+
+
+/* =====================================================
+   ALL CERTIFICATE BRAND ICONS
+===================================================== */
+
+.brand-icon {
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    font-size: 21px;
+
+    color: white;
+
+    transform-style: preserve-3d;
+
+    border:
+        1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        0 6px 12px rgba(0,0,0,.4),
+        inset 0 1px 2px rgba(255,255,255,.45);
+
+    animation:
+        brandIconFloat 2.2s ease-in-out infinite;
+}
+
+
+/* CISCO */
+
+.cisco-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #00bceb,
+            #0067a0
+        );
+
+    box-shadow:
+        0 0 12px rgba(0,188,235,.55),
+        0 6px 12px rgba(0,0,0,.4);
+}
+
+
+/* FORTINET */
+
+.fortinet-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3b30,
+            #a90000
+        );
+
+    box-shadow:
+        0 0 12px rgba(255,50,50,.55),
+        0 6px 12px rgba(0,0,0,.4);
+}
+
+
+/* ITIL */
+
+.itil-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #a855f7,
+            #5b21b6
+        );
+
+    box-shadow:
+        0 0 12px rgba(168,85,247,.6),
+        0 6px 12px rgba(0,0,0,.4);
+}
+
+
+/* CYBER SECURITY */
+
+.cyber-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #00e676,
+            #007c43
+        );
+
+    box-shadow:
+        0 0 12px rgba(0,230,118,.6),
+        0 6px 12px rgba(0,0,0,.4);
+}
+
+
+/* HCM */
+
+.hcm-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9800,
+            #d35400
+        );
+
+    box-shadow:
+        0 0 12px rgba(255,152,0,.6),
+        0 6px 12px rgba(0,0,0,.4);
+}
+
+
+/* SCE */
+
+.sce-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #00c6ff,
+            #0072ff
+        );
+
+    box-shadow:
+        0 0 12px rgba(0,198,255,.6),
+        0 6px 12px rgba(0,0,0,.4);
+}
+
+
+/* SEDER */
+
+.seder-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd166,
+            #b77900
+        );
+
+    box-shadow:
+        0 0 12px rgba(255,209,102,.55),
+        0 6px 12px rgba(0,0,0,.4);
+}
+
+
+/* AI */
+
+.ai-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff3cac,
+            #784ba0,
+            #2b86c5
+        );
+
+    background-size: 200% 200%;
+
+    box-shadow:
+        0 0 15px rgba(180,80,255,.65),
+        0 6px 12px rgba(0,0,0,.4);
+
+    animation:
+        brandIconFloat 2.2s ease-in-out infinite,
+        aiColorMove 4s linear infinite;
+}
+
+
+/* PYTHON */
+
+.python-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #3776ab,
+            #ffd343
+        );
+
+    color: white;
+
+    box-shadow:
+        0 0 15px rgba(55,118,171,.65),
+        0 6px 12px rgba(0,0,0,.4);
+}
+
+
+/* =====================================================
+   BRAND ICON 3D FLOAT
+===================================================== */
+
+@keyframes brandIconFloat {
+
+    0%,
+    100% {
+
+        transform:
+            perspective(500px)
+            rotateY(-7deg)
+            rotateX(4deg)
+            translateY(0);
+
+        filter:
+            brightness(1);
+    }
+
+    50% {
+
+        transform:
+            perspective(500px)
+            rotateY(7deg)
+            rotateX(-3deg)
+            translateY(-3px)
+            scale(1.08);
+
+        filter:
+            brightness(1.35);
+    }
+}
+
+
+/* =====================================================
+   AI COLOR MOVEMENT
+===================================================== */
+
+@keyframes aiColorMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+      
 </style>
 </head>
 
@@ -1217,40 +1470,150 @@ body {
 <section class="certificate-grid">
 
 
-    <!-- 1 CCNA -->
+  <!-- =====================================================
+     1. CCNA
+===================================================== -->
 
-    <div class="certificate-card">
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
 
         <img
             src="./ccna.jpg"
             alt="CCNA Certificate">
 
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>PORTFOLIO PREVIEW</strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
     </div>
 
+    <div class="certificate-title certificate-title-logo">
 
-    <!-- 2 CCNP -->
+        <div class="brand-icon cisco-icon">
+            <i class="fa-solid fa-network-wired"></i>
+        </div>
 
-    <div class="certificate-card">
+        <div class="certificate-title-text">
+
+            <strong>CCNA</strong>
+
+            <span>
+                Cisco Networking Certification
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     2. CCNP
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
 
         <img
             src="./ccnp.jpg"
             alt="CCNP Certificate">
 
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>PORTFOLIO PREVIEW</strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
     </div>
 
+    <div class="certificate-title certificate-title-logo">
 
-    <!-- 3 FORTINET -->
+        <div class="brand-icon cisco-icon">
+            <i class="fa-solid fa-network-wired"></i>
+        </div>
 
-    <div class="certificate-card">
+        <div class="certificate-title-text">
+
+            <strong>CCNP</strong>
+
+            <span>
+                Cisco Professional Networking
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     3. FORTINET
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
 
         <img
             src="./fortinet.jpg"
             alt="Fortinet Certificate">
 
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>PORTFOLIO PREVIEW</strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
     </div>
 
+    <div class="certificate-title certificate-title-logo">
 
-<!-- 4 AZURE 104 - PROTECTED TEST -->
+        <div class="brand-icon fortinet-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>FORTINET</strong>
+
+            <span>
+                Fortinet Network Security
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     4. AZ-104
+===================================================== -->
 
 <div class="protected-certificate-item">
 
@@ -1264,9 +1627,7 @@ body {
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>
-                PORTFOLIO PREVIEW
-            </strong>
+            <strong>PORTFOLIO PREVIEW</strong>
 
             <span>
                 Original Certificate Available on Request
@@ -1276,119 +1637,598 @@ body {
 
     </div>
 
-   <div class="certificate-title certificate-title-logo">
+    <div class="certificate-title certificate-title-logo">
 
-    <div class="microsoft-logo" aria-hidden="true">
+        <div class="microsoft-logo" aria-hidden="true">
 
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
 
-    </div>
+        </div>
 
-    <div class="certificate-title-text">
+        <div class="certificate-title-text">
 
-        <strong>AZ-104</strong>
+            <strong>AZ-104</strong>
 
-        <span>
-            Microsoft Azure Administrator
-        </span>
+            <span>
+                Microsoft Azure Administrator
+            </span>
+
+        </div>
 
     </div>
 
 </div>
 
-</div>
 
+<!-- =====================================================
+     5. AZ-700
+===================================================== -->
 
-    <!-- 5 AZURE 700 -->
+<div class="protected-certificate-item">
 
-    <div class="certificate-card">
+    <div class="certificate-card protected-test">
 
         <img
             src="./azure700.jpg"
             alt="Azure AZ-700 Certificate">
 
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>PORTFOLIO PREVIEW</strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
     </div>
 
+    <div class="certificate-title certificate-title-logo">
 
-    <!-- 6 ITIL -->
+        <div class="microsoft-logo" aria-hidden="true">
 
-    <div class="certificate-card">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>AZ-700</strong>
+
+            <span>
+                Microsoft Azure Network Engineer
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     6. ITIL
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
 
         <img
             src="./itil.jpg"
             alt="ITIL Certificate">
 
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>PORTFOLIO PREVIEW</strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
     </div>
-   <!-- 7 CYBERSECURITY -->
-<div class="certificate-card">
-    <img src="./certificates/cybersecurity.jpg"
-         alt="Cybersecurity Certificate">
-</div>
 
-<!-- 8 HCM -->
-<div class="certificate-card">
-    <img src="./certificates/hcm.jpg"
-         alt="HCM Certificate">
-</div>
+    <div class="certificate-title certificate-title-logo">
 
-<!-- 9 ITIL -->
-<div class="certificate-card">
-    <img src="./certificates/itil1.jpg"
-         alt="ITIL Certificate">
-</div>
+        <div class="brand-icon itil-icon">
+            <i class="fa-solid fa-diagram-project"></i>
+        </div>
 
-<!-- 10 SCE -->
-<div class="certificate-card">
-    <img src="./certificates/sce.jpg"
-         alt="SCE Certificate">
-</div>
+        <div class="certificate-title-text">
 
-<!-- 11 SEDER -->
-<div class="certificate-card">
-    <img src="./certificates/seder.jpg"
-         alt="SEDER Certificate">
-</div>
+            <strong>ITIL</strong>
 
-<!-- 12 AI ENGINEER -->
-<div class="certificate-card">
-    <img
-        src="./certificates/AI_Engineer.jpg"
-        alt="AI Engineer Certificate">
+            <span>
+                IT Service Management
+            </span>
+
+        </div>
+
+    </div>
+
 </div>
 
 
-<!-- 13 AI TECHNIQUE -->
-<div class="certificate-card">
-    <img
-        src="./certificates/ai_technique.jpg"
-        alt="AI Technique Certificate">
+<!-- =====================================================
+     7. CYBERSECURITY
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
+
+        <img
+            src="./certificates/cybersecurity.jpg"
+            alt="Cybersecurity Certificate">
+
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>PORTFOLIO PREVIEW</strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="certificate-title certificate-title-logo">
+
+        <div class="brand-icon cyber-icon">
+            <i class="fa-solid fa-shield"></i>
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>CYBERSECURITY</strong>
+
+            <span>
+                Cybersecurity Certificate
+            </span>
+
+        </div>
+
+    </div>
+
 </div>
 
 
-<!-- 14 FINE-TUNING LLM -->
-<div class="certificate-card">
-    <img
-        src="./certificates/finetuning_LLM.jpg"
-        alt="Fine-Tuning LLM Certificate">
+<!-- =====================================================
+     8. HCM
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
+
+        <img
+            src="./certificates/hcm.jpg"
+            alt="HCM Certificate">
+
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>PORTFOLIO PREVIEW</strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="certificate-title certificate-title-logo">
+
+        <div class="brand-icon hcm-icon">
+            <i class="fa-solid fa-users-gear"></i>
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>HCM</strong>
+
+            <span>
+                HCM Certificate
+            </span>
+
+        </div>
+
+    </div>
+
 </div>
 
 
-<!-- 15 PYTHON -->
-<div class="certificate-card">
-    <img
-        src="./certificates/python.jpg"
-        alt="Python Certificate">
+<!-- =====================================================
+     9. ITIL
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
+
+        <img
+            src="./certificates/itil1.jpg"
+            alt="ITIL Certificate">
+
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>PORTFOLIO PREVIEW</strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="certificate-title certificate-title-logo">
+
+        <div class="brand-icon itil-icon">
+            <i class="fa-solid fa-diagram-project"></i>
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>ITIL</strong>
+
+            <span>
+                ITIL Certificate
+            </span>
+
+        </div>
+
+    </div>
+
 </div>
 
 
-<!-- 16 PYTHON -->
-<div class="certificate-card">
-    <img
-        src="./certificates/python1.jpg"
-        alt="Python Certificate">
+<!-- =====================================================
+     10. SCE
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
+
+        <img
+            src="./certificates/sce.jpg"
+            alt="SCE Certificate">
+
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>PORTFOLIO PREVIEW</strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="certificate-title certificate-title-logo">
+
+        <div class="brand-icon sce-icon">
+            <i class="fa-solid fa-id-card"></i>
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>SCE</strong>
+
+            <span>
+                SCE Certificate
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     11. SEDER
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
+
+        <img
+            src="./certificates/seder.jpg"
+            alt="SEDER Certificate">
+
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>PORTFOLIO PREVIEW</strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="certificate-title certificate-title-logo">
+
+        <div class="brand-icon seder-icon">
+            <i class="fa-solid fa-building"></i>
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>SEDER</strong>
+
+            <span>
+                SEDER Certificate
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     12. AI ENGINEER
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
+
+        <img
+            src="./certificates/AI_Engineer.jpg"
+            alt="AI Engineer Certificate">
+
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>PORTFOLIO PREVIEW</strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="certificate-title certificate-title-logo">
+
+        <div class="brand-icon ai-icon">
+            <i class="fa-solid fa-brain"></i>
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>AI ENGINEER</strong>
+
+            <span>
+                AI Engineer Certificate
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     13. AI TECHNIQUE
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
+
+        <img
+            src="./certificates/ai_technique.jpg"
+            alt="AI Technique Certificate">
+
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>PORTFOLIO PREVIEW</strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="certificate-title certificate-title-logo">
+
+        <div class="brand-icon ai-icon">
+            <i class="fa-solid fa-microchip"></i>
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>AI TECHNIQUE</strong>
+
+            <span>
+                AI Technique Certificate
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     14. FINE-TUNING LLM
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
+
+        <img
+            src="./certificates/finetuning_LLM.jpg"
+            alt="Fine-Tuning LLM Certificate">
+
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>PORTFOLIO PREVIEW</strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="certificate-title certificate-title-logo">
+
+        <div class="brand-icon ai-icon">
+            <i class="fa-solid fa-sliders"></i>
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>FINE-TUNING LLM</strong>
+
+            <span>
+                LLM Fine-Tuning Certificate
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     15. PYTHON
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
+
+        <img
+            src="./certificates/python.jpg"
+            alt="Python Certificate">
+
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>PORTFOLIO PREVIEW</strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="certificate-title certificate-title-logo">
+
+        <div class="brand-icon python-icon">
+            <i class="fa-brands fa-python"></i>
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>PYTHON</strong>
+
+            <span>
+                Python Certificate
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     16. PYTHON
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
+
+        <img
+            src="./certificates/python1.jpg"
+            alt="Python Certificate">
+
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>PORTFOLIO PREVIEW</strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="certificate-title certificate-title-logo">
+
+        <div class="brand-icon python-icon">
+            <i class="fa-brands fa-python"></i>
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>PYTHON</strong>
+
+            <span>
+                Python Certificate
+            </span>
+
+        </div>
+
+    </div>
+
 </div>
    
 

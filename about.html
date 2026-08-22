@@ -1,892 +1,2764 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>About Me | Tanweer Ansari</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        About Me | Tanweer Ansari
+    </title>
 
     <meta name="description"
-        content="Tanweer Ansari - Network & IT Support Engineer with 16+ years of enterprise IT experience.">
+          content="Tanweer Ansari - Network & IT Support Engineer with 16+ years of enterprise IT experience across networking, security, Microsoft cloud, systems, endpoints and IT operations.">
+
+
+    <!-- FONT AWESOME -->
 
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet">
+    <!-- GOOGLE FONT -->
 
-<link rel="stylesheet" href="style.css">
-    <style>
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-        html {
-            scroll-behavior: smooth;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #061426;
-            color: #f4f7ff;
-            line-height: 1.6;
-        }
 
-      
-        /* =========================
-           HERO
-        ========================= */
+    <!-- MAIN CSS -->
 
-        .about-hero {
-            max-width: 1200px;
-            margin: auto;
-            padding: 90px 30px 50px;
-        }
+    <link rel="stylesheet"
+          href="style.css">
 
-        .eyebrow {
-            color: #35a9ff;
-            font-size: 14px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            margin-bottom: 18px;
-            text-transform: uppercase;
-        }
 
-        .about-hero h1 {
-            font-size: clamp(42px, 6vw, 76px);
-            line-height: 1.05;
-            max-width: 900px;
-            margin-bottom: 28px;
-        }
+<style>
 
-        .gradient-text {
-            background: linear-gradient(
-                90deg,
-                #ffffff,
-                #45b5ff,
-                #8c6cff,
-                #ff4fb3
-            );
-
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-description {
-            max-width: 850px;
-            font-size: 19px;
-            color: #aebbd0;
-            line-height: 1.9;
-        }
-
-        /* =========================
-           INFO CARDS
-        ========================= */
-
-        .cards-section {
-            max-width: 1200px;
-            margin: auto;
-            padding: 30px 30px 100px;
-        }
-
-        .cards-title {
-            margin-bottom: 35px;
-        }
-
-        .cards-title h2 {
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
-
-        .cards-title p {
-            color: #91a2bb;
-            font-size: 17px;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
-        }
-
-        .info-card {
-            position: relative;
-
-            padding: 28px;
-
-            min-height: 270px;
-
-            border-radius: 20px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(15, 39, 68, 0.95),
-                    rgba(7, 25, 46, 0.95)
-                );
-
-            border: 1px solid rgba(57, 155, 255, 0.22);
-
-            transition:
-                transform 0.4s ease,
-                border 0.4s ease,
-                box-shadow 0.4s ease;
-
-            overflow: hidden;
-        }
-
-        .info-card::before {
-            content: "";
-
-            position: absolute;
-            width: 160px;
-            height: 160px;
-
-            top: -80px;
-            right: -80px;
-
-            border-radius: 50%;
-
-            background: var(--card-color);
-
-            opacity: 0.10;
-
-            transition: 0.4s ease;
-        }
-
-        .info-card:hover {
-            transform:
-                perspective(800px)
-                rotateX(3deg)
-                rotateY(-3deg)
-                translateY(-8px)
-                scale(1.02);
-
-            border-color: var(--card-color);
-
-            box-shadow:
-                0 20px 50px rgba(0,0,0,0.35),
-                0 0 28px color-mix(
-                    in srgb,
-                    var(--card-color) 35%,
-                    transparent
-                );
-        }
-
-        .info-card:hover::before {
-            width: 300px;
-            height: 300px;
-            opacity: 0.18;
-        }
-
-        .icon-box {
-            width: 52px;
-            height: 52px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 15px;
-
-            background: linear-gradient(
-                135deg,
-                var(--card-color),
-                #ff4f81
-            );
-
-            color: white;
-
-            font-size: 22px;
-
-            margin-bottom: 20px;
-
-            box-shadow:
-                0 10px 25px
-                color-mix(
-                    in srgb,
-                    var(--card-color) 30%,
-                    transparent
-                );
-        }
-
-        .card-category {
-            color: var(--card-color);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1.4px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .info-card h3 {
-            font-size: 23px;
-            margin-bottom: 12px;
-        }
-
-        .info-card p {
-            color: #aab8cc;
-            font-size: 15px;
-            margin-bottom: 15px;
-        }
-
-        .info-card ul {
-            padding-left: 18px;
-            color: #aebbd0;
-        }
-
-        .info-card li {
-            margin-bottom: 7px;
-            font-size: 14px;
-        }
-
-        .info-card li::marker {
-            color: var(--card-color);
-        }
-
-        /* =========================
-           PROFILE SUMMARY
-        ========================= */
-
-        .summary {
-            max-width: 1200px;
-            margin: 0 auto 90px;
-
-            padding: 55px 40px;
-
-            border-radius: 25px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(20, 52, 91, 0.95),
-                    rgba(30, 31, 83, 0.95)
-                );
-
-            border: 1px solid rgba(90, 150, 255, 0.25);
-
-            text-align: center;
-        }
-
-        .summary h2 {
-            font-size: 40px;
-            margin-bottom: 18px;
-        }
-
-        .summary p {
-            max-width: 850px;
-            margin: auto;
-
-            color: #b8c4d7;
-            font-size: 17px;
-        }
-
-        .summary-buttons {
-            margin-top: 30px;
-
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .summary-buttons a {
-            padding: 14px 24px;
-
-            border-radius: 12px;
-
-            text-decoration: none;
-
-            font-weight: 700;
-
-            color: white;
-
-            background: linear-gradient(
-                135deg,
-                #299cff,
-                #7657ff
-            );
-
-            transition: 0.3s ease;
-        }
-
-        .summary-buttons a:hover {
-            transform: translateY(-4px) scale(1.04);
-            box-shadow: 0 12px 30px rgba(60,130,255,0.35);
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            text-align: center;
-            padding: 35px 20px;
-
-            color: #75869f;
-
-            border-top: 1px solid rgba(255,255,255,0.08);
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media(max-width: 850px) {
-
-         
-            .about-hero {
-                padding-top: 60px;
-            }
-
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .summary {
-                margin-left: 20px;
-                margin-right: 20px;
-            }
-        }
-
-        @media(max-width: 550px) {
-
-            .about-hero,
-            .cards-section {
-                padding-left: 18px;
-                padding-right: 18px;
-            }
-
-            .about-hero h1 {
-                font-size: 42px;
-            }
-
-            .hero-description {
-                font-size: 16px;
-            }
-
-            .cards-title h2 {
-                font-size: 30px;
-            }
-
-            .info-card {
-                padding: 22px;
-            }
-        }
 
 /* =====================================================
-   PREMIUM ABOUT HERO - FINAL OVERRIDE
+   GLOBAL
 ===================================================== */
 
-/* About section */
-.about-section,
-.about-hero {
-    padding-top: 85px !important;
-    padding-bottom: 90px !important;
+* {
+    box-sizing: border-box;
 }
 
-/* ABOUT ME small label */
-.about-section .section-label,
-.about-hero .section-label,
-.about-section .eyebrow,
-.about-hero .eyebrow {
-    font-size: 13px !important;
-    font-weight: 800 !important;
-    letter-spacing: 3px !important;
-    text-transform: uppercase !important;
-    color: #56c8ff !important;
-    margin-bottom: 18px !important;
+
+html {
+    scroll-behavior: smooth;
 }
 
-/* MAIN HEADING */
-.about-section h1,
-.about-section h2,
-.about-hero h1,
-.about-hero h2 {
-    max-width: 1050px !important;
 
-    font-family: "Inter", "Segoe UI", Arial, sans-serif !important;
+body {
 
-    font-size: clamp(42px, 4.3vw, 68px) !important;
-    font-weight: 750 !important;
+    margin: 0;
 
-    line-height: 1.08 !important;
-    letter-spacing: -2.2px !important;
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
 
-    margin-top: 0 !important;
-    margin-bottom: 34px !important;
-
-    color: #f4f8ff !important;
-}
-
-/* Gradient only on highlighted words if spans exist */
-.about-section h1 span,
-.about-section h2 span,
-.about-hero h1 span,
-.about-hero h2 span {
-    background: linear-gradient(
-        90deg,
-        #45caff 0%,
-        #668cff 35%,
-        #a45cff 68%,
-        #f052b5 100%
-    ) !important;
-
-    -webkit-background-clip: text !important;
-    background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-}
-
-/* DESCRIPTION */
-.about-section p,
-.about-hero p {
-    max-width: 940px !important;
-
-    font-family: "Inter", "Segoe UI", Arial, sans-serif !important;
-
-    font-size: 17px !important;
-    font-weight: 400 !important;
-
-    line-height: 1.85 !important;
-    letter-spacing: 0 !important;
-
-    color: #aebfd4 !important;
-
-    margin-bottom: 18px !important;
-}
-
-/* Desktop spacing */
-@media (min-width: 1000px) {
-
-    .about-section .container,
-    .about-hero .container {
-        max-width: 1360px !important;
-        margin: 0 auto !important;
-        padding-left: 60px !important;
-        padding-right: 60px !important;
-    }
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-
-    .about-section h1,
-    .about-section h2,
-    .about-hero h1,
-    .about-hero h2 {
-        font-size: 46px !important;
-        letter-spacing: -1.5px !important;
-    }
-
-    .about-section p,
-    .about-hero p {
-        font-size: 16px !important;
-    }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-
-    .about-section,
-    .about-hero {
-        padding-top: 55px !important;
-    }
-
-    .about-section h1,
-    .about-section h2,
-    .about-hero h1,
-    .about-hero h2 {
-        font-size: 36px !important;
-        line-height: 1.12 !important;
-        letter-spacing: -1px !important;
-    }
-
-    .about-section p,
-    .about-hero p {
-        font-size: 15px !important;
-        line-height: 1.7 !important;
-    }
-}
-
-/* =====================================================
-   ABOUT HERO - COMPACT PREMIUM CARD FINAL
-===================================================== */
-
-.about-hero {
-    width: min(1050px, 90%) !important;
-
-   margin: 125px auto 65px !important;
-
-    padding: 38px 42px 34px !important;
-
-    border-radius: 24px !important;
+    color:
+        #f4f7ff;
 
     background:
+
         radial-gradient(
-            circle at 90% 10%,
-            rgba(81, 91, 255, .12),
+            circle at 10% 15%,
+            rgba(0,180,255,.11),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 75%,
+            rgba(125,70,255,.12),
             transparent 35%
         ),
+
+        #061426;
+
+    overflow-x:
+        hidden;
+}
+
+
+.about-shell {
+
+    width:
+        min(1180px,92%);
+
+    margin:
+        0 auto;
+
+}
+
+
+
+/* =====================================================
+   ABOUT HERO
+===================================================== */
+
+.about-hero {
+
+    width:
+        min(1050px,90%);
+
+    margin:
+        125px auto 45px;
+
+    padding:
+        40px 42px 36px;
+
+    border-radius:
+        24px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+
+    background:
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(81,91,255,.12),
+            transparent 35%
+        ),
+
         linear-gradient(
             145deg,
-            rgba(12, 32, 56, .98),
-            rgba(7, 23, 43, .98)
-        ) !important;
+            rgba(12,32,56,.98),
+            rgba(7,23,43,.98)
+        );
+
 
     border:
-        1px solid rgba(75, 165, 255, .28) !important;
+        1px solid
+        rgba(75,165,255,.28);
+
 
     box-shadow:
-        0 22px 60px rgba(0,0,0,.30),
-        0 0 30px rgba(57,168,255,.06) !important;
 
-    position: relative;
-    overflow: hidden;
+        0 22px 60px
+        rgba(0,0,0,.30),
 
-    transition:
-        transform .35s ease,
-        border-color .35s ease,
-        box-shadow .35s ease;
+        0 0 30px
+        rgba(57,168,255,.06);
+
 }
 
-
-/* Card hover */
-
-.about-hero:hover {
-    transform: translateY(-5px);
-
-    border-color:
-        rgba(88,184,255,.48) !important;
-
-    box-shadow:
-        0 28px 70px rgba(0,0,0,.36),
-        0 0 35px rgba(57,168,255,.10) !important;
-}
-
-
-/* Small ABOUT ME label */
-
-.about-hero .eyebrow {
-    margin: 0 0 12px !important;
-
-    font-family:
-        "Inter",
-        "Segoe UI",
-        Arial,
-        sans-serif !important;
-
-    font-size: 12px !important;
-
-    font-weight: 800 !important;
-
-    letter-spacing: 3px !important;
-
-    color: #4fc3ff !important;
-
-    text-transform: uppercase;
-}
-
-
-/* Main Heading */
-
-.about-hero h1 {
-    max-width: 900px !important;
-
-    margin: 0 0 22px !important;
-
-    font-family:
-        "Inter",
-        "Segoe UI",
-        Arial,
-        sans-serif !important;
-
-    font-size:
-        clamp(38px, 4vw, 58px) !important;
-
-    font-weight: 800 !important;
-
-    line-height: 1.08 !important;
-
-    letter-spacing: -1.8px !important;
-
-    color: #f5f8ff !important;
-}
-
-
-/* Gradient text */
-
-.about-hero .gradient-text {
-    background:
-        linear-gradient(
-            90deg,
-            #4fc3ff,
-            #6594ff,
-            #9b67ff,
-            #f05ab8
-        ) !important;
-
-    -webkit-background-clip: text !important;
-
-    background-clip: text !important;
-
-    -webkit-text-fill-color: transparent !important;
-}
-
-
-/* Paragraph area */
-
-.about-hero .hero-description {
-    max-width: 900px !important;
-
-    margin: 0 !important;
-
-    font-family:
-        "Inter",
-        "Segoe UI",
-        Arial,
-        sans-serif !important;
-
-    font-size: 16px !important;
-
-    font-weight: 400 !important;
-
-    line-height: 1.75 !important;
-
-    color: #aebed2 !important;
-}
-
-
-/* Reduce paragraph spacing */
-
-.about-hero .hero-description br {
-    line-height: 1.4;
-}
-
-
-/* Decorative glow */
 
 .about-hero::before {
+
     content: "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    width: 260px;
-    height: 260px;
+    width:
+        260px;
 
-    right: -100px;
-    top: -110px;
+    height:
+        260px;
 
-    border-radius: 50%;
+    right:
+        -100px;
+
+    top:
+        -110px;
+
+    border-radius:
+        50%;
 
     background:
+
         radial-gradient(
             circle,
             rgba(70,170,255,.16),
             transparent 70%
         );
 
-    pointer-events: none;
+    pointer-events:
+        none;
+
 }
 
 
-/* Mobile */
+.eyebrow {
 
-@media (max-width: 700px) {
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0 0 12px;
+
+    color:
+        #4fc3ff;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        3px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.about-hero h1 {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        920px;
+
+    margin:
+        0 0 22px;
+
+    font-size:
+        clamp(38px,4vw,58px);
+
+    font-weight:
+        800;
+
+    line-height:
+        1.08;
+
+    letter-spacing:
+        -1.8px;
+
+    color:
+        #f5f8ff;
+
+}
+
+
+.gradient-text {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #4fc3ff,
+            #6594ff,
+            #9b67ff,
+            #f05ab8
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+}
+
+
+.hero-description {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        920px;
+
+    margin:
+        0;
+
+    color:
+        #aebed2;
+
+    font-size:
+        16px;
+
+    line-height:
+        1.78;
+
+}
+
+
+
+/* =====================================================
+   QUICK STATS
+===================================================== */
+
+.about-stats {
+
+    width:
+        min(1050px,90%);
+
+    margin:
+        0 auto 75px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        16px;
+
+}
+
+
+.about-stat {
+
+    padding:
+        23px 18px;
+
+    border-radius:
+        18px;
+
+    text-align:
+        center;
+
+    border:
+
+        1px solid
+        rgba(95,165,235,.18);
+
+    background:
+
+        rgba(255,255,255,.025);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.about-stat:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(79,195,255,.55);
+
+    box-shadow:
+
+        0 15px 40px
+        rgba(0,0,0,.24);
+
+}
+
+
+.about-stat strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    color:
+        #55c9ff;
+
+    font-size:
+        27px;
+
+    font-weight:
+        900;
+
+}
+
+
+.about-stat span {
+
+    color:
+        #879db3;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.section-heading {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        42px;
+
+}
+
+
+.section-heading small {
+
+    color:
+        #4fc3ff;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        3px;
+
+}
+
+
+.section-heading h2 {
+
+    margin:
+        10px 0 12px;
+
+    font-size:
+        clamp(30px,4.5vw,48px);
+
+    letter-spacing:
+        -1.6px;
+
+}
+
+
+.section-heading p {
+
+    max-width:
+        760px;
+
+    margin:
+        0 auto;
+
+    color:
+        #93a8bc;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.75;
+
+}
+
+
+
+/* =====================================================
+   TECHNICAL SECTION
+===================================================== */
+
+.technical-section {
+
+    margin-bottom:
+        90px;
+
+}
+
+
+.technical-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:
+        22px;
+
+}
+
+
+.technical-card {
+
+    --accent:
+        #39ffb0;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        28px;
+
+    border-radius:
+        23px;
+
+
+    border:
+
+        1px solid
+
+        color-mix(
+            in srgb,
+            var(--accent) 28%,
+            transparent
+        );
+
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+
+    transition:
+
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.technical-card:nth-child(1) {
+
+    --accent:
+        #39ffb0;
+
+}
+
+
+.technical-card:nth-child(2) {
+
+    --accent:
+        #35d9ff;
+
+}
+
+
+.technical-card:nth-child(3) {
+
+    --accent:
+        #4d8dff;
+
+}
+
+
+.technical-card:nth-child(4) {
+
+    --accent:
+        #a56cff;
+
+}
+
+
+.technical-card:nth-child(5) {
+
+    --accent:
+        #ffb347;
+
+}
+
+
+.technical-card:nth-child(6) {
+
+    --accent:
+        #ff4dca;
+
+}
+
+
+.technical-card::before {
+
+    content: "";
+
+    position:
+        absolute;
+
+    width:
+        230px;
+
+    height:
+        230px;
+
+    right:
+        -120px;
+
+    top:
+        -125px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--accent);
+
+    opacity:
+        .07;
+
+    filter:
+        blur(40px);
+
+}
+
+
+.technical-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        var(--accent);
+
+    box-shadow:
+
+        0 22px 60px
+        rgba(0,0,0,.34),
+
+        0 0 26px
+
+        color-mix(
+            in srgb,
+            var(--accent) 16%,
+            transparent
+        );
+
+}
+
+
+
+/* =====================================================
+   TECHNICAL CARD HEADER
+===================================================== */
+
+.technical-head {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    margin-bottom:
+        17px;
+
+}
+
+
+.technical-icon {
+
+    width:
+        55px;
+
+    height:
+        55px;
+
+    flex:
+        0 0 55px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        16px;
+
+    color:
+        var(--accent);
+
+    font-size:
+        22px;
+
+
+    border:
+
+        1px solid
+
+        color-mix(
+            in srgb,
+            var(--accent) 40%,
+            transparent
+        );
+
+
+    background:
+
+        color-mix(
+            in srgb,
+            var(--accent) 9%,
+            transparent
+        );
+
+}
+
+
+.technical-head h3 {
+
+    margin:
+        0 0 4px;
+
+    font-size:
+        19px;
+
+}
+
+
+.technical-head span {
+
+    color:
+        #74899e;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.technical-card p {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0 0 18px;
+
+    color:
+        #9eafbf;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.65;
+
+}
+
+
+
+/* =====================================================
+   TECHNOLOGY TAGS
+===================================================== */
+
+.tech-tags {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        7px;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.tech-tag {
+
+    padding:
+        6px 9px;
+
+    border-radius:
+        8px;
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.07);
+
+    background:
+
+        rgba(255,255,255,.025);
+
+    color:
+        #aebdca;
+
+    font-size:
+        10px;
+
+}
+
+
+
+/* =====================================================
+   WORK LIST
+===================================================== */
+
+.work-list {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        grid;
+
+    gap:
+        8px;
+
+}
+
+
+.work-item {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        9px;
+
+    color:
+        #98aabc;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.5;
+
+}
+
+
+.work-item i {
+
+    margin-top:
+        3px;
+
+    color:
+        var(--accent);
+
+    font-size:
+        9px;
+
+}
+
+
+
+/* =====================================================
+   OPERATIONAL PRACTICES
+===================================================== */
+
+.practice-section {
+
+    margin:
+        90px 0;
+
+}
+
+
+.practice-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        13px;
+
+}
+
+
+.practice {
+
+    min-height:
+        66px;
+
+    padding:
+        16px 17px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    border-radius:
+        14px;
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.075);
+
+    background:
+
+        rgba(255,255,255,.025);
+
+    color:
+        #9eafbf;
+
+    font-size:
+        11px;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.practice i {
+
+    width:
+        26px;
+
+    text-align:
+        center;
+
+    color:
+        #39ffb0;
+
+    font-size:
+        16px;
+
+}
+
+
+.practice:hover {
+
+    transform:
+        translateY(-4px);
+
+    color:
+        #ffffff;
+
+    border-color:
+        rgba(57,255,176,.5);
+
+}
+
+
+
+/* =====================================================
+   SUPPORT WORKFLOW
+===================================================== */
+
+.workflow-section {
+
+    margin:
+        95px 0;
+
+}
+
+
+.workflow {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:
+        12px;
+
+}
+
+
+.workflow-box {
+
+    padding:
+        22px 13px;
+
+    text-align:
+        center;
+
+    border-radius:
+        15px;
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.075);
+
+    background:
+
+        rgba(255,255,255,.025);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.workflow-box i {
+
+    display:
+        block;
+
+    margin-bottom:
+        10px;
+
+    color:
+        #a56cff;
+
+    font-size:
+        21px;
+
+}
+
+
+.workflow-box strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        5px;
+
+    font-size:
+        11px;
+
+}
+
+
+.workflow-box span {
+
+    color:
+        #74889b;
+
+    font-size:
+        9px;
+
+    line-height:
+        1.45;
+
+}
+
+
+.workflow-box:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(165,108,255,.6);
+
+}
+
+
+
+/* =====================================================
+   PROFESSIONAL PROFILE
+===================================================== */
+
+.summary {
+
+    width:
+        min(1080px,92%);
+
+    margin:
+        0 auto 80px;
+
+    padding:
+        48px 34px;
+
+    border-radius:
+        25px;
+
+    text-align:
+        center;
+
+    border:
+
+        1px solid
+        rgba(90,150,255,.22);
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(20,52,91,.78),
+            rgba(30,31,83,.76)
+        );
+
+}
+
+
+.summary h2 {
+
+    margin:
+        0 0 15px;
+
+    font-size:
+        clamp(27px,4vw,40px);
+
+}
+
+
+.summary p {
+
+    max-width:
+        820px;
+
+    margin:
+        0 auto;
+
+    color:
+        #b3c0d2;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.75;
+
+}
+
+
+.summary-buttons {
+
+    margin-top:
+        27px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        12px;
+
+}
+
+
+.summary-buttons a {
+
+    padding:
+        13px 20px;
+
+    border-radius:
+        11px;
+
+    color:
+        #ffffff;
+
+    text-decoration:
+        none;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.11);
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #299cff,
+            #7657ff
+        );
+
+
+    transition:
+        .3s ease;
+
+}
+
+
+.summary-buttons a.secondary {
+
+    background:
+        rgba(255,255,255,.045);
+
+}
+
+
+.summary-buttons a:hover {
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    text-align:
+        center;
+
+    padding:
+        35px 20px;
+
+    color:
+        #75869f;
+
+    border-top:
+
+        1px solid
+        rgba(255,255,255,.08);
+
+    font-size:
+        12px;
+
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width:900px) {
+
+
+    .technical-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .practice-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .workflow {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+
+@media (max-width:700px) {
+
 
     .about-hero {
-        width: 92% !important;
+
+        width:
+            92%;
 
         margin:
-            30px auto
-            45px !important;
+            30px auto 35px;
 
         padding:
-            28px 22px !important;
+            28px 22px;
 
         border-radius:
-            18px !important;
+            18px;
+
     }
 
 
     .about-hero h1 {
-        font-size:
-            35px !important;
 
-        line-height:
-            1.12 !important;
+        font-size:
+            35px;
 
         letter-spacing:
-            -1px !important;
+            -1px;
+
     }
 
 
-    .about-hero .hero-description {
+    .hero-description {
+
         font-size:
-            15px !important;
+            15px;
 
-        line-height:
-            1.7 !important;
+    }
+
+
+    .about-stats {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .practice-grid,
+    .workflow {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .technical-card {
+
+        padding:
+            23px;
+
     }
 
 }
-    /* =====================================================
-   PROFESSIONAL SUPPORT AREA - TOP SPACE FIX
-===================================================== */
-
-.cards-section {
-    padding-top: 135px !important;
-}
 
 
-/* Mobile */
+</style>
 
-@media (max-width: 700px) {
-
-    .cards-section {
-        padding-top: 105px !important;
-    }
-
-}    
-    </style>
 </head>
+
 
 <body>
 
-<!-- =========================
+
+
+<!-- =====================================================
      NAVIGATION
-========================= -->
-
-
-
-
-<!-- ================= NAVIGATION ================= -->
+===================================================== -->
 
 <header class="navbar">
 
+
     <div class="nav-container">
 
-        <a href="index.html" class="logo">
+
+        <a href="index.html"
+           class="logo">
+
             TANWEER<span>.</span>
+
         </a>
 
-      <nav id="navMenu">
 
-    <a href="index.html">Home</a>
 
-    <a href="about.html" class="active">
-        About
-    </a>
+        <nav id="navMenu">
 
-    <a href="expertise.html">
-        Expertise
-    </a>
 
-    <a href="experience.html">
-        Experience
-    </a>
+            <a href="index.html">
 
-    <a href="certifications.html">
-        Certifications
-    </a>
-
-    <a href="contact.html">
-        Contact
-    </a>
-
-</nav>
-
-        <div class="nav-buttons">
-
-            <button id="themeToggle" class="icon-btn">
-                <i class="fa-solid fa-moon"></i>
-            </button>
-
-            <a href="https://wa.me/966557316795"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="nav-contact whatsapp-nav"
-               title="WhatsApp: +966 55 731 6795">
-
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>WhatsApp</span>
+                Home
 
             </a>
 
-            <button id="menuToggle" class="menu-btn">
-                <i class="fa-solid fa-bars"></i>
+
+            <a href="about.html"
+               class="active">
+
+                About
+
+            </a>
+
+
+            <a href="experience.html">
+
+                Experience
+
+            </a>
+
+
+            <a href="certifications.html">
+
+                Certifications
+
+            </a>
+
+
+            <a href="contact.html">
+
+                Contact
+
+            </a>
+
+
+        </nav>
+
+
+
+        <div class="nav-buttons">
+
+
+            <button
+                id="themeToggle"
+                class="icon-btn"
+                aria-label="Toggle theme">
+
+                <i class="fa-solid fa-moon"></i>
+
             </button>
+
+
+
+            <a
+                href="mailto:tanweerstudy25@gmail.com?subject=Request%20for%20WhatsApp%20Contact&body=Hello%20Tanweer%2C%0A%0AI%20visited%20your%20portfolio%20website%20and%20would%20like%20to%20contact%20you%20on%20WhatsApp.%0A%0AThank%20you."
+                class="nav-contact whatsapp-nav">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                <span>
+                    Request Contact
+                </span>
+
+            </a>
+
+
+
+            <button
+                id="menuToggle"
+                class="menu-btn"
+                aria-label="Open menu">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
 
         </div>
 
+
     </div>
 
+
 </header>
-<!-- =========================
-     ABOUT ME
-========================= -->
+
+
+
+<!-- =====================================================
+     ABOUT HERO
+===================================================== -->
 
 <section class="about-hero">
 
+
     <div class="eyebrow">
+
         ABOUT ME
+
     </div>
 
+
+
     <h1>
+
         Practical IT Support Across
+
         <span class="gradient-text">
+
             Network, Cloud, Systems & Endpoints.
+
         </span>
+
     </h1>
 
+
+
     <p class="hero-description">
+
         I am a Network & IT Support Engineer with 16+ years of
         experience supporting IT infrastructure, enterprise users,
         networks, systems and Microsoft cloud technologies.
+
         <br><br>
+
         My day-to-day work includes network troubleshooting,
         Fortinet firewall support, Microsoft Azure, Microsoft 365,
         Entra ID, Intune, Windows Autopilot, Windows systems and
         end-user technical support.
+
         <br><br>
+
         I focus on practical troubleshooting, reliable IT support
-        and maintaining stable technology environments.
+        and maintaining secure, stable and dependable technology
+        environments.
+
     </p>
+
 
 </section>
 
 
 
+<!-- =====================================================
+     QUICK STATS
+===================================================== -->
+
+<section class="about-stats">
+
+
+    <div class="about-stat">
+
+        <strong>
+            16+
+        </strong>
+
+        <span>
+            Years IT Experience
+        </span>
+
+    </div>
 
 
 
-<!-- =========================
-     PROFESSIONAL SUMMARY
-========================= -->
+    <div class="about-stat">
+
+        <strong>
+            06
+        </strong>
+
+        <span>
+            Technical Focus Areas
+        </span>
+
+    </div>
+
+
+
+    <div class="about-stat">
+
+        <strong>
+            20+
+        </strong>
+
+        <span>
+            Technologies & Platforms
+        </span>
+
+    </div>
+
+
+</section>
+
+
+
+<main class="about-shell">
+
+
+
+<!-- =====================================================
+     TECHNICAL AREAS
+===================================================== -->
+
+<section class="technical-section">
+
+
+    <div class="section-heading">
+
+
+        <small>
+
+            TECHNICAL AREAS I WORK WITH
+
+        </small>
+
+
+        <h2>
+
+            Practical Infrastructure & Support Capabilities
+
+        </h2>
+
+
+        <p>
+
+            Hands-on work across enterprise networking,
+            security, Microsoft cloud, systems,
+            endpoint management, IT operations
+            and business technology services.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="technical-grid">
+
+
+
+<!-- =====================================================
+     1 NETWORK + SECURITY
+===================================================== -->
+
+<article class="technical-card">
+
+
+    <div class="technical-head">
+
+
+        <div class="technical-icon">
+
+            <i class="fa-solid fa-network-wired"></i>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Network Infrastructure & Security
+            </h3>
+
+            <span>
+                Cisco · Fortinet · Connectivity
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <p>
+
+        Supporting enterprise LAN/WAN connectivity,
+        routing, switching, network security
+        and secure remote access.
+
+    </p>
+
+
+
+    <div class="tech-tags">
+
+        <span class="tech-tag">Cisco</span>
+
+        <span class="tech-tag">
+            Routing & Switching
+        </span>
+
+        <span class="tech-tag">
+            LAN / WAN
+        </span>
+
+        <span class="tech-tag">
+            VLAN
+        </span>
+
+        <span class="tech-tag">
+            OSPF
+        </span>
+
+        <span class="tech-tag">
+            BGP
+        </span>
+
+        <span class="tech-tag">
+            FortiGate
+        </span>
+
+        <span class="tech-tag">
+            VPN
+        </span>
+
+        <span class="tech-tag">
+            Network Monitoring
+        </span>
+
+    </div>
+
+
+
+    <div class="work-list">
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Enterprise LAN/WAN connectivity
+            and network support
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Cisco routing, switching
+            and VLAN troubleshooting
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Fortinet firewall policies,
+            filtering and VPN support
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Network monitoring and
+            connectivity troubleshooting
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+<!-- =====================================================
+     2 AZURE
+===================================================== -->
+
+<article class="technical-card">
+
+
+    <div class="technical-head">
+
+
+        <div class="technical-icon">
+
+            <i class="fa-solid fa-cloud"></i>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Microsoft Azure & Cloud Infrastructure
+            </h3>
+
+            <span>
+                Cloud · Networking · Administration
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <p>
+
+        Working with Microsoft Azure infrastructure,
+        networking, identity integration
+        and cloud resource administration.
+
+    </p>
+
+
+
+    <div class="tech-tags">
+
+        <span class="tech-tag">
+            Microsoft Azure
+        </span>
+
+        <span class="tech-tag">
+            Azure Administration
+        </span>
+
+        <span class="tech-tag">
+            Virtual Networks
+        </span>
+
+        <span class="tech-tag">
+            Azure Networking
+        </span>
+
+        <span class="tech-tag">
+            Resource Management
+        </span>
+
+        <span class="tech-tag">
+            Azure Identity
+        </span>
+
+        <span class="tech-tag">
+            AZ-104
+        </span>
+
+        <span class="tech-tag">
+            AZ-700
+        </span>
+
+    </div>
+
+
+
+    <div class="work-list">
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Azure infrastructure
+            and resource administration
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Virtual network and
+            cloud connectivity support
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Azure identity
+            and access-related support
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Cloud infrastructure
+            troubleshooting and operations
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+<!-- =====================================================
+     3 MICROSOFT CLOUD
+===================================================== -->
+
+<article class="technical-card">
+
+
+    <div class="technical-head">
+
+
+        <div class="technical-icon">
+
+            <i class="fa-brands fa-microsoft"></i>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Microsoft 365, Identity & Endpoint
+            </h3>
+
+            <span>
+                Entra ID · Intune · Autopilot
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <p>
+
+        Supporting Microsoft identity,
+        endpoint, productivity and user-management
+        technologies across enterprise environments.
+
+    </p>
+
+
+
+    <div class="tech-tags">
+
+        <span class="tech-tag">
+            Microsoft 365
+        </span>
+
+        <span class="tech-tag">
+            Office 365
+        </span>
+
+        <span class="tech-tag">
+            Entra ID
+        </span>
+
+        <span class="tech-tag">
+            Intune
+        </span>
+
+        <span class="tech-tag">
+            Windows Autopilot
+        </span>
+
+        <span class="tech-tag">
+            Exchange Online
+        </span>
+
+        <span class="tech-tag">
+            SharePoint
+        </span>
+
+        <span class="tech-tag">
+            Access Management
+        </span>
+
+    </div>
+
+
+
+    <div class="work-list">
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            User, identity
+            and access management support
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Intune-based endpoint
+            management and support
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Windows Autopilot
+            provisioning workflows
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Microsoft 365, Outlook
+            and collaboration support
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+<!-- =====================================================
+     4 SYSTEMS SUPPORT
+===================================================== -->
+
+<article class="technical-card">
+
+
+    <div class="technical-head">
+
+
+        <div class="technical-icon">
+
+            <i class="fa-brands fa-windows"></i>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Systems & Enterprise IT Support
+            </h3>
+
+            <span>
+                Windows · AD · L2 Support
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <p>
+
+        Hands-on support for users,
+        endpoints, Windows environments,
+        applications, hardware
+        and business-critical IT services.
+
+    </p>
+
+
+
+    <div class="tech-tags">
+
+        <span class="tech-tag">
+            Windows Server 2016
+        </span>
+
+        <span class="tech-tag">
+            Active Directory
+        </span>
+
+        <span class="tech-tag">
+            Group Policy
+        </span>
+
+        <span class="tech-tag">
+            Windows 10 / 11
+        </span>
+
+        <span class="tech-tag">
+            Hardware Support
+        </span>
+
+        <span class="tech-tag">
+            Printer Support
+        </span>
+
+        <span class="tech-tag">
+            Remote Support
+        </span>
+
+        <span class="tech-tag">
+            L2 Support
+        </span>
+
+    </div>
+
+
+
+    <div class="work-list">
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            L2 troubleshooting
+            for enterprise end users
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Windows desktop,
+            hardware and application support
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Active Directory
+            and Windows Server support
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Printer, connectivity,
+            VPN and endpoint troubleshooting
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+<!-- =====================================================
+     5 OPERATIONS
+===================================================== -->
+
+<article class="technical-card">
+
+
+    <div class="technical-head">
+
+
+        <div class="technical-icon">
+
+            <i class="fa-solid fa-gears"></i>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                IT Operations & Infrastructure Services
+            </h3>
+
+            <span>
+                ITSM · Assets · Documentation
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <p>
+
+        Structured day-to-day enterprise
+        IT operations covering incidents,
+        service requests, infrastructure records
+        and asset management.
+
+    </p>
+
+
+
+    <div class="tech-tags">
+
+        <span class="tech-tag">
+            ITSM
+        </span>
+
+        <span class="tech-tag">
+            Ticketing
+        </span>
+
+        <span class="tech-tag">
+            Incident Management
+        </span>
+
+        <span class="tech-tag">
+            Service Requests
+        </span>
+
+        <span class="tech-tag">
+            Asset Management
+        </span>
+
+        <span class="tech-tag">
+            Inventory
+        </span>
+
+        <span class="tech-tag">
+            PPM Reports
+        </span>
+
+        <span class="tech-tag">
+            SOP
+        </span>
+
+        <span class="tech-tag">
+            Documentation
+        </span>
+
+    </div>
+
+
+
+    <div class="work-list">
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Incident and
+            service request handling
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            IT asset
+            and inventory tracking
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Technical reports, SOPs
+            and infrastructure documentation
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Enterprise IT operational
+            and user support
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+<!-- =====================================================
+     6 BUSINESS + SMART TECHNOLOGIES
+===================================================== -->
+
+<article class="technical-card">
+
+
+    <div class="technical-head">
+
+
+        <div class="technical-icon">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Business & Smart Technologies
+            </h3>
+
+            <span>
+                Applications · Telephony · Surveillance
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+
+    <p>
+
+        Additional hands-on exposure
+        supporting enterprise applications,
+        communication systems, surveillance
+        and smart technology environments.
+
+    </p>
+
+
+
+    <div class="tech-tags">
+
+        <span class="tech-tag">
+            Oracle Database 10g
+        </span>
+
+        <span class="tech-tag">
+            Oracle Forms / Reports
+        </span>
+
+        <span class="tech-tag">
+            Power BI
+        </span>
+
+        <span class="tech-tag">
+            Power Apps
+        </span>
+
+        <span class="tech-tag">
+            Cisco Telephony
+        </span>
+
+        <span class="tech-tag">
+            Avaya
+        </span>
+
+        <span class="tech-tag">
+            IP CCTV
+        </span>
+
+        <span class="tech-tag">
+            Access Control
+        </span>
+
+        <span class="tech-tag">
+            IoT
+        </span>
+
+    </div>
+
+
+
+    <div class="work-list">
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Enterprise application
+            installation and troubleshooting
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Cisco and Avaya
+            IP telephony support
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            CCTV, IP surveillance
+            and access-control support
+
+        </div>
+
+
+        <div class="work-item">
+
+            <i class="fa-solid fa-check"></i>
+
+            Reporting, Power BI
+            and business technology support
+
+        </div>
+
+
+    </div>
+
+
+</article>
+
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     OPERATIONAL PRACTICES
+===================================================== -->
+
+<section class="practice-section">
+
+
+    <div class="section-heading">
+
+
+        <small>
+
+            OPERATIONAL PRACTICES
+
+        </small>
+
+
+        <h2>
+
+            How I Support IT Operations
+
+        </h2>
+
+
+        <p>
+
+            Practical activities supporting
+            reliable infrastructure,
+            users and IT services.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="practice-grid">
+
+
+        <div class="practice">
+
+            <i class="fa-solid fa-file-lines"></i>
+
+            Technical Documentation
+
+        </div>
+
+
+        <div class="practice">
+
+            <i class="fa-solid fa-list-check"></i>
+
+            SOP Preparation
+
+        </div>
+
+
+        <div class="practice">
+
+            <i class="fa-solid fa-boxes-stacked"></i>
+
+            Asset & Inventory Management
+
+        </div>
+
+
+        <div class="practice">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            Incident Documentation
+
+        </div>
+
+
+        <div class="practice">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            PPM & Operational Reporting
+
+        </div>
+
+
+        <div class="practice">
+
+            <i class="fa-solid fa-headset"></i>
+
+            End User Support
+
+        </div>
+
+
+        <div class="practice">
+
+            <i class="fa-solid fa-diagram-project"></i>
+
+            Network Documentation
+
+        </div>
+
+
+        <div class="practice">
+
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+
+            Technical Troubleshooting
+
+        </div>
+
+
+        <div class="practice">
+
+            <i class="fa-solid fa-desktop"></i>
+
+            Remote Support
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     SUPPORT WORKFLOW
+===================================================== -->
+
+<section class="workflow-section">
+
+
+    <div class="section-heading">
+
+
+        <small>
+
+            SUPPORT APPROACH
+
+        </small>
+
+
+        <h2>
+
+            Practical IT Support Workflow
+
+        </h2>
+
+
+        <p>
+
+            A structured approach
+            to understanding,
+            troubleshooting and supporting
+            enterprise technology issues.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="workflow">
+
+
+        <div class="workflow-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <strong>
+                Identify
+            </strong>
+
+            <span>
+                Understand the issue
+            </span>
+
+        </div>
+
+
+
+        <div class="workflow-box">
+
+            <i class="fa-solid fa-stethoscope"></i>
+
+            <strong>
+                Diagnose
+            </strong>
+
+            <span>
+                Find the root cause
+            </span>
+
+        </div>
+
+
+
+        <div class="workflow-box">
+
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+
+            <strong>
+                Resolve
+            </strong>
+
+            <span>
+                Apply practical fix
+            </span>
+
+        </div>
+
+
+
+        <div class="workflow-box">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <strong>
+                Verify
+            </strong>
+
+            <span>
+                Confirm service stability
+            </span>
+
+        </div>
+
+
+
+        <div class="workflow-box">
+
+            <i class="fa-solid fa-file-circle-check"></i>
+
+            <strong>
+                Document
+            </strong>
+
+            <span>
+                Record the solution
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     PROFESSIONAL PROFILE
+===================================================== -->
 
 <section class="summary">
 
+
     <div class="eyebrow">
-        Professional Profile
+
+        PROFESSIONAL PROFILE
+
     </div>
 
+
     <h2>
+
         16+ Years of Practical IT Experience
+
     </h2>
+
 
     <p>
 
         My experience combines enterprise networking,
         cybersecurity, Microsoft cloud technologies,
-        endpoint management, IT operations and
-        end-user support.
+        endpoint management, systems, IT operations
+        and end-user support.
 
         I focus on solving technical problems efficiently,
         maintaining reliable infrastructure and providing
@@ -894,32 +2766,69 @@
 
     </p>
 
+
+
     <div class="summary-buttons">
 
+
         <a href="experience.html">
+
             <i class="fa-solid fa-briefcase"></i>
+
             View Experience
-        </a>
-
-        <a href="https://wa.me/966557316795"
-           target="_blank">
-
-            <i class="fa-brands fa-whatsapp"></i>
-            Contact on WhatsApp
 
         </a>
+
+
+
+        <a href="certifications.html"
+           class="secondary">
+
+            <i class="fa-solid fa-certificate"></i>
+
+            Certifications
+
+        </a>
+
+
+
+        <a href="contact.html"
+           class="secondary">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            Contact Me
+
+        </a>
+
 
     </div>
+
 
 </section>
 
 
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
 
-    © 2026 Tanweer Ansari · Network & IT Support Engineer
+    © 2026 Tanweer Ansari
+    · Network & IT Support Engineer
 
 </footer>
 
 
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
+
+
 </body>
+
 </html>

@@ -865,7 +865,57 @@ body {
     font-size: 14px;
     font-weight: 600;
 }   
-      
+ /* =====================================================
+   MICROSOFT LOGO WITH CERTIFICATE TITLE
+===================================================== */
+
+.certificate-title-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.certificate-title-text {
+    text-align: left;
+}
+
+.microsoft-logo {
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    gap: 3px;
+
+    flex-shrink: 0;
+
+    filter:
+        drop-shadow(0 4px 8px rgba(0,0,0,.35));
+}
+
+.microsoft-logo span:nth-child(1) {
+    background: #f25022;
+}
+
+.microsoft-logo span:nth-child(2) {
+    background: #7fba00;
+}
+
+.microsoft-logo span:nth-child(3) {
+    background: #00a4ef;
+}
+
+.microsoft-logo span:nth-child(4) {
+    background: #ffb900;
+}
+
+.microsoft-logo span {
+    border-radius: 1px;
+}     
 </style>
 </head>
 
@@ -1035,7 +1085,18 @@ body {
 
     </div>
 
-    <div class="certificate-title">
+   <div class="certificate-title certificate-title-logo">
+
+    <div class="microsoft-logo" aria-hidden="true">
+
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+    <div class="certificate-title-text">
 
         <strong>AZ-104</strong>
 
@@ -1044,6 +1105,8 @@ body {
         </span>
 
     </div>
+
+</div>
 
 </div>
 

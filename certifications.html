@@ -20,7 +20,6 @@
 
 <link rel="stylesheet" href="style.css">
 
-   
 <style>
 
 /* ================================
@@ -50,8 +49,6 @@ body {
    NAVIGATION
 ================================ */
 
-
-
 .top-nav {
     width: 100%;
     min-height: 72px;
@@ -73,12 +70,6 @@ body {
     z-index: 1000;
 }
 
-
-
-
-
-
-   
 .top-nav a {
     color: #c9dceb;
     text-decoration: none;
@@ -158,8 +149,6 @@ body {
    HEADER
 ================================ */
 
-
-
 .page-header {
     text-align: center;
 
@@ -172,10 +161,6 @@ body {
     position: relative;
 }
 
-
-
-
-      
 .page-label {
     color: #00c6ff;
 
@@ -224,8 +209,6 @@ body {
    CERTIFICATE GRID
 ================================ */
 
-
-
 .certificate-grid {
     width: min(1180px, 92%);
 
@@ -244,9 +227,6 @@ body {
     align-items: start;
 }
 
-
-
-      
 
 /* ================================
    CERTIFICATE CARD
@@ -538,6 +518,8 @@ body {
         height: 360px;
     }
 }
+
+
 /* =====================================================
    PREMIUM 3D CERTIFICATE FRAME
 ===================================================== */
@@ -548,7 +530,6 @@ body {
 
     border-radius: 24px !important;
 
-    /* 3D frame */
     border: 2px solid rgba(255,255,255,0.25) !important;
 
     background:
@@ -616,8 +597,6 @@ body {
 }
 
 
-/* Certificate rises slightly */
-
 .certificate-card:hover img {
 
     transform:
@@ -663,9 +642,6 @@ body {
     z-index: 30;
 }
 
-
-/* Light passes over the FRAME */
-
 .certificate-card:hover::after {
 
     opacity: 1;
@@ -689,7 +665,6 @@ body {
         0 0 55px rgba(0,180,255,.45) !important;
 }
 
-
 .certificate-card:nth-child(2):hover {
 
     border-color: #ff3d68 !important;
@@ -699,7 +674,6 @@ body {
         0 0 20px rgba(255,61,104,.85),
         0 0 55px rgba(255,30,80,.4) !important;
 }
-
 
 .certificate-card:nth-child(3):hover {
 
@@ -711,7 +685,6 @@ body {
         0 0 55px rgba(255,100,0,.4) !important;
 }
 
-
 .certificate-card:nth-child(4):hover {
 
     border-color: #2196f3 !important;
@@ -722,7 +695,6 @@ body {
         0 0 55px rgba(0,100,255,.4) !important;
 }
 
-
 .certificate-card:nth-child(5):hover {
 
     border-color: #a855f7 !important;
@@ -732,7 +704,6 @@ body {
         0 0 20px rgba(168,85,247,.85),
         0 0 55px rgba(120,50,255,.4) !important;
 }
-
 
 .certificate-card:nth-child(6):hover {
 
@@ -758,11 +729,11 @@ body {
     100% {
         left: 160%;
     }
-
 }
 
+
 /* =====================================================
-   AZ-104 PROTECTED PREVIEW - TEST ONLY
+   PROTECTED PREVIEW
 ===================================================== */
 
 .certificate-card.protected-test img {
@@ -825,9 +796,10 @@ body {
     font-size: 12px;
     color: #d5e6f5;
     letter-spacing: 1px;
-}     
+}
 
-   /* =====================================================
+
+/* =====================================================
    CERTIFICATE NAME BELOW PREVIEW
 ===================================================== */
 
@@ -846,43 +818,47 @@ body {
 
 .certificate-title strong {
     display: block;
-
     color: #ffffff;
-
     font-size: 21px;
     font-weight: 800;
-
     letter-spacing: 1px;
-
     margin-bottom: 5px;
 }
 
 .certificate-title span {
     display: block;
-
     color: #8fdcff;
-
     font-size: 14px;
     font-weight: 600;
-}   
- /* =====================================================
-   MICROSOFT LOGO WITH CERTIFICATE TITLE
+}
+
+
+/* =====================================================
+   MICROSOFT LOGO
 ===================================================== */
 
 .certificate-title-logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 14px;
+    gap: 10px !important;
+    perspective: 700px;
+
+    animation:
+        certificateGlowPulse 2.2s ease-in-out infinite;
 }
 
 .certificate-title-text {
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0 !important;
+    line-height: 1;
 }
 
 .microsoft-logo {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
 
     display: grid;
 
@@ -893,8 +869,17 @@ body {
 
     flex-shrink: 0;
 
+    transform:
+        perspective(500px)
+        rotateY(-7deg)
+        rotateX(4deg);
+
     filter:
-        drop-shadow(0 4px 8px rgba(0,0,0,.35));
+        drop-shadow(0 4px 5px rgba(0,0,0,.45))
+        drop-shadow(0 0 8px rgba(0,210,255,.35));
+
+    animation:
+        microsoftLogoFloat 2.2s ease-in-out infinite;
 }
 
 .microsoft-logo span:nth-child(1) {
@@ -915,36 +900,16 @@ body {
 
 .microsoft-logo span {
     border-radius: 1px;
-}     
+
+    box-shadow:
+        inset 0 1px 2px rgba(255,255,255,.45),
+        0 0 7px rgba(255,255,255,.18);
+}
+
+
 /* =====================================================
-   AZ-104 PREMIUM 3D GLOW + BLINK ANIMATION
+   TITLE ANIMATION
 ===================================================== */
-
-/* Logo + Text ko aur close rakho */
-
-.certificate-title-logo {
-    gap: 10px !important;
-
-    perspective: 700px;
-
-    animation:
-        certificateGlowPulse 2.2s ease-in-out infinite;
-}
-
-
-/* AZ-104 aur subtitle ko paas lao */
-
-.certificate-title-text {
-    display: flex;
-    flex-direction: column;
-
-    gap: 0 !important;
-
-    line-height: 1;
-}
-
-
-/* AZ-104 */
 
 .certificate-title-logo
 .certificate-title-text strong {
@@ -978,9 +943,6 @@ body {
         certificateTextFlow 3s linear infinite;
 }
 
-
-/* Microsoft Azure Administrator */
-
 .certificate-title-logo
 .certificate-title-text span {
 
@@ -996,41 +958,8 @@ body {
 }
 
 
-/* Microsoft Logo */
-
-.certificate-title-logo
-.microsoft-logo {
-
-    width: 36px;
-    height: 36px;
-
-    transform:
-        perspective(500px)
-        rotateY(-7deg)
-        rotateX(4deg);
-
-    filter:
-        drop-shadow(0 4px 5px rgba(0,0,0,.45))
-        drop-shadow(0 0 8px rgba(0,210,255,.35));
-
-    animation:
-        microsoftLogoFloat 2.2s ease-in-out infinite;
-}
-
-
-/* Logo ke 4 colors bhi glow karenge */
-
-.certificate-title-logo
-.microsoft-logo span {
-
-    box-shadow:
-        inset 0 1px 2px rgba(255,255,255,.45),
-        0 0 7px rgba(255,255,255,.18);
-}
-
-
 /* =====================================================
-   COMPLETE LOGO + TEXT LIGHT PULSE
+   TITLE GLOW
 ===================================================== */
 
 @keyframes certificateGlowPulse {
@@ -1061,10 +990,6 @@ body {
 }
 
 
-/* =====================================================
-   COLOR MOVEMENT
-===================================================== */
-
 @keyframes certificateTextFlow {
 
     0% {
@@ -1080,10 +1005,6 @@ body {
     }
 }
 
-
-/* =====================================================
-   MICROSOFT LOGO 3D FLOAT
-===================================================== */
 
 @keyframes microsoftLogoFloat {
 
@@ -1110,7 +1031,7 @@ body {
 
 
 /* =====================================================
-   ALL CERTIFICATE BRAND ICONS
+   BRAND ICONS
 ===================================================== */
 
 .brand-icon {
@@ -1308,7 +1229,7 @@ body {
 
 
 /* =====================================================
-   BRAND ICON 3D FLOAT
+   BRAND ICON FLOAT
 ===================================================== */
 
 @keyframes brandIconFloat {
@@ -1341,10 +1262,6 @@ body {
 }
 
 
-/* =====================================================
-   AI COLOR MOVEMENT
-===================================================== */
-
 @keyframes aiColorMove {
 
     0% {
@@ -1359,9 +1276,10 @@ body {
         background-position: 0% 50%;
     }
 }
-      
+
+
 /* =====================================================
-   BLOCK CERTIFICATE IMAGE SAVE / DRAG
+   BLOCK IMAGE SAVE / DRAG
 ===================================================== */
 
 .protected-certificate-item .certificate-card,
@@ -1369,7 +1287,6 @@ body {
 
     -webkit-user-select: none;
     user-select: none;
-
 }
 
 .protected-certificate-item .certificate-card img {
@@ -1379,12 +1296,11 @@ body {
     -webkit-user-drag: none;
 
     user-drag: none;
-
 }
 
+
 /* =====================================================
-   CERTIFICATIONS PAGE - PREMIUM LIGHT THEME
-   SAME THEME SYSTEM AS HOME PAGE
+   PREMIUM LIGHT THEME
 ===================================================== */
 
 body.theme-light {
@@ -1400,22 +1316,17 @@ body.theme-light {
         #102033 !important;
 }
 
-
-/* PAGE HEADER */
-
 body.theme-light .page-header {
 
     color:
         #102033 !important;
 }
 
-
 body.theme-light .page-label {
 
     color:
         #087cf0 !important;
 }
-
 
 body.theme-light .page-header h1 {
 
@@ -1441,15 +1352,11 @@ body.theme-light .page-header h1 {
         transparent !important;
 }
 
-
 body.theme-light .page-header p {
 
     color:
         #52657a !important;
 }
-
-
-/* CERTIFICATE FRAME */
 
 body.theme-light .certificate-card {
 
@@ -1468,24 +1375,17 @@ body.theme-light .certificate-card {
         inset 0 1px 2px rgba(255,255,255,.85) !important;
 }
 
-
-/* CERTIFICATE TITLE */
-
 body.theme-light .certificate-title strong {
 
     color:
         #102033 !important;
 }
 
-
 body.theme-light .certificate-title span {
 
     color:
         #087cf0 !important;
 }
-
-
-/* GRADIENT CERTIFICATE TITLE TEXT */
 
 body.theme-light
 .certificate-title-logo
@@ -1513,7 +1413,6 @@ body.theme-light
         transparent !important;
 }
 
-
 body.theme-light
 .certificate-title-logo
 .certificate-title-text span {
@@ -1525,9 +1424,6 @@ body.theme-light
         none !important;
 }
 
-
-/* PROTECTED PREVIEW */
-
 body.theme-light .certificate-protection {
 
     background:
@@ -1538,7 +1434,6 @@ body.theme-light .certificate-protection {
         ) !important;
 }
 
-
 body.theme-light .certificate-protection strong {
 
     color:
@@ -1548,15 +1443,11 @@ body.theme-light .certificate-protection strong {
         0 2px 8px rgba(255,255,255,.9) !important;
 }
 
-
 body.theme-light .certificate-protection span {
 
     color:
         #43566d !important;
 }
-
-
-/* BACK HOME BUTTON */
 
 body.theme-light .back-home {
 
@@ -1573,18 +1464,12 @@ body.theme-light .back-home {
     box-shadow:
         0 8px 22px rgba(30,100,190,.18) !important;
 }
-      
+
 </style>
 </head>
 
 
 <body>
-
-
-<!-- ================================
-     NAVIGATION
-================================ -->
-
 
 
 <!-- ================= NAVIGATION ================= -->
@@ -1596,34 +1481,35 @@ body.theme-light .back-home {
         <a href="index.html" class="logo">
             TANWEER<span>.</span>
         </a>
-<nav id="navMenu">
 
-    <a href="index.html">
-        Home
-    </a>
+        <nav id="navMenu">
 
-    <a href="about.html">
-        About
-    </a>
+            <a href="index.html">
+                Home
+            </a>
 
- 
+            <a href="about.html">
+                About
+            </a>
 
-    <a href="experience.html">
-        Experience
-    </a>
+            <a href="experience.html">
+                Experience
+            </a>
 
-    <a href="certifications.html" class="active">
-        Certifications
-    </a>
-<a href="documentation.html">
-    Documentation
-</a>
-    <a href="contact.html">
-        Contact
-    </a>
+            <a href="certifications.html" class="active">
+                Certifications
+            </a>
 
-</nav>
-        
+            <a href="documentation.html">
+                Documentation
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
 
         <div class="nav-buttons">
 
@@ -1637,9 +1523,13 @@ body.theme-light .back-home {
                class="nav-contact whatsapp-nav">
 
                 <i class="fa-brands fa-whatsapp"></i>
-                <span>WhatsApp</span>
+
+                <span>
+                    WhatsApp
+                </span>
 
             </a>
+
 
             <button id="menuToggle" class="menu-btn">
                 <i class="fa-solid fa-bars"></i>
@@ -1652,10 +1542,6 @@ body.theme-light .back-home {
 </header>
 
 
-
-
-
-   
 
 <!-- ================================
      HEADER
@@ -1677,6 +1563,7 @@ body.theme-light .back-home {
     </p>
 
 </header>
+
 
 
 <!-- ================================
@@ -1702,7 +1589,9 @@ body.theme-light .back-home {
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>PORTFOLIO PREVIEW</strong>
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
 
             <span>
                 Original Certificate Available on Request
@@ -1712,6 +1601,7 @@ body.theme-light .back-home {
 
     </div>
 
+
     <div class="certificate-title certificate-title-logo">
 
         <div class="brand-icon cisco-icon">
@@ -1720,7 +1610,9 @@ body.theme-light .back-home {
 
         <div class="certificate-title-text">
 
-            <strong>CCNA</strong>
+            <strong>
+                CCNA
+            </strong>
 
             <span>
                 Cisco Networking Certification
@@ -1750,7 +1642,9 @@ body.theme-light .back-home {
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>PORTFOLIO PREVIEW</strong>
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
 
             <span>
                 Original Certificate Available on Request
@@ -1760,6 +1654,7 @@ body.theme-light .back-home {
 
     </div>
 
+
     <div class="certificate-title certificate-title-logo">
 
         <div class="brand-icon cisco-icon">
@@ -1768,7 +1663,9 @@ body.theme-light .back-home {
 
         <div class="certificate-title-text">
 
-            <strong>CCNP</strong>
+            <strong>
+                CCNP
+            </strong>
 
             <span>
                 Cisco Professional Networking
@@ -1798,7 +1695,9 @@ body.theme-light .back-home {
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>PORTFOLIO PREVIEW</strong>
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
 
             <span>
                 Original Certificate Available on Request
@@ -1808,6 +1707,7 @@ body.theme-light .back-home {
 
     </div>
 
+
     <div class="certificate-title certificate-title-logo">
 
         <div class="brand-icon fortinet-icon">
@@ -1816,7 +1716,9 @@ body.theme-light .back-home {
 
         <div class="certificate-title-text">
 
-            <strong>FORTINET NSE 4</strong>
+            <strong>
+                FORTINET NSE 4
+            </strong>
 
             <span>
                 Fortinet Network Security
@@ -1846,7 +1748,9 @@ body.theme-light .back-home {
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>PORTFOLIO PREVIEW</strong>
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
 
             <span>
                 Original Certificate Available on Request
@@ -1856,9 +1760,11 @@ body.theme-light .back-home {
 
     </div>
 
+
     <div class="certificate-title certificate-title-logo">
 
-        <div class="microsoft-logo" aria-hidden="true">
+        <div class="microsoft-logo"
+             aria-hidden="true">
 
             <span></span>
             <span></span>
@@ -1869,7 +1775,9 @@ body.theme-light .back-home {
 
         <div class="certificate-title-text">
 
-            <strong>AZ-104</strong>
+            <strong>
+                AZ-104
+            </strong>
 
             <span>
                 Microsoft Azure Administrator
@@ -1899,7 +1807,9 @@ body.theme-light .back-home {
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>PORTFOLIO PREVIEW</strong>
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
 
             <span>
                 Original Certificate Available on Request
@@ -1909,9 +1819,11 @@ body.theme-light .back-home {
 
     </div>
 
+
     <div class="certificate-title certificate-title-logo">
 
-        <div class="microsoft-logo" aria-hidden="true">
+        <div class="microsoft-logo"
+             aria-hidden="true">
 
             <span></span>
             <span></span>
@@ -1922,7 +1834,9 @@ body.theme-light .back-home {
 
         <div class="certificate-title-text">
 
-            <strong>AZ-700</strong>
+            <strong>
+                AZ-700
+            </strong>
 
             <span>
                 Microsoft Azure Network Engineer
@@ -1937,7 +1851,243 @@ body.theme-light .back-home {
 
 
 <!-- =====================================================
-     6. ITIL
+     6. AZURE AI ENGINEER AI-102
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
+
+        <img
+            src="./certificates/Azure_AI_Engineer_AI-102.jpg"
+            alt="Azure AI Engineer AI-102 Certificate">
+
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="certificate-title certificate-title-logo">
+
+        <div class="microsoft-logo"
+             aria-hidden="true">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>
+                AI-102
+            </strong>
+
+            <span>
+                Microsoft Azure AI Engineer
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     7. AZURE NETWORKING & SECURITY
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
+
+        <img
+            src="./certificates/Azure_Networking_and_Security_for_Beginners_Tools_and_Services.jpg"
+            alt="Azure Networking and Security Certificate">
+
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="certificate-title certificate-title-logo">
+
+        <div class="microsoft-logo"
+             aria-hidden="true">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>
+                AZURE NETWORKING & SECURITY
+            </strong>
+
+            <span>
+                Azure Networking & Security Tools and Services
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     8. MICROSOFT INTUNE
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
+
+        <img
+            src="./certificates/Cloud_Management_with_Microsoft_Intune.jpg"
+            alt="Microsoft Intune Cloud Management Certificate">
+
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="certificate-title certificate-title-logo">
+
+        <div class="microsoft-logo"
+             aria-hidden="true">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>
+                MICROSOFT INTUNE
+            </strong>
+
+            <span>
+                Cloud Management with Microsoft Intune
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     9. MICROSOFT 365
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
+
+        <img
+            src="./certificates/Microsoft_365_Administration.jpg"
+            alt="Microsoft 365 Administration Certificate">
+
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="certificate-title certificate-title-logo">
+
+        <div class="microsoft-logo"
+             aria-hidden="true">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>
+                MICROSOFT 365
+            </strong>
+
+            <span>
+                Microsoft 365 Administration
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     10. ITIL
 ===================================================== -->
 
 <div class="protected-certificate-item">
@@ -1952,7 +2102,9 @@ body.theme-light .back-home {
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>PORTFOLIO PREVIEW</strong>
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
 
             <span>
                 Original Certificate Available on Request
@@ -1962,6 +2114,7 @@ body.theme-light .back-home {
 
     </div>
 
+
     <div class="certificate-title certificate-title-logo">
 
         <div class="brand-icon itil-icon">
@@ -1970,7 +2123,9 @@ body.theme-light .back-home {
 
         <div class="certificate-title-text">
 
-            <strong>ITIL</strong>
+            <strong>
+                ITIL
+            </strong>
 
             <span>
                 IT Service Management
@@ -1985,7 +2140,7 @@ body.theme-light .back-home {
 
 
 <!-- =====================================================
-     7. CYBERSECURITY
+     11. CYBERSECURITY
 ===================================================== -->
 
 <div class="protected-certificate-item">
@@ -2000,7 +2155,9 @@ body.theme-light .back-home {
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>PORTFOLIO PREVIEW</strong>
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
 
             <span>
                 Original Certificate Available on Request
@@ -2010,6 +2167,7 @@ body.theme-light .back-home {
 
     </div>
 
+
     <div class="certificate-title certificate-title-logo">
 
         <div class="brand-icon cyber-icon">
@@ -2018,7 +2176,9 @@ body.theme-light .back-home {
 
         <div class="certificate-title-text">
 
-            <strong>CYBERSECURITY</strong>
+            <strong>
+                CYBERSECURITY
+            </strong>
 
             <span>
                 Cybersecurity Certificate
@@ -2033,7 +2193,7 @@ body.theme-light .back-home {
 
 
 <!-- =====================================================
-     8. HCM
+     12. HCM
 ===================================================== -->
 
 <div class="protected-certificate-item">
@@ -2048,7 +2208,9 @@ body.theme-light .back-home {
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>PORTFOLIO PREVIEW</strong>
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
 
             <span>
                 Original Certificate Available on Request
@@ -2058,6 +2220,7 @@ body.theme-light .back-home {
 
     </div>
 
+
     <div class="certificate-title certificate-title-logo">
 
         <div class="brand-icon hcm-icon">
@@ -2066,7 +2229,9 @@ body.theme-light .back-home {
 
         <div class="certificate-title-text">
 
-            <strong>HCM</strong>
+            <strong>
+                HCM
+            </strong>
 
             <span>
                 HCM Certificate
@@ -2081,7 +2246,7 @@ body.theme-light .back-home {
 
 
 <!-- =====================================================
-     9. SCE
+     13. SCE
 ===================================================== -->
 
 <div class="protected-certificate-item">
@@ -2096,7 +2261,9 @@ body.theme-light .back-home {
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>PORTFOLIO PREVIEW</strong>
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
 
             <span>
                 Original Certificate Available on Request
@@ -2106,6 +2273,7 @@ body.theme-light .back-home {
 
     </div>
 
+
     <div class="certificate-title certificate-title-logo">
 
         <div class="brand-icon sce-icon">
@@ -2114,7 +2282,9 @@ body.theme-light .back-home {
 
         <div class="certificate-title-text">
 
-            <strong>SCE</strong>
+            <strong>
+                SCE
+            </strong>
 
             <span>
                 SCE Certificate
@@ -2129,7 +2299,7 @@ body.theme-light .back-home {
 
 
 <!-- =====================================================
-     10. SEDER
+     14. SEDER
 ===================================================== -->
 
 <div class="protected-certificate-item">
@@ -2144,7 +2314,9 @@ body.theme-light .back-home {
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>PORTFOLIO PREVIEW</strong>
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
 
             <span>
                 Original Certificate Available on Request
@@ -2154,6 +2326,7 @@ body.theme-light .back-home {
 
     </div>
 
+
     <div class="certificate-title certificate-title-logo">
 
         <div class="brand-icon seder-icon">
@@ -2162,7 +2335,9 @@ body.theme-light .back-home {
 
         <div class="certificate-title-text">
 
-            <strong>SEDER</strong>
+            <strong>
+                SEDER
+            </strong>
 
             <span>
                 SEDER Certificate
@@ -2177,7 +2352,7 @@ body.theme-light .back-home {
 
 
 <!-- =====================================================
-     11. AI ENGINEER
+     15. AI ENGINEER
 ===================================================== -->
 
 <div class="protected-certificate-item">
@@ -2192,7 +2367,9 @@ body.theme-light .back-home {
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>PORTFOLIO PREVIEW</strong>
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
 
             <span>
                 Original Certificate Available on Request
@@ -2202,6 +2379,7 @@ body.theme-light .back-home {
 
     </div>
 
+
     <div class="certificate-title certificate-title-logo">
 
         <div class="brand-icon ai-icon">
@@ -2210,7 +2388,9 @@ body.theme-light .back-home {
 
         <div class="certificate-title-text">
 
-            <strong>AI ENGINEER</strong>
+            <strong>
+                AI ENGINEER
+            </strong>
 
             <span>
                 AI Engineer Certificate
@@ -2225,7 +2405,7 @@ body.theme-light .back-home {
 
 
 <!-- =====================================================
-     12. AI TECHNIQUE
+     16. AI TECHNIQUE
 ===================================================== -->
 
 <div class="protected-certificate-item">
@@ -2240,7 +2420,9 @@ body.theme-light .back-home {
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>PORTFOLIO PREVIEW</strong>
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
 
             <span>
                 Original Certificate Available on Request
@@ -2250,6 +2432,7 @@ body.theme-light .back-home {
 
     </div>
 
+
     <div class="certificate-title certificate-title-logo">
 
         <div class="brand-icon ai-icon">
@@ -2258,7 +2441,9 @@ body.theme-light .back-home {
 
         <div class="certificate-title-text">
 
-            <strong>AI TECHNIQUE</strong>
+            <strong>
+                AI TECHNIQUE
+            </strong>
 
             <span>
                 AI Technique Certificate
@@ -2273,7 +2458,60 @@ body.theme-light .back-home {
 
 
 <!-- =====================================================
-     13. FINE-TUNING LLM
+     17. AI TECHNIQUES FOR NETWORKING
+===================================================== -->
+
+<div class="protected-certificate-item">
+
+    <div class="certificate-card protected-test">
+
+        <img
+            src="./certificates/AI-Techniques-for-Networking.jpg"
+            alt="AI Techniques for Networking Certificate">
+
+        <div class="certificate-protection">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
+
+            <span>
+                Original Certificate Available on Request
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="certificate-title certificate-title-logo">
+
+        <div class="brand-icon ai-icon">
+            <i class="fa-solid fa-network-wired"></i>
+        </div>
+
+        <div class="certificate-title-text">
+
+            <strong>
+                AI TECHNIQUES FOR NETWORKING
+            </strong>
+
+            <span>
+                AI Techniques for Networking
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     18. FINE-TUNING LLM
 ===================================================== -->
 
 <div class="protected-certificate-item">
@@ -2288,7 +2526,9 @@ body.theme-light .back-home {
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>PORTFOLIO PREVIEW</strong>
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
 
             <span>
                 Original Certificate Available on Request
@@ -2298,6 +2538,7 @@ body.theme-light .back-home {
 
     </div>
 
+
     <div class="certificate-title certificate-title-logo">
 
         <div class="brand-icon ai-icon">
@@ -2306,7 +2547,9 @@ body.theme-light .back-home {
 
         <div class="certificate-title-text">
 
-            <strong>FINE-TUNING LLM</strong>
+            <strong>
+                FINE-TUNING LLM
+            </strong>
 
             <span>
                 LLM Fine-Tuning Certificate
@@ -2321,7 +2564,7 @@ body.theme-light .back-home {
 
 
 <!-- =====================================================
-     14. PYTHON
+     19. PYTHON 1
 ===================================================== -->
 
 <div class="protected-certificate-item">
@@ -2330,13 +2573,15 @@ body.theme-light .back-home {
 
         <img
             src="./certificates/python1.jpg"
-            alt="Python Certificate">
+            alt="Python 1 Certificate">
 
         <div class="certificate-protection">
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>PORTFOLIO PREVIEW</strong>
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
 
             <span>
                 Original Certificate Available on Request
@@ -2346,6 +2591,7 @@ body.theme-light .back-home {
 
     </div>
 
+
     <div class="certificate-title certificate-title-logo">
 
         <div class="brand-icon python-icon">
@@ -2354,7 +2600,9 @@ body.theme-light .back-home {
 
         <div class="certificate-title-text">
 
-            <strong>PYTHON 1</strong>
+            <strong>
+                PYTHON 1
+            </strong>
 
             <span>
                 Python Certificate 1
@@ -2369,7 +2617,7 @@ body.theme-light .back-home {
 
 
 <!-- =====================================================
-     15. PYTHON
+     20. PYTHON 2
 ===================================================== -->
 
 <div class="protected-certificate-item">
@@ -2378,13 +2626,15 @@ body.theme-light .back-home {
 
         <img
             src="./certificates/python2.jpg"
-            alt="Python Certificate">
+            alt="Python 2 Certificate">
 
         <div class="certificate-protection">
 
             <i class="fa-solid fa-lock"></i>
 
-            <strong>PORTFOLIO PREVIEW</strong>
+            <strong>
+                PORTFOLIO PREVIEW
+            </strong>
 
             <span>
                 Original Certificate Available on Request
@@ -2394,6 +2644,7 @@ body.theme-light .back-home {
 
     </div>
 
+
     <div class="certificate-title certificate-title-logo">
 
         <div class="brand-icon python-icon">
@@ -2402,7 +2653,9 @@ body.theme-light .back-home {
 
         <div class="certificate-title-text">
 
-            <strong>PYTHON 2</strong>
+            <strong>
+                PYTHON 2
+            </strong>
 
             <span>
                 Python Certificate 2
@@ -2417,6 +2670,8 @@ body.theme-light .back-home {
 
 </section>
 
+
+
 <a
     href="index.html"
     class="back-home">
@@ -2426,16 +2681,13 @@ body.theme-light .back-home {
 </a>
 
 
+
 <script>
 
-
-      /* =====================================================
+/* =====================================================
    PROTECT CERTIFICATE PREVIEWS
    BLOCK RIGHT CLICK + IMAGE DRAG
 ===================================================== */
-
-
-/* Block right click on certificate cards */
 
 document.addEventListener(
     "contextmenu",
@@ -2455,8 +2707,6 @@ document.addEventListener(
 );
 
 
-/* Block dragging certificate images */
-
 document.addEventListener(
     "dragstart",
     function(event) {
@@ -2473,9 +2723,13 @@ document.addEventListener(
 
     }
 );
- 
+
 </script>
+
+
 <!-- SAME THEME + MOBILE MENU SYSTEM AS HOME PAGE -->
-<script src="script.js"></script>     
+
+<script src="script.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Website Documentation | Tanweer Ansari
+    </title>
+
+    <meta name="description"
+          content="Technical documentation of Tanweer Ansari's personal portfolio website including technologies, GitHub Pages, analytics, visitor tracking and development tools.">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+
+    <!-- MAIN WEBSITE CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+
+<style>
+
+/* =====================================================
+   DOCUMENTATION PAGE
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    color:
+        #eef6ff;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(0, 208, 255, .11),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(139, 92, 246, .13),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 85%,
+            rgba(255, 70, 180, .08),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            145deg,
+            #03111f,
+            #07192d 50%,
+            #0d1434
+        );
+
+    overflow-x: hidden;
+}
+
+
+
+/* =====================================================
+   MAIN WRAPPER
+===================================================== */
+
+.documentation-shell {
+
+    width:
+        min(1180px, 92%);
+
+    margin:
+        0 auto;
+
+}
+
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.documentation-hero {
+
+    width:
+        min(1050px, 90%);
+
+    margin:
+        125px auto 55px;
+
+    padding:
+        48px 42px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        28px;
+
+    text-align:
+        center;
+
+    border:
+        1px solid rgba(73, 196, 255, .30);
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0, 229, 255, .12),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(160, 100, 255, .15),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(10, 32, 55, .97),
+            rgba(10, 20, 48, .98)
+        );
+
+    box-shadow:
+
+        0 28px 70px
+        rgba(0, 0, 0, .38),
+
+        0 0 35px
+        rgba(0, 200, 255, .08);
+
+}
+
+
+.documentation-hero::before {
+
+    content: "";
+
+    position:
+        absolute;
+
+    width:
+        320px;
+
+    height:
+        320px;
+
+    right:
+        -130px;
+
+    top:
+        -140px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(114, 80, 255, .12);
+
+    filter:
+        blur(35px);
+
+}
+
+
+.documentation-label {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    color:
+        #56dfff;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        3px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.documentation-hero h1 {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        14px 0 18px;
+
+    font-size:
+        clamp(38px, 5vw, 62px);
+
+    line-height:
+        1.05;
+
+    letter-spacing:
+        -2px;
+
+}
+
+
+.documentation-gradient {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #42e9ff,
+            #648cff,
+            #a46cff,
+            #ff66c7
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+}
+
+
+.documentation-hero p {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        840px;
+
+    margin:
+        0 auto;
+
+    color:
+        #a8bbcd;
+
+    font-size:
+        15px;
+
+    line-height:
+        1.8;
+
+}
+
+
+
+/* =====================================================
+   QUICK PROJECT STATS
+===================================================== */
+
+.project-stats {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        15px;
+
+    margin:
+        0 0 80px;
+
+}
+
+
+.project-stat {
+
+    padding:
+        22px 15px;
+
+    text-align:
+        center;
+
+    border-radius:
+        17px;
+
+    border:
+        1px solid rgba(80, 180, 255, .18);
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.project-stat:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(75, 211, 255, .60);
+
+}
+
+
+.project-stat i {
+
+    margin-bottom:
+        10px;
+
+    color:
+        #4edcff;
+
+    font-size:
+        22px;
+
+}
+
+
+.project-stat strong {
+
+    display:
+        block;
+
+    color:
+        #ffffff;
+
+    font-size:
+        17px;
+
+}
+
+
+.project-stat span {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    color:
+        #768fa7;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        1px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.doc-heading {
+
+    margin-bottom:
+        35px;
+
+    text-align:
+        center;
+
+}
+
+
+.doc-heading small {
+
+    color:
+        #50dbff;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        3px;
+
+}
+
+
+.doc-heading h2 {
+
+    margin:
+        10px 0 10px;
+
+    font-size:
+        clamp(29px, 4vw, 43px);
+
+}
+
+
+.doc-heading p {
+
+    max-width:
+        760px;
+
+    margin:
+        0 auto;
+
+    color:
+        #8fa5ba;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+
+/* =====================================================
+   INTRODUCTION
+===================================================== */
+
+.project-introduction {
+
+    margin-bottom:
+        90px;
+
+    padding:
+        34px;
+
+    border-radius:
+        24px;
+
+    border:
+        1px solid rgba(92, 176, 255, .20);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .045),
+            rgba(255, 255, 255, .015)
+        );
+
+}
+
+
+.project-introduction h3 {
+
+    margin:
+        0 0 15px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        24px;
+
+}
+
+
+.project-introduction p {
+
+    margin:
+        0;
+
+    color:
+        #a4b5c6;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.9;
+
+}
+
+
+
+/* =====================================================
+   TECHNOLOGY CARDS
+===================================================== */
+
+.tech-section {
+
+    margin-bottom:
+        100px;
+
+}
+
+
+.tech-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        18px;
+
+}
+
+
+.doc-card {
+
+    --accent:
+        #47e6ff;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    min-height:
+        245px;
+
+    padding:
+        26px;
+
+    border-radius:
+        21px;
+
+    border:
+
+        1px solid
+
+        color-mix(
+            in srgb,
+            var(--accent) 30%,
+            transparent
+        );
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .055),
+            rgba(255, 255, 255, .015)
+        );
+
+    transition:
+        .35s ease;
+
+}
+
+
+.doc-card:nth-child(1) {
+
+    --accent:
+        #ff7043;
+
+}
+
+
+.doc-card:nth-child(2) {
+
+    --accent:
+        #4da6ff;
+
+}
+
+
+.doc-card:nth-child(3) {
+
+    --accent:
+        #ffd54f;
+
+}
+
+
+.doc-card:nth-child(4) {
+
+    --accent:
+        #ffffff;
+
+}
+
+
+.doc-card:nth-child(5) {
+
+    --accent:
+        #ff9f43;
+
+}
+
+
+.doc-card:nth-child(6) {
+
+    --accent:
+        #43e6a0;
+
+}
+
+
+.doc-card:nth-child(7) {
+
+    --accent:
+        #68d7ff;
+
+}
+
+
+.doc-card:nth-child(8) {
+
+    --accent:
+        #b17cff;
+
+}
+
+
+.doc-card:nth-child(9) {
+
+    --accent:
+        #ff67c4;
+
+}
+
+
+.doc-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        var(--accent);
+
+    box-shadow:
+
+        0 20px 45px
+        rgba(0, 0, 0, .30),
+
+        0 0 22px
+
+        color-mix(
+            in srgb,
+            var(--accent) 18%,
+            transparent
+        );
+
+}
+
+
+.doc-icon {
+
+    width:
+        52px;
+
+    height:
+        52px;
+
+    margin-bottom:
+        18px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        15px;
+
+    color:
+        var(--accent);
+
+    font-size:
+        22px;
+
+    border:
+
+        1px solid
+
+        color-mix(
+            in srgb,
+            var(--accent) 42%,
+            transparent
+        );
+
+    background:
+
+        color-mix(
+            in srgb,
+            var(--accent) 10%,
+            transparent
+        );
+
+}
+
+
+.doc-card h3 {
+
+    margin:
+        0 0 9px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        18px;
+
+}
+
+
+.doc-card p {
+
+    margin:
+        0;
+
+    color:
+        #8fa4b8;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.doc-tag {
+
+    display:
+        inline-block;
+
+    margin-top:
+        15px;
+
+    padding:
+        6px 9px;
+
+    border-radius:
+        8px;
+
+    color:
+        var(--accent);
+
+    font-size:
+        8px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .7px;
+
+    border:
+
+        1px solid
+
+        color-mix(
+            in srgb,
+            var(--accent) 28%,
+            transparent
+        );
+
+}
+
+
+
+/* =====================================================
+   DEVELOPMENT WORKFLOW
+===================================================== */
+
+.workflow-section {
+
+    margin-bottom:
+        100px;
+
+}
+
+
+.workflow-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap:
+        13px;
+
+}
+
+
+.workflow-item {
+
+    position:
+        relative;
+
+    padding:
+        25px 15px;
+
+    text-align:
+        center;
+
+    border-radius:
+        17px;
+
+    border:
+        1px solid rgba(255, 255, 255, .08);
+
+    background:
+        rgba(255, 255, 255, .025);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.workflow-item:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        #53dcff;
+
+}
+
+
+.workflow-number {
+
+    width:
+        36px;
+
+    height:
+        36px;
+
+    margin:
+        0 auto 13px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    color:
+        #061426;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #48e7ff,
+            #8a78ff
+        );
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+}
+
+
+.workflow-item strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        5px;
+
+    font-size:
+        11px;
+
+}
+
+
+.workflow-item span {
+
+    color:
+        #768ba0;
+
+    font-size:
+        9px;
+
+    line-height:
+        1.5;
+
+}
+
+
+
+/* =====================================================
+   ANALYTICS SECTION
+===================================================== */
+
+.analytics-section {
+
+    margin-bottom:
+        100px;
+
+}
+
+
+.analytics-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        20px;
+
+}
+
+
+.analytics-card {
+
+    padding:
+        30px;
+
+    border-radius:
+        22px;
+
+    border:
+        1px solid rgba(80, 190, 255, .20);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .05),
+            rgba(255, 255, 255, .015)
+        );
+
+}
+
+
+.analytics-title {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    margin-bottom:
+        17px;
+
+}
+
+
+.analytics-title i {
+
+    width:
+        46px;
+
+    height:
+        46px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        13px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        20px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #2196f3,
+            #7e57c2
+        );
+
+}
+
+
+.analytics-title h3 {
+
+    margin:
+        0;
+
+    font-size:
+        19px;
+
+}
+
+
+.analytics-card p {
+
+    color:
+        #94a9bc;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+}
+
+
+.analytics-list {
+
+    display:
+        grid;
+
+    gap:
+        8px;
+
+    margin-top:
+        15px;
+
+}
+
+
+.analytics-list span {
+
+    color:
+        #a6b7c7;
+
+    font-size:
+        10px;
+
+}
+
+
+.analytics-list i {
+
+    width:
+        20px;
+
+    color:
+        #4ddcff;
+
+}
+
+
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.documentation-summary {
+
+    margin:
+        0 auto 85px;
+
+    padding:
+        45px 35px;
+
+    text-align:
+        center;
+
+    border-radius:
+        26px;
+
+    border:
+        1px solid rgba(90, 155, 255, .25);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(14, 62, 90, .78),
+            rgba(42, 31, 93, .78)
+        );
+
+}
+
+
+.documentation-summary i {
+
+    margin-bottom:
+        16px;
+
+    color:
+        #59e1ff;
+
+    font-size:
+        35px;
+
+}
+
+
+.documentation-summary h2 {
+
+    margin:
+        0 0 14px;
+
+    font-size:
+        clamp(27px, 4vw, 40px);
+
+}
+
+
+.documentation-summary p {
+
+    max-width:
+        820px;
+
+    margin:
+        0 auto;
+
+    color:
+        #b2c1d0;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.8;
+
+}
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 950px) {
+
+    .tech-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .project-stats {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .workflow-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .documentation-hero {
+
+        width:
+            92%;
+
+        margin:
+            35px auto;
+
+        padding:
+            32px 21px;
+
+    }
+
+
+    .documentation-hero h1 {
+
+        font-size:
+            38px;
+
+    }
+
+
+    .tech-grid,
+    .analytics-grid,
+    .project-stats,
+    .workflow-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .project-introduction,
+    .analytics-card {
+
+        padding:
+            23px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html"
+           class="logo">
+
+            TANWEER<span>.</span>
+
+        </a>
+
+
+        <nav id="navMenu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="experience.html">
+                Experience
+            </a>
+
+            <a href="certifications.html">
+                Certifications
+            </a>
+
+            <a href="documentation.html"
+               class="active">
+                Documentation
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="nav-buttons">
+
+            <button
+                id="themeToggle"
+                class="icon-btn"
+                aria-label="Toggle theme">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+
+            <button
+                id="menuToggle"
+                class="menu-btn"
+                aria-label="Open menu">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="documentation-hero">
+
+    <div class="documentation-label">
+
+        <i class="fa-solid fa-book-open"></i>
+
+        PROJECT DOCUMENTATION
+
+    </div>
+
+
+    <h1>
+
+        Tanweer Ansari
+
+        <br>
+
+        <span class="documentation-gradient">
+
+            Personal Portfolio Website
+
+        </span>
+
+    </h1>
+
+
+    <p>
+
+        Technical overview of the technologies, platforms,
+        development tools, hosting services and analytics systems
+        used to design, develop, publish and maintain my professional
+        portfolio website.
+
+    </p>
+
+</section>
+
+
+
+<main class="documentation-shell">
+
+
+<!-- =====================================================
+     PROJECT QUICK OVERVIEW
+===================================================== -->
+
+<section class="project-stats">
+
+    <div class="project-stat">
+
+        <i class="fa-solid fa-code"></i>
+
+        <strong>
+            HTML · CSS · JS
+        </strong>
+
+        <span>
+            Core Development
+        </span>
+
+    </div>
+
+
+    <div class="project-stat">
+
+        <i class="fa-brands fa-github"></i>
+
+        <strong>
+            GitHub
+        </strong>
+
+        <span>
+            Source Control
+        </span>
+
+    </div>
+
+
+    <div class="project-stat">
+
+        <i class="fa-solid fa-chart-line"></i>
+
+        <strong>
+            Analytics
+        </strong>
+
+        <span>
+            Visitor Tracking
+        </span>
+
+    </div>
+
+
+    <div class="project-stat">
+
+        <i class="fa-solid fa-globe"></i>
+
+        <strong>
+            tanweer.site
+        </strong>
+
+        <span>
+            Custom Domain
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECT INTRODUCTION
+===================================================== -->
+
+<section>
+
+    <div class="doc-heading">
+
+        <small>
+            PROJECT OVERVIEW
+        </small>
+
+        <h2>
+            Introduction
+        </h2>
+
+        <p>
+            A complete overview of how this portfolio website
+            was planned, developed, published and monitored.
+        </p>
+
+    </div>
+
+
+    <div class="project-introduction">
+
+        <h3>
+            Professional Portfolio Website Project
+        </h3>
+
+
+        <p>
+
+            The Tanweer Ansari Personal Portfolio Website was created
+            as a professional online platform to present my IT experience,
+            technical skills, certifications, projects, technical notes
+            and professional profile.
+
+            <br><br>
+
+            The website was developed primarily using HTML5, CSS3 and
+            JavaScript instead of relying completely on a ready-made
+            website builder. This provides greater control over the
+            website structure, appearance, animations, responsive design
+            and future development.
+
+            <br><br>
+
+            GitHub is used for source-code management and version history,
+            while GitHub Pages provides website hosting and publishing.
+            The website is connected to the custom domain
+            <strong>tanweer.site</strong>.
+
+            <br><br>
+
+            Google Analytics 4 and GoatCounter were integrated to monitor
+            website visitors, page views, traffic sources, visitor
+            locations, devices and general website usage.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TECHNOLOGIES & PLATFORMS
+===================================================== -->
+
+<section class="tech-section">
+
+    <div class="doc-heading">
+
+        <small>
+            TECHNOLOGY STACK
+        </small>
+
+        <h2>
+            Tools & Platforms Used
+        </h2>
+
+        <p>
+            Main technologies and online services used during
+            website development and publishing.
+        </p>
+
+    </div>
+
+
+    <div class="tech-grid">
+
+
+        <!-- HTML -->
+
+        <article class="doc-card">
+
+            <div class="doc-icon">
+
+                <i class="fa-brands fa-html5"></i>
+
+            </div>
+
+            <h3>
+                HTML5
+            </h3>
+
+            <p>
+
+                HTML provides the core structure of the website,
+                including navigation, page sections, headings,
+                content, links, cards and other web elements.
+
+            </p>
+
+            <span class="doc-tag">
+                WEBSITE STRUCTURE
+            </span>
+
+        </article>
+
+
+
+        <!-- CSS -->
+
+        <article class="doc-card">
+
+            <div class="doc-icon">
+
+                <i class="fa-brands fa-css3-alt"></i>
+
+            </div>
+
+            <h3>
+                CSS3
+            </h3>
+
+            <p>
+
+                CSS is used for responsive layouts, colors,
+                animations, gradients, hover effects, cards,
+                typography and the overall visual design.
+
+            </p>
+
+            <span class="doc-tag">
+                DESIGN & ANIMATION
+            </span>
+
+        </article>
+
+
+
+        <!-- JAVASCRIPT -->
+
+        <article class="doc-card">
+
+            <div class="doc-icon">
+
+                <i class="fa-brands fa-js"></i>
+
+            </div>
+
+            <h3>
+                JavaScript
+            </h3>
+
+            <p>
+
+                JavaScript provides interactive website functions
+                including navigation behavior, theme controls,
+                dynamic effects and other user interactions.
+
+            </p>
+
+            <span class="doc-tag">
+                INTERACTIVITY
+            </span>
+
+        </article>
+
+
+
+        <!-- GITHUB -->
+
+        <article class="doc-card">
+
+            <div class="doc-icon">
+
+                <i class="fa-brands fa-github"></i>
+
+            </div>
+
+            <h3>
+                GitHub
+            </h3>
+
+            <p>
+
+                GitHub is used as the central source-code repository
+                where website files, images, documents and development
+                history are maintained.
+
+            </p>
+
+            <span class="doc-tag">
+                VERSION CONTROL
+            </span>
+
+        </article>
+
+
+
+        <!-- GITHUB PAGES -->
+
+        <article class="doc-card">
+
+            <div class="doc-icon">
+
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+            </div>
+
+            <h3>
+                GitHub Pages
+            </h3>
+
+            <p>
+
+                GitHub Pages publishes the repository content as a
+                live website and provides simple deployment whenever
+                website files are updated.
+
+            </p>
+
+            <span class="doc-tag">
+                WEB HOSTING
+            </span>
+
+        </article>
+
+
+
+        <!-- DOMAIN -->
+
+        <article class="doc-card">
+
+            <div class="doc-icon">
+
+                <i class="fa-solid fa-globe"></i>
+
+            </div>
+
+            <h3>
+                Custom Domain
+            </h3>
+
+            <p>
+
+                The custom domain tanweer.site provides a professional,
+                easy-to-remember web address instead of using only the
+                default GitHub Pages URL.
+
+            </p>
+
+            <span class="doc-tag">
+                TANWEER.SITE
+            </span>
+
+        </article>
+
+
+
+        <!-- GOOGLE ANALYTICS -->
+
+        <article class="doc-card">
+
+            <div class="doc-icon">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+            </div>
+
+            <h3>
+                Google Analytics 4
+            </h3>
+
+            <p>
+
+                Google Analytics provides detailed statistics about
+                visitors, page views, devices, traffic sources,
+                countries and user engagement.
+
+            </p>
+
+            <span class="doc-tag">
+                WEBSITE ANALYTICS
+            </span>
+
+        </article>
+
+
+
+        <!-- GOATCOUNTER -->
+
+        <article class="doc-card">
+
+            <div class="doc-icon">
+
+                <i class="fa-solid fa-eye"></i>
+
+            </div>
+
+            <h3>
+                GoatCounter
+            </h3>
+
+            <p>
+
+                GoatCounter provides lightweight website statistics
+                and is also used to display the public total visitor
+                counter on the portfolio website.
+
+            </p>
+
+            <span class="doc-tag">
+                VISITOR COUNTER
+            </span>
+
+        </article>
+
+
+
+        <!-- CHATGPT / AI -->
+
+        <article class="doc-card">
+
+            <div class="doc-icon">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            </div>
+
+            <h3>
+                AI-Assisted Development
+            </h3>
+
+            <p>
+
+                AI tools were used during planning, design,
+                troubleshooting, content development and code
+                improvement while building the portfolio website.
+
+            </p>
+
+            <span class="doc-tag">
+                DEVELOPMENT SUPPORT
+            </span>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DEVELOPMENT WORKFLOW
+===================================================== -->
+
+<section class="workflow-section">
+
+    <div class="doc-heading">
+
+        <small>
+            DEVELOPMENT FLOW
+        </small>
+
+        <h2>
+            Website Development Process
+        </h2>
+
+        <p>
+            The basic lifecycle followed while building
+            and publishing the portfolio website.
+        </p>
+
+    </div>
+
+
+    <div class="workflow-grid">
+
+
+        <div class="workflow-item">
+
+            <div class="workflow-number">
+                01
+            </div>
+
+            <strong>
+                Plan
+            </strong>
+
+            <span>
+                Define website structure and content
+            </span>
+
+        </div>
+
+
+        <div class="workflow-item">
+
+            <div class="workflow-number">
+                02
+            </div>
+
+            <strong>
+                Develop
+            </strong>
+
+            <span>
+                Build using HTML, CSS and JavaScript
+            </span>
+
+        </div>
+
+
+        <div class="workflow-item">
+
+            <div class="workflow-number">
+                03
+            </div>
+
+            <strong>
+                Test
+            </strong>
+
+            <span>
+                Check desktop and mobile experience
+            </span>
+
+        </div>
+
+
+        <div class="workflow-item">
+
+            <div class="workflow-number">
+                04
+            </div>
+
+            <strong>
+                Publish
+            </strong>
+
+            <span>
+                Deploy through GitHub Pages
+            </span>
+
+        </div>
+
+
+        <div class="workflow-item">
+
+            <div class="workflow-number">
+                05
+            </div>
+
+            <strong>
+                Monitor
+            </strong>
+
+            <span>
+                Review analytics and visitor statistics
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ANALYTICS & VISITOR TRACKING
+===================================================== -->
+
+<section class="analytics-section">
+
+    <div class="doc-heading">
+
+        <small>
+            WEBSITE MONITORING
+        </small>
+
+        <h2>
+            Analytics & Visitor Tracking
+        </h2>
+
+        <p>
+            Two analytics solutions are used to understand
+            website traffic and visitor activity.
+        </p>
+
+    </div>
+
+
+    <div class="analytics-grid">
+
+
+        <!-- GOOGLE ANALYTICS -->
+
+        <div class="analytics-card">
+
+            <div class="analytics-title">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <h3>
+                    Google Analytics 4
+                </h3>
+
+            </div>
+
+
+            <p>
+
+                Google Analytics provides advanced website
+                traffic analysis and detailed reports.
+
+            </p>
+
+
+            <div class="analytics-list">
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Active users
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    New visitors
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Page views
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Country and city information
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Device and browser information
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Traffic and engagement reports
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- GOATCOUNTER -->
+
+        <div class="analytics-card">
+
+            <div class="analytics-title">
+
+                <i class="fa-solid fa-users-viewfinder"></i>
+
+                <h3>
+                    GoatCounter
+                </h3>
+
+            </div>
+
+
+            <p>
+
+                GoatCounter provides simple, lightweight
+                statistics and supports the public visitor counter.
+
+            </p>
+
+
+            <div class="analytics-list">
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Total visits
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Visited pages
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Visitor countries
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Browser information
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Operating system information
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-check"></i>
+                    Public total visitor counter
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL SUMMARY
+===================================================== -->
+
+<section class="documentation-summary">
+
+    <i class="fa-solid fa-laptop-code"></i>
+
+    <h2>
+        Project Summary
+    </h2>
+
+
+    <p>
+
+        This portfolio website combines front-end web development,
+        GitHub-based source management, GitHub Pages hosting,
+        a professional custom domain and website analytics into
+        one practical personal IT portfolio project.
+
+        <br><br>
+
+        The website continues to evolve as new technical content,
+        professional experience, certifications, projects,
+        documentation and interactive features are added.
+
+    </p>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    © 2026 Tanweer Ansari
+    · Network & IT Support Engineer
+    · Website Project Documentation
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

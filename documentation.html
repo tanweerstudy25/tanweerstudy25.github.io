@@ -13,16 +13,20 @@
     </title>
 
     <meta name="description"
-          content="Technical documentation of Tanweer Ansari's personal portfolio website including technologies, GitHub Pages, analytics, visitor tracking and development tools.">
+          content="Project documentation and website architecture of Tanweer Ansari's professional IT portfolio website.">
 
 
-    <!-- FONT AWESOME -->
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 
-    <!-- GOOGLE FONTS -->
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
 
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
@@ -31,11 +35,13 @@
           href="https://fonts.gstatic.com"
           crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap"
           rel="stylesheet">
 
 
-    <!-- MAIN WEBSITE CSS -->
+    <!-- =====================================================
+         MAIN WEBSITE CSS
+    ====================================================== -->
 
     <link rel="stylesheet"
           href="style.css">
@@ -43,9 +49,10 @@
 
 <style>
 
-/* =====================================================
+/* ==========================================================
    DOCUMENTATION PAGE
-===================================================== */
+   WEBSITE ARCHITECTURE COMMAND CENTER
+========================================================== */
 
 * {
     box-sizing: border-box;
@@ -54,6 +61,25 @@
 
 html {
     scroll-behavior: smooth;
+}
+
+
+:root {
+
+    --doc-bg-1: #020a14;
+    --doc-bg-2: #06172a;
+    --doc-bg-3: #0d1232;
+
+    --doc-cyan: #41e9ff;
+    --doc-blue: #5591ff;
+    --doc-purple: #a86dff;
+    --doc-pink: #ff65bc;
+    --doc-green: #48f2a6;
+    --doc-orange: #ff9c48;
+    --doc-yellow: #ffd85a;
+
+    --doc-text: #f4f8ff;
+    --doc-muted: #8fa6bc;
 }
 
 
@@ -67,45 +93,212 @@ body {
         sans-serif;
 
     color:
-        #eef6ff;
+        var(--doc-text);
 
     background:
 
         radial-gradient(
-            circle at 10% 15%,
-            rgba(0, 208, 255, .11),
-            transparent 30%
+            circle at 8% 16%,
+            rgba(0, 220, 255, .13),
+            transparent 29%
         ),
 
         radial-gradient(
-            circle at 90% 20%,
-            rgba(139, 92, 246, .13),
-            transparent 30%
+            circle at 92% 20%,
+            rgba(132, 82, 255, .15),
+            transparent 31%
         ),
 
         radial-gradient(
-            circle at 80% 85%,
-            rgba(255, 70, 180, .08),
+            circle at 18% 82%,
+            rgba(44, 238, 168, .08),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 82%,
+            rgba(255, 74, 174, .09),
             transparent 30%
         ),
 
         linear-gradient(
             145deg,
-            #03111f,
-            #07192d 50%,
-            #0d1434
+            var(--doc-bg-1),
+            var(--doc-bg-2) 48%,
+            var(--doc-bg-3)
         );
 
-    overflow-x: hidden;
+    overflow-x:
+        hidden;
+
 }
 
 
+/* ==========================================================
+   AMBIENT BACKGROUND
+========================================================== */
 
-/* =====================================================
+.doc-ambient {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    z-index:
+        -1;
+
+    overflow:
+        hidden;
+
+}
+
+
+.doc-ambient::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        430px;
+
+    height:
+        430px;
+
+    left:
+        -190px;
+
+    top:
+        24%;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(0, 218, 255, .09);
+
+    filter:
+        blur(85px);
+
+}
+
+
+.doc-ambient::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        500px;
+
+    height:
+        500px;
+
+    right:
+        -220px;
+
+    bottom:
+        5%;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(160, 80, 255, .10);
+
+    filter:
+        blur(95px);
+
+}
+
+
+.doc-particles {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+}
+
+
+.doc-particles span {
+
+    position:
+        absolute;
+
+    left:
+        var(--x);
+
+    top:
+        var(--y);
+
+    width:
+        var(--size);
+
+    height:
+        var(--size);
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(100, 226, 255, .65);
+
+    box-shadow:
+        0 0 10px rgba(80, 225, 255, .6);
+
+    opacity:
+        .3;
+
+    animation:
+        docParticleFloat var(--duration)
+        ease-in-out infinite alternate;
+
+    animation-delay:
+        var(--delay);
+
+}
+
+
+@keyframes docParticleFloat {
+
+    from {
+
+        transform:
+            translate3d(0, 0, 0);
+
+    }
+
+    to {
+
+        transform:
+            translate3d(18px, -32px, 0);
+
+        opacity:
+            .7;
+
+    }
+
+}
+
+
+/* ==========================================================
    MAIN WRAPPER
-===================================================== */
+========================================================== */
 
-.documentation-shell {
+.doc-shell {
 
     width:
         min(1180px, 92%);
@@ -116,21 +309,20 @@ body {
 }
 
 
-
-/* =====================================================
+/* ==========================================================
    HERO
-===================================================== */
+========================================================== */
 
-.documentation-hero {
+.doc-hero {
 
     width:
-        min(1050px, 90%);
+        min(1080px, 90%);
 
     margin:
-        125px auto 55px;
+        125px auto 58px;
 
     padding:
-        48px 42px;
+        50px 42px 42px;
 
     position:
         relative;
@@ -138,137 +330,262 @@ body {
     overflow:
         hidden;
 
-    border-radius:
-        28px;
-
     text-align:
         center;
 
+    border-radius:
+        30px;
+
     border:
-        1px solid rgba(73, 196, 255, .30);
+        1px solid rgba(83, 202, 255, .34);
 
     background:
 
         radial-gradient(
-            circle at 15% 20%,
-            rgba(0, 229, 255, .12),
-            transparent 30%
+            circle at 13% 18%,
+            rgba(0, 225, 255, .15),
+            transparent 29%
         ),
 
         radial-gradient(
-            circle at 90% 20%,
-            rgba(160, 100, 255, .15),
-            transparent 32%
+            circle at 88% 18%,
+            rgba(164, 93, 255, .17),
+            transparent 31%
         ),
 
         linear-gradient(
             145deg,
-            rgba(10, 32, 55, .97),
-            rgba(10, 20, 48, .98)
+            rgba(10, 34, 58, .96),
+            rgba(9, 18, 46, .98)
         );
 
     box-shadow:
 
-        0 28px 70px
-        rgba(0, 0, 0, .38),
+        0 30px 80px
+        rgba(0, 0, 0, .43),
 
-        0 0 35px
-        rgba(0, 200, 255, .08);
+        0 0 40px
+        rgba(0, 204, 255, .10),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, .08);
+
+    transform-style:
+        preserve-3d;
+
+    animation:
+        heroFloat 5s ease-in-out infinite;
 
 }
 
 
-.documentation-hero::before {
+.doc-hero::before {
 
-    content: "";
+    content:
+        "";
 
     position:
         absolute;
 
     width:
-        320px;
+        340px;
 
     height:
-        320px;
+        340px;
 
     right:
-        -130px;
+        -150px;
 
     top:
-        -140px;
+        -165px;
 
     border-radius:
         50%;
 
     background:
-        rgba(114, 80, 255, .12);
+        rgba(130, 77, 255, .15);
 
     filter:
-        blur(35px);
+        blur(18px);
 
 }
 
 
-.documentation-label {
+.doc-hero::after {
+
+    content:
+        "";
 
     position:
-        relative;
+        absolute;
 
-    z-index:
-        2;
+    left:
+        -40%;
 
-    color:
-        #56dfff;
+    top:
+        0;
 
-    font-size:
-        11px;
+    width:
+        28%;
 
-    font-weight:
-        900;
-
-    letter-spacing:
-        3px;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-.documentation-hero h1 {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    margin:
-        14px 0 18px;
-
-    font-size:
-        clamp(38px, 5vw, 62px);
-
-    line-height:
-        1.05;
-
-    letter-spacing:
-        -2px;
-
-}
-
-
-.documentation-gradient {
+    height:
+        100%;
 
     background:
 
         linear-gradient(
             90deg,
-            #42e9ff,
-            #648cff,
-            #a46cff,
-            #ff66c7
+            transparent,
+            rgba(90, 230, 255, .04),
+            rgba(255, 255, 255, .09),
+            rgba(166, 104, 255, .06),
+            transparent
         );
+
+    transform:
+        skewX(-18deg);
+
+    animation:
+        heroScanner 7s linear infinite;
+
+}
+
+
+@keyframes heroScanner {
+
+    from {
+        left: -45%;
+    }
+
+    to {
+        left: 130%;
+    }
+
+}
+
+
+@keyframes heroFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-6px);
+
+    }
+
+}
+
+
+.doc-hero-label {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    padding:
+        8px 13px;
+
+    border-radius:
+        999px;
+
+    color:
+        #69e9ff;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        2.4px;
+
+    border:
+        1px solid rgba(88, 223, 255, .25);
+
+    background:
+        rgba(80, 220, 255, .055);
+
+    box-shadow:
+        0 0 18px rgba(67, 222, 255, .08);
+
+}
+
+
+.doc-hero-label i {
+
+    color:
+        #ff6fc5;
+
+}
+
+
+.doc-hero h1 {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    max-width:
+        920px;
+
+    margin:
+        18px auto 17px;
+
+    font-family:
+        "Space Grotesk",
+        "Inter",
+        sans-serif;
+
+    font-size:
+        clamp(38px, 5.2vw, 64px);
+
+    line-height:
+        1.02;
+
+    letter-spacing:
+        -2.3px;
+
+}
+
+
+.doc-gradient-text {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #44ecff,
+            #6198ff,
+            #ae70ff,
+            #ff68c0,
+            #ffd260,
+            #44ecff
+        );
+
+    background-size:
+        300% auto;
 
     -webkit-background-clip:
         text;
@@ -279,10 +596,28 @@ body {
     -webkit-text-fill-color:
         transparent;
 
+    animation:
+        heroGradient 7s linear infinite;
+
 }
 
 
-.documentation-hero p {
+@keyframes heroGradient {
+
+    from {
+        background-position:
+            0% center;
+    }
+
+    to {
+        background-position:
+            300% center;
+    }
+
+}
+
+
+.doc-hero-description {
 
     position:
         relative;
@@ -291,16 +626,16 @@ body {
         2;
 
     max-width:
-        840px;
+        850px;
 
     margin:
         0 auto;
 
     color:
-        #a8bbcd;
+        #a5b9cd;
 
     font-size:
-        15px;
+        14px;
 
     line-height:
         1.8;
@@ -308,12 +643,31 @@ body {
 }
 
 
+.doc-hero-description strong {
 
-/* =====================================================
-   QUICK PROJECT STATS
-===================================================== */
+    color:
+        #ffffff;
 
-.project-stats {
+}
+
+
+/* ==========================================================
+   HERO MINI STATUS
+========================================================== */
+
+.doc-status-grid {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        30px auto 0;
+
+    max-width:
+        880px;
 
     display:
         grid;
@@ -322,404 +676,24 @@ body {
         repeat(4, 1fr);
 
     gap:
-        15px;
-
-    margin:
-        0 0 80px;
+        11px;
 
 }
 
 
-.project-stat {
-
-    padding:
-        22px 15px;
-
-    text-align:
-        center;
-
-    border-radius:
-        17px;
-
-    border:
-        1px solid rgba(80, 180, 255, .18);
-
-    background:
-        rgba(255, 255, 255, .025);
-
-    transition:
-        .3s ease;
-
-}
-
-
-.project-stat:hover {
-
-    transform:
-        translateY(-6px);
-
-    border-color:
-        rgba(75, 211, 255, .60);
-
-}
-
-
-.project-stat i {
-
-    margin-bottom:
-        10px;
-
-    color:
-        #4edcff;
-
-    font-size:
-        22px;
-
-}
-
-
-.project-stat strong {
-
-    display:
-        block;
-
-    color:
-        #ffffff;
-
-    font-size:
-        17px;
-
-}
-
-
-.project-stat span {
-
-    display:
-        block;
-
-    margin-top:
-        5px;
-
-    color:
-        #768fa7;
-
-    font-size:
-        9px;
-
-    letter-spacing:
-        1px;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-
-/* =====================================================
-   SECTION HEADING
-===================================================== */
-
-.doc-heading {
-
-    margin-bottom:
-        35px;
-
-    text-align:
-        center;
-
-}
-
-
-.doc-heading small {
-
-    color:
-        #50dbff;
-
-    font-size:
-        10px;
-
-    font-weight:
-        900;
-
-    letter-spacing:
-        3px;
-
-}
-
-
-.doc-heading h2 {
-
-    margin:
-        10px 0 10px;
-
-    font-size:
-        clamp(29px, 4vw, 43px);
-
-}
-
-
-.doc-heading p {
-
-    max-width:
-        760px;
-
-    margin:
-        0 auto;
-
-    color:
-        #8fa5ba;
-
-    font-size:
-        13px;
-
-    line-height:
-        1.7;
-
-}
-
-
-
-/* =====================================================
-   INTRODUCTION
-===================================================== */
-
-.project-introduction {
-
-    margin-bottom:
-        90px;
-
-    padding:
-        34px;
-
-    border-radius:
-        24px;
-
-    border:
-        1px solid rgba(92, 176, 255, .20);
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, .045),
-            rgba(255, 255, 255, .015)
-        );
-
-}
-
-
-.project-introduction h3 {
-
-    margin:
-        0 0 15px;
-
-    color:
-        #ffffff;
-
-    font-size:
-        24px;
-
-}
-
-
-.project-introduction p {
-
-    margin:
-        0;
-
-    color:
-        #a4b5c6;
-
-    font-size:
-        14px;
-
-    line-height:
-        1.9;
-
-}
-
-
-
-/* =====================================================
-   TECHNOLOGY CARDS
-===================================================== */
-
-.tech-section {
-
-    margin-bottom:
-        100px;
-
-}
-
-
-.tech-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap:
-        18px;
-
-}
-
-
-.doc-card {
-
-    --accent:
-        #47e6ff;
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
+.doc-status {
 
     min-height:
-        245px;
+        78px;
 
     padding:
-        26px;
-
-    border-radius:
-        21px;
-
-    border:
-
-        1px solid
-
-        color-mix(
-            in srgb,
-            var(--accent) 30%,
-            transparent
-        );
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, .055),
-            rgba(255, 255, 255, .015)
-        );
-
-    transition:
-        .35s ease;
-
-}
-
-
-.doc-card:nth-child(1) {
-
-    --accent:
-        #ff7043;
-
-}
-
-
-.doc-card:nth-child(2) {
-
-    --accent:
-        #4da6ff;
-
-}
-
-
-.doc-card:nth-child(3) {
-
-    --accent:
-        #ffd54f;
-
-}
-
-
-.doc-card:nth-child(4) {
-
-    --accent:
-        #ffffff;
-
-}
-
-
-.doc-card:nth-child(5) {
-
-    --accent:
-        #ff9f43;
-
-}
-
-
-.doc-card:nth-child(6) {
-
-    --accent:
-        #43e6a0;
-
-}
-
-
-.doc-card:nth-child(7) {
-
-    --accent:
-        #68d7ff;
-
-}
-
-
-.doc-card:nth-child(8) {
-
-    --accent:
-        #b17cff;
-
-}
-
-
-.doc-card:nth-child(9) {
-
-    --accent:
-        #ff67c4;
-
-}
-
-
-.doc-card:hover {
-
-    transform:
-        translateY(-8px);
-
-    border-color:
-        var(--accent);
-
-    box-shadow:
-
-        0 20px 45px
-        rgba(0, 0, 0, .30),
-
-        0 0 22px
-
-        color-mix(
-            in srgb,
-            var(--accent) 18%,
-            transparent
-        );
-
-}
-
-
-.doc-icon {
-
-    width:
-        52px;
-
-    height:
-        52px;
-
-    margin-bottom:
-        18px;
+        14px 12px;
 
     display:
         flex;
+
+    flex-direction:
+        column;
 
     align-items:
         center;
@@ -729,144 +703,6 @@ body {
 
     border-radius:
         15px;
-
-    color:
-        var(--accent);
-
-    font-size:
-        22px;
-
-    border:
-
-        1px solid
-
-        color-mix(
-            in srgb,
-            var(--accent) 42%,
-            transparent
-        );
-
-    background:
-
-        color-mix(
-            in srgb,
-            var(--accent) 10%,
-            transparent
-        );
-
-}
-
-
-.doc-card h3 {
-
-    margin:
-        0 0 9px;
-
-    color:
-        #ffffff;
-
-    font-size:
-        18px;
-
-}
-
-
-.doc-card p {
-
-    margin:
-        0;
-
-    color:
-        #8fa4b8;
-
-    font-size:
-        12px;
-
-    line-height:
-        1.7;
-
-}
-
-
-.doc-tag {
-
-    display:
-        inline-block;
-
-    margin-top:
-        15px;
-
-    padding:
-        6px 9px;
-
-    border-radius:
-        8px;
-
-    color:
-        var(--accent);
-
-    font-size:
-        8px;
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        .7px;
-
-    border:
-
-        1px solid
-
-        color-mix(
-            in srgb,
-            var(--accent) 28%,
-            transparent
-        );
-
-}
-
-
-
-/* =====================================================
-   DEVELOPMENT WORKFLOW
-===================================================== */
-
-.workflow-section {
-
-    margin-bottom:
-        100px;
-
-}
-
-
-.workflow-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(5, 1fr);
-
-    gap:
-        13px;
-
-}
-
-
-.workflow-item {
-
-    position:
-        relative;
-
-    padding:
-        25px 15px;
-
-    text-align:
-        center;
-
-    border-radius:
-        17px;
 
     border:
         1px solid rgba(255, 255, 255, .08);
@@ -880,24 +716,2116 @@ body {
 }
 
 
-.workflow-item:hover {
+.doc-status:hover {
 
     transform:
-        translateY(-6px);
+        translateY(-5px);
 
     border-color:
-        #53dcff;
+        rgba(71, 226, 255, .50);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, .25);
 
 }
 
 
-.workflow-number {
+.doc-status i {
+
+    margin-bottom:
+        7px;
+
+    color:
+        #53e3ff;
+
+    font-size:
+        17px;
+
+}
+
+
+.doc-status strong {
+
+    color:
+        #ffffff;
+
+    font-size:
+        11px;
+
+}
+
+
+.doc-status span {
+
+    margin-top:
+        3px;
+
+    color:
+        #718aa1;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .8px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* ==========================================================
+   SECTION HEADINGS
+========================================================== */
+
+.doc-section-heading {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        35px;
+
+}
+
+
+.doc-section-heading small {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    color:
+        #5be6ff;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        2.7px;
+
+}
+
+
+.doc-section-heading h2 {
+
+    margin:
+        10px 0 11px;
+
+    font-family:
+        "Space Grotesk",
+        "Inter",
+        sans-serif;
+
+    font-size:
+        clamp(30px, 4.5vw, 47px);
+
+    letter-spacing:
+        -1.5px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #69e5ff,
+            #9980ff,
+            #ff72c7,
+            #ffffff
+        );
+
+    background-size:
+        240% auto;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+    animation:
+        headingColor 8s linear infinite;
+
+}
+
+
+@keyframes headingColor {
+
+    from {
+        background-position:
+            0% center;
+    }
+
+    to {
+        background-position:
+            240% center;
+    }
+
+}
+
+
+.doc-section-heading p {
+
+    max-width:
+        760px;
+
+    margin:
+        0 auto;
+
+    color:
+        #879eb4;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* ==========================================================
+   PROJECT SNAPSHOT
+========================================================== */
+
+.doc-snapshot {
+
+    margin:
+        0 0 95px;
+
+    padding:
+        27px 30px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        22px;
+
+    border:
+        1px solid rgba(76, 199, 255, .20);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .045),
+            rgba(255, 255, 255, .015)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.05);
+
+}
+
+
+.doc-snapshot::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
 
     width:
-        36px;
+        180px;
 
     height:
-        36px;
+        180px;
+
+    right:
+        -80px;
+
+    bottom:
+        -100px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(78, 223, 255, .08);
+
+    filter:
+        blur(30px);
+
+}
+
+
+.doc-snapshot-inner {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        55px 1fr;
+
+    gap:
+        18px;
+
+    align-items:
+        center;
+
+}
+
+
+.doc-snapshot-icon {
+
+    width:
+        55px;
+
+    height:
+        55px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        16px;
+
+    color:
+        #5ae8ff;
+
+    font-size:
+        22px;
+
+    border:
+        1px solid rgba(83, 225, 255, .35);
+
+    background:
+        rgba(77, 221, 255, .07);
+
+    box-shadow:
+        0 0 18px rgba(79, 223, 255, .09);
+
+}
+
+
+.doc-snapshot strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        15px;
+
+}
+
+
+.doc-snapshot p {
+
+    margin:
+        0;
+
+    color:
+        #9caec0;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.75;
+
+}
+
+
+/* ==========================================================
+   WEBSITE ARCHITECTURE SECTION
+========================================================== */
+
+.architecture-section {
+
+    margin-bottom:
+        105px;
+
+}
+
+
+.architecture-board {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        36px 28px 34px;
+
+    border-radius:
+        30px;
+
+    border:
+        1px solid rgba(76, 198, 255, .26);
+
+    background:
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(76, 95, 255, .11),
+            transparent 27%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(7, 29, 51, .96),
+            rgba(8, 17, 42, .98)
+        );
+
+    box-shadow:
+
+        0 28px 75px
+        rgba(0, 0, 0, .42),
+
+        inset 0 1px 0
+        rgba(255, 255, 255, .07),
+
+        0 0 36px
+        rgba(0, 202, 255, .07);
+
+    transform-style:
+        preserve-3d;
+
+    transition:
+        transform .15s ease;
+
+}
+
+
+.architecture-board::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+
+        linear-gradient(
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        32px 32px;
+
+    opacity:
+        .45;
+
+    pointer-events:
+        none;
+
+}
+
+
+.architecture-board::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -35%;
+
+    width:
+        28%;
+
+    height:
+        100%;
+
+    pointer-events:
+        none;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 229, 255, .025),
+            rgba(0, 229, 255, .11),
+            rgba(164, 100, 255, .09),
+            transparent
+        );
+
+    transform:
+        skewX(-19deg);
+
+    animation:
+        boardScanner 6.4s linear infinite;
+
+}
+
+
+@keyframes boardScanner {
+
+    from {
+        left: -35%;
+    }
+
+    to {
+        left: 125%;
+    }
+
+}
+
+
+/* ==========================================================
+   ARCHITECTURE TOP LABEL
+========================================================== */
+
+.arch-topbar {
+
+    position:
+        relative;
+
+    z-index:
+        4;
+
+    margin-bottom:
+        27px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+}
+
+
+.arch-topbar-left {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+}
+
+
+.arch-live-dot {
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    border-radius:
+        50%;
+
+    background:
+        #45f4a5;
+
+    box-shadow:
+
+        0 0 8px #45f4a5,
+        0 0 18px rgba(69,244,165,.7);
+
+    animation:
+        livePulse 1.3s ease-in-out infinite;
+
+}
+
+
+@keyframes livePulse {
+
+    0%,
+    100% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+.arch-topbar strong {
+
+    color:
+        #dff8ff;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        1.4px;
+
+}
+
+
+.arch-topbar span {
+
+    color:
+        #6f879e;
+
+    font-size:
+        9px;
+
+}
+
+
+/* ==========================================================
+   MAIN ARCHITECTURE FLOW
+========================================================== */
+
+.arch-flow {
+
+    position:
+        relative;
+
+    z-index:
+        4;
+
+    display:
+        grid;
+
+    grid-template-columns:
+
+        minmax(145px, 1.2fr)
+        46px
+        minmax(120px, .9fr)
+        46px
+        minmax(125px, .95fr)
+        46px
+        minmax(125px, .95fr)
+        46px
+        minmax(150px, 1.2fr);
+
+    align-items:
+        center;
+
+    gap:
+        0;
+
+}
+
+
+/* ==========================================================
+   FLOW NODES
+========================================================== */
+
+.arch-node {
+
+    --node:
+        #4ae8ff;
+
+    position:
+        relative;
+
+    min-height:
+        150px;
+
+    padding:
+        20px 15px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    border-radius:
+        20px;
+
+    border:
+
+        1px solid
+        color-mix(
+            in srgb,
+            var(--node) 36%,
+            transparent
+        );
+
+    background:
+
+        linear-gradient(
+            145deg,
+
+            color-mix(
+                in srgb,
+                var(--node) 9%,
+                rgba(255,255,255,.025)
+            ),
+
+            rgba(255,255,255,.017)
+        );
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.05);
+
+    transform-style:
+        preserve-3d;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.arch-node:hover {
+
+    transform:
+        translateY(-7px)
+        scale(1.025)
+        translateZ(15px);
+
+    border-color:
+        var(--node);
+
+    box-shadow:
+
+        0 18px 38px
+        rgba(0,0,0,.32),
+
+        0 0 23px
+
+        color-mix(
+            in srgb,
+            var(--node) 19%,
+            transparent
+        );
+
+}
+
+
+.arch-node-icon {
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    margin-bottom:
+        12px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        14px;
+
+    color:
+        var(--node);
+
+    font-size:
+        20px;
+
+    border:
+
+        1px solid
+
+        color-mix(
+            in srgb,
+            var(--node) 45%,
+            transparent
+        );
+
+    background:
+
+        color-mix(
+            in srgb,
+            var(--node) 10%,
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 15px
+
+        color-mix(
+            in srgb,
+            var(--node) 17%,
+            transparent
+        );
+
+}
+
+
+.arch-node small {
+
+    margin-bottom:
+        4px;
+
+    color:
+        var(--node);
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1.3px;
+
+}
+
+
+.arch-node strong {
+
+    color:
+        #ffffff;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.25;
+
+}
+
+
+.arch-node p {
+
+    margin:
+        6px 0 0;
+
+    color:
+        #718aa2;
+
+    font-size:
+        8px;
+
+    line-height:
+        1.45;
+
+}
+
+
+/* ==========================================================
+   NODE COLORS
+========================================================== */
+
+.node-development {
+    --node: #ffd258;
+}
+
+.node-github {
+    --node: #e7ebf0;
+}
+
+.node-pages {
+    --node: #4be4ff;
+}
+
+.node-cloudflare {
+    --node: #ff9c45;
+}
+
+.node-domain {
+    --node: #b475ff;
+}
+
+
+/* ==========================================================
+   DEVELOPMENT MINI STACK
+========================================================== */
+
+.development-stack {
+
+    margin-top:
+        10px;
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    justify-content:
+        center;
+
+    gap:
+        6px;
+
+}
+
+
+.development-stack span {
+
+    padding:
+        5px 7px;
+
+    border-radius:
+        7px;
+
+    color:
+        #dfe9f3;
+
+    font-size:
+        7px;
+
+    font-weight:
+        800;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.035);
+
+}
+
+
+/* ==========================================================
+   DATA CONNECTORS
+========================================================== */
+
+.arch-link {
+
+    position:
+        relative;
+
+    height:
+        2px;
+
+    overflow:
+        hidden;
+
+    background:
+        rgba(91, 204, 255, .16);
+
+}
+
+
+.arch-link::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -35%;
+
+    width:
+        34%;
+
+    height:
+        2px;
+
+    border-radius:
+        20px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            #5feeff,
+            #b277ff
+        );
+
+    box-shadow:
+        0 0 9px #58eaff;
+
+    animation:
+        dataTransfer 1.25s linear infinite;
+
+}
+
+
+.arch-link::after {
+
+    content:
+        "\f105";
+
+    font-family:
+        "Font Awesome 6 Free";
+
+    font-weight:
+        900;
+
+    position:
+        absolute;
+
+    right:
+        0;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        #68e7ff;
+
+    font-size:
+        10px;
+
+}
+
+
+@keyframes dataTransfer {
+
+    from {
+        left: -35%;
+    }
+
+    to {
+        left: 110%;
+    }
+
+}
+
+
+/* ==========================================================
+   DOMAIN CORE
+========================================================== */
+
+.domain-core-wrap {
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+.domain-ring {
+
+    position:
+        absolute;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid rgba(179, 112, 255, .32);
+
+    pointer-events:
+        none;
+
+}
+
+
+.domain-ring.ring-one {
+
+    width:
+        175px;
+
+    height:
+        175px;
+
+    border-style:
+        dashed;
+
+    animation:
+        ringRotate 12s linear infinite;
+
+}
+
+
+.domain-ring.ring-two {
+
+    width:
+        147px;
+
+    height:
+        147px;
+
+    border-color:
+        rgba(64, 229, 255, .30);
+
+    animation:
+        ringRotateReverse 8s linear infinite;
+
+}
+
+
+.domain-ring::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    left:
+        50%;
+
+    top:
+        -4px;
+
+    border-radius:
+        50%;
+
+    background:
+        #69ecff;
+
+    box-shadow:
+
+        0 0 8px #69ecff,
+        0 0 17px #69ecff;
+
+}
+
+
+.ring-one::before {
+
+    background:
+        #ff71c2;
+
+    box-shadow:
+
+        0 0 8px #ff71c2,
+        0 0 17px #ff71c2;
+
+}
+
+
+@keyframes ringRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+@keyframes ringRotateReverse {
+
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+.node-domain {
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+    animation:
+        domainPulse 2.5s ease-in-out infinite;
+
+}
+
+
+@keyframes domainPulse {
+
+    0%,
+    100% {
+
+        filter:
+            brightness(1);
+
+    }
+
+    50% {
+
+        filter:
+            brightness(1.18);
+
+    }
+
+}
+
+
+/* ==========================================================
+   DOMAIN REGISTRAR BRANCH
+========================================================== */
+
+.registrar-branch {
+
+    position:
+        relative;
+
+    z-index:
+        4;
+
+    margin-top:
+        26px;
+
+    display:
+        flex;
+
+    justify-content:
+        flex-end;
+
+}
+
+
+.registrar-card {
+
+    --registrar:
+        #ff8a40;
+
+    width:
+        min(315px, 100%);
+
+    padding:
+        15px 17px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    border-radius:
+        15px;
+
+    border:
+
+        1px solid
+        rgba(255, 139, 70, .30);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255, 135, 64, .075),
+            rgba(255,255,255,.018)
+        );
+
+    transition:
+        .3s ease;
+
+}
+
+
+.registrar-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        #ff964d;
+
+    box-shadow:
+        0 13px 30px rgba(0,0,0,.27);
+
+}
+
+
+.registrar-icon {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    flex:
+        0 0 42px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        12px;
+
+    color:
+        #ff9c4c;
+
+    background:
+        rgba(255, 140, 64, .09);
+
+    border:
+        1px solid rgba(255, 151, 76, .30);
+
+}
+
+
+.registrar-card small {
+
+    display:
+        block;
+
+    margin-bottom:
+        3px;
+
+    color:
+        #ff9e51;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1.1px;
+
+}
+
+
+.registrar-card strong {
+
+    display:
+        block;
+
+    color:
+        #ffffff;
+
+    font-size:
+        11px;
+
+}
+
+
+.registrar-card span {
+
+    display:
+        block;
+
+    margin-top:
+        3px;
+
+    color:
+        #7f94a8;
+
+    font-size:
+        8px;
+
+}
+
+
+/* ==========================================================
+   OBSERVABILITY / ANALYTICS
+========================================================== */
+
+.observability-zone {
+
+    position:
+        relative;
+
+    z-index:
+        4;
+
+    margin-top:
+        32px;
+
+    padding-top:
+        28px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, .06);
+
+}
+
+
+.observability-title {
+
+    margin-bottom:
+        14px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+}
+
+
+.observability-title strong {
+
+    color:
+        #dff6ff;
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        1.3px;
+
+}
+
+
+.observability-title span {
+
+    color:
+        #687f96;
+
+    font-size:
+        8px;
+
+}
+
+
+.analytics-mini-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        13px;
+
+}
+
+
+.analytics-mini {
+
+    --analytics:
+        #49ddff;
+
+    padding:
+        17px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        13px;
+
+    border-radius:
+        16px;
+
+    border:
+
+        1px solid
+
+        color-mix(
+            in srgb,
+            var(--analytics) 29%,
+            transparent
+        );
+
+    background:
+
+        linear-gradient(
+            135deg,
+
+            color-mix(
+                in srgb,
+                var(--analytics) 8%,
+                rgba(255,255,255,.018)
+            ),
+
+            rgba(255,255,255,.014)
+        );
+
+    transition:
+        .3s ease;
+
+}
+
+
+.analytics-mini:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        var(--analytics);
+
+}
+
+
+.analytics-mini.ga {
+    --analytics: #ffac4a;
+}
+
+
+.analytics-mini.goat {
+    --analytics: #49eba5;
+}
+
+
+.analytics-mini-icon {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    flex:
+        0 0 45px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        13px;
+
+    color:
+        var(--analytics);
+
+    font-size:
+        18px;
+
+    border:
+
+        1px solid
+
+        color-mix(
+            in srgb,
+            var(--analytics) 40%,
+            transparent
+        );
+
+    background:
+
+        color-mix(
+            in srgb,
+            var(--analytics) 10%,
+            transparent
+        );
+
+}
+
+
+.analytics-mini small {
+
+    display:
+        block;
+
+    margin-bottom:
+        3px;
+
+    color:
+        var(--analytics);
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.analytics-mini strong {
+
+    display:
+        block;
+
+    color:
+        #ffffff;
+
+    font-size:
+        11px;
+
+}
+
+
+.analytics-mini span {
+
+    display:
+        block;
+
+    margin-top:
+        4px;
+
+    color:
+        #758ba0;
+
+    font-size:
+        8px;
+
+    line-height:
+        1.4;
+
+}
+
+
+/* ==========================================================
+   TECHNOLOGY MATRIX
+========================================================== */
+
+.tech-matrix-section {
+
+    margin-bottom:
+        105px;
+
+}
+
+
+.tech-matrix {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap:
+        15px;
+
+}
+
+
+.tech-panel {
+
+    --tech:
+        #50e4ff;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    min-height:
+        180px;
+
+    padding:
+        21px 19px;
+
+    border-radius:
+        19px;
+
+    border:
+
+        1px solid
+
+        color-mix(
+            in srgb,
+            var(--tech) 29%,
+            transparent
+        );
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.046),
+            rgba(255,255,255,.014)
+        );
+
+    transform-style:
+        preserve-3d;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.tech-panel::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        130px;
+
+    height:
+        130px;
+
+    right:
+        -70px;
+
+    top:
+        -75px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--tech);
+
+    opacity:
+        .065;
+
+    filter:
+        blur(25px);
+
+}
+
+
+.tech-panel:hover {
+
+    transform:
+        translateY(-7px)
+        perspective(900px)
+        rotateX(2deg)
+        rotateY(-2deg);
+
+    border-color:
+        var(--tech);
+
+    box-shadow:
+
+        0 18px 38px rgba(0,0,0,.30),
+
+        0 0 20px
+
+        color-mix(
+            in srgb,
+            var(--tech) 16%,
+            transparent
+        );
+
+}
+
+
+.tech-panel:nth-child(1) {
+    --tech: #ff7650;
+}
+
+
+.tech-panel:nth-child(2) {
+    --tech: #4e9dff;
+}
+
+
+.tech-panel:nth-child(3) {
+    --tech: #ffd44c;
+}
+
+
+.tech-panel:nth-child(4) {
+    --tech: #e9edf2;
+}
+
+
+.tech-panel:nth-child(5) {
+    --tech: #53ddff;
+}
+
+
+.tech-panel:nth-child(6) {
+    --tech: #ff9845;
+}
+
+
+.tech-panel:nth-child(7) {
+    --tech: #ff8744;
+}
+
+
+.tech-panel:nth-child(8) {
+    --tech: #7cdaff;
+}
+
+
+.tech-panel-icon {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    margin-bottom:
+        14px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        13px;
+
+    color:
+        var(--tech);
+
+    font-size:
+        19px;
+
+    border:
+
+        1px solid
+
+        color-mix(
+            in srgb,
+            var(--tech) 40%,
+            transparent
+        );
+
+    background:
+
+        color-mix(
+            in srgb,
+            var(--tech) 9%,
+            transparent
+        );
+
+}
+
+
+.tech-panel h3 {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0 0 7px;
+
+    color:
+        #ffffff;
+
+    font-size:
+        14px;
+
+}
+
+
+.tech-panel p {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0;
+
+    color:
+        #8096aa;
+
+    font-size:
+        9px;
+
+    line-height:
+        1.55;
+
+}
+
+
+.tech-panel-tag {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        inline-block;
+
+    margin-top:
+        12px;
+
+    padding:
+        5px 7px;
+
+    border-radius:
+        7px;
+
+    color:
+        var(--tech);
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .8px;
+
+    border:
+
+        1px solid
+
+        color-mix(
+            in srgb,
+            var(--tech) 27%,
+            transparent
+        );
+
+}
+
+
+/* ==========================================================
+   DEVELOPMENT LIFECYCLE
+========================================================== */
+
+.lifecycle-section {
+
+    margin-bottom:
+        105px;
+
+}
+
+
+.lifecycle-board {
+
+    position:
+        relative;
+
+    padding:
+        29px 25px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        25px;
+
+    border:
+        1px solid rgba(94, 175, 255, .22);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.04),
+            rgba(255,255,255,.012)
+        );
+
+}
+
+
+.lifecycle-line {
+
+    position:
+        absolute;
+
+    left:
+        9%;
+
+    right:
+        9%;
+
+    top:
+        63px;
+
+    height:
+        2px;
+
+    background:
+        rgba(96, 205, 255, .14);
+
+}
+
+
+.lifecycle-line span {
+
+    display:
+        block;
+
+    width:
+        19%;
+
+    height:
+        2px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            #5cecff,
+            #ad72ff,
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(81, 229, 255, .65);
+
+    animation:
+        lifecycleFlow 2.8s linear infinite;
+
+}
+
+
+@keyframes lifecycleFlow {
+
+    from {
+        transform:
+            translateX(-100%);
+    }
+
+    to {
+        transform:
+            translateX(520%);
+    }
+
+}
+
+
+.lifecycle-grid {
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap:
+        12px;
+
+}
+
+
+.lifecycle-step {
+
+    text-align:
+        center;
+
+}
+
+
+.lifecycle-number {
+
+    width:
+        38px;
+
+    height:
+        38px;
 
     margin:
         0 auto 13px;
@@ -915,199 +2843,58 @@ body {
         50%;
 
     color:
-        #061426;
+        #061523;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
 
     background:
 
         linear-gradient(
             135deg,
-            #48e7ff,
+            #51e9ff,
             #8a78ff
         );
 
-    font-size:
-        11px;
+    border:
+        2px solid rgba(255,255,255,.35);
 
-    font-weight:
-        900;
+    box-shadow:
+
+        0 0 12px rgba(75,225,255,.3);
+
+    transition:
+        .3s ease;
 
 }
 
 
-.workflow-item strong {
+.lifecycle-step:hover .lifecycle-number {
+
+    transform:
+        translateY(-5px)
+        scale(1.12);
+
+    box-shadow:
+
+        0 0 18px rgba(75,225,255,.5);
+
+}
+
+
+.lifecycle-step strong {
 
     display:
         block;
 
     margin-bottom:
-        5px;
-
-    font-size:
-        11px;
-
-}
-
-
-.workflow-item span {
-
-    color:
-        #768ba0;
-
-    font-size:
-        9px;
-
-    line-height:
-        1.5;
-
-}
-
-
-
-/* =====================================================
-   ANALYTICS SECTION
-===================================================== */
-
-.analytics-section {
-
-    margin-bottom:
-        100px;
-
-}
-
-
-.analytics-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap:
-        20px;
-
-}
-
-
-.analytics-card {
-
-    padding:
-        30px;
-
-    border-radius:
-        22px;
-
-    border:
-        1px solid rgba(80, 190, 255, .20);
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, .05),
-            rgba(255, 255, 255, .015)
-        );
-
-}
-
-
-.analytics-title {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        14px;
-
-    margin-bottom:
-        17px;
-
-}
-
-
-.analytics-title i {
-
-    width:
-        46px;
-
-    height:
-        46px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    border-radius:
-        13px;
+        4px;
 
     color:
         #ffffff;
-
-    font-size:
-        20px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #2196f3,
-            #7e57c2
-        );
-
-}
-
-
-.analytics-title h3 {
-
-    margin:
-        0;
-
-    font-size:
-        19px;
-
-}
-
-
-.analytics-card p {
-
-    color:
-        #94a9bc;
-
-    font-size:
-        12px;
-
-    line-height:
-        1.7;
-
-}
-
-
-.analytics-list {
-
-    display:
-        grid;
-
-    gap:
-        8px;
-
-    margin-top:
-        15px;
-
-}
-
-
-.analytics-list span {
-
-    color:
-        #a6b7c7;
 
     font-size:
         10px;
@@ -1115,68 +2902,198 @@ body {
 }
 
 
-.analytics-list i {
-
-    width:
-        20px;
+.lifecycle-step span {
 
     color:
-        #4ddcff;
+        #71879c;
+
+    font-size:
+        8px;
+
+    line-height:
+        1.4;
 
 }
 
 
+/* ==========================================================
+   PAGE SYSTEM MAP
+========================================================== */
 
-/* =====================================================
-   SUMMARY
-===================================================== */
+.page-map-section {
 
-.documentation-summary {
+    margin-bottom:
+        100px;
 
-    margin:
-        0 auto 85px;
+}
+
+
+.page-map {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap:
+        11px;
+
+}
+
+
+.page-chip {
 
     padding:
-        45px 35px;
+        17px 10px;
 
     text-align:
         center;
 
     border-radius:
-        26px;
+        14px;
+
+    color:
+        #a8bbcc;
+
+    text-decoration:
+        none;
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
 
     border:
-        1px solid rgba(90, 155, 255, .25);
+        1px solid rgba(255,255,255,.07);
+
+    background:
+        rgba(255,255,255,.022);
+
+    transition:
+        .3s ease;
+
+}
+
+
+.page-chip i {
+
+    display:
+        block;
+
+    margin-bottom:
+        8px;
+
+    color:
+        #54e3ff;
+
+    font-size:
+        17px;
+
+}
+
+
+.page-chip:hover {
+
+    transform:
+        translateY(-5px);
+
+    color:
+        #ffffff;
+
+    border-color:
+        rgba(83, 226, 255, .48);
+
+    background:
+        rgba(67, 218, 255, .055);
+
+}
+
+
+/* ==========================================================
+   FINAL SUMMARY
+========================================================== */
+
+.doc-summary {
+
+    margin:
+        0 auto 85px;
+
+    padding:
+        42px 32px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    text-align:
+        center;
+
+    border-radius:
+        27px;
+
+    border:
+        1px solid rgba(96, 164, 255, .27);
 
     background:
 
+        radial-gradient(
+            circle at 15% 40%,
+            rgba(0, 219, 255, .10),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 88% 30%,
+            rgba(167, 88, 255, .14),
+            transparent 32%
+        ),
+
         linear-gradient(
             135deg,
-            rgba(14, 62, 90, .78),
-            rgba(42, 31, 93, .78)
+            rgba(13, 57, 88, .80),
+            rgba(37, 27, 87, .82)
         );
 
+    box-shadow:
+
+        0 22px 60px
+        rgba(0,0,0,.32),
+
+        inset 0 1px 0
+        rgba(255,255,255,.07);
+
 }
 
 
-.documentation-summary i {
+.doc-summary i {
 
     margin-bottom:
-        16px;
+        15px;
 
     color:
-        #59e1ff;
+        #5ce8ff;
 
     font-size:
-        35px;
+        31px;
+
+    filter:
+        drop-shadow(0 0 12px rgba(78,227,255,.35));
 
 }
 
 
-.documentation-summary h2 {
+.doc-summary h2 {
 
     margin:
-        0 0 14px;
+        0 0 12px;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
 
     font-size:
         clamp(27px, 4vw, 40px);
@@ -1184,7 +3101,7 @@ body {
 }
 
 
-.documentation-summary p {
+.doc-summary p {
 
     max-width:
         820px;
@@ -1193,78 +3110,317 @@ body {
         0 auto;
 
     color:
-        #b2c1d0;
+        #adc0d1;
 
     font-size:
-        14px;
+        13px;
 
     line-height:
-        1.8;
+        1.75;
 
 }
 
 
+.doc-summary strong {
 
-/* =====================================================
+    color:
+        #ffffff;
+
+}
+
+
+/* ==========================================================
+   REVEAL ANIMATION
+========================================================== */
+
+.reveal {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(28px);
+
+    transition:
+
+        opacity .75s ease,
+        transform .75s ease;
+
+}
+
+
+.reveal.in-view {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+footer {
+
+    padding:
+        34px 20px;
+
+    text-align:
+        center;
+
+    color:
+        #70869d;
+
+    font-size:
+        11px;
+
+    border-top:
+        1px solid rgba(255,255,255,.07);
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1050px) {
+
+    .arch-flow {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            11px;
+
+    }
+
+
+    .arch-link {
+
+        width:
+            2px;
+
+        height:
+            30px;
+
+        margin:
+            0 auto;
+
+    }
+
+
+    .arch-link::before {
+
+        width:
+            2px;
+
+        height:
+            35%;
+
+        top:
+            -35%;
+
+        left:
+            0;
+
+        animation:
+            dataTransferVertical 1.25s linear infinite;
+
+    }
+
+
+    .arch-link::after {
+
+        content:
+            "\f107";
+
+        right:
+            auto;
+
+        left:
+            50%;
+
+        top:
+            auto;
+
+        bottom:
+            -1px;
+
+        transform:
+            translateX(-50%);
+
+    }
+
+
+    @keyframes dataTransferVertical {
+
+        from {
+            top: -35%;
+        }
+
+        to {
+            top: 110%;
+        }
+
+    }
+
+
+    .arch-node {
+
+        min-height:
+            120px;
+
+    }
+
+
+    .domain-ring {
+        display: none;
+    }
+
+
+    .registrar-branch {
+
+        justify-content:
+            center;
+
+    }
+
+
+    .tech-matrix {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .lifecycle-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap:
+            25px 12px;
+
+    }
+
+
+    .lifecycle-line {
+
+        display:
+            none;
+
+    }
+
+
+    .page-map {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+/* ==========================================================
    MOBILE
-===================================================== */
+========================================================== */
 
-@media (max-width: 950px) {
+@media (max-width: 700px) {
 
-    .tech-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-
-    .project-stats {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-
-    .workflow-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-}
-
-
-@media (max-width: 650px) {
-
-    .documentation-hero {
+    .doc-hero {
 
         width:
             92%;
 
         margin:
-            35px auto;
+            35px auto 42px;
 
         padding:
-            32px 21px;
+            32px 20px 26px;
+
+        border-radius:
+            22px;
 
     }
 
 
-    .documentation-hero h1 {
+    .doc-hero h1 {
 
         font-size:
             38px;
 
+        letter-spacing:
+            -1.4px;
+
     }
 
 
-    .tech-grid,
-    .analytics-grid,
-    .project-stats,
-    .workflow-grid {
+    .doc-status-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .doc-snapshot {
+
+        padding:
+            22px 18px;
+
+    }
+
+
+    .doc-snapshot-inner {
+
+        grid-template-columns:
+            1fr;
+
+        text-align:
+            center;
+
+    }
+
+
+    .doc-snapshot-icon {
+
+        margin:
+            0 auto;
+
+    }
+
+
+    .architecture-board {
+
+        padding:
+            24px 16px;
+
+        border-radius:
+            22px;
+
+    }
+
+
+    .arch-topbar {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .analytics-mini-grid {
 
         grid-template-columns:
             1fr;
@@ -1272,11 +3428,58 @@ body {
     }
 
 
-    .project-introduction,
-    .analytics-card {
+    .tech-matrix {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .lifecycle-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .page-map {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .doc-summary {
 
         padding:
-            23px;
+            34px 20px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
 
     }
 
@@ -1287,17 +3490,32 @@ body {
 </head>
 
 
-
 <body>
 
 
-<!-- =====================================================
+<!-- ==========================================================
+     AMBIENT VISUALS
+========================================================== -->
+
+<div class="doc-ambient"
+     aria-hidden="true">
+
+    <div class="doc-particles"
+         id="docParticles">
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================================
      NAVIGATION
-===================================================== -->
+========================================================== -->
 
 <header class="navbar">
 
     <div class="nav-container">
+
 
         <a href="index.html"
            class="logo">
@@ -1309,54 +3527,85 @@ body {
 
         <nav id="navMenu">
 
+
             <a href="index.html">
+
                 Home
+
             </a>
+
 
             <a href="about.html">
+
                 About
+
             </a>
+
 
             <a href="experience.html">
+
                 Experience
+
             </a>
 
+
             <a href="certifications.html">
+
                 Certifications
+
             </a>
+
 
             <a href="documentation.html"
                class="active">
+
                 Documentation
+
             </a>
 
+
             <a href="contact.html">
+
                 Contact
+
             </a>
+
 
         </nav>
 
 
         <div class="nav-buttons">
 
-            <button
-                id="themeToggle"
-                class="icon-btn"
-                aria-label="Toggle theme">
+
+            <button id="themeToggle"
+                    class="icon-btn"
+                    aria-label="Toggle theme">
 
                 <i class="fa-solid fa-moon"></i>
 
             </button>
 
 
-            <button
-                id="menuToggle"
-                class="menu-btn"
-                aria-label="Open menu">
+            <a href="mailto:tanweerstudy25@gmail.com?subject=Request%20for%20WhatsApp%20Contact&body=Hello%20Tanweer%2C%0A%0AI%20visited%20your%20portfolio%20website%20and%20would%20like%20to%20contact%20you%20on%20WhatsApp.%0A%0AThank%20you."
+               class="nav-contact whatsapp-nav">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                <span>
+                    Request Contact
+                </span>
+
+            </a>
+
+
+            <button id="menuToggle"
+                    class="menu-btn"
+                    aria-label="Open menu">
 
                 <i class="fa-solid fa-bars"></i>
 
             </button>
+
 
         </div>
 
@@ -1366,15 +3615,17 @@ body {
 
 
 
-<!-- =====================================================
+<!-- ==========================================================
      HERO
-===================================================== -->
+========================================================== -->
 
-<section class="documentation-hero">
+<section class="doc-hero"
+         data-tilt>
 
-    <div class="documentation-label">
 
-        <i class="fa-solid fa-book-open"></i>
+    <div class="doc-hero-label">
+
+        <i class="fa-solid fa-diagram-project"></i>
 
         PROJECT DOCUMENTATION
 
@@ -1383,97 +3634,90 @@ body {
 
     <h1>
 
-        Tanweer Ansari
+        Personal Portfolio
 
         <br>
 
-        <span class="documentation-gradient">
+        <span class="doc-gradient-text">
 
-            Personal Portfolio Website
+            Website Architecture
 
         </span>
 
     </h1>
 
 
-    <p>
+    <p class="doc-hero-description">
 
-        Technical overview of the technologies, platforms,
-        development tools, hosting services and analytics systems
-        used to design, develop, publish and maintain my professional
-        portfolio website.
+        A visual overview of how my professional portfolio website is
+        <strong>developed, versioned, published, connected and monitored</strong>
+        across its complete web delivery environment.
 
     </p>
 
-</section>
+
+    <div class="doc-status-grid">
 
 
+        <div class="doc-status">
 
-<main class="documentation-shell">
+            <i class="fa-solid fa-code"></i>
 
+            <strong>
+                HTML · CSS · JS
+            </strong>
 
-<!-- =====================================================
-     PROJECT QUICK OVERVIEW
-===================================================== -->
+            <span>
+                Development
+            </span>
 
-<section class="project-stats">
-
-    <div class="project-stat">
-
-        <i class="fa-solid fa-code"></i>
-
-        <strong>
-            HTML · CSS · JS
-        </strong>
-
-        <span>
-            Core Development
-        </span>
-
-    </div>
+        </div>
 
 
-    <div class="project-stat">
+        <div class="doc-status">
 
-        <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-github"></i>
 
-        <strong>
-            GitHub
-        </strong>
+            <strong>
+                GitHub Pages
+            </strong>
 
-        <span>
-            Source Control
-        </span>
+            <span>
+                Publishing
+            </span>
 
-    </div>
-
-
-    <div class="project-stat">
-
-        <i class="fa-solid fa-chart-line"></i>
-
-        <strong>
-            Analytics
-        </strong>
-
-        <span>
-            Visitor Tracking
-        </span>
-
-    </div>
+        </div>
 
 
-    <div class="project-stat">
+        <div class="doc-status">
 
-        <i class="fa-solid fa-globe"></i>
+            <i class="fa-solid fa-globe"></i>
 
-        <strong>
-            tanweer.site
-        </strong>
+            <strong>
+                tanweer.site
+            </strong>
 
-        <span>
-            Custom Domain
-        </span>
+            <span>
+                Custom Domain
+            </span>
+
+        </div>
+
+
+        <div class="doc-status">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <strong>
+                Web Analytics
+            </strong>
+
+            <span>
+                Monitoring
+            </span>
+
+        </div>
+
 
     </div>
 
@@ -1481,66 +3725,438 @@ body {
 
 
 
-<!-- =====================================================
-     PROJECT INTRODUCTION
-===================================================== -->
+<main class="doc-shell">
 
-<section>
 
-    <div class="doc-heading">
+
+<!-- ==========================================================
+     SHORT PROJECT SNAPSHOT
+========================================================== -->
+
+<section class="doc-snapshot reveal">
+
+
+    <div class="doc-snapshot-inner">
+
+
+        <div class="doc-snapshot-icon">
+
+            <i class="fa-solid fa-laptop-code"></i>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Professional Portfolio Website Project
+            </strong>
+
+            <p>
+
+                This website serves as my professional online portfolio for
+                presenting IT experience, technical skills, certifications,
+                projects, technical notes and professional information.
+                The website is built with HTML5, CSS3 and JavaScript,
+                maintained through GitHub, published with GitHub Pages,
+                connected to <strong>tanweer.site</strong>, registered through
+                Namecheap, managed through the Cloudflare DNS layer and
+                monitored using Google Analytics 4 and GoatCounter.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     WEBSITE ARCHITECTURE COMMAND CENTER
+========================================================== -->
+
+<section class="architecture-section reveal">
+
+
+    <div class="doc-section-heading">
 
         <small>
-            PROJECT OVERVIEW
+
+            <i class="fa-solid fa-network-wired"></i>
+
+            WEBSITE DELIVERY ARCHITECTURE
+
         </small>
 
+
         <h2>
-            Introduction
+
+            Development to Live Website Flow
+
         </h2>
 
+
         <p>
-            A complete overview of how this portfolio website
-            was planned, developed, published and monitored.
+
+            A connected view of the development, source control,
+            hosting, DNS, domain and analytics services behind the website.
+
         </p>
 
     </div>
 
 
-    <div class="project-introduction">
 
-        <h3>
-            Professional Portfolio Website Project
-        </h3>
+    <div class="architecture-board"
+         data-tilt>
 
 
-        <p>
+        <div class="arch-topbar">
 
-            The Tanweer Ansari Personal Portfolio Website was created
-            as a professional online platform to present my IT experience,
-            technical skills, certifications, projects, technical notes
-            and professional profile.
 
-            <br><br>
+            <div class="arch-topbar-left">
 
-            The website was developed primarily using HTML5, CSS3 and
-            JavaScript instead of relying completely on a ready-made
-            website builder. This provides greater control over the
-            website structure, appearance, animations, responsive design
-            and future development.
+                <span class="arch-live-dot"></span>
 
-            <br><br>
+                <strong>
+                    PORTFOLIO SYSTEM ONLINE
+                </strong>
 
-            GitHub is used for source-code management and version history,
-            while GitHub Pages provides website hosting and publishing.
-            The website is connected to the custom domain
-            <strong>tanweer.site</strong>.
+            </div>
 
-            <br><br>
 
-            Google Analytics 4 and GoatCounter were integrated to monitor
-            website visitors, page views, traffic sources, visitor
-            locations, devices and general website usage.
+            <span>
 
-        </p>
+                Development · Publishing · Domain · DNS · Analytics
+
+            </span>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             MAIN FLOW
+        ================================================== -->
+
+        <div class="arch-flow">
+
+
+            <!-- DEVELOPMENT -->
+
+            <div class="arch-node node-development">
+
+                <div class="arch-node-icon">
+
+                    <i class="fa-solid fa-code"></i>
+
+                </div>
+
+                <small>
+                    DEVELOPMENT
+                </small>
+
+                <strong>
+                    Front-End Code
+                </strong>
+
+                <p>
+                    Website structure, design,
+                    animation and interaction.
+                </p>
+
+
+                <div class="development-stack">
+
+                    <span>
+                        HTML5
+                    </span>
+
+                    <span>
+                        CSS3
+                    </span>
+
+                    <span>
+                        JavaScript
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="arch-link"></div>
+
+
+            <!-- GITHUB -->
+
+            <div class="arch-node node-github">
+
+                <div class="arch-node-icon">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </div>
+
+                <small>
+                    SOURCE CONTROL
+                </small>
+
+                <strong>
+                    GitHub
+                </strong>
+
+                <p>
+                    Website source files
+                    and version history.
+                </p>
+
+            </div>
+
+
+            <div class="arch-link"></div>
+
+
+            <!-- GITHUB PAGES -->
+
+            <div class="arch-node node-pages">
+
+                <div class="arch-node-icon">
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                </div>
+
+                <small>
+                    WEB HOSTING
+                </small>
+
+                <strong>
+                    GitHub Pages
+                </strong>
+
+                <p>
+                    Publishes repository
+                    content as the live website.
+                </p>
+
+            </div>
+
+
+            <div class="arch-link"></div>
+
+
+            <!-- CLOUDFLARE -->
+
+            <div class="arch-node node-cloudflare">
+
+                <div class="arch-node-icon">
+
+                    <i class="fa-brands fa-cloudflare"></i>
+
+                </div>
+
+                <small>
+                    DNS LAYER
+                </small>
+
+                <strong>
+                    Cloudflare
+                </strong>
+
+                <p>
+                    DNS and domain traffic
+                    management layer.
+                </p>
+
+            </div>
+
+
+            <div class="arch-link"></div>
+
+
+            <!-- DOMAIN -->
+
+            <div class="domain-core-wrap">
+
+
+                <div class="domain-ring ring-one"></div>
+
+                <div class="domain-ring ring-two"></div>
+
+
+                <div class="arch-node node-domain">
+
+                    <div class="arch-node-icon">
+
+                        <i class="fa-solid fa-globe"></i>
+
+                    </div>
+
+                    <small>
+                        LIVE DOMAIN
+                    </small>
+
+                    <strong>
+                        tanweer.site
+                    </strong>
+
+                    <p>
+                        Public professional
+                        portfolio website.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             NAMECHEAP DOMAIN REGISTRAR
+        ================================================== -->
+
+        <div class="registrar-branch">
+
+
+            <div class="registrar-card">
+
+
+                <div class="registrar-icon">
+
+                    <i class="fa-solid fa-registered"></i>
+
+                </div>
+
+
+                <div>
+
+                    <small>
+                        DOMAIN REGISTRAR
+                    </small>
+
+                    <strong>
+                        Namecheap
+                    </strong>
+
+                    <span>
+                        Registration and ownership of tanweer.site
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             ANALYTICS
+        ================================================== -->
+
+        <div class="observability-zone">
+
+
+            <div class="observability-title">
+
+                <strong>
+                    WEBSITE OBSERVABILITY
+                </strong>
+
+                <span>
+                    Traffic &amp; page activity monitoring
+                </span>
+
+            </div>
+
+
+            <div class="analytics-mini-grid">
+
+
+                <!-- GOOGLE ANALYTICS -->
+
+                <div class="analytics-mini ga">
+
+
+                    <div class="analytics-mini-icon">
+
+                        <i class="fa-brands fa-google"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            ANALYTICS
+                        </small>
+
+                        <strong>
+                            Google Analytics 4
+                        </strong>
+
+                        <span>
+                            Traffic trends, page activity,
+                            sources, devices and aggregate
+                            geographic insights.
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- GOATCOUNTER -->
+
+                <div class="analytics-mini goat">
+
+
+                    <div class="analytics-mini-icon">
+
+                        <i class="fa-solid fa-chart-simple"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            LIGHTWEIGHT STATS
+                        </small>
+
+                        <strong>
+                            GoatCounter
+                        </strong>
+
+                        <span>
+                            Lightweight website traffic
+                            and page-view monitoring.
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
 
     </div>
 
@@ -1548,38 +4164,50 @@ body {
 
 
 
-<!-- =====================================================
-     TECHNOLOGIES & PLATFORMS
-===================================================== -->
+<!-- ==========================================================
+     TECHNOLOGY MATRIX
+========================================================== -->
 
-<section class="tech-section">
+<section class="tech-matrix-section reveal">
 
-    <div class="doc-heading">
+
+    <div class="doc-section-heading">
 
         <small>
+
+            <i class="fa-solid fa-layer-group"></i>
+
             TECHNOLOGY STACK
+
         </small>
 
+
         <h2>
-            Tools & Platforms Used
+
+            Platforms Behind the Website
+
         </h2>
 
+
         <p>
-            Main technologies and online services used during
-            website development and publishing.
+
+            Each platform has a specific role in the website
+            development and delivery environment.
+
         </p>
 
     </div>
 
 
-    <div class="tech-grid">
+
+    <div class="tech-matrix">
 
 
         <!-- HTML -->
 
-        <article class="doc-card">
+        <article class="tech-panel">
 
-            <div class="doc-icon">
+            <div class="tech-panel-icon">
 
                 <i class="fa-brands fa-html5"></i>
 
@@ -1590,15 +4218,12 @@ body {
             </h3>
 
             <p>
-
-                HTML provides the core structure of the website,
-                including navigation, page sections, headings,
-                content, links, cards and other web elements.
-
+                Core page structure, content,
+                navigation and website sections.
             </p>
 
-            <span class="doc-tag">
-                WEBSITE STRUCTURE
+            <span class="tech-panel-tag">
+                STRUCTURE
             </span>
 
         </article>
@@ -1607,9 +4232,9 @@ body {
 
         <!-- CSS -->
 
-        <article class="doc-card">
+        <article class="tech-panel">
 
-            <div class="doc-icon">
+            <div class="tech-panel-icon">
 
                 <i class="fa-brands fa-css3-alt"></i>
 
@@ -1620,15 +4245,12 @@ body {
             </h3>
 
             <p>
-
-                CSS is used for responsive layouts, colors,
-                animations, gradients, hover effects, cards,
-                typography and the overall visual design.
-
+                Responsive layouts, gradients,
+                animations, lighting and visual effects.
             </p>
 
-            <span class="doc-tag">
-                DESIGN & ANIMATION
+            <span class="tech-panel-tag">
+                DESIGN
             </span>
 
         </article>
@@ -1637,9 +4259,9 @@ body {
 
         <!-- JAVASCRIPT -->
 
-        <article class="doc-card">
+        <article class="tech-panel">
 
-            <div class="doc-icon">
+            <div class="tech-panel-icon">
 
                 <i class="fa-brands fa-js"></i>
 
@@ -1650,15 +4272,12 @@ body {
             </h3>
 
             <p>
-
-                JavaScript provides interactive website functions
-                including navigation behavior, theme controls,
-                dynamic effects and other user interactions.
-
+                Interactive behavior, dynamic
+                elements and website functionality.
             </p>
 
-            <span class="doc-tag">
-                INTERACTIVITY
+            <span class="tech-panel-tag">
+                INTERACTION
             </span>
 
         </article>
@@ -1667,9 +4286,9 @@ body {
 
         <!-- GITHUB -->
 
-        <article class="doc-card">
+        <article class="tech-panel">
 
-            <div class="doc-icon">
+            <div class="tech-panel-icon">
 
                 <i class="fa-brands fa-github"></i>
 
@@ -1680,15 +4299,12 @@ body {
             </h3>
 
             <p>
-
-                GitHub is used as the central source-code repository
-                where website files, images, documents and development
-                history are maintained.
-
+                Central repository for website
+                files and development history.
             </p>
 
-            <span class="doc-tag">
-                VERSION CONTROL
+            <span class="tech-panel-tag">
+                SOURCE CONTROL
             </span>
 
         </article>
@@ -1697,9 +4313,9 @@ body {
 
         <!-- GITHUB PAGES -->
 
-        <article class="doc-card">
+        <article class="tech-panel">
 
-            <div class="doc-icon">
+            <div class="tech-panel-icon">
 
                 <i class="fa-solid fa-cloud-arrow-up"></i>
 
@@ -1710,410 +4326,96 @@ body {
             </h3>
 
             <p>
-
-                GitHub Pages publishes the repository content as a
-                live website and provides simple deployment whenever
-                website files are updated.
-
+                Publishes the website directly
+                from the GitHub repository.
             </p>
 
-            <span class="doc-tag">
-                WEB HOSTING
+            <span class="tech-panel-tag">
+                HOSTING
             </span>
 
         </article>
 
 
 
-        <!-- DOMAIN -->
+        <!-- CLOUDFLARE -->
 
-        <article class="doc-card">
+        <article class="tech-panel">
 
-            <div class="doc-icon">
+            <div class="tech-panel-icon">
 
-                <i class="fa-solid fa-globe"></i>
+                <i class="fa-brands fa-cloudflare"></i>
 
             </div>
 
             <h3>
-                Custom Domain
+                Cloudflare
             </h3>
 
             <p>
-
-                The custom domain tanweer.site provides a professional,
-                easy-to-remember web address instead of using only the
-                default GitHub Pages URL.
-
+                DNS and domain traffic
+                management for the live website.
             </p>
 
-            <span class="doc-tag">
-                TANWEER.SITE
+            <span class="tech-panel-tag">
+                DNS LAYER
             </span>
 
         </article>
 
 
 
-        <!-- GOOGLE ANALYTICS -->
+        <!-- NAMECHEAP -->
 
-        <article class="doc-card">
+        <article class="tech-panel">
 
-            <div class="doc-icon">
+            <div class="tech-panel-icon">
 
-                <i class="fa-solid fa-chart-column"></i>
+                <i class="fa-solid fa-registered"></i>
 
             </div>
 
             <h3>
-                Google Analytics 4
+                Namecheap
             </h3>
 
             <p>
-
-                Google Analytics provides detailed statistics about
-                visitors, page views, devices, traffic sources,
-                countries and user engagement.
-
+                Domain registrar used for
+                tanweer.site registration.
             </p>
 
-            <span class="doc-tag">
-                WEBSITE ANALYTICS
+            <span class="tech-panel-tag">
+                DOMAIN REGISTRAR
             </span>
 
         </article>
 
 
 
-        <!-- GOATCOUNTER -->
+        <!-- ANALYTICS -->
 
-        <article class="doc-card">
+        <article class="tech-panel">
 
-            <div class="doc-icon">
-
-                <i class="fa-solid fa-eye"></i>
-
-            </div>
-
-            <h3>
-                GoatCounter
-            </h3>
-
-            <p>
-
-                GoatCounter provides lightweight website statistics
-                and is also used to display the public total visitor
-                counter on the portfolio website.
-
-            </p>
-
-            <span class="doc-tag">
-                VISITOR COUNTER
-            </span>
-
-        </article>
-
-
-
-        <!-- CHATGPT / AI -->
-
-        <article class="doc-card">
-
-            <div class="doc-icon">
-
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-
-            </div>
-
-            <h3>
-                AI-Assisted Development
-            </h3>
-
-            <p>
-
-                AI tools were used during planning, design,
-                troubleshooting, content development and code
-                improvement while building the portfolio website.
-
-            </p>
-
-            <span class="doc-tag">
-                DEVELOPMENT SUPPORT
-            </span>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     DEVELOPMENT WORKFLOW
-===================================================== -->
-
-<section class="workflow-section">
-
-    <div class="doc-heading">
-
-        <small>
-            DEVELOPMENT FLOW
-        </small>
-
-        <h2>
-            Website Development Process
-        </h2>
-
-        <p>
-            The basic lifecycle followed while building
-            and publishing the portfolio website.
-        </p>
-
-    </div>
-
-
-    <div class="workflow-grid">
-
-
-        <div class="workflow-item">
-
-            <div class="workflow-number">
-                01
-            </div>
-
-            <strong>
-                Plan
-            </strong>
-
-            <span>
-                Define website structure and content
-            </span>
-
-        </div>
-
-
-        <div class="workflow-item">
-
-            <div class="workflow-number">
-                02
-            </div>
-
-            <strong>
-                Develop
-            </strong>
-
-            <span>
-                Build using HTML, CSS and JavaScript
-            </span>
-
-        </div>
-
-
-        <div class="workflow-item">
-
-            <div class="workflow-number">
-                03
-            </div>
-
-            <strong>
-                Test
-            </strong>
-
-            <span>
-                Check desktop and mobile experience
-            </span>
-
-        </div>
-
-
-        <div class="workflow-item">
-
-            <div class="workflow-number">
-                04
-            </div>
-
-            <strong>
-                Publish
-            </strong>
-
-            <span>
-                Deploy through GitHub Pages
-            </span>
-
-        </div>
-
-
-        <div class="workflow-item">
-
-            <div class="workflow-number">
-                05
-            </div>
-
-            <strong>
-                Monitor
-            </strong>
-
-            <span>
-                Review analytics and visitor statistics
-            </span>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ANALYTICS & VISITOR TRACKING
-===================================================== -->
-
-<section class="analytics-section">
-
-    <div class="doc-heading">
-
-        <small>
-            WEBSITE MONITORING
-        </small>
-
-        <h2>
-            Analytics & Visitor Tracking
-        </h2>
-
-        <p>
-            Two analytics solutions are used to understand
-            website traffic and visitor activity.
-        </p>
-
-    </div>
-
-
-    <div class="analytics-grid">
-
-
-        <!-- GOOGLE ANALYTICS -->
-
-        <div class="analytics-card">
-
-            <div class="analytics-title">
+            <div class="tech-panel-icon">
 
                 <i class="fa-solid fa-chart-line"></i>
 
-                <h3>
-                    Google Analytics 4
-                </h3>
-
             </div>
 
+            <h3>
+                Web Analytics
+            </h3>
 
             <p>
-
-                Google Analytics provides advanced website
-                traffic analysis and detailed reports.
-
+                Google Analytics 4 and GoatCounter
+                provide traffic and page activity insights.
             </p>
 
+            <span class="tech-panel-tag">
+                MONITORING
+            </span>
 
-            <div class="analytics-list">
-
-                <span>
-                    <i class="fa-solid fa-check"></i>
-                    Active users
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-check"></i>
-                    New visitors
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-check"></i>
-                    Page views
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-check"></i>
-                    Country and city information
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-check"></i>
-                    Device and browser information
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-check"></i>
-                    Traffic and engagement reports
-                </span>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- GOATCOUNTER -->
-
-        <div class="analytics-card">
-
-            <div class="analytics-title">
-
-                <i class="fa-solid fa-users-viewfinder"></i>
-
-                <h3>
-                    GoatCounter
-                </h3>
-
-            </div>
-
-
-            <p>
-
-                GoatCounter provides simple, lightweight
-                statistics and supports the public visitor counter.
-
-            </p>
-
-
-            <div class="analytics-list">
-
-                <span>
-                    <i class="fa-solid fa-check"></i>
-                    Total visits
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-check"></i>
-                    Visited pages
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-check"></i>
-                    Visitor countries
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-check"></i>
-                    Browser information
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-check"></i>
-                    Operating system information
-                </span>
-
-                <span>
-                    <i class="fa-solid fa-check"></i>
-                    Public total visitor counter
-                </span>
-
-            </div>
-
-        </div>
+        </article>
 
 
     </div>
@@ -2122,33 +4424,301 @@ body {
 
 
 
-<!-- =====================================================
+<!-- ==========================================================
+     BUILD & PUBLISH LIFECYCLE
+========================================================== -->
+
+<section class="lifecycle-section reveal">
+
+
+    <div class="doc-section-heading">
+
+        <small>
+
+            <i class="fa-solid fa-code-branch"></i>
+
+            DEVELOPMENT LIFECYCLE
+
+        </small>
+
+
+        <h2>
+
+            Build, Publish &amp; Monitor
+
+        </h2>
+
+
+        <p>
+
+            A simple workflow showing how website updates
+            move from development to the live portfolio.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="lifecycle-board">
+
+
+        <div class="lifecycle-line">
+
+            <span></span>
+
+        </div>
+
+
+        <div class="lifecycle-grid">
+
+
+            <div class="lifecycle-step">
+
+                <div class="lifecycle-number">
+                    01
+                </div>
+
+                <strong>
+                    Design
+                </strong>
+
+                <span>
+                    Plan page structure
+                </span>
+
+            </div>
+
+
+            <div class="lifecycle-step">
+
+                <div class="lifecycle-number">
+                    02
+                </div>
+
+                <strong>
+                    Develop
+                </strong>
+
+                <span>
+                    HTML, CSS &amp; JS
+                </span>
+
+            </div>
+
+
+            <div class="lifecycle-step">
+
+                <div class="lifecycle-number">
+                    03
+                </div>
+
+                <strong>
+                    Version
+                </strong>
+
+                <span>
+                    Update GitHub
+                </span>
+
+            </div>
+
+
+            <div class="lifecycle-step">
+
+                <div class="lifecycle-number">
+                    04
+                </div>
+
+                <strong>
+                    Publish
+                </strong>
+
+                <span>
+                    GitHub Pages
+                </span>
+
+            </div>
+
+
+            <div class="lifecycle-step">
+
+                <div class="lifecycle-number">
+                    05
+                </div>
+
+                <strong>
+                    Connect
+                </strong>
+
+                <span>
+                    Domain &amp; DNS
+                </span>
+
+            </div>
+
+
+            <div class="lifecycle-step">
+
+                <div class="lifecycle-number">
+                    06
+                </div>
+
+                <strong>
+                    Monitor
+                </strong>
+
+                <span>
+                    Website analytics
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     WEBSITE PAGE MAP
+========================================================== -->
+
+<section class="page-map-section reveal">
+
+
+    <div class="doc-section-heading">
+
+        <small>
+
+            <i class="fa-solid fa-sitemap"></i>
+
+            WEBSITE STRUCTURE
+
+        </small>
+
+
+        <h2>
+
+            Portfolio Page Map
+
+        </h2>
+
+
+        <p>
+
+            Main sections available across the professional portfolio.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="page-map">
+
+
+        <a href="index.html"
+           class="page-chip">
+
+            <i class="fa-solid fa-house"></i>
+
+            Home
+
+        </a>
+
+
+        <a href="about.html"
+           class="page-chip">
+
+            <i class="fa-solid fa-user"></i>
+
+            About
+
+        </a>
+
+
+        <a href="experience.html"
+           class="page-chip">
+
+            <i class="fa-solid fa-briefcase"></i>
+
+            Experience
+
+        </a>
+
+
+        <a href="certifications.html"
+           class="page-chip">
+
+            <i class="fa-solid fa-certificate"></i>
+
+            Certifications
+
+        </a>
+
+
+        <a href="documentation.html"
+           class="page-chip">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            Documentation
+
+        </a>
+
+
+        <a href="contact.html"
+           class="page-chip">
+
+            <i class="fa-solid fa-envelope"></i>
+
+            Contact
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
      FINAL SUMMARY
-===================================================== -->
+========================================================== -->
 
-<section class="documentation-summary">
+<section class="doc-summary reveal"
+         data-tilt>
 
-    <i class="fa-solid fa-laptop-code"></i>
+
+    <i class="fa-solid fa-code"></i>
+
 
     <h2>
-        Project Summary
+
+        Professional Portfolio Web Platform
+
     </h2>
 
 
     <p>
 
-        This portfolio website combines front-end web development,
-        GitHub-based source management, GitHub Pages hosting,
-        a professional custom domain and website analytics into
-        one practical personal IT portfolio project.
-
-        <br><br>
-
-        The website continues to evolve as new technical content,
-        professional experience, certifications, projects,
-        documentation and interactive features are added.
+        A custom professional portfolio built with
+        <strong>HTML5, CSS3 and JavaScript</strong>,
+        maintained through <strong>GitHub</strong>,
+        published with <strong>GitHub Pages</strong>,
+        connected to <strong>tanweer.site</strong> through
+        <strong>Namecheap</strong> and <strong>Cloudflare</strong>,
+        and monitored using
+        <strong>Google Analytics 4</strong> and
+        <strong>GoatCounter</strong>.
 
     </p>
+
 
 </section>
 
@@ -2157,23 +4727,262 @@ body {
 
 
 
-<!-- =====================================================
+<!-- ==========================================================
      FOOTER
-===================================================== -->
+========================================================== -->
 
 <footer>
 
     © 2026 Tanweer Ansari
-    · Network & IT Support Engineer
-    · Website Project Documentation
+    · Network &amp; IT Support Engineer
 
 </footer>
 
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+<!-- ==========================================================
+     DOCUMENTATION PAGE ANIMATION
+========================================================== -->
+
+<script>
+
+(function () {
+
+
+    /* =====================================================
+       SCROLL REVEAL
+    ====================================================== */
+
+    const revealItems =
+        document.querySelectorAll(".reveal");
+
+
+    if ("IntersectionObserver" in window) {
+
+        const observer =
+            new IntersectionObserver(
+
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "in-view"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        revealItems.forEach(item => {
+
+            observer.observe(item);
+
+        });
+
+    }
+
+    else {
+
+        revealItems.forEach(item => {
+
+            item.classList.add(
+                "in-view"
+            );
+
+        });
+
+    }
+
+
+
+    /* =====================================================
+       3D TILT EFFECT
+    ====================================================== */
+
+    const tiltItems =
+        document.querySelectorAll(
+            "[data-tilt]"
+        );
+
+
+    tiltItems.forEach(card => {
+
+
+        card.addEventListener(
+            "mousemove",
+            event => {
+
+                if (
+                    window.matchMedia(
+                        "(max-width: 800px)"
+                    ).matches
+                ) {
+
+                    return;
+
+                }
+
+
+                const rect =
+                    card.getBoundingClientRect();
+
+
+                const x =
+                    event.clientX -
+                    rect.left;
+
+
+                const y =
+                    event.clientY -
+                    rect.top;
+
+
+                const centerX =
+                    rect.width / 2;
+
+
+                const centerY =
+                    rect.height / 2;
+
+
+                const rotateY =
+                    ((x - centerX) /
+                    centerX) * 2.5;
+
+
+                const rotateX =
+                    ((centerY - y) /
+                    centerY) * 2.5;
+
+
+                card.style.transform =
+                    `perspective(1200px)
+                     rotateX(${rotateX}deg)
+                     rotateY(${rotateY}deg)
+                     translateY(-3px)`;
+
+            }
+        );
+
+
+        card.addEventListener(
+            "mouseleave",
+            () => {
+
+                card.style.transform =
+                    "";
+
+            }
+        );
+
+
+    });
+
+
+
+    /* =====================================================
+       BACKGROUND PARTICLES
+    ====================================================== */
+
+    const particleContainer =
+        document.getElementById(
+            "docParticles"
+        );
+
+
+    if (particleContainer) {
+
+
+        const particleCount =
+            20;
+
+
+        for (
+            let i = 0;
+            i < particleCount;
+            i++
+        ) {
+
+
+            const particle =
+                document.createElement(
+                    "span"
+                );
+
+
+            particle.style.setProperty(
+                "--x",
+                Math.random() * 100 + "%"
+            );
+
+
+            particle.style.setProperty(
+                "--y",
+                Math.random() * 100 + "%"
+            );
+
+
+            particle.style.setProperty(
+                "--size",
+                (
+                    2 +
+                    Math.random() * 3
+                ) + "px"
+            );
+
+
+            particle.style.setProperty(
+                "--duration",
+                (
+                    4 +
+                    Math.random() * 6
+                ) + "s"
+            );
+
+
+            particle.style.setProperty(
+                "--delay",
+                (
+                    Math.random() * -8
+                ) + "s"
+            );
+
+
+            particleContainer.appendChild(
+                particle
+            );
+
+
+        }
+
+    }
+
+
+})();
+
+</script>
+
+
+
+<!-- ==========================================================
+     MAIN WEBSITE JAVASCRIPT
+========================================================== -->
 
 <script src="script.js"></script>
 

@@ -2108,6 +2108,995 @@ body.theme-light .whatsapp-popup {
     }
 
 }   
+ /* =========================================================
+   PREMIUM HOME HERO — EXECUTIVE TECH DESIGN
+   SAFE FINAL OVERRIDE
+========================================================= */
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+#home .hero-content {
+    position: relative;
+    z-index: 5;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================================
+   NAME — TANWEER ANSARI
+========================================================= */
+
+#home .hero-content h1 {
+
+    position: relative;
+
+    display: inline-block;
+
+    margin-top: 14px !important;
+    margin-bottom: 10px !important;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        clamp(58px, 7vw, 88px) !important;
+
+    font-weight:
+        800 !important;
+
+    line-height:
+        .98 !important;
+
+    letter-spacing:
+        -3.5px !important;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff 0%,
+            #d7faff 15%,
+            #43e8ff 32%,
+            #438cff 48%,
+            #8c6dff 63%,
+            #df68ff 78%,
+            #ff67b3 90%,
+            #ffffff 100%
+        );
+
+    background-size:
+        300% auto;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+    text-shadow:
+        none !important;
+
+    filter:
+        drop-shadow(
+            0 8px 22px
+            rgba(0,0,0,.20)
+        );
+
+    animation:
+        tanweerHeroNameFlow
+        7s linear infinite;
+}
+
+
+/* GLOWING LINE BELOW NAME */
+
+#home .hero-content h1::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 3px;
+    bottom: -13px;
+
+    width: 110px;
+    height: 3px;
+
+    border-radius:
+        100px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #42eaff,
+            #587cff,
+            #a360ff,
+            #ff5eb2
+        );
+
+    box-shadow:
+        0 0 10px rgba(66,234,255,.70),
+        0 0 22px rgba(120,85,255,.30);
+
+    animation:
+        tanweerHeroUnderline
+        2.8s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   JOB TITLE
+========================================================= */
+
+#home .hero-content h2 {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-top:
+        27px !important;
+
+    margin-bottom:
+        4px !important;
+
+    padding:
+        10px 17px 10px 14px;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        clamp(20px, 2.3vw, 28px) !important;
+
+    font-weight:
+        700 !important;
+
+    letter-spacing:
+        -.3px;
+
+    color:
+        #ffffff !important;
+
+    border:
+        1px solid
+        rgba(68,224,255,.30);
+
+    border-radius:
+        12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(10,52,79,.86),
+            rgba(28,34,82,.80),
+            rgba(55,25,83,.70)
+        );
+
+    box-shadow:
+        0 10px 28px
+        rgba(0,0,0,.20),
+
+        inset 0 1px 0
+        rgba(255,255,255,.10),
+
+        0 0 18px
+        rgba(45,200,255,.08);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+}
+
+
+/* COLOR BAR BEFORE TITLE */
+
+#home .hero-content h2::before {
+
+    content: "";
+
+    width: 5px;
+    height: 25px;
+
+    flex:
+        0 0 5px;
+
+    border-radius:
+        50px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #38ecff,
+            #527fff,
+            #a35fff,
+            #ff5baa
+        );
+
+    box-shadow:
+        0 0 10px
+        rgba(65,230,255,.65);
+
+    animation:
+        tanweerRolePulse
+        2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   FIRST PROFESSIONAL PARAGRAPH
+========================================================= */
+
+#home .hero-intro {
+
+    position: relative;
+
+    max-width:
+        880px !important;
+
+    margin-top:
+        21px !important;
+
+    margin-bottom:
+        0 !important;
+
+    padding:
+        17px 20px;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        15px !important;
+
+    font-weight:
+        500;
+
+    line-height:
+        1.75 !important;
+
+    letter-spacing:
+        .05px;
+
+    color:
+        #d7e4ef !important;
+
+    border-left:
+        3px solid
+        #43eaff;
+
+    border-radius:
+        0 14px 14px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(36,188,225,.10),
+            rgba(91,96,230,.05),
+            rgba(150,70,220,.025),
+            transparent
+        );
+
+    box-shadow:
+        inset 10px 0 30px
+        rgba(40,210,255,.025);
+}
+
+
+/* =========================================================
+   16+ YEARS
+========================================================= */
+
+#home .hero-intro strong {
+
+    display: inline-block;
+
+    position: relative;
+
+    margin:
+        0 3px;
+
+    padding:
+        1px 6px;
+
+    font-size:
+        1.08em;
+
+    font-weight:
+        800 !important;
+
+    letter-spacing:
+        -.2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #45eaff,
+            #4c94ff,
+            #a86cff,
+            #ff68b2,
+            #45eaff
+        );
+
+    background-size:
+        250% auto;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(65,220,255,.15)
+        );
+
+    animation:
+        tanweerYearsFlow
+        4s linear infinite;
+}
+
+
+/* =========================================================
+   SECOND DESCRIPTION
+========================================================= */
+
+#home .hero-description {
+
+    max-width:
+        880px !important;
+
+    margin-top:
+        13px !important;
+
+    margin-bottom:
+        0 !important;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        14px !important;
+
+    font-weight:
+        500;
+
+    line-height:
+        1.8 !important;
+
+    letter-spacing:
+        .08px;
+
+    color:
+        #91a9bd !important;
+}
+
+
+/* =========================================================
+   LOCATION + EXPERIENCE
+========================================================= */
+
+#home .hero-meta {
+
+    display:
+        flex !important;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        11px !important;
+
+    margin-top:
+        21px !important;
+}
+
+
+/* PREMIUM PILLS */
+
+#home .hero-meta span {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    padding:
+        9px 14px;
+
+    border-radius:
+        100px;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .15px;
+
+    color:
+        #e3eef7;
+
+    border:
+        1px solid
+        rgba(69,214,255,.25);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(13,48,73,.82),
+            rgba(30,29,68,.76)
+        );
+
+    box-shadow:
+        0 8px 22px
+        rgba(0,0,0,.16),
+
+        inset 0 1px 0
+        rgba(255,255,255,.08);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+
+/* META HOVER */
+
+#home .hero-meta span:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.025);
+
+    border-color:
+        rgba(72,230,255,.72);
+
+    box-shadow:
+        0 12px 28px
+        rgba(0,0,0,.23),
+
+        0 0 18px
+        rgba(65,220,255,.15);
+}
+
+
+/* META ICON */
+
+#home .hero-meta span i {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    color:
+        #48eaff;
+
+    font-size:
+        12px;
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(72,234,255,.55)
+        );
+}
+
+
+#home .hero-meta span:nth-child(2) i {
+
+    color:
+        #b875ff;
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(184,117,255,.55)
+        );
+}
+
+
+/* SHINE MOVEMENT */
+
+#home .hero-meta span::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -100%;
+    left: -55%;
+
+    width: 30%;
+    height: 300%;
+
+    transform:
+        rotate(22deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.16),
+            transparent
+        );
+
+    animation:
+        tanweerMetaShine
+        5s linear infinite;
+}
+
+
+#home .hero-meta span:nth-child(2)::after {
+
+    animation-delay:
+        -2.5s;
+}
+
+
+/* =========================================================
+   SOFT ENTRY ANIMATION
+========================================================= */
+
+#home .hero-content h1,
+#home .hero-content h2,
+#home .hero-intro,
+#home .hero-description,
+#home .hero-meta {
+
+    animation-fill-mode:
+        both;
+}
+
+
+#home .hero-content h1 {
+
+    animation:
+        tanweerHeroNameFlow
+        7s linear infinite,
+        tanweerHeroEntry
+        .7s ease both;
+}
+
+
+#home .hero-content h2 {
+
+    animation:
+        tanweerHeroEntry
+        .7s .10s ease both;
+}
+
+
+#home .hero-intro {
+
+    animation:
+        tanweerHeroEntry
+        .7s .20s ease both;
+}
+
+
+#home .hero-description {
+
+    animation:
+        tanweerHeroEntry
+        .7s .30s ease both;
+}
+
+
+#home .hero-meta {
+
+    animation:
+        tanweerHeroEntry
+        .7s .40s ease both;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes tanweerHeroNameFlow {
+
+    0% {
+
+        background-position:
+            0% center;
+    }
+
+    100% {
+
+        background-position:
+            300% center;
+    }
+
+}
+
+
+@keyframes tanweerHeroUnderline {
+
+    0%,
+    100% {
+
+        width:
+            85px;
+
+        opacity:
+            .65;
+    }
+
+    50% {
+
+        width:
+            145px;
+
+        opacity:
+            1;
+    }
+
+}
+
+
+@keyframes tanweerRolePulse {
+
+    0%,
+    100% {
+
+        opacity:
+            .65;
+
+        transform:
+            scaleY(.83);
+    }
+
+    50% {
+
+        opacity:
+            1;
+
+        transform:
+            scaleY(1.10);
+    }
+
+}
+
+
+@keyframes tanweerYearsFlow {
+
+    to {
+
+        background-position:
+            250% center;
+    }
+
+}
+
+
+@keyframes tanweerMetaShine {
+
+    0% {
+
+        left:
+            -55%;
+    }
+
+    65%,
+    100% {
+
+        left:
+            140%;
+    }
+
+}
+
+
+@keyframes tanweerHeroEntry {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+body.theme-light
+#home .hero-content h1 {
+
+    background:
+        linear-gradient(
+            90deg,
+            #11283e,
+            #087be8,
+            #4855d9,
+            #8a47c8,
+            #c83e8a,
+            #11283e
+        );
+
+    background-size:
+        300% auto;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+}
+
+
+body.theme-light
+#home .hero-content h2 {
+
+    color:
+        #173047 !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.92),
+            rgba(240,247,255,.94)
+        );
+
+    border-color:
+        rgba(30,140,210,.22);
+
+    box-shadow:
+        0 9px 25px
+        rgba(40,90,140,.10);
+}
+
+
+body.theme-light
+#home .hero-intro {
+
+    color:
+        #354b60 !important;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20,160,220,.08),
+            rgba(100,70,220,.04),
+            transparent
+        );
+}
+
+
+body.theme-light
+#home .hero-description {
+
+    color:
+        #5d7184 !important;
+}
+
+
+body.theme-light
+#home .hero-meta span {
+
+    color:
+        #314a60;
+
+    border-color:
+        rgba(20,125,210,.17);
+
+    background:
+        rgba(255,255,255,.80);
+
+    box-shadow:
+        0 7px 20px
+        rgba(40,80,120,.08);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    #home .hero-content {
+
+        text-align:
+            center;
+    }
+
+
+    #home .hero-content h1 {
+
+        font-size:
+            clamp(48px, 13vw, 66px)
+            !important;
+
+        letter-spacing:
+            -2.5px !important;
+    }
+
+
+    #home .hero-content h1::after {
+
+        left:
+            50%;
+
+        transform:
+            translateX(-50%);
+    }
+
+
+    #home .hero-content h2 {
+
+        justify-content:
+            center;
+
+        font-size:
+            18px !important;
+    }
+
+
+    #home .hero-intro {
+
+        border-left:
+            none;
+
+        border-top:
+            2px solid
+            rgba(65,225,255,.65);
+
+        border-radius:
+            13px;
+
+        margin-left:
+            auto;
+
+        margin-right:
+            auto;
+    }
+
+
+    #home .hero-description {
+
+        margin-left:
+            auto;
+
+        margin-right:
+            auto;
+    }
+
+
+    #home .hero-meta {
+
+        justify-content:
+            center;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    #home .hero-content h1 {
+
+        font-size:
+            45px !important;
+
+        letter-spacing:
+            -2px !important;
+    }
+
+
+    #home .hero-content h2 {
+
+        font-size:
+            15px !important;
+
+        padding:
+            9px 11px;
+    }
+
+
+    #home .hero-intro {
+
+        padding:
+            14px;
+
+        font-size:
+            13px !important;
+    }
+
+
+    #home .hero-description {
+
+        font-size:
+            12.5px !important;
+    }
+
+
+    #home .hero-meta span {
+
+        padding:
+            8px 11px;
+
+        font-size:
+            10px;
+    }
+
+}   
 </style>
 
 

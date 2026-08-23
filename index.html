@@ -4061,36 +4061,83 @@ body.theme-light #networkAtomCanvas {
 <script>
 (() => {
 
-    const canvas =
-        document.getElementById("networkAtomCanvas");
+    /* =========================================================
+       TANWEER ANSARI
+       LIVE NETWORK + CLOUD INFRASTRUCTURE
+       COMPACT RIGHT-SIDE HERO ANIMATION
+    ========================================================= */
 
-    const hero =
-        document.getElementById("home");
+    const canvas = document.getElementById("networkAtomCanvas");
+    const hero = document.getElementById("home");
 
     if (!canvas || !hero) return;
 
-    const ctx =
-        canvas.getContext("2d");
+    const ctx = canvas.getContext("2d");
 
     let width = 0;
     let height = 0;
     let dpr = 1;
+    let heroVisible = true;
 
 
-    /* ==========================================
-       RESIZE CANVAS
-    ========================================== */
+    /* =========================================================
+       RIGHT-TOP COMPACT POSITION
+    ========================================================= */
+
+    function applyCanvasLayout() {
+
+        canvas.style.position = "absolute";
+        canvas.style.left = "auto";
+
+        canvas.style.pointerEvents = "none";
+        canvas.style.zIndex = "3";
+
+        canvas.style.mixBlendMode = "screen";
+
+        canvas.style.filter =
+            "drop-shadow(0 0 14px rgba(150,255,0,.55))";
+
+        if (window.innerWidth <= 800) {
+
+            canvas.style.top = "5%";
+            canvas.style.right = "-12%";
+
+            canvas.style.width = "88%";
+            canvas.style.height = "42%";
+
+            canvas.style.opacity = ".72";
+
+        } else {
+
+            canvas.style.top = "3%";
+            canvas.style.right = "1%";
+
+            canvas.style.width = "57%";
+            canvas.style.height = "54%";
+
+            canvas.style.opacity = ".96";
+
+        }
+
+    }
+
+
+    /* =========================================================
+       RESIZE
+    ========================================================= */
 
     function resizeCanvas() {
 
+        applyCanvasLayout();
+
         const rect =
-            hero.getBoundingClientRect();
+            canvas.getBoundingClientRect();
 
         width =
-            rect.width;
+            Math.max(1, rect.width);
 
         height =
-            rect.height;
+            Math.max(1, rect.height);
 
         dpr =
             Math.min(
@@ -4099,16 +4146,10 @@ body.theme-light #networkAtomCanvas {
             );
 
         canvas.width =
-            Math.floor(width * dpr);
+            Math.round(width * dpr);
 
         canvas.height =
-            Math.floor(height * dpr);
-
-        canvas.style.width =
-            width + "px";
-
-        canvas.style.height =
-            height + "px";
+            Math.round(height * dpr);
 
         ctx.setTransform(
             dpr,
@@ -4130,179 +4171,124 @@ body.theme-light #networkAtomCanvas {
     );
 
 
-    /* ==========================================
-       ENTERPRISE IT NODES
-    ========================================== */
+    /* =========================================================
+       NETWORK + CLOUD DEVICES
+    ========================================================= */
 
     const nodes = [
 
         {
-            x: .60,
-            y: .18,
-            label: "AZURE"
+            x: .16,
+            y: .15,
+            label: "AZURE",
+            type: "cloud",
+            accent: "cyan"
         },
 
         {
-            x: .82,
-            y: .17,
-            label: "INTERNET"
+            x: .54,
+            y: .10,
+            label: "INTERNET",
+            type: "cloud",
+            accent: "green"
         },
 
         {
-            x: .71,
-            y: .34,
-            label: "FORTIGATE"
+            x: .86,
+            y: .15,
+            label: "M365",
+            type: "cloud",
+            accent: "cyan"
         },
 
         {
-            x: .82,
-            y: .48,
-            label: "CISCO"
+            x: .50,
+            y: .30,
+            label: "FORTIGATE",
+            type: "firewall",
+            accent: "green"
         },
 
         {
-            x: .69,
-            y: .60,
-            label: "CORE"
+            x: .48,
+            y: .47,
+            label: "ROUTER",
+            type: "router",
+            accent: "green"
         },
 
         {
-            x: .88,
+            x: .48,
             y: .64,
-            label: "SWITCH"
+            label: "CORE SW",
+            type: "switch",
+            accent: "green"
         },
 
         {
-            x: .59,
-            y: .79,
-            label: "SERVER"
-        },
-
-        {
-            x: .75,
+            x: .17,
             y: .83,
-            label: "CLIENTS"
+            label: "SERVER",
+            type: "server",
+            accent: "cyan"
         },
 
         {
-            x: .91,
-            y: .82,
-            label: "M365"
+            x: .68,
+            y: .84,
+            label: "CLIENTS",
+            type: "client",
+            accent: "green"
+        },
+
+        {
+            x: .87,
+            y: .46,
+            label: "ENTRA ID",
+            type: "identity",
+            accent: "cyan"
+        },
+
+        {
+            x: .87,
+            y: .68,
+            label: "INTUNE",
+            type: "endpoint",
+            accent: "green"
         }
 
     ];
 
 
+    /* =========================================================
+       NETWORK CONNECTIONS
+    ========================================================= */
+
     const links = [
 
-        [0, 2],
-        [1, 2],
+        { from: 1, to: 3 },
+        { from: 0, to: 3 },
 
-        [2, 3],
+        { from: 0, to: 2 },
 
-        [3, 4],
+        { from: 2, to: 8 },
 
-        [4, 5],
+        { from: 3, to: 4 },
 
-        [4, 6],
-        [4, 7],
+        { from: 4, to: 5 },
 
-        [5, 7],
-        [5, 8],
+        { from: 5, to: 6 },
 
-        [0, 8]
+        { from: 5, to: 7 },
+
+        { from: 7, to: 9 },
+
+        { from: 9, to: 8 },
+
+        { from: 8, to: 0 }
 
     ];
 
-
-    /* ==========================================
-       FAST DATA ELECTRONS
-    ========================================== */
-
-    const particles = [];
-
-    const particleCount =
-        window.innerWidth < 700
-        ? 25
-        : 55;
-
-
-    for (
-        let i = 0;
-        i < particleCount;
-        i++
-    ) {
-
-        particles.push({
-
-            link:
-                Math.floor(
-                    Math.random() *
-                    links.length
-                ),
-
-            t:
-                Math.random(),
-
-            speed:
-                .004 +
-                Math.random() *
-                .011,
-
-            size:
-                1.5 +
-                Math.random() *
-                2.8,
-
-            reverse:
-                Math.random() >
-                .5
-
-        });
-
-    }
-
-
-    /* ==========================================
-       ATOMIC ELECTRONS
-    ========================================== */
-
-    const orbitElectrons = [];
-
-    for (
-        let i = 0;
-        i < 18;
-        i++
-    ) {
-
-        orbitElectrons.push({
-
-            orbit:
-                i % 4,
-
-            angle:
-                Math.random() *
-                Math.PI *
-                2,
-
-            speed:
-                .035 +
-                Math.random() *
-                .065,
-
-            size:
-                2 +
-                Math.random() *
-                3
-
-        });
-
-    }
-
-
-    /* ==========================================
-       POSITION HELPER
-    ========================================== */
 
     function getNode(index) {
 
@@ -4321,58 +4307,594 @@ body.theme-light #networkAtomCanvas {
     }
 
 
-    /* ==========================================
-       DRAW NETWORK LINKS
-    ========================================== */
+    /* =========================================================
+       FAST NETWORK PACKETS
+       APPROX 2x - 3x FASTER
+    ========================================================= */
 
-    function drawLinks() {
+    const packetCount =
+        window.innerWidth <= 800
+            ? 38
+            : 78;
+
+
+    const packets = [];
+
+
+    for (
+        let i = 0;
+        i < packetCount;
+        i++
+    ) {
+
+        packets.push({
+
+            link:
+                Math.floor(
+                    Math.random() *
+                    links.length
+                ),
+
+            progress:
+                Math.random(),
+
+            speed:
+                .017 +
+                Math.random() *
+                .030,
+
+            size:
+                1.3 +
+                Math.random() *
+                2.2,
+
+            reverse:
+                Math.random() >
+                .68,
+
+            cyan:
+                Math.random() >
+                .76
+
+        });
+
+    }
+
+
+    /* =========================================================
+       SMALL BACKGROUND DATA DOTS
+    ========================================================= */
+
+    const microDots = [];
+
+    const microDotCount =
+        window.innerWidth <= 800
+            ? 18
+            : 40;
+
+
+    for (
+        let i = 0;
+        i < microDotCount;
+        i++
+    ) {
+
+        microDots.push({
+
+            x:
+                Math.random(),
+
+            y:
+                Math.random(),
+
+            size:
+                .5 +
+                Math.random() *
+                1.1,
+
+            phase:
+                Math.random() *
+                Math.PI *
+                2
+
+        });
+
+    }
+
+
+    /* =========================================================
+       COLORS
+    ========================================================= */
+
+    function nodeColor(node) {
+
+        if (
+            node.accent ===
+            "cyan"
+        ) {
+
+            return {
+
+                strong:
+                    "#45efff",
+
+                medium:
+                    "rgba(69,239,255,.72)"
+
+            };
+
+        }
+
+
+        return {
+
+            strong:
+                "#baff19",
+
+            medium:
+                "rgba(186,255,25,.80)"
+
+        };
+
+    }
+
+
+    /* =========================================================
+       ROUNDED RECT
+    ========================================================= */
+
+    function roundedRect(
+        x,
+        y,
+        w,
+        h,
+        r
+    ) {
+
+        ctx.beginPath();
+
+        ctx.roundRect(
+            x,
+            y,
+            w,
+            h,
+            r
+        );
+
+    }
+
+
+    /* =========================================================
+       CONNECTION LINES
+    ========================================================= */
+
+    function drawConnections(time) {
+
+        links.forEach(
+            (link, index) => {
+
+                const a =
+                    getNode(link.from);
+
+                const b =
+                    getNode(link.to);
+
+
+                const pulse =
+                    (
+                        Math.sin(
+                            time *
+                            .005 +
+                            index
+                        ) +
+                        1
+                    ) /
+                    2;
+
+
+                ctx.save();
+
+
+                ctx.lineWidth =
+                    1;
+
+
+                ctx.shadowBlur =
+                    7 +
+                    pulse * 8;
+
+
+                ctx.shadowColor =
+                    "#aaff00";
+
+
+                ctx.strokeStyle =
+                    `rgba(
+                        170,
+                        255,
+                        20,
+                        ${.20 + pulse * .18}
+                    )`;
+
+
+                ctx.beginPath();
+
+
+                ctx.moveTo(
+                    a.x,
+                    a.y
+                );
+
+
+                ctx.lineTo(
+                    b.x,
+                    b.y
+                );
+
+
+                ctx.stroke();
+
+
+                ctx.restore();
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       DEVICE ICONS
+    ========================================================= */
+
+    function drawIcon(
+        node,
+        x,
+        y,
+        color
+    ) {
 
         ctx.save();
 
-        ctx.lineWidth =
-            1;
+        ctx.strokeStyle = color;
+        ctx.fillStyle = color;
 
-        ctx.shadowBlur =
-            8;
+        ctx.lineWidth = 1.2;
 
-        ctx.shadowColor =
-            "#9cff00";
 
-        links.forEach(link => {
+        /* CLOUD */
 
-            const a =
-                getNode(link[0]);
+        if (node.type === "cloud") {
 
-            const b =
-                getNode(link[1]);
+            ctx.beginPath();
+
+            ctx.arc(
+                x - 6,
+                y,
+                5,
+                Math.PI,
+                0
+            );
+
+            ctx.arc(
+                x,
+                y - 4,
+                7,
+                Math.PI,
+                0
+            );
+
+            ctx.arc(
+                x + 7,
+                y,
+                5,
+                Math.PI,
+                0
+            );
+
+            ctx.lineTo(
+                x + 10,
+                y + 5
+            );
+
+            ctx.lineTo(
+                x - 10,
+                y + 5
+            );
+
+            ctx.closePath();
+
+            ctx.stroke();
+
+        }
+
+
+        /* FIREWALL */
+
+        else if (
+            node.type ===
+            "firewall"
+        ) {
 
             ctx.beginPath();
 
             ctx.moveTo(
-                a.x,
-                a.y
+                x,
+                y - 10
             );
 
             ctx.lineTo(
-                b.x,
-                b.y
+                x + 9,
+                y - 6
             );
 
-            ctx.strokeStyle =
-                "rgba(160,255,0,.20)";
+            ctx.lineTo(
+                x + 7,
+                y + 5
+            );
+
+            ctx.lineTo(
+                x,
+                y + 10
+            );
+
+            ctx.lineTo(
+                x - 7,
+                y + 5
+            );
+
+            ctx.lineTo(
+                x - 9,
+                y - 6
+            );
+
+            ctx.closePath();
 
             ctx.stroke();
 
-        });
+        }
+
+
+        /* ROUTER */
+
+        else if (
+            node.type ===
+            "router"
+        ) {
+
+            ctx.beginPath();
+
+            ctx.arc(
+                x,
+                y,
+                8,
+                0,
+                Math.PI * 2
+            );
+
+            ctx.stroke();
+
+
+            ctx.beginPath();
+
+            ctx.moveTo(
+                x - 5,
+                y
+            );
+
+            ctx.lineTo(
+                x + 5,
+                y
+            );
+
+
+            ctx.moveTo(
+                x,
+                y - 5
+            );
+
+            ctx.lineTo(
+                x,
+                y + 5
+            );
+
+            ctx.stroke();
+
+        }
+
+
+        /* SWITCH */
+
+        else if (
+            node.type ===
+            "switch"
+        ) {
+
+            ctx.strokeRect(
+                x - 10,
+                y - 6,
+                20,
+                12
+            );
+
+
+            for (
+                let i = 0;
+                i < 4;
+                i++
+            ) {
+
+                ctx.fillRect(
+                    x - 7 +
+                    i * 5,
+                    y - 1,
+                    2,
+                    2
+                );
+
+            }
+
+        }
+
+
+        /* SERVER */
+
+        else if (
+            node.type ===
+            "server"
+        ) {
+
+            ctx.strokeRect(
+                x - 8,
+                y - 10,
+                16,
+                20
+            );
+
+
+            ctx.beginPath();
+
+            ctx.moveTo(
+                x - 6,
+                y - 3
+            );
+
+            ctx.lineTo(
+                x + 6,
+                y - 3
+            );
+
+
+            ctx.moveTo(
+                x - 6,
+                y + 3
+            );
+
+            ctx.lineTo(
+                x + 6,
+                y + 3
+            );
+
+            ctx.stroke();
+
+        }
+
+
+        /* CLIENT */
+
+        else if (
+            node.type ===
+            "client"
+        ) {
+
+            ctx.strokeRect(
+                x - 10,
+                y - 8,
+                20,
+                13
+            );
+
+
+            ctx.beginPath();
+
+            ctx.moveTo(
+                x,
+                y + 5
+            );
+
+            ctx.lineTo(
+                x,
+                y + 10
+            );
+
+
+            ctx.moveTo(
+                x - 5,
+                y + 10
+            );
+
+            ctx.lineTo(
+                x + 5,
+                y + 10
+            );
+
+            ctx.stroke();
+
+        }
+
+
+        /* IDENTITY */
+
+        else if (
+            node.type ===
+            "identity"
+        ) {
+
+            ctx.beginPath();
+
+            ctx.arc(
+                x,
+                y - 4,
+                4,
+                0,
+                Math.PI * 2
+            );
+
+            ctx.stroke();
+
+
+            ctx.beginPath();
+
+            ctx.arc(
+                x,
+                y + 8,
+                8,
+                Math.PI,
+                0
+            );
+
+            ctx.stroke();
+
+        }
+
+
+        /* INTUNE */
+
+        else {
+
+            ctx.strokeRect(
+                x - 9,
+                y - 9,
+                18,
+                18
+            );
+
+
+            ctx.beginPath();
+
+            ctx.moveTo(
+                x - 5,
+                y
+            );
+
+            ctx.lineTo(
+                x + 5,
+                y
+            );
+
+            ctx.stroke();
+
+        }
+
 
         ctx.restore();
 
     }
 
 
-    /* ==========================================
-       DRAW IT DEVICE NODE
-    ========================================== */
+    /* =========================================================
+       DEVICE CARDS
+    ========================================================= */
 
     function drawNode(
         node,
@@ -4388,556 +4910,672 @@ body.theme-light #networkAtomCanvas {
             node.y *
             height;
 
+
+        const colors =
+            nodeColor(node);
+
+
         const pulse =
-            1 +
-            Math.sin(
-                time * .004 +
-                index
-            ) * .12;
+            (
+                Math.sin(
+                    time *
+                    .006 +
+                    index
+                ) +
+                1
+            ) /
+            2;
+
+
+        const cardW =
+            node.label.length >
+            8
+                ? 88
+                : 72;
+
+
+        const cardH =
+            32;
 
 
         ctx.save();
 
+
         ctx.shadowBlur =
-            20 * pulse;
+            10 +
+            pulse *
+            13;
+
 
         ctx.shadowColor =
-            "#b6ff00";
+            colors.strong;
+
+
+        roundedRect(
+            x - cardW / 2,
+            y - cardH / 2,
+            cardW,
+            cardH,
+            8
+        );
+
+
+        const gradient =
+            ctx.createLinearGradient(
+                x - cardW / 2,
+                y,
+                x + cardW / 2,
+                y
+            );
+
+
+        gradient.addColorStop(
+            0,
+            "rgba(1,18,27,.78)"
+        );
+
+
+        gradient.addColorStop(
+            1,
+            "rgba(5,35,34,.45)"
+        );
 
 
         ctx.fillStyle =
-            "rgba(180,255,0,.14)";
+            gradient;
 
-        ctx.strokeStyle =
-            "rgba(190,255,0,.65)";
-
-        ctx.lineWidth =
-            1;
-
-
-        ctx.beginPath();
-
-        ctx.roundRect(
-            x - 34,
-            y - 13,
-            68,
-            26,
-            5
-        );
 
         ctx.fill();
+
+
+        ctx.strokeStyle =
+            colors.medium;
+
+
+        ctx.lineWidth =
+            .8;
+
 
         ctx.stroke();
 
 
-        ctx.shadowBlur =
-            8;
+        drawIcon(
+            node,
+            x - cardW / 2 + 16,
+            y,
+            colors.strong
+        );
+
 
         ctx.fillStyle =
-            "rgba(220,255,180,.85)";
+            "#effff1";
+
 
         ctx.font =
-            "700 9px Inter, Arial";
+            "700 8px Inter, Arial";
+
 
         ctx.textAlign =
-            "center";
+            "left";
+
 
         ctx.textBaseline =
             "middle";
 
+
         ctx.fillText(
             node.label,
-            x,
+            x - cardW / 2 + 30,
             y
         );
 
-        ctx.restore();
 
-    }
+        /* PORT LEDs */
 
+        for (
+            let i = 0;
+            i < 3;
+            i++
+        ) {
 
-    /* ==========================================
-       DRAW FAST PACKETS
-    ========================================== */
-
-    function drawParticles() {
-
-        particles.forEach(p => {
-
-            const link =
-                links[p.link];
-
-            let a =
-                getNode(link[0]);
-
-            let b =
-                getNode(link[1]);
-
-
-            if (p.reverse) {
-
-                const temp =
-                    a;
-
-                a =
-                    b;
-
-                b =
-                    temp;
-
-            }
-
-
-            p.t +=
-                p.speed;
-
-
-            if (p.t > 1) {
-
-                p.t = 0;
-
-                p.link =
-                    Math.floor(
-                        Math.random() *
-                        links.length
-                    );
-
-            }
-
-
-            const x =
-                a.x +
-                (b.x - a.x) *
-                p.t;
-
-            const y =
-                a.y +
-                (b.y - a.y) *
-                p.t;
-
-
-            ctx.save();
-
-
-            ctx.shadowBlur =
-                18;
-
-            ctx.shadowColor =
-                "#baff00";
-
-
-            ctx.fillStyle =
-                "#d7ff3f";
-
-
-            ctx.beginPath();
-
-            ctx.arc(
-                x,
-                y,
-                p.size,
-                0,
-                Math.PI * 2
-            );
-
-            ctx.fill();
-
-
-            ctx.fillStyle =
-                "rgba(200,255,0,.18)";
-
-            ctx.beginPath();
-
-            ctx.arc(
-                x,
-                y,
-                p.size * 3,
-                0,
-                Math.PI * 2
-            );
-
-            ctx.fill();
-
-
-            ctx.restore();
-
-        });
-
-    }
-
-
-    /* ==========================================
-       NETWORK CORE / NUCLEUS
-    ========================================== */
-
-    function drawNucleus(time) {
-
-        const cx =
-            width * .77;
-
-        const cy =
-            height * .49;
-
-
-        ctx.save();
-
-
-        const pulse =
-            1 +
-            Math.sin(
-                time * .006
-            ) *
-            .10;
-
-
-        const nucleus = [
-
-            [-9, -5, "#baff00"],
-
-            [8, -7, "#00e5ff"],
-
-            [-4, 8, "#9cff00"],
-
-            [10, 7, "#8b5cf6"],
-
-            [0, 0, "#ffffff"]
-
-        ];
-
-
-        nucleus.forEach(
-            (particle, i) => {
-
-                ctx.shadowBlur =
-                    25;
-
-                ctx.shadowColor =
-                    particle[2];
-
-                ctx.fillStyle =
-                    particle[2];
-
-                ctx.beginPath();
-
-                ctx.arc(
-
-                    cx +
-                    particle[0],
-
-                    cy +
-                    particle[1],
-
-                    (5 + i % 2) *
-                    pulse,
-
-                    0,
-
-                    Math.PI * 2
-
-                );
-
-                ctx.fill();
-
-            }
-        );
-
-
-        ctx.restore();
-
-    }
-
-
-    /* ==========================================
-       ATOMIC ORBITS
-    ========================================== */
-
-    function drawAtomicOrbits(time) {
-
-        const cx =
-            width * .77;
-
-        const cy =
-            height * .49;
-
-
-        const orbitData = [
-
-            {
-                rx: 105,
-                ry: 38,
-                rotation: .20
-            },
-
-            {
-                rx: 120,
-                ry: 48,
-                rotation: -.55
-            },
-
-            {
-                rx: 145,
-                ry: 55,
-                rotation: .78
-            },
-
-            {
-                rx: 165,
-                ry: 68,
-                rotation: -1.02
-            }
-
-        ];
-
-
-        orbitData.forEach(
-            orbit => {
-
-                ctx.save();
-
-                ctx.translate(
-                    cx,
-                    cy
-                );
-
-                ctx.rotate(
-                    orbit.rotation
-                );
-
-
-                ctx.beginPath();
-
-                ctx.ellipse(
-                    0,
-                    0,
-                    orbit.rx,
-                    orbit.ry,
-                    0,
-                    0,
-                    Math.PI * 2
-                );
-
-
-                ctx.strokeStyle =
-                    "rgba(185,255,0,.16)";
-
-                ctx.lineWidth =
-                    1;
-
-                ctx.stroke();
-
-
-                ctx.restore();
-
-            }
-        );
-
-
-        orbitElectrons.forEach(
-            electron => {
-
-                const orbit =
-                    orbitData[
-                        electron.orbit
-                    ];
-
-
-                electron.angle +=
-                    electron.speed;
-
-
-                const localX =
-                    Math.cos(
-                        electron.angle
-                    ) *
-                    orbit.rx;
-
-
-                const localY =
-                    Math.sin(
-                        electron.angle
-                    ) *
-                    orbit.ry;
-
-
-                const cos =
-                    Math.cos(
-                        orbit.rotation
-                    );
-
-
-                const sin =
-                    Math.sin(
-                        orbit.rotation
-                    );
-
-
-                const x =
-                    cx +
-                    localX *
-                    cos -
-                    localY *
-                    sin;
-
-
-                const y =
-                    cy +
-                    localX *
-                    sin +
-                    localY *
-                    cos;
-
-
-                ctx.save();
-
-
-                ctx.shadowBlur =
-                    22;
-
-                ctx.shadowColor =
-                    electron.orbit % 2
-                    ? "#00e5ff"
-                    : "#baff00";
-
-
-                ctx.fillStyle =
-                    electron.orbit % 2
-                    ? "#4cecff"
-                    : "#d5ff35";
-
-
-                ctx.beginPath();
-
-                ctx.arc(
-                    x,
-                    y,
-                    electron.size,
-                    0,
-                    Math.PI * 2
-                );
-
-                ctx.fill();
-
-
-                ctx.restore();
-
-            }
-        );
-
-    }
-
-
-    /* ==========================================
-       RANDOM SMALL ENERGY PARTICLES
-    ========================================== */
-
-    const sparks =
-        Array.from(
-            {
-                length:
-                    window.innerWidth <
-                    700
-                    ? 18
-                    : 35
-            },
-            () => ({
-
-                x:
-                    .48 +
-                    Math.random() *
-                    .50,
-
-                y:
-                    Math.random(),
-
-                phase:
-                    Math.random() *
-                    Math.PI *
-                    2,
-
-                speed:
-                    .002 +
-                    Math.random() *
-                    .005
-
-            })
-        );
-
-
-    function drawSparks(time) {
-
-        sparks.forEach(s => {
-
-            const x =
-                s.x *
-                width;
-
-            const y =
-                (
-                    s.y +
-                    time *
-                    s.speed *
-                    .001
-                ) %
-                1 *
-                height;
-
-
-            const alpha =
-                .20 +
+            const blink =
                 (
                     Math.sin(
                         time *
-                        .006 +
-                        s.phase
+                        .015 +
+                        i * 2 +
+                        index
                     ) +
                     1
-                ) *
-                .20;
+                ) /
+                2;
 
 
             ctx.save();
 
 
             ctx.globalAlpha =
-                alpha;
+                .25 +
+                blink *
+                .75;
 
 
             ctx.shadowBlur =
-                12;
+                8;
+
 
             ctx.shadowColor =
-                "#aaff00";
+                colors.strong;
 
 
             ctx.fillStyle =
-                "#baff00";
+                colors.strong;
 
 
             ctx.beginPath();
 
+
             ctx.arc(
-                x,
-                y,
+                x +
+                cardW / 2 -
+                17 +
+                i * 5,
+                y + 10,
                 1.2,
                 0,
                 Math.PI * 2
             );
+
 
             ctx.fill();
 
 
             ctx.restore();
 
-        });
+        }
+
+
+        ctx.restore();
 
     }
 
 
-    /* ==========================================
-       MAIN ANIMATION
-    ========================================== */
+    /* =========================================================
+       FAST MOVING PACKETS
+    ========================================================= */
+
+    function drawPackets() {
+
+        packets.forEach(
+            packet => {
+
+                const link =
+                    links[
+                        packet.link
+                    ];
+
+
+                let a =
+                    getNode(
+                        link.from
+                    );
+
+
+                let b =
+                    getNode(
+                        link.to
+                    );
+
+
+                if (
+                    packet.reverse
+                ) {
+
+                    const temp = a;
+
+                    a = b;
+                    b = temp;
+
+                }
+
+
+                packet.progress +=
+                    packet.speed;
+
+
+                if (
+                    packet.progress >
+                    1
+                ) {
+
+                    packet.progress = 0;
+
+
+                    packet.link =
+                        Math.floor(
+                            Math.random() *
+                            links.length
+                        );
+
+
+                    packet.reverse =
+                        Math.random() >
+                        .68;
+
+
+                    packet.cyan =
+                        Math.random() >
+                        .76;
+
+                }
+
+
+                const x =
+                    a.x +
+                    (
+                        b.x -
+                        a.x
+                    ) *
+                    packet.progress;
+
+
+                const y =
+                    a.y +
+                    (
+                        b.y -
+                        a.y
+                    ) *
+                    packet.progress;
+
+
+                const tail =
+                    Math.max(
+                        0,
+                        packet.progress -
+                        .07
+                    );
+
+
+                const tx =
+                    a.x +
+                    (
+                        b.x -
+                        a.x
+                    ) *
+                    tail;
+
+
+                const ty =
+                    a.y +
+                    (
+                        b.y -
+                        a.y
+                    ) *
+                    tail;
+
+
+                const color =
+                    packet.cyan
+                        ? "#47edff"
+                        : "#c7ff19";
+
+
+                ctx.save();
+
+
+                /* PACKET TRAIL */
+
+                const trail =
+                    ctx.createLinearGradient(
+                        tx,
+                        ty,
+                        x,
+                        y
+                    );
+
+
+                trail.addColorStop(
+                    0,
+                    "rgba(180,255,20,0)"
+                );
+
+
+                trail.addColorStop(
+                    1,
+                    packet.cyan
+                        ? "rgba(71,237,255,.95)"
+                        : "rgba(199,255,25,.98)"
+                );
+
+
+                ctx.strokeStyle =
+                    trail;
+
+
+                ctx.lineWidth =
+                    1.7;
+
+
+                ctx.shadowBlur =
+                    14;
+
+
+                ctx.shadowColor =
+                    color;
+
+
+                ctx.beginPath();
+
+
+                ctx.moveTo(
+                    tx,
+                    ty
+                );
+
+
+                ctx.lineTo(
+                    x,
+                    y
+                );
+
+
+                ctx.stroke();
+
+
+                /* HEAD */
+
+                ctx.shadowBlur =
+                    20;
+
+
+                ctx.fillStyle =
+                    color;
+
+
+                ctx.beginPath();
+
+
+                ctx.arc(
+                    x,
+                    y,
+                    packet.size,
+                    0,
+                    Math.PI * 2
+                );
+
+
+                ctx.fill();
+
+
+                /* EXTRA GLOW */
+
+                ctx.globalAlpha =
+                    .18;
+
+
+                ctx.beginPath();
+
+
+                ctx.arc(
+                    x,
+                    y,
+                    packet.size *
+                    3.5,
+                    0,
+                    Math.PI * 2
+                );
+
+
+                ctx.fill();
+
+
+                ctx.restore();
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       MICRO DATA BACKGROUND
+    ========================================================= */
+
+    function drawMicroData(time) {
+
+        microDots.forEach(
+            dot => {
+
+                const x =
+                    dot.x *
+                    width;
+
+
+                const y =
+                    dot.y *
+                    height;
+
+
+                const blink =
+                    (
+                        Math.sin(
+                            time *
+                            .009 +
+                            dot.phase
+                        ) +
+                        1
+                    ) /
+                    2;
+
+
+                ctx.save();
+
+
+                ctx.globalAlpha =
+                    .10 +
+                    blink *
+                    .32;
+
+
+                ctx.shadowBlur =
+                    7;
+
+
+                ctx.shadowColor =
+                    "#9cff00";
+
+
+                ctx.fillStyle =
+                    "#baff19";
+
+
+                ctx.beginPath();
+
+
+                ctx.arc(
+                    x,
+                    y,
+                    dot.size,
+                    0,
+                    Math.PI * 2
+                );
+
+
+                ctx.fill();
+
+
+                ctx.restore();
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       LIVE LABEL
+    ========================================================= */
+
+    function drawStatusLabel(time) {
+
+        const pulse =
+            (
+                Math.sin(
+                    time *
+                    .009
+                ) +
+                1
+            ) /
+            2;
+
+
+        ctx.save();
+
+
+        ctx.font =
+            "700 8px Inter, Arial";
+
+
+        ctx.textAlign =
+            "right";
+
+
+        ctx.textBaseline =
+            "middle";
+
+
+        ctx.fillStyle =
+            "rgba(220,255,225,.72)";
+
+
+        ctx.fillText(
+            "LIVE NETWORK + CLOUD",
+            width - 18,
+            16
+        );
+
+
+        ctx.shadowBlur =
+            15;
+
+
+        ctx.shadowColor =
+            "#aaff00";
+
+
+        ctx.fillStyle =
+            "#baff19";
+
+
+        ctx.globalAlpha =
+            .45 +
+            pulse *
+            .55;
+
+
+        ctx.beginPath();
+
+
+        ctx.arc(
+            width - 8,
+            16,
+            2.5,
+            0,
+            Math.PI * 2
+        );
+
+
+        ctx.fill();
+
+
+        ctx.restore();
+
+    }
+
+
+    /* =========================================================
+       SUBTLE SCANNER
+    ========================================================= */
+
+    function drawScanner(time) {
+
+        const x =
+            (
+                (
+                    time *
+                    .14
+                ) %
+                (
+                    width +
+                    120
+                )
+            ) -
+            60;
+
+
+        const gradient =
+            ctx.createLinearGradient(
+                x - 60,
+                0,
+                x + 60,
+                0
+            );
+
+
+        gradient.addColorStop(
+            0,
+            "rgba(150,255,0,0)"
+        );
+
+
+        gradient.addColorStop(
+            .5,
+            "rgba(150,255,0,.045)"
+        );
+
+
+        gradient.addColorStop(
+            1,
+            "rgba(150,255,0,0)"
+        );
+
+
+        ctx.save();
+
+
+        ctx.fillStyle =
+            gradient;
+
+
+        ctx.fillRect(
+            x - 60,
+            0,
+            120,
+            height
+        );
+
+
+        ctx.restore();
+
+    }
+
+
+    /* =========================================================
+       MAIN LOOP
+    ========================================================= */
 
     function animate(time) {
+
+        if (!heroVisible) {
+
+            requestAnimationFrame(
+                animate
+            );
+
+            return;
+
+        }
+
 
         ctx.clearRect(
             0,
@@ -4947,35 +5585,32 @@ body.theme-light #networkAtomCanvas {
         );
 
 
-        drawLinks();
+        drawScanner(time);
+
+        drawMicroData(time);
+
+        drawConnections(time);
 
 
         nodes.forEach(
-            (node, index) =>
+            (
+                node,
+                index
+            ) => {
+
                 drawNode(
                     node,
                     index,
                     time
-                )
+                );
+
+            }
         );
 
 
-        drawAtomicOrbits(
-            time
-        );
+        drawPackets();
 
-
-        drawNucleus(
-            time
-        );
-
-
-        drawParticles();
-
-
-        drawSparks(
-            time
-        );
+        drawStatusLabel(time);
 
 
         requestAnimationFrame(
@@ -4984,6 +5619,45 @@ body.theme-light #networkAtomCanvas {
 
     }
 
+
+    /* =========================================================
+       PERFORMANCE
+    ========================================================= */
+
+    if (
+        "IntersectionObserver"
+        in window
+    ) {
+
+        const observer =
+            new IntersectionObserver(
+
+                entries => {
+
+                    heroVisible =
+                        entries[0]
+                            .isIntersecting;
+
+                },
+
+                {
+                    threshold:
+                        .02
+                }
+
+            );
+
+
+        observer.observe(
+            hero
+        );
+
+    }
+
+
+    /* =========================================================
+       START
+    ========================================================= */
 
     requestAnimationFrame(
         animate

@@ -3718,36 +3718,54 @@
            RENDER CHARTS
         ===================================================== */
 
-        function renderCharts(data) {
+     function renderCharts(data) {
 
-            drawLineChart(
-                "monthlyChart",
-                "monthlyEmpty",
-                data.monthly,
-                "month",
-                "visitors"
-            );
-
-
-            drawLineChart(
-                "dailyChart",
-                "dailyEmpty",
-                data.daily,
-                "date",
-                "visitors",
-                30
-            );
+    const monthlyWithTraffic =
+        Array.isArray(data.monthly)
+            ? data.monthly.filter(
+                item =>
+                    Number(item.visitors || 0) > 0
+              )
+            : [];
 
 
-            drawBarChart(
-                "yearlyChart",
-                "yearlyEmpty",
-                data.yearly,
-                "year",
-                "visitors"
-            );
+    const yearlyWithTraffic =
+        Array.isArray(data.yearly)
+            ? data.yearly.filter(
+                item =>
+                    Number(item.visitors || 0) > 0
+              )
+            : [];
 
-        }
+
+    drawLineChart(
+        "monthlyChart",
+        "monthlyEmpty",
+        monthlyWithTraffic,
+        "month",
+        "visitors"
+    );
+
+
+    drawLineChart(
+        "dailyChart",
+        "dailyEmpty",
+        data.daily,
+        "date",
+        "visitors",
+        30
+    );
+
+
+    drawBarChart(
+        "yearlyChart",
+        "yearlyEmpty",
+        yearlyWithTraffic,
+        "year",
+        "visitors"
+    );
+
+}
 
 
 

@@ -11505,6 +11505,838 @@ body.theme-light .tp-legend-row strong {
 </script>
 
 <!-- END TRAFFIC & PAGE PERFORMANCE -->
+<!-- =========================================================
+     PREMIUM 5 METRIC CARDS - NEON GLOW UPGRADE
+========================================================= -->
 
+<style>
+
+/* =========================================================
+   ALL 5 TOP METRIC CARDS
+========================================================= */
+
+.metrics-grid .metric-card {
+
+    --mc-a: #00e5ff;
+    --mc-b: #3478ff;
+    --mc-soft: rgba(0,229,255,.38);
+    --mc-bg: rgba(0,229,255,.08);
+
+    position: relative;
+
+    isolation: isolate;
+
+    overflow: hidden;
+
+    border:
+        1.5px solid
+        var(--mc-a) !important;
+
+    background:
+
+        radial-gradient(
+            circle at 90% 10%,
+            var(--mc-bg),
+            transparent 36%
+        ),
+
+        radial-gradient(
+            circle at 10% 100%,
+            var(--mc-bg),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(7,27,49,.97),
+            rgba(4,16,34,.96)
+        ) !important;
+
+    box-shadow:
+
+        0 12px 32px
+        rgba(0,0,0,.30),
+
+        0 0 10px
+        var(--mc-soft),
+
+        0 0 22px
+        rgba(0,229,255,.08),
+
+        inset 0 0 18px
+        rgba(255,255,255,.025);
+
+}
+
+
+/* =========================================================
+   UNIQUE COLOR FOR EACH CARD
+========================================================= */
+
+/* 1 - TODAY : CYAN / BLUE */
+
+.metrics-grid
+.metric-card:nth-child(1) {
+
+    --mc-a:
+        #00f0ff;
+
+    --mc-b:
+        #1687ff;
+
+    --mc-soft:
+        rgba(0,240,255,.55);
+
+    --mc-bg:
+        rgba(0,240,255,.12);
+
+}
+
+
+/* 2 - 7 DAYS : PURPLE */
+
+.metrics-grid
+.metric-card:nth-child(2) {
+
+    --mc-a:
+        #b45cff;
+
+    --mc-b:
+        #6b5cff;
+
+    --mc-soft:
+        rgba(180,92,255,.52);
+
+    --mc-bg:
+        rgba(180,92,255,.12);
+
+}
+
+
+/* 3 - MONTH : GOLD / ORANGE */
+
+.metrics-grid
+.metric-card:nth-child(3) {
+
+    --mc-a:
+        #ffbf32;
+
+    --mc-b:
+        #ff6b22;
+
+    --mc-soft:
+        rgba(255,173,41,.52);
+
+    --mc-bg:
+        rgba(255,173,41,.12);
+
+}
+
+
+/* 4 - YEAR : GREEN */
+
+.metrics-grid
+.metric-card:nth-child(4) {
+
+    --mc-a:
+        #27f5aa;
+
+    --mc-b:
+        #00c9a7;
+
+    --mc-soft:
+        rgba(39,245,170,.50);
+
+    --mc-bg:
+        rgba(39,245,170,.11);
+
+}
+
+
+/* 5 - TOTAL : PINK */
+
+.metrics-grid
+.metric-card:nth-child(5) {
+
+    --mc-a:
+        #ff3da5;
+
+    --mc-b:
+        #ff3366;
+
+    --mc-soft:
+        rgba(255,61,165,.55);
+
+    --mc-bg:
+        rgba(255,61,165,.12);
+
+}
+
+
+/* =========================================================
+   BRIGHT ANIMATED BORDER
+========================================================= */
+
+.metrics-grid
+.metric-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -2px;
+
+    z-index: 0;
+
+    padding: 2px;
+
+    border-radius:
+        inherit;
+
+    pointer-events:
+        none;
+
+    background:
+
+        linear-gradient(
+            120deg,
+
+            transparent 5%,
+
+            var(--mc-a) 20%,
+
+            #ffffff 32%,
+
+            var(--mc-b) 48%,
+
+            transparent 63%,
+
+            var(--mc-a) 78%,
+
+            #ffffff 88%,
+
+            transparent 100%
+        );
+
+    background-size:
+        320% 320%;
+
+    opacity:
+        .95;
+
+    filter:
+
+        drop-shadow(
+            0 0 5px
+            var(--mc-soft)
+        )
+
+        drop-shadow(
+            0 0 11px
+            var(--mc-soft)
+        );
+
+    animation:
+
+        metricNeonBorderMove
+        3.5s
+        linear
+        infinite,
+
+        metricNeonBorderPulse
+        1.8s
+        ease-in-out
+        infinite alternate;
+
+
+    -webkit-mask:
+
+        linear-gradient(
+            #fff 0 0
+        )
+        content-box,
+
+        linear-gradient(
+            #fff 0 0
+        );
+
+
+    -webkit-mask-composite:
+        xor;
+
+    mask-composite:
+        exclude;
+
+}
+
+
+/* BORDER MOVEMENT */
+
+@keyframes metricNeonBorderMove {
+
+    0% {
+
+        background-position:
+            0% 50%;
+
+    }
+
+    50% {
+
+        background-position:
+            100% 50%;
+
+    }
+
+    100% {
+
+        background-position:
+            200% 50%;
+
+    }
+
+}
+
+
+/* BORDER BRIGHTNESS PULSE */
+
+@keyframes metricNeonBorderPulse {
+
+    from {
+
+        opacity:
+            .60;
+
+        filter:
+
+            drop-shadow(
+                0 0 3px
+                var(--mc-soft)
+            )
+
+            drop-shadow(
+                0 0 7px
+                var(--mc-soft)
+            );
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        filter:
+
+            drop-shadow(
+                0 0 8px
+                var(--mc-soft)
+            )
+
+            drop-shadow(
+                0 0 18px
+                var(--mc-soft)
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   MOVING INTERNAL AURA
+========================================================= */
+
+.metrics-grid
+.metric-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: 0;
+
+    width:
+        130px;
+
+    height:
+        130px;
+
+    right:
+        -48px;
+
+    bottom:
+        -55px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            var(--mc-soft),
+            transparent 68%
+        );
+
+    filter:
+        blur(10px);
+
+    opacity:
+        .45;
+
+    pointer-events:
+        none;
+
+    animation:
+
+        metricAuraFloat
+        3.8s
+        ease-in-out
+        infinite alternate;
+
+}
+
+
+@keyframes metricAuraFloat {
+
+    from {
+
+        transform:
+
+            translate(
+                0,
+                10px
+            )
+
+            scale(.85);
+
+        opacity:
+            .25;
+
+    }
+
+    to {
+
+        transform:
+
+            translate(
+                -45px,
+                -35px
+            )
+
+            scale(1.25);
+
+        opacity:
+            .65;
+
+    }
+
+}
+
+
+/* =========================================================
+   KEEP CONTENT ABOVE EFFECTS
+========================================================= */
+
+.metrics-grid
+.metric-card
+.metric-top,
+
+.metrics-grid
+.metric-card
+.metric-value,
+
+.metrics-grid
+.metric-card
+.metric-label {
+
+    position: relative;
+
+    z-index: 3;
+
+}
+
+
+/* =========================================================
+   ICON MATCHING CARD COLOR
+========================================================= */
+
+.metrics-grid
+.metric-card
+.metric-icon {
+
+    color:
+        var(--mc-a) !important;
+
+    border:
+
+        1px solid
+        var(--mc-a) !important;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--mc-bg),
+            rgba(255,255,255,.025)
+        ) !important;
+
+    box-shadow:
+
+        0 0 9px
+        var(--mc-soft),
+
+        inset 0 0 8px
+        var(--mc-bg);
+
+    animation:
+
+        metricIconBrightPulse
+        1.9s
+        ease-in-out
+        infinite alternate;
+
+}
+
+
+@keyframes metricIconBrightPulse {
+
+    from {
+
+        box-shadow:
+
+            0 0 5px
+            var(--mc-soft);
+
+    }
+
+    to {
+
+        box-shadow:
+
+            0 0 12px
+            var(--mc-soft),
+
+            0 0 22px
+            var(--mc-soft);
+
+    }
+
+}
+
+
+/* ICON ITSELF */
+
+.metrics-grid
+.metric-card
+.metric-icon i {
+
+    color:
+        var(--mc-a);
+
+    text-shadow:
+
+        0 0 7px
+        var(--mc-soft),
+
+        0 0 14px
+        var(--mc-soft);
+
+}
+
+
+/* =========================================================
+   BIG NUMBER GLOW
+========================================================= */
+
+.metrics-grid
+.metric-card
+.metric-value {
+
+    color:
+        #ffffff !important;
+
+    text-shadow:
+
+        0 0 4px
+        #ffffff,
+
+        0 0 10px
+        var(--mc-soft),
+
+        0 0 20px
+        var(--mc-soft) !important;
+
+    animation:
+
+        metricValueBrightGlow
+        1.6s
+        ease-in-out
+        infinite alternate;
+
+}
+
+
+@keyframes metricValueBrightGlow {
+
+    from {
+
+        text-shadow:
+
+            0 0 3px
+            rgba(255,255,255,.65),
+
+            0 0 8px
+            var(--mc-soft);
+
+    }
+
+    to {
+
+        text-shadow:
+
+            0 0 6px
+            #ffffff,
+
+            0 0 14px
+            var(--mc-soft),
+
+            0 0 26px
+            var(--mc-soft);
+
+    }
+
+}
+
+
+/* =========================================================
+   STATUS TEXT
+   LIVE / 7 DAYS / MONTH / YEAR / TOTAL
+========================================================= */
+
+.metrics-grid
+.metric-card
+.metric-status {
+
+    color:
+        var(--mc-a) !important;
+
+    text-shadow:
+
+        0 0 7px
+        var(--mc-soft);
+
+    animation:
+
+        metricStatusBlink
+        1.5s
+        ease-in-out
+        infinite alternate;
+
+}
+
+
+@keyframes metricStatusBlink {
+
+    from {
+
+        opacity:
+            .60;
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        text-shadow:
+
+            0 0 8px
+            var(--mc-soft),
+
+            0 0 16px
+            var(--mc-soft);
+
+    }
+
+}
+
+
+/* =========================================================
+   LABEL COLOR
+========================================================= */
+
+.metrics-grid
+.metric-card
+.metric-label {
+
+    color:
+        #b9cce0 !important;
+
+}
+
+
+/* =========================================================
+   HOVER = EXTRA POWER
+========================================================= */
+
+.metrics-grid
+.metric-card:hover {
+
+    border-color:
+        #ffffff !important;
+
+    box-shadow:
+
+        0 18px 42px
+        rgba(0,0,0,.36),
+
+        0 0 14px
+        var(--mc-soft),
+
+        0 0 30px
+        var(--mc-soft),
+
+        0 0 48px
+        var(--mc-soft) !important;
+
+}
+
+
+/* =========================================================
+   TOP BRIGHT SCANNER LINE
+========================================================= */
+
+.metrics-grid
+.metric-card
+.metric-top::after {
+
+    content: "";
+
+    position: absolute;
+
+    top:
+        -22px;
+
+    left:
+        -50%;
+
+    width:
+        35%;
+
+    height:
+        2px;
+
+    border-radius:
+        999px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            #ffffff,
+            var(--mc-a),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 8px
+        var(--mc-soft),
+
+        0 0 14px
+        var(--mc-soft);
+
+    animation:
+
+        metricScannerLine
+        3.4s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes metricScannerLine {
+
+    0% {
+
+        left:
+            -50%;
+
+        opacity:
+            0;
+
+    }
+
+    20% {
+
+        opacity:
+            1;
+
+    }
+
+    75% {
+
+        opacity:
+            1;
+
+    }
+
+    100% {
+
+        left:
+            120%;
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media
+(prefers-reduced-motion: reduce) {
+
+    .metrics-grid
+    .metric-card::before,
+
+    .metrics-grid
+    .metric-card::after,
+
+    .metrics-grid
+    .metric-card
+    .metric-icon,
+
+    .metrics-grid
+    .metric-card
+    .metric-value,
+
+    .metrics-grid
+    .metric-card
+    .metric-status,
+
+    .metrics-grid
+    .metric-card
+    .metric-top::after {
+
+        animation:
+            none !important;
+
+    }
+
+}
+
+</style>
+
+<!-- END PREMIUM 5 METRIC CARDS -->
 </body>
 </html>

@@ -7696,7 +7696,1758 @@ if (
 </script>
 
 <!-- END FINAL PREMIUM UPGRADE -->
+<!-- =========================================================
+     GLOBAL VISITOR SPOTLIGHT
+     FINAL ONE-PASTE UPGRADE
+========================================================= -->
 
+<style>
+
+/* =========================================================
+   CONVERT MONTHLY PANEL INTO GLOBAL COUNTRY SPOTLIGHT
+========================================================= */
+
+.country-spotlight-panel {
+
+    --spot-cyan: #00e5ff;
+    --spot-blue: #3478ff;
+    --spot-purple: #9b5cff;
+    --spot-pink: #ff3d9a;
+    --spot-orange: #ff9d2e;
+    --spot-green: #22e6a8;
+
+}
+
+
+/* KEEP OLD CANVAS SAFE BUT INVISIBLE */
+
+.country-spotlight-panel
+#monthlyChart {
+
+    opacity: 0 !important;
+
+    pointer-events: none !important;
+
+}
+
+
+.country-spotlight-panel
+#monthlyEmpty {
+
+    display: none !important;
+
+}
+
+
+/* =========================================================
+   SPOTLIGHT LAYER
+========================================================= */
+
+.country-spotlight-layer {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 10;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    padding: 2px;
+
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(0,229,255,.25)
+        transparent;
+
+}
+
+
+.country-spotlight-layer::-webkit-scrollbar {
+
+    width: 4px;
+
+}
+
+
+.country-spotlight-layer::-webkit-scrollbar-thumb {
+
+    border-radius: 999px;
+
+    background:
+        rgba(0,229,255,.28);
+
+}
+
+
+/* =========================================================
+   LIVE BADGE
+========================================================= */
+
+.country-spotlight-live {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-left: auto;
+
+    padding:
+        6px 10px;
+
+    border-radius:
+        999px;
+
+    color:
+        #9effd1;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+
+    border:
+        1px solid
+        rgba(34,230,168,.28);
+
+    background:
+        rgba(34,230,168,.07);
+
+}
+
+
+.country-spotlight-live-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+        var(--spot-green);
+
+    box-shadow:
+        0 0 10px
+        var(--spot-green);
+
+    animation:
+        globalSpotLive
+        1s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes globalSpotLive {
+
+    0%,
+    100% {
+
+        opacity: .35;
+
+        transform:
+            scale(.75);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.35);
+
+    }
+
+}
+
+
+/* =========================================================
+   TOP COUNTRY HERO
+========================================================= */
+
+.global-top-country {
+
+    position: relative;
+
+    overflow: hidden;
+
+    flex:
+        0 0 auto;
+
+    padding:
+        19px 20px;
+
+    border-radius:
+        19px;
+
+    border:
+        1px solid
+        rgba(0,229,255,.34);
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0,229,255,.20),
+            transparent 36%
+        ),
+
+        radial-gradient(
+            circle at 95% 100%,
+            rgba(155,92,255,.20),
+            transparent 42%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(8,37,63,.96),
+            rgba(12,19,45,.96)
+        );
+
+    box-shadow:
+
+        0 16px 36px
+        rgba(0,0,0,.30),
+
+        0 0 20px
+        rgba(0,229,255,.08);
+
+    animation:
+        globalTopFloat
+        3.8s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes globalTopFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-4px);
+
+    }
+
+}
+
+
+/* MOVING LIGHT */
+
+.global-top-country::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -50%;
+
+    left: -40%;
+
+    width: 24%;
+
+    height: 200%;
+
+    transform:
+        rotate(20deg);
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.20),
+            transparent
+        );
+
+    animation:
+        globalSpotShine
+        4.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes globalSpotShine {
+
+    0%,
+    62% {
+
+        left: -40%;
+
+    }
+
+    100% {
+
+        left: 125%;
+
+    }
+
+}
+
+
+/* =========================================================
+   TOP COUNTRY BADGE
+========================================================= */
+
+.global-top-rank {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-bottom:
+        14px;
+
+    padding:
+        6px 9px;
+
+    border-radius:
+        8px;
+
+    color:
+        #8cf7ff;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+
+    border:
+        1px solid
+        rgba(0,229,255,.20);
+
+    background:
+        rgba(0,229,255,.075);
+
+}
+
+
+/* =========================================================
+   TOP COUNTRY MAIN ROW
+========================================================= */
+
+.global-top-main {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+/* FLAG */
+
+.global-big-flag {
+
+    width: 68px;
+
+    height: 68px;
+
+    flex:
+        0 0 68px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius:
+        19px;
+
+    font-size:
+        41px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    box-shadow:
+        0 10px 28px
+        rgba(0,0,0,.25);
+
+    animation:
+        globalFlagMove
+        2.8s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes globalFlagMove {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-5px)
+            rotate(-3deg);
+
+    }
+
+}
+
+
+/* COUNTRY NAME */
+
+.global-top-info {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.global-top-country-name {
+
+    overflow: hidden;
+
+    color:
+        #ffffff;
+
+    font-size:
+        clamp(
+            19px,
+            2vw,
+            27px
+        );
+
+    font-weight:
+        900;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.global-top-country-desc {
+
+    margin-top:
+        5px;
+
+    color:
+        #91a9c0;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+}
+
+
+/* VISITOR COUNT */
+
+.global-top-visitors {
+
+    flex:
+        0 0 auto;
+
+    text-align:
+        right;
+
+}
+
+
+.global-top-visitors strong {
+
+    display: block;
+
+    color:
+        #ffffff;
+
+    font-size:
+        34px;
+
+    line-height: 1;
+
+    font-weight:
+        900;
+
+    text-shadow:
+        0 0 16px
+        rgba(0,229,255,.42);
+
+}
+
+
+.global-top-visitors span {
+
+    display: block;
+
+    margin-top:
+        5px;
+
+    color:
+        #72f2ff;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+/* =========================================================
+   TRAFFIC SHARE
+========================================================= */
+
+.global-share {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-top:
+        17px;
+
+}
+
+
+.global-share-label {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom:
+        7px;
+
+    color:
+        #8fa8be;
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+}
+
+
+.global-share-label strong {
+
+    color:
+        #ffffff;
+
+}
+
+
+.global-share-track {
+
+    height:
+        7px;
+
+    overflow: hidden;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(255,255,255,.07);
+
+}
+
+
+.global-share-fill {
+
+    height:
+        100%;
+
+    border-radius:
+        inherit;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #00e5ff,
+            #3478ff,
+            #9b5cff,
+            #ff3d9a,
+            #ff9d2e
+        );
+
+    background-size:
+        260% 100%;
+
+    box-shadow:
+        0 0 14px
+        rgba(0,229,255,.40);
+
+    animation:
+        globalShareMove
+        3s
+        linear
+        infinite;
+
+}
+
+
+@keyframes globalShareMove {
+
+    from {
+
+        background-position:
+            0% 50%;
+
+    }
+
+    to {
+
+        background-position:
+            260% 50%;
+
+    }
+
+}
+
+
+/* =========================================================
+   OTHER COUNTRY GRID
+========================================================= */
+
+.global-country-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+    gap:
+        9px;
+
+    flex:
+        1;
+
+}
+
+
+.global-country-mini {
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+
+    padding:
+        10px 11px;
+
+    border-radius:
+        12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    background:
+        rgba(255,255,255,.025);
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+
+}
+
+
+.global-country-mini:nth-child(1) {
+
+    border-color:
+        rgba(168,85,247,.28);
+
+}
+
+
+.global-country-mini:nth-child(2) {
+
+    border-color:
+        rgba(255,157,46,.28);
+
+}
+
+
+.global-country-mini:nth-child(3) {
+
+    border-color:
+        rgba(34,230,168,.28);
+
+}
+
+
+.global-country-mini:nth-child(4) {
+
+    border-color:
+        rgba(255,61,154,.28);
+
+}
+
+
+.global-country-mini:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.018);
+
+    background:
+        rgba(255,255,255,.05);
+
+    box-shadow:
+        0 10px 24px
+        rgba(0,0,0,.22);
+
+}
+
+
+/* MINI RANK */
+
+.global-mini-rank {
+
+    flex:
+        0 0 auto;
+
+    color:
+        #66849e;
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+
+}
+
+
+/* MINI FLAG */
+
+.global-mini-flag {
+
+    flex:
+        0 0 auto;
+
+    font-size:
+        24px;
+
+}
+
+
+/* MINI COUNTRY INFO */
+
+.global-mini-info {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.global-mini-info strong {
+
+    display: block;
+
+    overflow: hidden;
+
+    color:
+        #ffffff;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.global-mini-info span {
+
+    display: block;
+
+    margin-top:
+        3px;
+
+    color:
+        #86a0b7;
+
+    font-size:
+        8px;
+
+    font-weight:
+        700;
+
+}
+
+
+/* MINI NUMBER */
+
+.global-mini-count {
+
+    flex:
+        0 0 auto;
+
+    color:
+        #ffffff;
+
+    font-size:
+        14px;
+
+    font-weight:
+        900;
+
+}
+
+
+/* =========================================================
+   EMPTY / LOADING
+========================================================= */
+
+.global-country-empty {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 11px;
+
+    color:
+        #8da8bf;
+
+    font-size:
+        11px;
+
+    text-align: center;
+
+}
+
+
+.global-country-empty i {
+
+    color:
+        #00e5ff;
+
+    font-size:
+        34px;
+
+    animation:
+        globalEmptyFloat
+        2s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes globalEmptyFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-5px);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media
+(max-width: 650px) {
+
+    .country-spotlight-panel
+    .chart-wrap {
+
+        height:
+            430px !important;
+
+    }
+
+
+    .global-top-main {
+
+        align-items:
+            flex-start;
+
+        flex-wrap:
+            wrap;
+
+    }
+
+
+    .global-top-visitors {
+
+        width:
+            100%;
+
+        text-align:
+            left;
+
+        padding-left:
+            83px;
+
+        margin-top:
+            -20px;
+
+    }
+
+
+    .global-country-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   LIGHT THEME SUPPORT
+========================================================= */
+
+body.theme-light
+.global-top-country {
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0,180,220,.12),
+            transparent 36%
+        ),
+
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #eef7ff
+        );
+
+    border-color:
+        rgba(0,140,210,.25);
+
+}
+
+
+body.theme-light
+.global-top-country-name,
+
+body.theme-light
+.global-top-visitors strong,
+
+body.theme-light
+.global-mini-info strong,
+
+body.theme-light
+.global-mini-count {
+
+    color:
+        #173047;
+
+}
+
+
+body.theme-light
+.global-country-mini {
+
+    background:
+        rgba(255,255,255,.70);
+
+}
+
+</style>
+
+
+<script>
+
+(function () {
+
+    "use strict";
+
+
+    /* =====================================================
+       FIND EXISTING MONTHLY PANEL
+    ===================================================== */
+
+    const monthlyCanvas =
+        document.getElementById(
+            "monthlyChart"
+        );
+
+
+    if (!monthlyCanvas) {
+
+        return;
+
+    }
+
+
+    const monthlyPanel =
+        monthlyCanvas.closest(
+            ".panel"
+        );
+
+
+    const monthlyWrap =
+        monthlyCanvas.closest(
+            ".chart-wrap"
+        );
+
+
+    if (
+        !monthlyPanel ||
+        !monthlyWrap
+    ) {
+
+        return;
+
+    }
+
+
+    monthlyPanel.classList.add(
+        "country-spotlight-panel"
+    );
+
+
+    /* =====================================================
+       CHANGE PANEL TITLE
+    ===================================================== */
+
+    const monthlyTitle =
+        monthlyPanel.querySelector(
+            ".panel-title h2"
+        );
+
+
+    const monthlySubtitle =
+        monthlyPanel.querySelector(
+            ".panel-subtitle"
+        );
+
+
+    const monthlyIcon =
+        monthlyPanel.querySelector(
+            ".panel-title-icon i"
+        );
+
+
+    if (monthlyTitle) {
+
+        monthlyTitle.textContent =
+            "Global Visitor Spotlight";
+
+    }
+
+
+    if (monthlySubtitle) {
+
+        monthlySubtitle.textContent =
+            "Top countries visiting this portfolio";
+
+    }
+
+
+    if (monthlyIcon) {
+
+        monthlyIcon.className =
+            "fa-solid fa-earth-asia";
+
+    }
+
+
+    /* =====================================================
+       ADD LIVE BADGE
+    ===================================================== */
+
+    const panelHeader =
+        monthlyPanel.querySelector(
+            ".panel-header"
+        );
+
+
+    if (
+        panelHeader &&
+        !panelHeader.querySelector(
+            ".country-spotlight-live"
+        )
+    ) {
+
+        const badge =
+            document.createElement(
+                "div"
+            );
+
+
+        badge.className =
+            "country-spotlight-live";
+
+
+        badge.innerHTML =
+            `
+            <span class="country-spotlight-live-dot"></span>
+            LIVE GLOBAL
+            `;
+
+
+        panelHeader.appendChild(
+            badge
+        );
+
+    }
+
+
+    /* =====================================================
+       CREATE SPOTLIGHT OVERLAY
+    ===================================================== */
+
+    let spotlight =
+        document.getElementById(
+            "countrySpotlightPro"
+        );
+
+
+    if (!spotlight) {
+
+        spotlight =
+            document.createElement(
+                "div"
+            );
+
+
+        spotlight.id =
+            "countrySpotlightPro";
+
+
+        spotlight.className =
+            "country-spotlight-layer";
+
+
+        monthlyWrap.appendChild(
+            spotlight
+        );
+
+    }
+
+
+    /* =====================================================
+       HELPERS
+    ===================================================== */
+
+    function safeNumber(
+        value
+    ) {
+
+        const number =
+            Number(
+                value || 0
+            );
+
+
+        return Number.isFinite(
+            number
+        )
+            ?
+            number
+            :
+            0;
+
+    }
+
+
+    function formatSpotNumber(
+        value
+    ) {
+
+        return safeNumber(
+            value
+        ).toLocaleString(
+            "en-US"
+        );
+
+    }
+
+
+    function safeText(
+        value
+    ) {
+
+        return String(
+            value || "Unknown"
+        )
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+    }
+
+
+    function spotlightFlag(
+        code
+    ) {
+
+        const clean =
+            String(
+                code || ""
+            )
+            .trim()
+            .toUpperCase();
+
+
+        if (
+            clean.length !== 2
+        ) {
+
+            return "🌍";
+
+        }
+
+
+        try {
+
+            return String.fromCodePoint(
+                ...clean
+                    .split("")
+                    .map(
+                        char =>
+                            127397 +
+                            char.charCodeAt(
+                                0
+                            )
+                    )
+            );
+
+        }
+        catch (
+            error
+        ) {
+
+            return "🌍";
+
+        }
+
+    }
+
+
+    /* =====================================================
+       RENDER COUNTRIES
+    ===================================================== */
+
+    function renderGlobalSpotlight(
+        countries
+    ) {
+
+        if (
+            !Array.isArray(
+                countries
+            ) ||
+            countries.length === 0
+        ) {
+
+            spotlight.innerHTML =
+                `
+                <div class="global-country-empty">
+
+                    <i class="fa-solid fa-earth-americas"></i>
+
+                    <strong>
+                        Waiting for global visitor data
+                    </strong>
+
+                    <span>
+                        Country activity will appear automatically.
+                    </span>
+
+                </div>
+                `;
+
+            return;
+
+        }
+
+
+        const sorted =
+            [...countries]
+                .filter(
+                    item =>
+                        safeNumber(
+                            item.visitors
+                        ) > 0
+                )
+                .sort(
+                    (
+                        a,
+                        b
+                    ) =>
+                        safeNumber(
+                            b.visitors
+                        ) -
+                        safeNumber(
+                            a.visitors
+                        )
+                );
+
+
+        if (
+            sorted.length === 0
+        ) {
+
+            spotlight.innerHTML =
+                `
+                <div class="global-country-empty">
+
+                    <i class="fa-solid fa-earth-americas"></i>
+
+                    No visitor country data yet.
+
+                </div>
+                `;
+
+            return;
+
+        }
+
+
+        const total =
+            sorted.reduce(
+                (
+                    sum,
+                    country
+                ) =>
+                    sum +
+                    safeNumber(
+                        country.visitors
+                    ),
+                0
+            );
+
+
+        const top =
+            sorted[0];
+
+
+        const topVisitors =
+            safeNumber(
+                top.visitors
+            );
+
+
+        const topShare =
+            total > 0
+                ?
+                Math.round(
+                    (
+                        topVisitors /
+                        total
+                    ) *
+                    100
+                )
+                :
+                0;
+
+
+        const secondary =
+            sorted.slice(
+                1,
+                5
+            );
+
+
+        let html =
+            `
+            <div class="global-top-country">
+
+                <div class="global-top-rank">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                    #1 TOP COUNTRY
+
+                </div>
+
+
+                <div class="global-top-main">
+
+                    <div class="global-big-flag">
+
+                        ${spotlightFlag(
+                            top.code
+                        )}
+
+                    </div>
+
+
+                    <div class="global-top-info">
+
+                        <div class="global-top-country-name">
+
+                            ${safeText(
+                                top.country
+                            )}
+
+                        </div>
+
+
+                        <div class="global-top-country-desc">
+
+                            Leading portfolio audience
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="global-top-visitors">
+
+                        <strong>
+
+                            ${formatSpotNumber(
+                                topVisitors
+                            )}
+
+                        </strong>
+
+                        <span>
+
+                            VISITORS
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="global-share">
+
+                    <div class="global-share-label">
+
+                        <span>
+                            Global Traffic Share
+                        </span>
+
+                        <strong>
+                            ${topShare}%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="global-share-track">
+
+                        <div
+                            class="global-share-fill"
+                            style="
+                                width:${Math.min(
+                                    topShare,
+                                    100
+                                )}%;
+                            "
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            `;
+
+
+        if (
+            secondary.length > 0
+        ) {
+
+            html +=
+                `
+                <div class="global-country-grid">
+                `;
+
+
+            secondary.forEach(
+                (
+                    country,
+                    index
+                ) => {
+
+                    const visitors =
+                        safeNumber(
+                            country.visitors
+                        );
+
+
+                    html +=
+                        `
+                        <div class="global-country-mini">
+
+                            <div class="global-mini-rank">
+
+                                #${index + 2}
+
+                            </div>
+
+
+                            <div class="global-mini-flag">
+
+                                ${spotlightFlag(
+                                    country.code
+                                )}
+
+                            </div>
+
+
+                            <div class="global-mini-info">
+
+                                <strong>
+
+                                    ${safeText(
+                                        country.country
+                                    )}
+
+                                </strong>
+
+                                <span>
+
+                                    Portfolio visitors
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="global-mini-count">
+
+                                ${formatSpotNumber(
+                                    visitors
+                                )}
+
+                            </div>
+
+                        </div>
+                        `;
+
+                }
+            );
+
+
+            html +=
+                `
+                </div>
+                `;
+
+        }
+
+
+        spotlight.innerHTML =
+            html;
+
+    }
+
+
+    /* =====================================================
+       CONNECT TO EXISTING LIVE COUNTRY FUNCTION
+    ===================================================== */
+
+    if (
+        typeof renderCountries ===
+        "function"
+    ) {
+
+        const originalRenderCountries =
+            renderCountries;
+
+
+        renderCountries =
+            function (
+                countries
+            ) {
+
+                originalRenderCountries(
+                    countries
+                );
+
+
+                renderGlobalSpotlight(
+                    countries
+                );
+
+            };
+
+    }
+
+
+    /* =====================================================
+       IF DATA ALREADY LOADED
+    ===================================================== */
+
+    try {
+
+        if (
+            typeof analyticsData !==
+                "undefined" &&
+            analyticsData &&
+            Array.isArray(
+                analyticsData.countries
+            )
+        ) {
+
+            renderGlobalSpotlight(
+                analyticsData.countries
+            );
+
+        }
+        else {
+
+            spotlight.innerHTML =
+                `
+                <div class="global-country-empty">
+
+                    <i class="fa-solid fa-earth-asia"></i>
+
+                    Loading live country statistics...
+
+                </div>
+                `;
+
+        }
+
+    }
+    catch (
+        error
+    ) {
+
+        spotlight.innerHTML =
+            `
+            <div class="global-country-empty">
+
+                <i class="fa-solid fa-earth-asia"></i>
+
+                Loading live country statistics...
+
+            </div>
+            `;
+
+    }
+
+
+})();
+
+</script>
+
+<!-- END GLOBAL VISITOR SPOTLIGHT -->
 </body>
 
 </html>

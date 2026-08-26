@@ -709,32 +709,42 @@ a {
 
 .hero h1 {
 
-   font-size:
-    clamp(30px,4vw,48px);
+    display: inline-block;
+    position: relative;
 
-font-weight:
-    700;
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
 
-line-height:
-    1.15;
+    font-size:
+        clamp(26px, 3.2vw, 40px);
 
-letter-spacing:
-    -0.5px;
+    font-weight:
+        800;
 
-margin-bottom:
-    18px;
+    line-height:
+        1.15;
+
+    letter-spacing:
+        -0.8px;
+
+    margin-bottom:
+        20px;
 
     background:
         linear-gradient(
-            90deg,
-            #ffffff,
-            #55b8ff,
-            #9d70ff,
-            #ffffff
+            110deg,
+            #ffffff 0%,
+            #55d8ff 20%,
+            #168cff 40%,
+            #9d70ff 60%,
+            #ff65c3 78%,
+            #ffffff 100%
         );
 
     background-size:
-        250% auto;
+        300% auto;
 
     -webkit-background-clip:
         text;
@@ -745,26 +755,110 @@ margin-bottom:
     color:
         transparent;
 
+    -webkit-text-fill-color:
+        transparent;
+
+    filter:
+        drop-shadow(0 2px 0 rgba(0,120,255,.65))
+        drop-shadow(0 5px 4px rgba(0,0,0,.45));
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,.25),
+        0 4px 6px rgba(0,0,0,.38),
+        0 0 12px rgba(0,170,255,.35),
+        0 0 25px rgba(120,80,255,.20);
+
+    transform-style:
+        preserve-3d;
+
     animation:
-        gradientMove
-        5s linear infinite;
+        experienceTitleGradient 5s linear infinite,
+        experienceTitleFloat 3.2s ease-in-out infinite,
+        experienceTitleGlow 2.2s ease-in-out infinite alternate;
+
+    transition:
+        transform .35s ease,
+        filter .35s ease;
 }
 
 
-@keyframes gradientMove {
+.hero h1:hover {
+
+    animation-play-state:
+        paused;
+
+    transform:
+        perspective(900px)
+        rotateX(7deg)
+        rotateY(-6deg)
+        translateY(-5px)
+        scale(1.045);
+
+    filter:
+        drop-shadow(0 3px 0 rgba(0,170,255,.85))
+        drop-shadow(0 9px 8px rgba(0,0,0,.50))
+        brightness(1.12);
+}
+
+
+@keyframes experienceTitleGradient {
 
     0% {
-
         background-position:
             0% center;
     }
 
     100% {
-
         background-position:
-            250% center;
+            300% center;
     }
 }
+
+
+@keyframes experienceTitleFloat {
+
+    0%,
+    100% {
+
+        transform:
+            perspective(900px)
+            translateY(0)
+            rotateX(0deg);
+    }
+
+    50% {
+
+        transform:
+            perspective(900px)
+            translateY(-5px)
+            rotateX(2deg);
+    }
+}
+
+
+@keyframes experienceTitleGlow {
+
+    0% {
+
+        text-shadow:
+            0 1px 0 rgba(255,255,255,.20),
+            0 4px 6px rgba(0,0,0,.38),
+            0 0 8px rgba(0,170,255,.28),
+            0 0 18px rgba(120,80,255,.15);
+    }
+
+    100% {
+
+        text-shadow:
+            0 1px 0 rgba(255,255,255,.32),
+            0 5px 8px rgba(0,0,0,.42),
+            0 0 15px rgba(0,210,255,.55),
+            0 0 30px rgba(145,80,255,.32);
+    }
+}
+
+
+    
 
 
 .hero p {
@@ -1730,7 +1824,7 @@ footer strong {
     .hero h1 {
 
         font-size:
-            30px;
+            27px;
     }
 
 
@@ -1819,15 +1913,17 @@ body.theme-light
 
     background:
         linear-gradient(
-            90deg,
-            #102033,
-            #087cf0,
-            #7950f2,
-            #102033
+            110deg,
+            #102033 0%,
+            #087cf0 22%,
+            #005bd7 42%,
+            #7950f2 62%,
+            #d72a91 80%,
+            #102033 100%
         ) !important;
 
     background-size:
-        250% auto !important;
+        300% auto !important;
 
     -webkit-background-clip:
         text !important;
@@ -1840,8 +1936,16 @@ body.theme-light
 
     -webkit-text-fill-color:
         transparent !important;
-}
 
+    filter:
+        drop-shadow(0 2px 0 rgba(0,100,220,.28))
+        drop-shadow(0 5px 5px rgba(20,55,100,.22)) !important;
+
+    text-shadow:
+        0 2px 2px rgba(255,255,255,.70),
+        0 5px 6px rgba(0,70,150,.18),
+        0 0 14px rgba(8,124,240,.20) !important;
+}
 
 body.theme-light
 .hero p {

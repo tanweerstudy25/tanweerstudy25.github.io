@@ -7615,3 +7615,24 @@ footer {
         0 0 40px rgba(139,92,246,.30)
         !important;
 }
+/* =========================================================
+   SUPPORT + FEEDBACK + ADMIN SAME ROW
+========================================================= */
+
+.support-actions-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+}
+
+
+/* MOBILE - KEEP ORIGINAL BUTTON LAYOUT */
+
+@media (max-width: 520px) {
+
+    .support-actions-row {
+        display: contents;
+    }
+
+}

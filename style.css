@@ -1634,10 +1634,10 @@ footer {
         ),
         url("tanweer-hero.png");
 
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-
+    background-color: #061426;
     border: 1px solid rgba(57,168,255,.35);
 
     border-radius: 22px;
@@ -7614,4 +7614,42 @@ footer {
         0 0 25px rgba(80,100,255,.45),
         0 0 40px rgba(139,92,246,.30)
         !important;
+}
+/* =========================================================
+   FEEDBACK + ADMIN SAME ROW
+========================================================= */
+
+.feedback-admin-pair {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex: 0 0 auto;
+}
+
+
+@media (max-width: 520px) {
+
+    .feedback-admin-pair {
+
+        width: 100%;
+
+        display: flex;
+
+        gap: 8px;
+
+    }
+
+
+    .feedback-admin-pair .btn {
+
+        flex: 1;
+
+        width: auto !important;
+
+    }
+
 }

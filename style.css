@@ -7615,24 +7615,24 @@ footer {
         0 0 40px rgba(139,92,246,.30)
         !important;
 }
+
 /* =========================================================
-   SUPPORT + FEEDBACK + ADMIN SAME ROW
+   LAST THREE HERO BUTTONS - SAME ROW
 ========================================================= */
 
-.support-actions-row {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    flex: 0 0 auto;
+.hero-row-break {
+    flex-basis: 100%;
+    width: 0;
+    height: 0;
 }
 
 
-/* MOBILE - KEEP ORIGINAL BUTTON LAYOUT */
+/* MOBILE - ORIGINAL LAYOUT */
 
 @media (max-width: 520px) {
 
-    .support-actions-row {
-        display: contents;
+    .hero-row-break {
+        display: none;
     }
 
 }

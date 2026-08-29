@@ -7636,3 +7636,21 @@ footer {
     }
 
 }
+/* =========================================================
+   FEEDBACK + COMMUNITY STAY TOGETHER
+========================================================= */
+
+.feedback-community-pair {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+}
+
+@media (max-width: 520px) {
+
+    .feedback-community-pair {
+        display: contents;
+    }
+
+}

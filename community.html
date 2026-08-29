@@ -1,0 +1,3725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Tanweer IT Community | Public Discussion
+    </title>
+
+    <meta name="description"
+          content="Tanweer IT Community - Public discussion, comments, replies, likes and dislikes for IT professionals and visitors.">
+
+    <meta name="robots"
+          content="index,follow">
+
+
+    <!-- =========================================================
+         FONT AWESOME
+    ========================================================= -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =========================================================
+         GOOGLE FONT
+    ========================================================= -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    min-height: 100vh;
+
+    color: #f4f8ff;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0, 213, 255, .10),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(139, 92, 246, .12),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            180deg,
+            #061426,
+            #07182b,
+            #061426
+        );
+
+    overflow-x: hidden;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.community-navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 9999;
+
+    width: 100%;
+
+    background:
+        rgba(5, 18, 34, .92);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border-bottom:
+        1px solid
+        rgba(55, 182, 255, .18);
+}
+
+
+.nav-inner {
+
+    width:
+        min(1180px, 92%);
+
+    min-height:
+        76px;
+
+    margin:
+        0 auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        18px;
+}
+
+
+.logo {
+
+    font-size:
+        21px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .5px;
+
+    white-space:
+        nowrap;
+}
+
+
+.logo span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #42eaff,
+            #5486ff,
+            #b766ff
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+}
+
+
+.nav-links {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    flex-wrap:
+        wrap;
+
+    justify-content:
+        flex-end;
+}
+
+
+.nav-links a {
+
+    padding:
+        9px 12px;
+
+    border-radius:
+        9px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    color:
+        #a9bdd1;
+
+    transition:
+        .25s ease;
+}
+
+
+.nav-links a:hover {
+
+    color:
+        #ffffff;
+
+    background:
+        rgba(57, 168, 255, .10);
+
+    transform:
+        translateY(-2px);
+}
+
+
+.nav-links a.active {
+
+    color:
+        #ffffff;
+
+    border:
+        1px solid
+        rgba(67, 222, 255, .48);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20, 133, 205, .34),
+            rgba(92, 65, 200, .30)
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(55, 195, 255, .12);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.community-hero {
+
+    width:
+        min(1180px, 92%);
+
+    margin:
+        42px auto 24px auto;
+
+    padding:
+        42px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        25px;
+
+    border:
+        1px solid
+        rgba(64, 200, 255, .28);
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0, 229, 255, .15),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(182, 84, 255, .13),
+            transparent 40%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(10, 35, 61, .96),
+            rgba(10, 24, 49, .96)
+        );
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.28);
+}
+
+
+.community-badge {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    margin-bottom:
+        17px;
+
+    padding:
+        7px 12px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .7px;
+
+    color:
+        #72f1ff;
+
+    border:
+        1px solid
+        rgba(62, 226, 255, .35);
+
+    background:
+        rgba(0, 195, 255, .07);
+}
+
+
+.community-badge span {
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #48ff96;
+
+    box-shadow:
+        0 0 12px
+        #48ff96;
+
+    animation:
+        onlinePulse
+        .8s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+@keyframes onlinePulse {
+
+    from {
+        opacity: .45;
+        transform: scale(.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.25);
+    }
+
+}
+
+
+.community-hero h1 {
+
+    max-width:
+        850px;
+
+    font-size:
+        clamp(37px, 5vw, 65px);
+
+    line-height:
+        1.04;
+
+    letter-spacing:
+        -2.5px;
+
+    margin-bottom:
+        16px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #45eaff,
+            #5490ff,
+            #b96bff,
+            #ff75bf
+        );
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    color:
+        transparent;
+}
+
+
+.community-hero p {
+
+    max-width:
+        820px;
+
+    color:
+        #a9bdd1;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.8;
+}
+
+
+.community-hero-tags {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        9px;
+
+    margin-top:
+        24px;
+}
+
+
+.community-hero-tags span {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        8px 12px;
+
+    border-radius:
+        999px;
+
+    color:
+        #dbe9f8;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    border:
+        1px solid
+        rgba(92, 174, 255, .22);
+
+    background:
+        rgba(11, 39, 67, .72);
+}
+
+
+.community-hero-tags i {
+    color: #52dcff;
+}
+
+
+/* =========================================================
+   MAIN GRID
+========================================================= */
+
+.community-layout {
+
+    width:
+        min(1180px, 92%);
+
+    margin:
+        0 auto 80px auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        320px;
+
+    gap:
+        22px;
+
+    align-items:
+        start;
+}
+
+
+/* =========================================================
+   MAIN COLUMN
+========================================================= */
+
+.community-main {
+
+    min-width:
+        0;
+}
+
+
+/* =========================================================
+   CREATE POST
+========================================================= */
+
+.create-post-card {
+
+    padding:
+        25px;
+
+    margin-bottom:
+        18px;
+
+    border-radius:
+        20px;
+
+    border:
+        1px solid
+        rgba(65, 168, 255, .23);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(11, 31, 53, .96),
+            rgba(9, 25, 46, .96)
+        );
+
+    box-shadow:
+        0 18px 45px
+        rgba(0,0,0,.18);
+}
+
+
+.card-title {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    margin-bottom:
+        18px;
+}
+
+
+.card-title-icon {
+
+    width:
+        40px;
+
+    height:
+        40px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        11px;
+
+    font-size:
+        16px;
+
+    color:
+        #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00c9ff,
+            #477dff,
+            #9c5aff
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(64, 175, 255, .23);
+}
+
+
+.card-title h2 {
+
+    font-size:
+        17px;
+
+    margin-bottom:
+        2px;
+}
+
+
+.card-title p {
+
+    color:
+        #8399ae;
+
+    font-size:
+        11px;
+}
+
+
+.community-form {
+
+    display:
+        grid;
+
+    gap:
+        13px;
+}
+
+
+.form-label {
+
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    color:
+        #b8cadb;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+}
+
+
+.community-input,
+.community-textarea {
+
+    width:
+        100%;
+
+    border:
+        1px solid
+        rgba(81, 163, 239, .24);
+
+    border-radius:
+        12px;
+
+    outline:
+        none;
+
+    color:
+        #ffffff;
+
+    background:
+        rgba(5, 21, 39, .88);
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+
+.community-input {
+
+    height:
+        46px;
+
+    padding:
+        0 14px;
+}
+
+
+.community-textarea {
+
+    min-height:
+        125px;
+
+    resize:
+        vertical;
+
+    padding:
+        13px 14px;
+
+    line-height:
+        1.6;
+}
+
+
+.community-input:focus,
+.community-textarea:focus {
+
+    border-color:
+        rgba(53, 211, 255, .75);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(53, 211, 255, .07);
+
+    background:
+        rgba(7, 27, 48, .96);
+}
+
+
+.character-count {
+
+    margin-top:
+        6px;
+
+    text-align:
+        right;
+
+    font-size:
+        10px;
+
+    color:
+        #72889d;
+}
+
+
+.post-button {
+
+    min-height:
+        47px;
+
+    border:
+        0;
+
+    border-radius:
+        12px;
+
+    cursor:
+        pointer;
+
+    color:
+        #ffffff;
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00a9d9,
+            #3579ff,
+            #8555e9
+        );
+
+    box-shadow:
+        0 10px 28px
+        rgba(50, 121, 255, .20);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease;
+}
+
+
+.post-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    filter:
+        brightness(1.1);
+
+    box-shadow:
+        0 15px 35px
+        rgba(50, 121, 255, .30);
+}
+
+
+.post-button:disabled {
+
+    opacity:
+        .55;
+
+    cursor:
+        wait;
+
+    transform:
+        none;
+}
+
+
+/* =========================================================
+   STATUS MESSAGE
+========================================================= */
+
+.status-message {
+
+    display:
+        none;
+
+    margin-top:
+        13px;
+
+    padding:
+        11px 13px;
+
+    border-radius:
+        10px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        600;
+}
+
+
+.status-message.show {
+    display: block;
+}
+
+
+.status-success {
+
+    color:
+        #8affb3;
+
+    border:
+        1px solid
+        rgba(62, 255, 137, .25);
+
+    background:
+        rgba(27, 130, 76, .12);
+}
+
+
+.status-error {
+
+    color:
+        #ff9f9f;
+
+    border:
+        1px solid
+        rgba(255, 95, 95, .28);
+
+    background:
+        rgba(160, 35, 35, .13);
+}
+
+
+/* =========================================================
+   DISCUSSION HEADER
+========================================================= */
+
+.discussion-header {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    margin:
+        24px 0 13px 0;
+}
+
+
+.discussion-header h2 {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    font-size:
+        18px;
+}
+
+
+.discussion-header h2 i {
+    color: #49dfff;
+}
+
+
+.refresh-button {
+
+    border:
+        1px solid
+        rgba(65, 180, 255, .30);
+
+    border-radius:
+        9px;
+
+    padding:
+        8px 11px;
+
+    cursor:
+        pointer;
+
+    color:
+        #b9d2e8;
+
+    background:
+        rgba(10, 36, 60, .75);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    transition:
+        .25s;
+}
+
+
+.refresh-button:hover {
+
+    color:
+        #ffffff;
+
+    border-color:
+        rgba(65, 220, 255, .70);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   POSTS
+========================================================= */
+
+.posts-container {
+
+    display:
+        grid;
+
+    gap:
+        13px;
+}
+
+
+.community-post {
+
+    padding:
+        20px;
+
+    border-radius:
+        17px;
+
+    border:
+        1px solid
+        rgba(63, 157, 240, .19);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 29, 50, .96),
+            rgba(8, 23, 42, .96)
+        );
+
+    box-shadow:
+        0 13px 32px
+        rgba(0,0,0,.13);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.community-post:hover {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(60, 201, 255, .36);
+
+    box-shadow:
+        0 17px 38px
+        rgba(0,0,0,.19);
+}
+
+
+.post-header {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+    margin-bottom:
+        13px;
+}
+
+
+.post-user {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+}
+
+
+.avatar {
+
+    width:
+        39px;
+
+    height:
+        39px;
+
+    flex:
+        0 0 39px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    color:
+        #ffffff;
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00bddf,
+            #4276f4,
+            #9b59e8
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(60, 170, 255, .20);
+}
+
+
+.post-user-name {
+
+    font-size:
+        13px;
+
+    font-weight:
+        800;
+
+    color:
+        #eef7ff;
+}
+
+
+.post-date {
+
+    margin-top:
+        2px;
+
+    font-size:
+        9px;
+
+    color:
+        #73899f;
+}
+
+
+.post-message {
+
+    margin:
+        12px 0 16px 0;
+
+    color:
+        #c2d2df;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+    white-space:
+        pre-wrap;
+
+    overflow-wrap:
+        anywhere;
+}
+
+
+.post-actions {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+}
+
+
+.action-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        6px;
+
+    min-height:
+        32px;
+
+    padding:
+        6px 10px;
+
+    border-radius:
+        9px;
+
+    border:
+        1px solid
+        rgba(79, 151, 215, .18);
+
+    cursor:
+        pointer;
+
+    color:
+        #9eb4c8;
+
+    background:
+        rgba(6, 23, 41, .68);
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    transition:
+        .22s ease;
+}
+
+
+.action-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    color:
+        #ffffff;
+
+    border-color:
+        rgba(74, 208, 255, .45);
+}
+
+
+.like-button:hover {
+    color: #6dff9a;
+}
+
+
+.dislike-button:hover {
+    color: #ff8a8a;
+}
+
+
+.reply-button:hover {
+    color: #77dfff;
+}
+
+
+.report-button {
+
+    margin-left:
+        auto;
+}
+
+
+.report-button:hover {
+    color: #ffc369;
+}
+
+
+/* =========================================================
+   REPLY FORM
+========================================================= */
+
+.reply-form {
+
+    display:
+        none;
+
+    margin-top:
+        13px;
+
+    padding:
+        13px;
+
+    border-radius:
+        12px;
+
+    border:
+        1px solid
+        rgba(67, 174, 255, .17);
+
+    background:
+        rgba(5, 22, 41, .70);
+}
+
+
+.reply-form.show {
+    display: block;
+}
+
+
+.reply-form textarea {
+
+    width:
+        100%;
+
+    min-height:
+        80px;
+
+    padding:
+        10px 11px;
+
+    resize:
+        vertical;
+
+    border-radius:
+        9px;
+
+    outline:
+        none;
+
+    color:
+        #ffffff;
+
+    border:
+        1px solid
+        rgba(78, 163, 240, .22);
+
+    background:
+        #071a2e;
+}
+
+
+.reply-form-actions {
+
+    display:
+        flex;
+
+    justify-content:
+        flex-end;
+
+    gap:
+        7px;
+
+    margin-top:
+        8px;
+}
+
+
+.small-button {
+
+    padding:
+        7px 10px;
+
+    border:
+        0;
+
+    border-radius:
+        8px;
+
+    cursor:
+        pointer;
+
+    color:
+        #ffffff;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+}
+
+
+.cancel-reply {
+
+    background:
+        #263a4e;
+}
+
+
+.submit-reply {
+
+    background:
+        linear-gradient(
+            135deg,
+            #0c9dca,
+            #4976f0
+        );
+}
+
+
+/* =========================================================
+   REPLIES
+========================================================= */
+
+.replies-container {
+
+    margin-top:
+        14px;
+
+    margin-left:
+        33px;
+
+    display:
+        grid;
+
+    gap:
+        9px;
+}
+
+
+.community-reply {
+
+    position:
+        relative;
+
+    padding:
+        13px 14px;
+
+    border-radius:
+        12px;
+
+    border:
+        1px solid
+        rgba(73, 155, 230, .15);
+
+    background:
+        rgba(7, 23, 42, .74);
+}
+
+
+.community-reply::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        -18px;
+
+    top:
+        0;
+
+    width:
+        14px;
+
+    height:
+        22px;
+
+    border-left:
+        2px solid
+        rgba(73, 183, 255, .25);
+
+    border-bottom:
+        2px solid
+        rgba(73, 183, 255, .25);
+
+    border-radius:
+        0 0 0 8px;
+}
+
+
+.reply-user {
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    color:
+        #85dbff;
+}
+
+
+.reply-message {
+
+    margin-top:
+        5px;
+
+    color:
+        #aebfd0;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.6;
+
+    white-space:
+        pre-wrap;
+
+    overflow-wrap:
+        anywhere;
+}
+
+
+/* =========================================================
+   LOADING / EMPTY
+========================================================= */
+
+.community-loading,
+.community-empty {
+
+    padding:
+        32px 20px;
+
+    text-align:
+        center;
+
+    border-radius:
+        15px;
+
+    color:
+        #7890a6;
+
+    border:
+        1px dashed
+        rgba(74, 160, 240, .19);
+
+    background:
+        rgba(7, 25, 44, .45);
+}
+
+
+.community-loading i {
+
+    margin-right:
+        7px;
+
+    color:
+        #4edfff;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.community-sidebar {
+
+    position:
+        sticky;
+
+    top:
+        96px;
+
+    display:
+        grid;
+
+    gap:
+        14px;
+}
+
+
+.sidebar-card {
+
+    padding:
+        20px;
+
+    border-radius:
+        17px;
+
+    border:
+        1px solid
+        rgba(70, 160, 240, .18);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 31, 53, .94),
+            rgba(8, 24, 44, .94)
+        );
+
+    box-shadow:
+        0 14px 35px
+        rgba(0,0,0,.14);
+}
+
+
+.sidebar-card h3 {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    margin-bottom:
+        12px;
+
+    font-size:
+        13px;
+}
+
+
+.sidebar-card h3 i {
+    color: #4bdfff;
+}
+
+
+.sidebar-card p {
+
+    color:
+        #889eb2;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.7;
+}
+
+
+.rules-list {
+
+    display:
+        grid;
+
+    gap:
+        10px;
+}
+
+
+.rule-item {
+
+    display:
+        flex;
+
+    gap:
+        9px;
+
+    color:
+        #a7bacb;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.5;
+}
+
+
+.rule-item i {
+
+    margin-top:
+        2px;
+
+    color:
+        #55e5ff;
+}
+
+
+.community-stats {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        8px;
+}
+
+
+.stat-box {
+
+    padding:
+        12px 8px;
+
+    text-align:
+        center;
+
+    border-radius:
+        11px;
+
+    border:
+        1px solid
+        rgba(66, 166, 255, .15);
+
+    background:
+        rgba(7, 26, 46, .75);
+}
+
+
+.stat-box strong {
+
+    display:
+        block;
+
+    color:
+        #ffffff;
+
+    font-size:
+        18px;
+}
+
+
+.stat-box span {
+
+    display:
+        block;
+
+    margin-top:
+        3px;
+
+    color:
+        #788fa4;
+
+    font-size:
+        8px;
+
+    font-weight:
+        700;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .5px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.community-footer {
+
+    padding:
+        25px 0;
+
+    text-align:
+        center;
+
+    color:
+        #70869a;
+
+    font-size:
+        10px;
+
+    border-top:
+        1px solid
+        rgba(58, 145, 220, .10);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .community-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    .community-sidebar {
+        position: static;
+    }
+
+
+    .nav-inner {
+
+        padding:
+            12px 0;
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+
+    .nav-links {
+
+        width:
+            100%;
+
+        justify-content:
+            flex-start;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .community-hero {
+
+        margin-top:
+            22px;
+
+        padding:
+            27px 20px;
+
+        border-radius:
+            18px;
+    }
+
+
+    .community-hero h1 {
+
+        letter-spacing:
+            -1.5px;
+    }
+
+
+    .create-post-card {
+
+        padding:
+            18px;
+
+        border-radius:
+            16px;
+    }
+
+
+    .community-post {
+
+        padding:
+            16px;
+    }
+
+
+    .replies-container {
+
+        margin-left:
+            20px;
+    }
+
+
+    .report-button {
+
+        margin-left:
+            0;
+    }
+
+
+    .nav-links a {
+
+        padding:
+            7px 8px;
+
+        font-size:
+            10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header class="community-navbar">
+
+    <div class="nav-inner">
+
+
+        <a href="index.html"
+           class="logo">
+
+            TANWEER<span>.SITE</span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="skills.html">
+                Skills
+            </a>
+
+            <a href="experience.html">
+                Experience
+            </a>
+
+            <a href="projects.html">
+                Projects
+            </a>
+
+            <a href="community.html"
+               class="active">
+
+                <i class="fa-solid fa-comments"></i>
+
+                Community
+
+            </a>
+
+        </nav>
+
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="community-hero">
+
+
+    <div class="community-badge">
+
+        <span></span>
+
+        PUBLIC COMMUNITY
+
+    </div>
+
+
+    <h1>
+        Tanweer IT Community
+    </h1>
+
+
+    <p>
+
+        A public place for IT professionals, learners and visitors
+        to share ideas, ask questions, reply to discussions and
+        help each other.
+
+    </p>
+
+
+    <div class="community-hero-tags">
+
+        <span>
+
+            <i class="fa-solid fa-message"></i>
+
+            Public Comments
+
+        </span>
+
+
+        <span>
+
+            <i class="fa-solid fa-reply"></i>
+
+            Replies
+
+        </span>
+
+
+        <span>
+
+            <i class="fa-solid fa-thumbs-up"></i>
+
+            Like / Dislike
+
+        </span>
+
+
+        <span>
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Moderated Community
+
+        </span>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="community-layout">
+
+
+    <!-- =====================================================
+         LEFT SIDE
+    ====================================================== -->
+
+    <section class="community-main">
+
+
+        <!-- =================================================
+             CREATE POST
+        ================================================== -->
+
+        <div class="create-post-card">
+
+
+            <div class="card-title">
+
+
+                <div class="card-title-icon">
+
+                    <i class="fa-solid fa-pen-to-square"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Start a Discussion
+                    </h2>
+
+                    <p>
+                        Share your question, idea or comment.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <form
+                id="communityForm"
+                class="community-form">
+
+
+                <div>
+
+                    <label
+                        class="form-label"
+                        for="communityName">
+
+                        Your Name / Nickname
+
+                    </label>
+
+
+                    <input
+                        id="communityName"
+                        class="community-input"
+                        type="text"
+                        maxlength="40"
+                        autocomplete="nickname"
+                        placeholder="Example: Ahmed"
+                        required>
+
+                </div>
+
+
+                <div>
+
+                    <label
+                        class="form-label"
+                        for="communityMessage">
+
+                        Your Message
+
+                    </label>
+
+
+                    <textarea
+                        id="communityMessage"
+                        class="community-textarea"
+                        maxlength="1000"
+                        placeholder="Write your message, question or idea here..."
+                        required></textarea>
+
+
+                    <div
+                        id="characterCount"
+                        class="character-count">
+
+                        0 / 1000
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="postButton"
+                    class="post-button"
+                    type="submit">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Post Message
+
+                </button>
+
+
+            </form>
+
+
+            <div
+                id="formStatus"
+                class="status-message">
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             DISCUSSIONS
+        ================================================== -->
+
+        <div class="discussion-header">
+
+
+            <h2>
+
+                <i class="fa-solid fa-comments"></i>
+
+                Community Discussions
+
+            </h2>
+
+
+            <button
+                id="refreshButton"
+                class="refresh-button"
+                type="button">
+
+                <i class="fa-solid fa-rotate"></i>
+
+                Refresh
+
+            </button>
+
+
+        </div>
+
+
+        <div
+            id="postsContainer"
+            class="posts-container">
+
+
+            <div class="community-loading">
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                Loading community...
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         RIGHT SIDEBAR
+    ====================================================== -->
+
+    <aside class="community-sidebar">
+
+
+        <div class="sidebar-card">
+
+
+            <h3>
+
+                <i class="fa-solid fa-chart-simple"></i>
+
+                Community Activity
+
+            </h3>
+
+
+            <div class="community-stats">
+
+
+                <div class="stat-box">
+
+                    <strong id="totalPosts">
+                        0
+                    </strong>
+
+                    <span>
+                        Discussions
+                    </span>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <strong id="totalReplies">
+                        0
+                    </strong>
+
+                    <span>
+                        Replies
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="sidebar-card">
+
+
+            <h3>
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Community Rules
+
+            </h3>
+
+
+            <div class="rules-list">
+
+
+                <div class="rule-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        Be respectful to other community members.
+                    </span>
+
+                </div>
+
+
+                <div class="rule-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        Do not post spam, scams or harmful links.
+                    </span>
+
+                </div>
+
+
+                <div class="rule-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        Keep discussions useful and professional.
+                    </span>
+
+                </div>
+
+
+                <div class="rule-item">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                        Report inappropriate comments for review.
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="sidebar-card">
+
+
+            <h3>
+
+                <i class="fa-solid fa-lock"></i>
+
+                Privacy Notice
+
+            </h3>
+
+
+            <p>
+
+                Do not share passwords, OTPs, bank details,
+                private company information or other sensitive
+                information in this public community.
+
+            </p>
+
+
+        </div>
+
+
+    </aside>
+
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="community-footer">
+
+    © 2026 Tanweer Ansari · Tanweer IT Community
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   COMMUNITY API
+========================================================= */
+
+/*
+   Existing Cloudflare Worker.
+
+   Backend routes will be added in the next step:
+
+   GET  /community
+   POST /community
+   POST /community/react
+   POST /community/report
+*/
+
+const COMMUNITY_API =
+    "https://live-visitor-counter.tanweerstudy25.workers.dev";
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const communityForm =
+    document.getElementById("communityForm");
+
+const communityName =
+    document.getElementById("communityName");
+
+const communityMessage =
+    document.getElementById("communityMessage");
+
+const characterCount =
+    document.getElementById("characterCount");
+
+const postButton =
+    document.getElementById("postButton");
+
+const formStatus =
+    document.getElementById("formStatus");
+
+const postsContainer =
+    document.getElementById("postsContainer");
+
+const refreshButton =
+    document.getElementById("refreshButton");
+
+const totalPostsElement =
+    document.getElementById("totalPosts");
+
+const totalRepliesElement =
+    document.getElementById("totalReplies");
+
+
+/* =========================================================
+   CHARACTER COUNTER
+========================================================= */
+
+communityMessage.addEventListener(
+    "input",
+    function () {
+
+        characterCount.textContent =
+            `${communityMessage.value.length} / 1000`;
+
+    }
+);
+
+
+/* =========================================================
+   STATUS MESSAGE
+========================================================= */
+
+function showStatus(message, type) {
+
+    formStatus.textContent =
+        message;
+
+    formStatus.className =
+        "status-message show " +
+        (
+            type === "success"
+                ? "status-success"
+                : "status-error"
+        );
+
+
+    window.setTimeout(
+        function () {
+
+            formStatus.classList.remove(
+                "show"
+            );
+
+        },
+        5000
+    );
+
+}
+
+
+/* =========================================================
+   SAFE INITIALS
+========================================================= */
+
+function getInitials(name) {
+
+    const cleanName =
+        String(name || "User").trim();
+
+    if (!cleanName) {
+        return "U";
+    }
+
+
+    const parts =
+        cleanName
+            .split(/\s+/)
+            .filter(Boolean);
+
+
+    if (parts.length === 1) {
+
+        return parts[0]
+            .slice(0, 2)
+            .toUpperCase();
+
+    }
+
+
+    return (
+        parts[0].charAt(0) +
+        parts[1].charAt(0)
+    ).toUpperCase();
+
+}
+
+
+/* =========================================================
+   FORMAT DATE
+========================================================= */
+
+function formatCommunityDate(value) {
+
+    if (!value) {
+        return "";
+    }
+
+
+    let dateValue =
+        String(value);
+
+
+    if (
+        !dateValue.includes("T") &&
+        !dateValue.endsWith("Z")
+    ) {
+
+        dateValue =
+            dateValue.replace(" ", "T") + "Z";
+
+    }
+
+
+    const date =
+        new Date(dateValue);
+
+
+    if (
+        Number.isNaN(
+            date.getTime()
+        )
+    ) {
+
+        return String(value);
+
+    }
+
+
+    return date.toLocaleString(
+        "en-GB",
+        {
+            dateStyle: "medium",
+            timeStyle: "short"
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CREATE ELEMENT
+========================================================= */
+
+function createElement(
+    tag,
+    className,
+    text
+) {
+
+    const element =
+        document.createElement(tag);
+
+
+    if (className) {
+
+        element.className =
+            className;
+
+    }
+
+
+    if (
+        text !== undefined &&
+        text !== null
+    ) {
+
+        element.textContent =
+            String(text);
+
+    }
+
+
+    return element;
+
+}
+
+
+/* =========================================================
+   REPLY CARD
+========================================================= */
+
+function createReplyElement(reply) {
+
+    const replyBox =
+        createElement(
+            "div",
+            "community-reply"
+        );
+
+
+    const replyName =
+        createElement(
+            "div",
+            "reply-user",
+            reply.name || "Visitor"
+        );
+
+
+    const replyMessage =
+        createElement(
+            "div",
+            "reply-message",
+            reply.message || ""
+        );
+
+
+    replyBox.appendChild(
+        replyName
+    );
+
+
+    replyBox.appendChild(
+        replyMessage
+    );
+
+
+    return replyBox;
+
+}
+
+
+/* =========================================================
+   CREATE POST CARD
+========================================================= */
+
+function createPostElement(post) {
+
+    const postId =
+        Number(post.id);
+
+
+    const postCard =
+        createElement(
+            "article",
+            "community-post"
+        );
+
+
+    /* HEADER */
+
+    const postHeader =
+        createElement(
+            "div",
+            "post-header"
+        );
+
+
+    const postUser =
+        createElement(
+            "div",
+            "post-user"
+        );
+
+
+    const avatar =
+        createElement(
+            "div",
+            "avatar",
+            getInitials(post.name)
+        );
+
+
+    const userDetails =
+        createElement(
+            "div"
+        );
+
+
+    const userName =
+        createElement(
+            "div",
+            "post-user-name",
+            post.name || "Visitor"
+        );
+
+
+    const postDate =
+        createElement(
+            "div",
+            "post-date",
+            formatCommunityDate(
+                post.created_at
+            )
+        );
+
+
+    userDetails.appendChild(
+        userName
+    );
+
+
+    userDetails.appendChild(
+        postDate
+    );
+
+
+    postUser.appendChild(
+        avatar
+    );
+
+
+    postUser.appendChild(
+        userDetails
+    );
+
+
+    postHeader.appendChild(
+        postUser
+    );
+
+
+    postCard.appendChild(
+        postHeader
+    );
+
+
+    /* MESSAGE */
+
+    const message =
+        createElement(
+            "div",
+            "post-message",
+            post.message || ""
+        );
+
+
+    postCard.appendChild(
+        message
+    );
+
+
+    /* ACTIONS */
+
+    const actions =
+        createElement(
+            "div",
+            "post-actions"
+        );
+
+
+    const likeButton =
+        createElement(
+            "button",
+            "action-button like-button"
+        );
+
+
+    likeButton.type =
+        "button";
+
+
+    likeButton.innerHTML =
+        '<i class="fa-solid fa-thumbs-up"></i>';
+
+
+    const likeCount =
+        createElement(
+            "span",
+            "",
+            Number(post.likes || 0)
+        );
+
+
+    likeButton.appendChild(
+        likeCount
+    );
+
+
+    likeButton.addEventListener(
+        "click",
+        function () {
+
+            reactToPost(
+                postId,
+                "like"
+            );
+
+        }
+    );
+
+
+    const dislikeButton =
+        createElement(
+            "button",
+            "action-button dislike-button"
+        );
+
+
+    dislikeButton.type =
+        "button";
+
+
+    dislikeButton.innerHTML =
+        '<i class="fa-solid fa-thumbs-down"></i>';
+
+
+    const dislikeCount =
+        createElement(
+            "span",
+            "",
+            Number(post.dislikes || 0)
+        );
+
+
+    dislikeButton.appendChild(
+        dislikeCount
+    );
+
+
+    dislikeButton.addEventListener(
+        "click",
+        function () {
+
+            reactToPost(
+                postId,
+                "dislike"
+            );
+
+        }
+    );
+
+
+    const replyButton =
+        createElement(
+            "button",
+            "action-button reply-button"
+        );
+
+
+    replyButton.type =
+        "button";
+
+
+    replyButton.innerHTML =
+        '<i class="fa-solid fa-reply"></i> Reply';
+
+
+    const reportButton =
+        createElement(
+            "button",
+            "action-button report-button"
+        );
+
+
+    reportButton.type =
+        "button";
+
+
+    reportButton.innerHTML =
+        '<i class="fa-solid fa-flag"></i> Report';
+
+
+    reportButton.addEventListener(
+        "click",
+        function () {
+
+            reportPost(
+                postId
+            );
+
+        }
+    );
+
+
+    actions.appendChild(
+        likeButton
+    );
+
+
+    actions.appendChild(
+        dislikeButton
+    );
+
+
+    actions.appendChild(
+        replyButton
+    );
+
+
+    actions.appendChild(
+        reportButton
+    );
+
+
+    postCard.appendChild(
+        actions
+    );
+
+
+    /* REPLY FORM */
+
+    const replyForm =
+        createElement(
+            "div",
+            "reply-form"
+        );
+
+
+    const replyTextarea =
+        document.createElement(
+            "textarea"
+        );
+
+
+    replyTextarea.maxLength =
+        500;
+
+
+    replyTextarea.placeholder =
+        "Write your reply...";
+
+
+    const replyActions =
+        createElement(
+            "div",
+            "reply-form-actions"
+        );
+
+
+    const cancelReply =
+        createElement(
+            "button",
+            "small-button cancel-reply",
+            "Cancel"
+        );
+
+
+    cancelReply.type =
+        "button";
+
+
+    const submitReply =
+        createElement(
+            "button",
+            "small-button submit-reply",
+            "Post Reply"
+        );
+
+
+    submitReply.type =
+        "button";
+
+
+    replyActions.appendChild(
+        cancelReply
+    );
+
+
+    replyActions.appendChild(
+        submitReply
+    );
+
+
+    replyForm.appendChild(
+        replyTextarea
+    );
+
+
+    replyForm.appendChild(
+        replyActions
+    );
+
+
+    postCard.appendChild(
+        replyForm
+    );
+
+
+    replyButton.addEventListener(
+        "click",
+        function () {
+
+            replyForm.classList.toggle(
+                "show"
+            );
+
+
+            if (
+                replyForm.classList.contains(
+                    "show"
+                )
+            ) {
+
+                replyTextarea.focus();
+
+            }
+
+        }
+    );
+
+
+    cancelReply.addEventListener(
+        "click",
+        function () {
+
+            replyForm.classList.remove(
+                "show"
+            );
+
+            replyTextarea.value =
+                "";
+
+        }
+    );
+
+
+    submitReply.addEventListener(
+        "click",
+        async function () {
+
+            const reply =
+                replyTextarea.value.trim();
+
+
+            if (!reply) {
+
+                alert(
+                    "Please write a reply."
+                );
+
+                return;
+
+            }
+
+
+            const savedName =
+                communityName.value.trim();
+
+
+            const replyName =
+                savedName || "Visitor";
+
+
+            submitReply.disabled =
+                true;
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        COMMUNITY_API +
+                        "/community",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body:
+                                JSON.stringify(
+                                    {
+                                        name:
+                                            replyName,
+
+                                        message:
+                                            reply,
+
+                                        parent_id:
+                                            postId
+                                    }
+                                )
+                        }
+                    );
+
+
+                const result =
+                    await response.json();
+
+
+                if (
+                    !response.ok ||
+                    !result.success
+                ) {
+
+                    throw new Error(
+                        result.error ||
+                        "Reply failed."
+                    );
+
+                }
+
+
+                replyTextarea.value =
+                    "";
+
+
+                replyForm.classList.remove(
+                    "show"
+                );
+
+
+                await loadCommunityPosts();
+
+
+            }
+            catch (error) {
+
+                alert(
+                    "Reply could not be submitted yet. Community backend may still be under setup."
+                );
+
+            }
+            finally {
+
+                submitReply.disabled =
+                    false;
+
+            }
+
+        }
+    );
+
+
+    /* EXISTING REPLIES */
+
+    const replies =
+        Array.isArray(post.replies)
+            ? post.replies
+            : [];
+
+
+    if (
+        replies.length > 0
+    ) {
+
+        const repliesContainer =
+            createElement(
+                "div",
+                "replies-container"
+            );
+
+
+        replies.forEach(
+            function (reply) {
+
+                repliesContainer.appendChild(
+                    createReplyElement(
+                        reply
+                    )
+                );
+
+            }
+        );
+
+
+        postCard.appendChild(
+            repliesContainer
+        );
+
+    }
+
+
+    return postCard;
+
+}
+
+
+/* =========================================================
+   LOAD COMMUNITY
+========================================================= */
+
+async function loadCommunityPosts() {
+
+    refreshButton.disabled =
+        true;
+
+
+    try {
+
+        const response =
+            await fetch(
+                COMMUNITY_API +
+                "/community",
+                {
+                    method:
+                        "GET",
+
+                    cache:
+                        "no-store"
+                }
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Community API unavailable"
+            );
+
+        }
+
+
+        const result =
+            await response.json();
+
+
+        const posts =
+            Array.isArray(result.posts)
+                ? result.posts
+                : (
+                    Array.isArray(result.data)
+                        ? result.data
+                        : []
+                );
+
+
+        renderCommunityPosts(
+            posts
+        );
+
+
+    }
+    catch (error) {
+
+        postsContainer.innerHTML =
+            "";
+
+
+        const empty =
+            createElement(
+                "div",
+                "community-empty"
+            );
+
+
+        const icon =
+            createElement(
+                "i",
+                "fa-solid fa-screwdriver-wrench"
+            );
+
+
+        const text =
+            createElement(
+                "div",
+                "",
+                "Community backend is being configured. The page design is ready."
+            );
+
+
+        text.style.marginTop =
+            "10px";
+
+
+        empty.appendChild(
+            icon
+        );
+
+
+        empty.appendChild(
+            text
+        );
+
+
+        postsContainer.appendChild(
+            empty
+        );
+
+
+        totalPostsElement.textContent =
+            "0";
+
+
+        totalRepliesElement.textContent =
+            "0";
+
+    }
+    finally {
+
+        refreshButton.disabled =
+            false;
+
+    }
+
+}
+
+
+/* =========================================================
+   RENDER POSTS
+========================================================= */
+
+function renderCommunityPosts(posts) {
+
+    postsContainer.innerHTML =
+        "";
+
+
+    const mainPosts =
+        posts.filter(
+            function (post) {
+
+                return !post.parent_id;
+
+            }
+        );
+
+
+    const replies =
+        posts.filter(
+            function (post) {
+
+                return Boolean(
+                    post.parent_id
+                );
+
+            }
+        );
+
+
+    mainPosts.forEach(
+        function (post) {
+
+            if (
+                !Array.isArray(post.replies)
+            ) {
+
+                post.replies =
+                    replies.filter(
+                        function (reply) {
+
+                            return (
+                                Number(
+                                    reply.parent_id
+                                ) ===
+                                Number(
+                                    post.id
+                                )
+                            );
+
+                        }
+                    );
+
+            }
+
+
+            postsContainer.appendChild(
+                createPostElement(post)
+            );
+
+        }
+    );
+
+
+    totalPostsElement.textContent =
+        String(
+            mainPosts.length
+        );
+
+
+    totalRepliesElement.textContent =
+        String(
+            replies.length
+        );
+
+
+    if (
+        mainPosts.length === 0
+    ) {
+
+        postsContainer.appendChild(
+            createElement(
+                "div",
+                "community-empty",
+                "No discussions yet. Be the first person to start a conversation."
+            )
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   POST NEW DISCUSSION
+========================================================= */
+
+communityForm.addEventListener(
+    "submit",
+    async function (event) {
+
+        event.preventDefault();
+
+
+        const name =
+            communityName.value.trim();
+
+
+        const message =
+            communityMessage.value.trim();
+
+
+        if (
+            name.length < 2
+        ) {
+
+            showStatus(
+                "Please enter a valid name or nickname.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if (
+            message.length < 2
+        ) {
+
+            showStatus(
+                "Please write a message.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        postButton.disabled =
+            true;
+
+
+        postButton.innerHTML =
+            '<i class="fa-solid fa-spinner fa-spin"></i> Posting...';
+
+
+        try {
+
+            const response =
+                await fetch(
+                    COMMUNITY_API +
+                    "/community",
+                    {
+                        method:
+                            "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body:
+                            JSON.stringify(
+                                {
+                                    name:
+                                        name,
+
+                                    message:
+                                        message,
+
+                                    parent_id:
+                                        null
+                                }
+                            )
+                    }
+                );
+
+
+            const result =
+                await response.json();
+
+
+            if (
+                !response.ok ||
+                !result.success
+            ) {
+
+                throw new Error(
+                    result.error ||
+                    "Unable to post."
+                );
+
+            }
+
+
+            communityMessage.value =
+                "";
+
+
+            characterCount.textContent =
+                "0 / 1000";
+
+
+            showStatus(
+                "Your message has been posted successfully.",
+                "success"
+            );
+
+
+            await loadCommunityPosts();
+
+
+        }
+        catch (error) {
+
+            showStatus(
+                "Community backend is not active yet. We will connect it in the next step.",
+                "error"
+            );
+
+        }
+        finally {
+
+            postButton.disabled =
+                false;
+
+
+            postButton.innerHTML =
+                '<i class="fa-solid fa-paper-plane"></i> Post Message';
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   LIKE / DISLIKE
+========================================================= */
+
+async function reactToPost(
+    postId,
+    reaction
+) {
+
+    try {
+
+        const response =
+            await fetch(
+                COMMUNITY_API +
+                "/community/react",
+                {
+                    method:
+                        "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify(
+                            {
+                                post_id:
+                                    postId,
+
+                                reaction:
+                                    reaction
+                            }
+                        )
+                }
+            );
+
+
+        const result =
+            await response.json();
+
+
+        if (
+            !response.ok ||
+            !result.success
+        ) {
+
+            throw new Error(
+                "Reaction failed"
+            );
+
+        }
+
+
+        await loadCommunityPosts();
+
+
+    }
+    catch (error) {
+
+        alert(
+            "Like/Dislike backend is not active yet."
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   REPORT
+========================================================= */
+
+async function reportPost(postId) {
+
+    const reason =
+        window.prompt(
+            "Why are you reporting this comment?"
+        );
+
+
+    if (!reason) {
+        return;
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                COMMUNITY_API +
+                "/community/report",
+                {
+                    method:
+                        "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify(
+                            {
+                                post_id:
+                                    postId,
+
+                                reason:
+                                    reason.trim()
+                            }
+                        )
+                }
+            );
+
+
+        const result =
+            await response.json();
+
+
+        if (
+            !response.ok ||
+            !result.success
+        ) {
+
+            throw new Error(
+                "Report failed"
+            );
+
+        }
+
+
+        alert(
+            "Thank you. The comment has been reported for review."
+        );
+
+
+    }
+    catch (error) {
+
+        alert(
+            "Report service is not active yet."
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   REFRESH
+========================================================= */
+
+refreshButton.addEventListener(
+    "click",
+    loadCommunityPosts
+);
+
+
+/* =========================================================
+   AUTO REFRESH
+========================================================= */
+
+window.setInterval(
+    function () {
+
+        if (
+            document.visibilityState ===
+            "visible"
+        ) {
+
+            loadCommunityPosts();
+
+        }
+
+    },
+    15000
+);
+
+
+/* =========================================================
+   INITIAL LOAD
+========================================================= */
+
+loadCommunityPosts();
+
+</script>
+
+
+</body>
+
+</html>

@@ -1583,7 +1583,7 @@ footer {
 
 .hero-content {
     width: min(1180px, 92%) !important;
-    max-width: 1050px !important;
+    max-width: 1180px !important;
 
     margin: 0 auto 40px auto !important;
 
@@ -7637,20 +7637,41 @@ footer {
 
 }
 /* =========================================================
-   FEEDBACK + COMMUNITY STAY TOGETHER
+   IT SUPPORT + FEEDBACK + COMMUNITY - SAME DESKTOP ROW
 ========================================================= */
 
 .feedback-community-pair {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    flex: 0 0 auto;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex: 0 0 auto !important;
 }
+
+
+/* DESKTOP - KEEP ALL HERO BUTTONS IN ONE ROW */
+
+@media (min-width: 1280px) {
+
+    .hero-buttons {
+        flex-wrap: nowrap !important;
+        width: max-content !important;
+        max-width: none !important;
+    }
+
+    .feedback-community-pair {
+        display: inline-flex !important;
+        flex-wrap: nowrap !important;
+    }
+
+}
+
+
+/* MOBILE - KEEP ORIGINAL RESPONSIVE LAYOUT */
 
 @media (max-width: 520px) {
 
     .feedback-community-pair {
-        display: contents;
+        display: contents !important;
     }
 
 }

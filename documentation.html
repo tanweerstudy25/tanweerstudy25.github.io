@@ -3,2769 +3,4727 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
+<title>
+    Website Documentation | Tanweer Ansari
+</title>
 
-    <title>
-        Website Documentation | Tanweer Ansari
-    </title>
+<meta name="description"
+      content="Animated technology architecture and deployment documentation for Tanweer Ansari's professional portfolio website.">
 
 
-    <meta name="description"
-          content="A concise overview of the architecture, deployment and monitoring used for Tanweer Ansari's professional portfolio website.">
+<!-- =========================================================
+     FONT AWESOME
+========================================================= -->
 
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- =========================================================
-         FONT AWESOME
-    ========================================================= -->
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<!-- =========================================================
+     GOOGLE FONT
+========================================================= -->
 
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
 
-    <!-- =========================================================
-         GOOGLE FONTS
-    ========================================================= -->
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet">
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap"
-          rel="stylesheet">
+<!-- =========================================================
+     MAIN WEBSITE CSS
+========================================================= -->
 
+<link rel="stylesheet"
+      href="style.css">
 
-    <!-- =========================================================
-         MAIN WEBSITE CSS
-    ========================================================= -->
 
-    <link rel="stylesheet"
-          href="style.css">
+<style>
 
+/* =========================================================
+   ROOT
+========================================================= */
 
-    <style>
+:root {
 
-        /* =========================================================
-           DOCUMENTATION PAGE
-           CLEAN + COMPACT VERSION
-        ========================================================= */
+    --cyan:
+        #46ebff;
 
+    --blue:
+        #518cff;
 
-        :root {
+    --purple:
+        #a762ff;
 
-            --doc-cyan:
-                #45eaff;
+    --pink:
+        #ff58ae;
 
-            --doc-blue:
-                #4d84ff;
+    --orange:
+        #ff9948;
 
-            --doc-purple:
-                #a55cff;
+    --green:
+        #43eba3;
 
-            --doc-orange:
-                #ff994d;
+    --text:
+        #f5f9ff;
 
-            --doc-green:
-                #45e6a1;
+    --muted:
+        #91a7bc;
 
-            --doc-text:
-                #f4f8ff;
+}
 
-            --doc-muted:
-                #91a7bb;
 
-            --doc-border:
-                rgba(95, 190, 255, .20);
+/* =========================================================
+   GLOBAL
+========================================================= */
 
-            --doc-card:
-                rgba(8, 26, 47, .88);
+* {
 
-        }
+    box-sizing:
+        border-box;
 
+}
 
-        * {
 
-            box-sizing:
-                border-box;
+html {
 
-        }
+    scroll-behavior:
+        smooth;
 
+}
 
-        html {
 
-            scroll-behavior:
-                smooth;
+body {
 
-        }
+    margin:
+        0;
 
+    min-height:
+        100vh;
 
-        body {
+    overflow-x:
+        hidden;
 
-            margin:
-                0;
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
 
-            min-height:
-                100vh;
+    color:
+        var(--text);
 
-            font-family:
-                "Inter",
-                Arial,
-                sans-serif;
+    background:
 
-            color:
-                var(--doc-text);
+        radial-gradient(
+            circle at 10% 12%,
+            rgba(0,220,255,.13),
+            transparent 27%
+        ),
 
-            overflow-x:
-                hidden;
+        radial-gradient(
+            circle at 90% 18%,
+            rgba(157,78,255,.15),
+            transparent 30%
+        ),
 
+        radial-gradient(
+            circle at 60% 90%,
+            rgba(255,65,170,.08),
+            transparent 28%
+        ),
 
-            background:
+        linear-gradient(
+            145deg,
+            #020b16,
+            #04172a 48%,
+            #0c1031
+        );
 
-                radial-gradient(
-                    circle at 10% 12%,
-                    rgba(0, 210, 255, .10),
-                    transparent 28%
-                ),
+}
 
-                radial-gradient(
-                    circle at 90% 18%,
-                    rgba(155, 80, 255, .11),
-                    transparent 30%
-                ),
 
-                linear-gradient(
-                    145deg,
-                    #03101e,
-                    #06182b 52%,
-                    #0b1030
-                );
+a {
 
-        }
+    color:
+        inherit;
 
+    text-decoration:
+        none;
 
-        a {
+}
 
-            color:
-                inherit;
 
-            text-decoration:
-                none;
+/* =========================================================
+   ANIMATED UNIVERSE
+========================================================= */
 
-        }
+.tech-universe {
 
+    position:
+        fixed;
 
+    inset:
+        0;
 
-        /* =========================================================
-           DOCUMENTATION PAGE CONTAINER
-        ========================================================= */
+    z-index:
+        -5;
 
+    overflow:
+        hidden;
 
-        .docs-page {
+    pointer-events:
+        none;
 
-            width:
-                min(
-                    1180px,
-                    92%
-                );
+}
 
-            margin:
-                125px auto 80px;
 
-        }
+/* GRID */
 
+.tech-universe::before {
 
+    content:
+        "";
 
-        /* =========================================================
-           HERO
-        ========================================================= */
+    position:
+        absolute;
 
+    inset:
+        0;
 
-        .docs-hero {
+    background:
 
-            padding:
-                42px;
+        linear-gradient(
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        ),
 
-            text-align:
-                center;
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.018) 1px,
+            transparent 1px
+        );
 
-            border-radius:
-                26px;
+    background-size:
+        45px 45px;
 
-            border:
-                1px solid
-                rgba(
-                    74,
-                    211,
-                    255,
-                    .27
-                );
+    animation:
+        gridMove
+        18s
+        linear
+        infinite;
 
+}
 
-            background:
 
-                radial-gradient(
-                    circle at 15% 20%,
-                    rgba(0, 220, 255, .12),
-                    transparent 30%
-                ),
+@keyframes gridMove {
 
-                radial-gradient(
-                    circle at 85% 25%,
-                    rgba(164, 90, 255, .13),
-                    transparent 31%
-                ),
+    from {
 
-                linear-gradient(
-                    145deg,
-                    rgba(7, 31, 55, .96),
-                    rgba(11, 19, 52, .96)
-                );
+        background-position:
+            0 0;
 
+    }
 
-            box-shadow:
+    to {
 
-                0 24px 60px
-                rgba(0, 0, 0, .28),
+        background-position:
+            45px 45px;
 
-                inset 0 1px 0
-                rgba(255, 255, 255, .06);
+    }
 
-        }
+}
 
 
+/* =========================================================
+   AURORA LIGHTS
+========================================================= */
 
-        .docs-label {
+.aurora {
 
-            display:
-                inline-flex;
+    position:
+        absolute;
 
-            align-items:
-                center;
+    border-radius:
+        50%;
 
-            gap:
-                8px;
+    filter:
+        blur(100px);
 
+    opacity:
+        .20;
 
-            padding:
-                8px 13px;
+    animation:
+        auroraMove
+        12s
+        ease-in-out
+        infinite
+        alternate;
 
+}
 
-            border-radius:
-                999px;
 
+.aurora-one {
 
-            color:
-                var(--doc-cyan);
+    width:
+        430px;
 
+    height:
+        430px;
 
-            font-size:
-                10px;
+    top:
+        8%;
 
-            font-weight:
-                900;
+    left:
+        -170px;
 
-            letter-spacing:
-                1.4px;
+    background:
+        var(--cyan);
 
+}
 
-            border:
-                1px solid
-                rgba(69, 234, 255, .25);
 
+.aurora-two {
 
-            background:
-                rgba(69, 234, 255, .06);
+    width:
+        520px;
 
-        }
+    height:
+        520px;
 
+    top:
+        26%;
 
+    right:
+        -230px;
 
-        .docs-label i {
+    background:
+        var(--purple);
 
-            color:
-                var(--doc-cyan);
+    animation-delay:
+        -4s;
 
-        }
+}
 
 
+.aurora-three {
 
-        .docs-hero h1 {
+    width:
+        400px;
 
-            margin:
-                18px 0 12px;
+    height:
+        400px;
 
+    bottom:
+        -220px;
 
-            font-family:
-                "Space Grotesk",
-                sans-serif;
+    left:
+        36%;
 
+    background:
+        var(--pink);
 
-            font-size:
-                clamp(
-                    38px,
-                    5vw,
-                    62px
-                );
+    animation-delay:
+        -7s;
 
+}
 
-            line-height:
-                1.05;
 
+@keyframes auroraMove {
 
-            letter-spacing:
-                -2px;
+    from {
 
-        }
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            )
+            scale(1);
 
+    }
 
+    to {
 
-        .docs-gradient {
+        transform:
+            translate3d(
+                70px,
+                -50px,
+                0
+            )
+            scale(1.18);
 
-            background:
+    }
 
-                linear-gradient(
-                    90deg,
-                    #48ebff,
-                    #5790ff,
-                    #a662ff,
-                    #ff5aae
-                );
+}
 
 
-            -webkit-background-clip:
-                text;
+/* =========================================================
+   PARTICLES
+========================================================= */
 
-            background-clip:
-                text;
+#particles {
 
-            color:
-                transparent;
+    position:
+        absolute;
 
-        }
+    inset:
+        0;
 
+}
 
 
-        .docs-hero p {
+.tech-particle {
 
-            max-width:
-                760px;
+    position:
+        absolute;
 
-            margin:
-                0 auto;
+    width:
+        var(--size);
 
+    height:
+        var(--size);
 
-            color:
-                #a8bbcc;
+    left:
+        var(--left);
 
+    top:
+        var(--top);
 
-            font-size:
-                14px;
+    border-radius:
+        50%;
 
-            line-height:
-                1.8;
+    background:
+        var(--particle-color);
 
-        }
+    box-shadow:
 
+        0 0 8px
+        var(--particle-color),
 
+        0 0 18px
+        var(--particle-color);
 
-        /* =========================================================
-           HERO TECHNOLOGY STACK
-        ========================================================= */
+    opacity:
+        .55;
 
+    animation:
 
-        .docs-stack {
+        particleFloat
+        var(--speed)
+        ease-in-out
+        infinite
+        alternate;
 
-            margin-top:
-                22px;
+    animation-delay:
+        var(--delay);
 
+}
 
-            display:
-                flex;
 
-            justify-content:
-                center;
+@keyframes particleFloat {
 
-            flex-wrap:
-                wrap;
+    from {
 
-            gap:
-                9px;
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            )
+            scale(.6);
 
-        }
+        opacity:
+            .15;
 
+    }
 
+    to {
 
-        .docs-stack span {
+        transform:
+            translate3d(
+                35px,
+                -80px,
+                0
+            )
+            scale(1.4);
 
-            display:
-                inline-flex;
+        opacity:
+            .85;
 
-            align-items:
-                center;
+    }
 
-            gap:
-                7px;
+}
 
 
-            padding:
-                8px 11px;
+/* =========================================================
+   CURSOR GLOW
+========================================================= */
 
+.cursor-glow {
 
-            border-radius:
-                10px;
+    position:
+        fixed;
 
+    width:
+        320px;
 
-            color:
-                #d5e8f7;
+    height:
+        320px;
 
+    left:
+        -500px;
 
-            font-size:
-                10px;
+    top:
+        -500px;
 
-            font-weight:
-                700;
+    z-index:
+        -2;
 
+    border-radius:
+        50%;
 
-            border:
-                1px solid
-                rgba(255, 255, 255, .08);
+    pointer-events:
+        none;
 
+    opacity:
+        .15;
 
-            background:
-                rgba(255, 255, 255, .035);
+    filter:
+        blur(45px);
 
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
 
-            transition:
-                transform .25s ease,
-                border-color .25s ease;
+    background:
 
-        }
+        radial-gradient(
+            circle,
+            rgba(70,235,255,.75),
+            rgba(130,85,255,.24) 45%,
+            transparent 70%
+        );
 
+}
 
 
-        .docs-stack span:hover {
+/* =========================================================
+   PAGE
+========================================================= */
 
-            transform:
-                translateY(-4px);
+.docs-page {
 
+    width:
+        min(
+            1180px,
+            92%
+        );
 
-            border-color:
-                rgba(69, 234, 255, .40);
+    margin:
+        135px auto 85px;
 
-        }
+}
 
 
+/* =========================================================
+   REVEAL
+========================================================= */
 
-        .docs-stack i {
+.reveal {
 
-            color:
-                var(--doc-cyan);
+    opacity:
+        0;
 
-        }
+    transform:
+        translateY(32px)
+        scale(.985);
 
+    transition:
 
+        opacity
+        .85s
+        ease,
 
-        /* =========================================================
-           GENERAL DOCUMENTATION SECTION
-        ========================================================= */
+        transform
+        .85s
+        cubic-bezier(
+            .2,
+            .8,
+            .2,
+            1
+        );
 
+}
 
-        .docs-section {
 
-            margin-top:
-                24px;
+.reveal.visible {
 
+    opacity:
+        1;
 
-            padding:
-                28px;
+    transform:
+        translateY(0)
+        scale(1);
 
+}
 
-            border-radius:
-                24px;
 
+/* =========================================================
+   HERO
+========================================================= */
 
-            border:
-                1px solid
-                var(--doc-border);
+.docs-hero {
 
+    position:
+        relative;
 
-            background:
+    isolation:
+        isolate;
 
-                linear-gradient(
-                    145deg,
-                    rgba(8, 29, 50, .94),
-                    rgba(7, 20, 43, .94)
-                );
+    overflow:
+        hidden;
 
+    min-height:
+        390px;
 
-            box-shadow:
+    padding:
+        45px 30px;
 
-                0 18px 45px
-                rgba(0, 0, 0, .17);
+    display:
+        flex;
 
-        }
+    flex-direction:
+        column;
 
+    align-items:
+        center;
 
+    justify-content:
+        center;
 
-        .docs-section-title {
+    text-align:
+        center;
 
-            display:
-                flex;
+    border-radius:
+        30px;
 
-            align-items:
-                center;
+    border:
+        1px solid
+        rgba(70,220,255,.30);
 
-            justify-content:
-                space-between;
+    background:
 
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0,225,255,.14),
+            transparent 31%
+        ),
 
-            gap:
-                16px;
+        radial-gradient(
+            circle at 87% 22%,
+            rgba(170,80,255,.15),
+            transparent 32%
+        ),
 
+        linear-gradient(
+            145deg,
+            rgba(5,28,51,.96),
+            rgba(10,16,49,.97)
+        );
 
-            margin-bottom:
-                22px;
+    box-shadow:
 
-        }
+        0 30px 75px
+        rgba(0,0,0,.38),
 
+        0 0 35px
+        rgba(0,215,255,.06),
 
+        inset 0 1px 0
+        rgba(255,255,255,.07);
 
-        .docs-section-title h2 {
+}
 
-            margin:
-                0;
 
+/* HERO ROTATING BORDER */
 
-            display:
-                flex;
+.docs-hero::before {
 
-            align-items:
-                center;
+    content:
+        "";
 
+    position:
+        absolute;
 
-            gap:
-                10px;
+    inset:
+        -2px;
 
+    z-index:
+        -2;
 
-            font-family:
-                "Space Grotesk",
-                sans-serif;
+    border-radius:
+        inherit;
 
+    background:
 
-            font-size:
-                21px;
+        conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            var(--cyan) 55deg,
+            transparent 105deg,
+            var(--purple) 175deg,
+            transparent 230deg,
+            var(--pink) 290deg,
+            transparent 360deg
+        );
 
-        }
+    opacity:
+        .42;
 
+    animation:
+        heroBorderSpin
+        11s
+        linear
+        infinite;
 
+}
 
-        .docs-section-title h2 i {
 
-            color:
-                var(--doc-cyan);
+.docs-hero::after {
 
-        }
+    content:
+        "";
 
+    position:
+        absolute;
 
+    inset:
+        1px;
 
-        .docs-section-title p {
+    z-index:
+        -1;
 
-            margin:
-                0;
+    border-radius:
+        29px;
 
+    background:
 
-            color:
-                #72899f;
+        linear-gradient(
+            145deg,
+            rgba(5,27,50,.985),
+            rgba(10,15,47,.99)
+        );
 
+}
 
-            font-size:
-                10px;
 
-        }
+@keyframes heroBorderSpin {
 
+    to {
 
+        transform:
+            rotate(360deg);
 
-        /* =========================================================
-           CORE ARCHITECTURE
-        ========================================================= */
+    }
 
+}
 
-        .architecture-flow {
 
-            display:
-                grid;
+/* =========================================================
+   HERO ORBIT
+========================================================= */
 
+.hero-orbit {
 
-            grid-template-columns:
+    position:
+        relative;
 
-                minmax(150px, 1fr)
+    width:
+        110px;
 
-                34px
+    height:
+        110px;
 
-                minmax(140px, 1fr)
+    margin-bottom:
+        18px;
 
-                34px
+    display:
+        flex;
 
-                minmax(140px, 1fr)
+    align-items:
+        center;
 
-                34px
+    justify-content:
+        center;
 
-                minmax(140px, 1fr)
+}
 
-                34px
 
-                minmax(150px, 1fr);
+.hero-core {
 
+    position:
+        relative;
 
-            align-items:
-                stretch;
+    z-index:
+        5;
 
+    width:
+        58px;
 
-            gap:
-                7px;
+    height:
+        58px;
 
-        }
+    display:
+        flex;
 
+    align-items:
+        center;
 
+    justify-content:
+        center;
 
-        .flow-card {
+    border-radius:
+        17px;
 
-            min-height:
-                165px;
+    color:
+        #ffffff;
 
+    font-size:
+        24px;
 
-            padding:
-                20px 14px;
+    border:
+        1px solid
+        rgba(105,225,255,.45);
 
+    background:
 
-            display:
-                flex;
+        linear-gradient(
+            135deg,
+            rgba(0,220,255,.22),
+            rgba(115,75,255,.33),
+            rgba(255,75,170,.22)
+        );
 
-            flex-direction:
-                column;
+    box-shadow:
 
-            align-items:
-                center;
+        0 0 22px
+        rgba(0,220,255,.45),
 
-            justify-content:
-                center;
+        0 0 45px
+        rgba(120,80,255,.22);
 
+    animation:
+        corePulse
+        2.5s
+        ease-in-out
+        infinite;
 
-            text-align:
-                center;
+}
 
 
-            border-radius:
-                17px;
+@keyframes corePulse {
 
+    0%,
+    100% {
 
-            border:
-                1px solid
-                rgba(105, 188, 255, .16);
+        transform:
+            scale(1)
+            rotate(-3deg);
 
+    }
 
-            background:
-                rgba(255, 255, 255, .025);
+    50% {
 
+        transform:
+            scale(1.1)
+            rotate(3deg);
 
-            transition:
+        filter:
+            brightness(1.35);
 
-                transform .25s ease,
+    }
 
-                border-color .25s ease,
+}
 
-                background .25s ease,
 
-                box-shadow .25s ease;
+.hero-ring {
 
-        }
+    position:
+        absolute;
 
+    border-radius:
+        50%;
 
+}
 
-        .flow-card:hover {
 
-            transform:
-                translateY(-6px);
+.hero-ring-one {
 
+    width:
+        89px;
 
-            border-color:
-                rgba(69, 234, 255, .55);
+    height:
+        89px;
 
+    border:
+        1px dashed
+        rgba(70,230,255,.65);
 
-            background:
-                rgba(255, 255, 255, .045);
+    animation:
+        orbitForward
+        7s
+        linear
+        infinite;
 
+}
 
-            box-shadow:
 
-                0 14px 28px
-                rgba(0, 0, 0, .18);
+.hero-ring-two {
 
-        }
+    width:
+        112px;
 
+    height:
+        112px;
 
+    border:
+        1px solid
+        rgba(170,85,255,.42);
 
-        .flow-icon {
+    animation:
+        orbitReverse
+        10s
+        linear
+        infinite;
 
-            width:
-                50px;
+}
 
-            height:
-                50px;
 
+.hero-ring-three {
 
-            margin-bottom:
-                12px;
+    width:
+        135px;
 
+    height:
+        135px;
 
-            display:
-                flex;
+    border:
+        1px dotted
+        rgba(255,90,180,.20);
 
-            align-items:
-                center;
+    animation:
+        orbitForward
+        15s
+        linear
+        infinite;
 
-            justify-content:
-                center;
+}
 
 
-            border-radius:
-                14px;
+.hero-ring-one::before,
+.hero-ring-two::before,
+.hero-ring-three::before {
 
+    content:
+        "";
 
-            color:
-                var(--doc-cyan);
+    position:
+        absolute;
 
+    width:
+        8px;
 
-            font-size:
-                21px;
+    height:
+        8px;
 
+    top:
+        -4px;
 
-            border:
-                1px solid
-                rgba(255, 255, 255, .10);
+    left:
+        50%;
 
+    border-radius:
+        50%;
 
-            background:
-                rgba(255, 255, 255, .035);
+    background:
+        var(--cyan);
 
-        }
+    box-shadow:
 
+        0 0 8px
+        var(--cyan),
 
+        0 0 18px
+        var(--cyan);
 
-        .github-card
-        .flow-icon {
+}
 
-            color:
-                #eff4f8;
 
-        }
+.hero-ring-two::before {
 
+    background:
+        var(--pink);
 
+    box-shadow:
 
-        .pages-card
-        .flow-icon {
+        0 0 8px
+        var(--pink),
 
-            color:
-                #5d9aff;
+        0 0 18px
+        var(--pink);
 
-        }
+}
 
 
+.hero-ring-three::before {
 
-        .cloudflare-card
-        .flow-icon {
+    background:
+        var(--green);
 
-            color:
-                var(--doc-orange);
+    box-shadow:
 
-        }
+        0 0 8px
+        var(--green),
 
+        0 0 18px
+        var(--green);
 
+}
 
-        .domain-card
-        .flow-icon {
 
-            color:
-                var(--doc-purple);
+@keyframes orbitForward {
 
-        }
+    to {
 
+        transform:
+            rotate(360deg);
 
+    }
 
-        .flow-card small {
+}
 
-            color:
-                var(--doc-cyan);
 
+@keyframes orbitReverse {
 
-            font-size:
-                8px;
+    to {
 
-            font-weight:
-                900;
+        transform:
+            rotate(-360deg);
 
-            letter-spacing:
-                1px;
+    }
 
-        }
+}
 
 
+/* =========================================================
+   HERO LABEL
+========================================================= */
 
-        .flow-card strong {
+.docs-label {
 
-            margin-top:
-                5px;
+    margin-top:
+        7px;
 
+    display:
+        inline-flex;
 
-            color:
-                #ffffff;
+    align-items:
+        center;
 
+    gap:
+        8px;
 
-            font-size:
-                13px;
+    padding:
+        8px 14px;
 
-        }
+    border-radius:
+        999px;
 
+    color:
+        var(--cyan);
 
+    font-size:
+        10px;
 
-        .flow-card p {
+    font-weight:
+        900;
 
-            margin:
-                7px 0 0;
+    letter-spacing:
+        1.5px;
 
+    border:
+        1px solid
+        rgba(70,230,255,.26);
 
-            color:
-                #7f96aa;
+    background:
+        rgba(70,230,255,.055);
 
+    box-shadow:
+        0 0 18px
+        rgba(0,215,255,.07);
 
-            font-size:
-                9px;
+}
 
-            line-height:
-                1.55;
 
-        }
+.docs-label i {
 
+    animation:
+        labelBlink
+        1.8s
+        ease-in-out
+        infinite;
 
+}
 
-        /* =========================================================
-           FLOW ARROW
-        ========================================================= */
 
+@keyframes labelBlink {
 
-        .flow-arrow {
+    50% {
 
-            display:
-                flex;
+        filter:
 
-            align-items:
-                center;
+            brightness(1.8)
 
-            justify-content:
-                center;
+            drop-shadow(
+                0 0 8px
+                currentColor
+            );
 
+    }
 
-            color:
-                #55eaff;
+}
 
 
-            font-size:
-                14px;
+/* =========================================================
+   HERO TITLE
+========================================================= */
 
+.docs-hero h1 {
 
-            opacity:
-                .8;
+    margin:
+        19px 0 12px;
 
-        }
+    font-family:
+        "Space Grotesk",
+        sans-serif;
 
+    font-size:
+        clamp(
+            42px,
+            5.4vw,
+            66px
+        );
 
+    line-height:
+        1.03;
 
-        .flow-arrow i {
+    letter-spacing:
+        -2.5px;
 
-            animation:
-                arrowPulse
-                1.5s
-                ease-in-out
-                infinite;
+}
 
-        }
 
+.docs-gradient {
 
+    background:
 
-        @keyframes arrowPulse {
+        linear-gradient(
+            90deg,
+            #46ebff,
+            #568fff,
+            #a45fff,
+            #ff58ae,
+            #ffb04e,
+            #46ebff
+        );
 
-            0%,
-            100% {
+    background-size:
+        300%
+        auto;
 
-                transform:
-                    translateX(0);
+    -webkit-background-clip:
+        text;
 
-                opacity:
-                    .55;
+    background-clip:
+        text;
 
-            }
+    color:
+        transparent;
 
+    animation:
+        gradientFlow
+        6s
+        linear
+        infinite;
 
-            50% {
+}
 
-                transform:
-                    translateX(4px);
 
-                opacity:
-                    1;
+@keyframes gradientFlow {
 
-            }
+    from {
 
-        }
+        background-position:
+            0%
+            center;
 
+    }
 
+    to {
 
-        /* =========================================================
-           SUPPORT SERVICES
-        ========================================================= */
+        background-position:
+            300%
+            center;
 
+    }
 
-        .services-grid {
+}
 
-            display:
-                grid;
 
+.docs-hero > p {
 
-            grid-template-columns:
-                repeat(
-                    3,
-                    1fr
-                );
+    max-width:
+        800px;
 
+    margin:
+        0 auto;
 
-            gap:
-                13px;
+    color:
+        #9fb4c7;
 
-        }
+    font-size:
+        14px;
 
+    line-height:
+        1.8;
 
+}
 
-        .service-item {
 
-            padding:
-                20px;
+/* =========================================================
+   HERO STACK
+========================================================= */
 
+.docs-stack {
 
-            display:
-                flex;
+    margin-top:
+        23px;
 
-            align-items:
-                center;
+    display:
+        flex;
 
+    flex-wrap:
+        wrap;
 
-            gap:
-                14px;
+    justify-content:
+        center;
 
+    gap:
+        9px;
 
-            border-radius:
-                16px;
+}
 
 
-            border:
-                1px solid
-                rgba(255, 255, 255, .07);
+.docs-stack span {
 
+    display:
+        inline-flex;
 
-            background:
-                rgba(255, 255, 255, .025);
+    align-items:
+        center;
 
+    gap:
+        7px;
 
-            transition:
+    padding:
+        9px 12px;
 
-                transform .25s ease,
+    border-radius:
+        10px;
 
-                border-color .25s ease,
+    color:
+        #cee8f7;
 
-                background .25s ease;
+    font-size:
+        9px;
 
-        }
+    font-weight:
+        800;
 
+    border:
+        1px solid
+        rgba(255,255,255,.08);
 
+    background:
+        rgba(255,255,255,.035);
 
-        .service-item:hover {
+    box-shadow:
 
-            transform:
-                translateY(-5px);
+        inset 0 1px 0
+        rgba(255,255,255,.04);
 
+    animation:
+        chipFloat
+        3.3s
+        ease-in-out
+        infinite;
 
-            border-color:
-                rgba(69, 234, 255, .36);
+}
 
 
-            background:
-                rgba(255, 255, 255, .04);
+.docs-stack span:nth-child(2) {
 
-        }
+    animation-delay:
+        -.9s;
 
+}
 
 
-        .service-icon {
+.docs-stack span:nth-child(3) {
 
-            width:
-                48px;
+    animation-delay:
+        -1.8s;
 
-            height:
-                48px;
+}
 
 
-            flex:
-                0 0 48px;
+.docs-stack i {
 
+    color:
+        var(--cyan);
 
-            display:
-                flex;
+}
 
-            align-items:
-                center;
 
-            justify-content:
-                center;
+@keyframes chipFloat {
 
+    50% {
 
-            border-radius:
-                13px;
+        transform:
+            translateY(-5px);
 
+    }
 
-            color:
-                var(--doc-orange);
+}
 
 
-            font-size:
-                19px;
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
 
+.docs-section {
 
-            border:
-                1px solid
-                rgba(255, 255, 255, .09);
+    position:
+        relative;
 
+    overflow:
+        hidden;
 
-            background:
-                rgba(255, 255, 255, .035);
+    margin-top:
+        24px;
 
-        }
+    padding:
+        29px;
 
+    border-radius:
+        25px;
 
+    border:
+        1px solid
+        rgba(85,190,255,.21);
 
-        .service-item:nth-child(2)
-        .service-icon {
+    background:
 
-            color:
-                #ffb94f;
+        radial-gradient(
+            circle at 8% 15%,
+            rgba(0,220,255,.06),
+            transparent 25%
+        ),
 
-        }
+        radial-gradient(
+            circle at 95% 85%,
+            rgba(165,75,255,.06),
+            transparent 28%
+        ),
 
+        linear-gradient(
+            145deg,
+            rgba(7,28,49,.95),
+            rgba(7,19,42,.96)
+        );
 
+    box-shadow:
 
-        .service-item:nth-child(3)
-        .service-icon {
+        0 22px 55px
+        rgba(0,0,0,.20),
 
-            color:
-                var(--doc-green);
+        inset 0 1px 0
+        rgba(255,255,255,.045);
 
-        }
+}
 
 
+/* MOVING GRID */
 
-        .service-item small {
+.docs-section::before {
 
-            display:
-                block;
+    content:
+        "";
 
+    position:
+        absolute;
 
-            color:
-                #72899f;
+    inset:
+        0;
 
+    pointer-events:
+        none;
 
-            font-size:
-                8px;
+    background:
 
-            font-weight:
-                800;
+        linear-gradient(
+            rgba(255,255,255,.014) 1px,
+            transparent 1px
+        ),
 
-            letter-spacing:
-                .8px;
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.014) 1px,
+            transparent 1px
+        );
 
-        }
+    background-size:
+        31px 31px;
 
+}
 
 
-        .service-item strong {
+/* SCANNER */
 
-            display:
-                block;
+.docs-section::after {
 
+    content:
+        "";
 
-            margin:
-                4px 0;
+    position:
+        absolute;
 
+    top:
+        0;
 
-            color:
-                #ffffff;
+    left:
+        -35%;
 
+    width:
+        28%;
 
-            font-size:
-                13px;
+    height:
+        100%;
 
-        }
+    pointer-events:
+        none;
 
+    background:
 
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(60,220,255,.02),
+            rgba(70,230,255,.07),
+            rgba(160,80,255,.07),
+            transparent
+        );
 
-        .service-item p {
+    transform:
+        skewX(-18deg);
 
-            margin:
-                0;
+    animation:
+        scannerMove
+        7s
+        linear
+        infinite;
 
+}
 
-            color:
-                #8298ac;
 
+@keyframes scannerMove {
 
-            font-size:
-                9px;
+    from {
 
-            line-height:
-                1.5;
+        left:
+            -35%;
 
-        }
+    }
 
+    to {
 
+        left:
+            130%;
 
-        /* =========================================================
-           DELIVERY WORKFLOW
-        ========================================================= */
+    }
 
+}
 
-        .workflow-grid {
 
-            display:
-                grid;
+/* =========================================================
+   SECTION HEADER
+========================================================= */
 
+.docs-section-title {
 
-            grid-template-columns:
-                repeat(
-                    4,
-                    1fr
-                );
+    position:
+        relative;
 
+    z-index:
+        5;
 
-            gap:
-                12px;
+    display:
+        flex;
 
-        }
+    align-items:
+        center;
 
+    justify-content:
+        space-between;
 
+    gap:
+        16px;
 
-        .workflow-item {
+    margin-bottom:
+        23px;
 
-            padding:
-                19px 15px;
+}
 
 
-            text-align:
-                center;
+.docs-section-title h2 {
 
+    margin:
+        0;
 
-            border-radius:
-                15px;
+    display:
+        flex;
 
+    align-items:
+        center;
 
-            border:
-                1px solid
-                rgba(255, 255, 255, .07);
+    gap:
+        10px;
 
+    font-family:
+        "Space Grotesk",
+        sans-serif;
 
-            background:
-                rgba(255, 255, 255, .022);
+    font-size:
+        21px;
 
+}
 
-            transition:
 
-                transform .25s ease,
+.docs-section-title h2 i {
 
-                border-color .25s ease,
+    color:
+        var(--cyan);
 
-                background .25s ease;
+    filter:
 
-        }
+        drop-shadow(
+            0 0 7px
+            rgba(70,235,255,.45)
+        );
 
+}
 
 
-        .workflow-item:hover {
+.docs-section-title p {
 
-            transform:
-                translateY(-5px);
+    margin:
+        0;
 
+    color:
+        #70889d;
 
-            border-color:
-                rgba(69, 234, 255, .32);
+    font-size:
+        9px;
 
+}
 
-            background:
-                rgba(255, 255, 255, .04);
 
-        }
+/* =========================================================
+   ARCHITECTURE FLOW
+========================================================= */
 
+.architecture-flow {
 
+    position:
+        relative;
 
-        .workflow-number {
+    z-index:
+        5;
 
-            width:
-                38px;
+    display:
+        grid;
 
-            height:
-                38px;
+    grid-template-columns:
 
+        minmax(150px,1fr)
 
-            margin:
-                0 auto 10px;
+        38px
 
+        minmax(145px,1fr)
 
-            display:
-                flex;
+        38px
 
-            align-items:
-                center;
+        minmax(145px,1fr)
 
-            justify-content:
-                center;
+        38px
 
+        minmax(145px,1fr)
 
-            border-radius:
-                50%;
+        38px
 
+        minmax(150px,1fr);
 
-            color:
-                #051321;
+    gap:
+        6px;
 
+    align-items:
+        stretch;
 
-            font-size:
-                9px;
+}
 
-            font-weight:
-                900;
 
+/* =========================================================
+   FLOW CARDS
+========================================================= */
 
-            background:
+.flow-card {
 
-                linear-gradient(
-                    135deg,
-                    #4ceaff,
-                    #6b91ff,
-                    #a768ff
-                );
+    --accent:
+        var(--cyan);
 
+    position:
+        relative;
 
-            box-shadow:
+    overflow:
+        hidden;
 
-                0 0 13px
-                rgba(70, 225, 255, .20);
+    min-height:
+        175px;
 
-        }
+    padding:
+        21px 14px;
 
+    display:
+        flex;
 
+    flex-direction:
+        column;
 
-        .workflow-item strong {
+    align-items:
+        center;
 
-            display:
-                block;
+    justify-content:
+        center;
 
+    text-align:
+        center;
 
-            color:
-                #ffffff;
+    border-radius:
+        19px;
 
+    border:
+        1px solid
+        rgba(85,185,255,.17);
 
-            font-size:
-                11px;
+    background:
 
-        }
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.015)
+        );
 
+    box-shadow:
 
+        inset 0 1px 0
+        rgba(255,255,255,.05),
 
-        .workflow-item span {
+        0 12px 25px
+        rgba(0,0,0,.14);
 
-            display:
-                block;
+    transform-style:
+        preserve-3d;
 
+    transition:
 
-            margin-top:
-                4px;
+        transform .35s ease,
 
+        border-color .35s ease,
 
-            color:
-                #768da1;
+        box-shadow .35s ease,
 
+        filter .35s ease;
 
-            font-size:
-                8px;
+}
 
-        }
 
+/* TOP ENERGY LINE */
 
+.flow-card::before {
 
-        /* =========================================================
-           SUMMARY
-        ========================================================= */
+    content:
+        "";
 
+    position:
+        absolute;
 
-        .docs-summary {
+    top:
+        0;
 
-            margin-top:
-                24px;
+    left:
+        15%;
 
+    right:
+        15%;
 
-            padding:
-                18px 20px;
+    height:
+        2px;
 
+    background:
 
-            display:
-                flex;
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--accent),
+            transparent
+        );
 
-            align-items:
-                center;
+    box-shadow:
 
-            justify-content:
-                center;
+        0 0 10px
+        var(--accent);
 
+    opacity:
+        .7;
 
-            gap:
-                12px;
+}
 
 
-            text-align:
-                center;
+/* LIGHT SWEEP */
 
+.flow-card::after {
 
-            border-radius:
-                17px;
+    content:
+        "";
 
+    position:
+        absolute;
 
-            border:
-                1px solid
-                rgba(82, 193, 255, .18);
+    left:
+        -80%;
 
+    top:
+        -40%;
 
-            background:
+    width:
+        38%;
 
-                linear-gradient(
-                    90deg,
-                    rgba(40, 145, 190, .10),
-                    rgba(104, 65, 190, .12)
-                );
+    height:
+        180%;
 
-        }
+    background:
 
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.11),
+            transparent
+        );
 
+    transform:
+        rotate(20deg);
 
-        .docs-summary i {
+    transition:
+        left
+        .7s
+        ease;
 
-            color:
-                var(--doc-cyan);
+}
 
 
-            font-size:
-                18px;
+.flow-card:hover::after {
 
-        }
+    left:
+        145%;
 
+}
 
 
-        .docs-summary p {
+.flow-card:hover {
 
-            margin:
-                0;
+    transform:
 
+        translateY(-9px)
 
-            color:
-                #9fb3c5;
+        scale(1.025);
 
+    border-color:
+        var(--accent);
 
-            font-size:
-                10px;
+    box-shadow:
 
-            line-height:
-                1.6;
+        0 22px 40px
+        rgba(0,0,0,.30),
 
-        }
+        0 0 25px
+        color-mix(
+            in srgb,
+            var(--accent) 18%,
+            transparent
+        );
 
+}
 
 
-        .docs-summary strong {
+.flow-card.flow-active {
 
-            color:
-                #ffffff;
+    border-color:
+        var(--accent);
 
-        }
+    filter:
+        brightness(1.18);
 
+    box-shadow:
 
+        0 0 22px
+        color-mix(
+            in srgb,
+            var(--accent) 23%,
+            transparent
+        ),
 
-        /* =========================================================
-           FOOTER
-        ========================================================= */
+        inset 0 0 20px
+        rgba(255,255,255,.02);
 
+}
 
-        .docs-footer {
 
-            padding:
-                30px 20px;
+/* CARD COLORS */
 
+.development-card {
 
-            text-align:
-                center;
+    --accent:
+        #46ebff;
 
+}
 
-            color:
-                #6f8498;
 
+.github-card {
 
-            font-size:
-                10px;
+    --accent:
+        #eef3f8;
 
+}
 
-            border-top:
-                1px solid
-                rgba(255, 255, 255, .06);
 
-        }
+.pages-card {
 
+    --accent:
+        #528dff;
 
+}
 
-        /* =========================================================
-           LIGHT THEME
-        ========================================================= */
 
+.cloudflare-card {
 
-        body.theme-light {
+    --accent:
+        #ff9848;
 
-            color:
-                #14283c;
+}
 
 
-            background:
+.domain-card {
 
-                radial-gradient(
-                    circle at 10% 12%,
-                    rgba(50, 180, 255, .10),
-                    transparent 28%
-                ),
+    --accent:
+        #ad63ff;
 
-                radial-gradient(
-                    circle at 90% 18%,
-                    rgba(150, 90, 255, .08),
-                    transparent 30%
-                ),
+}
 
-                linear-gradient(
-                    145deg,
-                    #f4f9ff,
-                    #ffffff
-                );
 
-        }
+/* =========================================================
+   FLOW ICON
+========================================================= */
 
+.flow-icon {
 
+    width:
+        54px;
 
-        body.theme-light
-        .docs-hero,
+    height:
+        54px;
 
-        body.theme-light
-        .docs-section {
+    margin-bottom:
+        12px;
 
-            background:
+    display:
+        flex;
 
-                linear-gradient(
-                    145deg,
-                    rgba(255, 255, 255, .98),
-                    rgba(242, 248, 255, .98)
-                );
+    align-items:
+        center;
 
+    justify-content:
+        center;
 
-            border-color:
-                rgba(55, 150, 220, .22);
+    border-radius:
+        15px;
 
+    color:
+        var(--accent);
 
-            box-shadow:
+    font-size:
+        22px;
 
-                0 18px 42px
-                rgba(45, 90, 135, .10);
+    border:
+        1px solid
+        rgba(255,255,255,.11);
 
-        }
+    background:
+        rgba(255,255,255,.035);
 
+    box-shadow:
 
+        0 0 18px
+        color-mix(
+            in srgb,
+            var(--accent) 17%,
+            transparent
+        );
 
-        body.theme-light
-        .docs-hero h1,
+    animation:
+        iconFloat
+        3s
+        ease-in-out
+        infinite;
 
-        body.theme-light
-        .docs-section-title h2 {
+}
 
-            color:
-                #173047;
 
-        }
+@keyframes iconFloat {
 
+    50% {
 
+        transform:
+            translateY(-5px)
+            rotateY(10deg);
 
-        body.theme-light
-        .docs-hero p,
+    }
 
-        body.theme-light
-        .docs-section-title p,
+}
 
-        body.theme-light
-        .flow-card p,
 
-        body.theme-light
-        .service-item p,
+.flow-card small {
 
-        body.theme-light
-        .workflow-item span,
+    color:
+        var(--accent);
 
-        body.theme-light
-        .docs-summary p {
+    font-size:
+        8px;
 
-            color:
-                #61778b;
+    font-weight:
+        900;
 
-        }
+    letter-spacing:
+        1.2px;
 
+}
 
 
-        body.theme-light
-        .flow-card,
+.flow-card strong {
 
-        body.theme-light
-        .service-item,
+    display:
+        block;
 
-        body.theme-light
-        .workflow-item,
+    margin-top:
+        6px;
 
-        body.theme-light
-        .docs-stack span {
+    color:
+        #ffffff;
 
-            background:
-                #ffffff;
+    font-size:
+        13px;
 
+}
 
-            border-color:
-                rgba(55, 150, 220, .16);
 
-        }
+.flow-card p {
 
+    margin:
+        8px 0 0;
 
+    color:
+        #7d94a9;
 
-        body.theme-light
-        .flow-card strong,
+    font-size:
+        9px;
 
-        body.theme-light
-        .service-item strong,
+    line-height:
+        1.55;
 
-        body.theme-light
-        .workflow-item strong,
+}
 
-        body.theme-light
-        .docs-summary strong {
 
-            color:
-                #173047;
+/* =========================================================
+   FLOW CONNECTORS
+========================================================= */
 
-        }
+.flow-arrow {
 
+    position:
+        relative;
 
+    display:
+        flex;
 
-        body.theme-light
-        .flow-icon,
+    align-items:
+        center;
 
-        body.theme-light
-        .service-icon {
+    justify-content:
+        center;
 
-            background:
-                #f5f9fd;
+}
 
 
-            border-color:
-                rgba(55, 150, 220, .18);
+.flow-arrow::before {
 
-        }
+    content:
+        "";
 
+    position:
+        absolute;
 
+    width:
+        100%;
 
-        body.theme-light
-        .docs-summary {
+    height:
+        2px;
 
-            background:
+    background:
+        rgba(70,220,255,.15);
 
-                linear-gradient(
-                    90deg,
-                    rgba(45, 170, 220, .07),
-                    rgba(125, 80, 220, .07)
-                );
+}
 
 
-            border-color:
-                rgba(55, 150, 220, .18);
+.flow-arrow::after {
 
-        }
+    content:
+        "";
 
+    position:
+        absolute;
 
+    left:
+        -35%;
 
-        body.theme-light
-        .docs-footer {
+    width:
+        35%;
 
-            color:
-                #70869a;
+    height:
+        3px;
 
+    border-radius:
+        999px;
 
-            border-color:
-                rgba(45, 110, 165, .12);
+    background:
 
-        }
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            var(--purple),
+            var(--pink)
+        );
 
+    box-shadow:
 
+        0 0 8px
+        var(--cyan),
 
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
+        0 0 16px
+        rgba(120,90,255,.65);
 
+    animation:
+        packetMove
+        1.3s
+        linear
+        infinite;
 
-        @media (
-            max-width:
-            1050px
-        ) {
+}
 
 
-            .architecture-flow {
+.flow-arrow i {
 
-                grid-template-columns:
-                    1fr;
+    position:
+        relative;
 
-            }
+    z-index:
+        3;
 
+    margin-left:
+        auto;
 
-            .flow-arrow {
+    color:
+        var(--cyan);
 
-                min-height:
-                    26px;
+    font-size:
+        11px;
 
+    filter:
 
-                transform:
-                    rotate(90deg);
+        drop-shadow(
+            0 0 5px
+            var(--cyan)
+        );
 
-            }
+}
 
 
-            .flow-card {
+@keyframes packetMove {
 
-                min-height:
-                    135px;
+    from {
 
-            }
+        left:
+            -35%;
 
-        }
+    }
 
+    to {
 
+        left:
+            100%;
 
-        @media (
-            max-width:
-            800px
-        ) {
+    }
 
+}
 
-            .services-grid,
 
-            .workflow-grid {
+/* =========================================================
+   SERVICES
+========================================================= */
 
-                grid-template-columns:
-                    1fr 1fr;
+.services-grid {
 
-            }
+    position:
+        relative;
 
+    z-index:
+        5;
 
-            .docs-section-title {
+    display:
+        grid;
 
-                align-items:
-                    flex-start;
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
 
+    gap:
+        14px;
 
-                flex-direction:
-                    column;
+}
 
-            }
 
-        }
+.service-item {
 
+    --service:
+        var(--orange);
 
+    position:
+        relative;
 
-        @media (
-            max-width:
-            600px
-        ) {
+    overflow:
+        hidden;
 
+    min-height:
+        110px;
 
-            .docs-page {
+    padding:
+        20px;
 
-                width:
-                    92%;
+    display:
+        flex;
 
+    align-items:
+        center;
 
-                margin-top:
-                    105px;
+    gap:
+        14px;
 
-            }
+    border-radius:
+        18px;
 
+    border:
+        1px solid
+        rgba(255,255,255,.07);
 
-            .docs-hero {
+    background:
 
-                padding:
-                    30px 20px;
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.012)
+        );
 
+    transition:
 
-                border-radius:
-                    20px;
+        transform .35s ease,
 
-            }
+        border-color .35s ease,
 
+        box-shadow .35s ease;
 
-            .docs-hero h1 {
+}
 
-                font-size:
-                    38px;
 
+.service-item::before {
 
-                letter-spacing:
-                    -1.3px;
+    content:
+        "";
 
-            }
+    position:
+        absolute;
 
+    width:
+        170px;
 
-            .docs-section {
+    height:
+        170px;
 
-                padding:
-                    20px;
+    right:
+        -105px;
 
+    top:
+        -100px;
 
-                border-radius:
-                    19px;
+    border-radius:
+        50%;
 
-            }
+    background:
+        var(--service);
 
+    opacity:
+        .08;
 
-            .services-grid,
+    filter:
+        blur(25px);
 
-            .workflow-grid {
+    transition:
+        .4s ease;
 
-                grid-template-columns:
-                    1fr;
+}
 
-            }
 
+.service-item:hover {
 
-            .docs-summary {
+    transform:
+        translateY(-7px)
+        scale(1.015);
 
-                align-items:
-                    flex-start;
+    border-color:
+        var(--service);
 
+    box-shadow:
 
-                flex-direction:
-                    column;
+        0 18px 35px
+        rgba(0,0,0,.25),
 
+        0 0 20px
+        color-mix(
+            in srgb,
+            var(--service) 14%,
+            transparent
+        );
 
-                text-align:
-                    left;
+}
 
-            }
 
-        }
+.service-item:hover::before {
 
+    opacity:
+        .18;
 
-    </style>
+    transform:
+        scale(1.35);
+
+}
+
+
+.service-item:nth-child(1) {
+
+    --service:
+        #ff8845;
+
+}
+
+
+.service-item:nth-child(2) {
+
+    --service:
+        #ffba4f;
+
+}
+
+
+.service-item:nth-child(3) {
+
+    --service:
+        #43eba2;
+
+}
+
+
+.service-icon {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        51px;
+
+    height:
+        51px;
+
+    flex:
+        0 0 51px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        14px;
+
+    color:
+        var(--service);
+
+    font-size:
+        21px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    background:
+        rgba(255,255,255,.035);
+
+    box-shadow:
+
+        0 0 16px
+        color-mix(
+            in srgb,
+            var(--service) 14%,
+            transparent
+        );
+
+    animation:
+        serviceFloat
+        3.2s
+        ease-in-out
+        infinite;
+
+}
+
+
+.service-item:nth-child(2)
+.service-icon {
+
+    animation-delay:
+        -.8s;
+
+}
+
+
+.service-item:nth-child(3)
+.service-icon {
+
+    animation-delay:
+        -1.6s;
+
+}
+
+
+@keyframes serviceFloat {
+
+    50% {
+
+        transform:
+            translateY(-5px)
+            rotate(-4deg);
+
+    }
+
+}
+
+
+.service-item > div:last-child {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+.service-item small {
+
+    display:
+        block;
+
+    color:
+        var(--service);
+
+    font-size:
+        8px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.service-item strong {
+
+    display:
+        block;
+
+    margin:
+        4px 0;
+
+    color:
+        #ffffff;
+
+    font-size:
+        13px;
+
+}
+
+
+.service-item p {
+
+    margin:
+        0;
+
+    color:
+        #8298ac;
+
+    font-size:
+        9px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/* =========================================================
+   WORKFLOW
+========================================================= */
+
+.workflow-grid {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap:
+        12px;
+
+}
+
+
+.workflow-item {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        21px 15px;
+
+    text-align:
+        center;
+
+    border-radius:
+        17px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    background:
+        rgba(255,255,255,.024);
+
+    transition:
+
+        transform .3s ease,
+
+        border-color .3s ease,
+
+        box-shadow .3s ease;
+
+}
+
+
+.workflow-item:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(75,230,255,.40);
+
+    box-shadow:
+
+        0 15px 30px
+        rgba(0,0,0,.20);
+
+}
+
+
+.workflow-number {
+
+    position:
+        relative;
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    margin:
+        0 auto 11px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    color:
+        #061321;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #4ceaff,
+            #6b91ff,
+            #a768ff
+        );
+
+    border:
+        2px solid
+        rgba(255,255,255,.28);
+
+    box-shadow:
+
+        0 0 15px
+        rgba(70,225,255,.28);
+
+    animation:
+        numberPulse
+        2.7s
+        ease-in-out
+        infinite;
+
+}
+
+
+.workflow-item:nth-child(2)
+.workflow-number {
+
+    animation-delay:
+        -.65s;
+
+}
+
+
+.workflow-item:nth-child(3)
+.workflow-number {
+
+    animation-delay:
+        -1.3s;
+
+}
+
+
+.workflow-item:nth-child(4)
+.workflow-number {
+
+    animation-delay:
+        -1.95s;
+
+}
+
+
+@keyframes numberPulse {
+
+    50% {
+
+        transform:
+            scale(1.1);
+
+        filter:
+            brightness(1.3);
+
+        box-shadow:
+
+            0 0 22px
+            rgba(70,225,255,.45),
+
+            0 0 35px
+            rgba(145,90,255,.20);
+
+    }
+
+}
+
+
+.workflow-item strong {
+
+    display:
+        block;
+
+    color:
+        #ffffff;
+
+    font-size:
+        11px;
+
+}
+
+
+.workflow-item span {
+
+    display:
+        block;
+
+    margin-top:
+        4px;
+
+    color:
+        #778da1;
+
+    font-size:
+        8px;
+
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.docs-summary {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    margin-top:
+        24px;
+
+    padding:
+        19px 20px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    text-align:
+        center;
+
+    border-radius:
+        18px;
+
+    border:
+        1px solid
+        rgba(80,190,255,.20);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(35,145,190,.11),
+            rgba(100,55,170,.13),
+            rgba(160,45,120,.07)
+        );
+
+}
+
+
+.docs-summary::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -40%;
+
+    width:
+        25%;
+
+    height:
+        100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.12),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    animation:
+        summarySweep
+        6s
+        linear
+        infinite;
+
+}
+
+
+@keyframes summarySweep {
+
+    to {
+
+        left:
+            130%;
+
+    }
+
+}
+
+
+.docs-summary i {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    color:
+        var(--cyan);
+
+    font-size:
+        19px;
+
+    animation:
+        summaryIcon
+        2.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes summaryIcon {
+
+    50% {
+
+        transform:
+            rotate(12deg)
+            scale(1.15);
+
+        filter:
+
+            drop-shadow(
+                0 0 8px
+                var(--cyan)
+            );
+
+    }
+
+}
+
+
+.docs-summary p {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin:
+        0;
+
+    color:
+        #9eb2c5;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.6;
+
+}
+
+
+.docs-summary strong {
+
+    color:
+        #ffffff;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.docs-footer {
+
+    padding:
+        32px 20px;
+
+    text-align:
+        center;
+
+    color:
+        #70869a;
+
+    font-size:
+        10px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+body.theme-light {
+
+    color:
+        #14283b;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 12%,
+            rgba(45,180,255,.10),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 18%,
+            rgba(145,80,255,.08),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            145deg,
+            #f2f8ff,
+            #ffffff
+        );
+
+}
+
+
+body.theme-light
+.tech-universe::before {
+
+    background:
+
+        linear-gradient(
+            rgba(30,90,140,.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(30,90,140,.035) 1px,
+            transparent 1px
+        );
+
+}
+
+
+body.theme-light
+.docs-hero::after {
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.99),
+            rgba(242,248,255,.99)
+        );
+
+}
+
+
+body.theme-light
+.docs-section {
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.97),
+            rgba(242,248,255,.98)
+        );
+
+    border-color:
+        rgba(45,145,215,.22);
+
+    box-shadow:
+
+        0 18px 45px
+        rgba(45,90,135,.10);
+
+}
+
+
+body.theme-light
+.docs-hero > p,
+
+body.theme-light
+.docs-section-title p,
+
+body.theme-light
+.flow-card p,
+
+body.theme-light
+.service-item p,
+
+body.theme-light
+.workflow-item span,
+
+body.theme-light
+.docs-summary p {
+
+    color:
+        #61778b;
+
+}
+
+
+body.theme-light
+.docs-hero h1,
+
+body.theme-light
+.docs-section-title h2,
+
+body.theme-light
+.flow-card strong,
+
+body.theme-light
+.service-item strong,
+
+body.theme-light
+.workflow-item strong,
+
+body.theme-light
+.docs-summary strong {
+
+    color:
+        #173047;
+
+}
+
+
+body.theme-light
+.flow-card,
+
+body.theme-light
+.service-item,
+
+body.theme-light
+.workflow-item,
+
+body.theme-light
+.docs-stack span {
+
+    background:
+        rgba(255,255,255,.82);
+
+    border-color:
+        rgba(55,145,210,.18);
+
+}
+
+
+body.theme-light
+.flow-icon,
+
+body.theme-light
+.service-icon {
+
+    background:
+        #f5f9fd;
+
+    border-color:
+        rgba(55,145,210,.18);
+
+}
+
+
+body.theme-light
+.docs-summary {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(45,170,220,.07),
+            rgba(120,70,220,.07)
+        );
+
+}
+
+
+body.theme-light
+.docs-footer {
+
+    color:
+        #71869a;
+
+    border-color:
+        rgba(40,105,160,.12);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (
+    max-width:
+    1050px
+) {
+
+    .architecture-flow {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .flow-card {
+
+        min-height:
+            145px;
+
+    }
+
+
+    .flow-arrow {
+
+        min-height:
+            32px;
+
+        transform:
+            rotate(90deg);
+
+    }
+
+
+    .flow-arrow::before {
+
+        width:
+            34px;
+
+    }
+
+
+    .flow-arrow::after {
+
+        width:
+            13px;
+
+        animation:
+            none;
+
+        left:
+            50%;
+
+    }
+
+}
+
+
+@media (
+    max-width:
+    800px
+) {
+
+    .services-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .workflow-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .docs-section-title {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+}
+
+
+@media (
+    max-width:
+    600px
+) {
+
+    .docs-page {
+
+        width:
+            92%;
+
+        margin-top:
+            110px;
+
+    }
+
+
+    .docs-hero {
+
+        min-height:
+            auto;
+
+        padding:
+            38px 20px;
+
+        border-radius:
+            22px;
+
+    }
+
+
+    .docs-hero::after {
+
+        border-radius:
+            21px;
+
+    }
+
+
+    .hero-orbit {
+
+        transform:
+            scale(.82);
+
+        margin-bottom:
+            5px;
+
+    }
+
+
+    .docs-hero h1 {
+
+        font-size:
+            39px;
+
+        letter-spacing:
+            -1.5px;
+
+    }
+
+
+    .docs-section {
+
+        padding:
+            21px;
+
+        border-radius:
+            20px;
+
+    }
+
+
+    .workflow-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .docs-summary {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        text-align:
+            left;
+
+    }
+
+
+    .cursor-glow {
+
+        display:
+            none;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (
+    prefers-reduced-motion:
+    reduce
+) {
+
+    * {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+    }
+
+}
+
+</style>
 
 </head>
-
 
 
 <body>
 
 
-    <!-- =========================================================
-         NAVIGATION
-    ========================================================= -->
+<!-- =========================================================
+     ANIMATED BACKGROUND
+========================================================= -->
+
+<div class="tech-universe"
+     aria-hidden="true">
+
+    <div class="aurora aurora-one"></div>
+
+    <div class="aurora aurora-two"></div>
+
+    <div class="aurora aurora-three"></div>
+
+    <div id="particles"></div>
+
+</div>
 
 
-    <header class="navbar">
+<div class="cursor-glow"
+     id="cursorGlow"
+     aria-hidden="true">
+</div>
 
 
-        <div class="nav-container">
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
 
 
-            <!-- LOGO -->
+        <!-- LOGO -->
 
-            <a href="index.html"
-               class="logo">
+        <a href="index.html"
+           class="logo">
 
-                TANWEER<span>.</span>
+            TANWEER<span>.</span>
+
+        </a>
+
+
+        <!-- MENU -->
+
+        <nav id="navMenu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="experience.html">
+                Experience
+            </a>
+
+            <a href="certifications.html">
+                Certifications
+            </a>
+
+            <a href="documentation.html"
+               class="active">
+
+                Documentation
+
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <!-- RIGHT NAVIGATION -->
+
+        <div class="nav-buttons">
+
+
+            <!-- THEME -->
+
+            <button
+                id="themeToggle"
+                class="icon-btn"
+                aria-label="Toggle theme"
+                title="Switch Theme">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+
+            <!-- REQUEST CONTACT -->
+
+            <a
+                href="mailto:tanweerstudy25@gmail.com?subject=Request%20for%20WhatsApp%20Contact&body=Hello%20Tanweer%2C%0A%0AI%20visited%20your%20portfolio%20website%20and%20would%20like%20to%20contact%20you%20on%20WhatsApp.%0A%0AThank%20you."
+                class="nav-contact whatsapp-nav">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                <span>
+                    Request Contact
+                </span>
 
             </a>
 
 
+            <!-- MOBILE MENU -->
 
-            <!-- NAVIGATION -->
+            <button
+                id="menuToggle"
+                class="menu-btn"
+                aria-label="Open menu">
 
-            <nav id="navMenu">
+                <i class="fa-solid fa-bars"></i>
 
-
-                <a href="index.html">
-
-                    Home
-
-                </a>
-
-
-                <a href="about.html">
-
-                    About
-
-                </a>
-
-
-                <a href="experience.html">
-
-                    Experience
-
-                </a>
-
-
-                <a href="certifications.html">
-
-                    Certifications
-
-                </a>
-
-
-                <a href="documentation.html"
-                   class="active">
-
-                    Documentation
-
-                </a>
-
-
-                <a href="contact.html">
-
-                    Contact
-
-                </a>
-
-
-            </nav>
-
-
-
-            <!-- RIGHT NAVIGATION -->
-
-            <div class="nav-buttons">
-
-
-                <!-- THEME -->
-
-                <button
-                    id="themeToggle"
-                    class="icon-btn"
-                    aria-label="Toggle theme"
-                    title="Switch Theme">
-
-                    <i class="fa-solid fa-moon"></i>
-
-                </button>
-
-
-
-                <!-- REQUEST CONTACT -->
-
-                <a
-                    href="mailto:tanweerstudy25@gmail.com?subject=Request%20for%20WhatsApp%20Contact&body=Hello%20Tanweer%2C%0A%0AI%20visited%20your%20portfolio%20website%20and%20would%20like%20to%20contact%20you%20on%20WhatsApp.%0A%0AThank%20you."
-                    class="nav-contact whatsapp-nav">
-
-
-                    <i class="fa-solid fa-paper-plane"></i>
-
-
-                    <span>
-
-                        Request Contact
-
-                    </span>
-
-
-                </a>
-
-
-
-                <!-- MOBILE MENU -->
-
-                <button
-                    id="menuToggle"
-                    class="menu-btn"
-                    aria-label="Open menu">
-
-
-                    <i class="fa-solid fa-bars"></i>
-
-
-                </button>
-
-
-            </div>
-
+            </button>
 
         </div>
 
 
-    </header>
+    </div>
+
+</header>
 
 
 
-    <!-- =========================================================
-         DOCUMENTATION
-    ========================================================= -->
+<!-- =========================================================
+     DOCUMENTATION
+========================================================= -->
+
+<main class="docs-page">
 
 
-    <main class="docs-page">
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="docs-hero reveal">
 
 
-        <!-- =====================================================
-             HERO
-        ====================================================== -->
+    <!-- ORBIT -->
+
+    <div class="hero-orbit">
+
+        <div class="hero-ring hero-ring-one"></div>
+
+        <div class="hero-ring hero-ring-two"></div>
+
+        <div class="hero-ring hero-ring-three"></div>
 
 
-        <section class="docs-hero">
+        <div class="hero-core">
+
+            <i class="fa-solid fa-diagram-project"></i>
+
+        </div>
+
+    </div>
 
 
-            <div class="docs-label">
+    <!-- LABEL -->
+
+    <div class="docs-label">
+
+        <i class="fa-solid fa-satellite-dish"></i>
+
+        WEBSITE DOCUMENTATION
+
+    </div>
 
 
-                <i class="fa-solid fa-diagram-project"></i>
+    <!-- TITLE -->
+
+    <h1>
+
+        Portfolio
+
+        <span class="docs-gradient">
+
+            Architecture
+
+        </span>
+
+    </h1>
 
 
-                WEBSITE DOCUMENTATION
+    <!-- DESCRIPTION -->
 
+    <p>
+
+        A concise visual overview of how this portfolio is
+        developed, versioned, published, delivered through the
+        custom domain and monitored.
+
+    </p>
+
+
+    <!-- STACK -->
+
+    <div class="docs-stack">
+
+
+        <span>
+
+            <i class="fa-solid fa-code"></i>
+
+            HTML · CSS · JavaScript
+
+        </span>
+
+
+        <span>
+
+            <i class="fa-brands fa-github"></i>
+
+            GitHub
+
+        </span>
+
+
+        <span>
+
+            <i class="fa-brands fa-cloudflare"></i>
+
+            Cloudflare
+
+        </span>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     CORE ARCHITECTURE
+========================================================= -->
+
+<section
+    class="docs-section reveal"
+    id="architectureBoard">
+
+
+    <div class="docs-section-title">
+
+
+        <h2>
+
+            <i class="fa-solid fa-network-wired"></i>
+
+            Core Architecture
+
+        </h2>
+
+
+        <p>
+
+            Build → Version → Publish → Deliver → Live
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="architecture-flow">
+
+
+        <!-- DEVELOPMENT -->
+
+        <article
+            class="flow-card development-card tilt-card">
+
+
+            <div class="flow-icon">
+
+                <i class="fa-solid fa-code"></i>
 
             </div>
 
 
-
-            <h1>
-
-
-                Portfolio
+            <small>
+                BUILD
+            </small>
 
 
-                <span class="docs-gradient">
-
-                    Architecture
-
-                </span>
-
-
-            </h1>
-
+            <strong>
+                Web Development
+            </strong>
 
 
             <p>
 
-                A concise view of how this portfolio is built,
-                published, delivered through the custom domain
-                and monitored.
+                Front-end structure,
+                styling and interaction.
 
             </p>
 
 
+        </article>
 
-            <div class="docs-stack">
 
 
-                <span>
+        <div class="flow-arrow">
 
-
-                    <i class="fa-solid fa-code"></i>
-
-
-                    HTML · CSS · JavaScript
-
-
-                </span>
-
-
-
-                <span>
-
-
-                    <i class="fa-brands fa-github"></i>
-
-
-                    GitHub
-
-
-                </span>
-
-
-
-                <span>
-
-
-                    <i class="fa-brands fa-cloudflare"></i>
-
-
-                    Cloudflare
-
-
-                </span>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =====================================================
-             CORE ARCHITECTURE
-        ====================================================== -->
-
-
-        <section class="docs-section">
-
-
-            <div class="docs-section-title">
-
-
-                <h2>
-
-
-                    <i class="fa-solid fa-network-wired"></i>
-
-
-                    Core Architecture
-
-
-                </h2>
-
-
-
-                <p>
-
-                    Build → Store → Publish → Deliver → Visit
-
-                </p>
-
-
-            </div>
-
-
-
-            <div class="architecture-flow">
-
-
-                <!-- DEVELOPMENT -->
-
-                <article class="flow-card development-card">
-
-
-                    <div class="flow-icon">
-
-
-                        <i class="fa-solid fa-code"></i>
-
-
-                    </div>
-
-
-
-                    <small>
-
-                        BUILD
-
-                    </small>
-
-
-
-                    <strong>
-
-                        Web Development
-
-                    </strong>
-
-
-
-                    <p>
-
-                        Front-end structure,
-                        styling and interaction.
-
-                    </p>
-
-
-                </article>
-
-
-
-                <div class="flow-arrow">
-
-
-                    <i class="fa-solid fa-chevron-right"></i>
-
-
-                </div>
-
-
-
-                <!-- GITHUB -->
-
-                <article class="flow-card github-card">
-
-
-                    <div class="flow-icon">
-
-
-                        <i class="fa-brands fa-github"></i>
-
-
-                    </div>
-
-
-
-                    <small>
-
-                        VERSION
-
-                    </small>
-
-
-
-                    <strong>
-
-                        GitHub
-
-                    </strong>
-
-
-
-                    <p>
-
-                        Source files
-                        and version history.
-
-                    </p>
-
-
-                </article>
-
-
-
-                <div class="flow-arrow">
-
-
-                    <i class="fa-solid fa-chevron-right"></i>
-
-
-                </div>
-
-
-
-                <!-- GITHUB PAGES -->
-
-                <article class="flow-card pages-card">
-
-
-                    <div class="flow-icon">
-
-
-                        <i class="fa-solid fa-code-branch"></i>
-
-
-                    </div>
-
-
-
-                    <small>
-
-                        PUBLISH
-
-                    </small>
-
-
-
-                    <strong>
-
-                        GitHub Pages
-
-                    </strong>
-
-
-
-                    <p>
-
-                        Converts the repository
-                        into the live website.
-
-                    </p>
-
-
-                </article>
-
-
-
-                <div class="flow-arrow">
-
-
-                    <i class="fa-solid fa-chevron-right"></i>
-
-
-                </div>
-
-
-
-                <!-- CLOUDFLARE -->
-
-                <article class="flow-card cloudflare-card">
-
-
-                    <div class="flow-icon">
-
-
-                        <i class="fa-brands fa-cloudflare"></i>
-
-
-                    </div>
-
-
-
-                    <small>
-
-                        DELIVER
-
-                    </small>
-
-
-
-                    <strong>
-
-                        Cloudflare
-
-                    </strong>
-
-
-
-                    <p>
-
-                        DNS and website
-                        traffic delivery.
-
-                    </p>
-
-
-                </article>
-
-
-
-                <div class="flow-arrow">
-
-
-                    <i class="fa-solid fa-chevron-right"></i>
-
-
-                </div>
-
-
-
-                <!-- DOMAIN -->
-
-                <article class="flow-card domain-card">
-
-
-                    <div class="flow-icon">
-
-
-                        <i class="fa-solid fa-globe"></i>
-
-
-                    </div>
-
-
-
-                    <small>
-
-                        LIVE
-
-                    </small>
-
-
-
-                    <strong>
-
-                        tanweer.site
-
-                    </strong>
-
-
-
-                    <p>
-
-                        Public access through
-                        the custom domain.
-
-                    </p>
-
-
-                </article>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =====================================================
-             SUPPORTING SERVICES
-        ====================================================== -->
-
-
-        <section class="docs-section">
-
-
-            <div class="docs-section-title">
-
-
-                <h2>
-
-
-                    <i class="fa-solid fa-layer-group"></i>
-
-
-                    Supporting Services
-
-
-                </h2>
-
-
-
-                <p>
-
-                    Domain ownership and website insights
-
-                </p>
-
-
-            </div>
-
-
-
-            <div class="services-grid">
-
-
-                <!-- NAMECHEAP -->
-
-                <article class="service-item">
-
-
-                    <div class="service-icon">
-
-
-                        <i class="fa-solid fa-at"></i>
-
-
-                    </div>
-
-
-
-                    <div>
-
-
-                        <small>
-
-                            DOMAIN REGISTRAR
-
-                        </small>
-
-
-
-                        <strong>
-
-                            Namecheap
-
-                        </strong>
-
-
-
-                        <p>
-
-                            Registration and ownership
-                            of tanweer.site.
-
-                        </p>
-
-
-                    </div>
-
-
-                </article>
-
-
-
-                <!-- GOOGLE ANALYTICS -->
-
-                <article class="service-item">
-
-
-                    <div class="service-icon">
-
-
-                        <i class="fa-brands fa-google"></i>
-
-
-                    </div>
-
-
-
-                    <div>
-
-
-                        <small>
-
-                            ANALYTICS
-
-                        </small>
-
-
-
-                        <strong>
-
-                            Google Analytics 4
-
-                        </strong>
-
-
-
-                        <p>
-
-                            Aggregate website traffic
-                            and visitor insights.
-
-                        </p>
-
-
-                    </div>
-
-
-                </article>
-
-
-
-                <!-- GOATCOUNTER -->
-
-                <article class="service-item">
-
-
-                    <div class="service-icon">
-
-
-                        <i class="fa-solid fa-chart-simple"></i>
-
-
-                    </div>
-
-
-
-                    <div>
-
-
-                        <small>
-
-                            TRAFFIC STATS
-
-                        </small>
-
-
-
-                        <strong>
-
-                            GoatCounter
-
-                        </strong>
-
-
-
-                        <p>
-
-                            Lightweight
-                            page-view monitoring.
-
-                        </p>
-
-
-                    </div>
-
-
-                </article>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =====================================================
-             DELIVERY WORKFLOW
-        ====================================================== -->
-
-
-        <section class="docs-section">
-
-
-            <div class="docs-section-title">
-
-
-                <h2>
-
-
-                    <i class="fa-solid fa-arrows-rotate"></i>
-
-
-                    Delivery Workflow
-
-
-                </h2>
-
-
-
-                <p>
-
-                    Four clear stages from update to monitoring
-
-                </p>
-
-
-            </div>
-
-
-
-            <div class="workflow-grid">
-
-
-                <!-- STEP 1 -->
-
-                <div class="workflow-item">
-
-
-                    <div class="workflow-number">
-
-                        01
-
-                    </div>
-
-
-
-                    <strong>
-
-                        Build
-
-                    </strong>
-
-
-
-                    <span>
-
-                        Update website files
-
-                    </span>
-
-
-                </div>
-
-
-
-                <!-- STEP 2 -->
-
-                <div class="workflow-item">
-
-
-                    <div class="workflow-number">
-
-                        02
-
-                    </div>
-
-
-
-                    <strong>
-
-                        Commit
-
-                    </strong>
-
-
-
-                    <span>
-
-                        Save changes to GitHub
-
-                    </span>
-
-
-                </div>
-
-
-
-                <!-- STEP 3 -->
-
-                <div class="workflow-item">
-
-
-                    <div class="workflow-number">
-
-                        03
-
-                    </div>
-
-
-
-                    <strong>
-
-                        Publish
-
-                    </strong>
-
-
-
-                    <span>
-
-                        GitHub Pages deploys
-
-                    </span>
-
-
-                </div>
-
-
-
-                <!-- STEP 4 -->
-
-                <div class="workflow-item">
-
-
-                    <div class="workflow-number">
-
-                        04
-
-                    </div>
-
-
-
-                    <strong>
-
-                        Monitor
-
-                    </strong>
-
-
-
-                    <span>
-
-                        Review website traffic
-
-                    </span>
-
-
-                </div>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =====================================================
-             SIMPLE SUMMARY
-        ====================================================== -->
-
-
-        <div class="docs-summary">
-
-
-            <i class="fa-solid fa-circle-nodes"></i>
-
-
-
-            <p>
-
-
-                <strong>
-
-                    Simple architecture:
-
-                </strong>
-
-
-                development → GitHub → GitHub Pages →
-                Cloudflare →
-
-
-                <strong>
-
-                    tanweer.site
-
-                </strong>
-
-
-            </p>
-
+            <i class="fa-solid fa-chevron-right"></i>
 
         </div>
 
 
-    </main>
+
+        <!-- GITHUB -->
+
+        <article
+            class="flow-card github-card tilt-card">
+
+
+            <div class="flow-icon">
+
+                <i class="fa-brands fa-github"></i>
+
+            </div>
+
+
+            <small>
+                VERSION
+            </small>
+
+
+            <strong>
+                GitHub
+            </strong>
+
+
+            <p>
+
+                Source files and
+                version history.
+
+            </p>
+
+
+        </article>
 
 
 
-    <!-- =========================================================
-         FOOTER
-    ========================================================= -->
+        <div class="flow-arrow">
 
+            <i class="fa-solid fa-chevron-right"></i>
 
-    <footer class="docs-footer">
-
-
-        © 2026 Tanweer Ansari
-        · Network &amp; IT Support Engineer
-
-
-    </footer>
+        </div>
 
 
 
-    <!-- =========================================================
-         MAIN WEBSITE SCRIPT
-    ========================================================= -->
+        <!-- GITHUB PAGES -->
+
+        <article
+            class="flow-card pages-card tilt-card">
 
 
-    <script src="script.js"></script>
+            <div class="flow-icon">
+
+                <i class="fa-solid fa-code-branch"></i>
+
+            </div>
+
+
+            <small>
+                PUBLISH
+            </small>
+
+
+            <strong>
+                GitHub Pages
+            </strong>
+
+
+            <p>
+
+                Publishes the repository
+                as the live website.
+
+            </p>
+
+
+        </article>
+
+
+
+        <div class="flow-arrow">
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </div>
+
+
+
+        <!-- CLOUDFLARE -->
+
+        <article
+            class="flow-card cloudflare-card tilt-card">
+
+
+            <div class="flow-icon">
+
+                <i class="fa-brands fa-cloudflare"></i>
+
+            </div>
+
+
+            <small>
+                DELIVER
+            </small>
+
+
+            <strong>
+                Cloudflare
+            </strong>
+
+
+            <p>
+
+                DNS and website
+                traffic delivery.
+
+            </p>
+
+
+        </article>
+
+
+
+        <div class="flow-arrow">
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+        </div>
+
+
+
+        <!-- DOMAIN -->
+
+        <article
+            class="flow-card domain-card tilt-card">
+
+
+            <div class="flow-icon">
+
+                <i class="fa-solid fa-globe"></i>
+
+            </div>
+
+
+            <small>
+                LIVE
+            </small>
+
+
+            <strong>
+                tanweer.site
+            </strong>
+
+
+            <p>
+
+                Public access through
+                the custom domain.
+
+            </p>
+
+
+        </article>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     SUPPORTING SERVICES
+========================================================= -->
+
+<section class="docs-section reveal">
+
+
+    <div class="docs-section-title">
+
+
+        <h2>
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            Supporting Services
+
+        </h2>
+
+
+        <p>
+
+            Domain ownership and website insights
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="services-grid">
+
+
+        <!-- NAMECHEAP -->
+
+        <article class="service-item tilt-card">
+
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-at"></i>
+
+            </div>
+
+
+            <div>
+
+
+                <small>
+
+                    DOMAIN REGISTRAR
+
+                </small>
+
+
+                <strong>
+
+                    Namecheap
+
+                </strong>
+
+
+                <p>
+
+                    Registration and ownership
+                    of tanweer.site.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- GOOGLE ANALYTICS -->
+
+        <article class="service-item tilt-card">
+
+
+            <div class="service-icon">
+
+                <i class="fa-brands fa-google"></i>
+
+            </div>
+
+
+            <div>
+
+
+                <small>
+
+                    ANALYTICS
+
+                </small>
+
+
+                <strong>
+
+                    Google Analytics 4
+
+                </strong>
+
+
+                <p>
+
+                    Aggregate website traffic
+                    and visitor insights.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- GOATCOUNTER -->
+
+        <article class="service-item tilt-card">
+
+
+            <div class="service-icon">
+
+                <i class="fa-solid fa-chart-simple"></i>
+
+            </div>
+
+
+            <div>
+
+
+                <small>
+
+                    TRAFFIC STATS
+
+                </small>
+
+
+                <strong>
+
+                    GoatCounter
+
+                </strong>
+
+
+                <p>
+
+                    Lightweight
+                    page-view monitoring.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     DELIVERY WORKFLOW
+========================================================= -->
+
+<section class="docs-section reveal">
+
+
+    <div class="docs-section-title">
+
+
+        <h2>
+
+            <i class="fa-solid fa-arrows-rotate"></i>
+
+            Delivery Workflow
+
+        </h2>
+
+
+        <p>
+
+            Four stages from update to monitoring
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="workflow-grid">
+
+
+        <!-- 01 -->
+
+        <div class="workflow-item">
+
+            <div class="workflow-number">
+
+                01
+
+            </div>
+
+
+            <strong>
+
+                Build
+
+            </strong>
+
+
+            <span>
+
+                Update website files
+
+            </span>
+
+        </div>
+
+
+
+        <!-- 02 -->
+
+        <div class="workflow-item">
+
+            <div class="workflow-number">
+
+                02
+
+            </div>
+
+
+            <strong>
+
+                Commit
+
+            </strong>
+
+
+            <span>
+
+                Save changes to GitHub
+
+            </span>
+
+        </div>
+
+
+
+        <!-- 03 -->
+
+        <div class="workflow-item">
+
+            <div class="workflow-number">
+
+                03
+
+            </div>
+
+
+            <strong>
+
+                Publish
+
+            </strong>
+
+
+            <span>
+
+                GitHub Pages deploys
+
+            </span>
+
+        </div>
+
+
+
+        <!-- 04 -->
+
+        <div class="workflow-item">
+
+            <div class="workflow-number">
+
+                04
+
+            </div>
+
+
+            <strong>
+
+                Monitor
+
+            </strong>
+
+
+            <span>
+
+                Review website traffic
+
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     SUMMARY
+========================================================= -->
+
+<div class="docs-summary reveal">
+
+
+    <i class="fa-solid fa-circle-nodes"></i>
+
+
+    <p>
+
+        <strong>
+
+            Portfolio delivery path:
+
+        </strong>
+
+        Development →
+
+        GitHub →
+
+        GitHub Pages →
+
+        Cloudflare →
+
+        <strong>
+
+            tanweer.site
+
+        </strong>
+
+    </p>
+
+
+</div>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="docs-footer">
+
+    © 2026 Tanweer Ansari
+    · Network &amp; IT Support Engineer
+
+</footer>
+
+
+
+<!-- =========================================================
+     DOCUMENTATION ANIMATION SCRIPT
+========================================================= -->
+
+<script>
+
+(function () {
+
+
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+const particles =
+    document.getElementById(
+        "particles"
+    );
+
+
+if (particles) {
+
+
+    const colors = [
+
+        "#46ebff",
+
+        "#588cff",
+
+        "#a55fff",
+
+        "#ff59ae",
+
+        "#ffad4c",
+
+        "#45eba3"
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < 35;
+        i++
+    ) {
+
+
+        const particle =
+            document.createElement(
+                "span"
+            );
+
+
+        particle.className =
+            "tech-particle";
+
+
+        particle.style.setProperty(
+
+            "--left",
+
+            Math.random() *
+            100 +
+            "%"
+
+        );
+
+
+        particle.style.setProperty(
+
+            "--top",
+
+            Math.random() *
+            100 +
+            "%"
+
+        );
+
+
+        particle.style.setProperty(
+
+            "--size",
+
+            (
+                1.5 +
+                Math.random() *
+                3.5
+            ) +
+            "px"
+
+        );
+
+
+        particle.style.setProperty(
+
+            "--speed",
+
+            (
+                6 +
+                Math.random() *
+                8
+            ) +
+            "s"
+
+        );
+
+
+        particle.style.setProperty(
+
+            "--delay",
+
+            (
+                Math.random() *
+                -10
+            ) +
+            "s"
+
+        );
+
+
+        particle.style.setProperty(
+
+            "--particle-color",
+
+            colors[
+                Math.floor(
+                    Math.random() *
+                    colors.length
+                )
+            ]
+
+        );
+
+
+        particles.appendChild(
+            particle
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   CURSOR GLOW
+===================================================== */
+
+const cursorGlow =
+    document.getElementById(
+        "cursorGlow"
+    );
+
+
+if (cursorGlow) {
+
+
+    document.addEventListener(
+
+        "mousemove",
+
+        function (event) {
+
+
+            cursorGlow.style.left =
+                event.clientX +
+                "px";
+
+
+            cursorGlow.style.top =
+                event.clientY +
+                "px";
+
+
+        }
+
+    );
+
+}
+
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const revealElements =
+    document.querySelectorAll(
+        ".reveal"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+
+        function (entries) {
+
+
+            entries.forEach(
+
+                function (entry) {
+
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+
+                    }
+
+                }
+
+            );
+
+
+        },
+
+        {
+
+            threshold:
+                .12
+
+        }
+
+    );
+
+
+revealElements.forEach(
+
+    function (element) {
+
+        observer.observe(
+            element
+        );
+
+    }
+
+);
+
+
+
+/* =====================================================
+   3D CARD TILT
+===================================================== */
+
+const tiltCards =
+    document.querySelectorAll(
+        ".tilt-card"
+    );
+
+
+tiltCards.forEach(
+
+    function (card) {
+
+
+        card.addEventListener(
+
+            "mousemove",
+
+            function (event) {
+
+
+                if (
+                    window.matchMedia(
+                        "(max-width:1050px)"
+                    ).matches
+                ) {
+
+                    return;
+
+                }
+
+
+                const rect =
+                    card.getBoundingClientRect();
+
+
+                const x =
+                    event.clientX -
+                    rect.left;
+
+
+                const y =
+                    event.clientY -
+                    rect.top;
+
+
+                const rotateY =
+                    (
+                        x /
+                        rect.width -
+                        .5
+                    ) *
+                    7;
+
+
+                const rotateX =
+                    (
+                        .5 -
+                        y /
+                        rect.height
+                    ) *
+                    7;
+
+
+                card.style.transform =
+
+                    "perspective(750px) " +
+
+                    "rotateX(" +
+                    rotateX +
+                    "deg) " +
+
+                    "rotateY(" +
+                    rotateY +
+                    "deg) " +
+
+                    "translateY(-7px)";
+
+
+            }
+
+        );
+
+
+        card.addEventListener(
+
+            "mouseleave",
+
+            function () {
+
+
+                card.style.transform =
+                    "";
+
+
+            }
+
+        );
+
+
+    }
+
+);
+
+
+
+/* =====================================================
+   AUTOMATIC ARCHITECTURE FLOW
+===================================================== */
+
+const flowCards =
+    document.querySelectorAll(
+        ".flow-card"
+    );
+
+
+let activeFlow =
+    0;
+
+
+function animateArchitectureFlow() {
+
+
+    flowCards.forEach(
+
+        function (card) {
+
+
+            card.classList.remove(
+                "flow-active"
+            );
+
+
+        }
+
+    );
+
+
+    if (
+        flowCards.length
+    ) {
+
+
+        flowCards[
+            activeFlow
+        ].classList.add(
+            "flow-active"
+        );
+
+
+        activeFlow =
+            (
+                activeFlow +
+                1
+            ) %
+            flowCards.length;
+
+
+    }
+
+}
+
+
+animateArchitectureFlow();
+
+
+setInterval(
+
+    animateArchitectureFlow,
+
+    1250
+
+);
+
+
+
+/* =====================================================
+   WORKFLOW ENTRANCE
+===================================================== */
+
+const workflowItems =
+    document.querySelectorAll(
+        ".workflow-item"
+    );
+
+
+const workflowObserver =
+    new IntersectionObserver(
+
+        function (entries) {
+
+
+            entries.forEach(
+
+                function (entry) {
+
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+
+                        const items =
+                            Array.from(
+                                workflowItems
+                            );
+
+
+                        const index =
+                            items.indexOf(
+                                entry.target
+                            );
+
+
+                        entry.target.animate(
+
+                            [
+
+                                {
+
+                                    opacity:
+                                        0,
+
+                                    transform:
+                                        "translateY(25px) scale(.94)"
+
+                                },
+
+                                {
+
+                                    opacity:
+                                        1,
+
+                                    transform:
+                                        "translateY(0) scale(1)"
+
+                                }
+
+                            ],
+
+                            {
+
+                                duration:
+                                    650,
+
+                                delay:
+                                    index *
+                                    100,
+
+                                easing:
+                                    "cubic-bezier(.2,.8,.2,1)",
+
+                                fill:
+                                    "both"
+
+                            }
+
+                        );
+
+
+                        workflowObserver.unobserve(
+                            entry.target
+                        );
+
+
+                    }
+
+                }
+
+            );
+
+
+        },
+
+        {
+
+            threshold:
+                .15
+
+        }
+
+    );
+
+
+workflowItems.forEach(
+
+    function (item) {
+
+
+        workflowObserver.observe(
+            item
+        );
+
+
+    }
+
+);
+
+
+})();
+
+</script>
+
+
+
+<!-- =========================================================
+     MAIN WEBSITE SCRIPT
+========================================================= -->
+
+<script src="script.js"></script>
 
 
 </body>

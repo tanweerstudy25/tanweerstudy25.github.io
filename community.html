@@ -41,7 +41,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
           rel="stylesheet">
 
-
+<!-- MAIN WEBSITE CSS -->
+<link rel="stylesheet" href="style.css">
 <style>
 
 /* =========================================================
@@ -110,171 +111,8 @@ select {
 }
 
 
-/* =========================================================
-   NAVBAR
-========================================================= */
-
-.community-navbar {
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 9999;
-
-    width: 100%;
-
-    background:
-        rgba(5, 18, 34, .92);
-
-    backdrop-filter:
-        blur(18px);
-
-    -webkit-backdrop-filter:
-        blur(18px);
-
-    border-bottom:
-        1px solid
-        rgba(55, 182, 255, .18);
-}
 
 
-.nav-inner {
-
-    width:
-        min(1180px, 92%);
-
-    min-height:
-        76px;
-
-    margin:
-        0 auto;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    gap:
-        18px;
-}
-
-
-.logo {
-
-    font-size:
-        21px;
-
-    font-weight:
-        900;
-
-    letter-spacing:
-        .5px;
-
-    white-space:
-        nowrap;
-}
-
-
-.logo span {
-
-    background:
-        linear-gradient(
-            90deg,
-            #42eaff,
-            #5486ff,
-            #b766ff
-        );
-
-    -webkit-background-clip:
-        text;
-
-    background-clip:
-        text;
-
-    color:
-        transparent;
-}
-
-
-.nav-links {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        9px;
-
-    flex-wrap:
-        wrap;
-
-    justify-content:
-        flex-end;
-}
-
-
-.nav-links a {
-
-    padding:
-        9px 12px;
-
-    border-radius:
-        9px;
-
-    font-size:
-        12px;
-
-    font-weight:
-        700;
-
-    color:
-        #a9bdd1;
-
-    transition:
-        .25s ease;
-}
-
-
-.nav-links a:hover {
-
-    color:
-        #ffffff;
-
-    background:
-        rgba(57, 168, 255, .10);
-
-    transform:
-        translateY(-2px);
-}
-
-
-.nav-links a.active {
-
-    color:
-        #ffffff;
-
-    border:
-        1px solid
-        rgba(67, 222, 255, .48);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(20, 133, 205, .34),
-            rgba(92, 65, 200, .30)
-        );
-
-    box-shadow:
-        0 0 18px
-        rgba(55, 195, 255, .12);
-}
 
 
 /* =========================================================
@@ -1793,27 +1631,7 @@ select {
     }
 
 
-    .nav-inner {
-
-        padding:
-            12px 0;
-
-        align-items:
-            flex-start;
-
-        flex-direction:
-            column;
-    }
-
-
-    .nav-links {
-
-        width:
-            100%;
-
-        justify-content:
-            flex-start;
-    }
+   
 
 }
 
@@ -1871,14 +1689,7 @@ select {
     }
 
 
-    .nav-links a {
 
-        padding:
-            7px 8px;
-
-        font-size:
-            10px;
-    }
 
 }
 
@@ -1894,20 +1705,17 @@ select {
      NAVIGATION
 ========================================================= -->
 
-<header class="community-navbar">
+<header class="navbar">
 
-    <div class="nav-inner">
+    <div class="nav-container">
 
-
-        <a href="index.html"
-           class="logo">
-
-            TANWEER<span>.SITE</span>
-
+        <!-- LOGO -->
+        <a href="index.html" class="logo">
+            TANWEER<span>.</span>
         </a>
 
-
-        <nav class="nav-links">
+        <!-- NAVIGATION -->
+        <nav id="navMenu">
 
             <a href="index.html">
                 Home
@@ -1917,34 +1725,41 @@ select {
                 About
             </a>
 
-            <a href="skills.html">
-                Skills
-            </a>
-
             <a href="experience.html">
                 Experience
             </a>
 
-            <a href="projects.html">
-                Projects
+            <a href="certifications.html">
+                Certifications
             </a>
 
-            <a href="community.html"
-               class="active">
+            <a href="documentation.html">
+                Documentation
+            </a>
 
-                <i class="fa-solid fa-comments"></i>
-
-                Community
-
+            <a href="/contact.html">
+                Contact
             </a>
 
         </nav>
 
+        <!-- MOBILE MENU -->
+        <div class="nav-buttons">
+
+            <button
+                id="menuToggle"
+                class="menu-btn"
+                aria-label="Open Menu">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
 
     </div>
 
 </header>
-
 
 <!-- =========================================================
      HERO
@@ -3718,7 +3533,7 @@ window.setInterval(
 loadCommunityPosts();
 
 </script>
-
+<script src="script.js"></script>
 
 </body>
 

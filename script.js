@@ -401,3 +401,698 @@ document.addEventListener(
 
     }
 );
+/* =========================================================
+   4. TANWEER AI ASSISTANT
+   CLOUDFLARE WORKERS AI CHAT
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        /* =====================================================
+           CHAT ELEMENTS
+        ===================================================== */
+
+        const aiChatToggle =
+            document.getElementById(
+                "aiChatToggle"
+            );
+
+        const aiChatWindow =
+            document.getElementById(
+                "aiChatWindow"
+            );
+
+        const aiChatClose =
+            document.getElementById(
+                "aiChatClose"
+            );
+
+        const aiChatForm =
+            document.getElementById(
+                "aiChatForm"
+            );
+
+        const aiChatInput =
+            document.getElementById(
+                "aiChatInput"
+            );
+
+        const aiChatMessages =
+            document.getElementById(
+                "aiChatMessages"
+            );
+
+        const aiChatSend =
+            document.getElementById(
+                "aiChatSend"
+            );
+
+        const quickButtons =
+            document.querySelectorAll(
+                ".ai-quick-btn"
+            );
+
+
+        /* =====================================================
+           ONLY RUN ON PAGE WITH AI CHAT
+        ===================================================== */
+
+        if (
+            !aiChatToggle ||
+            !aiChatWindow ||
+            !aiChatClose ||
+            !aiChatForm ||
+            !aiChatInput ||
+            !aiChatMessages
+        ) {
+
+            return;
+
+        }
+
+
+        /* =====================================================
+           CLOUDFLARE AI WORKER
+        ===================================================== */
+
+        const AI_API_URL =
+            "https://tanweer-ai-assistant.tanweerstudy25.workers.dev/";
+
+
+        /* =====================================================
+           OPEN CHAT
+        ===================================================== */
+
+        function openAiChat() {
+
+            aiChatWindow.classList.add(
+                "is-open"
+            );
+
+            aiChatWindow.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            aiChatToggle.setAttribute(
+                "aria-expanded",
+                "true"
+            );
+
+
+            setTimeout(
+                function () {
+
+                    aiChatInput.focus();
+
+                },
+                250
+            );
+
+        }
+
+
+        /* =====================================================
+           CLOSE CHAT
+        ===================================================== */
+
+        function closeAiChat() {
+
+            aiChatWindow.classList.remove(
+                "is-open"
+            );
+
+            aiChatWindow.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            aiChatToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+        }
+
+
+        /* =====================================================
+           TOGGLE BUTTON
+        ===================================================== */
+
+        aiChatToggle.addEventListener(
+            "click",
+            function () {
+
+                const isOpen =
+                    aiChatWindow.classList.contains(
+                        "is-open"
+                    );
+
+
+                if (isOpen) {
+
+                    closeAiChat();
+
+                }
+
+                else {
+
+                    openAiChat();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           CLOSE BUTTON
+        ===================================================== */
+
+        aiChatClose.addEventListener(
+            "click",
+            closeAiChat
+        );
+
+
+        /* =====================================================
+           ESC KEY CLOSE
+        ===================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape" &&
+                    aiChatWindow.classList.contains(
+                        "is-open"
+                    )
+                ) {
+
+                    closeAiChat();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           SCROLL CHAT TO BOTTOM
+        ===================================================== */
+
+        function scrollChatBottom() {
+
+            aiChatMessages.scrollTop =
+                aiChatMessages.scrollHeight;
+
+        }
+
+
+        /* =====================================================
+           ADD USER MESSAGE
+        ===================================================== */
+
+        function addUserMessage(
+            message
+        ) {
+
+            const messageRow =
+                document.createElement(
+                    "div"
+                );
+
+
+            messageRow.className =
+                "ai-message ai-message-user";
+
+
+            const bubble =
+                document.createElement(
+                    "div"
+                );
+
+
+            bubble.className =
+                "ai-message-bubble";
+
+
+            /* SAFE TEXT - NO HTML INJECTION */
+
+            bubble.textContent =
+                message;
+
+
+            messageRow.appendChild(
+                bubble
+            );
+
+
+            aiChatMessages.appendChild(
+                messageRow
+            );
+
+
+            scrollChatBottom();
+
+        }
+
+
+        /* =====================================================
+           ADD AI MESSAGE
+        ===================================================== */
+
+        function addAiMessage(
+            message
+        ) {
+
+            const messageRow =
+                document.createElement(
+                    "div"
+                );
+
+
+            messageRow.className =
+                "ai-message ai-message-bot";
+
+
+            const icon =
+                document.createElement(
+                    "div"
+                );
+
+
+            icon.className =
+                "ai-message-icon";
+
+
+            icon.innerHTML =
+                '<i class="fa-solid fa-robot"></i>';
+
+
+            const bubble =
+                document.createElement(
+                    "div"
+                );
+
+
+            bubble.className =
+                "ai-message-bubble";
+
+
+            /* SAFE AI RESPONSE */
+
+            bubble.textContent =
+                message;
+
+
+            messageRow.appendChild(
+                icon
+            );
+
+
+            messageRow.appendChild(
+                bubble
+            );
+
+
+            aiChatMessages.appendChild(
+                messageRow
+            );
+
+
+            scrollChatBottom();
+
+        }
+
+
+        /* =====================================================
+           AI TYPING INDICATOR
+        ===================================================== */
+
+        function showTypingIndicator() {
+
+            const messageRow =
+                document.createElement(
+                    "div"
+                );
+
+
+            messageRow.className =
+                "ai-message ai-message-bot";
+
+
+            messageRow.id =
+                "aiTypingMessage";
+
+
+            const icon =
+                document.createElement(
+                    "div"
+                );
+
+
+            icon.className =
+                "ai-message-icon";
+
+
+            icon.innerHTML =
+                '<i class="fa-solid fa-robot"></i>';
+
+
+            const bubble =
+                document.createElement(
+                    "div"
+                );
+
+
+            bubble.className =
+                "ai-message-bubble";
+
+
+            const typing =
+                document.createElement(
+                    "div"
+                );
+
+
+            typing.className =
+                "ai-typing";
+
+
+            typing.innerHTML = `
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            `;
+
+
+            bubble.appendChild(
+                typing
+            );
+
+
+            messageRow.appendChild(
+                icon
+            );
+
+
+            messageRow.appendChild(
+                bubble
+            );
+
+
+            aiChatMessages.appendChild(
+                messageRow
+            );
+
+
+            scrollChatBottom();
+
+        }
+
+
+        /* =====================================================
+           REMOVE TYPING INDICATOR
+        ===================================================== */
+
+        function removeTypingIndicator() {
+
+            const typingMessage =
+                document.getElementById(
+                    "aiTypingMessage"
+                );
+
+
+            if (typingMessage) {
+
+                typingMessage.remove();
+
+            }
+
+        }
+
+
+        /* =====================================================
+           SEND BUTTON LOADING STATE
+        ===================================================== */
+
+        function setAiLoading(
+            loading
+        ) {
+
+            aiChatInput.disabled =
+                loading;
+
+
+            if (aiChatSend) {
+
+                aiChatSend.disabled =
+                    loading;
+
+
+                aiChatSend.innerHTML =
+                    loading
+
+                        ? '<i class="fa-solid fa-spinner fa-spin"></i>'
+
+                        : '<i class="fa-solid fa-paper-plane"></i>';
+
+            }
+
+        }
+
+
+        /* =====================================================
+           SEND MESSAGE TO CLOUDFLARE AI
+        ===================================================== */
+
+        async function sendMessageToAi(
+            message
+        ) {
+
+            const cleanMessage =
+                String(
+                    message || ""
+                ).trim();
+
+
+            if (!cleanMessage) {
+
+                return;
+
+            }
+
+
+            /* OPEN CHAT IF QUICK BUTTON USED */
+
+            openAiChat();
+
+
+            /* SHOW USER MESSAGE */
+
+            addUserMessage(
+                cleanMessage
+            );
+
+
+            /* CLEAR INPUT */
+
+            aiChatInput.value =
+                "";
+
+
+            /* LOADING */
+
+            setAiLoading(
+                true
+            );
+
+
+            showTypingIndicator();
+
+
+            try {
+
+                const response =
+                    await fetch(
+
+                        AI_API_URL,
+
+                        {
+
+                            method:
+                                "POST",
+
+                            headers: {
+
+                                "Content-Type":
+                                    "application/json"
+
+                            },
+
+                            body:
+                                JSON.stringify(
+                                    {
+                                        message:
+                                            cleanMessage
+                                    }
+                                )
+
+                        }
+
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                removeTypingIndicator();
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+
+                        data.error ||
+                        data.details ||
+                        "AI service unavailable"
+
+                    );
+
+                }
+
+
+                const reply =
+                    data.reply ||
+                    "Sorry, I could not generate a response.";
+
+
+                addAiMessage(
+                    reply
+                );
+
+            }
+
+
+            catch (error) {
+
+                removeTypingIndicator();
+
+
+                console.error(
+                    "Tanweer AI Assistant:",
+                    error
+                );
+
+
+                addAiMessage(
+
+                    "Sorry, I’m having trouble connecting to the AI service right now. Please try again in a moment."
+
+                );
+
+            }
+
+
+            finally {
+
+                setAiLoading(
+                    false
+                );
+
+
+                aiChatInput.focus();
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CHAT FORM SUBMIT
+        ===================================================== */
+
+        aiChatForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const message =
+                    aiChatInput.value.trim();
+
+
+                if (!message) {
+
+                    return;
+
+                }
+
+
+                sendMessageToAi(
+                    message
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           QUICK QUESTION BUTTONS
+        ===================================================== */
+
+        quickButtons.forEach(
+
+            button => {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        const question =
+                            button.getAttribute(
+                                "data-question"
+                            );
+
+
+                        if (question) {
+
+                            sendMessageToAi(
+                                question
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+
+        );
+
+
+        /* =====================================================
+           INITIAL ACCESSIBILITY STATE
+        ===================================================== */
+
+        aiChatToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+
+    }
+);
+
+
+/* =========================================================
+   TANWEER AI ASSISTANT END
+========================================================= */

@@ -13,7 +13,7 @@
 </title>
 
 <meta name="description"
-      content="Animated technology architecture and deployment documentation for Tanweer Ansari's professional portfolio website.">
+      content="Animated technology architecture and portfolio documentation for Tanweer Ansari's professional website.">
 
 
 <!-- =========================================================
@@ -25,7 +25,7 @@
 
 
 <!-- =========================================================
-     GOOGLE FONT
+     GOOGLE FONTS
 ========================================================= -->
 
 <link rel="preconnect"
@@ -55,29 +55,16 @@
 
 :root {
 
-    --cyan:
-        #46ebff;
+    --cyan: #43ebff;
+    --blue: #4f8cff;
+    --purple: #a45fff;
+    --pink: #ff58ae;
+    --orange: #ff9648;
+    --green: #42eaa0;
+    --yellow: #ffd84d;
 
-    --blue:
-        #518cff;
-
-    --purple:
-        #a762ff;
-
-    --pink:
-        #ff58ae;
-
-    --orange:
-        #ff9948;
-
-    --green:
-        #43eba3;
-
-    --text:
-        #f5f9ff;
-
-    --muted:
-        #91a7bc;
+    --text: #f5f9ff;
+    --muted: #8fa6bb;
 
 }
 
@@ -88,64 +75,58 @@
 
 * {
 
-    box-sizing:
-        border-box;
+    box-sizing: border-box;
 
 }
 
 
 html {
 
-    scroll-behavior:
-        smooth;
+    scroll-behavior: smooth;
 
 }
 
 
 body {
 
-    margin:
-        0;
+    margin: 0;
 
-    min-height:
-        100vh;
+    min-height: 100vh;
 
-    overflow-x:
-        hidden;
+    overflow-x: hidden;
 
     font-family:
         "Inter",
         Arial,
         sans-serif;
 
-    color:
-        var(--text);
+    color: var(--text);
 
     background:
 
         radial-gradient(
-            circle at 10% 12%,
+            circle at 12% 10%,
             rgba(0,220,255,.13),
-            transparent 27%
+            transparent 28%
         ),
 
         radial-gradient(
             circle at 90% 18%,
-            rgba(157,78,255,.15),
+            rgba(160,80,255,.14),
             transparent 30%
         ),
 
         radial-gradient(
-            circle at 60% 90%,
-            rgba(255,65,170,.08),
+            circle at 50% 90%,
+            rgba(255,80,175,.08),
             transparent 28%
         ),
 
         linear-gradient(
             145deg,
-            #020b16,
+            #010912,
             #04172a 48%,
-            #0c1031
+            #0c1030
         );
 
 }
@@ -153,11 +134,8 @@ body {
 
 a {
 
-    color:
-        inherit;
-
-    text-decoration:
-        none;
+    color: inherit;
+    text-decoration: none;
 
 }
 
@@ -168,36 +146,28 @@ a {
 
 .tech-universe {
 
-    position:
-        fixed;
+    position: fixed;
 
-    inset:
-        0;
+    inset: 0;
 
-    z-index:
-        -5;
+    z-index: -10;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
-    pointer-events:
-        none;
+    pointer-events: none;
 
 }
 
 
-/* GRID */
+/* MOVING GRID */
 
 .tech-universe::before {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    inset:
-        0;
+    inset: 0;
 
     background:
 
@@ -212,19 +182,18 @@ a {
             transparent 1px
         );
 
-    background-size:
-        45px 45px;
+    background-size: 44px 44px;
 
     animation:
-        gridMove
-        18s
+        universeGridMove
+        20s
         linear
         infinite;
 
 }
 
 
-@keyframes gridMove {
+@keyframes universeGridMove {
 
     from {
 
@@ -236,7 +205,7 @@ a {
     to {
 
         background-position:
-            45px 45px;
+            44px 44px;
 
     }
 
@@ -244,26 +213,22 @@ a {
 
 
 /* =========================================================
-   AURORA LIGHTS
+   AURORA
 ========================================================= */
 
 .aurora {
 
-    position:
-        absolute;
+    position: absolute;
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
-    filter:
-        blur(100px);
+    filter: blur(105px);
 
-    opacity:
-        .20;
+    opacity: .21;
 
     animation:
-        auroraMove
-        12s
+        auroraFloat
+        13s
         ease-in-out
         infinite
         alternate;
@@ -273,71 +238,48 @@ a {
 
 .aurora-one {
 
-    width:
-        430px;
+    width: 470px;
+    height: 470px;
 
-    height:
-        430px;
+    top: 5%;
+    left: -200px;
 
-    top:
-        8%;
-
-    left:
-        -170px;
-
-    background:
-        var(--cyan);
+    background: var(--cyan);
 
 }
 
 
 .aurora-two {
 
-    width:
-        520px;
+    width: 560px;
+    height: 560px;
 
-    height:
-        520px;
+    top: 25%;
+    right: -250px;
 
-    top:
-        26%;
+    background: var(--purple);
 
-    right:
-        -230px;
-
-    background:
-        var(--purple);
-
-    animation-delay:
-        -4s;
+    animation-delay: -4s;
 
 }
 
 
 .aurora-three {
 
-    width:
-        400px;
+    width: 430px;
+    height: 430px;
 
-    height:
-        400px;
+    bottom: -230px;
+    left: 34%;
 
-    bottom:
-        -220px;
+    background: var(--pink);
 
-    left:
-        36%;
-
-    background:
-        var(--pink);
-
-    animation-delay:
-        -7s;
+    animation-delay: -8s;
 
 }
 
 
-@keyframes auroraMove {
+@keyframes auroraFloat {
 
     from {
 
@@ -355,11 +297,11 @@ a {
 
         transform:
             translate3d(
-                70px,
-                -50px,
+                75px,
+                -55px,
                 0
             )
-            scale(1.18);
+            scale(1.2);
 
     }
 
@@ -372,37 +314,28 @@ a {
 
 #particles {
 
-    position:
-        absolute;
+    position: absolute;
 
-    inset:
-        0;
+    inset: 0;
 
 }
 
 
 .tech-particle {
 
-    position:
-        absolute;
+    position: absolute;
 
-    width:
-        var(--size);
+    width: var(--particle-size);
 
-    height:
-        var(--size);
+    height: var(--particle-size);
 
-    left:
-        var(--left);
+    left: var(--particle-left);
 
-    top:
-        var(--top);
+    top: var(--particle-top);
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
-    background:
-        var(--particle-color);
+    background: var(--particle-color);
 
     box-shadow:
 
@@ -412,26 +345,25 @@ a {
         0 0 18px
         var(--particle-color);
 
-    opacity:
-        .55;
-
     animation:
 
-        particleFloat
-        var(--speed)
+        particleMovement
+        var(--particle-speed)
         ease-in-out
         infinite
         alternate;
 
     animation-delay:
-        var(--delay);
+        var(--particle-delay);
 
 }
 
 
-@keyframes particleFloat {
+@keyframes particleMovement {
 
-    from {
+    0% {
+
+        opacity: .15;
 
         transform:
             translate3d(
@@ -439,25 +371,21 @@ a {
                 0,
                 0
             )
-            scale(.6);
-
-        opacity:
-            .15;
+            scale(.7);
 
     }
 
-    to {
+    100% {
+
+        opacity: .9;
 
         transform:
             translate3d(
                 35px,
-                -80px,
+                -90px,
                 0
             )
-            scale(1.4);
-
-        opacity:
-            .85;
+            scale(1.45);
 
     }
 
@@ -470,35 +398,23 @@ a {
 
 .cursor-glow {
 
-    position:
-        fixed;
+    position: fixed;
 
-    width:
-        320px;
+    width: 340px;
+    height: 340px;
 
-    height:
-        320px;
+    left: -500px;
+    top: -500px;
 
-    left:
-        -500px;
+    z-index: -3;
 
-    top:
-        -500px;
+    border-radius: 50%;
 
-    z-index:
-        -2;
+    pointer-events: none;
 
-    border-radius:
-        50%;
+    opacity: .16;
 
-    pointer-events:
-        none;
-
-    opacity:
-        .15;
-
-    filter:
-        blur(45px);
+    filter: blur(45px);
 
     transform:
         translate(
@@ -510,28 +426,28 @@ a {
 
         radial-gradient(
             circle,
-            rgba(70,235,255,.75),
-            rgba(130,85,255,.24) 45%,
-            transparent 70%
+            rgba(65,235,255,.75),
+            rgba(130,85,255,.22) 48%,
+            transparent 72%
         );
 
 }
 
 
 /* =========================================================
-   PAGE
+   PAGE CONTAINER
 ========================================================= */
 
 .docs-page {
 
     width:
         min(
-            1180px,
+            1200px,
             92%
         );
 
     margin:
-        135px auto 85px;
+        135px auto 90px;
 
 }
 
@@ -542,21 +458,17 @@ a {
 
 .reveal {
 
-    opacity:
-        0;
+    opacity: 0;
 
     transform:
-        translateY(32px)
+        translateY(30px)
         scale(.985);
 
     transition:
 
-        opacity
-        .85s
-        ease,
+        opacity .85s ease,
 
-        transform
-        .85s
+        transform .85s
         cubic-bezier(
             .2,
             .8,
@@ -569,8 +481,7 @@ a {
 
 .reveal.visible {
 
-    opacity:
-        1;
+    opacity: 1;
 
     transform:
         translateY(0)
@@ -585,38 +496,28 @@ a {
 
 .docs-hero {
 
-    position:
-        relative;
+    position: relative;
 
-    isolation:
-        isolate;
+    isolation: isolate;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
-    min-height:
-        390px;
+    min-height: 405px;
 
     padding:
         45px 30px;
 
-    display:
-        flex;
+    display: flex;
 
-    flex-direction:
-        column;
+    flex-direction: column;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        center;
+    justify-content: center;
 
-    text-align:
-        center;
+    text-align: center;
 
-    border-radius:
-        30px;
+    border-radius: 31px;
 
     border:
         1px solid
@@ -625,29 +526,29 @@ a {
     background:
 
         radial-gradient(
-            circle at 15% 20%,
+            circle at 13% 18%,
             rgba(0,225,255,.14),
             transparent 31%
         ),
 
         radial-gradient(
-            circle at 87% 22%,
-            rgba(170,80,255,.15),
-            transparent 32%
+            circle at 87% 20%,
+            rgba(170,80,255,.16),
+            transparent 31%
         ),
 
         linear-gradient(
             145deg,
-            rgba(5,28,51,.96),
-            rgba(10,16,49,.97)
+            rgba(4,27,50,.97),
+            rgba(10,15,47,.98)
         );
 
     box-shadow:
 
-        0 30px 75px
-        rgba(0,0,0,.38),
+        0 32px 80px
+        rgba(0,0,0,.40),
 
-        0 0 35px
+        0 0 45px
         rgba(0,215,255,.06),
 
         inset 0 1px 0
@@ -656,43 +557,44 @@ a {
 }
 
 
-/* HERO ROTATING BORDER */
+/* HERO ANIMATED BORDER */
 
 .docs-hero::before {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    inset:
-        -2px;
+    inset: -2px;
 
-    z-index:
-        -2;
+    z-index: -2;
 
-    border-radius:
-        inherit;
+    border-radius: inherit;
 
     background:
 
         conic-gradient(
             from 0deg,
+
             transparent 0deg,
-            var(--cyan) 55deg,
-            transparent 105deg,
-            var(--purple) 175deg,
-            transparent 230deg,
-            var(--pink) 290deg,
+
+            var(--cyan) 60deg,
+
+            transparent 110deg,
+
+            var(--purple) 180deg,
+
+            transparent 235deg,
+
+            var(--pink) 295deg,
+
             transparent 360deg
         );
 
-    opacity:
-        .42;
+    opacity: .42;
 
     animation:
-        heroBorderSpin
+        heroBorderRotation
         11s
         linear
         infinite;
@@ -702,33 +604,28 @@ a {
 
 .docs-hero::after {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    inset:
-        1px;
+    inset: 1px;
 
-    z-index:
-        -1;
+    z-index: -1;
 
-    border-radius:
-        29px;
+    border-radius: 30px;
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(5,27,50,.985),
-            rgba(10,15,47,.99)
+            rgba(4,26,48,.99),
+            rgba(10,15,47,.995)
         );
 
 }
 
 
-@keyframes heroBorderSpin {
+@keyframes heroBorderRotation {
 
     to {
 
@@ -741,90 +638,71 @@ a {
 
 
 /* =========================================================
-   HERO ORBIT
+   HERO MINI ATOM
 ========================================================= */
 
 .hero-orbit {
 
-    position:
-        relative;
+    position: relative;
 
-    width:
-        110px;
+    width: 115px;
+    height: 115px;
 
-    height:
-        110px;
+    margin-bottom: 17px;
 
-    margin-bottom:
-        18px;
+    display: flex;
 
-    display:
-        flex;
+    align-items: center;
 
-    align-items:
-        center;
-
-    justify-content:
-        center;
+    justify-content: center;
 
 }
 
 
 .hero-core {
 
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        5;
+    z-index: 5;
 
-    width:
-        58px;
+    width: 58px;
+    height: 58px;
 
-    height:
-        58px;
+    display: flex;
 
-    display:
-        flex;
+    align-items: center;
 
-    align-items:
-        center;
+    justify-content: center;
 
-    justify-content:
-        center;
+    border-radius: 18px;
 
-    border-radius:
-        17px;
+    color: #ffffff;
 
-    color:
-        #ffffff;
-
-    font-size:
-        24px;
+    font-size: 25px;
 
     border:
         1px solid
-        rgba(105,225,255,.45);
+        rgba(105,225,255,.48);
 
     background:
 
         linear-gradient(
             135deg,
             rgba(0,220,255,.22),
-            rgba(115,75,255,.33),
+            rgba(115,75,255,.35),
             rgba(255,75,170,.22)
         );
 
     box-shadow:
 
         0 0 22px
-        rgba(0,220,255,.45),
+        rgba(0,220,255,.48),
 
-        0 0 45px
-        rgba(120,80,255,.22);
+        0 0 48px
+        rgba(115,75,255,.24);
 
     animation:
-        corePulse
+        heroCorePulse
         2.5s
         ease-in-out
         infinite;
@@ -832,7 +710,7 @@ a {
 }
 
 
-@keyframes corePulse {
+@keyframes heroCorePulse {
 
     0%,
     100% {
@@ -859,30 +737,25 @@ a {
 
 .hero-ring {
 
-    position:
-        absolute;
+    position: absolute;
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
 }
 
 
 .hero-ring-one {
 
-    width:
-        89px;
-
-    height:
-        89px;
+    width: 90px;
+    height: 90px;
 
     border:
         1px dashed
         rgba(70,230,255,.65);
 
     animation:
-        orbitForward
-        7s
+        heroOrbitForward
+        6s
         linear
         infinite;
 
@@ -891,40 +764,16 @@ a {
 
 .hero-ring-two {
 
-    width:
-        112px;
-
-    height:
-        112px;
+    width: 116px;
+    height: 116px;
 
     border:
         1px solid
         rgba(170,85,255,.42);
 
     animation:
-        orbitReverse
-        10s
-        linear
-        infinite;
-
-}
-
-
-.hero-ring-three {
-
-    width:
-        135px;
-
-    height:
-        135px;
-
-    border:
-        1px dotted
-        rgba(255,90,180,.20);
-
-    animation:
-        orbitForward
-        15s
+        heroOrbitReverse
+        9s
         linear
         infinite;
 
@@ -932,32 +781,21 @@ a {
 
 
 .hero-ring-one::before,
-.hero-ring-two::before,
-.hero-ring-three::before {
+.hero-ring-two::before {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    width:
-        8px;
+    width: 8px;
+    height: 8px;
 
-    height:
-        8px;
+    top: -4px;
+    left: 50%;
 
-    top:
-        -4px;
+    border-radius: 50%;
 
-    left:
-        50%;
-
-    border-radius:
-        50%;
-
-    background:
-        var(--cyan);
+    background: var(--cyan);
 
     box-shadow:
 
@@ -972,8 +810,7 @@ a {
 
 .hero-ring-two::before {
 
-    background:
-        var(--pink);
+    background: var(--pink);
 
     box-shadow:
 
@@ -986,23 +823,7 @@ a {
 }
 
 
-.hero-ring-three::before {
-
-    background:
-        var(--green);
-
-    box-shadow:
-
-        0 0 8px
-        var(--green),
-
-        0 0 18px
-        var(--green);
-
-}
-
-
-@keyframes orbitForward {
+@keyframes heroOrbitForward {
 
     to {
 
@@ -1014,7 +835,7 @@ a {
 }
 
 
-@keyframes orbitReverse {
+@keyframes heroOrbitReverse {
 
     to {
 
@@ -1027,40 +848,29 @@ a {
 
 
 /* =========================================================
-   HERO LABEL
+   HERO TEXT
 ========================================================= */
 
 .docs-label {
 
-    margin-top:
-        7px;
+    display: inline-flex;
 
-    display:
-        inline-flex;
+    align-items: center;
 
-    align-items:
-        center;
-
-    gap:
-        8px;
+    gap: 8px;
 
     padding:
         8px 14px;
 
-    border-radius:
-        999px;
+    border-radius: 999px;
 
-    color:
-        var(--cyan);
+    color: var(--cyan);
 
-    font-size:
-        10px;
+    font-size: 10px;
 
-    font-weight:
-        900;
+    font-weight: 900;
 
-    letter-spacing:
-        1.5px;
+    letter-spacing: 1.5px;
 
     border:
         1px solid
@@ -1069,25 +879,21 @@ a {
     background:
         rgba(70,230,255,.055);
 
-    box-shadow:
-        0 0 18px
-        rgba(0,215,255,.07);
-
 }
 
 
 .docs-label i {
 
     animation:
-        labelBlink
-        1.8s
+        labelGlow
+        1.7s
         ease-in-out
         infinite;
 
 }
 
 
-@keyframes labelBlink {
+@keyframes labelGlow {
 
     50% {
 
@@ -1097,17 +903,13 @@ a {
 
             drop-shadow(
                 0 0 8px
-                currentColor
+                var(--cyan)
             );
 
     }
 
 }
 
-
-/* =========================================================
-   HERO TITLE
-========================================================= */
 
 .docs-hero h1 {
 
@@ -1120,16 +922,14 @@ a {
 
     font-size:
         clamp(
-            42px,
+            43px,
             5.4vw,
-            66px
+            67px
         );
 
-    line-height:
-        1.03;
+    line-height: 1.03;
 
-    letter-spacing:
-        -2.5px;
+    letter-spacing: -2.5px;
 
 }
 
@@ -1140,29 +940,25 @@ a {
 
         linear-gradient(
             90deg,
-            #46ebff,
+            #47ebff,
             #568fff,
-            #a45fff,
-            #ff58ae,
-            #ffb04e,
-            #46ebff
+            #a65fff,
+            #ff59af,
+            #ffb14d,
+            #47ebff
         );
 
     background-size:
-        300%
-        auto;
+        320% auto;
 
-    -webkit-background-clip:
-        text;
+    -webkit-background-clip: text;
 
-    background-clip:
-        text;
+    background-clip: text;
 
-    color:
-        transparent;
+    color: transparent;
 
     animation:
-        gradientFlow
+        titleGradientMovement
         6s
         linear
         infinite;
@@ -1170,7 +966,7 @@ a {
 }
 
 
-@keyframes gradientFlow {
+@keyframes titleGradientMovement {
 
     from {
 
@@ -1183,7 +979,7 @@ a {
     to {
 
         background-position:
-            300%
+            320%
             center;
 
     }
@@ -1193,263 +989,112 @@ a {
 
 .docs-hero > p {
 
-    max-width:
-        800px;
+    max-width: 800px;
 
     margin:
         0 auto;
 
-    color:
-        #9fb4c7;
+    color: #a2b6c8;
 
-    font-size:
-        14px;
+    font-size: 14px;
 
-    line-height:
-        1.8;
+    line-height: 1.8;
 
 }
 
 
 /* =========================================================
-   HERO STACK
+   LANGUAGE HIGHLIGHT SECTION
 ========================================================= */
 
-.docs-stack {
+.language-section {
 
-    margin-top:
-        23px;
+    position: relative;
 
-    display:
-        flex;
+    overflow: hidden;
 
-    flex-wrap:
-        wrap;
-
-    justify-content:
-        center;
-
-    gap:
-        9px;
-
-}
-
-
-.docs-stack span {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    gap:
-        7px;
+    margin-top: 25px;
 
     padding:
-        9px 12px;
+        30px;
 
-    border-radius:
-        10px;
-
-    color:
-        #cee8f7;
-
-    font-size:
-        9px;
-
-    font-weight:
-        800;
+    border-radius: 26px;
 
     border:
         1px solid
-        rgba(255,255,255,.08);
-
-    background:
-        rgba(255,255,255,.035);
-
-    box-shadow:
-
-        inset 0 1px 0
-        rgba(255,255,255,.04);
-
-    animation:
-        chipFloat
-        3.3s
-        ease-in-out
-        infinite;
-
-}
-
-
-.docs-stack span:nth-child(2) {
-
-    animation-delay:
-        -.9s;
-
-}
-
-
-.docs-stack span:nth-child(3) {
-
-    animation-delay:
-        -1.8s;
-
-}
-
-
-.docs-stack i {
-
-    color:
-        var(--cyan);
-
-}
-
-
-@keyframes chipFloat {
-
-    50% {
-
-        transform:
-            translateY(-5px);
-
-    }
-
-}
-
-
-/* =========================================================
-   GENERAL SECTION
-========================================================= */
-
-.docs-section {
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    margin-top:
-        24px;
-
-    padding:
-        29px;
-
-    border-radius:
-        25px;
-
-    border:
-        1px solid
-        rgba(85,190,255,.21);
+        rgba(82,190,255,.22);
 
     background:
 
         radial-gradient(
-            circle at 8% 15%,
-            rgba(0,220,255,.06),
-            transparent 25%
+            circle at 15% 40%,
+            rgba(255,95,65,.08),
+            transparent 27%
         ),
 
         radial-gradient(
-            circle at 95% 85%,
-            rgba(165,75,255,.06),
-            transparent 28%
+            circle at 50% 40%,
+            rgba(55,160,255,.08),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 85% 40%,
+            rgba(255,215,70,.07),
+            transparent 27%
         ),
 
         linear-gradient(
             145deg,
-            rgba(7,28,49,.95),
-            rgba(7,19,42,.96)
+            rgba(7,29,50,.96),
+            rgba(8,18,42,.97)
         );
 
     box-shadow:
 
         0 22px 55px
-        rgba(0,0,0,.20),
+        rgba(0,0,0,.22),
 
         inset 0 1px 0
-        rgba(255,255,255,.045);
+        rgba(255,255,255,.05);
 
 }
 
 
-/* MOVING GRID */
+/* SCANNING LIGHT */
 
-.docs-section::before {
+.language-section::after {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    inset:
-        0;
+    top: 0;
 
-    pointer-events:
-        none;
+    left: -35%;
 
-    background:
+    width: 25%;
 
-        linear-gradient(
-            rgba(255,255,255,.014) 1px,
-            transparent 1px
-        ),
+    height: 100%;
 
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.014) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        31px 31px;
-
-}
-
-
-/* SCANNER */
-
-.docs-section::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    top:
-        0;
-
-    left:
-        -35%;
-
-    width:
-        28%;
-
-    height:
-        100%;
-
-    pointer-events:
-        none;
+    pointer-events: none;
 
     background:
 
         linear-gradient(
             90deg,
             transparent,
-            rgba(60,220,255,.02),
-            rgba(70,230,255,.07),
+            rgba(255,255,255,.03),
+            rgba(70,230,255,.08),
             rgba(160,80,255,.07),
             transparent
         );
 
     transform:
-        skewX(-18deg);
+        skewX(-20deg);
 
     animation:
-        scannerMove
+        sectionScanner
         7s
         linear
         infinite;
@@ -1457,104 +1102,479 @@ a {
 }
 
 
-@keyframes scannerMove {
+@keyframes sectionScanner {
 
     from {
 
-        left:
-            -35%;
+        left: -35%;
 
     }
 
     to {
 
-        left:
-            130%;
+        left: 130%;
 
     }
 
 }
 
 
-/* =========================================================
-   SECTION HEADER
-========================================================= */
+.section-header {
 
-.docs-section-title {
+    position: relative;
 
-    position:
-        relative;
+    z-index: 3;
 
-    z-index:
-        5;
+    display: flex;
 
-    display:
-        flex;
+    align-items: center;
 
-    align-items:
-        center;
+    justify-content: space-between;
 
-    justify-content:
-        space-between;
+    gap: 15px;
 
-    gap:
-        16px;
-
-    margin-bottom:
-        23px;
+    margin-bottom: 23px;
 
 }
 
 
-.docs-section-title h2 {
+.section-header h2 {
 
-    margin:
-        0;
+    margin: 0;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        10px;
+    gap: 10px;
 
     font-family:
         "Space Grotesk",
         sans-serif;
 
-    font-size:
-        21px;
+    font-size: 22px;
 
 }
 
 
-.docs-section-title h2 i {
+.section-header h2 i {
 
-    color:
-        var(--cyan);
+    color: var(--cyan);
 
     filter:
 
         drop-shadow(
             0 0 7px
-            rgba(70,235,255,.45)
+            rgba(70,235,255,.50)
         );
 
 }
 
 
-.docs-section-title p {
+.section-header p {
 
-    margin:
-        0;
+    margin: 0;
+
+    color: #71899e;
+
+    font-size: 9px;
+
+}
+
+
+/* =========================================================
+   LANGUAGE CARDS
+========================================================= */
+
+.language-grid {
+
+    position: relative;
+
+    z-index: 3;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 17px;
+
+}
+
+
+.language-card {
+
+    --language-color:
+        var(--cyan);
+
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 205px;
+
+    padding:
+        25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 19px;
+
+    border-radius: 21px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.05),
+            rgba(255,255,255,.012)
+        );
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.06),
+
+        0 15px 35px
+        rgba(0,0,0,.16);
+
+    transition:
+
+        transform .35s ease,
+
+        border-color .35s ease,
+
+        box-shadow .35s ease;
+
+}
+
+
+.language-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 10%;
+    right: 10%;
+    top: 0;
+
+    height: 3px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--language-color),
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 15px
+        var(--language-color);
+
+}
+
+
+.language-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -110px;
+    bottom: -120px;
+
+    border-radius: 50%;
+
+    background:
+        var(--language-color);
+
+    opacity: .07;
+
+    filter: blur(30px);
+
+}
+
+
+.language-card:hover {
+
+    transform:
+        translateY(-9px)
+        scale(1.018);
+
+    border-color:
+        var(--language-color);
+
+    box-shadow:
+
+        0 22px 42px
+        rgba(0,0,0,.28),
+
+        0 0 28px
+        color-mix(
+            in srgb,
+            var(--language-color) 20%,
+            transparent
+        );
+
+}
+
+
+.html-card {
+
+    --language-color:
+        #ff6a45;
+
+}
+
+
+.css-card {
+
+    --language-color:
+        #47a5ff;
+
+}
+
+
+.js-card {
+
+    --language-color:
+        #ffd84c;
+
+}
+
+
+.language-logo {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 85px;
+    height: 85px;
+
+    flex:
+        0 0 85px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 24px;
 
     color:
-        #70889d;
+        var(--language-color);
 
-    font-size:
-        9px;
+    font-size: 48px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.11);
+
+    background:
+        rgba(255,255,255,.04);
+
+    box-shadow:
+
+        0 0 22px
+        color-mix(
+            in srgb,
+            var(--language-color) 25%,
+            transparent
+        );
+
+    animation:
+        languageLogoFloat
+        3s
+        ease-in-out
+        infinite;
+
+}
+
+
+.css-card
+.language-logo {
+
+    animation-delay: -.9s;
+
+}
+
+
+.js-card
+.language-logo {
+
+    animation-delay: -1.8s;
+
+}
+
+
+@keyframes languageLogoFloat {
+
+    50% {
+
+        transform:
+            translateY(-7px)
+            rotateY(12deg);
+
+        filter:
+            brightness(1.25);
+
+    }
+
+}
+
+
+.language-content {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.language-content small {
+
+    color:
+        var(--language-color);
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.language-content h3 {
+
+    margin:
+        6px 0 7px;
+
+    color: #ffffff;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 24px;
+
+}
+
+
+.language-content p {
+
+    margin: 0;
+
+    color: #8ca3b8;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   CORE ARCHITECTURE
+========================================================= */
+
+.architecture-section {
+
+    position: relative;
+
+    overflow: hidden;
+
+    margin-top: 25px;
+
+    padding:
+        30px;
+
+    border-radius: 26px;
+
+    border:
+        1px solid
+        rgba(82,190,255,.21);
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(0,220,255,.06),
+            transparent 26%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(165,80,255,.06),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(7,29,50,.96),
+            rgba(8,18,42,.97)
+        );
+
+    box-shadow:
+
+        0 22px 55px
+        rgba(0,0,0,.20);
+
+}
+
+
+.architecture-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -35%;
+
+    width: 28%;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(70,230,255,.03),
+            rgba(70,230,255,.08),
+            rgba(165,80,255,.07),
+            transparent
+        );
+
+    transform:
+        skewX(-18deg);
+
+    animation:
+        sectionScanner
+        7.5s
+        linear
+        infinite;
 
 }
 
@@ -1565,14 +1585,11 @@ a {
 
 .architecture-flow {
 
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        5;
+    z-index: 3;
 
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
 
@@ -1594,53 +1611,38 @@ a {
 
         minmax(150px,1fr);
 
-    gap:
-        6px;
+    gap: 6px;
 
-    align-items:
-        stretch;
+    align-items: stretch;
 
 }
 
-
-/* =========================================================
-   FLOW CARDS
-========================================================= */
 
 .flow-card {
 
     --accent:
         var(--cyan);
 
-    position:
-        relative;
+    position: relative;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
-    min-height:
-        175px;
+    min-height: 180px;
 
     padding:
         21px 14px;
 
-    display:
-        flex;
+    display: flex;
 
-    flex-direction:
-        column;
+    flex-direction: column;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        center;
+    justify-content: center;
 
-    text-align:
-        center;
+    text-align: center;
 
-    border-radius:
-        19px;
+    border-radius: 19px;
 
     border:
         1px solid
@@ -1662,9 +1664,6 @@ a {
         0 12px 25px
         rgba(0,0,0,.14);
 
-    transform-style:
-        preserve-3d;
-
     transition:
 
         transform .35s ease,
@@ -1678,27 +1677,17 @@ a {
 }
 
 
-/* TOP ENERGY LINE */
-
 .flow-card::before {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    top:
-        0;
+    left: 15%;
+    right: 15%;
+    top: 0;
 
-    left:
-        15%;
-
-    right:
-        15%;
-
-    height:
-        2px;
+    height: 2px;
 
     background:
 
@@ -1711,36 +1700,23 @@ a {
 
     box-shadow:
 
-        0 0 10px
+        0 0 12px
         var(--accent);
-
-    opacity:
-        .7;
 
 }
 
 
-/* LIGHT SWEEP */
-
 .flow-card::after {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        -80%;
+    left: -80%;
+    top: -40%;
 
-    top:
-        -40%;
-
-    width:
-        38%;
-
-    height:
-        180%;
+    width: 38%;
+    height: 180%;
 
     background:
 
@@ -1755,17 +1731,14 @@ a {
         rotate(20deg);
 
     transition:
-        left
-        .7s
-        ease;
+        left .7s ease;
 
 }
 
 
 .flow-card:hover::after {
 
-    left:
-        145%;
+    left: 145%;
 
 }
 
@@ -1773,9 +1746,7 @@ a {
 .flow-card:hover {
 
     transform:
-
         translateY(-9px)
-
         scale(1.025);
 
     border-color:
@@ -1802,97 +1773,73 @@ a {
         var(--accent);
 
     filter:
-        brightness(1.18);
+        brightness(1.2);
 
     box-shadow:
 
         0 0 22px
         color-mix(
             in srgb,
-            var(--accent) 23%,
+            var(--accent) 25%,
             transparent
-        ),
-
-        inset 0 0 20px
-        rgba(255,255,255,.02);
+        );
 
 }
 
 
-/* CARD COLORS */
-
 .development-card {
 
-    --accent:
-        #46ebff;
+    --accent: #46ebff;
 
 }
 
 
 .github-card {
 
-    --accent:
-        #eef3f8;
+    --accent: #edf2f7;
 
 }
 
 
 .pages-card {
 
-    --accent:
-        #528dff;
+    --accent: #538dff;
 
 }
 
 
 .cloudflare-card {
 
-    --accent:
-        #ff9848;
+    --accent: #ff9848;
 
 }
 
 
 .domain-card {
 
-    --accent:
-        #ad63ff;
+    --accent: #ad62ff;
 
 }
 
 
-/* =========================================================
-   FLOW ICON
-========================================================= */
-
 .flow-icon {
 
-    width:
-        54px;
+    width: 55px;
+    height: 55px;
 
-    height:
-        54px;
+    margin-bottom: 12px;
 
-    margin-bottom:
-        12px;
+    display: flex;
 
-    display:
-        flex;
+    align-items: center;
 
-    align-items:
-        center;
+    justify-content: center;
 
-    justify-content:
-        center;
+    border-radius: 15px;
 
-    border-radius:
-        15px;
+    color: var(--accent);
 
-    color:
-        var(--accent);
-
-    font-size:
-        22px;
+    font-size: 23px;
 
     border:
         1px solid
@@ -1906,12 +1853,12 @@ a {
         0 0 18px
         color-mix(
             in srgb,
-            var(--accent) 17%,
+            var(--accent) 18%,
             transparent
         );
 
     animation:
-        iconFloat
+        flowIconFloat
         3s
         ease-in-out
         infinite;
@@ -1919,7 +1866,7 @@ a {
 }
 
 
-@keyframes iconFloat {
+@keyframes flowIconFloat {
 
     50% {
 
@@ -1934,34 +1881,26 @@ a {
 
 .flow-card small {
 
-    color:
-        var(--accent);
+    color: var(--accent);
 
-    font-size:
-        8px;
+    font-size: 8px;
 
-    font-weight:
-        900;
+    font-weight: 900;
 
-    letter-spacing:
-        1.2px;
+    letter-spacing: 1.2px;
 
 }
 
 
 .flow-card strong {
 
-    display:
-        block;
+    display: block;
 
-    margin-top:
-        6px;
+    margin-top: 6px;
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
-    font-size:
-        13px;
+    font-size: 13px;
 
 }
 
@@ -1971,52 +1910,40 @@ a {
     margin:
         8px 0 0;
 
-    color:
-        #7d94a9;
+    color: #7d94a9;
 
-    font-size:
-        9px;
+    font-size: 9px;
 
-    line-height:
-        1.55;
+    line-height: 1.55;
 
 }
 
 
 /* =========================================================
-   FLOW CONNECTORS
+   DATA CONNECTORS
 ========================================================= */
 
 .flow-arrow {
 
-    position:
-        relative;
+    position: relative;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        center;
+    justify-content: center;
 
 }
 
 
 .flow-arrow::before {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    width:
-        100%;
-
-    height:
-        2px;
+    width: 100%;
+    height: 2px;
 
     background:
         rgba(70,220,255,.15);
@@ -2026,23 +1953,16 @@ a {
 
 .flow-arrow::after {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    left:
-        -35%;
+    left: -35%;
 
-    width:
-        35%;
+    width: 35%;
+    height: 3px;
 
-    height:
-        3px;
-
-    border-radius:
-        999px;
+    border-radius: 999px;
 
     background:
 
@@ -2063,8 +1983,8 @@ a {
         rgba(120,90,255,.65);
 
     animation:
-        packetMove
-        1.3s
+        dataPacketMove
+        1.2s
         linear
         infinite;
 
@@ -2073,44 +1993,30 @@ a {
 
 .flow-arrow i {
 
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        3;
+    z-index: 2;
 
-    margin-left:
-        auto;
+    margin-left: auto;
 
-    color:
-        var(--cyan);
+    color: var(--cyan);
 
-    font-size:
-        11px;
-
-    filter:
-
-        drop-shadow(
-            0 0 5px
-            var(--cyan)
-        );
+    font-size: 11px;
 
 }
 
 
-@keyframes packetMove {
+@keyframes dataPacketMove {
 
     from {
 
-        left:
-            -35%;
+        left: -35%;
 
     }
 
     to {
 
-        left:
-            100%;
+        left: 100%;
 
     }
 
@@ -2118,19 +2024,1080 @@ a {
 
 
 /* =========================================================
-   SERVICES
+   ATOM SECTION
 ========================================================= */
 
-.services-grid {
+.atom-section {
 
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        5;
+    overflow: hidden;
 
-    display:
-        grid;
+    margin-top: 25px;
+
+    min-height: 900px;
+
+    padding:
+        30px;
+
+    border-radius: 30px;
+
+    border:
+        1px solid
+        rgba(90,200,255,.24);
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(80,75,255,.13),
+            transparent 24%
+        ),
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0,220,255,.07),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255,70,170,.07),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(5,26,48,.97),
+            rgba(8,15,42,.98)
+        );
+
+    box-shadow:
+
+        0 32px 80px
+        rgba(0,0,0,.30),
+
+        inset 0 1px 0
+        rgba(255,255,255,.06);
+
+}
+
+
+.atom-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            rgba(255,255,255,.015) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.015) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        32px 32px;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   ATOM HEADER
+========================================================= */
+
+.atom-header {
+
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.atom-header h2 {
+
+    margin: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 23px;
+
+}
+
+
+.atom-header h2 i {
+
+    color: var(--cyan);
+
+    animation:
+        atomIconPulse
+        2s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes atomIconPulse {
+
+    50% {
+
+        transform:
+            rotate(20deg)
+            scale(1.18);
+
+        filter:
+
+            drop-shadow(
+                0 0 9px
+                var(--cyan)
+            );
+
+    }
+
+}
+
+
+.atom-header p {
+
+    margin: 0;
+
+    color: #71899e;
+
+    font-size: 9px;
+
+}
+
+
+/* =========================================================
+   ATOM STAGE
+========================================================= */
+
+.atom-stage {
+
+    position: relative;
+
+    width:
+        min(
+            900px,
+            100%
+        );
+
+    height: 760px;
+
+    margin:
+        0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    perspective: 1200px;
+
+}
+
+
+/* =========================================================
+   NUCLEUS
+========================================================= */
+
+.atom-nucleus {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    z-index: 20;
+
+    width: 170px;
+    height: 170px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    text-align: center;
+
+    border:
+        2px solid
+        rgba(100,230,255,.55);
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(80,235,255,.36),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 70% 75%,
+            rgba(180,80,255,.32),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            145deg,
+            #092d50,
+            #141347
+        );
+
+    box-shadow:
+
+        0 0 30px
+        rgba(70,230,255,.55),
+
+        0 0 70px
+        rgba(100,90,255,.30),
+
+        0 0 110px
+        rgba(255,75,180,.14),
+
+        inset 0 0 24px
+        rgba(255,255,255,.08);
+
+    animation:
+        nucleusPulse
+        2.4s
+        ease-in-out
+        infinite;
+
+}
+
+
+.atom-nucleus::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -13px;
+
+    border-radius: 50%;
+
+    border:
+        1px dashed
+        rgba(70,230,255,.38);
+
+    animation:
+        nucleusHaloRotation
+        8s
+        linear
+        infinite;
+
+}
+
+
+.atom-nucleus::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -28px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(170,80,255,.18);
+
+    animation:
+        nucleusHaloRotationReverse
+        11s
+        linear
+        infinite;
+
+}
+
+
+.atom-nucleus i {
+
+    margin-bottom: 8px;
+
+    color: var(--cyan);
+
+    font-size: 26px;
+
+}
+
+
+.atom-nucleus strong {
+
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 20px;
+
+    color: #ffffff;
+
+}
+
+
+.atom-nucleus span {
+
+    margin-top: 4px;
+
+    color: #8ddff2;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+@keyframes nucleusPulse {
+
+    0%,
+    100% {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            scale(1.06);
+
+        filter:
+            brightness(1.22);
+
+    }
+
+}
+
+
+@keyframes nucleusHaloRotation {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes nucleusHaloRotationReverse {
+
+    to {
+
+        transform:
+            rotate(-360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   GENERIC ORBIT
+========================================================= */
+
+.atom-orbit {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border-radius: 50%;
+
+    transform-origin: center center;
+
+}
+
+
+/* =========================================================
+   INNER ORBIT
+   Namecheap / GA4 / GoatCounter
+========================================================= */
+
+.atom-orbit-inner {
+
+    width: 390px;
+    height: 390px;
+
+    margin-left: -195px;
+    margin-top: -195px;
+
+    border:
+        1px solid
+        rgba(75,235,170,.30);
+
+    box-shadow:
+
+        inset 0 0 30px
+        rgba(70,235,160,.025),
+
+        0 0 20px
+        rgba(70,235,160,.035);
+
+    animation:
+        orbitInnerRotation
+        15s
+        linear
+        infinite;
+
+}
+
+
+@keyframes orbitInnerRotation {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   MIDDLE ORBIT
+   GitHub / GitHub Repo / GitHub Pages / Cloudflare
+========================================================= */
+
+.atom-orbit-middle {
+
+    width: 570px;
+    height: 570px;
+
+    margin-left: -285px;
+    margin-top: -285px;
+
+    border:
+        1px dashed
+        rgba(85,145,255,.32);
+
+    box-shadow:
+
+        inset 0 0 35px
+        rgba(85,145,255,.025),
+
+        0 0 22px
+        rgba(85,145,255,.035);
+
+    animation:
+        orbitMiddleRotation
+        21s
+        linear
+        infinite;
+
+}
+
+
+@keyframes orbitMiddleRotation {
+
+    to {
+
+        transform:
+            rotate(-360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   OUTER ORBIT
+   HTML / CSS / JS
+========================================================= */
+
+.atom-orbit-outer {
+
+    width: 735px;
+    height: 735px;
+
+    margin-left: -367.5px;
+    margin-top: -367.5px;
+
+    border:
+        1px dotted
+        rgba(255,110,190,.30);
+
+    box-shadow:
+
+        inset 0 0 40px
+        rgba(255,80,175,.02),
+
+        0 0 28px
+        rgba(255,80,175,.03);
+
+    animation:
+        orbitOuterRotation
+        11s
+        linear
+        infinite;
+
+}
+
+
+@keyframes orbitOuterRotation {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   ORBIT NODE HOLDERS
+========================================================= */
+
+.orbit-node {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 1px;
+    height: 1px;
+
+    transform:
+
+        rotate(
+            var(--angle)
+        )
+
+        translateX(
+            var(--radius)
+        );
+
+    transform-origin:
+        0 0;
+
+}
+
+
+/* =========================================================
+   ORBIT CHIPS
+========================================================= */
+
+.orbit-chip {
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    min-width: 92px;
+
+    padding:
+        8px 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    border-radius: 12px;
+
+    white-space: nowrap;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    color: #e8f5ff;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    background:
+        rgba(6,24,43,.94);
+
+    box-shadow:
+
+        0 9px 22px
+        rgba(0,0,0,.28),
+
+        inset 0 1px 0
+        rgba(255,255,255,.05);
+
+}
+
+
+/* INNER CHIP COUNTER ROTATION */
+
+.atom-orbit-inner
+.orbit-chip {
+
+    animation:
+        chipCounterInner
+        15s
+        linear
+        infinite;
+
+}
+
+
+@keyframes chipCounterInner {
+
+    from {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(
+                calc(
+                    -1 *
+                    var(--angle)
+                )
+            );
+
+    }
+
+    to {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(
+                calc(
+                    -360deg -
+                    var(--angle)
+                )
+            );
+
+    }
+
+}
+
+
+/* MIDDLE CHIP COUNTER ROTATION */
+
+.atom-orbit-middle
+.orbit-chip {
+
+    animation:
+        chipCounterMiddle
+        21s
+        linear
+        infinite;
+
+}
+
+
+@keyframes chipCounterMiddle {
+
+    from {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(
+                calc(
+                    -1 *
+                    var(--angle)
+                )
+            );
+
+    }
+
+    to {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(
+                calc(
+                    360deg -
+                    var(--angle)
+                )
+            );
+
+    }
+
+}
+
+
+/* OUTER CHIP COUNTER ROTATION */
+
+.atom-orbit-outer
+.orbit-chip {
+
+    animation:
+        chipCounterOuter
+        11s
+        linear
+        infinite;
+
+}
+
+
+@keyframes chipCounterOuter {
+
+    from {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(
+                calc(
+                    -1 *
+                    var(--angle)
+                )
+            );
+
+    }
+
+    to {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(
+                calc(
+                    -360deg -
+                    var(--angle)
+                )
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   CHIP ICON COLORS
+========================================================= */
+
+.orbit-chip i {
+
+    font-size: 14px;
+
+}
+
+
+.chip-namecheap {
+
+    border-color:
+        rgba(255,125,60,.35);
+
+    box-shadow:
+
+        0 0 18px
+        rgba(255,125,60,.10);
+
+}
+
+
+.chip-namecheap i {
+
+    color: #ff8748;
+
+}
+
+
+.chip-ga {
+
+    border-color:
+        rgba(255,185,70,.34);
+
+}
+
+
+.chip-ga i {
+
+    color: #ffba4f;
+
+}
+
+
+.chip-goat {
+
+    border-color:
+        rgba(65,235,160,.34);
+
+}
+
+
+.chip-goat i {
+
+    color: var(--green);
+
+}
+
+
+.chip-github {
+
+    border-color:
+        rgba(235,240,248,.24);
+
+}
+
+
+.chip-github i {
+
+    color: #f1f4f8;
+
+}
+
+
+.chip-pages {
+
+    border-color:
+        rgba(80,145,255,.36);
+
+}
+
+
+.chip-pages i {
+
+    color: #5b96ff;
+
+}
+
+
+.chip-cloudflare {
+
+    border-color:
+        rgba(255,145,65,.36);
+
+}
+
+
+.chip-cloudflare i {
+
+    color: var(--orange);
+
+}
+
+
+.chip-html {
+
+    border-color:
+        rgba(255,105,70,.42);
+
+    box-shadow:
+
+        0 0 22px
+        rgba(255,105,70,.12);
+
+}
+
+
+.chip-html i {
+
+    color: #ff6b47;
+
+}
+
+
+.chip-css {
+
+    border-color:
+        rgba(70,165,255,.42);
+
+    box-shadow:
+
+        0 0 22px
+        rgba(70,165,255,.12);
+
+}
+
+
+.chip-css i {
+
+    color: #49a5ff;
+
+}
+
+
+.chip-js {
+
+    border-color:
+        rgba(255,215,70,.42);
+
+    box-shadow:
+
+        0 0 22px
+        rgba(255,215,70,.12);
+
+}
+
+
+.chip-js i {
+
+    color: #ffd84d;
+
+}
+
+
+/* =========================================================
+   ELECTRON DOTS
+========================================================= */
+
+.atom-orbit::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: -5px;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+
+        0 0 10px
+        var(--cyan),
+
+        0 0 22px
+        var(--cyan);
+
+}
+
+
+.atom-orbit-inner::after {
+
+    background: var(--green);
+
+    box-shadow:
+
+        0 0 10px
+        var(--green),
+
+        0 0 22px
+        var(--green);
+
+}
+
+
+.atom-orbit-middle::after {
+
+    background: var(--blue);
+
+    box-shadow:
+
+        0 0 10px
+        var(--blue),
+
+        0 0 22px
+        var(--blue);
+
+}
+
+
+.atom-orbit-outer::after {
+
+    background: var(--pink);
+
+    box-shadow:
+
+        0 0 10px
+        var(--pink),
+
+        0 0 22px
+        var(--pink);
+
+}
+
+
+/* =========================================================
+   ATOM LEGEND
+========================================================= */
+
+.atom-legend {
+
+    position: relative;
+
+    z-index: 10;
+
+    margin:
+        0 auto;
+
+    max-width: 820px;
+
+    display: grid;
 
     grid-template-columns:
         repeat(
@@ -2138,534 +3105,103 @@ a {
             1fr
         );
 
-    gap:
-        14px;
+    gap: 11px;
 
 }
 
 
-.service-item {
-
-    --service:
-        var(--orange);
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    min-height:
-        110px;
+.legend-item {
 
     padding:
-        20px;
+        12px 14px;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        14px;
+    gap: 10px;
 
-    border-radius:
-        18px;
+    border-radius: 13px;
 
     border:
         1px solid
         rgba(255,255,255,.07);
 
     background:
-
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.045),
-            rgba(255,255,255,.012)
-        );
-
-    transition:
-
-        transform .35s ease,
-
-        border-color .35s ease,
-
-        box-shadow .35s ease;
+        rgba(255,255,255,.025);
 
 }
 
 
-.service-item::before {
+.legend-dot {
 
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        170px;
-
-    height:
-        170px;
-
-    right:
-        -105px;
-
-    top:
-        -100px;
-
-    border-radius:
-        50%;
-
-    background:
-        var(--service);
-
-    opacity:
-        .08;
-
-    filter:
-        blur(25px);
-
-    transition:
-        .4s ease;
-
-}
-
-
-.service-item:hover {
-
-    transform:
-        translateY(-7px)
-        scale(1.015);
-
-    border-color:
-        var(--service);
-
-    box-shadow:
-
-        0 18px 35px
-        rgba(0,0,0,.25),
-
-        0 0 20px
-        color-mix(
-            in srgb,
-            var(--service) 14%,
-            transparent
-        );
-
-}
-
-
-.service-item:hover::before {
-
-    opacity:
-        .18;
-
-    transform:
-        scale(1.35);
-
-}
-
-
-.service-item:nth-child(1) {
-
-    --service:
-        #ff8845;
-
-}
-
-
-.service-item:nth-child(2) {
-
-    --service:
-        #ffba4f;
-
-}
-
-
-.service-item:nth-child(3) {
-
-    --service:
-        #43eba2;
-
-}
-
-
-.service-icon {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    width:
-        51px;
-
-    height:
-        51px;
+    width: 10px;
+    height: 10px;
 
     flex:
-        0 0 51px;
+        0 0 10px;
 
-    display:
-        flex;
+    border-radius: 50%;
 
-    align-items:
-        center;
+}
 
-    justify-content:
-        center;
 
-    border-radius:
-        14px;
+.legend-inner {
 
-    color:
-        var(--service);
-
-    font-size:
-        21px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.10);
-
-    background:
-        rgba(255,255,255,.035);
+    background: var(--green);
 
     box-shadow:
 
-        0 0 16px
-        color-mix(
-            in srgb,
-            var(--service) 14%,
-            transparent
-        );
-
-    animation:
-        serviceFloat
-        3.2s
-        ease-in-out
-        infinite;
+        0 0 10px
+        var(--green);
 
 }
 
 
-.service-item:nth-child(2)
-.service-icon {
+.legend-middle {
 
-    animation-delay:
-        -.8s;
-
-}
-
-
-.service-item:nth-child(3)
-.service-icon {
-
-    animation-delay:
-        -1.6s;
-
-}
-
-
-@keyframes serviceFloat {
-
-    50% {
-
-        transform:
-            translateY(-5px)
-            rotate(-4deg);
-
-    }
-
-}
-
-
-.service-item > div:last-child {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-}
-
-
-.service-item small {
-
-    display:
-        block;
-
-    color:
-        var(--service);
-
-    font-size:
-        8px;
-
-    font-weight:
-        900;
-
-    letter-spacing:
-        1px;
-
-}
-
-
-.service-item strong {
-
-    display:
-        block;
-
-    margin:
-        4px 0;
-
-    color:
-        #ffffff;
-
-    font-size:
-        13px;
-
-}
-
-
-.service-item p {
-
-    margin:
-        0;
-
-    color:
-        #8298ac;
-
-    font-size:
-        9px;
-
-    line-height:
-        1.5;
-
-}
-
-
-/* =========================================================
-   WORKFLOW
-========================================================= */
-
-.workflow-grid {
-
-    position:
-        relative;
-
-    z-index:
-        5;
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(
-            4,
-            1fr
-        );
-
-    gap:
-        12px;
-
-}
-
-
-.workflow-item {
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    padding:
-        21px 15px;
-
-    text-align:
-        center;
-
-    border-radius:
-        17px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.07);
-
-    background:
-        rgba(255,255,255,.024);
-
-    transition:
-
-        transform .3s ease,
-
-        border-color .3s ease,
-
-        box-shadow .3s ease;
-
-}
-
-
-.workflow-item:hover {
-
-    transform:
-        translateY(-7px);
-
-    border-color:
-        rgba(75,230,255,.40);
+    background: var(--blue);
 
     box-shadow:
 
-        0 15px 30px
-        rgba(0,0,0,.20);
+        0 0 10px
+        var(--blue);
 
 }
 
 
-.workflow-number {
+.legend-outer {
 
-    position:
-        relative;
-
-    width:
-        42px;
-
-    height:
-        42px;
-
-    margin:
-        0 auto 11px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    border-radius:
-        50%;
-
-    color:
-        #061321;
-
-    font-size:
-        9px;
-
-    font-weight:
-        900;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #4ceaff,
-            #6b91ff,
-            #a768ff
-        );
-
-    border:
-        2px solid
-        rgba(255,255,255,.28);
+    background: var(--pink);
 
     box-shadow:
 
-        0 0 15px
-        rgba(70,225,255,.28);
-
-    animation:
-        numberPulse
-        2.7s
-        ease-in-out
-        infinite;
+        0 0 10px
+        var(--pink);
 
 }
 
 
-.workflow-item:nth-child(2)
-.workflow-number {
+.legend-item strong {
 
-    animation-delay:
-        -.65s;
+    display: block;
 
-}
+    color: #ffffff;
 
-
-.workflow-item:nth-child(3)
-.workflow-number {
-
-    animation-delay:
-        -1.3s;
+    font-size: 10px;
 
 }
 
 
-.workflow-item:nth-child(4)
-.workflow-number {
+.legend-item span {
 
-    animation-delay:
-        -1.95s;
+    display: block;
 
-}
+    margin-top: 2px;
 
+    color: #788fa4;
 
-@keyframes numberPulse {
-
-    50% {
-
-        transform:
-            scale(1.1);
-
-        filter:
-            brightness(1.3);
-
-        box-shadow:
-
-            0 0 22px
-            rgba(70,225,255,.45),
-
-            0 0 35px
-            rgba(145,90,255,.20);
-
-    }
-
-}
-
-
-.workflow-item strong {
-
-    display:
-        block;
-
-    color:
-        #ffffff;
-
-    font-size:
-        11px;
-
-}
-
-
-.workflow-item span {
-
-    display:
-        block;
-
-    margin-top:
-        4px;
-
-    color:
-        #778da1;
-
-    font-size:
-        8px;
+    font-size: 8px;
 
 }
 
@@ -2676,39 +3212,30 @@ a {
 
 .docs-summary {
 
-    position:
-        relative;
+    position: relative;
 
-    overflow:
-        hidden;
+    overflow: hidden;
 
-    margin-top:
-        24px;
+    margin-top: 25px;
 
     padding:
-        19px 20px;
+        20px 22px;
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    justify-content:
-        center;
+    justify-content: center;
 
-    gap:
-        12px;
+    gap: 12px;
 
-    text-align:
-        center;
+    text-align: center;
 
-    border-radius:
-        18px;
+    border-radius: 18px;
 
     border:
         1px solid
-        rgba(80,190,255,.20);
+        rgba(85,195,255,.20);
 
     background:
 
@@ -2724,23 +3251,15 @@ a {
 
 .docs-summary::before {
 
-    content:
-        "";
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    top:
-        0;
+    top: 0;
+    left: -40%;
 
-    left:
-        -40%;
-
-    width:
-        25%;
-
-    height:
-        100%;
+    width: 25%;
+    height: 100%;
 
     background:
 
@@ -2755,7 +3274,7 @@ a {
         skewX(-20deg);
 
     animation:
-        summarySweep
+        summaryScanner
         6s
         linear
         infinite;
@@ -2763,12 +3282,11 @@ a {
 }
 
 
-@keyframes summarySweep {
+@keyframes summaryScanner {
 
     to {
 
-        left:
-            130%;
+        left: 130%;
 
     }
 
@@ -2777,20 +3295,16 @@ a {
 
 .docs-summary i {
 
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        2;
+    z-index: 2;
 
-    color:
-        var(--cyan);
+    color: var(--cyan);
 
-    font-size:
-        19px;
+    font-size: 19px;
 
     animation:
-        summaryIcon
+        summaryIconMovement
         2.5s
         ease-in-out
         infinite;
@@ -2798,7 +3312,7 @@ a {
 }
 
 
-@keyframes summaryIcon {
+@keyframes summaryIconMovement {
 
     50% {
 
@@ -2820,31 +3334,22 @@ a {
 
 .docs-summary p {
 
-    position:
-        relative;
+    position: relative;
 
-    z-index:
-        2;
+    z-index: 2;
 
-    margin:
-        0;
+    margin: 0;
 
-    color:
-        #9eb2c5;
+    color: #9fb3c5;
 
-    font-size:
-        10px;
-
-    line-height:
-        1.6;
+    font-size: 10px;
 
 }
 
 
 .docs-summary strong {
 
-    color:
-        #ffffff;
+    color: #ffffff;
 
 }
 
@@ -2858,14 +3363,11 @@ a {
     padding:
         32px 20px;
 
-    text-align:
-        center;
+    text-align: center;
 
-    color:
-        #70869a;
+    color: #70869a;
 
-    font-size:
-        10px;
+    font-size: 10px;
 
     border-top:
         1px solid
@@ -2880,8 +3382,7 @@ a {
 
 body.theme-light {
 
-    color:
-        #14283b;
+    color: #14283b;
 
     background:
 
@@ -2912,13 +3413,13 @@ body.theme-light
     background:
 
         linear-gradient(
-            rgba(30,90,140,.035) 1px,
+            rgba(35,90,140,.035) 1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(30,90,140,.035) 1px,
+            rgba(35,90,140,.035) 1px,
             transparent 1px
         );
 
@@ -2933,21 +3434,27 @@ body.theme-light
         linear-gradient(
             145deg,
             rgba(255,255,255,.99),
-            rgba(242,248,255,.99)
+            rgba(241,248,255,.99)
         );
 
 }
 
 
 body.theme-light
-.docs-section {
+.language-section,
+
+body.theme-light
+.architecture-section,
+
+body.theme-light
+.atom-section {
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(255,255,255,.97),
-            rgba(242,248,255,.98)
+            rgba(255,255,255,.98),
+            rgba(241,248,255,.98)
         );
 
     border-color:
@@ -2962,67 +3469,68 @@ body.theme-light
 
 
 body.theme-light
-.docs-hero > p,
-
-body.theme-light
-.docs-section-title p,
-
-body.theme-light
-.flow-card p,
-
-body.theme-light
-.service-item p,
-
-body.theme-light
-.workflow-item span,
-
-body.theme-light
-.docs-summary p {
-
-    color:
-        #61778b;
-
-}
-
-
-body.theme-light
 .docs-hero h1,
 
 body.theme-light
-.docs-section-title h2,
+.section-header h2,
+
+body.theme-light
+.atom-header h2,
+
+body.theme-light
+.language-content h3,
 
 body.theme-light
 .flow-card strong,
 
 body.theme-light
-.service-item strong,
-
-body.theme-light
-.workflow-item strong,
+.legend-item strong,
 
 body.theme-light
 .docs-summary strong {
 
-    color:
-        #173047;
+    color: #173047;
 
 }
 
+
+body.theme-light
+.docs-hero > p,
+
+body.theme-light
+.section-header p,
+
+body.theme-light
+.atom-header p,
+
+body.theme-light
+.language-content p,
+
+body.theme-light
+.flow-card p,
+
+body.theme-light
+.legend-item span,
+
+body.theme-light
+.docs-summary p {
+
+    color: #61778b;
+
+}
+
+
+body.theme-light
+.language-card,
 
 body.theme-light
 .flow-card,
 
 body.theme-light
-.service-item,
-
-body.theme-light
-.workflow-item,
-
-body.theme-light
-.docs-stack span {
+.legend-item {
 
     background:
-        rgba(255,255,255,.82);
+        rgba(255,255,255,.85);
 
     border-color:
         rgba(55,145,210,.18);
@@ -3031,13 +3539,12 @@ body.theme-light
 
 
 body.theme-light
-.flow-icon,
+.language-logo,
 
 body.theme-light
-.service-icon {
+.flow-icon {
 
-    background:
-        #f5f9fd;
+    background: #f5f9fd;
 
     border-color:
         rgba(55,145,210,.18);
@@ -3046,15 +3553,51 @@ body.theme-light
 
 
 body.theme-light
-.docs-summary {
+.orbit-chip {
+
+    color: #173047;
 
     background:
+        rgba(255,255,255,.96);
+
+    box-shadow:
+
+        0 8px 20px
+        rgba(50,90,130,.12);
+
+}
+
+
+body.theme-light
+.atom-nucleus {
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(80,220,255,.24),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 70% 75%,
+            rgba(180,80,255,.20),
+            transparent 38%
+        ),
 
         linear-gradient(
-            90deg,
-            rgba(45,170,220,.07),
-            rgba(120,70,220,.07)
+            145deg,
+            #ffffff,
+            #eaf4ff
         );
+
+}
+
+
+body.theme-light
+.atom-nucleus strong {
+
+    color: #173047;
 
 }
 
@@ -3062,8 +3605,7 @@ body.theme-light
 body.theme-light
 .docs-footer {
 
-    color:
-        #71869a;
+    color: #71869a;
 
     border-color:
         rgba(40,105,160,.12);
@@ -3076,9 +3618,23 @@ body.theme-light
 ========================================================= */
 
 @media (
-    max-width:
-    1050px
+    max-width: 1100px
 ) {
+
+    .language-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .language-card {
+
+        min-height: 150px;
+
+    }
+
 
     .architecture-flow {
 
@@ -3088,18 +3644,9 @@ body.theme-light
     }
 
 
-    .flow-card {
-
-        min-height:
-            145px;
-
-    }
-
-
     .flow-arrow {
 
-        min-height:
-            32px;
+        min-height: 34px;
 
         transform:
             rotate(90deg);
@@ -3109,22 +3656,27 @@ body.theme-light
 
     .flow-arrow::before {
 
-        width:
-            34px;
+        width: 34px;
 
     }
 
 
-    .flow-arrow::after {
+    .atom-section {
 
-        width:
-            13px;
+        min-height: 820px;
 
-        animation:
-            none;
+    }
 
-        left:
-            50%;
+
+    .atom-stage {
+
+        transform:
+            scale(.88);
+
+        transform-origin:
+            top center;
+
+        margin-bottom: -80px;
 
     }
 
@@ -3132,11 +3684,22 @@ body.theme-light
 
 
 @media (
-    max-width:
-    800px
+    max-width: 850px
 ) {
 
-    .services-grid {
+    .atom-stage {
+
+        height: 680px;
+
+        transform:
+            scale(.72);
+
+        margin-bottom: -170px;
+
+    }
+
+
+    .atom-legend {
 
         grid-template-columns:
             1fr;
@@ -3144,15 +3707,9 @@ body.theme-light
     }
 
 
-    .workflow-grid {
+    .section-header,
 
-        grid-template-columns:
-            1fr 1fr;
-
-    }
-
-
-    .docs-section-title {
+    .atom-header {
 
         align-items:
             flex-start;
@@ -3166,39 +3723,33 @@ body.theme-light
 
 
 @media (
-    max-width:
-    600px
+    max-width: 600px
 ) {
 
     .docs-page {
 
-        width:
-            92%;
+        width: 92%;
 
-        margin-top:
-            110px;
+        margin-top: 110px;
 
     }
 
 
     .docs-hero {
 
-        min-height:
-            auto;
+        min-height: auto;
 
         padding:
             38px 20px;
 
-        border-radius:
-            22px;
+        border-radius: 22px;
 
     }
 
 
     .docs-hero::after {
 
-        border-radius:
-            21px;
+        border-radius: 21px;
 
     }
 
@@ -3206,40 +3757,93 @@ body.theme-light
     .hero-orbit {
 
         transform:
-            scale(.82);
+            scale(.84);
 
-        margin-bottom:
-            5px;
+        margin-bottom: 3px;
 
     }
 
 
     .docs-hero h1 {
 
-        font-size:
-            39px;
+        font-size: 39px;
 
-        letter-spacing:
-            -1.5px;
+        letter-spacing: -1.5px;
 
     }
 
 
-    .docs-section {
+    .language-section,
+
+    .architecture-section,
+
+    .atom-section {
 
         padding:
-            21px;
-
-        border-radius:
             20px;
+
+        border-radius: 21px;
 
     }
 
 
-    .workflow-grid {
+    .language-card {
 
-        grid-template-columns:
-            1fr;
+        padding:
+            20px;
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .language-logo {
+
+        width: 75px;
+        height: 75px;
+
+        flex-basis: 75px;
+
+        font-size: 42px;
+
+    }
+
+
+    .atom-section {
+
+        min-height: 670px;
+
+    }
+
+
+    .atom-stage {
+
+        width: 760px;
+
+        max-width: none;
+
+        height: 620px;
+
+        left: 50%;
+
+        margin-left: -380px;
+
+        transform:
+            scale(.52);
+
+        transform-origin:
+            center top;
+
+        margin-bottom: -290px;
+
+    }
+
+
+    .cursor-glow {
+
+        display: none;
 
     }
 
@@ -3252,16 +3856,7 @@ body.theme-light
         flex-direction:
             column;
 
-        text-align:
-            left;
-
-    }
-
-
-    .cursor-glow {
-
-        display:
-            none;
+        text-align: left;
 
     }
 
@@ -3273,8 +3868,7 @@ body.theme-light
 ========================================================= */
 
 @media (
-    prefers-reduced-motion:
-    reduce
+    prefers-reduced-motion: reduce
 ) {
 
     * {
@@ -3298,7 +3892,7 @@ body.theme-light
 
 
 <!-- =========================================================
-     ANIMATED BACKGROUND
+     BACKGROUND
 ========================================================= -->
 
 <div class="tech-universe"
@@ -3315,9 +3909,10 @@ body.theme-light
 </div>
 
 
-<div class="cursor-glow"
-     id="cursorGlow"
-     aria-hidden="true">
+<div
+    class="cursor-glow"
+    id="cursorGlow"
+    aria-hidden="true">
 </div>
 
 
@@ -3328,59 +3923,73 @@ body.theme-light
 
 <header class="navbar">
 
+
     <div class="nav-container">
 
 
-        <!-- LOGO -->
-
-        <a href="index.html"
-           class="logo">
+        <a
+            href="index.html"
+            class="logo">
 
             TANWEER<span>.</span>
 
         </a>
 
 
-        <!-- MENU -->
 
         <nav id="navMenu">
 
+
             <a href="index.html">
+
                 Home
+
             </a>
+
 
             <a href="about.html">
+
                 About
+
             </a>
+
 
             <a href="experience.html">
+
                 Experience
+
             </a>
+
 
             <a href="certifications.html">
+
                 Certifications
+
             </a>
 
-            <a href="documentation.html"
-               class="active">
+
+            <a
+                href="documentation.html"
+                class="active">
 
                 Documentation
 
             </a>
 
+
             <a href="contact.html">
+
                 Contact
+
             </a>
+
 
         </nav>
 
 
-        <!-- RIGHT NAVIGATION -->
 
         <div class="nav-buttons">
 
-
-            <!-- THEME -->
 
             <button
                 id="themeToggle"
@@ -3393,7 +4002,6 @@ body.theme-light
             </button>
 
 
-            <!-- REQUEST CONTACT -->
 
             <a
                 href="mailto:tanweerstudy25@gmail.com?subject=Request%20for%20WhatsApp%20Contact&body=Hello%20Tanweer%2C%0A%0AI%20visited%20your%20portfolio%20website%20and%20would%20like%20to%20contact%20you%20on%20WhatsApp.%0A%0AThank%20you."
@@ -3402,13 +4010,14 @@ body.theme-light
                 <i class="fa-solid fa-paper-plane"></i>
 
                 <span>
+
                     Request Contact
+
                 </span>
 
             </a>
 
 
-            <!-- MOBILE MENU -->
 
             <button
                 id="menuToggle"
@@ -3419,17 +4028,19 @@ body.theme-light
 
             </button>
 
+
         </div>
 
 
     </div>
+
 
 </header>
 
 
 
 <!-- =========================================================
-     DOCUMENTATION
+     PAGE
 ========================================================= -->
 
 <main class="docs-page">
@@ -3442,15 +4053,12 @@ body.theme-light
 <section class="docs-hero reveal">
 
 
-    <!-- ORBIT -->
-
     <div class="hero-orbit">
+
 
         <div class="hero-ring hero-ring-one"></div>
 
         <div class="hero-ring hero-ring-two"></div>
-
-        <div class="hero-ring hero-ring-three"></div>
 
 
         <div class="hero-core">
@@ -3459,76 +4067,219 @@ body.theme-light
 
         </div>
 
+
     </div>
 
 
-    <!-- LABEL -->
 
     <div class="docs-label">
 
+
         <i class="fa-solid fa-satellite-dish"></i>
 
-        WEBSITE DOCUMENTATION
+
+        WEBSITE TECHNOLOGY DOCUMENTATION
+
 
     </div>
 
 
-    <!-- TITLE -->
 
     <h1>
 
+
         Portfolio
+
 
         <span class="docs-gradient">
 
-            Architecture
+            Technology Architecture
 
         </span>
+
 
     </h1>
 
 
-    <!-- DESCRIPTION -->
 
     <p>
 
-        A concise visual overview of how this portfolio is
-        developed, versioned, published, delivered through the
-        custom domain and monitored.
+        A professional visual overview of the technologies,
+        source control, deployment, DNS, domain and analytics
+        services powering this portfolio website.
 
     </p>
 
 
-    <!-- STACK -->
-
-    <div class="docs-stack">
+</section>
 
 
-        <span>
+
+<!-- =========================================================
+     LANGUAGES
+========================================================= -->
+
+<section class="language-section reveal">
+
+
+    <div class="section-header">
+
+
+        <h2>
 
             <i class="fa-solid fa-code"></i>
 
-            HTML · CSS · JavaScript
+            Core Development Languages
 
-        </span>
-
-
-        <span>
-
-            <i class="fa-brands fa-github"></i>
-
-            GitHub
-
-        </span>
+        </h2>
 
 
-        <span>
+        <p>
 
-            <i class="fa-brands fa-cloudflare"></i>
+            Front-end technologies used to build the website
 
-            Cloudflare
+        </p>
 
-        </span>
+
+    </div>
+
+
+
+    <div class="language-grid">
+
+
+        <!-- HTML -->
+
+        <article class="language-card html-card tilt-card">
+
+
+            <div class="language-logo">
+
+                <i class="fa-brands fa-html5"></i>
+
+            </div>
+
+
+            <div class="language-content">
+
+
+                <small>
+
+                    STRUCTURE
+
+                </small>
+
+
+                <h3>
+
+                    HTML5
+
+                </h3>
+
+
+                <p>
+
+                    Defines the page structure,
+                    content and semantic layout
+                    of the portfolio.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- CSS -->
+
+        <article class="language-card css-card tilt-card">
+
+
+            <div class="language-logo">
+
+                <i class="fa-brands fa-css3-alt"></i>
+
+            </div>
+
+
+            <div class="language-content">
+
+
+                <small>
+
+                    DESIGN & MOTION
+
+                </small>
+
+
+                <h3>
+
+                    CSS3
+
+                </h3>
+
+
+                <p>
+
+                    Controls visual design,
+                    responsive layouts,
+                    effects and animations.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
+
+
+
+        <!-- JAVASCRIPT -->
+
+        <article class="language-card js-card tilt-card">
+
+
+            <div class="language-logo">
+
+                <i class="fa-brands fa-js"></i>
+
+            </div>
+
+
+            <div class="language-content">
+
+
+                <small>
+
+                    INTERACTION
+
+                </small>
+
+
+                <h3>
+
+                    JavaScript
+
+                </h3>
+
+
+                <p>
+
+                    Powers interactive behaviour,
+                    dynamic functions,
+                    movements and website logic.
+
+                </p>
+
+
+            </div>
+
+
+        </article>
 
 
     </div>
@@ -3543,11 +4294,10 @@ body.theme-light
 ========================================================= -->
 
 <section
-    class="docs-section reveal"
-    id="architectureBoard">
+    class="architecture-section reveal">
 
 
-    <div class="docs-section-title">
+    <div class="section-header">
 
 
         <h2>
@@ -3561,7 +4311,7 @@ body.theme-light
 
         <p>
 
-            Build → Version → Publish → Deliver → Live
+            Develop → Version → Publish → Deliver → Live
 
         </p>
 
@@ -3587,19 +4337,23 @@ body.theme-light
 
 
             <small>
-                BUILD
+
+                DEVELOPMENT
+
             </small>
 
 
             <strong>
-                Web Development
+
+                HTML · CSS · JavaScript
+
             </strong>
 
 
             <p>
 
-                Front-end structure,
-                styling and interaction.
+                Portfolio source
+                and interface development.
 
             </p>
 
@@ -3630,19 +4384,23 @@ body.theme-light
 
 
             <small>
-                VERSION
+
+                SOURCE CONTROL
+
             </small>
 
 
             <strong>
+
                 GitHub
+
             </strong>
 
 
             <p>
 
-                Source files and
-                version history.
+                Repository and
+                version management.
 
             </p>
 
@@ -3673,12 +4431,16 @@ body.theme-light
 
 
             <small>
-                PUBLISH
+
+                HOSTING
+
             </small>
 
 
             <strong>
+
                 GitHub Pages
+
             </strong>
 
 
@@ -3716,12 +4478,16 @@ body.theme-light
 
 
             <small>
-                DELIVER
+
+                DNS & DELIVERY
+
             </small>
 
 
             <strong>
+
                 Cloudflare
+
             </strong>
 
 
@@ -3759,19 +4525,23 @@ body.theme-light
 
 
             <small>
-                LIVE
+
+                LIVE DOMAIN
+
             </small>
 
 
             <strong>
+
                 tanweer.site
+
             </strong>
 
 
             <p>
 
-                Public access through
-                the custom domain.
+                Public portfolio
+                available online.
 
             </p>
 
@@ -3787,27 +4557,27 @@ body.theme-light
 
 
 <!-- =========================================================
-     SUPPORTING SERVICES
+     ATOM ARCHITECTURE
 ========================================================= -->
 
-<section class="docs-section reveal">
+<section class="atom-section reveal">
 
 
-    <div class="docs-section-title">
+    <div class="atom-header">
 
 
         <h2>
 
-            <i class="fa-solid fa-layer-group"></i>
+            <i class="fa-solid fa-atom"></i>
 
-            Supporting Services
+            Portfolio Technology Atom
 
         </h2>
 
 
         <p>
 
-            Domain ownership and website insights
+            Three technology layers orbiting the live domain
 
         </p>
 
@@ -3816,287 +4586,425 @@ body.theme-light
 
 
 
-    <div class="services-grid">
+    <div class="atom-stage">
 
 
-        <!-- NAMECHEAP -->
+        <!-- =================================================
+             NUCLEUS
+        ================================================== -->
 
-        <article class="service-item tilt-card">
-
-
-            <div class="service-icon">
-
-                <i class="fa-solid fa-at"></i>
-
-            </div>
+        <div class="atom-nucleus">
 
 
-            <div>
+            <i class="fa-solid fa-globe"></i>
 
 
-                <small>
+            <strong>
 
-                    DOMAIN REGISTRAR
+                tanweer.site
 
-                </small>
+            </strong>
 
 
-                <strong>
+            <span>
+
+                LIVE PORTFOLIO
+
+            </span>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             INNER ORBIT
+             NAMECHEAP / GA4 / GOATCOUNTER
+        ================================================== -->
+
+        <div class="atom-orbit atom-orbit-inner">
+
+
+            <!-- NAMECHEAP -->
+
+            <div
+                class="orbit-node"
+                style="
+                    --angle:0deg;
+                    --radius:195px;
+                ">
+
+
+                <div class="orbit-chip chip-namecheap">
+
+
+                    <i class="fa-solid fa-at"></i>
+
 
                     Namecheap
 
-                </strong>
 
-
-                <p>
-
-                    Registration and ownership
-                    of tanweer.site.
-
-                </p>
+                </div>
 
 
             </div>
 
 
-        </article>
+
+            <!-- GOOGLE ANALYTICS -->
+
+            <div
+                class="orbit-node"
+                style="
+                    --angle:120deg;
+                    --radius:195px;
+                ">
 
 
-
-        <!-- GOOGLE ANALYTICS -->
-
-        <article class="service-item tilt-card">
+                <div class="orbit-chip chip-ga">
 
 
-            <div class="service-icon">
+                    <i class="fa-brands fa-google"></i>
 
-                <i class="fa-brands fa-google"></i>
-
-            </div>
-
-
-            <div>
-
-
-                <small>
-
-                    ANALYTICS
-
-                </small>
-
-
-                <strong>
 
                     Google Analytics 4
 
-                </strong>
 
-
-                <p>
-
-                    Aggregate website traffic
-                    and visitor insights.
-
-                </p>
+                </div>
 
 
             </div>
 
 
-        </article>
+
+            <!-- GOATCOUNTER -->
+
+            <div
+                class="orbit-node"
+                style="
+                    --angle:240deg;
+                    --radius:195px;
+                ">
 
 
-
-        <!-- GOATCOUNTER -->
-
-        <article class="service-item tilt-card">
+                <div class="orbit-chip chip-goat">
 
 
-            <div class="service-icon">
+                    <i class="fa-solid fa-chart-simple"></i>
 
-                <i class="fa-solid fa-chart-simple"></i>
+
+                    GoatCounter
+
+
+                </div>
+
 
             </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             MIDDLE ORBIT
+             GITHUB / GITHUB REPO / PAGES / CLOUDFLARE
+        ================================================== -->
+
+        <div class="atom-orbit atom-orbit-middle">
+
+
+            <!-- GITHUB -->
+
+            <div
+                class="orbit-node"
+                style="
+                    --angle:0deg;
+                    --radius:285px;
+                ">
+
+
+                <div class="orbit-chip chip-github">
+
+
+                    <i class="fa-brands fa-github"></i>
+
+
+                    GitHub
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- GITHUB REPOSITORY -->
+
+            <div
+                class="orbit-node"
+                style="
+                    --angle:90deg;
+                    --radius:285px;
+                ">
+
+
+                <div class="orbit-chip chip-github">
+
+
+                    <i class="fa-solid fa-code-branch"></i>
+
+
+                    GitHub Repo
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- GITHUB PAGES -->
+
+            <div
+                class="orbit-node"
+                style="
+                    --angle:180deg;
+                    --radius:285px;
+                ">
+
+
+                <div class="orbit-chip chip-pages">
+
+
+                    <i class="fa-solid fa-server"></i>
+
+
+                    GitHub Pages
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- CLOUDFLARE -->
+
+            <div
+                class="orbit-node"
+                style="
+                    --angle:270deg;
+                    --radius:285px;
+                ">
+
+
+                <div class="orbit-chip chip-cloudflare">
+
+
+                    <i class="fa-brands fa-cloudflare"></i>
+
+
+                    Cloudflare
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             OUTER ORBIT
+             HTML / CSS / JAVASCRIPT
+        ================================================== -->
+
+        <div class="atom-orbit atom-orbit-outer">
+
+
+            <!-- HTML -->
+
+            <div
+                class="orbit-node"
+                style="
+                    --angle:0deg;
+                    --radius:367px;
+                ">
+
+
+                <div class="orbit-chip chip-html">
+
+
+                    <i class="fa-brands fa-html5"></i>
+
+
+                    HTML5
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- CSS -->
+
+            <div
+                class="orbit-node"
+                style="
+                    --angle:120deg;
+                    --radius:367px;
+                ">
+
+
+                <div class="orbit-chip chip-css">
+
+
+                    <i class="fa-brands fa-css3-alt"></i>
+
+
+                    CSS3
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- JAVASCRIPT -->
+
+            <div
+                class="orbit-node"
+                style="
+                    --angle:240deg;
+                    --radius:367px;
+                ">
+
+
+                <div class="orbit-chip chip-js">
+
+
+                    <i class="fa-brands fa-js"></i>
+
+
+                    JavaScript
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         ORBIT LEGEND
+    ====================================================== -->
+
+    <div class="atom-legend">
+
+
+        <div class="legend-item">
+
+
+            <span class="legend-dot legend-inner"></span>
 
 
             <div>
 
 
-                <small>
-
-                    TRAFFIC STATS
-
-                </small>
-
-
                 <strong>
 
-                    GoatCounter
+                    Services Layer
 
                 </strong>
 
 
-                <p>
+                <span>
 
-                    Lightweight
-                    page-view monitoring.
+                    Domain & Analytics
 
-                </p>
+                </span>
 
 
             </div>
 
-
-        </article>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =========================================================
-     DELIVERY WORKFLOW
-========================================================= -->
-
-<section class="docs-section reveal">
-
-
-    <div class="docs-section-title">
-
-
-        <h2>
-
-            <i class="fa-solid fa-arrows-rotate"></i>
-
-            Delivery Workflow
-
-        </h2>
-
-
-        <p>
-
-            Four stages from update to monitoring
-
-        </p>
-
-
-    </div>
-
-
-
-    <div class="workflow-grid">
-
-
-        <!-- 01 -->
-
-        <div class="workflow-item">
-
-            <div class="workflow-number">
-
-                01
-
-            </div>
-
-
-            <strong>
-
-                Build
-
-            </strong>
-
-
-            <span>
-
-                Update website files
-
-            </span>
 
         </div>
 
 
 
-        <!-- 02 -->
+        <div class="legend-item">
 
-        <div class="workflow-item">
 
-            <div class="workflow-number">
+            <span class="legend-dot legend-middle"></span>
 
-                02
+
+            <div>
+
+
+                <strong>
+
+                    Delivery Layer
+
+                </strong>
+
+
+                <span>
+
+                    GitHub & Cloudflare
+
+                </span>
+
 
             </div>
 
-
-            <strong>
-
-                Commit
-
-            </strong>
-
-
-            <span>
-
-                Save changes to GitHub
-
-            </span>
 
         </div>
 
 
 
-        <!-- 03 -->
+        <div class="legend-item">
 
-        <div class="workflow-item">
 
-            <div class="workflow-number">
+            <span class="legend-dot legend-outer"></span>
 
-                03
+
+            <div>
+
+
+                <strong>
+
+                    Development Layer
+
+                </strong>
+
+
+                <span>
+
+                    HTML · CSS · JavaScript
+
+                </span>
+
 
             </div>
 
-
-            <strong>
-
-                Publish
-
-            </strong>
-
-
-            <span>
-
-                GitHub Pages deploys
-
-            </span>
-
-        </div>
-
-
-
-        <!-- 04 -->
-
-        <div class="workflow-item">
-
-            <div class="workflow-number">
-
-                04
-
-            </div>
-
-
-            <strong>
-
-                Monitor
-
-            </strong>
-
-
-            <span>
-
-                Review website traffic
-
-            </span>
 
         </div>
 
@@ -4122,17 +5030,25 @@ body.theme-light
 
         <strong>
 
-            Portfolio delivery path:
+            Portfolio ecosystem:
 
         </strong>
 
-        Development →
+        HTML5 + CSS3 + JavaScript
 
-        GitHub →
+        →
 
-        GitHub Pages →
+        GitHub
 
-        Cloudflare →
+        →
+
+        GitHub Pages
+
+        →
+
+        Cloudflare
+
+        →
 
         <strong>
 
@@ -4156,8 +5072,10 @@ body.theme-light
 
 <footer class="docs-footer">
 
+
     © 2026 Tanweer Ansari
     · Network &amp; IT Support Engineer
+
 
 </footer>
 
@@ -4176,16 +5094,16 @@ body.theme-light
    PARTICLES
 ===================================================== */
 
-const particles =
+const particleContainer =
     document.getElementById(
         "particles"
     );
 
 
-if (particles) {
+if (particleContainer) {
 
 
-    const colors = [
+    const particleColors = [
 
         "#46ebff",
 
@@ -4204,7 +5122,7 @@ if (particles) {
 
     for (
         let i = 0;
-        i < 35;
+        i < 42;
         i++
     ) {
 
@@ -4221,7 +5139,7 @@ if (particles) {
 
         particle.style.setProperty(
 
-            "--left",
+            "--particle-left",
 
             Math.random() *
             100 +
@@ -4232,7 +5150,7 @@ if (particles) {
 
         particle.style.setProperty(
 
-            "--top",
+            "--particle-top",
 
             Math.random() *
             100 +
@@ -4243,7 +5161,7 @@ if (particles) {
 
         particle.style.setProperty(
 
-            "--size",
+            "--particle-size",
 
             (
                 1.5 +
@@ -4257,12 +5175,12 @@ if (particles) {
 
         particle.style.setProperty(
 
-            "--speed",
+            "--particle-speed",
 
             (
                 6 +
                 Math.random() *
-                8
+                9
             ) +
             "s"
 
@@ -4271,11 +5189,11 @@ if (particles) {
 
         particle.style.setProperty(
 
-            "--delay",
+            "--particle-delay",
 
             (
                 Math.random() *
-                -10
+                -12
             ) +
             "s"
 
@@ -4286,21 +5204,23 @@ if (particles) {
 
             "--particle-color",
 
-            colors[
+            particleColors[
                 Math.floor(
                     Math.random() *
-                    colors.length
+                    particleColors.length
                 )
             ]
 
         );
 
 
-        particles.appendChild(
+        particleContainer.appendChild(
             particle
         );
 
+
     }
+
 
 }
 
@@ -4340,6 +5260,7 @@ if (cursorGlow) {
 
     );
 
+
 }
 
 
@@ -4354,7 +5275,7 @@ const revealElements =
     );
 
 
-const observer =
+const revealObserver =
     new IntersectionObserver(
 
         function (entries) {
@@ -4375,12 +5296,13 @@ const observer =
                         );
 
 
-                        observer.unobserve(
+                        revealObserver.unobserve(
                             entry.target
                         );
 
 
                     }
+
 
                 }
 
@@ -4391,8 +5313,7 @@ const observer =
 
         {
 
-            threshold:
-                .12
+            threshold: .10
 
         }
 
@@ -4403,9 +5324,11 @@ revealElements.forEach(
 
     function (element) {
 
-        observer.observe(
+
+        revealObserver.observe(
             element
         );
+
 
     }
 
@@ -4437,7 +5360,7 @@ tiltCards.forEach(
 
                 if (
                     window.matchMedia(
-                        "(max-width:1050px)"
+                        "(max-width:1100px)"
                     ).matches
                 ) {
 
@@ -4480,7 +5403,7 @@ tiltCards.forEach(
 
                 card.style.transform =
 
-                    "perspective(750px) " +
+                    "perspective(800px) " +
 
                     "rotateX(" +
                     rotateX +
@@ -4521,7 +5444,7 @@ tiltCards.forEach(
 
 
 /* =====================================================
-   AUTOMATIC ARCHITECTURE FLOW
+   AUTOMATIC FLOW HIGHLIGHT
 ===================================================== */
 
 const flowCards =
@@ -4530,7 +5453,7 @@ const flowCards =
     );
 
 
-let activeFlow =
+let activeFlowIndex =
     0;
 
 
@@ -4558,21 +5481,22 @@ function animateArchitectureFlow() {
 
 
         flowCards[
-            activeFlow
+            activeFlowIndex
         ].classList.add(
             "flow-active"
         );
 
 
-        activeFlow =
+        activeFlowIndex =
             (
-                activeFlow +
+                activeFlowIndex +
                 1
             ) %
             flowCards.length;
 
 
     }
+
 
 }
 
@@ -4584,23 +5508,23 @@ setInterval(
 
     animateArchitectureFlow,
 
-    1250
+    1200
 
 );
 
 
 
 /* =====================================================
-   WORKFLOW ENTRANCE
+   LANGUAGE CARD ENTRANCE
 ===================================================== */
 
-const workflowItems =
+const languageCards =
     document.querySelectorAll(
-        ".workflow-item"
+        ".language-card"
     );
 
 
-const workflowObserver =
+const languageObserver =
     new IntersectionObserver(
 
         function (entries) {
@@ -4616,14 +5540,14 @@ const workflowObserver =
                     ) {
 
 
-                        const items =
+                        const cards =
                             Array.from(
-                                workflowItems
+                                languageCards
                             );
 
 
                         const index =
-                            items.indexOf(
+                            cards.indexOf(
                                 entry.target
                             );
 
@@ -4634,8 +5558,7 @@ const workflowObserver =
 
                                 {
 
-                                    opacity:
-                                        0,
+                                    opacity: 0,
 
                                     transform:
                                         "translateY(25px) scale(.94)"
@@ -4644,8 +5567,7 @@ const workflowObserver =
 
                                 {
 
-                                    opacity:
-                                        1,
+                                    opacity: 1,
 
                                     transform:
                                         "translateY(0) scale(1)"
@@ -4656,12 +5578,11 @@ const workflowObserver =
 
                             {
 
-                                duration:
-                                    650,
+                                duration: 700,
 
                                 delay:
                                     index *
-                                    100,
+                                    130,
 
                                 easing:
                                     "cubic-bezier(.2,.8,.2,1)",
@@ -4674,12 +5595,13 @@ const workflowObserver =
                         );
 
 
-                        workflowObserver.unobserve(
+                        languageObserver.unobserve(
                             entry.target
                         );
 
 
                     }
+
 
                 }
 
@@ -4690,21 +5612,20 @@ const workflowObserver =
 
         {
 
-            threshold:
-                .15
+            threshold: .15
 
         }
 
     );
 
 
-workflowItems.forEach(
+languageCards.forEach(
 
-    function (item) {
+    function (card) {
 
 
-        workflowObserver.observe(
-            item
+        languageObserver.observe(
+            card
         );
 
 

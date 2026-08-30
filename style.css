@@ -7675,3 +7675,1534 @@ footer {
     }
 
 }
+/* =========================================================
+   TANWEER AI ASSISTANT - PREMIUM CHAT WINDOW
+   START
+========================================================= */
+
+
+/* =========================================================
+   AI FLOATING ROBOT BUTTON
+========================================================= */
+
+#aiChatToggle {
+
+    cursor: pointer !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00e5ff 0%,
+            #2979ff 35%,
+            #8b5cf6 68%,
+            #ec4899 100%
+        ) !important;
+
+    border:
+        3px solid
+        rgba(255,255,255,.92)
+        !important;
+
+    color:
+        #ffffff !important;
+
+    box-shadow:
+        0 10px 30px rgba(0,217,255,.38),
+        0 0 24px rgba(41,121,255,.35),
+        0 0 35px rgba(139,92,246,.20)
+        !important;
+
+    animation:
+        tanweerAiButtonPulse
+        2s
+        ease-in-out
+        infinite !important;
+
+}
+
+
+#aiChatToggle:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.09)
+        !important;
+
+    box-shadow:
+        0 16px 38px rgba(0,217,255,.48),
+        0 0 32px rgba(139,92,246,.42),
+        0 0 48px rgba(236,72,153,.20)
+        !important;
+
+}
+
+
+/* AI ONLINE DOT */
+
+#aiChatToggle::after {
+
+    background:
+        #60ff9b !important;
+
+    border:
+        3px solid
+        #163452 !important;
+
+    box-shadow:
+        0 0 6px #60ff9b,
+        0 0 14px rgba(96,255,155,.85)
+        !important;
+
+}
+
+
+/* =========================================================
+   MAIN CHAT WINDOW
+========================================================= */
+
+.ai-chat-window {
+
+    position:
+        fixed;
+
+    right:
+        26px;
+
+    bottom:
+        175px;
+
+    width:
+        390px;
+
+    height:
+        560px;
+
+    max-height:
+        calc(100vh - 205px);
+
+    z-index:
+        100000;
+
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+
+    overflow:
+        hidden;
+
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+
+    border:
+        1px solid
+        rgba(71,220,255,.48);
+
+
+    border-radius:
+        24px;
+
+
+    background:
+
+        radial-gradient(
+            circle at 15% 5%,
+            rgba(0,229,255,.16),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(139,92,246,.20),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            160deg,
+            rgba(9,30,52,.985),
+            rgba(10,21,42,.985),
+            rgba(24,18,54,.985)
+        );
+
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(0,0,0,.52),
+
+        0 0 28px
+        rgba(0,217,255,.17),
+
+        0 0 55px
+        rgba(139,92,246,.12);
+
+
+    backdrop-filter:
+        blur(22px);
+
+    -webkit-backdrop-filter:
+        blur(22px);
+
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    pointer-events:
+        none;
+
+
+    transform:
+        translateY(22px)
+        scale(.94);
+
+
+    transform-origin:
+        bottom right;
+
+
+    transition:
+
+        opacity .32s ease,
+        visibility .32s ease,
+        transform .32s
+        cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+/* =========================================================
+   OPEN CHAT
+========================================================= */
+
+.ai-chat-window.is-open {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    pointer-events:
+        auto;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+/* =========================================================
+   CHAT HEADER
+========================================================= */
+
+.ai-chat-header {
+
+    position:
+        relative;
+
+    flex:
+        0 0 auto;
+
+
+    min-height:
+        76px;
+
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+
+    padding:
+        14px 16px;
+
+
+    border-bottom:
+        1px solid
+        rgba(80,190,255,.18);
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(0,157,255,.16),
+            rgba(92,80,230,.13),
+            rgba(236,72,153,.08)
+        );
+
+}
+
+
+/* HEADER LIGHT LINE */
+
+.ai-chat-header::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    bottom:
+        -1px;
+
+    width:
+        100%;
+
+    height:
+        1px;
+
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            #00e5ff,
+            #7c6cff,
+            #ec4899,
+            transparent
+        );
+
+
+    opacity:
+        .65;
+
+}
+
+
+/* =========================================================
+   HEADER LEFT
+========================================================= */
+
+.ai-chat-header-left {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+}
+
+
+/* =========================================================
+   AI HEADER AVATAR
+========================================================= */
+
+.ai-chat-avatar {
+
+    width:
+        46px;
+
+    height:
+        46px;
+
+    min-width:
+        46px;
+
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+
+    border-radius:
+        50%;
+
+
+    font-size:
+        20px;
+
+
+    color:
+        #ffffff;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #00d9ff,
+            #2979ff,
+            #8b5cf6,
+            #ec4899
+        );
+
+
+    border:
+        2px solid
+        rgba(255,255,255,.90);
+
+
+    box-shadow:
+
+        0 0 12px
+        rgba(0,217,255,.55),
+
+        0 0 22px
+        rgba(139,92,246,.25);
+
+
+    animation:
+        tanweerAiAvatarGlow
+        2.2s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   CHAT TITLE
+========================================================= */
+
+.ai-chat-title {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    line-height:
+        1.25;
+
+}
+
+
+.ai-chat-title strong {
+
+    color:
+        #ffffff;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        -.1px;
+
+}
+
+
+.ai-chat-title span {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+
+    margin-top:
+        4px;
+
+
+    color:
+        #88a8c1;
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+}
+
+
+/* ONLINE GREEN DOT */
+
+.ai-chat-title span i {
+
+    color:
+        #55f58a;
+
+    font-size:
+        7px;
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            #55f58a
+        );
+
+    animation:
+        tanweerAiOnlineBlink
+        .9s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.ai-chat-close {
+
+    width:
+        35px;
+
+    height:
+        35px;
+
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+
+    border-radius:
+        10px;
+
+
+    border:
+        1px solid
+        rgba(120,170,220,.20);
+
+
+    background:
+        rgba(255,255,255,.045);
+
+
+    color:
+        #a9bdd0;
+
+
+    font-size:
+        15px;
+
+
+    cursor:
+        pointer;
+
+
+    transition:
+        .25s ease;
+
+}
+
+
+.ai-chat-close:hover {
+
+    color:
+        #ffffff;
+
+    background:
+        rgba(236,72,153,.18);
+
+    border-color:
+        rgba(236,72,153,.45);
+
+    transform:
+        rotate(90deg);
+
+}
+
+
+/* =========================================================
+   MESSAGES AREA
+========================================================= */
+
+.ai-chat-messages {
+
+    flex:
+        1 1 auto;
+
+
+    min-height:
+        0;
+
+
+    overflow-y:
+        auto;
+
+
+    padding:
+        18px 15px;
+
+
+    scroll-behavior:
+        smooth;
+
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.012),
+            rgba(0,0,0,.055)
+        );
+
+}
+
+
+/* SCROLLBAR */
+
+.ai-chat-messages::-webkit-scrollbar {
+
+    width:
+        5px;
+
+}
+
+
+.ai-chat-messages::-webkit-scrollbar-track {
+
+    background:
+        transparent;
+
+}
+
+
+.ai-chat-messages::-webkit-scrollbar-thumb {
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #00cfff,
+            #7c6cff
+        );
+
+    border-radius:
+        20px;
+
+}
+
+
+/* =========================================================
+   MESSAGE ROW
+========================================================= */
+
+.ai-message {
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    gap:
+        8px;
+
+
+    margin-bottom:
+        14px;
+
+}
+
+
+/* =========================================================
+   BOT MESSAGE ICON
+========================================================= */
+
+.ai-message-icon {
+
+    width:
+        28px;
+
+    height:
+        28px;
+
+    min-width:
+        28px;
+
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+
+    border-radius:
+        50%;
+
+
+    color:
+        #ffffff;
+
+    font-size:
+        11px;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #00cfff,
+            #6275ff,
+            #a85cff
+        );
+
+
+    box-shadow:
+        0 0 10px
+        rgba(75,180,255,.25);
+
+}
+
+
+/* =========================================================
+   MESSAGE BUBBLE
+========================================================= */
+
+.ai-message-bubble {
+
+    max-width:
+        82%;
+
+
+    padding:
+        11px 13px;
+
+
+    border-radius:
+        15px 15px 15px 4px;
+
+
+    color:
+        #dce8f3;
+
+
+    font-size:
+        12px;
+
+    font-weight:
+        500;
+
+    line-height:
+        1.55;
+
+
+    background:
+        rgba(22,49,76,.88);
+
+
+    border:
+        1px solid
+        rgba(80,180,240,.16);
+
+
+    box-shadow:
+        0 7px 18px
+        rgba(0,0,0,.14);
+
+}
+
+
+/* =========================================================
+   USER MESSAGE
+========================================================= */
+
+.ai-message-user {
+
+    justify-content:
+        flex-end;
+
+}
+
+
+.ai-message-user
+.ai-message-icon {
+
+    display:
+        none;
+
+}
+
+
+.ai-message-user
+.ai-message-bubble {
+
+    color:
+        #ffffff;
+
+
+    border-radius:
+        15px 15px 4px 15px;
+
+
+    border:
+        1px solid
+        rgba(120,110,255,.32);
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #2478db,
+            #655be4,
+            #8b55d8
+        );
+
+
+    box-shadow:
+        0 8px 18px
+        rgba(60,80,220,.20);
+
+}
+
+
+/* =========================================================
+   QUICK QUESTION BUTTONS
+========================================================= */
+
+.ai-quick-questions {
+
+    flex:
+        0 0 auto;
+
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+
+    gap:
+        7px;
+
+
+    padding:
+        10px 13px;
+
+
+    border-top:
+        1px solid
+        rgba(80,170,230,.10);
+
+
+    background:
+        rgba(6,20,39,.46);
+
+}
+
+
+.ai-quick-btn {
+
+    min-height:
+        34px;
+
+
+    padding:
+        7px 8px;
+
+
+    border-radius:
+        9px;
+
+
+    border:
+        1px solid
+        rgba(74,183,255,.20);
+
+
+    color:
+        #bde5ff;
+
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+
+    cursor:
+        pointer;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(0,180,255,.07),
+            rgba(120,80,255,.09)
+        );
+
+
+    transition:
+        .25s ease;
+
+}
+
+
+.ai-quick-btn:hover {
+
+    color:
+        #ffffff;
+
+
+    border-color:
+        rgba(72,220,255,.62);
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(0,202,255,.18),
+            rgba(139,92,246,.20)
+        );
+
+
+    transform:
+        translateY(-2px);
+
+
+    box-shadow:
+        0 5px 14px
+        rgba(0,180,255,.10);
+
+}
+
+
+/* =========================================================
+   CHAT INPUT AREA
+========================================================= */
+
+.ai-chat-form {
+
+    flex:
+        0 0 auto;
+
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+
+    padding:
+        11px 12px 13px;
+
+
+    border-top:
+        1px solid
+        rgba(80,180,255,.14);
+
+
+    background:
+        rgba(5,17,34,.92);
+
+}
+
+
+/* INPUT */
+
+#aiChatInput {
+
+    flex:
+        1;
+
+
+    min-width:
+        0;
+
+
+    height:
+        43px;
+
+
+    padding:
+        0 13px;
+
+
+    border-radius:
+        12px;
+
+
+    outline:
+        none;
+
+
+    border:
+        1px solid
+        rgba(90,170,230,.22);
+
+
+    background:
+        rgba(17,40,65,.82);
+
+
+    color:
+        #ffffff;
+
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+
+    font-size:
+        12px;
+
+
+    transition:
+        .25s ease;
+
+}
+
+
+#aiChatInput::placeholder {
+
+    color:
+        #718ba3;
+
+}
+
+
+#aiChatInput:focus {
+
+    border-color:
+        rgba(55,220,255,.62);
+
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0,210,255,.07),
+        0 0 16px
+        rgba(0,190,255,.07);
+
+}
+
+
+/* =========================================================
+   SEND BUTTON
+========================================================= */
+
+#aiChatSend {
+
+    width:
+        43px;
+
+    height:
+        43px;
+
+    min-width:
+        43px;
+
+
+    border:
+        0;
+
+
+    border-radius:
+        12px;
+
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+
+    cursor:
+        pointer;
+
+
+    color:
+        #ffffff;
+
+
+    font-size:
+        14px;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #00cfff,
+            #347dff,
+            #8b5cf6
+        );
+
+
+    box-shadow:
+        0 7px 18px
+        rgba(30,130,255,.25);
+
+
+    transition:
+        .25s ease;
+
+}
+
+
+#aiChatSend:hover {
+
+    transform:
+        translateY(-2px)
+        scale(1.04);
+
+
+    box-shadow:
+        0 10px 22px
+        rgba(75,100,255,.38);
+
+}
+
+
+/* =========================================================
+   AI TYPING INDICATOR - USED LATER BY JAVASCRIPT
+========================================================= */
+
+.ai-typing {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+}
+
+
+.ai-typing span {
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+
+    border-radius:
+        50%;
+
+
+    background:
+        #69dcff;
+
+
+    animation:
+        tanweerAiTyping
+        .8s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+
+.ai-typing span:nth-child(2) {
+
+    animation-delay:
+        .15s;
+
+}
+
+
+.ai-typing span:nth-child(3) {
+
+    animation-delay:
+        .30s;
+
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+body.theme-light
+.ai-chat-window {
+
+    background:
+
+        radial-gradient(
+            circle at 15% 5%,
+            rgba(0,190,255,.12),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            155deg,
+            rgba(255,255,255,.985),
+            rgba(241,247,255,.985),
+            rgba(247,242,255,.985)
+        );
+
+
+    border-color:
+        rgba(40,150,220,.32);
+
+
+    box-shadow:
+        0 20px 60px
+        rgba(30,70,110,.18);
+
+}
+
+
+body.theme-light
+.ai-chat-header {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(0,180,255,.10),
+            rgba(120,80,255,.08)
+        );
+
+}
+
+
+body.theme-light
+.ai-chat-title strong {
+
+    color:
+        #10283d;
+
+}
+
+
+body.theme-light
+.ai-chat-title span {
+
+    color:
+        #60758a;
+
+}
+
+
+body.theme-light
+.ai-chat-messages {
+
+    background:
+        rgba(246,250,255,.82);
+
+}
+
+
+body.theme-light
+.ai-message-bot
+.ai-message-bubble {
+
+    color:
+        #314b62;
+
+
+    background:
+        #ffffff;
+
+
+    border-color:
+        rgba(40,120,190,.14);
+
+
+    box-shadow:
+        0 7px 18px
+        rgba(40,90,130,.08);
+
+}
+
+
+body.theme-light
+.ai-chat-form {
+
+    background:
+        rgba(249,252,255,.96);
+
+}
+
+
+body.theme-light
+#aiChatInput {
+
+    color:
+        #193249;
+
+
+    background:
+        #ffffff;
+
+
+    border-color:
+        rgba(50,120,180,.20);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .ai-chat-window {
+
+        right:
+            12px;
+
+        bottom:
+            150px;
+
+
+        width:
+            calc(100vw - 24px);
+
+
+        height:
+            min(520px, calc(100vh - 185px));
+
+
+        max-height:
+            calc(100vh - 185px);
+
+
+        border-radius:
+            20px;
+
+    }
+
+
+    .ai-chat-header {
+
+        min-height:
+            68px;
+
+        padding:
+            11px 13px;
+
+    }
+
+
+    .ai-chat-avatar {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+        min-width:
+            40px;
+
+        font-size:
+            17px;
+
+    }
+
+
+    .ai-chat-title strong {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .ai-chat-messages {
+
+        padding:
+            14px 11px;
+
+    }
+
+
+    .ai-quick-questions {
+
+        padding:
+            8px 10px;
+
+        gap:
+            6px;
+
+    }
+
+
+    #aiChatInput {
+
+        height:
+            41px;
+
+    }
+
+
+    #aiChatSend {
+
+        width:
+            41px;
+
+        height:
+            41px;
+
+        min-width:
+            41px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes tanweerAiButtonPulse {
+
+    0%,
+    100% {
+
+        box-shadow:
+            0 10px 30px rgba(0,217,255,.34),
+            0 0 0 0 rgba(90,100,255,.30);
+
+    }
+
+
+    50% {
+
+        box-shadow:
+            0 12px 34px rgba(0,217,255,.48),
+            0 0 0 12px rgba(90,100,255,0);
+
+    }
+
+}
+
+
+@keyframes tanweerAiAvatarGlow {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+
+    50% {
+
+        transform:
+            scale(1.06);
+
+    }
+
+}
+
+
+@keyframes tanweerAiOnlineBlink {
+
+    from {
+
+        opacity:
+            .45;
+
+        transform:
+            scale(.75);
+
+    }
+
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            scale(1.18);
+
+    }
+
+}
+
+
+@keyframes tanweerAiTyping {
+
+    from {
+
+        opacity:
+            .35;
+
+        transform:
+            translateY(1px);
+
+    }
+
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(-2px);
+
+    }
+
+}
+
+
+/* =========================================================
+   TANWEER AI ASSISTANT - PREMIUM CHAT WINDOW
+   END
+========================================================= */

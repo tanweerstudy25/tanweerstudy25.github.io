@@ -2929,7 +2929,325 @@ body {
 }
 
 
-/* NAYA CSS YAHAN KHATAM */
+/* =====================================================
+   FASTER + CLEAR HANDWRITING + SIGNATURE
+===================================================== */
+
+/* CLEARER HANDWRITTEN TITLE */
+
+.about-hero h1 {
+
+    font-weight:
+        700 !important;
+
+    letter-spacing:
+        .35px !important;
+
+    text-shadow:
+        0 2px 2px rgba(0,0,0,.28),
+        0 0 10px rgba(80,210,255,.10);
+
+}
+
+
+/* CLEARER HANDWRITTEN PARAGRAPHS */
+
+.about-hero .hero-description {
+
+    font-family:
+        "Caveat",
+        cursive !important;
+
+    font-size:
+        clamp(19px, 1.85vw, 22px) !important;
+
+    font-weight:
+        600 !important;
+
+    line-height:
+        1.38 !important;
+
+    letter-spacing:
+        .25px !important;
+
+    color:
+        #e5eef8 !important;
+
+    text-shadow:
+        0 1px 1px rgba(0,0,0,.40),
+        0 0 4px rgba(255,255,255,.05);
+
+}
+
+
+/* =====================================================
+   SIGNATURE AREA
+===================================================== */
+
+.about-signature {
+
+    position:
+        relative;
+
+    display:
+        inline-block;
+
+    min-width:
+        180px;
+
+    margin-top:
+        18px;
+
+    padding:
+        4px 12px 8px 5px;
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size:
+        clamp(27px, 3vw, 37px);
+
+    font-weight:
+        700;
+
+    line-height:
+        1;
+
+    letter-spacing:
+        .6px;
+
+    color:
+        #ffffff;
+
+    transform:
+        rotate(-3deg);
+
+    text-shadow:
+        0 2px 2px rgba(0,0,0,.30),
+        0 0 9px rgba(65,230,255,.28),
+        0 0 15px rgba(255,90,185,.12);
+
+}
+
+
+/* SIGNATURE GRADIENT */
+
+.write-signature {
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #69eaff,
+            #7c8cff,
+            #c36cff,
+            #ff68ba,
+            #ffffff
+        );
+
+    background-size:
+        260% auto;
+
+    -webkit-background-clip:
+        text;
+
+    background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+    animation:
+        signatureColorFlow
+        4s
+        linear
+        infinite;
+
+}
+
+
+/* SIGNATURE UNDERLINE */
+
+.about-signature::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    bottom:
+        0;
+
+    width:
+        0;
+
+    height:
+        2px;
+
+    border-radius:
+        100px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #42eaff,
+            #728cff,
+            #b56cff,
+            #ff61b8
+        );
+
+    box-shadow:
+        0 0 7px rgba(65,230,255,.65);
+
+    opacity:
+        0;
+
+}
+
+
+/* SHOW UNDERLINE AFTER SIGNATURE */
+
+.about-signature.signature-complete::after {
+
+    opacity:
+        1;
+
+    animation:
+        signatureLineDraw
+        .85s
+        ease
+        forwards;
+
+}
+
+
+/* SMALL SIGNATURE LABEL */
+
+.signature-label {
+
+    display:
+        block;
+
+    margin-top:
+        5px;
+
+    padding-left:
+        5px;
+
+    font-family:
+        "Inter",
+        Arial,
+        sans-serif;
+
+    font-size:
+        7px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1.7px;
+
+    color:
+        #7392aa;
+
+    text-transform:
+        uppercase;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(5px);
+
+    transition:
+        .45s ease;
+
+}
+
+
+.signature-label.signature-label-show {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* SIGNATURE ANIMATIONS */
+
+@keyframes signatureLineDraw {
+
+    from {
+
+        width:
+            0;
+
+    }
+
+    to {
+
+        width:
+            100%;
+
+    }
+
+}
+
+
+@keyframes signatureColorFlow {
+
+    from {
+
+        background-position:
+            0% center;
+
+    }
+
+    to {
+
+        background-position:
+            260% center;
+
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width:700px) {
+
+    .about-hero .hero-description {
+
+        font-size:
+            19px !important;
+
+        line-height:
+            1.36 !important;
+
+    }
+
+
+    .about-signature {
+
+        font-size:
+            30px;
+
+        margin-top:
+            15px;
+
+    }
+
+}
 
 
 
@@ -3858,96 +4176,158 @@ body {
      JAVASCRIPT
 ===================================================== -->
 <script>
+
 (function () {
 
-    const hero = document.querySelector(".about-hero");
+    const hero =
+        document.querySelector(
+            ".about-hero"
+        );
 
     if (!hero) return;
 
 
-    const eyebrow = hero.querySelector(".eyebrow");
-    const title = hero.querySelector("h1");
-    const description = hero.querySelector(".hero-description");
+    const eyebrow =
+        hero.querySelector(
+            ".eyebrow"
+        );
+
+    const title =
+        hero.querySelector(
+            "h1"
+        );
+
+    const description =
+        hero.querySelector(
+            ".hero-description"
+        );
 
 
-    /* ===============================
+    /* =====================================================
        MOVING PEN
-    =============================== */
+    ===================================================== */
 
-    const pen = document.createElement("i");
+    const pen =
+        document.createElement(
+            "i"
+        );
 
     pen.className =
         "fa-solid fa-pen-nib live-writing-pen";
 
-    hero.appendChild(pen);
+    hero.appendChild(
+        pen
+    );
 
 
-    /* ===============================
-       PREPARE TEXT AREAS
-    =============================== */
+    /* =====================================================
+       PREPARE ABOUT ME
+    ===================================================== */
 
     eyebrow.innerHTML = `
+
         <i class="fa-solid fa-pen-nib"></i>
+
         <span class="write-about"></span>
+
         <i class="fa-solid fa-pencil"></i>
+
     `;
 
+
+    /* =====================================================
+       PREPARE TITLE
+    ===================================================== */
 
     title.innerHTML = `
+
         <span class="write-title-one"></span>
+
         <br>
+
         <span class="gradient-text write-title-two"></span>
+
     `;
 
 
+    /* =====================================================
+       PREPARE DESCRIPTION + SIGNATURE
+    ===================================================== */
+
     description.innerHTML = `
+
         <span class="write-paragraph-one"></span>
+
         <br><br>
 
         <span class="write-paragraph-two"></span>
+
         <br><br>
 
         <span class="write-paragraph-three"></span>
+
+        <br>
+
+        <span class="about-signature">
+
+            <span class="write-signature"></span>
+
+        </span>
+
+        <span class="signature-label">
+
+            Network & IT Support Engineer
+
+        </span>
+
     `;
 
+
+    /* =====================================================
+       TEXT
+    ===================================================== */
 
     const aboutText =
         "ABOUT ME";
 
-
     const titleOne =
         "Practical IT Support Across";
-
 
     const titleTwo =
         "Network, Cloud, Systems & Endpoints.";
 
-
     const paragraphOne =
         "I am a Network & IT Support Engineer with 16+ years of experience supporting IT infrastructure, enterprise users, networks, systems and Microsoft cloud technologies.";
-
 
     const paragraphTwo =
         "My day-to-day work includes network troubleshooting, Fortinet firewall support, Microsoft Azure, Microsoft 365, Entra ID, Intune, Windows Autopilot, Windows systems and end-user technical support.";
 
-
     const paragraphThree =
         "I focus on practical troubleshooting, reliable IT support and maintaining secure, stable and dependable technology environments.";
 
+    const signatureText =
+        "Tanweer Ansari";
 
-    /* ===============================
-       MOVE PEN TO LAST LETTER
-    =============================== */
 
-    function movePen(target) {
+    /* =====================================================
+       MOVE PEN
+    ===================================================== */
+
+    function movePen(
+        target
+    ) {
 
         const marker =
-            document.createElement("span");
+            document.createElement(
+                "span"
+            );
 
-        marker.textContent = "\u200b";
+        marker.textContent =
+            "\u200b";
 
-        target.appendChild(marker);
-
+        target.appendChild(
+            marker
+        );
 
         const markerRect =
             marker.getBoundingClientRect();
@@ -3955,26 +4335,30 @@ body {
         const heroRect =
             hero.getBoundingClientRect();
 
-
         pen.style.left =
-            (markerRect.left -
-             heroRect.left + 3) + "px";
-
+            (
+                markerRect.left -
+                heroRect.left +
+                3
+            ) +
+            "px";
 
         pen.style.top =
-            (markerRect.top -
-             heroRect.top +
-             markerRect.height) + "px";
-
+            (
+                markerRect.top -
+                heroRect.top +
+                markerRect.height
+            ) +
+            "px";
 
         marker.remove();
 
     }
 
 
-    /* ===============================
+    /* =====================================================
        TYPE TEXT
-    =============================== */
+    ===================================================== */
 
     function typeText(
         element,
@@ -3982,115 +4366,246 @@ body {
         speed
     ) {
 
-        return new Promise(resolve => {
+        return new Promise(
 
-            let index = 0;
+            resolve => {
 
-            pen.classList.add(
-                "is-writing"
-            );
+                let index =
+                    0;
 
+                pen.classList.add(
+                    "is-writing"
+                );
 
-            function writeCharacter() {
+                function writeCharacter() {
 
-                if (index < text.length) {
+                    if (
+                        index <
+                        text.length
+                    ) {
 
-                    element.textContent +=
-                        text.charAt(index);
+                        element.textContent +=
+                            text.charAt(
+                                index
+                            );
 
-                    movePen(element);
+                        movePen(
+                            element
+                        );
 
-                    index++;
+                        index++;
 
-                    setTimeout(
-                        writeCharacter,
-                        speed
-                    );
+                        setTimeout(
+                            writeCharacter,
+                            speed
+                        );
+
+                    }
+
+                    else {
+
+                        resolve();
+
+                    }
 
                 }
 
-                else {
-
-                    resolve();
-
-                }
+                writeCharacter();
 
             }
 
-
-            writeCharacter();
-
-        });
+        );
 
     }
 
 
-    /* ===============================
-       START HANDWRITING
-    =============================== */
+    /* =====================================================
+       WAIT
+    ===================================================== */
+
+    function wait(
+        milliseconds
+    ) {
+
+        return new Promise(
+
+            resolve =>
+
+                setTimeout(
+                    resolve,
+                    milliseconds
+                )
+
+        );
+
+    }
+
+
+    /* =====================================================
+       START WRITING
+    ===================================================== */
 
     async function startWriting() {
 
+
         await typeText(
-            document.querySelector(".write-about"),
+
+            document.querySelector(
+                ".write-about"
+            ),
+
             aboutText,
-            75
+
+            38
+
         );
 
 
         await typeText(
-            document.querySelector(".write-title-one"),
+
+            document.querySelector(
+                ".write-title-one"
+            ),
+
             titleOne,
-            45
+
+            22
+
         );
 
 
         await typeText(
-            document.querySelector(".write-title-two"),
+
+            document.querySelector(
+                ".write-title-two"
+            ),
+
             titleTwo,
-            45
+
+            22
+
         );
 
 
         await typeText(
-            document.querySelector(".write-paragraph-one"),
+
+            document.querySelector(
+                ".write-paragraph-one"
+            ),
+
             paragraphOne,
-            18
+
+            9
+
         );
 
 
         await typeText(
-            document.querySelector(".write-paragraph-two"),
+
+            document.querySelector(
+                ".write-paragraph-two"
+            ),
+
             paragraphTwo,
-            18
+
+            9
+
         );
 
 
         await typeText(
-            document.querySelector(".write-paragraph-three"),
+
+            document.querySelector(
+                ".write-paragraph-three"
+            ),
+
             paragraphThree,
-            18
+
+            9
+
         );
 
+
+        /* SIGNATURE */
+
+        await wait(
+            250
+        );
+
+
+        const signature =
+            document.querySelector(
+                ".write-signature"
+            );
+
+
+        await typeText(
+
+            signature,
+
+            signatureText,
+
+            46
+
+        );
+
+
+        /* SIGNATURE UNDERLINE */
+
+        const signatureBox =
+            document.querySelector(
+                ".about-signature"
+            );
+
+        signatureBox.classList.add(
+            "signature-complete"
+        );
+
+
+        /* LABEL */
+
+        await wait(
+            350
+        );
+
+
+        const signatureLabel =
+            document.querySelector(
+                ".signature-label"
+            );
+
+        signatureLabel.classList.add(
+            "signature-label-show"
+        );
+
+
+        /* HIDE PEN */
 
         pen.classList.remove(
             "is-writing"
         );
 
-        pen.style.opacity = "0";
+        pen.style.opacity =
+            "0";
 
     }
 
 
-    /* Start when About page opens */
+    /* =====================================================
+       START
+    ===================================================== */
 
     setTimeout(
+
         startWriting,
-        350
+
+        180
+
     );
 
 
 })();
+
 </script>
 <script src="script.js"></script>
 

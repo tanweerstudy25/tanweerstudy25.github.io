@@ -4217,42 +4217,193 @@ body.theme-light
 
 
 <!-- =========================================================
-     PRIVATE CONTACT REQUEST
+     TANWEER AI ASSISTANT
 ========================================================= -->
 
 <div class="floating-whatsapp">
 
     <div class="whatsapp-popup">
 
-        <!-- CUSTOMER SUPPORT AGENT -->
+        <!-- AI ASSISTANT AVATAR -->
 
         <div class="support-agent-avatar">
 
             <img
                 src="customer.png"
-                alt="IT Support Contact">
+                alt="Tanweer AI Assistant">
 
         </div>
 
         <strong>
-            Need IT Support?
+            Tanweer AI Assistant
         </strong>
 
         <span>
-            Request my contact details by email
+            Ask about my skills, experience & projects
         </span>
 
     </div>
 
 
-    <a
-        href="mailto:tanweerstudy25@gmail.com?subject=Contact%20Request%20from%20Portfolio%20Website&body=Hello%20Tanweer%2C%0A%0AI%20visited%20your%20portfolio%20website%20and%20would%20like%20to%20contact%20you.%0A%0APlease%20share%20your%20preferred%20contact%20details.%0A%0AName%3A%20%0ACompany%3A%20%0AReason%20for%20contact%3A%20%0A%0AThank%20you."
+    <button
+        type="button"
+        id="aiChatToggle"
         class="whatsapp-float-btn"
-        title="Request Contact by Email">
+        title="Chat with Tanweer AI Assistant"
+        aria-label="Open Tanweer AI Assistant">
 
-        <i class="fa-solid fa-envelope"></i>
+        <i class="fa-solid fa-robot"></i>
 
-    </a>
+    </button>
+
+</div>
+    <!-- =========================================================
+     TANWEER AI CHAT WINDOW
+========================================================= -->
+
+<div
+    id="aiChatWindow"
+    class="ai-chat-window"
+    aria-hidden="true">
+
+    <!-- CHAT HEADER -->
+
+    <div class="ai-chat-header">
+
+        <div class="ai-chat-header-left">
+
+            <div class="ai-chat-avatar">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+
+            <div class="ai-chat-title">
+
+                <strong>
+                    Tanweer AI Assistant
+                </strong>
+
+                <span>
+                    <i class="fa-solid fa-circle"></i>
+                    AI Online
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="aiChatClose"
+            class="ai-chat-close"
+            aria-label="Close AI Assistant">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <!-- CHAT MESSAGES -->
+
+    <div
+        id="aiChatMessages"
+        class="ai-chat-messages">
+
+        <div class="ai-message ai-message-bot">
+
+            <div class="ai-message-icon">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+
+            <div class="ai-message-bubble">
+
+                Hi! 👋 I’m Tanweer AI Assistant.
+
+                <br><br>
+
+                Ask me about Tanweer’s experience,
+                skills, certifications or projects.
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUICK QUESTIONS -->
+
+    <div class="ai-quick-questions">
+
+        <button
+            type="button"
+            class="ai-quick-btn"
+            data-question="Tell me about Tanweer's IT experience.">
+
+            Experience
+
+        </button>
+
+
+        <button
+            type="button"
+            class="ai-quick-btn"
+            data-question="What are Tanweer's main technical skills?">
+
+            Skills
+
+        </button>
+
+
+        <button
+            type="button"
+            class="ai-quick-btn"
+            data-question="What certifications does Tanweer have?">
+
+            Certifications
+
+        </button>
+
+
+        <button
+            type="button"
+            class="ai-quick-btn"
+            data-question="Tell me about Tanweer's projects.">
+
+            Projects
+
+        </button>
+
+    </div>
+
+
+    <!-- CHAT INPUT -->
+
+    <form
+        id="aiChatForm"
+        class="ai-chat-form">
+
+        <input
+            type="text"
+            id="aiChatInput"
+            placeholder="Ask Tanweer AI..."
+            autocomplete="off"
+            maxlength="500"
+            aria-label="Ask Tanweer AI Assistant">
+
+
+        <button
+            type="submit"
+            id="aiChatSend"
+            aria-label="Send message">
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+        </button>
+
+    </form>
 
 </div>
 <!-- =========================================================

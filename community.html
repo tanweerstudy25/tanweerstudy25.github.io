@@ -125,7 +125,7 @@ select {
         min(1180px, 92%);
 
     margin:
-        42px auto 24px auto;
+        118px auto 24px auto;
 
     padding:
         42px;
@@ -1641,7 +1641,7 @@ select {
     .community-hero {
 
         margin-top:
-            22px;
+            90px;
 
         padding:
             27px 20px;
@@ -1692,7 +1692,155 @@ select {
 
 
 }
+/* =========================================================
+   COMMUNITY LIGHT THEME
+========================================================= */
 
+body.theme-light {
+    background:
+        linear-gradient(
+            180deg,
+            #f4f9ff,
+            #eef6ff,
+            #ffffff
+        );
+
+    color: #173047;
+}
+
+
+body.theme-light .community-hero {
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0,190,255,.10),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(145,90,255,.08),
+            transparent 40%
+        ),
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f2f7ff
+        );
+
+    border-color:
+        rgba(40,145,220,.25);
+
+    box-shadow:
+        0 20px 55px
+        rgba(40,90,140,.12);
+}
+
+
+body.theme-light .community-hero p {
+    color: #52677b;
+}
+
+
+body.theme-light .community-hero-tags span {
+    color: #28445d;
+
+    background:
+        rgba(255,255,255,.90);
+
+    border-color:
+        rgba(45,145,220,.22);
+}
+
+
+body.theme-light .create-post-card,
+body.theme-light .community-post,
+body.theme-light .sidebar-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f3f8ff
+        );
+
+    border-color:
+        rgba(40,145,220,.20);
+
+    box-shadow:
+        0 15px 38px
+        rgba(40,80,120,.10);
+}
+
+
+body.theme-light .card-title h2,
+body.theme-light .discussion-header h2,
+body.theme-light .sidebar-card h3,
+body.theme-light .post-user-name {
+
+    color: #173047;
+}
+
+
+body.theme-light .card-title p,
+body.theme-light .sidebar-card p,
+body.theme-light .post-message,
+body.theme-light .rule-item {
+
+    color: #566c80;
+}
+
+
+body.theme-light .community-input,
+body.theme-light .community-textarea,
+body.theme-light .reply-form textarea {
+
+    color: #173047;
+
+    background: #ffffff;
+
+    border-color:
+        rgba(40,145,220,.25);
+}
+
+
+body.theme-light .community-input::placeholder,
+body.theme-light .community-textarea::placeholder,
+body.theme-light .reply-form textarea::placeholder {
+
+    color: #8395a6;
+}
+
+
+body.theme-light .action-button,
+body.theme-light .refresh-button,
+body.theme-light .stat-box {
+
+    color: #405a70;
+
+    background: #f4f8fc;
+
+    border-color:
+        rgba(40,145,220,.18);
+}
+
+
+body.theme-light .community-reply,
+body.theme-light .reply-form {
+
+    background: #f5f9fd;
+
+    border-color:
+        rgba(40,145,220,.18);
+}
+
+
+body.theme-light .community-footer {
+
+    color: #667b8f;
+
+    border-color:
+        rgba(40,145,220,.15);
+}
 </style>
 
 </head>
@@ -1742,10 +1890,21 @@ select {
             </a>
 
         </nav>
-
-        <!-- MOBILE MENU -->
+        <!-- RIGHT NAVIGATION -->
         <div class="nav-buttons">
 
+            <!-- THEME BUTTON -->
+            <button
+                id="themeToggle"
+                class="icon-btn"
+                aria-label="Toggle Theme"
+                title="Switch to White Theme">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+            <!-- MOBILE MENU -->
             <button
                 id="menuToggle"
                 class="menu-btn"
@@ -1756,6 +1915,7 @@ select {
             </button>
 
         </div>
+      
 
     </div>
 

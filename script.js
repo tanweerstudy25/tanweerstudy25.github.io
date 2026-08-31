@@ -660,7 +660,631 @@ document.addEventListener(
 
         }
 
+        /* =====================================================
+           SAFE PROFESSIONAL AI RESPONSE FORMATTER
+        ===================================================== */
 
+        function appendAiInlineFormatting(
+            target,
+            text
+        ) {
+
+            const source =
+                String(text || "");
+
+            const pattern =
+                /(\*\*[^*]+\*\*|`[^`]+`)/g;
+
+            let lastIndex = 0;
+            let match;
+
+
+            while (
+                (
+                    match =
+                        pattern.exec(source)
+                ) !== null
+            ) {
+
+                if (
+                    match.index >
+                    lastIndex
+                ) {
+
+                    target.appendChild(
+                        document.createTextNode(
+                            source.slice(
+                                lastIndex,
+                                match.index
+                            )
+                        )
+                    );
+
+                }
+
+
+                const token =
+                    match[0];
+
+
+                /* BOLD TEXT */
+
+                if (
+                    token.startsWith("**") &&
+                    token.endsWith("**")
+                ) {
+
+                    const strong =
+                        document.createElement(
+                            "strong"
+                        );
+
+                    strong.className =
+                        "ai-response-bold";
+
+                    strong.textContent =
+                        token.slice(
+                            2,
+                            -2
+                        );
+
+                    target.appendChild(
+                        strong
+                    );
+
+                }
+
+
+                /* INLINE CODE */
+
+                else if (
+                    token.startsWith("`") &&
+                    token.endsWith("`")
+                ) {
+
+                    const code =
+                        document.createElement(
+                            "code"
+                        );
+
+                    code.className =
+                        "ai-inline-code";
+
+                    code.textContent =
+                        token.slice(
+                            1,
+                            -1
+                        );
+
+                    target.appendChild(
+                        code
+                    );
+
+                }
+
+
+                lastIndex =
+                    pattern.lastIndex;
+
+            }
+
+
+            if (
+                lastIndex <
+                source.length
+            ) {
+
+                target.appendChild(
+                    document.createTextNode(
+                        source.slice(
+                            lastIndex
+                        )
+                    )
+                );
+
+            }
+
+        }
+
+
+
+        function formatAiResponse(
+            message
+        ) {
+
+            const container =
+                document.createElement(
+                    "div"
+                );
+
+
+            container.className =
+                "ai-rich-response";
+
+
+            const lines =
+                String(
+                    message || ""
+                )
+                .replace(
+                    /\r\n/g,
+                    "\n"
+                )
+                .split(
+                    "\n"
+                );
+
+
+            let currentList =
+                null;
+
+            let currentListType =
+                null;
+
+            let insideCodeBlock =
+                false;
+
+            let codeLines =
+                [];
+
+
+            function resetList() {
+
+                currentList =
+                    null;
+
+                currentListType =
+                    null;
+
+            }
+
+
+            function addParagraph(
+                text,
+                className = ""
+            ) {
+
+                const paragraph =
+                    document.createElement(
+                        "p"
+                    );
+
+
+                paragraph.className =
+                    className
+                        ? "ai-response-paragraph " +
+                          className
+                        : "ai-response-paragraph";
+
+
+                appendAiInlineFormatting(
+                    paragraph,
+                    text
+                );
+
+
+                container.appendChild(
+                    paragraph
+                );
+
+            }
+
+
+            function addCodeBlock() {
+
+                if (
+                    !codeLines.length
+                ) {
+
+                    return;
+
+                }
+
+
+                const wrapper =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                wrapper.className =
+                    "ai-code-block";
+
+
+                const codeHeader =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                codeHeader.className =
+                    "ai-code-header";
+
+
+                const codeIcon =
+                    document.createElement(
+                        "i"
+                    );
+
+
+                codeIcon.className =
+                    "fa-solid fa-terminal";
+
+
+                const codeLabel =
+                    document.createElement(
+                        "span"
+                    );
+
+
+                codeLabel.textContent =
+                    "Command / Code";
+
+
+                codeHeader.appendChild(
+                    codeIcon
+                );
+
+
+                codeHeader.appendChild(
+                    codeLabel
+                );
+
+
+                const pre =
+                    document.createElement(
+                        "pre"
+                    );
+
+
+                const code =
+                    document.createElement(
+                        "code"
+                    );
+
+
+                code.textContent =
+                    codeLines.join(
+                        "\n"
+                    );
+
+
+                pre.appendChild(
+                    code
+                );
+
+
+                wrapper.appendChild(
+                    codeHeader
+                );
+
+
+                wrapper.appendChild(
+                    pre
+                );
+
+
+                container.appendChild(
+                    wrapper
+                );
+
+
+                codeLines =
+                    [];
+
+            }
+
+
+            lines.forEach(
+                rawLine => {
+
+                    const trimmed =
+                        rawLine.trim();
+
+
+                    /* CODE FENCE */
+
+                    if (
+                        trimmed.startsWith(
+                            "```"
+                        )
+                    ) {
+
+                        resetList();
+
+
+                        if (
+                            !insideCodeBlock
+                        ) {
+
+                            insideCodeBlock =
+                                true;
+
+                            codeLines =
+                                [];
+
+                        }
+
+                        else {
+
+                            insideCodeBlock =
+                                false;
+
+                            addCodeBlock();
+
+                        }
+
+
+                        return;
+
+                    }
+
+
+                    if (
+                        insideCodeBlock
+                    ) {
+
+                        codeLines.push(
+                            rawLine
+                        );
+
+                        return;
+
+                    }
+
+
+                    /* EMPTY LINE */
+
+                    if (!trimmed) {
+
+                        resetList();
+
+                        return;
+
+                    }
+
+
+                    /* MARKDOWN HEADING */
+
+                    const headingMatch =
+                        trimmed.match(
+                            /^(#{1,3})\s+(.+)$/
+                        );
+
+
+                    if (
+                        headingMatch
+                    ) {
+
+                        resetList();
+
+
+                        const heading =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        heading.className =
+                            "ai-response-heading ai-heading-" +
+                            headingMatch[1].length;
+
+
+                        appendAiInlineFormatting(
+                            heading,
+                            headingMatch[2]
+                        );
+
+
+                        container.appendChild(
+                            heading
+                        );
+
+
+                        return;
+
+                    }
+
+
+                    /* BULLET LIST */
+
+                    const bulletMatch =
+                        trimmed.match(
+                            /^[-*•]\s+(.+)$/
+                        );
+
+
+                    if (
+                        bulletMatch
+                    ) {
+
+                        if (
+                            !currentList ||
+                            currentListType !==
+                                "ul"
+                        ) {
+
+                            currentList =
+                                document.createElement(
+                                    "ul"
+                                );
+
+
+                            currentList.className =
+                                "ai-response-list";
+
+
+                            container.appendChild(
+                                currentList
+                            );
+
+
+                            currentListType =
+                                "ul";
+
+                        }
+
+
+                        const item =
+                            document.createElement(
+                                "li"
+                            );
+
+
+                        appendAiInlineFormatting(
+                            item,
+                            bulletMatch[1]
+                        );
+
+
+                        currentList.appendChild(
+                            item
+                        );
+
+
+                        return;
+
+                    }
+
+
+                    /* NUMBERED LIST */
+
+                    const numberMatch =
+                        trimmed.match(
+                            /^\d+[.)]\s+(.+)$/
+                        );
+
+
+                    if (
+                        numberMatch
+                    ) {
+
+                        if (
+                            !currentList ||
+                            currentListType !==
+                                "ol"
+                        ) {
+
+                            currentList =
+                                document.createElement(
+                                    "ol"
+                                );
+
+
+                            currentList.className =
+                                "ai-response-list ai-response-numbered";
+
+
+                            container.appendChild(
+                                currentList
+                            );
+
+
+                            currentListType =
+                                "ol";
+
+                        }
+
+
+                        const item =
+                            document.createElement(
+                                "li"
+                            );
+
+
+                        appendAiInlineFormatting(
+                            item,
+                            numberMatch[1]
+                        );
+
+
+                        currentList.appendChild(
+                            item
+                        );
+
+
+                        return;
+
+                    }
+
+
+                    resetList();
+
+
+                    /* WARNING */
+
+                    if (
+                        /^(⚠️|warning:|important:)/i
+                            .test(trimmed)
+                    ) {
+
+                        addParagraph(
+                            trimmed,
+                            "ai-callout ai-callout-warning"
+                        );
+
+                        return;
+
+                    }
+
+
+                    /* SUCCESS / VERIFICATION */
+
+                    if (
+                        /^(✅|verification:|expected result:|result:)/i
+                            .test(trimmed)
+                    ) {
+
+                        addParagraph(
+                            trimmed,
+                            "ai-callout ai-callout-success"
+                        );
+
+                        return;
+
+                    }
+
+
+                    /* TIP / NOTE */
+
+                    if (
+                        /^(💡|tip:|note:|professional tip:)/i
+                            .test(trimmed)
+                    ) {
+
+                        addParagraph(
+                            trimmed,
+                            "ai-callout ai-callout-tip"
+                        );
+
+                        return;
+
+                    }
+
+
+                    /* NORMAL PARAGRAPH */
+
+                    addParagraph(
+                        trimmed
+                    );
+
+                }
+            );
+
+
+            if (
+                insideCodeBlock &&
+                codeLines.length
+            ) {
+
+                addCodeBlock();
+
+            }
+
+
+            return container;
+
+        }
         /* =====================================================
            ADD AI MESSAGE
         ===================================================== */
@@ -703,10 +1327,13 @@ document.addEventListener(
                 "ai-message-bubble";
 
 
-            /* SAFE AI RESPONSE */
+           /* SAFE PROFESSIONAL AI RESPONSE */
 
-            bubble.textContent =
-                message;
+            bubble.appendChild(
+                formatAiResponse(
+                    message
+                )
+            );
 
 
             messageRow.appendChild(

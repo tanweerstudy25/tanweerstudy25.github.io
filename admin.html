@@ -11,7 +11,7 @@
     <meta name="robots"
           content="noindex, nofollow">
 
-    <title>Admin Feedback | Tanweer Ansari</title>
+    <title>Admin Console | Tanweer Ansari</title>
 
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
@@ -900,6 +900,195 @@ a {
 
 
 /* =========================================================
+   ADMIN TABS + AI CHAT RECORDS
+========================================================= */
+
+.admin-tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.admin-tab-btn {
+    min-height: 44px;
+    padding: 0 18px;
+    border-radius: 11px;
+    border: 1px solid rgba(63, 197, 255, .22);
+    background: rgba(6, 28, 50, .86);
+    color: #b9cfdf;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.admin-tab-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--cyan);
+}
+
+.admin-tab-btn.active {
+    color: white;
+    border-color: rgba(55, 228, 255, .65);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 189, 220, .28),
+            rgba(53, 124, 255, .26),
+            rgba(122, 85, 237, .22)
+        );
+    box-shadow: 0 10px 28px rgba(55, 228, 255, .08);
+}
+
+.admin-view {
+    display: block;
+}
+
+.admin-view.hidden {
+    display: none;
+}
+
+.ai-chat-list {
+    display: grid;
+    gap: 16px;
+}
+
+.ai-session-card {
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid rgba(91, 190, 255, .18);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8, 29, 51, .96),
+            rgba(12, 26, 52, .96)
+        );
+    box-shadow: 0 16px 38px rgba(0,0,0,.18);
+}
+
+.ai-session-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    background: rgba(34, 131, 224, .06);
+}
+
+.ai-session-title {
+    font-size: 13px;
+    font-weight: 900;
+    color: #eaf8ff;
+}
+
+.ai-session-id {
+    margin-top: 5px;
+    color: #6fcfff;
+    font-size: 10px;
+    word-break: break-all;
+}
+
+.ai-session-meta {
+    color: #8ca5ba;
+    font-size: 10px;
+    line-height: 1.6;
+    text-align: right;
+}
+
+.ai-turns {
+    display: grid;
+    gap: 12px;
+    padding: 18px;
+}
+
+.ai-turn {
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(75, 174, 235, .12);
+    background: rgba(3, 18, 34, .58);
+}
+
+.ai-turn-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.ai-turn-number {
+    color: var(--cyan);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .7px;
+    text-transform: uppercase;
+}
+
+.ai-turn-time {
+    color: #748da4;
+    font-size: 10px;
+}
+
+.ai-question,
+.ai-answer {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+}
+
+.ai-question {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.ai-answer {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.06);
+    color: #bfd0de;
+    font-size: 12px;
+}
+
+.ai-label {
+    display: inline-block;
+    margin-right: 7px;
+    color: #7fdcff;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+}
+
+.ai-source-meta {
+    margin-top: 12px;
+    color: #6f899f;
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+    .admin-tab-btn {
+        flex: 1 1 140px;
+    }
+
+    .ai-session-meta {
+        width: 100%;
+        text-align: left;
+    }
+
+    .ai-turn-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+/* =========================================================
    MOBILE
 ========================================================= */
 
@@ -963,7 +1152,7 @@ a {
             Tanweer Admin
 
             <span>
-                PRIVATE FEEDBACK CONSOLE
+                PRIVATE PORTFOLIO CONSOLE
             </span>
 
         </span>
@@ -1007,7 +1196,7 @@ a {
 
         <p class="login-subtitle">
             Secure access to your private portfolio
-            feedback dashboard.
+            admin dashboard.
         </p>
 
 
@@ -1119,11 +1308,11 @@ a {
         <div class="dashboard-title">
 
             <h1>
-                Feedback Inbox
+                Admin Console
             </h1>
 
             <p>
-                Private feedback received from your portfolio.
+                Manage portfolio feedback and AI assistant conversations.
             </p>
 
         </div>
@@ -1160,73 +1349,176 @@ a {
 
 
 
-    <section class="stats-grid">
+    <div class="admin-tabs">
 
-        <article class="stat-card">
+        <button
+            id="feedbackTab"
+            class="admin-tab-btn active"
+            type="button">
 
-            <i class="fa-solid fa-comments"></i>
+            <i class="fa-solid fa-comment-dots"></i>
+            Feedback
 
-            <strong id="totalFeedback">
-                0
-            </strong>
-
-            <span>
-                Total Feedback
-            </span>
-
-        </article>
+        </button>
 
 
-        <article class="stat-card">
+        <button
+            id="aiChatsTab"
+            class="admin-tab-btn"
+            type="button">
 
-            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-robot"></i>
+            AI Chats
 
-            <strong id="averageRating">
-                0.0
-            </strong>
-
-            <span>
-                Average Rating
-            </span>
-
-        </article>
-
-
-        <article class="stat-card">
-
-            <i class="fa-solid fa-clock"></i>
-
-            <strong id="latestFeedback">
-                —
-            </strong>
-
-            <span>
-                Latest Feedback
-            </span>
-
-        </article>
-
-    </section>
-
-
-
-    <div class="search-box">
-
-        <i class="fa-solid fa-magnifying-glass"></i>
-
-        <input
-            id="feedbackSearch"
-            type="search"
-            placeholder="Search by name, email or feedback..."
-            autocomplete="off">
+        </button>
 
     </div>
 
 
+    <section
+        id="feedbackView"
+        class="admin-view">
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+
+                <i class="fa-solid fa-comments"></i>
+
+                <strong id="totalFeedback">
+                    0
+                </strong>
+
+                <span>
+                    Total Feedback
+                </span>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <i class="fa-solid fa-star"></i>
+
+                <strong id="averageRating">
+                    0.0
+                </strong>
+
+                <span>
+                    Average Rating
+                </span>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <strong id="latestFeedback">
+                    —
+                </strong>
+
+                <span>
+                    Latest Feedback
+                </span>
+
+            </article>
+
+        </section>
+
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                id="feedbackSearch"
+                type="search"
+                placeholder="Search by name, email or feedback..."
+                autocomplete="off">
+
+        </div>
+
+
+        <section
+            id="feedbackList"
+            class="feedback-list">
+        </section>
+
+    </section>
+
 
     <section
-        id="feedbackList"
-        class="feedback-list">
+        id="aiChatsView"
+        class="admin-view hidden">
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+
+                <i class="fa-solid fa-message"></i>
+
+                <strong id="totalAiMessages">
+                    0
+                </strong>
+
+                <span>
+                    AI Messages
+                </span>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                <strong id="totalAiSessions">
+                    0
+                </strong>
+
+                <span>
+                    Chat Sessions
+                </span>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <strong id="latestAiChat">
+                    —
+                </strong>
+
+                <span>
+                    Latest AI Chat
+                </span>
+
+            </article>
+
+        </section>
+
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                id="aiChatSearch"
+                type="search"
+                placeholder="Search question, AI reply, session or language..."
+                autocomplete="off">
+
+        </div>
+
+
+        <section
+            id="aiChatList"
+            class="ai-chat-list">
+        </section>
 
     </section>
 
@@ -1237,8 +1529,12 @@ a {
 
 <script>
 
-const WORKER_URL =
+const FEEDBACK_WORKER_URL =
     "https://live-visitor-counter.tanweerstudy25.workers.dev/admin/feedback";
+
+
+const AI_CHATS_WORKER_URL =
+    "https://live-visitor-counter.tanweerstudy25.workers.dev/admin/ai-chats";
 
 
 const loginSection =
@@ -1289,18 +1585,62 @@ const feedbackList =
     );
 
 
-const searchInput =
+const feedbackSearch =
     document.getElementById(
         "feedbackSearch"
     );
 
 
-let currentUsername = "";
+const aiChatList =
+    document.getElementById(
+        "aiChatList"
+    );
 
-let currentPassword = "";
 
-let allFeedback = [];
+const aiChatSearch =
+    document.getElementById(
+        "aiChatSearch"
+    );
 
+
+const feedbackView =
+    document.getElementById(
+        "feedbackView"
+    );
+
+
+const aiChatsView =
+    document.getElementById(
+        "aiChatsView"
+    );
+
+
+const feedbackTab =
+    document.getElementById(
+        "feedbackTab"
+    );
+
+
+const aiChatsTab =
+    document.getElementById(
+        "aiChatsTab"
+    );
+
+
+let currentUsername =
+    "";
+
+
+let currentPassword =
+    "";
+
+
+let allFeedback =
+    [];
+
+
+let allAiChats =
+    [];
 
 
 /* =========================================================
@@ -1335,9 +1675,8 @@ document
     );
 
 
-
 /* =========================================================
-   SECURE API REQUEST
+   SECURE FEEDBACK API REQUEST
 ========================================================= */
 
 async function loadFeedback(
@@ -1347,7 +1686,7 @@ async function loadFeedback(
 
     const response =
         await fetch(
-            WORKER_URL,
+            FEEDBACK_WORKER_URL,
             {
                 method:
                     "POST",
@@ -1414,6 +1753,83 @@ async function loadFeedback(
 }
 
 
+/* =========================================================
+   SECURE AI CHAT API REQUEST
+========================================================= */
+
+async function loadAiChats(
+    username,
+    password
+) {
+
+    const response =
+        await fetch(
+            AI_CHATS_WORKER_URL,
+            {
+                method:
+                    "POST",
+
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
+
+                cache:
+                    "no-store",
+
+                body:
+                    JSON.stringify(
+                        {
+                            username:
+                                username,
+
+                            password:
+                                password
+                        }
+                    )
+            }
+        );
+
+
+    let data = {};
+
+
+    try {
+
+        data =
+            await response.json();
+
+    }
+    catch {
+
+        throw new Error(
+            "Invalid AI chat server response"
+        );
+
+    }
+
+
+    if (
+        !response.ok ||
+        !data.success
+    ) {
+
+        throw new Error(
+            data.error ||
+            "Unable to load AI chats"
+        );
+
+    }
+
+
+    return Array.isArray(
+        data.chats
+    )
+        ? data.chats
+        : [];
+
+}
+
 
 /* =========================================================
    LOGIN
@@ -1475,6 +1891,31 @@ loginForm.addEventListener(
                 );
 
 
+            let aiChats =
+                [];
+
+
+            try {
+
+                aiChats =
+                    await loadAiChats(
+                        username,
+                        password
+                    );
+
+            }
+            catch (
+                aiChatError
+            ) {
+
+                console.error(
+                    "AI Chats Load Error:",
+                    aiChatError
+                );
+
+            }
+
+
             currentUsername =
                 username;
 
@@ -1485,6 +1926,10 @@ loginForm.addEventListener(
 
             allFeedback =
                 feedback;
+
+
+            allAiChats =
+                aiChats;
 
 
             passwordInput.value =
@@ -1500,8 +1945,11 @@ loginForm.addEventListener(
             );
 
 
-            renderDashboard(
-                allFeedback
+            renderDashboard();
+
+
+            switchAdminView(
+                "feedback"
             );
 
         }
@@ -1530,6 +1978,68 @@ loginForm.addEventListener(
     }
 );
 
+
+/* =========================================================
+   TABS
+========================================================= */
+
+feedbackTab.addEventListener(
+    "click",
+    function () {
+
+        switchAdminView(
+            "feedback"
+        );
+
+    }
+);
+
+
+aiChatsTab.addEventListener(
+    "click",
+    function () {
+
+        switchAdminView(
+            "ai"
+        );
+
+    }
+);
+
+
+function switchAdminView(
+    view
+) {
+
+    const showFeedback =
+        view ===
+        "feedback";
+
+
+    feedbackView.classList.toggle(
+        "hidden",
+        !showFeedback
+    );
+
+
+    aiChatsView.classList.toggle(
+        "hidden",
+        showFeedback
+    );
+
+
+    feedbackTab.classList.toggle(
+        "active",
+        showFeedback
+    );
+
+
+    aiChatsTab.classList.toggle(
+        "active",
+        !showFeedback
+    );
+
+}
 
 
 /* =========================================================
@@ -1566,22 +2076,61 @@ document
 
             try {
 
-                allFeedback =
+                const feedback =
                     await loadFeedback(
                         currentUsername,
                         currentPassword
                     );
 
 
-                renderDashboard(
-                    allFeedback
-                );
+                let aiChats =
+                    allAiChats;
+
+
+                try {
+
+                    aiChats =
+                        await loadAiChats(
+                            currentUsername,
+                            currentPassword
+                        );
+
+                }
+                catch (
+                    aiChatError
+                ) {
+
+                    console.error(
+                        "AI Chats Refresh Error:",
+                        aiChatError
+                    );
+
+                }
+
+
+                allFeedback =
+                    feedback;
+
+
+                allAiChats =
+                    aiChats;
+
+
+                feedbackSearch.value =
+                    "";
+
+
+                aiChatSearch.value =
+                    "";
+
+
+                renderDashboard();
 
             }
             catch {
 
                 alert(
-                    "Unable to refresh feedback."
+                    "Unable to refresh admin data."
                 );
 
             }
@@ -1598,7 +2147,6 @@ document
 
         }
     );
-
 
 
 /* =========================================================
@@ -1625,6 +2173,10 @@ document
                 [];
 
 
+            allAiChats =
+                [];
+
+
             usernameInput.value =
                 "";
 
@@ -1633,11 +2185,18 @@ document
                 "";
 
 
-            searchInput.value =
+            feedbackSearch.value =
+                "";
+
+
+            aiChatSearch.value =
                 "";
 
 
             feedbackList.replaceChildren();
+
+
+            aiChatList.replaceChildren();
 
 
             dashboard.classList.remove(
@@ -1647,6 +2206,11 @@ document
 
             loginSection.style.display =
                 "flex";
+
+
+            switchAdminView(
+                "feedback"
+            );
 
 
             showLoginMessage(
@@ -1661,12 +2225,11 @@ document
     );
 
 
-
 /* =========================================================
-   SEARCH
+   FEEDBACK SEARCH
 ========================================================= */
 
-searchInput.addEventListener(
+feedbackSearch.addEventListener(
     "input",
     function () {
 
@@ -1718,12 +2281,97 @@ searchInput.addEventListener(
 );
 
 
-
 /* =========================================================
-   DASHBOARD STATS
+   AI CHAT SEARCH
 ========================================================= */
 
-function renderDashboard(
+aiChatSearch.addEventListener(
+    "input",
+    function () {
+
+        const query =
+            this.value
+                .trim()
+                .toLowerCase();
+
+
+        if (!query) {
+
+            renderAiChats(
+                allAiChats
+            );
+
+            return;
+
+        }
+
+
+        const filtered =
+            allAiChats.filter(
+                item => {
+
+                    const haystack =
+                        [
+                            item.session_id,
+                            item.question,
+                            item.ai_reply,
+                            item.language,
+                            item.page_url,
+                            item.created_at
+                        ]
+                        .join(" ")
+                        .toLowerCase();
+
+
+                    return haystack.includes(
+                        query
+                    );
+
+                }
+            );
+
+
+        renderAiChats(
+            filtered
+        );
+
+    }
+);
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+function renderDashboard() {
+
+    renderFeedbackStats(
+        allFeedback
+    );
+
+
+    renderAiStats(
+        allAiChats
+    );
+
+
+    renderFeedback(
+        allFeedback
+    );
+
+
+    renderAiChats(
+        allAiChats
+    );
+
+}
+
+
+/* =========================================================
+   FEEDBACK STATS
+========================================================= */
+
+function renderFeedbackStats(
     feedback
 ) {
 
@@ -1776,13 +2424,60 @@ function renderDashboard(
                 :
                 "—";
 
-
-    renderFeedback(
-        feedback
-    );
-
 }
 
+
+/* =========================================================
+   AI CHAT STATS
+========================================================= */
+
+function renderAiStats(
+    chats
+) {
+
+    document
+        .getElementById(
+            "totalAiMessages"
+        )
+        .textContent =
+            chats.length;
+
+
+    const sessions =
+        new Set(
+            chats.map(
+                item =>
+                    String(
+                        item.session_id ||
+                        "unknown"
+                    )
+            )
+        );
+
+
+    document
+        .getElementById(
+            "totalAiSessions"
+        )
+        .textContent =
+            sessions.size;
+
+
+    document
+        .getElementById(
+            "latestAiChat"
+        )
+        .textContent =
+            chats.length
+                ?
+                formatShortDate(
+                    chats[0]
+                        .created_at
+                )
+                :
+                "—";
+
+}
 
 
 /* =========================================================
@@ -1802,46 +2497,12 @@ function renderFeedback(
         feedback.length === 0
     ) {
 
-        const empty =
-            document.createElement(
-                "div"
-            );
-
-
-        empty.className =
-            "empty-state";
-
-
-        const icon =
-            document.createElement(
-                "i"
-            );
-
-
-        icon.className =
-            "fa-regular fa-folder-open";
-
-
-        const message =
-            document.createElement(
-                "div"
-            );
-
-
-        message.textContent =
-            "No feedback found.";
-
-
-        empty.append(
-            icon,
-            message
-        );
-
-
         feedbackList.appendChild(
-            empty
+            createEmptyState(
+                "fa-regular fa-folder-open",
+                "No feedback found."
+            )
         );
-
 
         return;
 
@@ -1984,6 +2645,532 @@ function renderFeedback(
 
 }
 
+
+/* =========================================================
+   SAFE AI CHAT RENDERING
+   Groups messages by session_id
+========================================================= */
+
+function renderAiChats(
+    chats
+) {
+
+    aiChatList
+        .replaceChildren();
+
+
+    if (
+        chats.length === 0
+    ) {
+
+        aiChatList.appendChild(
+            createEmptyState(
+                "fa-solid fa-robot",
+                "No AI chat records found."
+            )
+        );
+
+        return;
+
+    }
+
+
+    const sessions =
+        new Map();
+
+
+    chats.forEach(
+        item => {
+
+            const sessionId =
+                String(
+                    item.session_id ||
+                    "Unknown session"
+                );
+
+
+            if (
+                !sessions.has(
+                    sessionId
+                )
+            ) {
+
+                sessions.set(
+                    sessionId,
+                    []
+                );
+
+            }
+
+
+            sessions
+                .get(
+                    sessionId
+                )
+                .push(
+                    item
+                );
+
+        }
+    );
+
+
+    const groupedSessions =
+        Array.from(
+            sessions.entries()
+        )
+        .map(
+            (
+                [
+                    sessionId,
+                    messages
+                ]
+            ) => {
+
+                messages.sort(
+                    (
+                        a,
+                        b
+                    ) =>
+                        Number(
+                            a.id || 0
+                        ) -
+                        Number(
+                            b.id || 0
+                        )
+                );
+
+
+                const latest =
+                    messages[
+                        messages.length - 1
+                    ];
+
+
+                return {
+                    sessionId:
+                        sessionId,
+
+                    messages:
+                        messages,
+
+                    latest:
+                        latest
+                };
+
+            }
+        )
+        .sort(
+            (
+                a,
+                b
+            ) =>
+                Number(
+                    b.latest?.id || 0
+                ) -
+                Number(
+                    a.latest?.id || 0
+                )
+        );
+
+
+    groupedSessions.forEach(
+        (
+            session,
+            sessionIndex
+        ) => {
+
+            const card =
+                document.createElement(
+                    "article"
+                );
+
+
+            card.className =
+                "ai-session-card";
+
+
+            const head =
+                document.createElement(
+                    "div"
+                );
+
+
+            head.className =
+                "ai-session-head";
+
+
+            const left =
+                document.createElement(
+                    "div"
+                );
+
+
+            const title =
+                document.createElement(
+                    "div"
+                );
+
+
+            title.className =
+                "ai-session-title";
+
+
+            title.textContent =
+                "Session " +
+                (
+                    sessionIndex +
+                    1
+                ) +
+                " · " +
+                session.messages.length +
+                (
+                    session.messages.length === 1
+                        ? " message"
+                        : " messages"
+                );
+
+
+            const sessionId =
+                document.createElement(
+                    "div"
+                );
+
+
+            sessionId.className =
+                "ai-session-id";
+
+
+            sessionId.textContent =
+                session.sessionId;
+
+
+            left.append(
+                title,
+                sessionId
+            );
+
+
+            const meta =
+                document.createElement(
+                    "div"
+                );
+
+
+            meta.className =
+                "ai-session-meta";
+
+
+            const first =
+                session.messages[0];
+
+
+            const latest =
+                session.latest;
+
+
+            meta.textContent =
+                formatDate(
+                    latest?.created_at
+                ) +
+                (
+                    first?.language
+                        ? " · " +
+                          first.language
+                        : ""
+                );
+
+
+            head.append(
+                left,
+                meta
+            );
+
+
+            const turns =
+                document.createElement(
+                    "div"
+                );
+
+
+            turns.className =
+                "ai-turns";
+
+
+            session.messages.forEach(
+                (
+                    item,
+                    index
+                ) => {
+
+                    const turn =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    turn.className =
+                        "ai-turn";
+
+
+                    const top =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    top.className =
+                        "ai-turn-top";
+
+
+                    const turnNumber =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    turnNumber.className =
+                        "ai-turn-number";
+
+
+                    turnNumber.textContent =
+                        "Turn " +
+                        (
+                            index +
+                            1
+                        );
+
+
+                    const turnTime =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    turnTime.className =
+                        "ai-turn-time";
+
+
+                    turnTime.textContent =
+                        formatDate(
+                            item.created_at
+                        );
+
+
+                    top.append(
+                        turnNumber,
+                        turnTime
+                    );
+
+
+                    const question =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    question.className =
+                        "ai-question";
+
+
+                    const qLabel =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    qLabel.className =
+                        "ai-label";
+
+
+                    qLabel.textContent =
+                        "Visitor";
+
+
+                    const qText =
+                        document.createTextNode(
+                            item.question ||
+                            ""
+                        );
+
+
+                    question.append(
+                        qLabel,
+                        qText
+                    );
+
+
+                    const answer =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    answer.className =
+                        "ai-answer";
+
+
+                    const aLabel =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    aLabel.className =
+                        "ai-label";
+
+
+                    aLabel.textContent =
+                        "AI";
+
+
+                    const aText =
+                        document.createTextNode(
+                            item.ai_reply ||
+                            ""
+                        );
+
+
+                    answer.append(
+                        aLabel,
+                        aText
+                    );
+
+
+                    const source =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    source.className =
+                        "ai-source-meta";
+
+
+                    const sourceParts =
+                        [];
+
+
+                    if (
+                        item.language
+                    ) {
+
+                        sourceParts.push(
+                            "Language: " +
+                            item.language
+                        );
+
+                    }
+
+
+                    if (
+                        item.page_url
+                    ) {
+
+                        sourceParts.push(
+                            "Page: " +
+                            item.page_url
+                        );
+
+                    }
+
+
+                    source.textContent =
+                        sourceParts.join(
+                            " · "
+                        );
+
+
+                    turn.append(
+                        top,
+                        question,
+                        answer
+                    );
+
+
+                    if (
+                        sourceParts.length
+                    ) {
+
+                        turn.appendChild(
+                            source
+                        );
+
+                    }
+
+
+                    turns.appendChild(
+                        turn
+                    );
+
+                }
+            );
+
+
+            card.append(
+                head,
+                turns
+            );
+
+
+            aiChatList.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+function createEmptyState(
+    iconClass,
+    text
+) {
+
+    const empty =
+        document.createElement(
+            "div"
+        );
+
+
+    empty.className =
+        "empty-state";
+
+
+    const icon =
+        document.createElement(
+            "i"
+        );
+
+
+    icon.className =
+        iconClass;
+
+
+    const message =
+        document.createElement(
+            "div"
+        );
+
+
+    message.textContent =
+        text;
+
+
+    empty.append(
+        icon,
+        message
+    );
+
+
+    return empty;
+
+}
 
 
 /* =========================================================

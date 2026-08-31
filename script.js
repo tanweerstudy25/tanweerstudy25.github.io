@@ -479,6 +479,42 @@ document.addEventListener(
 
         const AI_API_URL =
             "https://tanweer-ai-assistant.tanweerstudy25.workers.dev/";
+               /* =====================================================
+           AI CHAT SESSION ID
+        ===================================================== */
+
+        const AI_SESSION_STORAGE_KEY =
+            "tanweerAiSessionId";
+
+
+        let AI_SESSION_ID =
+            sessionStorage.getItem(
+                AI_SESSION_STORAGE_KEY
+            );
+
+
+        if (!AI_SESSION_ID) {
+
+            AI_SESSION_ID =
+                (
+                    typeof crypto !== "undefined" &&
+                    typeof crypto.randomUUID === "function"
+                )
+                    ? crypto.randomUUID()
+                    : "chat-" +
+                      Date.now() +
+                      "-" +
+                      Math.random()
+                          .toString(36)
+                          .slice(2, 10);
+
+
+            sessionStorage.setItem(
+                AI_SESSION_STORAGE_KEY,
+                AI_SESSION_ID
+            );
+
+        }
 
 
         /* =====================================================
@@ -1566,8 +1602,11 @@ document.addEventListener(
                             body:
                                 JSON.stringify(
                                     {
-                                        message:
-                                            cleanMessage
+                                         message:
+                                             cleanMessage,
+
+                                              session_id:
+                                                   AI_SESSION_ID
                                     }
                                 )
 
